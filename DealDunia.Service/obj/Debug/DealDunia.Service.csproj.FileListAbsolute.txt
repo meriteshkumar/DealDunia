@@ -1,0 +1,7 @@
+E:\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.csprojResolveAssemblyReference.cache
+E:\DealDunia\DealDunia.Service\bin\DealDunia.Service.dll
+E:\DealDunia\DealDunia.Service\bin\DealDunia.Service.pdb
+E:\DealDunia\DealDunia.Service\bin\DealDunia.Infrastructure.dll
+E:\DealDunia\DealDunia.Service\bin\DealDunia.Infrastructure.pdb
+E:\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.dll
+E:\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.pdb
