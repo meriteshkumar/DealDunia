@@ -1,9 +1,7 @@
 ﻿using DealDunia.Domain.Abstract;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DealDunia.Infrastructure.Helpers;
+using DealDunia.Service;
+using System.Xml;
 
 namespace DealDunia.Domain.Concrete
 {
@@ -12,15 +10,19 @@ namespace DealDunia.Domain.Concrete
 
         public string GetItem(Infrastructure.Helpers.ItemRequest request)
         {
-            DealDuniaServiceReference.AmazonSoapClient serviceRef = new DealDuniaServiceReference.AmazonSoapClient();
+            Amazon serviceRef = new Amazon();
 
-            var response = serviceRef.ItemSearch(new DealDuniaServiceReference.ItemRequest
+            var response = serviceRef.ItemSearch(new ItemRequest
             {
                 Keywords = request.Keywords,
                 Operation = request.Operation,
                 ResponseGroup = request.ResponseGroup,
                 SearchIndex = request.SearchIndex
             });
+
+            XmlParser parser = new XmlParser();
+            ItemResponse itemResponse = new ItemResponse();
+            parser.MapXMLtoClass(response, itemResponse);
 
             return null;
         }

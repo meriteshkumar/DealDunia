@@ -1,0 +1,4 @@
+E:\DealDunia\DealDunia.Repository\bin\Debug\DealDunia.Repository.dll
+E:\DealDunia\DealDunia.Repository\bin\Debug\DealDunia.Repository.pdb
+E:\DealDunia\DealDunia.Repository\obj\Debug\DealDunia.Repository.dll
+E:\DealDunia\DealDunia.Repository\obj\Debug\DealDunia.Repository.pdb

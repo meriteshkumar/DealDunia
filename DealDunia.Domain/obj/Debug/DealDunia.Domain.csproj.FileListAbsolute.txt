@@ -1,8 +1,10 @@
+E:\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Domain.dll.config
 E:\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Domain.dll
 E:\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Domain.pdb
+E:\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Infrastructure.dll
+E:\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Service.dll
+E:\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Infrastructure.pdb
+E:\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Service.pdb
+E:\DealDunia\DealDunia.Domain\obj\Debug\DealDunia.Domain.csprojResolveAssemblyReference.cache
 E:\DealDunia\DealDunia.Domain\obj\Debug\DealDunia.Domain.dll
 E:\DealDunia\DealDunia.Domain\obj\Debug\DealDunia.Domain.pdb
-E:\DealDunia\DealDunia.Domain\obj\Debug\DealDunia.Domain.csprojResolveAssemblyReference.cache
-E:\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Infrastructure.dll
-E:\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Infrastructure.pdb
-E:\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Domain.dll.config

@@ -42,8 +42,12 @@
   <ItemGroup>
     <Compile Include="Helpers\ItemRequest.cs" />
     <Compile Include="Helpers\SignedRequestHelper.cs" />
+    <Compile Include="Helpers\XmlParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Helpers\ItemResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Helpers\AmazonSample.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

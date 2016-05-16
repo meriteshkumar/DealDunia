@@ -31,9 +31,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -42,51 +44,31 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ILookupRepository.cs" />
+    <Compile Include="Abstract\IStoreRepository.cs" />
     <Compile Include="Concrete\AmazonRepository.cs" />
+    <Compile Include="Concrete\SQLStoreRepository.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Store.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\DealDuniaServiceReference\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entities\" />
+    <Compile Include="SQLHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DealDunia.Infrastructure\DealDunia.Infrastructure.csproj">
       <Project>{721d9d70-5092-4e45-8952-41a5f7873028}</Project>
       <Name>DealDunia.Infrastructure</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <ProjectReference Include="..\DealDunia.Service\DealDunia.Service.csproj">
+      <Project>{5be7ca64-4e32-47ed-ba30-0945956cf1c3}</Project>
+      <Name>DealDunia.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\System.Xml.Linq.XElement.datasource" />
-    <None Include="Service References\DealDuniaServiceReference\Amazon.wsdl" />
-    <None Include="Service References\DealDuniaServiceReference\DealDunia.Domain.DealDuniaServiceReference.ItemSearchResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\DealDuniaServiceReference\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\DealDuniaServiceReference\Amazon.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\DealDuniaServiceReference\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\DealDuniaServiceReference\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Service References\DealDuniaServiceReference\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

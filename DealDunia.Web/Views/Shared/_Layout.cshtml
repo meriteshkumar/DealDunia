@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Conent/css")
+    @Scripts.Render("~/bundles/js")
 </head>
 <body>
     <div>
+        @Html.Action("Menu","Nav")
         @RenderBody()
     </div>
 </body>

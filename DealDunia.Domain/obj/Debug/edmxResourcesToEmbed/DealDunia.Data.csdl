@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EcomModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EcomEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="C__MigrationHistory" EntityType="EcomModel.C__MigrationHistory" />
+    <EntitySet Name="Categories" EntityType="EcomModel.Category" />
+    <EntitySet Name="Stores" EntityType="EcomModel.Store" />
+    <FunctionImport Name="GetCategories" ReturnType="Collection(EcomModel.GetCategories_Result)" />
+    <FunctionImport Name="GetSubCategories" ReturnType="Collection(EcomModel.GetSubCategories_Result)">
+      <Parameter Name="CategoryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <EntityType Name="C__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+    <Property Name="ContextKey" Type="String" Nullable="false" MaxLength="300" Unicode="true" FixedLength="false" />
+    <Property Name="Model" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="ProductVersion" Type="String" Nullable="false" MaxLength="32" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Image" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="ParentId" Type="Int32" Nullable="false" />
+    <Property Name="Level" Type="Int32" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreId" />
+    </Key>
+    <Property Name="StoreId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreName" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="StoreImage" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="Affiliate" Type="Boolean" Nullable="false" />
+    <Property Name="AffiliateId" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <ComplexType Name="GetCategories_Result">
+    <Property Type="Int32" Name="CategoryId" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Image" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GetSubCategories_Result">
+    <Property Type="Int32" Name="CategoryId" Nullable="false" />
+    <Property Type="String" Name="CategoryName" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Image" Nullable="true" />
+  </ComplexType>
+</Schema>
