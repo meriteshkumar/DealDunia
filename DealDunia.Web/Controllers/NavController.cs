@@ -16,7 +16,7 @@ namespace DealDunia.Web.Controllers
 
         public PartialViewResult Menu()
         {
-            var categories = repository.Categories.Select(x => x.CategoryName).Distinct();
+            var categories = repository.Categories.Distinct();
             return PartialView("Menu", categories);
         }
 

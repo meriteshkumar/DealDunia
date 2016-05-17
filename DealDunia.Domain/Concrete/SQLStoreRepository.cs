@@ -53,5 +53,24 @@ namespace DealDunia.Domain.Concrete
                 return categories;
             }
         }
+
+        public IEnumerable<Category> SubCategories(int CateogyId)
+        {
+
+            List<Category> categories = new List<Category>();
+            Category category = null;
+
+            SqlDataReader reader = SqlHelper.ExecuteReader("Data Source=IRIS-CSG-554;Initial Catalog=Ecom;Integrated Security=True", CommandType.StoredProcedure, "dbo.GetSubCategories", new SqlParameter[] { new SqlParameter("CategoryId", CateogyId) });
+
+            while (reader.Read())
+            {
+                category = new Category();
+                category.CategoryId = (int)((IDataRecord)reader)["CategoryId"];
+                category.CategoryName = ((IDataRecord)reader)["CategoryName"].ToString();
+                category.Image = ((IDataRecord)reader)["Image"].ToString();
+                categories.Add(category);
+            }
+            return categories;
+        }
     }
 }
