@@ -7,6 +7,5 @@ namespace DealDunia.Domain.Abstract
     {
        IEnumerable<Store> Stores { get; }
        IEnumerable<Category> Categories { get; }
-       IEnumerable<Category> SubCategories(int CategoryId);
     }
 }

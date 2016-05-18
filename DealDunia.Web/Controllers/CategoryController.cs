@@ -15,14 +15,14 @@ namespace DealDunia.Web.Controllers
 
         public ActionResult Index()
         {
-            AmazonRepository rep = new AmazonRepository();
-            rep.GetItem(new ItemRequest
-                {
-                    Keywords = "Harry Potter",
-                    Operation = "ItemSearch",
-                    ResponseGroup = "Images,ItemAttributes,Offers",
-                    SearchIndex = "Books"
-                });
+            //AmazonRepository rep = new AmazonRepository();
+            //rep.GetItem(new ItemRequest
+            //    {
+            //        Keywords = "Harry Potter",
+            //        Operation = "ItemSearch",
+            //        ResponseGroup = "Images,ItemAttributes,Offers",
+            //        SearchIndex = "Books"
+            //    });
 
             return View();
         }
