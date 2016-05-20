@@ -1,0 +1,2358 @@
+﻿<?xml version="1.0"?>
+<ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01">
+  <OperationRequest>
+    <RequestId>3bb80b9b-3076-4b62-8f37-e2fb6819f52a</RequestId>
+    <Arguments>
+      <Argument Name="AWSAccessKeyId" Value="AKIAI5MQ3KTFHR6HFMUA"></Argument>
+      <Argument Name="AssociateTag" Value="itdezo-21"></Argument>
+      <Argument Name="Keywords" Value="iPhone 5"></Argument>
+      <Argument Name="Operation" Value="ItemSearch"></Argument>
+      <Argument Name="ResponseGroup" Value="Images,ItemAttributes,Offers"></Argument>
+      <Argument Name="SearchIndex" Value="Electronics"></Argument>
+      <Argument Name="Service" Value="AWSECommerceService"></Argument>
+      <Argument Name="SubscriptionId" Value="AKIAI5MQ3KTFHR6HFMUA"></Argument>
+      <Argument Name="Timestamp" Value="2016-05-19T08:27:45Z"></Argument>
+      <Argument Name="Version" Value="2011-08-01"></Argument>
+      <Argument Name="Signature" Value="euO4ARnlatQjy4Ma8mVcNrwk7698zz2RDAxJ2KtNgOQ="></Argument>
+    </Arguments>
+    <RequestProcessingTime>0.8341185270000000</RequestProcessingTime>
+  </OperationRequest>
+  <Items>
+    <Request>
+      <IsValid>True</IsValid>
+      <ItemSearchRequest>
+        <Keywords>iPhone 5</Keywords>
+        <ResponseGroup>Images</ResponseGroup>
+        <ResponseGroup>ItemAttributes</ResponseGroup>
+        <ResponseGroup>Offers</ResponseGroup>
+        <SearchIndex>Electronics</SearchIndex>
+      </ItemSearchRequest>
+    </Request>
+    <TotalResults>1067280</TotalResults>
+    <TotalPages>106728</TotalPages>
+    <MoreSearchResultsUrl>http://www.amazon.in/gp/redirect.html?linkCode=xm2&amp;SubscriptionId=AKIAI5MQ3KTFHR6HFMUA&amp;location=http%3A%2F%2Fwww.amazon.in%2Fgp%2Fsearch%3Fkeywords%3DiPhone%2B5%26url%3Dsearch-alias%253Delectronics&amp;tag=itdezo-21&amp;creative=165953&amp;camp=2025</MoreSearchResultsUrl>
+    <Item>
+      <ASIN>B00FXLC9V4</ASIN>
+      <ParentASIN>B00UTGJ7CM</ParentASIN>
+      <DetailPageURL>http://www.amazon.in/Apple-iPhone-5s-Space-Grey/dp/B00FXLC9V4%3Fpsc%3D1%26SubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00FXLC9V4</DetailPageURL>
+      <SmallImage>
+        <URL>http://ecx.images-amazon.com/images/I/514CXmH-xDL._SL75_.jpg</URL>
+        <Height Units="pixels">75</Height>
+        <Width Units="pixels">36</Width>
+      </SmallImage>
+      <MediumImage>
+        <URL>http://ecx.images-amazon.com/images/I/514CXmH-xDL._SL160_.jpg</URL>
+        <Height Units="pixels">160</Height>
+        <Width Units="pixels">77</Width>
+      </MediumImage>
+      <LargeImage>
+        <URL>http://ecx.images-amazon.com/images/I/514CXmH-xDL.jpg</URL>
+        <Height Units="pixels">500</Height>
+        <Width Units="pixels">241</Width>
+      </LargeImage>
+      <ImageSets>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/31GAOuaffIL._SL30_.jpg</URL>
+            <Height Units="pixels">18</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/31GAOuaffIL._SL75_.jpg</URL>
+            <Height Units="pixels">45</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/31GAOuaffIL._SL75_.jpg</URL>
+            <Height Units="pixels">45</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/31GAOuaffIL._SL110_.jpg</URL>
+            <Height Units="pixels">66</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/31GAOuaffIL._SL160_.jpg</URL>
+            <Height Units="pixels">96</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/31GAOuaffIL.jpg</URL>
+            <Height Units="pixels">300</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/31UxI8GkNgL._SL30_.jpg</URL>
+            <Height Units="pixels">12</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/31UxI8GkNgL._SL75_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/31UxI8GkNgL._SL75_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/31UxI8GkNgL._SL110_.jpg</URL>
+            <Height Units="pixels">44</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/31UxI8GkNgL._SL160_.jpg</URL>
+            <Height Units="pixels">63</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/31UxI8GkNgL.jpg</URL>
+            <Height Units="pixels">198</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/31rNEGYjpML._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">12</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/31rNEGYjpML._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">30</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/31rNEGYjpML._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">30</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/31rNEGYjpML._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">44</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/31rNEGYjpML._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">64</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/31rNEGYjpML.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">199</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="primary">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/514CXmH-xDL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">14</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/514CXmH-xDL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">36</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/514CXmH-xDL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">36</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/514CXmH-xDL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">53</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/514CXmH-xDL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">77</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/514CXmH-xDL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">241</Width>
+          </LargeImage>
+        </ImageSet>
+      </ImageSets>
+      <ItemAttributes>
+        <Binding>Electronics</Binding>
+        <Brand>Apple</Brand>
+        <Color>Space Grey</Color>
+        <EAN>0885909844135</EAN>
+        <EANList>
+          <EANListElement>0885909844135</EANListElement>
+          <EANListElement>8902529631784</EANListElement>
+        </EANList>
+        <Feature>8MP primary camera with true tone flash, auto focus, geo tagging, face detection burst mode, 1.2MP front facing camera with HD video recording and backside illumination sensor</Feature>
+        <Feature>4-inch multi-touch retina display with 1136 x 640 pixels resolution</Feature>
+        <Feature>iOS 7 operating system with 16GB internal memory</Feature>
+        <Feature>Rechargable battery providing talk-time up to 10 hours on 3G network and standby time up to 250 hours</Feature>
+        <Feature>1 year manufacturer warranty for device and in-box accessories including batteries from the date of purchase</Feature>
+        <ItemDimensions>
+          <Height Units="hundredths-inches">232</Height>
+          <Length Units="hundredths-inches">488</Length>
+          <Weight Units="hundredths-pounds">25</Weight>
+          <Width Units="hundredths-inches">31</Width>
+        </ItemDimensions>
+        <Label>Apple Computer</Label>
+        <Languages>
+          <Language>
+            <Name>English</Name>
+            <Type>Unknown</Type>
+          </Language>
+        </Languages>
+        <LegalDisclaimer>Warranty as Per Manufacturer Terms &amp; Conditions</LegalDisclaimer>
+        <ListPrice>
+          <Amount>2500000</Amount>
+          <CurrencyCode>INR</CurrencyCode>
+          <FormattedPrice>INR 25,000.00</FormattedPrice>
+        </ListPrice>
+        <Manufacturer>Apple Computer</Manufacturer>
+        <Model>iPhone 5s</Model>
+        <MPN>APE_iPhone5s_SPEGRY_16GB</MPN>
+        <OperatingSystem>iOS</OperatingSystem>
+        <PackageDimensions>
+          <Height Units="hundredths-inches">228</Height>
+          <Length Units="hundredths-inches">567</Length>
+          <Weight Units="hundredths-pounds">79</Weight>
+          <Width Units="hundredths-inches">315</Width>
+        </PackageDimensions>
+        <PackageQuantity>1</PackageQuantity>
+        <PartNumber>APE_iPhone5s_SPEGRY_16GB</PartNumber>
+        <ProductGroup>Wireless</ProductGroup>
+        <ProductTypeName>PHONE</ProductTypeName>
+        <Publisher>Apple Computer</Publisher>
+        <Size>16GB</Size>
+        <Studio>Apple Computer</Studio>
+        <Title>Apple iPhone 5s (Space Grey, 16GB)</Title>
+        <UPC>885909844135</UPC>
+        <UPCList>
+          <UPCListElement>885909844135</UPCListElement>
+        </UPCList>
+        <Warranty>1 year manufacturer warranty for device and in-box accessories including batteries from the date of purchase</Warranty>
+      </ItemAttributes>
+      <OfferSummary>
+        <LowestNewPrice>
+          <Amount>2094500</Amount>
+          <CurrencyCode>INR</CurrencyCode>
+          <FormattedPrice>INR 20,945.00</FormattedPrice>
+        </LowestNewPrice>
+        <TotalNew>65</TotalNew>
+        <TotalUsed>0</TotalUsed>
+        <TotalCollectible>0</TotalCollectible>
+        <TotalRefurbished>0</TotalRefurbished>
+      </OfferSummary>
+      <Offers>
+        <TotalOffers>1</TotalOffers>
+        <TotalOfferPages>1</TotalOfferPages>
+        <MoreOffersUrl>http://www.amazon.in/gp/offer-listing/B00FXLC9V4%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00FXLC9V4</MoreOffersUrl>
+        <Offer>
+          <OfferAttributes>
+            <Condition>New</Condition>
+          </OfferAttributes>
+          <OfferListing>
+            <OfferListingId>3vBa9nsSApVfzcYsk6%2F2fxSM0M2sLf%2F%2BSX4UZW195i76SmaUSV1%2FlEf8GTBw9hDxdCS%2B1rUKKv6LRZOlTLM%2F%2F2%2FZdsfZfXtcWt%2FLWBbmBWqWzAblF4EK4hREumwhDvzEts41Iz0QYfQEIs6WSBF5fd7alwbO8021</OfferListingId>
+            <Price>
+              <Amount>2094500</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 20,945.00</FormattedPrice>
+            </Price>
+            <AmountSaved>
+              <Amount>405500</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 4,055.00</FormattedPrice>
+            </AmountSaved>
+            <PercentageSaved>16</PercentageSaved>
+            <Availability>Usually dispatched within 24 hours</Availability>
+            <AvailabilityAttributes>
+              <AvailabilityType>now</AvailabilityType>
+              <MinimumHours>0</MinimumHours>
+              <MaximumHours>0</MaximumHours>
+            </AvailabilityAttributes>
+            <IsEligibleForSuperSaverShipping>1</IsEligibleForSuperSaverShipping>
+            <IsEligibleForPrime>1</IsEligibleForPrime>
+          </OfferListing>
+        </Offer>
+      </Offers>
+    </Item>
+    <Item>
+      <ASIN>B00FXLCG7G</ASIN>
+      <ParentASIN>B00UTGJ7CM</ParentASIN>
+      <DetailPageURL>http://www.amazon.in/Apple-iPhone-5s-Silver-16GB/dp/B00FXLCG7G%3Fpsc%3D1%26SubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00FXLCG7G</DetailPageURL>
+      <SmallImage>
+        <URL>http://ecx.images-amazon.com/images/I/51%2BHMTo6nFL._SL75_.jpg</URL>
+        <Height Units="pixels">75</Height>
+        <Width Units="pixels">36</Width>
+      </SmallImage>
+      <MediumImage>
+        <URL>http://ecx.images-amazon.com/images/I/51%2BHMTo6nFL._SL160_.jpg</URL>
+        <Height Units="pixels">160</Height>
+        <Width Units="pixels">76</Width>
+      </MediumImage>
+      <LargeImage>
+        <URL>http://ecx.images-amazon.com/images/I/51%2BHMTo6nFL.jpg</URL>
+        <Height Units="pixels">500</Height>
+        <Width Units="pixels">237</Width>
+      </LargeImage>
+      <ImageSets>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/41-WeMC8DFL._SL30_.jpg</URL>
+            <Height Units="pixels">22</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/41-WeMC8DFL._SL75_.jpg</URL>
+            <Height Units="pixels">55</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/41-WeMC8DFL._SL75_.jpg</URL>
+            <Height Units="pixels">55</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/41-WeMC8DFL._SL110_.jpg</URL>
+            <Height Units="pixels">80</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/41-WeMC8DFL._SL160_.jpg</URL>
+            <Height Units="pixels">116</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/41-WeMC8DFL.jpg</URL>
+            <Height Units="pixels">364</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/517k18G%2BcnL._SL30_.jpg</URL>
+            <Height Units="pixels">14</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/517k18G%2BcnL._SL75_.jpg</URL>
+            <Height Units="pixels">36</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/517k18G%2BcnL._SL75_.jpg</URL>
+            <Height Units="pixels">36</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/517k18G%2BcnL._SL110_.jpg</URL>
+            <Height Units="pixels">52</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/517k18G%2BcnL._SL160_.jpg</URL>
+            <Height Units="pixels">76</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/517k18G%2BcnL.jpg</URL>
+            <Height Units="pixels">237</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/31ygKbef6rL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">14</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/31ygKbef6rL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">36</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/31ygKbef6rL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">36</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/31ygKbef6rL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">52</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/31ygKbef6rL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">76</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/31ygKbef6rL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">238</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="primary">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/51%2BHMTo6nFL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">14</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/51%2BHMTo6nFL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">36</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/51%2BHMTo6nFL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">36</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/51%2BHMTo6nFL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">52</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/51%2BHMTo6nFL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">76</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/51%2BHMTo6nFL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">237</Width>
+          </LargeImage>
+        </ImageSet>
+      </ImageSets>
+      <ItemAttributes>
+        <Binding>Electronics</Binding>
+        <Brand>Apple</Brand>
+        <Color>Silver</Color>
+        <EAN>4895178334462</EAN>
+        <EANList>
+          <EANListElement>4895178334462</EANListElement>
+          <EANListElement>0885909844289</EANListElement>
+        </EANList>
+        <Feature>8MP primary camera with true tone flash, auto focus, geo tagging, face detection burst mode, 1.2MP front facing camera with HD video recording and backside illumination sensor</Feature>
+        <Feature>4-inch multi-touch retina display with 1136 x 640 pixels resolution</Feature>
+        <Feature>iOS 7 operating system with 16GB internal memory</Feature>
+        <Feature>Rechargable battery providing talk-time up to 10 hours on 3G network and standby time up to 250 hours</Feature>
+        <Feature>1 year manufacturer warranty for device and in-box accessories including batteries from the date of purchase</Feature>
+        <ItemDimensions>
+          <Height Units="hundredths-inches">232</Height>
+          <Length Units="hundredths-inches">488</Length>
+          <Weight Units="hundredths-pounds">25</Weight>
+          <Width Units="hundredths-inches">31</Width>
+        </ItemDimensions>
+        <Label>Apple Computer</Label>
+        <Languages>
+          <Language>
+            <Name>English</Name>
+            <Type>Unknown</Type>
+          </Language>
+        </Languages>
+        <LegalDisclaimer>Please check your local laws before purchasing this product.</LegalDisclaimer>
+        <ListPrice>
+          <Amount>3500000</Amount>
+          <CurrencyCode>INR</CurrencyCode>
+          <FormattedPrice>INR 35,000.00</FormattedPrice>
+        </ListPrice>
+        <Manufacturer>Apple Computer</Manufacturer>
+        <Model>iPhone 5s</Model>
+        <MPN>APE_iPhone5s_SIR_16GB</MPN>
+        <OperatingSystem>iOS</OperatingSystem>
+        <PackageDimensions>
+          <Height Units="hundredths-inches">173</Height>
+          <Length Units="hundredths-inches">567</Length>
+          <Weight Units="hundredths-pounds">75</Weight>
+          <Width Units="hundredths-inches">307</Width>
+        </PackageDimensions>
+        <PackageQuantity>1</PackageQuantity>
+        <PartNumber>APE_iPhone5s_SIR_16GB</PartNumber>
+        <ProductGroup>Wireless</ProductGroup>
+        <ProductTypeName>PHONE</ProductTypeName>
+        <Publisher>Apple Computer</Publisher>
+        <Size>16GB</Size>
+        <Studio>Apple Computer</Studio>
+        <Title>Apple iPhone 5s (Silver, 16GB)</Title>
+        <UPC>885909844289</UPC>
+        <UPCList>
+          <UPCListElement>885909844289</UPCListElement>
+        </UPCList>
+        <Warranty>1 year manufacturer warranty for device and in-box accessories including batteries from the date of purchase</Warranty>
+      </ItemAttributes>
+      <OfferSummary>
+        <LowestNewPrice>
+          <Amount>2109900</Amount>
+          <CurrencyCode>INR</CurrencyCode>
+          <FormattedPrice>INR 21,099.00</FormattedPrice>
+        </LowestNewPrice>
+        <TotalNew>31</TotalNew>
+        <TotalUsed>0</TotalUsed>
+        <TotalCollectible>0</TotalCollectible>
+        <TotalRefurbished>0</TotalRefurbished>
+      </OfferSummary>
+      <Offers>
+        <TotalOffers>1</TotalOffers>
+        <TotalOfferPages>1</TotalOfferPages>
+        <MoreOffersUrl>http://www.amazon.in/gp/offer-listing/B00FXLCG7G%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00FXLCG7G</MoreOffersUrl>
+        <Offer>
+          <OfferAttributes>
+            <Condition>New</Condition>
+          </OfferAttributes>
+          <OfferListing>
+            <OfferListingId>VO9ipFmtY9tbpVvRyAXcqaFG3f2GtBqvryBxD7ikjk4KiE4thKPmYaERsPgkgkhztSWyYTdSJ8J%2BnSit1K6R6O%2Bru9PMbp17AxK%2BZxtI6LaPNsvPZwEVshiOS2zjFpNpo%2F11ciMXRWn9Ik54X7uBKsD7kChLtoQS</OfferListingId>
+            <Price>
+              <Amount>2109900</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 21,099.00</FormattedPrice>
+            </Price>
+            <AmountSaved>
+              <Amount>1390100</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 13,901.00</FormattedPrice>
+            </AmountSaved>
+            <PercentageSaved>40</PercentageSaved>
+            <Availability>Usually dispatched within 24 hours</Availability>
+            <AvailabilityAttributes>
+              <AvailabilityType>now</AvailabilityType>
+              <MinimumHours>0</MinimumHours>
+              <MaximumHours>0</MaximumHours>
+            </AvailabilityAttributes>
+            <IsEligibleForSuperSaverShipping>1</IsEligibleForSuperSaverShipping>
+            <IsEligibleForPrime>1</IsEligibleForPrime>
+          </OfferListing>
+        </Offer>
+      </Offers>
+    </Item>
+    <Item>
+      <ASIN>B0097CZJEO</ASIN>
+      <DetailPageURL>http://www.amazon.in/Apple-iPhone-5-White-16GB/dp/B0097CZJEO%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0097CZJEO</DetailPageURL>
+      <SmallImage>
+        <URL>http://ecx.images-amazon.com/images/I/31wjOELyfBL._SL75_.jpg</URL>
+        <Height Units="pixels">75</Height>
+        <Width Units="pixels">36</Width>
+      </SmallImage>
+      <MediumImage>
+        <URL>http://ecx.images-amazon.com/images/I/31wjOELyfBL._SL160_.jpg</URL>
+        <Height Units="pixels">160</Height>
+        <Width Units="pixels">77</Width>
+      </MediumImage>
+      <LargeImage>
+        <URL>http://ecx.images-amazon.com/images/I/31wjOELyfBL.jpg</URL>
+        <Height Units="pixels">500</Height>
+        <Width Units="pixels">241</Width>
+      </LargeImage>
+      <ImageSets>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/21oN3v5g3kL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">11</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/21oN3v5g3kL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">26</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/21oN3v5g3kL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">26</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/21oN3v5g3kL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">39</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/21oN3v5g3kL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">56</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/21oN3v5g3kL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">176</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/31QfggQYl2L._SL30_.jpg</URL>
+            <Height Units="pixels">17</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/31QfggQYl2L._SL75_.jpg</URL>
+            <Height Units="pixels">42</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/31QfggQYl2L._SL75_.jpg</URL>
+            <Height Units="pixels">42</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/31QfggQYl2L._SL110_.jpg</URL>
+            <Height Units="pixels">62</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/31QfggQYl2L._SL160_.jpg</URL>
+            <Height Units="pixels">90</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/31QfggQYl2L.jpg</URL>
+            <Height Units="pixels">281</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/31mBvTpQUBL._SL30_.jpg</URL>
+            <Height Units="pixels">14</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/31mBvTpQUBL._SL75_.jpg</URL>
+            <Height Units="pixels">36</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/31mBvTpQUBL._SL75_.jpg</URL>
+            <Height Units="pixels">36</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/31mBvTpQUBL._SL110_.jpg</URL>
+            <Height Units="pixels">52</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/31mBvTpQUBL._SL160_.jpg</URL>
+            <Height Units="pixels">76</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/31mBvTpQUBL.jpg</URL>
+            <Height Units="pixels">237</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/31r8au66QML._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">14</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/31r8au66QML._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">36</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/31r8au66QML._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">36</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/31r8au66QML._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">52</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/31r8au66QML._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">76</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/31r8au66QML.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">237</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/51Wm-3V9fhL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">28</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/51Wm-3V9fhL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">69</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/51Wm-3V9fhL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">69</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/51Wm-3V9fhL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">102</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/51Wm-3V9fhL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">148</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/51Wm-3V9fhL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">462</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="primary">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/31wjOELyfBL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">14</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/31wjOELyfBL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">36</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/31wjOELyfBL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">36</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/31wjOELyfBL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">53</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/31wjOELyfBL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">77</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/31wjOELyfBL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">241</Width>
+          </LargeImage>
+        </ImageSet>
+      </ImageSets>
+      <ItemAttributes>
+        <AspectRatio>16:9</AspectRatio>
+        <Binding>Wireless Phone Accessory</Binding>
+        <Brand>Apple</Brand>
+        <CatalogNumberList>
+          <CatalogNumberListElement>163</CatalogNumberListElement>
+          <CatalogNumberListElement>IP5UnlockedWhite16</CatalogNumberListElement>
+        </CatalogNumberList>
+        <Color>white</Color>
+        <EAN>0885909530182</EAN>
+        <EANList>
+          <EANListElement>0885909530182</EANListElement>
+          <EANListElement>0741414245464</EANListElement>
+          <EANListElement>0885909530274</EANListElement>
+        </EANList>
+        <HazardousMaterialType>Fuel cell</HazardousMaterialType>
+        <IsAutographed>0</IsAutographed>
+        <IsMemorabilia>0</IsMemorabilia>
+        <ItemDimensions>
+          <Height Units="hundredths-inches">450</Height>
+          <Length Units="hundredths-inches">250</Length>
+          <Weight Units="hundredths-pounds">50</Weight>
+          <Width Units="hundredths-inches">50</Width>
+        </ItemDimensions>
+        <Label>Apple Computer</Label>
+        <LegalDisclaimer>Product Return Not Acceptable Once Seal Has Been Broken</LegalDisclaimer>
+        <Manufacturer>Apple Computer</Manufacturer>
+        <Model>iPhone 5 16GB Unlocked</Model>
+        <MPN>MD294LL/A</MPN>
+        <OperatingSystem>iOS</OperatingSystem>
+        <PackageDimensions>
+          <Height Units="hundredths-inches">190</Height>
+          <Length Units="hundredths-inches">520</Length>
+          <Weight Units="hundredths-pounds">75</Weight>
+          <Width Units="hundredths-inches">330</Width>
+        </PackageDimensions>
+        <PackageQuantity>1</PackageQuantity>
+        <PartNumber>MD294LL/A</PartNumber>
+        <ProductGroup>Wireless</ProductGroup>
+        <ProductTypeName>WIRELESS_ACCESSORY</ProductTypeName>
+        <Publisher>Apple Computer</Publisher>
+        <Studio>Apple Computer</Studio>
+        <Title>Apple iPhone 5 (White, 16GB)</Title>
+        <UPC>741414245464</UPC>
+        <UPCList>
+          <UPCListElement>741414245464</UPCListElement>
+          <UPCListElement>885909530182</UPCListElement>
+          <UPCListElement>885909530274</UPCListElement>
+        </UPCList>
+      </ItemAttributes>
+      <OfferSummary>
+        <LowestNewPrice>
+          <Amount>3912900</Amount>
+          <CurrencyCode>INR</CurrencyCode>
+          <FormattedPrice>INR 39,129.00</FormattedPrice>
+        </LowestNewPrice>
+        <TotalNew>1</TotalNew>
+        <TotalUsed>0</TotalUsed>
+        <TotalCollectible>0</TotalCollectible>
+        <TotalRefurbished>0</TotalRefurbished>
+      </OfferSummary>
+      <Offers>
+        <TotalOffers>1</TotalOffers>
+        <TotalOfferPages>1</TotalOfferPages>
+        <MoreOffersUrl>http://www.amazon.in/gp/offer-listing/B0097CZJEO%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0097CZJEO</MoreOffersUrl>
+        <Offer>
+          <OfferAttributes>
+            <Condition>New</Condition>
+          </OfferAttributes>
+          <OfferListing>
+            <OfferListingId>sE8DvNHWZqOaGTq3Zj31mXFkf0N8T8LPgDpg5G5Mfa0wlh95rMS%2Bp0ypGDAcFVXeAO19v2w6nJPEGCSwoJAQeg6kyKbZzyOBxycyS%2BDPuM880kRk%2FgvudnKe%2FbHlJ4zghzG66ctCJrin3HLUriYfvitajAOQps93</OfferListingId>
+            <Price>
+              <Amount>3912900</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 39,129.00</FormattedPrice>
+            </Price>
+            <Availability>Usually dispatched within 6-10 business days</Availability>
+            <AvailabilityAttributes>
+              <AvailabilityType>now</AvailabilityType>
+              <MinimumHours>144</MinimumHours>
+              <MaximumHours>240</MaximumHours>
+            </AvailabilityAttributes>
+            <IsEligibleForSuperSaverShipping>0</IsEligibleForSuperSaverShipping>
+            <IsEligibleForPrime>0</IsEligibleForPrime>
+          </OfferListing>
+        </Offer>
+      </Offers>
+    </Item>
+    <Item>
+      <ASIN>B00F6TY0VK</ASIN>
+      <DetailPageURL>http://www.amazon.in/Supra-Lightning-Charge-Connector-Adapter/dp/B00F6TY0VK%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00F6TY0VK</DetailPageURL>
+      <SmallImage>
+        <URL>http://ecx.images-amazon.com/images/I/31Mk5w3zLNL._SL75_.jpg</URL>
+        <Height Units="pixels">75</Height>
+        <Width Units="pixels">75</Width>
+      </SmallImage>
+      <MediumImage>
+        <URL>http://ecx.images-amazon.com/images/I/31Mk5w3zLNL._SL160_.jpg</URL>
+        <Height Units="pixels">160</Height>
+        <Width Units="pixels">160</Width>
+      </MediumImage>
+      <LargeImage>
+        <URL>http://ecx.images-amazon.com/images/I/31Mk5w3zLNL.jpg</URL>
+        <Height Units="pixels">500</Height>
+        <Width Units="pixels">500</Width>
+      </LargeImage>
+      <ImageSets>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/31FA3zqIrgL._SL30_.jpg</URL>
+            <Height Units="pixels">26</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/31FA3zqIrgL._SL75_.jpg</URL>
+            <Height Units="pixels">64</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/31FA3zqIrgL._SL75_.jpg</URL>
+            <Height Units="pixels">64</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/31FA3zqIrgL._SL110_.jpg</URL>
+            <Height Units="pixels">94</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/31FA3zqIrgL._SL160_.jpg</URL>
+            <Height Units="pixels">136</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/31FA3zqIrgL.jpg</URL>
+            <Height Units="pixels">426</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/212rG9PLCGL._SL30_.jpg</URL>
+            <Height Units="pixels">22</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/212rG9PLCGL._SL75_.jpg</URL>
+            <Height Units="pixels">56</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/212rG9PLCGL._SL75_.jpg</URL>
+            <Height Units="pixels">56</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/212rG9PLCGL._SL110_.jpg</URL>
+            <Height Units="pixels">82</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/212rG9PLCGL._SL160_.jpg</URL>
+            <Height Units="pixels">120</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/212rG9PLCGL.jpg</URL>
+            <Height Units="pixels">375</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/31KaMlZyQ5L._SL30_.jpg</URL>
+            <Height Units="pixels">22</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/31KaMlZyQ5L._SL75_.jpg</URL>
+            <Height Units="pixels">55</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/31KaMlZyQ5L._SL75_.jpg</URL>
+            <Height Units="pixels">55</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/31KaMlZyQ5L._SL110_.jpg</URL>
+            <Height Units="pixels">80</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/31KaMlZyQ5L._SL160_.jpg</URL>
+            <Height Units="pixels">117</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/31KaMlZyQ5L.jpg</URL>
+            <Height Units="pixels">365</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="primary">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/31Mk5w3zLNL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/31Mk5w3zLNL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/31Mk5w3zLNL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/31Mk5w3zLNL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/31Mk5w3zLNL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/31Mk5w3zLNL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+      </ImageSets>
+      <ItemAttributes>
+        <Binding>Electronics</Binding>
+        <Brand>Supra</Brand>
+        <Color>White</Color>
+        <Feature>BUY ONLY FULLFILLED BY AMAZON PRODUCTS BECAUSE THEY ARE VERIFIED BY AMAZON AND COVERED UNDER AMAZON 'S 100% PURCHASE PROTECTION A-Z GUARANTEE.</Feature>
+        <ItemDimensions>
+          <Weight Units="hundredths-pounds">18</Weight>
+        </ItemDimensions>
+        <Model>8 pin Mcro usb</Model>
+        <MPN>Apple</MPN>
+        <NumberOfItems>1</NumberOfItems>
+        <PackageDimensions>
+          <Height Units="hundredths-inches">8</Height>
+          <Length Units="hundredths-inches">394</Length>
+          <Weight Units="hundredths-pounds">2</Weight>
+          <Width Units="hundredths-inches">276</Width>
+        </PackageDimensions>
+        <PartNumber>Apple</PartNumber>
+        <ProductGroup>Wireless</ProductGroup>
+        <ProductTypeName>PHONE_ACCESSORY</ProductTypeName>
+        <Title>Supra Lightning 8 Pin To Micro Usb Charge Sync Data Connector Adapter Iphone 5 Ipad 4</Title>
+      </ItemAttributes>
+      <OfferSummary>
+        <LowestNewPrice>
+          <Amount>1400</Amount>
+          <CurrencyCode>INR</CurrencyCode>
+          <FormattedPrice>INR 14.00</FormattedPrice>
+        </LowestNewPrice>
+        <TotalNew>21</TotalNew>
+        <TotalUsed>0</TotalUsed>
+        <TotalCollectible>0</TotalCollectible>
+        <TotalRefurbished>0</TotalRefurbished>
+      </OfferSummary>
+      <Offers>
+        <TotalOffers>1</TotalOffers>
+        <TotalOfferPages>1</TotalOfferPages>
+        <MoreOffersUrl>http://www.amazon.in/gp/offer-listing/B00F6TY0VK%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00F6TY0VK</MoreOffersUrl>
+        <Offer>
+          <OfferAttributes>
+            <Condition>New</Condition>
+          </OfferAttributes>
+          <OfferListing>
+            <OfferListingId>sE8DvNHWZqOaGTq3Zj31mbynEgkIbGyrkZpRP7y9sj7%2FW6vs2xh79gii23SyOPoqqwjCVHJUmkzKGJMgrgkMVrhTfXEGgRb1zZZHjHlhBFPCbVS9iANTcl2xS%2FtjrA%2Bmrw5SS5Ah8uSFiOhI8ZhgUz7IwzHtjbOW</OfferListingId>
+            <Price>
+              <Amount>1400</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 14.00</FormattedPrice>
+            </Price>
+            <Availability>Usually dispatched within 1-2 business days</Availability>
+            <AvailabilityAttributes>
+              <AvailabilityType>now</AvailabilityType>
+              <MinimumHours>24</MinimumHours>
+              <MaximumHours>48</MaximumHours>
+            </AvailabilityAttributes>
+            <IsEligibleForSuperSaverShipping>0</IsEligibleForSuperSaverShipping>
+            <IsEligibleForPrime>0</IsEligibleForPrime>
+          </OfferListing>
+        </Offer>
+      </Offers>
+    </Item>
+    <Item>
+      <ASIN>B00RZJ78OU</ASIN>
+      <DetailPageURL>http://www.amazon.in/Royce-Series-Shockproof-Layer-iPhone/dp/B00RZJ78OU%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00RZJ78OU</DetailPageURL>
+      <ImageSets>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/41wiijKFCqL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/41wiijKFCqL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/41wiijKFCqL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/41wiijKFCqL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/41wiijKFCqL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/41wiijKFCqL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/41PDXxtiBqL._SL30_.jpg</URL>
+            <Height Units="pixels">20</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/41PDXxtiBqL._SL75_.jpg</URL>
+            <Height Units="pixels">51</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/41PDXxtiBqL._SL75_.jpg</URL>
+            <Height Units="pixels">51</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/41PDXxtiBqL._SL110_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/41PDXxtiBqL._SL160_.jpg</URL>
+            <Height Units="pixels">109</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/41PDXxtiBqL.jpg</URL>
+            <Height Units="pixels">341</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/41DjQnuz%2BaL._SL30_.jpg</URL>
+            <Height Units="pixels">23</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/41DjQnuz%2BaL._SL75_.jpg</URL>
+            <Height Units="pixels">56</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/41DjQnuz%2BaL._SL75_.jpg</URL>
+            <Height Units="pixels">56</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/41DjQnuz%2BaL._SL110_.jpg</URL>
+            <Height Units="pixels">83</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/41DjQnuz%2BaL._SL160_.jpg</URL>
+            <Height Units="pixels">120</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/41DjQnuz%2BaL.jpg</URL>
+            <Height Units="pixels">376</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/51keZMiK%2BlL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/51keZMiK%2BlL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/51keZMiK%2BlL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/51keZMiK%2BlL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/51keZMiK%2BlL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/51keZMiK%2BlL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/51jWDetZn2L._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/51jWDetZn2L._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/51jWDetZn2L._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/51jWDetZn2L._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/51jWDetZn2L._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/51jWDetZn2L.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/41JYgFUjApL._SL30_.jpg</URL>
+            <Height Units="pixels">23</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/41JYgFUjApL._SL75_.jpg</URL>
+            <Height Units="pixels">59</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/41JYgFUjApL._SL75_.jpg</URL>
+            <Height Units="pixels">59</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/41JYgFUjApL._SL110_.jpg</URL>
+            <Height Units="pixels">86</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/41JYgFUjApL._SL160_.jpg</URL>
+            <Height Units="pixels">125</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/41JYgFUjApL.jpg</URL>
+            <Height Units="pixels">391</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+      </ImageSets>
+      <ItemAttributes>
+        <Binding>Electronics</Binding>
+        <Brand>Rock</Brand>
+        <EAN>0745495188603</EAN>
+        <EANList>
+          <EANListElement>0745495188603</EANListElement>
+          <EANListElement>6950290685729</EANListElement>
+        </EANList>
+        <Feature>High quality and environmental materials, Rubberized exterior , provides grip</Feature>
+        <Feature>Color matches with dark color, luxury in look</Feature>
+        <Feature>Outer PC layer + inner TPU shell</Feature>
+        <Feature>Double protection against shock and scratches</Feature>
+        <Feature>Strap hole is reserved. Original packing box</Feature>
+        <ItemDimensions>
+          <Weight Units="hundredths-pounds">29</Weight>
+        </ItemDimensions>
+        <Label>Rock</Label>
+        <LegalDisclaimer>CONDITIONS APPLY</LegalDisclaimer>
+        <Manufacturer>Rock</Manufacturer>
+        <Model>695029068729</Model>
+        <MPN>695029068729</MPN>
+        <PackageDimensions>
+          <Height Units="hundredths-inches">94</Height>
+          <Length Units="hundredths-inches">685</Length>
+          <Weight Units="hundredths-pounds">31</Weight>
+          <Width Units="hundredths-inches">402</Width>
+        </PackageDimensions>
+        <PackageQuantity>1</PackageQuantity>
+        <PartNumber>695029068729</PartNumber>
+        <ProductGroup>Wireless</ProductGroup>
+        <ProductTypeName>PHONE_ACCESSORY</ProductTypeName>
+        <Publisher>Rock</Publisher>
+        <Studio>Rock</Studio>
+        <Title>ROCK Royce Series Shockproof Dual Layer Back Case Cover for Apple iPhone 5 5S - GREY</Title>
+        <UPC>745495188603</UPC>
+        <UPCList>
+          <UPCListElement>745495188603</UPCListElement>
+        </UPCList>
+      </ItemAttributes>
+      <OfferSummary>
+        <LowestNewPrice>
+          <Amount>39000</Amount>
+          <CurrencyCode>INR</CurrencyCode>
+          <FormattedPrice>INR 390.00</FormattedPrice>
+        </LowestNewPrice>
+        <TotalNew>18</TotalNew>
+        <TotalUsed>0</TotalUsed>
+        <TotalCollectible>0</TotalCollectible>
+        <TotalRefurbished>0</TotalRefurbished>
+      </OfferSummary>
+      <Offers>
+        <TotalOffers>1</TotalOffers>
+        <TotalOfferPages>1</TotalOfferPages>
+        <MoreOffersUrl>http://www.amazon.in/gp/offer-listing/B00RZJ78OU%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00RZJ78OU</MoreOffersUrl>
+        <Offer>
+          <OfferAttributes>
+            <Condition>New</Condition>
+          </OfferAttributes>
+          <OfferListing>
+            <OfferListingId>sE8DvNHWZqOaGTq3Zj31mewn65D2KyCoNoOUtlr5SVpTQlB9u3vPUFR3YkTj0OOo25tH%2BAn%2BMwZklgwrbIyxHAb8oMq1PNObDu036je%2FSsMoINSieXHZfU8rQLXIe%2FBQ34c7jIo%2BRyXhaKJVlhsJRg%3D%3D</OfferListingId>
+            <Price>
+              <Amount>44500</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 445.00</FormattedPrice>
+            </Price>
+            <Availability>Usually dispatched within 24 hours</Availability>
+            <AvailabilityAttributes>
+              <AvailabilityType>now</AvailabilityType>
+              <MinimumHours>0</MinimumHours>
+              <MaximumHours>0</MaximumHours>
+            </AvailabilityAttributes>
+            <IsEligibleForSuperSaverShipping>1</IsEligibleForSuperSaverShipping>
+            <IsEligibleForPrime>1</IsEligibleForPrime>
+          </OfferListing>
+        </Offer>
+      </Offers>
+    </Item>
+    <Item>
+      <ASIN>B018INMYG8</ASIN>
+      <DetailPageURL>http://www.amazon.in/Earphones-EarPods-Handsfree-Headphones-iPhone/dp/B018INMYG8%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB018INMYG8</DetailPageURL>
+      <SmallImage>
+        <URL>http://ecx.images-amazon.com/images/I/41Y7m1RGqLL._SL75_.jpg</URL>
+        <Height Units="pixels">75</Height>
+        <Width Units="pixels">75</Width>
+      </SmallImage>
+      <MediumImage>
+        <URL>http://ecx.images-amazon.com/images/I/41Y7m1RGqLL._SL160_.jpg</URL>
+        <Height Units="pixels">160</Height>
+        <Width Units="pixels">160</Width>
+      </MediumImage>
+      <LargeImage>
+        <URL>http://ecx.images-amazon.com/images/I/41Y7m1RGqLL.jpg</URL>
+        <Height Units="pixels">500</Height>
+        <Width Units="pixels">500</Width>
+      </LargeImage>
+      <ImageSets>
+        <ImageSet Category="primary">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/41Y7m1RGqLL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/41Y7m1RGqLL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/41Y7m1RGqLL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/41Y7m1RGqLL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/41Y7m1RGqLL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/41Y7m1RGqLL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+      </ImageSets>
+      <ItemAttributes>
+        <Binding>Electronics</Binding>
+        <Brand>Shivam</Brand>
+        <EAN>0799648725153</EAN>
+        <EANList>
+          <EANListElement>0799648725153</EANListElement>
+        </EANList>
+        <ItemDimensions>
+          <Weight Units="hundredths-pounds">7</Weight>
+        </ItemDimensions>
+        <Label>shivam enterprise</Label>
+        <LegalDisclaimer>Breakthrough design, concise, fashion, comfortable. Unlike traditional, circular earbuds, the design of the new EarPods is defined by the geometry of the ear. More comfortable for more people than any other earbud-style headphone. The speakers inside earPods have been engineered to minimise sound loss and maximise sound output. So you get high-quality audio that's just as impressive as what you'd hear from more expensive headphones. Control music playback, answer and end calls, pause music, forward to the next song, etc. all by pressing the button on the mic.</LegalDisclaimer>
+        <Manufacturer>shivam enterprise</Manufacturer>
+        <Model>shivam</Model>
+        <MPN>shivam</MPN>
+        <PackageDimensions>
+          <Height Units="hundredths-inches">47</Height>
+          <Length Units="hundredths-inches">244</Length>
+          <Weight Units="hundredths-pounds">4</Weight>
+          <Width Units="hundredths-inches">244</Width>
+        </PackageDimensions>
+        <PartNumber>shivam</PartNumber>
+        <ProductGroup>CE</ProductGroup>
+        <ProductTypeName>PHONE_ACCESSORY</ProductTypeName>
+        <Publisher>shivam enterprise</Publisher>
+        <Studio>shivam enterprise</Studio>
+        <Title>Earphones EarPods Handsfree Headphones for Apple iPhone 4/4s/5/5s/6/6+ - White</Title>
+        <UPC>799648725153</UPC>
+        <UPCList>
+          <UPCListElement>799648725153</UPCListElement>
+        </UPCList>
+      </ItemAttributes>
+      <OfferSummary>
+        <LowestNewPrice>
+          <Amount>9200</Amount>
+          <CurrencyCode>INR</CurrencyCode>
+          <FormattedPrice>INR 92.00</FormattedPrice>
+        </LowestNewPrice>
+        <TotalNew>13</TotalNew>
+        <TotalUsed>0</TotalUsed>
+        <TotalCollectible>0</TotalCollectible>
+        <TotalRefurbished>0</TotalRefurbished>
+      </OfferSummary>
+      <Offers>
+        <TotalOffers>0</TotalOffers>
+        <TotalOfferPages>0</TotalOfferPages>
+        <MoreOffersUrl>0</MoreOffersUrl>
+      </Offers>
+    </Item>
+    <Item>
+      <ASIN>B00FXLCJ28</ASIN>
+      <ParentASIN>B00UTGJ7CM</ParentASIN>
+      <DetailPageURL>http://www.amazon.in/Apple-iPhone-5s-Space-Grey/dp/B00FXLCJ28%3Fpsc%3D1%26SubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00FXLCJ28</DetailPageURL>
+      <SmallImage>
+        <URL>http://ecx.images-amazon.com/images/I/41uHivasXbL._SL75_.jpg</URL>
+        <Height Units="pixels">75</Height>
+        <Width Units="pixels">39</Width>
+      </SmallImage>
+      <MediumImage>
+        <URL>http://ecx.images-amazon.com/images/I/41uHivasXbL._SL160_.jpg</URL>
+        <Height Units="pixels">160</Height>
+        <Width Units="pixels">83</Width>
+      </MediumImage>
+      <LargeImage>
+        <URL>http://ecx.images-amazon.com/images/I/41uHivasXbL.jpg</URL>
+        <Height Units="pixels">500</Height>
+        <Width Units="pixels">260</Width>
+      </LargeImage>
+      <ImageSets>
+        <ImageSet Category="primary">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/41uHivasXbL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">16</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/41uHivasXbL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">39</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/41uHivasXbL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">39</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/41uHivasXbL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">57</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/41uHivasXbL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">83</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/41uHivasXbL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">260</Width>
+          </LargeImage>
+        </ImageSet>
+      </ImageSets>
+      <ItemAttributes>
+        <Binding>Electronics</Binding>
+        <Brand>Apple</Brand>
+        <Color>Space Grey</Color>
+        <EAN>0885909844593</EAN>
+        <EANList>
+          <EANListElement>0885909844593</EANListElement>
+        </EANList>
+        <Feature>8MP primary camera with true tone flash, auto focus, geo tagging, face detection burst mode, 1.2MP front facing camera with HD video recording and backside illumination sensor</Feature>
+        <Feature>4-inch multi-touch retina display with 1136 x 640 pixels resolution</Feature>
+        <Feature>iOS 9 operating system with 32GB internal memory</Feature>
+        <Feature>Rechargable battery providing talk-time up to 10 hours on 3G network and standby time up to 250 hours</Feature>
+        <Feature>1 year manufacturer warranty for device and in-box accessories including batteries from the date of purchase</Feature>
+        <ItemDimensions>
+          <Height Units="hundredths-inches">232</Height>
+          <Length Units="hundredths-inches">488</Length>
+          <Weight Units="hundredths-pounds">25</Weight>
+          <Width Units="hundredths-inches">31</Width>
+        </ItemDimensions>
+        <Label>Apple Computer</Label>
+        <Languages>
+          <Language>
+            <Name>English</Name>
+            <Type>Unknown</Type>
+          </Language>
+        </Languages>
+        <LegalDisclaimer>THIS PHONE DOESN'T COVER APPLE MANUFACTURE WARRANTY ONLY 6 MONTHS SELLER WARRANTY FOR BOTH HARDWARE AND SOFTWARE RELATED ISSUES.</LegalDisclaimer>
+        <ListPrice>
+          <Amount>3000000</Amount>
+          <CurrencyCode>INR</CurrencyCode>
+          <FormattedPrice>INR 30,000.00</FormattedPrice>
+        </ListPrice>
+        <Manufacturer>Apple Computer</Manufacturer>
+        <Model>iPhone 5s</Model>
+        <MPN>APE_iPhone5s_SPEGRY_32GB</MPN>
+        <OperatingSystem>iOS</OperatingSystem>
+        <PackageDimensions>
+          <Height Units="hundredths-inches">181</Height>
+          <Length Units="hundredths-inches">583</Length>
+          <Weight Units="hundredths-pounds">75</Weight>
+          <Width Units="hundredths-inches">323</Width>
+        </PackageDimensions>
+        <PackageQuantity>1</PackageQuantity>
+        <PartNumber>APE_iPhone5s_SPEGRY_32GB</PartNumber>
+        <ProductGroup>Wireless</ProductGroup>
+        <ProductTypeName>PHONE</ProductTypeName>
+        <Publisher>Apple Computer</Publisher>
+        <Size>32GB</Size>
+        <Studio>Apple Computer</Studio>
+        <Title>Apple iPhone 5s (Space Grey, 32GB)</Title>
+        <UPC>885909844593</UPC>
+        <UPCList>
+          <UPCListElement>885909844593</UPCListElement>
+        </UPCList>
+        <Warranty>1 year manufacturer warranty for device and in-box accessories including batteries from the date of purchase</Warranty>
+      </ItemAttributes>
+      <OfferSummary>
+        <LowestNewPrice>
+          <Amount>2736900</Amount>
+          <CurrencyCode>INR</CurrencyCode>
+          <FormattedPrice>INR 27,369.00</FormattedPrice>
+        </LowestNewPrice>
+        <TotalNew>15</TotalNew>
+        <TotalUsed>0</TotalUsed>
+        <TotalCollectible>0</TotalCollectible>
+        <TotalRefurbished>0</TotalRefurbished>
+      </OfferSummary>
+      <Offers>
+        <TotalOffers>1</TotalOffers>
+        <TotalOfferPages>1</TotalOfferPages>
+        <MoreOffersUrl>http://www.amazon.in/gp/offer-listing/B00FXLCJ28%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00FXLCJ28</MoreOffersUrl>
+        <Offer>
+          <OfferAttributes>
+            <Condition>New</Condition>
+          </OfferAttributes>
+          <OfferListing>
+            <OfferListingId>sE8DvNHWZqOaGTq3Zj31mfj9L0T%2BqdjYx7fABYW6k6oltnpubbsxwIyXAgbSx0qnotIVYT5hAg7KQN6zXFLnSfWF4WycqUTfk7sYgjdLEUV%2BQiVMS13fDJdEzxJJuGTTe0rnD0PjbxVV2RbiqyeMzxe%2FkheuRtUh</OfferListingId>
+            <Price>
+              <Amount>2777000</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 27,770.00</FormattedPrice>
+            </Price>
+            <AmountSaved>
+              <Amount>223000</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 2,230.00</FormattedPrice>
+            </AmountSaved>
+            <PercentageSaved>7</PercentageSaved>
+            <Availability>Usually dispatched within 24 hours</Availability>
+            <AvailabilityAttributes>
+              <AvailabilityType>now</AvailabilityType>
+              <MinimumHours>0</MinimumHours>
+              <MaximumHours>0</MaximumHours>
+            </AvailabilityAttributes>
+            <IsEligibleForSuperSaverShipping>1</IsEligibleForSuperSaverShipping>
+            <IsEligibleForPrime>1</IsEligibleForPrime>
+          </OfferListing>
+        </Offer>
+      </Offers>
+    </Item>
+    <Item>
+      <ASIN>B014IT327Q</ASIN>
+      <ParentASIN>B01C825G24</ParentASIN>
+      <DetailPageURL>http://www.amazon.in/Trucase-Iphone-Charging-Cable-Tablets/dp/B014IT327Q%3Fpsc%3D1%26SubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB014IT327Q</DetailPageURL>
+      <SmallImage>
+        <URL>http://ecx.images-amazon.com/images/I/3196JAYvDFL._SL75_.jpg</URL>
+        <Height Units="pixels">75</Height>
+        <Width Units="pixels">61</Width>
+      </SmallImage>
+      <MediumImage>
+        <URL>http://ecx.images-amazon.com/images/I/3196JAYvDFL._SL160_.jpg</URL>
+        <Height Units="pixels">160</Height>
+        <Width Units="pixels">129</Width>
+      </MediumImage>
+      <LargeImage>
+        <URL>http://ecx.images-amazon.com/images/I/3196JAYvDFL.jpg</URL>
+        <Height Units="pixels">500</Height>
+        <Width Units="pixels">404</Width>
+      </LargeImage>
+      <ImageSets>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/31JkBEKEvvL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">24</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/31JkBEKEvvL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">59</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/31JkBEKEvvL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">59</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/31JkBEKEvvL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">86</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/31JkBEKEvvL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">126</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/31JkBEKEvvL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">393</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/41MLifdz9-L._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/41MLifdz9-L._SL75_.jpg</URL>
+            <Height Units="pixels">74</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/41MLifdz9-L._SL75_.jpg</URL>
+            <Height Units="pixels">74</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/41MLifdz9-L._SL110_.jpg</URL>
+            <Height Units="pixels">109</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/41MLifdz9-L._SL160_.jpg</URL>
+            <Height Units="pixels">158</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/41MLifdz9-L.jpg</URL>
+            <Height Units="pixels">494</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/41iEueSU1gL._SL30_.jpg</URL>
+            <Height Units="pixels">22</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/41iEueSU1gL._SL75_.jpg</URL>
+            <Height Units="pixels">55</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/41iEueSU1gL._SL75_.jpg</URL>
+            <Height Units="pixels">55</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/41iEueSU1gL._SL110_.jpg</URL>
+            <Height Units="pixels">80</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/41iEueSU1gL._SL160_.jpg</URL>
+            <Height Units="pixels">117</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/41iEueSU1gL.jpg</URL>
+            <Height Units="pixels">365</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/51C33pDYNbL._SL30_.jpg</URL>
+            <Height Units="pixels">29</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/51C33pDYNbL._SL75_.jpg</URL>
+            <Height Units="pixels">72</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/51C33pDYNbL._SL75_.jpg</URL>
+            <Height Units="pixels">72</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/51C33pDYNbL._SL110_.jpg</URL>
+            <Height Units="pixels">105</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/51C33pDYNbL._SL160_.jpg</URL>
+            <Height Units="pixels">153</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/51C33pDYNbL.jpg</URL>
+            <Height Units="pixels">479</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/41MFtF%2BIh4L._SL30_.jpg</URL>
+            <Height Units="pixels">23</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/41MFtF%2BIh4L._SL75_.jpg</URL>
+            <Height Units="pixels">57</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/41MFtF%2BIh4L._SL75_.jpg</URL>
+            <Height Units="pixels">57</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/41MFtF%2BIh4L._SL110_.jpg</URL>
+            <Height Units="pixels">84</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/41MFtF%2BIh4L._SL160_.jpg</URL>
+            <Height Units="pixels">122</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/41MFtF%2BIh4L.jpg</URL>
+            <Height Units="pixels">382</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="primary">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/3196JAYvDFL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">24</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/3196JAYvDFL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">61</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/3196JAYvDFL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">61</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/3196JAYvDFL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">89</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/3196JAYvDFL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">129</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/3196JAYvDFL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">404</Width>
+          </LargeImage>
+        </ImageSet>
+      </ImageSets>
+      <ItemAttributes>
+        <Binding>Electronics</Binding>
+        <Brand>Trucase</Brand>
+        <Color>White</Color>
+        <Feature>USB data charge cableCompatable with Usb2.0, Provides high speed data transfer and charging,Cable Length: 1 Meter, Good quality cable casing ensures long-lasting durability</Feature>
+        <Feature>Compatible with Iphone5, 5s, 6, 6+,6s,6s+,Ipod touch 5, Ipod Nano and Ipad Mini</Feature>
+        <Feature>The super slim connector head slots into virtually all case openings - whether big or small - because we believe your choice of accessories shouldn't be restricted by the size of your cable.</Feature>
+        <Feature>"TRUCASE" product are retailed by seller "TRUCASE" only. TRUCASE hasn't assigned the rights to retail it's Products to anyone.All other sellers using TRUCASE's name are doing so without prior permission and TRUCASE will not be liable for the low or substandard quality of those products, also TRUCASE quality assurance will not be applicable on those products.</Feature>
+        <Feature>"TRUCASE" is a registered Trademark and other sellers using the name are doing it illegally and are liable to be prosecuted under section 135 of the Trademarks act for Infringement.</Feature>
+        <ItemDimensions>
+          <Weight Units="hundredths-pounds">2</Weight>
+        </ItemDimensions>
+        <Label>Trucase</Label>
+        <LegalDisclaimer>Subject to Ludhiana jurisdiction only</LegalDisclaimer>
+        <Manufacturer>Trucase</Manufacturer>
+        <Model>USB Cable</Model>
+        <MPN>TrucaseUSBCableforIphone</MPN>
+        <NumberOfItems>1</NumberOfItems>
+        <PackageDimensions>
+          <Height Units="hundredths-inches">39</Height>
+          <Length Units="hundredths-inches">677</Length>
+          <Weight Units="hundredths-pounds">4</Weight>
+          <Width Units="hundredths-inches">441</Width>
+        </PackageDimensions>
+        <PartNumber>TrucaseUSBCableforIphone</PartNumber>
+        <ProductGroup>CE</ProductGroup>
+        <ProductTypeName>PHONE_ACCESSORY</ProductTypeName>
+        <Publisher>Trucase</Publisher>
+        <Size>1MTR</Size>
+        <Studio>Trucase</Studio>
+        <Title>Trucase Apple Iphone Data Sync Charging Cable 1 Meter for Iphone 5, 5s, 6 , 6 Plus,iPods &amp; Tablets</Title>
+      </ItemAttributes>
+      <OfferSummary>
+        <LowestNewPrice>
+          <Amount>19900</Amount>
+          <CurrencyCode>INR</CurrencyCode>
+          <FormattedPrice>INR 199.00</FormattedPrice>
+        </LowestNewPrice>
+        <TotalNew>2</TotalNew>
+        <TotalUsed>0</TotalUsed>
+        <TotalCollectible>0</TotalCollectible>
+        <TotalRefurbished>0</TotalRefurbished>
+      </OfferSummary>
+      <Offers>
+        <TotalOffers>1</TotalOffers>
+        <TotalOfferPages>1</TotalOfferPages>
+        <MoreOffersUrl>http://www.amazon.in/gp/offer-listing/B014IT327Q%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB014IT327Q</MoreOffersUrl>
+        <Offer>
+          <OfferAttributes>
+            <Condition>New</Condition>
+          </OfferAttributes>
+          <OfferListing>
+            <OfferListingId>sE8DvNHWZqNI6qJZlsujv5SoZwo9iRpNLGUNjRFhtAIeJ5C7ybuCgxCRJjCj448ZnEDDAz06FnE4MkrzHCoUSWOQArkPo0RT45GlZB9PulCVpfZcBc96utNQfbNJ1znjXwG62jEYdkco0w4yrZcteQ%3D%3D</OfferListingId>
+            <Price>
+              <Amount>39900</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 399.00</FormattedPrice>
+            </Price>
+            <SalePrice>
+              <Amount>22500</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 225.00</FormattedPrice>
+            </SalePrice>
+            <AmountSaved>
+              <Amount>17400</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 174.00</FormattedPrice>
+            </AmountSaved>
+            <PercentageSaved>44</PercentageSaved>
+            <Availability>Usually dispatched within 24 hours</Availability>
+            <AvailabilityAttributes>
+              <AvailabilityType>now</AvailabilityType>
+              <MinimumHours>0</MinimumHours>
+              <MaximumHours>0</MaximumHours>
+            </AvailabilityAttributes>
+            <IsEligibleForSuperSaverShipping>1</IsEligibleForSuperSaverShipping>
+            <IsEligibleForPrime>1</IsEligibleForPrime>
+          </OfferListing>
+        </Offer>
+      </Offers>
+    </Item>
+    <Item>
+      <ASIN>B017KE8DQG</ASIN>
+      <DetailPageURL>http://www.amazon.in/Apple-iPhone-5s-Blue-Complimentary/dp/B017KE8DQG%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB017KE8DQG</DetailPageURL>
+      <SmallImage>
+        <URL>http://ecx.images-amazon.com/images/I/41bfXY30QIL._SL75_.jpg</URL>
+        <Height Units="pixels">75</Height>
+        <Width Units="pixels">75</Width>
+      </SmallImage>
+      <MediumImage>
+        <URL>http://ecx.images-amazon.com/images/I/41bfXY30QIL._SL160_.jpg</URL>
+        <Height Units="pixels">160</Height>
+        <Width Units="pixels">160</Width>
+      </MediumImage>
+      <LargeImage>
+        <URL>http://ecx.images-amazon.com/images/I/41bfXY30QIL.jpg</URL>
+        <Height Units="pixels">500</Height>
+        <Width Units="pixels">500</Width>
+      </LargeImage>
+      <ImageSets>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/51wIiTOkxNL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/51wIiTOkxNL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/51wIiTOkxNL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/51wIiTOkxNL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/51wIiTOkxNL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/51wIiTOkxNL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/41p9zFOXnxL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/41p9zFOXnxL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/41p9zFOXnxL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/41p9zFOXnxL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/41p9zFOXnxL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/41p9zFOXnxL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/51tTkxPKOtL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/51tTkxPKOtL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/51tTkxPKOtL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/51tTkxPKOtL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/51tTkxPKOtL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/51tTkxPKOtL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/51ZZdcy639L._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/51ZZdcy639L._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/51ZZdcy639L._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/51ZZdcy639L._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/51ZZdcy639L._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/51ZZdcy639L.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="primary">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/41bfXY30QIL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/41bfXY30QIL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/41bfXY30QIL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/41bfXY30QIL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/41bfXY30QIL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/41bfXY30QIL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+      </ImageSets>
+      <ItemAttributes>
+        <Binding>Electronics</Binding>
+        <Brand>CELLBELL</Brand>
+        <Color>Clear Transparent</Color>
+        <Feature>BE SAFE: Buy Original CELLBELL products from Cellbell site or Bagtag Seller(shown below as 'Sold By Bagtag Store'). As only Original products will be eligible for Replacement Guarantee and Low-cost warranty terms</Feature>
+        <Label>bagtag</Label>
+        <LegalDisclaimer>CELLBELL brand offers 24 months Low-cost Warranty against manufacturing Defects mentioned on Cellbell brand site.Please read CELLBELL Brand site for more details about Replacement Guarantee and Warranty Terms. Its so far the most hassle-free warranty coverage existent in whole accessory market. Just Contact us before leaving any non-positive feedback or review, whenever you face any issue because we are more known for our Awesome Customer Service.</LegalDisclaimer>
+        <Manufacturer>bagtag</Manufacturer>
+        <Model>Apple iPhone 5s Blue</Model>
+        <MPN>BTMBAG1096</MPN>
+        <NumberOfItems>0</NumberOfItems>
+        <PackageDimensions>
+          <Height Units="hundredths-inches">55</Height>
+          <Length Units="hundredths-inches">850</Length>
+          <Weight Units="hundredths-pounds">9</Weight>
+          <Width Units="hundredths-inches">402</Width>
+        </PackageDimensions>
+        <PartNumber>BTMBAG1096</PartNumber>
+        <ProductGroup>CE</ProductGroup>
+        <ProductTypeName>PHONE_ACCESSORY</ProductTypeName>
+        <Publisher>bagtag</Publisher>
+        <Studio>bagtag</Studio>
+        <Title>Cellbell Premium Apple iPhone 5 / 5s front back Blue Tempered Glass Screen Protector (Comes with Warranty,User guide,Complimentary Prep cloth)-Bronze Edition</Title>
+      </ItemAttributes>
+      <OfferSummary>
+        <LowestNewPrice>
+          <Amount>24900</Amount>
+          <CurrencyCode>INR</CurrencyCode>
+          <FormattedPrice>INR 249.00</FormattedPrice>
+        </LowestNewPrice>
+        <TotalNew>1</TotalNew>
+        <TotalUsed>0</TotalUsed>
+        <TotalCollectible>0</TotalCollectible>
+        <TotalRefurbished>0</TotalRefurbished>
+      </OfferSummary>
+      <Offers>
+        <TotalOffers>1</TotalOffers>
+        <TotalOfferPages>1</TotalOfferPages>
+        <MoreOffersUrl>http://www.amazon.in/gp/offer-listing/B017KE8DQG%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB017KE8DQG</MoreOffersUrl>
+        <Offer>
+          <OfferAttributes>
+            <Condition>New</Condition>
+          </OfferAttributes>
+          <OfferListing>
+            <OfferListingId>sE8DvNHWZqNI6qJZlsujv7yqVrAqR%2Bt10gw53Wds6kj2BGksWQ8JUBg0pSWnl5%2B27aHHXijbAZpSGndrjBBEyaUy3sIswdshShU69B8BaBjimmA7Rb53RJ9%2BkDWp1dXeBj1UZIhgWfBiAe50pIgkbg%3D%3D</OfferListingId>
+            <Price>
+              <Amount>24900</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 249.00</FormattedPrice>
+            </Price>
+            <SalePrice>
+              <Amount>24900</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 249.00</FormattedPrice>
+            </SalePrice>
+            <Availability>Usually dispatched within 24 hours</Availability>
+            <AvailabilityAttributes>
+              <AvailabilityType>now</AvailabilityType>
+              <MinimumHours>0</MinimumHours>
+              <MaximumHours>0</MaximumHours>
+            </AvailabilityAttributes>
+            <IsEligibleForSuperSaverShipping>1</IsEligibleForSuperSaverShipping>
+            <IsEligibleForPrime>1</IsEligibleForPrime>
+          </OfferListing>
+        </Offer>
+      </Offers>
+    </Item>
+    <Item>
+      <ASIN>B01BHVKLK4</ASIN>
+      <DetailPageURL>http://www.amazon.in/iSAVE-Silicone-Design-Cover-iPhone/dp/B01BHVKLK4%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB01BHVKLK4</DetailPageURL>
+      <SmallImage>
+        <URL>http://ecx.images-amazon.com/images/I/51u1uBSQVdL._SL75_.jpg</URL>
+        <Height Units="pixels">68</Height>
+        <Width Units="pixels">75</Width>
+      </SmallImage>
+      <MediumImage>
+        <URL>http://ecx.images-amazon.com/images/I/51u1uBSQVdL._SL160_.jpg</URL>
+        <Height Units="pixels">145</Height>
+        <Width Units="pixels">160</Width>
+      </MediumImage>
+      <LargeImage>
+        <URL>http://ecx.images-amazon.com/images/I/51u1uBSQVdL.jpg</URL>
+        <Height Units="pixels">452</Height>
+        <Width Units="pixels">500</Width>
+      </LargeImage>
+      <ImageSets>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/3121t%2BwzoxL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/3121t%2BwzoxL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/3121t%2BwzoxL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/3121t%2BwzoxL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/3121t%2BwzoxL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/3121t%2BwzoxL.jpg</URL>
+            <Height Units="pixels">250</Height>
+            <Width Units="pixels">250</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/51w7YQ-3WfL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/51w7YQ-3WfL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/51w7YQ-3WfL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/51w7YQ-3WfL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/51w7YQ-3WfL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/51w7YQ-3WfL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/41Clh38n0CL._SL30_.jpg</URL>
+            <Height Units="pixels">30</Height>
+            <Width Units="pixels">18</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/41Clh38n0CL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">46</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/41Clh38n0CL._SL75_.jpg</URL>
+            <Height Units="pixels">75</Height>
+            <Width Units="pixels">46</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/41Clh38n0CL._SL110_.jpg</URL>
+            <Height Units="pixels">110</Height>
+            <Width Units="pixels">67</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/41Clh38n0CL._SL160_.jpg</URL>
+            <Height Units="pixels">160</Height>
+            <Width Units="pixels">98</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/41Clh38n0CL.jpg</URL>
+            <Height Units="pixels">500</Height>
+            <Width Units="pixels">305</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="variant">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/21iimZKBm9L._SL30_.jpg</URL>
+            <Height Units="pixels">17</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/21iimZKBm9L._SL75_.jpg</URL>
+            <Height Units="pixels">42</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/21iimZKBm9L._SL75_.jpg</URL>
+            <Height Units="pixels">42</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/21iimZKBm9L._SL110_.jpg</URL>
+            <Height Units="pixels">62</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/21iimZKBm9L._SL160_.jpg</URL>
+            <Height Units="pixels">90</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/21iimZKBm9L.jpg</URL>
+            <Height Units="pixels">158</Height>
+            <Width Units="pixels">280</Width>
+          </LargeImage>
+        </ImageSet>
+        <ImageSet Category="primary">
+          <SwatchImage>
+            <URL>http://ecx.images-amazon.com/images/I/51u1uBSQVdL._SL30_.jpg</URL>
+            <Height Units="pixels">27</Height>
+            <Width Units="pixels">30</Width>
+          </SwatchImage>
+          <SmallImage>
+            <URL>http://ecx.images-amazon.com/images/I/51u1uBSQVdL._SL75_.jpg</URL>
+            <Height Units="pixels">68</Height>
+            <Width Units="pixels">75</Width>
+          </SmallImage>
+          <ThumbnailImage>
+            <URL>http://ecx.images-amazon.com/images/I/51u1uBSQVdL._SL75_.jpg</URL>
+            <Height Units="pixels">68</Height>
+            <Width Units="pixels">75</Width>
+          </ThumbnailImage>
+          <TinyImage>
+            <URL>http://ecx.images-amazon.com/images/I/51u1uBSQVdL._SL110_.jpg</URL>
+            <Height Units="pixels">99</Height>
+            <Width Units="pixels">110</Width>
+          </TinyImage>
+          <MediumImage>
+            <URL>http://ecx.images-amazon.com/images/I/51u1uBSQVdL._SL160_.jpg</URL>
+            <Height Units="pixels">145</Height>
+            <Width Units="pixels">160</Width>
+          </MediumImage>
+          <LargeImage>
+            <URL>http://ecx.images-amazon.com/images/I/51u1uBSQVdL.jpg</URL>
+            <Height Units="pixels">452</Height>
+            <Width Units="pixels">500</Width>
+          </LargeImage>
+        </ImageSet>
+      </ImageSets>
+      <ItemAttributes>
+        <Binding>Electronics</Binding>
+        <Brand>iSAVE</Brand>
+        <Color>BLACK</Color>
+        <Feature>Protects your Phone from scratches.</Feature>
+        <Feature>Made from high quality of material. Gives your device a smooth comfortable surface texture.</Feature>
+        <Feature>Prevents damage to your device from objects in your pockets or purse</Feature>
+        <Feature>Dirt proof and scratch resistant, static resistant, Precision molded for a perfect fit.</Feature>
+        <Feature>Easy to Install and Remove.</Feature>
+        <ItemDimensions>
+          <Weight Units="hundredths-pounds">22</Weight>
+        </ItemDimensions>
+        <Label>S.A.V.E.</Label>
+        <Manufacturer>S.A.V.E.</Manufacturer>
+        <MPN>GRIDSILICONIPH5</MPN>
+        <PackageDimensions>
+          <Height Units="hundredths-inches">50</Height>
+          <Length Units="hundredths-inches">550</Length>
+          <Weight Units="hundredths-pounds">22</Weight>
+          <Width Units="hundredths-inches">275</Width>
+        </PackageDimensions>
+        <PartNumber>GRIDSILICONIPH5</PartNumber>
+        <ProductGroup>CE</ProductGroup>
+        <ProductTypeName>PHONE_ACCESSORY</ProductTypeName>
+        <Publisher>S.A.V.E.</Publisher>
+        <Studio>S.A.V.E.</Studio>
+        <Title>iSAVE Soft Silicone Grid Design Back Case Cover For iPhone 5/5s (BLACK)</Title>
+      </ItemAttributes>
+      <OfferSummary>
+        <LowestNewPrice>
+          <Amount>15500</Amount>
+          <CurrencyCode>INR</CurrencyCode>
+          <FormattedPrice>INR 155.00</FormattedPrice>
+        </LowestNewPrice>
+        <TotalNew>2</TotalNew>
+        <TotalUsed>0</TotalUsed>
+        <TotalCollectible>0</TotalCollectible>
+        <TotalRefurbished>0</TotalRefurbished>
+      </OfferSummary>
+      <Offers>
+        <TotalOffers>1</TotalOffers>
+        <TotalOfferPages>1</TotalOfferPages>
+        <MoreOffersUrl>http://www.amazon.in/gp/offer-listing/B01BHVKLK4%3FSubscriptionId%3DAKIAI5MQ3KTFHR6HFMUA%26tag%3Ditdezo-21%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB01BHVKLK4</MoreOffersUrl>
+        <Offer>
+          <OfferAttributes>
+            <Condition>New</Condition>
+          </OfferAttributes>
+          <OfferListing>
+            <OfferListingId>sE8DvNHWZqNI6qJZlsujv3RvskHMJzLZjaSC8o7gbj%2Fp3DiEIxJOFfoyMpXyaPncsy%2Blk2MwUnNaJeyuibRIyF6GA6PXdp2X7%2Bp5pkDjYmbCnKlJPUcKgR7gfKVIyvidpDEgs8RnkyaKz4O0Wt7IdNS3qbJ0ZBUO</OfferListingId>
+            <Price>
+              <Amount>16500</Amount>
+              <CurrencyCode>INR</CurrencyCode>
+              <FormattedPrice>INR 165.00</FormattedPrice>
+            </Price>
+            <Availability>Usually dispatched within 24 hours</Availability>
+            <AvailabilityAttributes>
+              <AvailabilityType>now</AvailabilityType>
+              <MinimumHours>0</MinimumHours>
+              <MaximumHours>0</MaximumHours>
+            </AvailabilityAttributes>
+            <IsEligibleForSuperSaverShipping>1</IsEligibleForSuperSaverShipping>
+            <IsEligibleForPrime>1</IsEligibleForPrime>
+          </OfferListing>
+        </Offer>
+      </Offers>
+    </Item>
+  </Items>
+</ItemSearchResponse>

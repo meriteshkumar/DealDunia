@@ -1,4 +1,5 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.Category>
+@using DealDunia.Infrastructure.Utility
 <style>
     .dropdown-submenu {
         position: relative;
@@ -54,21 +55,18 @@
             @foreach (var category in Model.Where(c => c.Level == 1))
             {
                 <li class="menu-item dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><strong>@category.CategoryName</strong><b class="caret"></b></a>
+                    <a href="@Url.RouteUrl("Level1", new { id1 = Utilities.EncodeUrl(category.CategoryName) })" class="dropdown-toggle" data-toggle="dropdown"><strong>@category.CategoryName</strong><b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         @foreach (var subcategory in Model.Where(m => m.ParentId == category.CategoryId))
                         {
-                            <li class="menu-item dropdown dropdown-submenu"><a href="#" class="dropdown-toggle" data-toggle="dropdown">@subcategory.CategoryName</a>
+                            <li class="menu-item dropdown dropdown-submenu"><a href="@Url.RouteUrl("Level2", new { id1 = Utilities.EncodeUrl(category.CategoryName), id2 = Utilities.EncodeUrl(subcategory.CategoryName) })" class="dropdown-toggle" data-toggle="dropdown">@subcategory.CategoryName</a>
                                 @if (Model.Where(i => i.ParentId == subcategory.CategoryId).Count() > 0)
                                 {
                                     <ul class="dropdown-menu">
                                         @foreach (var inner in Model.Where(i => i.ParentId == subcategory.CategoryId))
                                         {
-                                    
-                                            <li class="menu-item"><a href="#">@inner.CategoryName</a></li>
-                                    
+                                            <li class="menu-item"><a href="@Url.RouteUrl("Level3", new { id1 = Utilities.EncodeUrl(category.CategoryName), id2 = Utilities.EncodeUrl(subcategory.CategoryName), id3 = Utilities.EncodeUrl(inner.CategoryName) })">@inner.CategoryName</a></li>
                                         }
-
                                     </ul>
                                 }
                             </li>
@@ -77,6 +75,13 @@
                 </li>
             }
         </ul>
+        @using (Html.BeginForm("Tags", "Product", FormMethod.Post, new { @class = "navbar-form navbar-left", role = "search" }))
+        {
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search" name="searchtext">
+            </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+        }
     </div>
 </nav>
 

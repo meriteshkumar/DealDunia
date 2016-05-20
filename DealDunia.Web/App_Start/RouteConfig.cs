@@ -14,6 +14,24 @@ namespace DealDunia.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Level3",
+                url: "category/{id1}/{id2}/{id3}",
+                defaults: new { controller = "Category", action = "Browse3" }
+            );
+
+            routes.MapRoute(
+                name: "Level2",
+                url: "category/{id1}/{id2}",
+                defaults: new { controller = "Category", action = "Browse2" }
+            );
+
+            routes.MapRoute(
+                name: "Level1",
+                url: "category/{id1}",
+                defaults: new { controller = "Category", action = "Browse1" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Category", action = "Index", id = UrlParameter.Optional }

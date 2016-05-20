@@ -121,6 +121,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\NavController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -133,7 +134,8 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\XMLFile1.xml" />
+    <Content Include="Content\Books.xml" />
+    <Content Include="Content\Electronics.xml" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -163,6 +165,7 @@
     <Content Include="Scripts\jquery-2.2.3.min.map" />
     <Content Include="Views\Nav\Menu.cshtml" />
     <Content Include="Views\Nav\ShopByStore.cshtml" />
+    <Content Include="Views\Product\Tags.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -212,7 +215,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>45506</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:64110/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
