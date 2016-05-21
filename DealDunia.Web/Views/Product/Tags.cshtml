@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DealDunia.Infrastructure.Helpers.ItemResponse>
+﻿@model IEnumerable<DealDunia.Infrastructure.Abstract.IItemResponse>
 @{
     ViewBag.Title = "Tags";
 }
@@ -24,7 +24,7 @@
                 <br />
                 &#8377;&nbsp;@item.Amount
                 <br />
-                <img src="@item.URL" width="77" height="160" />
+                <img src="@item.ImageUrl" width="77" height="160" />
                 <br />
                 <br />
                 <a class="btn btn-primary" href="@item.DetailPageURL">Buy Now</a>

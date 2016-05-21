@@ -2,59 +2,20 @@
 using System.Xml.Linq;
 using System.Linq;
 using System.Collections.Generic;
+using DealDunia.Infrastructure.Abstract;
 
 
 namespace DealDunia.Infrastructure.Helpers
 {
     public class XmlParser
     {
-        public void MapXMLtoClass(System.IO.Stream xml, List<ItemResponse> responseList, string rootElement)
+        public void MapXMLtoClass(System.IO.Stream xml, List<IItemResponse> responseList, string rootElement, IItemResponse seed)
         {
-            //XmlDocument doc = new XmlDocument();
-            //doc.Load(xml);
-
-            //XmlNodeList lstItems = doc.GetElementsByTagName("Item");
-
-            //if (lstItems.Count > 0)
-            //{
-            //    foreach (XmlNode nItem in lstItems)
-            //    {
-            //        ItemResponse responseItem = new ItemResponse();
-
-            //        foreach (XmlNode nChild in nItem.ChildNodes)
-            //        {
-            //            if (nChild.Name == "ASIN")
-            //            {
-            //                responseItem.ProductCode = nChild.InnerText;
-            //            }
-            //            else if (nChild.Name == "DetailPageURL")
-            //            {
-            //                responseItem.DetailPageURL = nChild.InnerText;
-            //            }
-            //            if (nChild.Name == "ItemAttributes")
-            //            {
-            //                foreach (XmlNode nIA in nChild.ChildNodes)
-            //                {
-            //                    if (nIA.Name == "Title")
-            //                    {
-            //                        responseItem.Title = nIA.InnerText;
-            //                    }
-            //                    if (nIA.Name == "Title")
-            //                    {
-            //                        responseItem.Title = nIA.InnerText;
-            //                    }
-            //                }
-            //            }
-            //        }
-            //        obj.Add(responseItem);
-            //    }
-            //}
-
             XmlTextReader reader = new XmlTextReader(xml);
             bool IsMatched = false;
             bool IsItem = false;
             string Property = string.Empty;
-            ItemResponse obj = null;
+            IItemResponse obj = null;
             while (reader.Read())
             {
                 switch (reader.NodeType)
@@ -62,14 +23,14 @@ namespace DealDunia.Infrastructure.Helpers
                     case XmlNodeType.Element:          
                         if (reader.Name == rootElement)
                         {
-                            obj = new ItemResponse();
+                            obj = seed;
                             IsItem = true;
                         }
                         if (IsItem == true)
                         {
                             foreach (var prop in obj.GetType().GetProperties())
                             {
-                                if (prop.Name == reader.Name)
+                                if (prop.GetCustomAttributes(typeof(System.ComponentModel.DisplayNameAttribute), true).Cast<System.ComponentModel.DisplayNameAttribute>().Single().DisplayName == reader.Name)
                                 {
                                     IsMatched = true;
                                     Property = prop.Name;

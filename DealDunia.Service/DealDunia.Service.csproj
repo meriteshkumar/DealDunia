@@ -60,7 +60,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Amazon.cs" />
+    <Compile Include="Flipkart.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Snapdeal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Web.Debug.config">

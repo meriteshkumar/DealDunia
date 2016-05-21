@@ -46,6 +46,8 @@
     <Compile Include="Abstract\ILookupRepository.cs" />
     <Compile Include="Abstract\IStoreRepository.cs" />
     <Compile Include="Concrete\AmazonRepository.cs" />
+    <Compile Include="Concrete\FlipkartRepository.cs" />
+    <Compile Include="Concrete\SnapdealRepository.cs" />
     <Compile Include="Concrete\SQLStoreRepository.cs" />
     <Compile Include="Entities\Category.cs" />
     <Compile Include="Entities\Store.cs" />

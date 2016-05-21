@@ -1,5 +1,6 @@
 ﻿using DealDunia.Domain.Concrete;
 using DealDunia.Infrastructure.Helpers;
+using DealDunia.Infrastructure.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,14 +17,22 @@ namespace DealDunia.Web.Controllers
         [HttpPost]
         public ActionResult Tags(string searchtext)
         {
+            List<IItemResponse> response = null;
+
             AmazonRepository rep = new AmazonRepository();
-            var response = rep.GetItem(new ItemRequest
+            response = rep.GetItem(new ItemRequest
               {
                   Keywords = searchtext,
                   Operation = "ItemSearch",
                   ResponseGroup = "Images,ItemAttributes,Offers",
                   SearchIndex = "Electronics"
               });
+
+            FlipkartRepository rep1 = new FlipkartRepository();
+            response.AddRange(rep1.GetItem(new ItemRequest
+            {
+                Keywords = searchtext
+            }));
 
             ViewBag.SearchedItem = searchtext;
 

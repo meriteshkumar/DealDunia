@@ -40,15 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IItemResponse.cs" />
+    <Compile Include="Helpers\FlipkartItemResponse.cs" />
     <Compile Include="Helpers\ItemRequest.cs" />
     <Compile Include="Helpers\SignedRequestHelper.cs" />
+    <Compile Include="Helpers\SnapdealItemResponse.cs" />
     <Compile Include="Helpers\XmlParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Helpers\ItemResponse.cs" />
+    <Compile Include="Helpers\AmazonItemResponse.cs" />
     <Compile Include="Utility\Utilities.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Helpers\AmazonSample.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
