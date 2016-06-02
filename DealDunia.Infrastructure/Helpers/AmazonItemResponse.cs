@@ -5,19 +5,19 @@ namespace DealDunia.Infrastructure.Helpers
 {
     public class AmazonItemResponse : IItemResponse
     {
-        [DisplayName("ASIN")]
+         [DevAttribute(DisplayName = "ASIN", XPath = "Item/ASIN")]
         public string ProductId { get; set; }
 
-        [DisplayName("Title")]
+         [DevAttribute(DisplayName = "Title", XPath = "ItemAttributes/Title")]
         public string Title { get; set; }
 
-        [DisplayName("URL")]
+         [DevAttribute(DisplayName = "URL", XPath = "MediumImage/URL")]
         public string ImageUrl { get; set; }
 
-        [DisplayName("Amount")]
+         [DevAttribute(DisplayName = "FormattedPrice", XPath = "Price/FormattedPrice")]
         public string Amount { get; set; }
 
-        [DisplayName("DetailPageURL")]
+         [DevAttribute(DisplayName = "DetailPageURL", XPath = "Item/DetailPageURL")]
         public string DetailPageURL { get; set; }
     }
 }

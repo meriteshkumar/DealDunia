@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
+using System.Xml;
 
 namespace DealDunia.Service
 {
@@ -15,7 +16,8 @@ namespace DealDunia.Service
         private const string SubscriptionId = "AKIAI5MQ3KTFHR6HFMUA";
         private const string AssociateTag = "itdezo-21";
 
-        public System.IO.Stream ItemSearch(ItemRequest requestParams)
+        //public System.IO.Stream ItemSearch(ItemRequest requestParams)
+        public XmlDocument ItemSearch(ItemRequest requestParams)
         {
             try
             {
@@ -38,7 +40,13 @@ namespace DealDunia.Service
                 WebRequest request = HttpWebRequest.Create(requestUrl);
                 WebResponse response = request.GetResponse();
 
-                return response.GetResponseStream();
+                XmlDocument xDoc = new XmlDocument();
+
+                xDoc.Load(response.GetResponseStream());
+
+                return xDoc;
+
+                //return response.GetResponseStream();
             }
             catch (Exception ex)
             {

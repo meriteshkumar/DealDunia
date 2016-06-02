@@ -25,7 +25,7 @@ namespace DealDunia.Domain.Concrete
 
             XmlParser parser = new XmlParser();
             List<IItemResponse> itemResponse = new List<AmazonItemResponse>().Cast<IItemResponse>().ToList(); ;
-            parser.MapXMLtoClass(response, itemResponse, "Item", new AmazonItemResponse());
+            parser.MapXMLtoClass(response, itemResponse, "Item", "AmazonItemResponse");
 
             return itemResponse;
         }

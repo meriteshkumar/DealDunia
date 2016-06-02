@@ -6,19 +6,19 @@ namespace DealDunia.Infrastructure.Helpers
 {
     public class FlipkartItemResponse : IItemResponse
     {
-        [DisplayName("productId")]
+        [DevAttribute(DisplayName = "productId", XPath = "productBaseInfoV1/productId")]
         public string ProductId { get; set; }
 
-        [DisplayName("title")]
+       [DevAttribute(DisplayName = "title", XPath = "productBaseInfoV1/title")]
         public string Title { get; set; }
 
-        [DisplayName("value")]
+         [DevAttribute(DisplayName = "value", XPath = "entry/value", PreviousNode = "key", PreviousNodeValue = "400x400")]
         public string ImageUrl { get; set; }
 
-        [DisplayName("amount")]
+         [DevAttribute(DisplayName = "amount", XPath = "maximumRetailPrice/amount")]
         public string Amount { get; set; }
 
-        [DisplayName("productUrl")]
+          [DevAttribute(DisplayName = "productUrl", XPath = "productBaseInfoV1/productUrl")]
         public string DetailPageURL { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace DealDunia.Domain.Concrete
 
             XmlParser parser = new XmlParser();
             List<IItemResponse> itemResponse = new List<FlipkartItemResponse>().Cast<IItemResponse>().ToList();
-            parser.MapXMLtoClass(response, itemResponse, "productInfoList", new FlipkartItemResponse());
+            parser.MapXMLtoClass(response, itemResponse, "productInfoList", "FlipkartItemResponse");
 
             return itemResponse;
         }

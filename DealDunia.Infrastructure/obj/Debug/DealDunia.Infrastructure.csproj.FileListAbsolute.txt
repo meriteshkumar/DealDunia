@@ -2,4 +2,3 @@ E:\DealDunia\DealDunia.Infrastructure\bin\Debug\DealDunia.Infrastructure.dll
 E:\DealDunia\DealDunia.Infrastructure\bin\Debug\DealDunia.Infrastructure.pdb
 E:\DealDunia\DealDunia.Infrastructure\obj\Debug\DealDunia.Infrastructure.dll
 E:\DealDunia\DealDunia.Infrastructure\obj\Debug\DealDunia.Infrastructure.pdb
-E:\DealDunia\DealDunia.Infrastructure\obj\Debug\DealDunia.Infrastructure.csprojResolveAssemblyReference.cache

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.Xml;
 
 namespace DealDunia.Service
 {
@@ -13,7 +14,7 @@ namespace DealDunia.Service
         private const string AFFILIATE_TOKEN = "48e7442debe1404ab298977ddf6e0d65";
         private const string API_URL = "https://affiliate-api.flipkart.net/affiliate/1.0/search.xml";
 
-        public System.IO.Stream ItemSearch(ItemRequest requestParams)
+        public XmlDocument ItemSearch(ItemRequest requestParams)
         {
             try
             {
@@ -25,7 +26,13 @@ namespace DealDunia.Service
 
                 WebResponse response = request.GetResponse();
 
-                return response.GetResponseStream();
+                XmlDocument xDoc = new XmlDocument();
+
+                xDoc.Load(response.GetResponseStream());
+
+                return xDoc;
+
+                //return response.GetResponseStream();
             }
             catch (Exception ex)
             {

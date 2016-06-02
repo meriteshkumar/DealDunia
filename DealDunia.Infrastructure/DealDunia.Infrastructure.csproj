@@ -41,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IItemResponse.cs" />
+    <Compile Include="Helpers\DevAttribute.cs" />
     <Compile Include="Helpers\FlipkartItemResponse.cs" />
     <Compile Include="Helpers\ItemRequest.cs" />
+    <Compile Include="Helpers\ItemResponseFactory.cs" />
     <Compile Include="Helpers\SignedRequestHelper.cs" />
     <Compile Include="Helpers\SnapdealItemResponse.cs" />
     <Compile Include="Helpers\XmlParser.cs" />

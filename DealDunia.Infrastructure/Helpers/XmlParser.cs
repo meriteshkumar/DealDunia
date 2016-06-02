@@ -9,50 +9,65 @@ namespace DealDunia.Infrastructure.Helpers
 {
     public class XmlParser
     {
-        public void MapXMLtoClass(System.IO.Stream xml, List<IItemResponse> responseList, string rootElement, IItemResponse seed)
+        static IItemResponse item = null;
+
+        public void MapXMLtoClass(XmlDocument xml, List<IItemResponse> responseList, string rootElement, string type)
         {
-            XmlTextReader reader = new XmlTextReader(xml);
-            bool IsMatched = false;
-            bool IsItem = false;
-            string Property = string.Empty;
-            IItemResponse obj = null;
-            while (reader.Read())
+            GetItem(xml, rootElement, responseList,  type);
+        }
+
+        static void GetItem(XmlNode node, string rootElement, List<IItemResponse> responseList, string type)
+        {
+
+            if (node.Name.Equals(rootElement))
             {
-                switch (reader.NodeType)
+
+                string xmlContent = string.Concat("<", rootElement, ">", node.InnerXml, "</", rootElement, ">");
+                item = ItemResponseFactory.CreateItemReponse(type);
+                XmlDocument doc = new XmlDocument();
+                doc.LoadXml(xmlContent);
+                GetItemElements(doc.DocumentElement, item);
+                responseList.Add(item);
+            }
+
+            //Console.WriteLine("{0}{1}{2}", "-".PadLeft(level + 1), node.Name, node.InnerText);
+
+            foreach (XmlNode child in node.ChildNodes)
+            {
+                GetItem(child, rootElement, responseList, type);
+            }
+        }
+
+        static void GetItemElements(XmlNode node, IItemResponse seed)
+        {
+            if (node.Name == "FormattedPrice")
+            {
+                int i = 0;
+            }
+            foreach (var prop in seed.GetType().GetProperties())
+            {
+                var d = prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().DisplayName;
+                var x = prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().XPath;
+                string xPath = string.Concat(node.ParentNode.Name, "/", node.Name);
+                if (x.Equals(xPath) && node.Name == d)
                 {
-                    case XmlNodeType.Element:          
-                        if (reader.Name == rootElement)
-                        {
-                            obj = seed;
-                            IsItem = true;
-                        }
-                        if (IsItem == true)
-                        {
-                            foreach (var prop in obj.GetType().GetProperties())
-                            {
-                                if (prop.GetCustomAttributes(typeof(System.ComponentModel.DisplayNameAttribute), true).Cast<System.ComponentModel.DisplayNameAttribute>().Single().DisplayName == reader.Name)
-                                {
-                                    IsMatched = true;
-                                    Property = prop.Name;
-                                }
-                            }
-                        }
-                        break;
-                    case XmlNodeType.Text: 
-                        if (IsMatched == true)
-                        {
-                            obj.GetType().GetProperty(Property).SetValue(obj, reader.Value);
-                            IsMatched = false;
-                        }
-                        break;
-                    case XmlNodeType.EndElement:
-                        if (reader.Name == rootElement)
-                        {
-                            responseList.Add(obj);
-                            IsItem = false;
-                        }
-                        break;
+                    if (!string.IsNullOrEmpty(prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().PreviousNode))
+                    {
+                        var prevNode = prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().PreviousNode;
+                        var prevNodeValue = prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().PreviousNodeValue;
+                        if (node.PreviousSibling.Name == prevNode && node.PreviousSibling.InnerText == prevNodeValue)
+                            seed.GetType().GetProperty(prop.Name).SetValue(seed, node.InnerText);
+                    }
+                    else
+                    {
+                        seed.GetType().GetProperty(prop.Name).SetValue(seed, node.InnerText);
+                    }
+
                 }
+            }
+            foreach (XmlNode child in node.ChildNodes)
+            {
+                GetItemElements(child, seed);
             }
         }
     }
