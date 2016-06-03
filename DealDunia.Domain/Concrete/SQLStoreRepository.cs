@@ -33,7 +33,7 @@ namespace DealDunia.Domain.Concrete
 
         }
 
-        public IEnumerable<Category> Categories
+        public IEnumerable<Category> Menus
         {
             get
             {
@@ -55,6 +55,51 @@ namespace DealDunia.Domain.Concrete
                 }
                 return categories;
             }
+        }
+
+        public IEnumerable<Category> TopCategory
+        {
+            get
+            {
+                List<Category> categories = new List<Category>();
+                Category category = null;
+
+                SqlDataReader reader = SqlHelper.ExecuteReader("Data Source=IRIS-CSG-554;Initial Catalog=Ecom;Integrated Security=True", CommandType.StoredProcedure, "dbo.GetCategories");
+
+                while (reader.Read())
+                {
+                    category = new Category();
+                    category.CategoryId = (int)((IDataRecord)reader)["CategoryId"];
+                    category.CategoryName = ((IDataRecord)reader)["CategoryName"].ToString();
+                    category.Image = ((IDataRecord)reader)["Image"].ToString();
+                    category.RootId = -1;
+                    category.ParentId = -1;
+                    category.Level = -1;
+                    categories.Add(category);
+                }
+                return categories;
+            }
+        }
+
+        public IEnumerable<Category> SubCategory(int CategoryId)
+        {
+                List<Category> categories = new List<Category>();
+                Category category = null;
+
+                SqlDataReader reader = SqlHelper.ExecuteReader("Data Source=IRIS-CSG-554;Initial Catalog=Ecom;Integrated Security=True", CommandType.StoredProcedure, "dbo.GetSubCategories");
+
+                while (reader.Read())
+                {
+                    category = new Category();
+                    category.CategoryId = (int)((IDataRecord)reader)["CategoryId"];
+                    category.CategoryName = ((IDataRecord)reader)["CategoryName"].ToString();
+                    category.Image = ((IDataRecord)reader)["Image"].ToString();
+                    category.RootId = (int)((IDataRecord)reader)["RootId"];
+                    category.ParentId = (int)((IDataRecord)reader)["ParentId"];
+                    category.Level = Convert.ToInt16(((IDataRecord)reader)["Level"]);
+                    categories.Add(category);
+                }
+                return categories;
         }
     }
 }

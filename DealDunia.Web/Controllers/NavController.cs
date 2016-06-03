@@ -16,7 +16,7 @@ namespace DealDunia.Web.Controllers
 
         public PartialViewResult Menu()
         {
-            var categories = repository.Categories.Distinct();
+            var categories = repository.Menus.Distinct();
             return PartialView("Menu", categories);
         }
 
@@ -26,5 +26,10 @@ namespace DealDunia.Web.Controllers
             return PartialView("ShopByStore", stores);
         }
 
+        public PartialViewResult ShopByCategory()
+        {
+            var categories = repository.TopCategory;
+            return PartialView("ShopByCategory", categories);
+        }
     }
 }

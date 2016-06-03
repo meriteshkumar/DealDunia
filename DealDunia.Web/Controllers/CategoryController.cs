@@ -5,13 +5,13 @@ using System.Web;
 using System.Web.Mvc;
 using DealDunia.Domain.Concrete;
 using DealDunia.Infrastructure.Helpers;
+using DealDunia.Domain.Abstract;
 
 namespace DealDunia.Web.Controllers
 {
     public class CategoryController : Controller
     {
-        //
-        // GET: /Category/
+        IStoreRepository repository = new SQLStoreRepository();
 
         public ActionResult Index()
         {
@@ -20,7 +20,11 @@ namespace DealDunia.Web.Controllers
 
         public ActionResult Browse1()
         {
-            var level1 = RouteData.Values["id1"].ToString();
+            //var level1 = RouteData.Values["id1"].ToString();
+
+            //var categories = repository.SubCategory(int.Parse(level1));
+
+            //return View("BrowseCategory", categories);
 
             return View("Index");
         }

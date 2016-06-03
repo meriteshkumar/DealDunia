@@ -6,6 +6,8 @@ namespace DealDunia.Domain.Abstract
    public interface IStoreRepository
     {
        IEnumerable<Store> Stores { get; }
-       IEnumerable<Category> Categories { get; }
+       IEnumerable<Category> Menus { get; }
+       IEnumerable<Category> TopCategory { get; }
+       IEnumerable<Category> SubCategory(int CategoryId);
     }
 }
