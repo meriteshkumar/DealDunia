@@ -20,13 +20,13 @@ namespace DealDunia.Web.Controllers
 
         public ActionResult Browse1()
         {
-            //var level1 = RouteData.Values["id1"].ToString();
+            var level1 = RouteData.Values["id1"].ToString();
 
-            //var categories = repository.SubCategory(int.Parse(level1));
+            ViewBag.ShowBrowse = 1;
 
-            //return View("BrowseCategory", categories);
+            var categories = repository.SubCategory(0, level1);
 
-            return View("Index");
+            return View("BrowseCategory", categories);
         }
 
         public ActionResult Browse2()
@@ -34,7 +34,11 @@ namespace DealDunia.Web.Controllers
             var level1 = RouteData.Values["id1"].ToString();
             var level2 = RouteData.Values["id2"].ToString();
 
-            return View("Index");
+            ViewBag.ShowBrowse = 2;
+
+            var categories = repository.SubCategory(0, level1 + "/" + level2);
+
+            return View("BrowseCategory", categories);
         }
 
         public ActionResult Browse3()

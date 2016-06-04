@@ -1,4 +1,4 @@
-﻿@model DealDunia.Domain.Entities.Category
+﻿@model IEnumerable<DealDunia.Domain.Entities.Category>
 
 @{
     ViewBag.Title = "BrowseCategory";
@@ -7,5 +7,12 @@
 <h2>BrowseCategory</h2>
 
 <div class="container">
-    @Html.Partial("LineItem", Model)
+    @if (Convert.ToInt16(ViewBag.ShowBrowse) == 1)
+    {
+        @Html.Partial("LineItem", Model)
+    }
+    else if (Convert.ToInt16(ViewBag.ShowBrowse) == 2)
+    {
+        @Html.Partial("LineItem2", Model)
+    }
 </div>

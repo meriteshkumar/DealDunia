@@ -31,5 +31,11 @@ namespace DealDunia.Web.Controllers
             var categories = repository.TopCategory;
             return PartialView("ShopByCategory", categories);
         }
+
+        public PartialViewResult ExclusiveDeals()
+        {
+            var deals = repository.ExecutiveDeals(0, 0);
+            return PartialView("ExclusiveDeals",  deals);
+        }
     }
 }

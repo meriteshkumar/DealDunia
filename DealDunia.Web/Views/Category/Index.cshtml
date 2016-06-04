@@ -5,8 +5,15 @@
 <h2>Index</h2>
 
 <div class="container">
-    @Html.Action("ShopByStore","Nav")
-     @Html.Action("ShopByCategory","Nav")
+    <h3>Shop By Store</h3>
+    <hr />
+    @Html.Action("ShopByStore", "Nav")
+    <h3>Exclusive Deals</h3>
+    <hr />
+    @Html.Action("ExclusiveDeals", "Nav")
+    <h3>Shop By Category</h3>
+    <hr />
+    @Html.Action("ShopByCategory", "Nav")
 </div>
 
 

@@ -8,6 +8,7 @@ namespace DealDunia.Domain.Abstract
        IEnumerable<Store> Stores { get; }
        IEnumerable<Category> Menus { get; }
        IEnumerable<Category> TopCategory { get; }
-       IEnumerable<Category> SubCategory(int CategoryId);
+       IEnumerable<Category> SubCategory(int CategoryId, string CategoryName);
+       IEnumerable<ExecutiveDeals> ExecutiveDeals(int StoreId, int CategoryId);
     }
 }

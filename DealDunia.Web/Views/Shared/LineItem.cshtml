@@ -5,10 +5,10 @@
     @foreach (var category in Model)
     {
         <div class="jumbotron col-md-4 col-lg-4 text-center">
-            <a href="@Url.RouteUrl("Level1", new { id1 = Utilities.EncodeUrl(category.CategoryName) })">
+            <a href="@Url.RouteUrl("Level2", new {id1 = Utilities.EncodeUrl(ViewContext.RouteData.Values["id1"].ToString()), id2 = Utilities.EncodeUrl(category.CategoryName) })">
                 <img src="@Url.Content("~/Images/" + category.Image)" alt="@category.CategoryName" /></a>
             <br />
-            <span><a href="@Url.RouteUrl("Level1", new { id1 = Utilities.EncodeUrl(category.CategoryName) })"><strong>@category.CategoryName</strong></a></span>
+            <span><a href="@Url.RouteUrl("Level2", new {id1 = Utilities.EncodeUrl(ViewContext.RouteData.Values["id1"].ToString()), id2 = Utilities.EncodeUrl(category.CategoryName) })"><strong>@category.CategoryName</strong></a></span>
         </div>
     }
 </div>
