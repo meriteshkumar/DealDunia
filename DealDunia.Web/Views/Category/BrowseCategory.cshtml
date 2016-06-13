@@ -15,4 +15,9 @@
     {
         @Html.Partial("LineItem2", Model)
     }
+
+    @Html.Action("SearchResult", "Nav", new { searchtext = ViewContext.RouteData.Values["id1"].ToString() })
+
 </div>
+
+

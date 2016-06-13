@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DealDunia.Infrastructure.Abstract.IItemResponse>
+﻿@*@model IEnumerable<DealDunia.Infrastructure.Abstract.IItemResponse>*@
 @{
     ViewBag.Title = "Tags";
 }
@@ -6,29 +6,5 @@
 <h2>@ViewBag.SearchedItem</h2>
 
 <div class="container">
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="well" style="width: 200px; text-align: center; float: left; height: 314px; margin-right: 5px;">
-                @{
-            if (item.Title.Length > 34)
-            {
-                    <b>@item.Title.Substring(0, 34)..</b>
-            }
-            else
-            {
-                    <b>@item.Title</b>
-            }
-                }
-
-                <br />
-                @item.Amount
-                <br />
-                <img src="@item.ImageUrl" width="77" height="160" />
-                <br />
-                <br />
-                <a class="btn btn-primary" href="@item.DetailPageURL">Buy Now</a>
-            </div>
-        }
-    </div>
+    @Html.Action("SearchResult", "Nav", new { searchtext = ViewBag.SearchedItem })
 </div>
