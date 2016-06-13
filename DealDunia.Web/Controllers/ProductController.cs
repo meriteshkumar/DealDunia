@@ -25,7 +25,7 @@ namespace DealDunia.Web.Controllers
                   Keywords = searchtext,
                   Operation = "ItemSearch",
                   ResponseGroup = "Images,ItemAttributes,Offers",
-                  SearchIndex = "Electronics"
+                  SearchIndex = "All"
               });
 
             FlipkartRepository rep1 = new FlipkartRepository();

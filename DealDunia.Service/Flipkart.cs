@@ -22,7 +22,7 @@ namespace DealDunia.Service
 
                 WebRequest request = HttpWebRequest.Create(requestUrl);
                 request.Headers.Add("Fk-Affiliate-Id", AFFILIATE_ID);
-                //request.Headers.Add("Fk-Affiliate-Token", string.Concat(AFFILIATE_TOKEN, " ", API_URL));
+                request.Headers.Add("Fk-Affiliate-Token",AFFILIATE_TOKEN);
 
                 WebResponse response = request.GetResponse();
 

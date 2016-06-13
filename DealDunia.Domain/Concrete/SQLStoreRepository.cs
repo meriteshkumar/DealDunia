@@ -72,9 +72,6 @@ namespace DealDunia.Domain.Concrete
                     category.CategoryId = (int)((IDataRecord)reader)["CategoryId"];
                     category.CategoryName = ((IDataRecord)reader)["CategoryName"].ToString();
                     category.Image = ((IDataRecord)reader)["Image"].ToString();
-                    category.RootId = -1;
-                    category.ParentId = -1;
-                    category.Level = -1;
                     categories.Add(category);
                 }
                 return categories;
@@ -94,9 +91,6 @@ namespace DealDunia.Domain.Concrete
                 category.CategoryId = (int)((IDataRecord)reader)["CategoryId"];
                 category.CategoryName = ((IDataRecord)reader)["CategoryName"].ToString();
                 category.Image = ((IDataRecord)reader)["Image"].ToString();
-                category.RootId = 0;
-                category.ParentId = (int)((IDataRecord)reader)["ParentId"];
-                category.Level = Convert.ToInt16(((IDataRecord)reader)["Level"]);
                 categories.Add(category);
             }
             return categories;
@@ -115,6 +109,27 @@ namespace DealDunia.Domain.Concrete
                 deal.ExcDealId = (int)((IDataRecord)reader)["ExcDealId"];
                 deal.StoreId = Convert.ToInt16(((IDataRecord)reader)["StoreId"]);
                 deal.CategoryId = (int)((IDataRecord)reader)["CategoryId"];
+                deal.Title = ((IDataRecord)reader)["Title"].ToString();
+                deal.Description = ((IDataRecord)reader)["Description"].ToString();
+                deal.Image = ((IDataRecord)reader)["Image"].ToString();
+                deal.URL = ((IDataRecord)reader)["URL"].ToString();
+                deals.Add(deal);
+            }
+            return deals;
+        }
+
+        public IEnumerable<DailyDeals> DailyDeals(int StoreId)
+        {
+            List<DailyDeals> deals = new List<DailyDeals>();
+            DailyDeals deal = null;
+
+            SqlDataReader reader = SqlHelper.ExecuteReader("Data Source=.;Initial Catalog=Ecom;Integrated Security=True", CommandType.StoredProcedure, "dbo.GetDailyDeals", new SqlParameter[] { new SqlParameter("@StoreId", StoreId == 0 ? 0 : StoreId) });
+
+            while (reader.Read())
+            {
+                deal = new DailyDeals();
+                deal.DailyDealId = Convert.ToInt16(((IDataRecord)reader)["DailyDealId"]);
+                deal.StoreId = Convert.ToInt16(((IDataRecord)reader)["StoreId"]);
                 deal.Title = ((IDataRecord)reader)["Title"].ToString();
                 deal.Description = ((IDataRecord)reader)["Description"].ToString();
                 deal.Image = ((IDataRecord)reader)["Image"].ToString();
