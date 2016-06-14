@@ -1,0 +1,12 @@
+﻿@model IEnumerable<DealDunia.Domain.Entities.Category>
+@using DealDunia.Infrastructure.Utility
+
+@foreach (var category in Model.Where(c => c.Level == 1))
+{
+    <a href="@Url.RouteUrl("Level1", new { id1 = Utilities.EncodeUrl(category.CategoryName) })" >@category.CategoryName&nbsp;:&nbsp;</a>
+    foreach (var subcategory in Model.Where(m => m.ParentId == category.CategoryId))
+    {
+    <a href="@Url.RouteUrl("Level2", new { id1 = Utilities.EncodeUrl(category.CategoryName), id2 = Utilities.EncodeUrl(subcategory.CategoryName) })" >@subcategory.CategoryName&nbsp;|&nbsp;</a>
+    }
+    <br />
+}

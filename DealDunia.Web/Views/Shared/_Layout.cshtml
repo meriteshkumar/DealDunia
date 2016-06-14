@@ -9,8 +9,11 @@
 </head>
 <body>
     <div>
-        @Html.Action("Menu","Nav")
+        @Html.Action("Menu", "Nav", new { position = "HEADER" })
         @RenderBody()
+    </div>
+    <div class="panel-footer text-center">
+        @Html.Action("Menu", "Nav", new { position = "FOOTER" })
     </div>
 </body>
 </html>

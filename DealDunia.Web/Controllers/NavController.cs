@@ -17,10 +17,14 @@ namespace DealDunia.Web.Controllers
             this.repository = new SQLStoreRepository();
         }
 
-        public PartialViewResult Menu()
+        public PartialViewResult Menu(string position)
         {
             var categories = repository.Menus.Distinct();
-            return PartialView("Menu", categories);
+
+            if (position.ToUpper() == "HEADER")
+                return PartialView("Menu", categories);
+            else
+                return PartialView("Footer", categories);
         }
 
         public PartialViewResult ShopByStore()

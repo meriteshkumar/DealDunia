@@ -16,8 +16,14 @@
         @Html.Partial("LineItem2", Model)
     }
 
-    @Html.Action("SearchResult", "Nav", new { searchtext = ViewContext.RouteData.Values["id1"].ToString() })
-
+     @if (Convert.ToInt16(ViewBag.ShowBrowse) == 1)
+    {
+        @Html.Action("SearchResult", "Nav", new { searchtext = ViewContext.RouteData.Values["id1"].ToString() })
+    }
+    else if (Convert.ToInt16(ViewBag.ShowBrowse) == 2)
+    {
+        @Html.Action("SearchResult", "Nav", new { searchtext = ViewContext.RouteData.Values["id2"].ToString() })
+    }
 </div>
 
 
