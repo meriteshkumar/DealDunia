@@ -1,0 +1,23 @@
+﻿@model IEnumerable<DealDunia.Domain.Entities.DailyDeals>
+
+@{
+    ViewBag.Title = "Daily";
+}
+
+<h2>Daily Deals</h2>
+
+<div class="container">
+
+    @foreach (var deal in Model)
+    {
+        <div class="panel panel-info">
+            <div class="panel-heading">@deal.Description</div>
+            <div class="panel-body">
+                <a href="@deal.URL" target="_blank">
+                    <img src="@Url.Content("~/Images/" + deal.Image)"/></a>
+            </div>
+        </div>
+        <br />
+    }
+
+</div>

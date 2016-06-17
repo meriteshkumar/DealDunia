@@ -9,6 +9,8 @@ namespace DealDunia.Domain.Concrete
 {
     public class SQLStoreRepository : IStoreRepository
     {
+        private const string _connectionString = "Data Source=.;Initial Catalog=Ecom;Integrated Security=True";
+
         public IEnumerable<Store> Stores
         {
             get
@@ -16,7 +18,7 @@ namespace DealDunia.Domain.Concrete
                 List<Store> stores = new List<Store>();
                 Store store = null;
 
-                SqlDataReader reader = SqlHelper.ExecuteReader("Data Source=.;Initial Catalog=Ecom;Integrated Security=True", CommandType.StoredProcedure, "dbo.GetStores");
+                SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetStores");
 
                 while (reader.Read())
                 {
@@ -40,7 +42,7 @@ namespace DealDunia.Domain.Concrete
                 List<Category> categories = new List<Category>();
                 Category category = null;
 
-                SqlDataReader reader = SqlHelper.ExecuteReader("Data Source=.;Initial Catalog=Ecom;Integrated Security=True", CommandType.StoredProcedure, "dbo.GetMenu");
+                SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetMenu");
 
                 while (reader.Read())
                 {
@@ -64,7 +66,7 @@ namespace DealDunia.Domain.Concrete
                 List<Category> categories = new List<Category>();
                 Category category = null;
 
-                SqlDataReader reader = SqlHelper.ExecuteReader("Data Source=.;Initial Catalog=Ecom;Integrated Security=True", CommandType.StoredProcedure, "dbo.GetCategories");
+                SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetCategories");
 
                 while (reader.Read())
                 {
@@ -83,7 +85,7 @@ namespace DealDunia.Domain.Concrete
             List<Category> categories = new List<Category>();
             Category category = null;
 
-            SqlDataReader reader = SqlHelper.ExecuteReader("Data Source=.;Initial Catalog=Ecom;Integrated Security=True", CommandType.StoredProcedure, "dbo.GetSubCategories", new SqlParameter[] { new SqlParameter("@CategoryId", CategoryId), new SqlParameter("@CategoryName", CategoryName) });
+            SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetSubCategories", new SqlParameter[] { new SqlParameter("@CategoryId", CategoryId), new SqlParameter("@CategoryName", CategoryName) });
 
             while (reader.Read())
             {
@@ -101,7 +103,7 @@ namespace DealDunia.Domain.Concrete
             List<ExecutiveDeals> deals = new List<ExecutiveDeals>();
             ExecutiveDeals deal = null;
 
-            SqlDataReader reader = SqlHelper.ExecuteReader("Data Source=.;Initial Catalog=Ecom;Integrated Security=True", CommandType.StoredProcedure, "dbo.GetExcDeals", new SqlParameter[] { new SqlParameter("@StoreId", StoreId), new SqlParameter("@CategoryId", CategoryId) });
+            SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetExcDeals", new SqlParameter[] { new SqlParameter("@StoreId", StoreId), new SqlParameter("@CategoryId", CategoryId) });
 
             while (reader.Read())
             {
@@ -123,7 +125,7 @@ namespace DealDunia.Domain.Concrete
             List<DailyDeals> deals = new List<DailyDeals>();
             DailyDeals deal = null;
 
-            SqlDataReader reader = SqlHelper.ExecuteReader("Data Source=.;Initial Catalog=Ecom;Integrated Security=True", CommandType.StoredProcedure, "dbo.GetDailyDeals", new SqlParameter[] { new SqlParameter("@StoreId", StoreId == 0 ? 0 : StoreId) });
+            SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetDailyDeals", new SqlParameter[] { new SqlParameter("@StoreId", StoreId == 0 ? 0 : StoreId) });
 
             while (reader.Read())
             {
