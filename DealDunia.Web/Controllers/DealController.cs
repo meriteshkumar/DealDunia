@@ -24,5 +24,12 @@ namespace DealDunia.Web.Controllers
             return View(deals);
         }
 
+        public ActionResult Exclusive()
+        {
+            var deals = repository.ExecutiveDeals(0, 0);
+
+            return View(deals);
+        }
+
     }
 }
