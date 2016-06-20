@@ -9,7 +9,7 @@ namespace DealDunia.Domain.Abstract
        IEnumerable<Category> Menus { get; }
        IEnumerable<Category> TopCategory { get; }
        IEnumerable<Category> SubCategory(int CategoryId, string CategoryName);
-       IEnumerable<ExecutiveDeals> ExecutiveDeals(int StoreId, int CategoryId);
-       IEnumerable<DailyDeals> DailyDeals(int StoreId);
+       IEnumerable<ExecutiveDeals> ExecutiveDeals(int StoreId, int CategoryId, string StoreName = null, string CategoryName = null);
+       IEnumerable<DailyDeals> DailyDeals(int StoreId, string StoreName = null);
     }
 }

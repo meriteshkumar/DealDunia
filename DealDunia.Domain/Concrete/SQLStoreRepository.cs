@@ -98,12 +98,17 @@ namespace DealDunia.Domain.Concrete
             return categories;
         }
 
-        public IEnumerable<ExecutiveDeals> ExecutiveDeals(int StoreId, int CategoryId)
+        public IEnumerable<ExecutiveDeals> ExecutiveDeals(int StoreId, int CategoryId, string StoreName = null, string CategoryName = null)
         {
             List<ExecutiveDeals> deals = new List<ExecutiveDeals>();
             ExecutiveDeals deal = null;
 
-            SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetExcDeals", new SqlParameter[] { new SqlParameter("@StoreId", StoreId), new SqlParameter("@CategoryId", CategoryId) });
+            SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetExcDeals",
+                        new SqlParameter[] { 
+                            new SqlParameter("@StoreId", StoreId)
+                        ,   new SqlParameter("@CategoryId", CategoryId) 
+                        ,   new SqlParameter("@StoreName", StoreName)
+                        ,   new SqlParameter("@CategoryName", CategoryName)});
 
             while (reader.Read())
             {
@@ -120,12 +125,15 @@ namespace DealDunia.Domain.Concrete
             return deals;
         }
 
-        public IEnumerable<DailyDeals> DailyDeals(int StoreId)
+        public IEnumerable<DailyDeals> DailyDeals(int StoreId, string StoreName = null)
         {
             List<DailyDeals> deals = new List<DailyDeals>();
             DailyDeals deal = null;
 
-            SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetDailyDeals", new SqlParameter[] { new SqlParameter("@StoreId", StoreId == 0 ? 0 : StoreId) });
+            SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetDailyDeals",
+                new SqlParameter[] { 
+                    new SqlParameter("@StoreId", StoreId == 0 ? 0 : StoreId)
+                ,   new SqlParameter("@StoreName", StoreName)});
 
             while (reader.Read())
             {

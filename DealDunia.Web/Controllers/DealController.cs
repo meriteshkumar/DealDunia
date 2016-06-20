@@ -31,5 +31,14 @@ namespace DealDunia.Web.Controllers
             return View(deals);
         }
 
+        public ActionResult Store(string store)
+        {
+            var selectedStore = repository.Stores.Where(s => s.StoreName.ToUpper() == store.ToUpper()).SingleOrDefault();
+
+            selectedStore.ExclusiveDeals = repository.ExecutiveDeals(0, 0, selectedStore.StoreName).ToList();
+            selectedStore.DailyDeals = repository.DailyDeals(0, selectedStore.StoreName).ToList();
+
+            return View(selectedStore);
+        }
     }
 }

@@ -14,6 +14,12 @@ namespace DealDunia.Web
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "Store",
+                url: "store/{store}",
+                defaults: new { controller = "Deal", action = "Store" }
+            );
+
+            routes.MapRoute(
                 name: "Exclusive",
                 url: "exclusive-deals",
                 defaults: new { controller = "Deal", action = "Exclusive" }

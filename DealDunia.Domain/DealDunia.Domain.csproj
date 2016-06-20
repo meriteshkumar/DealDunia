@@ -49,6 +49,8 @@
     <Compile Include="Concrete\FlipkartRepository.cs" />
     <Compile Include="Concrete\SQLStoreRepository.cs" />
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\DailyDeals.cs" />
+    <Compile Include="Entities\ExecutiveDeals.cs" />
     <Compile Include="Entities\Store.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SQLHelper.cs" />
