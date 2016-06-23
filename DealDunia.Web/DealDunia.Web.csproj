@@ -122,6 +122,7 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\DealController.cs" />
     <Compile Include="Controllers\NavController.cs" />
+    <Compile Include="Controllers\OfferController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -239,6 +240,7 @@
     <Content Include="Views\Deal\Store.cshtml" />
     <Content Include="Views\Shared\ExclusiveDeal.cshtml" />
     <Content Include="Views\Shared\DailyDeal.cshtml" />
+    <Content Include="Views\Offer\Coupon.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
