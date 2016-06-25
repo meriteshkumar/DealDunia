@@ -26,7 +26,7 @@ namespace DealDunia.Web.Controllers
 
             ViewBag.ShowBrowse = 1;
 
-            var categories = repository.SubCategory(0, level1);
+            var categories = repository.Menus(level1);
 
             return View("BrowseCategory", categories);
         }

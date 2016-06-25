@@ -35,28 +35,26 @@ namespace DealDunia.Domain.Concrete
 
         }
 
-        public IEnumerable<Category> Menus
+        public IEnumerable<Category> Menus(string CategoryName)
         {
-            get
+            List<Category> categories = new List<Category>();
+            Category category = null;
+
+            SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetMenu", new SqlParameter[] { 
+                    new SqlParameter("@CategoryName", string.IsNullOrEmpty(CategoryName) ? null : CategoryName)});
+
+            while (reader.Read())
             {
-                List<Category> categories = new List<Category>();
-                Category category = null;
-
-                SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetMenu");
-
-                while (reader.Read())
-                {
-                    category = new Category();
-                    category.CategoryId = (int)((IDataRecord)reader)["CategoryId"];
-                    category.CategoryName = ((IDataRecord)reader)["CategoryName"].ToString();
-                    category.Image = ((IDataRecord)reader)["Image"].ToString();
-                    category.RootId = (int)((IDataRecord)reader)["RootId"];
-                    category.ParentId = (int)((IDataRecord)reader)["ParentId"];
-                    category.Level = Convert.ToInt16(((IDataRecord)reader)["Level"]);
-                    categories.Add(category);
-                }
-                return categories;
+                category = new Category();
+                category.CategoryId = (int)((IDataRecord)reader)["CategoryId"];
+                category.CategoryName = ((IDataRecord)reader)["CategoryName"].ToString();
+                category.Image = ((IDataRecord)reader)["Image"].ToString();
+                category.RootId = (int)((IDataRecord)reader)["RootId"];
+                category.ParentId = (int)((IDataRecord)reader)["ParentId"];
+                category.Level = Convert.ToInt16(((IDataRecord)reader)["Level"]);
+                categories.Add(category);
             }
+            return categories;
         }
 
         public IEnumerable<Category> TopCategory

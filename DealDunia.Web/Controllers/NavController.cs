@@ -19,7 +19,7 @@ namespace DealDunia.Web.Controllers
 
         public PartialViewResult Menu(string position)
         {
-            var categories = repository.Menus.Distinct();
+            var categories = repository.Menus(null).Distinct();
 
             if (position.ToUpper() == "HEADER")
                 return PartialView("Menu", categories);

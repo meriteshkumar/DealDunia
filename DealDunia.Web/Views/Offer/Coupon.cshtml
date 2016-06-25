@@ -4,29 +4,23 @@
 
 <script>
     $(document).ready(function () {
-
-        function callbackName() {
-            alert("Hello");
-        }
-        $.ajax("https://tools.vcommission.com/api/coupons.php?apikey=4cd38b37164ca7837819c4196b1ff81fae72073a15054c60ba6a50653d97ac6d", {
+        $.ajax("https://tools.vcommission.com/api/coupons.php?apikey=4cd38b37164ca7837819c4196b1ff81fae72073a15054c60ba6a50653d97ac6d&callback=?", {
             type: "GET",
             cache: false,
             headers: {
                 'Access-Control-Allow-Origin': '*'
             },
             data: "{}",
-            contentType: "application/javascript; charset=utf-8",
+            contentType: "text/json; charset=utf-8",
             dataType: "jsonp",
             crossDomain: true,
             async: false,
-            jsonp: false,
-            jsonpCallback: "callbackName",
-            success: function (response) {
-                var coupons = response.responseText;
-                alert(coupons);
-            },
-            failure: function (msg) {
-                alert(msg);
+            jsonp: true,
+            //jsonpCallback: function () {
+            //    alert("Callback");
+            //},
+            error: function (jqXHR, textStatus, errorThrown) {
+                alert(textStatus + "----" + errorThrown);
             },
             complete: function (data) {
                 alert(data.status);
