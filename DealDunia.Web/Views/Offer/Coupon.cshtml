@@ -1,32 +1,27 @@
-﻿@{
+﻿@model IEnumerable<DealDunia.Domain.Entities.VCommissionResponse>
+
+@{
     ViewBag.Title = "Coupons & Offers";
 }
 
-<script>
-    $(document).ready(function () {
-        $.ajax("https://tools.vcommission.com/api/coupons.php?apikey=4cd38b37164ca7837819c4196b1ff81fae72073a15054c60ba6a50653d97ac6d&callback=?", {
-            type: "GET",
-            cache: false,
-            headers: {
-                'Access-Control-Allow-Origin': '*'
-            },
-            data: "{}",
-            contentType: "text/json; charset=utf-8",
-            dataType: "jsonp",
-            crossDomain: true,
-            async: false,
-            jsonp: true,
-            //jsonpCallback: function () {
-            //    alert("Callback");
-            //},
-            error: function (jqXHR, textStatus, errorThrown) {
-                alert(textStatus + "----" + errorThrown);
-            },
-            complete: function (data) {
-                alert(data.status);
-            }
-        });
-    });
-</script>
-
 <h2>Coupons & Offers</h2>
+
+<div class="container">
+    @foreach (var coupon in Model)
+    {
+        <div class="panel panel-info">
+            <div class="panel-heading"><strong>@coupon.offer_name</strong> (@coupon.coupon_title)</div>
+            <div class="panel-body">
+                <div style="float:left;">
+                    <span>@coupon.coupon_title</span><br />
+                    <span>@coupon.coupon_description</span><br />
+                    <span>Expires on @coupon.coupon_expiry</span>
+                </div>
+                <div style="float:right;">
+                    <span><a target="_blank" href="@coupon.link">@coupon.coupon_code</a></span>
+                </div>
+            </div>
+        </div>
+        <br />
+    }
+</div>
