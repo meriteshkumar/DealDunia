@@ -1,0 +1,30 @@
+﻿@model IEnumerable<DealDunia.Domain.Entities.Store>
+
+@{
+    ViewBag.Title = "Store";
+}
+
+@*<h2>@Model.StoreName</h2>*@
+
+<link href="~/css/store.css" rel="stylesheet" />
+
+<div class="row">
+    @foreach (string category in Model.Select(x => x.StoreCategoryName).Distinct())
+    {
+        <div class="panel panel-info">
+            <div class="panel-heading">@category</div>
+            <div>
+                <div class="panel-body" >
+
+                @foreach (var store in Model.Where(x => x.StoreCategoryName == category))
+                {
+                    <a href="@store.StoreURL" class="store_logo" style="width:230px;float:left;margin-right:15px;height:75px;overflow:hidden;">
+                        <img  src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" style="align-content:center" />
+                    </a>
+                }
+                     </div>
+            </div>
+        </div>
+    }
+
+</div>

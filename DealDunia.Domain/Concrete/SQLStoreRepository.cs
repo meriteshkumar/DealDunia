@@ -11,6 +11,60 @@ namespace DealDunia.Domain.Concrete
     {
         private const string _connectionString = "Data Source=.;Initial Catalog=Ecom;Integrated Security=True";
 
+        public IEnumerable<Coupon> GetCoupons(string OfferType, string OfferName, string StoreCategoryName)
+        {
+            List<Coupon> coupons = new List<Coupon>();
+            Coupon coupon = null;
+
+            SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetCoupons", new SqlParameter[] { 
+                new SqlParameter("@OfferType", string.IsNullOrEmpty(StoreCategoryName) ? null : StoreCategoryName)
+                , new SqlParameter("@OfferName", string.IsNullOrEmpty(StoreCategoryName) ? null : StoreCategoryName)
+                , new SqlParameter("@StoreCategoryName", string.IsNullOrEmpty(StoreCategoryName) ? null : StoreCategoryName)
+            });
+
+            while (reader.Read())
+            {
+                coupon = new Coupon();
+                coupon.CouponId = Convert.ToInt16(((IDataRecord)reader)["CouponId"]);
+                coupon.OfferId = Convert.ToInt16(((IDataRecord)reader)["OfferId"]);
+                coupon.OfferName = ((IDataRecord)reader)["OfferName"].ToString();
+                coupon.OfferType = ((IDataRecord)reader)["OfferType"].ToString();
+                coupon.CouponTitle = ((IDataRecord)reader)["CouponTitle"].ToString();
+                coupon.Category = ((IDataRecord)reader)["Category"].ToString();
+                coupon.Description = ((IDataRecord)reader)["Description"].ToString();
+                coupon.CouponCode = ((IDataRecord)reader)["CouponCode"].ToString();
+                coupon.OfferURL = ((IDataRecord)reader)["OfferURL"].ToString();
+                coupon.CouponExpiry = ((IDataRecord)reader)["CouponExpiry"].ToString();
+                coupon.StoreImage = ((IDataRecord)reader)["StoreImage"].ToString();
+                coupon.StoreURL = ((IDataRecord)reader)["StoreURL"].ToString();
+                                                
+                coupons.Add(coupon);
+            }
+            return coupons;
+        }
+
+        public IEnumerable<Store> StoresByCategory(string StoreCategoryName)
+        {            
+            List<Store> stores = new List<Store>();
+            Store store = null;
+
+            SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetStoreByCategories", new SqlParameter[] { 
+                new SqlParameter("@StoreCategoryName", string.IsNullOrEmpty(StoreCategoryName) ? null : StoreCategoryName)});
+
+            while (reader.Read())
+            {
+                store = new Store();
+                store.StoreId = Convert.ToInt16(((IDataRecord)reader)["StoreId"]);
+                store.StoreName = ((IDataRecord)reader)["StoreName"].ToString();
+                store.StoreURL = ((IDataRecord)reader)["StoreURL"].ToString();
+                store.StoreImage = ((IDataRecord)reader)["StoreImage"].ToString();
+                store.StoreCategoryName = ((IDataRecord)reader)["StoreCategoryName"].ToString();
+                //store.AffiliateId = ((IDataRecord)reader)["AffiliateId"].ToString();
+                stores.Add(store);
+            }
+            return stores;
+        }
+
         public IEnumerable<Store> Stores
         {
             get
@@ -26,8 +80,8 @@ namespace DealDunia.Domain.Concrete
                     store.StoreId = Convert.ToInt16(((IDataRecord)reader)["StoreId"]);
                     store.StoreName = ((IDataRecord)reader)["StoreName"].ToString();
                     store.StoreImage = ((IDataRecord)reader)["StoreImage"].ToString();
-                    store.Affiliate = (bool)((IDataRecord)reader)["Affiliate"];
-                    store.AffiliateId = ((IDataRecord)reader)["AffiliateId"].ToString();
+                    //store.Affiliate = (bool)((IDataRecord)reader)["Affiliate"];
+                    //store.AffiliateId = ((IDataRecord)reader)["AffiliateId"].ToString();
                     stores.Add(store);
                 }
                 return stores;

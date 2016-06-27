@@ -1,4 +1,5 @@
-﻿@model IEnumerable<DealDunia.Domain.Entities.VCommissionResponse>
+﻿@*@model IEnumerable<DealDunia.Domain.Entities.VCommissionResponse>*@
+@model IEnumerable<DealDunia.Domain.Entities.Coupon>
 
 @{
     ViewBag.Title = "Coupons & Offers";
@@ -7,15 +8,15 @@
 <h2>Coupons & Offers</h2>
 
 <div class="container">
-    @foreach (var coupon in Model)
+    @*  @foreach (var coupon in Model)
     {
         <div class="panel panel-info">
             <div class="panel-heading"><strong>@coupon.offer_name</strong> (@coupon.coupon_title)</div>
             <div class="panel-body">
                 <div style="float:left;">
-                    <span>@coupon.coupon_title</span><br />
+                    <b><span>@coupon.coupon_title</span></b><br />
                     <span>@coupon.coupon_description</span><br />
-                    <span>Expires on @coupon.coupon_expiry</span>
+                    <span><b>Expires on </b>@coupon.coupon_expiry</span>
                 </div>
                 <div style="float:right;">
                     <span><a target="_blank" href="@coupon.link">@coupon.coupon_code</a></span>
@@ -23,5 +24,30 @@
             </div>
         </div>
         <br />
+    }*@
+
+    @foreach (var coupon in Model)
+    {
+        <div class="panel panel-info">
+            <div class="panel-heading"><strong>@coupon.OfferName</strong> (@coupon.CouponTitle)</div>
+            <div class="panel-body">
+                <div style="float: left;">
+                    <a href="@coupon.StoreURL">
+                        <img  src="@Url.Content("~/Images/" + coupon.StoreImage)" alt="@coupon.OfferName"/>
+                    </a>
+                </div>
+                <div>
+                    <b><span>@coupon.CouponTitle</span></b><br />
+                    <span>@coupon.Description</span><br />
+                    <span><b>Expires on </b>@coupon.CouponExpiry</span>
+                </div>
+                <div style="float: right;">
+                    <span><a target="_blank" href="@coupon.OfferURL">@coupon.CouponCode</a></span>
+                </div>
+
+            </div>
+        </div>
+        <br />
     }
+
 </div>

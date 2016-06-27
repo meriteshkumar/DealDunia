@@ -124,6 +124,7 @@
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\OfferController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -139,6 +140,7 @@
     <Content Include="Content\Books.xml" />
     <Content Include="Content\Electronics.xml" />
     <Content Include="Content\Flipkart.xml" />
+    <Content Include="css\store.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -336,6 +338,8 @@
     <Content Include="Views\Shared\ExclusiveDeal.cshtml" />
     <Content Include="Views\Shared\DailyDeal.cshtml" />
     <Content Include="Views\Offer\Coupon.cshtml" />
+    <Content Include="Views\Shared\Stores.cshtml" />
+    <Content Include="Views\Shared\CouponStores.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
