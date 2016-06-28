@@ -11,21 +11,32 @@ namespace DealDunia.Domain.Concrete
     {
         private const string _connectionString = "Data Source=.;Initial Catalog=Ecom;Integrated Security=True";
 
+        public void UpdateVCOMCoupons(String Source, DataTable dt)
+        {
+            if (Source == "VCOM")
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@Coupons", dt);
+                sqlParam[0].SqlDbType = SqlDbType.Structured;                
+                SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "dbo.UpdateVCOMCoupons", sqlParam);
+            }
+        }
+
         public IEnumerable<Coupon> GetCoupons(string OfferType, string OfferName, string StoreCategoryName)
         {
             List<Coupon> coupons = new List<Coupon>();
             Coupon coupon = null;
 
             SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetCoupons", new SqlParameter[] { 
-                new SqlParameter("@OfferType", string.IsNullOrEmpty(StoreCategoryName) ? null : StoreCategoryName)
-                , new SqlParameter("@OfferName", string.IsNullOrEmpty(StoreCategoryName) ? null : StoreCategoryName)
+                new SqlParameter("@OfferType", string.IsNullOrEmpty(OfferType) ? null : OfferType)
+                , new SqlParameter("@OfferName", string.IsNullOrEmpty(OfferName) ? null : OfferName)
                 , new SqlParameter("@StoreCategoryName", string.IsNullOrEmpty(StoreCategoryName) ? null : StoreCategoryName)
             });
 
             while (reader.Read())
             {
                 coupon = new Coupon();
-                coupon.CouponId = Convert.ToInt16(((IDataRecord)reader)["CouponId"]);
+                //coupon.CouponId = Convert.ToInt16(((IDataRecord)reader)["CouponId"]);
                 coupon.OfferId = Convert.ToInt16(((IDataRecord)reader)["OfferId"]);
                 coupon.OfferName = ((IDataRecord)reader)["OfferName"].ToString();
                 coupon.OfferType = ((IDataRecord)reader)["OfferType"].ToString();

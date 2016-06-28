@@ -8,7 +8,7 @@ namespace DealDunia.Domain.Entities
 {
     public class Coupon
     {
-        public int CouponId { get; set; }        
+        //public int CouponId { get; set; }        
         public int OfferId { get; set; }
         public string OfferName { get; set; }
         public string OfferType { get; set; }
@@ -25,5 +25,7 @@ namespace DealDunia.Domain.Entities
         //public string store_link { get; set; }
         public string StoreImage { get; set; }
         public string StoreURL { get; set; }
+        public string Featured { get; set; }
+        public string Exclusive { get; set; }
     }
 }

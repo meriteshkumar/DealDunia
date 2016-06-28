@@ -9,7 +9,7 @@ namespace DealDunia.Domain.Entities
     public class VCommissionResponse
     {
         public string featured { get; set; }
-        public object exclusive { get; set; }
+        public string exclusive { get; set; }
         public string promo_id { get; set; }
         public int offer_id { get; set; }
         public string offer_name { get; set; }

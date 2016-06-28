@@ -30,6 +30,7 @@
     {
         <div class="panel panel-info">
             <div class="panel-heading"><strong>@coupon.OfferName</strong> (@coupon.CouponTitle)</div>
+
             <div class="panel-body">
                 <div style="float: left;">
                     <a href="@coupon.StoreURL">
@@ -37,15 +38,22 @@
                     </a>
                 </div>
                 <div>
-                    <b><span>@coupon.CouponTitle</span></b><br />
-                    <span>@coupon.Description</span><br />
-                    <span><b>Expires on </b>@coupon.CouponExpiry</span>
+                    <b><span>@coupon.CouponTitle</span></b>
                 </div>
                 <div style="float: right;">
-                    <span><a target="_blank" href="@coupon.OfferURL">@coupon.CouponCode</a></span>
+                    <span><a target="_blank" href="@coupon.OfferURL">@if (@coupon.OfferType == "Coupon")
+                                                                     { @coupon.CouponCode;
+                                                                     }
+                                                                     else
+                                                                     { <span>GRAB OFFER</span>} </a></span>
+                    <br />
+                    <span><b>Expires on </b>@coupon.CouponExpiry</span>
+                </div>                
+                <div style="float: left;">
+                    <span>@coupon.Description</span>
                 </div>
-
             </div>
+
         </div>
         <br />
     }

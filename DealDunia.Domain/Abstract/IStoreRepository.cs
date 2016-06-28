@@ -1,5 +1,6 @@
 ﻿using DealDunia.Domain.Entities;
 using System.Collections.Generic;
+using System.Data;
 
 namespace DealDunia.Domain.Abstract
 {
@@ -13,5 +14,6 @@ namespace DealDunia.Domain.Abstract
        IEnumerable<DailyDeals> DailyDeals(int StoreId, string StoreName = null);
        IEnumerable<Store> StoresByCategory(string StoreCategoryName);
        IEnumerable<Coupon> GetCoupons(string OfferType, string OfferName, string StoreCategoryName);
+       void UpdateVCOMCoupons(string Source, DataTable dt);
     }
 }
