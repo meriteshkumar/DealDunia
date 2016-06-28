@@ -56,7 +56,9 @@ namespace DealDunia.Web.Controllers
             level2 = DealDunia.Infrastructure.Utility.Utilities.DecodeUrl(level2);
             level3 = DealDunia.Infrastructure.Utility.Utilities.DecodeUrl(level3);
 
-            return View("Index");
+            ViewBag.SearchedItem = level3;
+
+            return View("Tags");
         }
 
     }

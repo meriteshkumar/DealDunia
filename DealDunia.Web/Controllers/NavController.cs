@@ -74,5 +74,12 @@ namespace DealDunia.Web.Controllers
 
             return PartialView(response);
         }
+
+        public PartialViewResult LeftSideBar()
+        {
+            var coupons = repository.GetCouponStoreCategories();
+
+            return PartialView(coupons);
+        }
     }
 }

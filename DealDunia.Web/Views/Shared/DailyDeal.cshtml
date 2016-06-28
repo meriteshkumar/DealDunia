@@ -5,10 +5,11 @@
 @foreach (var deal in Model)
 {
     <div class="panel panel-info">
-        <div class="panel-heading">@deal.Description</div>
+        <div class="panel-heading">@deal.Title</div>
         <div class="panel-body">
             <a href="@deal.URL" target="_blank">
                 <img src="@Url.Content("~/Images/" + deal.Image)"/></a>
+            @deal.Description
         </div>
     </div>
     <br />

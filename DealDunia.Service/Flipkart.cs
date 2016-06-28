@@ -18,7 +18,7 @@ namespace DealDunia.Service
         {
             try
             {
-                String requestUrl = string.Format("{0}?query={1}&resultCount={2}", API_URL, requestParams.Keywords, "10");
+                String requestUrl = string.Format("{0}?query={1}&resultCount={2}", API_URL, requestParams.Keywords, "50");
 
                 WebRequest request = HttpWebRequest.Create(requestUrl);
                 request.Headers.Add("Fk-Affiliate-Id", AFFILIATE_ID);

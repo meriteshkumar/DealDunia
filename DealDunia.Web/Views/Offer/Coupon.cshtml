@@ -7,8 +7,8 @@
 
 <h2>Coupons & Offers</h2>
 
-<div class="container">
-    @*  @foreach (var coupon in Model)
+@*<div>
+      @foreach (var coupon in Model)
     {
         <div class="panel panel-info">
             <div class="panel-heading"><strong>@coupon.offer_name</strong> (@coupon.coupon_title)</div>
@@ -26,7 +26,37 @@
         <br />
     }*@
 
-    @foreach (var coupon in Model)
+@foreach (string OfferName in Model.Select(x => x.OfferName).Distinct())
+{
+    <div class="panel-info">
+        <div class="panel-heading">
+            <img alt="@OfferName" src="@Url.Content("~/Images/" + @Model.Where((x => x.OfferName == OfferName)).FirstOrDefault().StoreImage)" />
+        </div>
+        @foreach (var coupon in Model.Where(x => x.OfferName == OfferName))
+        {
+            <div>
+                <b><span>@coupon.CouponTitle</span></b>
+            </div>
+            <div style="float: right;">
+                <span><a target="_blank" href="@coupon.OfferURL">@if (@coupon.OfferType == "Coupon")
+                                                                 { @coupon.CouponCode;
+                                                                 }
+                                                                 else
+                                                                 { <span>GRAB OFFER</span>} </a></span>
+                <br />
+                <span><b>Expires on </b>@coupon.CouponExpiry</span>
+                </div>
+            <div style="float: left;">
+                <span>@coupon.Description</span>
+            </div>
+            <br />
+        }
+    </div>
+}
+
+
+
+@*@foreach (var coupon in Model)
     {
         <div class="panel panel-info">
             <div class="panel-heading"><strong>@coupon.OfferName</strong> (@coupon.CouponTitle)</div>
@@ -48,7 +78,7 @@
                                                                      { <span>GRAB OFFER</span>} </a></span>
                     <br />
                     <span><b>Expires on </b>@coupon.CouponExpiry</span>
-                </div>                
+                </div>
                 <div style="float: left;">
                     <span>@coupon.Description</span>
                 </div>
@@ -58,4 +88,4 @@
         <br />
     }
 
-</div>
+</div>*@

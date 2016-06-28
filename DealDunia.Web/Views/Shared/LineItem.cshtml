@@ -4,8 +4,9 @@
 <div class="row">
     @foreach (var category in Model.Where(c => c.Level == 2))
     {
-        <div class="jumbotron col-md-4 col-lg-4 text-center" style="height:400px;">
+        <div style="float:left;margin-right:20px;margin-bottom:20px;width:207px;">
             <span><a href="@Url.RouteUrl("Level2", new { id1 = Utilities.EncodeUrl(ViewContext.RouteData.Values["id1"].ToString()), id2 = Utilities.EncodeUrl(category.CategoryName) })"><strong>@category.CategoryName</strong></a></span>
+            <br />
             <a href="@Url.RouteUrl("Level2", new { id1 = Utilities.EncodeUrl(ViewContext.RouteData.Values["id1"].ToString()), id2 = Utilities.EncodeUrl(category.CategoryName) })">
                 <img src="@Url.Content("~/Images/" + category.Image)" alt="@category.CategoryName" /></a>
             <br />

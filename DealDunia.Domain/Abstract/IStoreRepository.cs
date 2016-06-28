@@ -15,5 +15,6 @@ namespace DealDunia.Domain.Abstract
        IEnumerable<Store> StoresByCategory(string StoreCategoryName);
        IEnumerable<Coupon> GetCoupons(string OfferType, string OfferName, string StoreCategoryName);
        void UpdateVCOMCoupons(string Source, DataTable dt);
+       IEnumerable<string> GetCouponStoreCategories();
     }
 }

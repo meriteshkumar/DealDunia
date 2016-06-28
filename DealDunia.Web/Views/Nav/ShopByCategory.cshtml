@@ -4,7 +4,7 @@
 <div class="row">
     @foreach (var category in Model)
     {
-        <div class="jumbotron col-md-4 col-lg-4 text-center">
+        <div class="text-center" style="float:left;margin-right:40px;margin-bottom:20px;">
             <a href="@Url.RouteUrl("Level1", new { id1 = Utilities.EncodeUrl(category.CategoryName) })">
                 <img src="@Url.Content("~/Images/" + category.Image)" alt="@category.CategoryName" /></a>
             <br />

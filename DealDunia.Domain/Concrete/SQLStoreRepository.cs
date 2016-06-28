@@ -17,7 +17,7 @@ namespace DealDunia.Domain.Concrete
             {
                 SqlParameter[] sqlParam = new SqlParameter[1];
                 sqlParam[0] = new SqlParameter("@Coupons", dt);
-                sqlParam[0].SqlDbType = SqlDbType.Structured;                
+                sqlParam[0].SqlDbType = SqlDbType.Structured;
                 SqlHelper.ExecuteNonQuery(_connectionString, CommandType.StoredProcedure, "dbo.UpdateVCOMCoupons", sqlParam);
             }
         }
@@ -48,14 +48,14 @@ namespace DealDunia.Domain.Concrete
                 coupon.CouponExpiry = ((IDataRecord)reader)["CouponExpiry"].ToString();
                 coupon.StoreImage = ((IDataRecord)reader)["StoreImage"].ToString();
                 coupon.StoreURL = ((IDataRecord)reader)["StoreURL"].ToString();
-                                                
+
                 coupons.Add(coupon);
             }
             return coupons;
         }
 
         public IEnumerable<Store> StoresByCategory(string StoreCategoryName)
-        {            
+        {
             List<Store> stores = new List<Store>();
             Store store = null;
 
@@ -210,6 +210,19 @@ namespace DealDunia.Domain.Concrete
                 deals.Add(deal);
             }
             return deals;
+        }
+
+        public IEnumerable<string> GetCouponStoreCategories()
+        {
+            List<string> coupons = new List<string>();
+
+            SqlDataReader reader = SqlHelper.ExecuteReader(_connectionString, CommandType.StoredProcedure, "dbo.GetCouponStoreCategories");
+
+            while (reader.Read())
+            {
+                coupons.Add(reader.GetString(0));
+            }
+            return coupons;
         }
     }
 }

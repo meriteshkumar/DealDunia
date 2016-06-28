@@ -323,7 +323,7 @@
     <Content Include="Scripts\jquery-2.2.3.min.map" />
     <Content Include="Views\Nav\Menu.cshtml" />
     <Content Include="Views\Nav\ShopByStore.cshtml" />
-    <Content Include="Views\Product\Tags.cshtml" />
+    <Content Include="Views\Shared\Tags.cshtml" />
     <Content Include="Views\Nav\ShopByCategory.cshtml" />
     <Content Include="Views\Category\BrowseCategory.cshtml" />
     <Content Include="Views\Shared\LineItem.cshtml" />
@@ -340,10 +340,12 @@
     <Content Include="Views\Offer\Coupon.cshtml" />
     <Content Include="Views\Shared\Stores.cshtml" />
     <Content Include="Views\Shared\CouponStores.cshtml" />
+    <Content Include="Views\Nav\LeftSidebar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
