@@ -1,12 +1,13 @@
 ﻿@model IEnumerable<string>
-<h5><a href="@Url.Action("Daily", "Deal")">Daily Deals</a></h5>
-<h5><a href="@Url.Action("Exclusive", "Deal")">Exclusive Deals</a></h5>
-<h5><a href="@Url.Action("Stores", "Store")">Online Stores</a></h5>
+<br />
 
-<h5>Coupons & Promotions</h5>
+<ul class="list-group"><a href="@Url.Action("Daily", "Deal")">Daily Deals</a></ul>
+<ul class="list-group"><a href="@Url.Action("Exclusive", "Deal")">Exclusive Deals</a></ul>
+<ul class="list-group"><a href="@Url.Action("Stores", "Store")">Online Stores</a></ul>
 <ul class="list-group">
+    Coupons & Promotions
     @foreach (var coupon in Model)
     {
-        <li class="list-group-item"><a href="@Url.RouteUrl("CouponsByCategory", new { Category = @coupon })">@coupon</a></li>
+        <li class="list-group-item"><a href="@Url.RouteUrl("CouponsByCategory", new { Category = @coupon.Replace("&","and")})">@coupon</a></li>
     }
 </ul>

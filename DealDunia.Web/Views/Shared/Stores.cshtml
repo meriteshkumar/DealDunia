@@ -14,15 +14,14 @@
         <div class="panel panel-info">
             <div class="panel-heading">@category</div>
             <div>
-                <div class="panel-body" >
-
-                @foreach (var store in Model.Where(x => x.StoreCategoryName == category))
-                {
-                    <a href="@store.StoreURL" class="store_logo" style="width:230px;float:left;margin-right:15px;height:75px;overflow:hidden;">
-                        <img  src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" style="align-content:center" />
-                    </a>
-                }
-                     </div>
+                <div class="panel-body">
+                    @foreach (var store in Model.Where(x => x.StoreCategoryName == category))
+                    {
+                        <a href="@store.StoreURL" class="store_logo" style="width:100px;float:left;margin-right:34px;height:75px;overflow:hidden;" target="_blank">
+                            <img  src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" style="align-content:center" />
+                        </a>
+                    }
+                </div>
             </div>
         </div>
     }

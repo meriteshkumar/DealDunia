@@ -11,3 +11,19 @@
     -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;
     box-shadow: 0 1px 4px rgba(0,0,0,0.3),0 0 40px rgba(0,0,0,0.1) inset;
 }
+
+.divBox
+{
+   float: left;
+   height:auto;
+   width:200px;
+   margin-top:10px;
+   margin-bottom:10px;
+   text-align:center;
+}
+
+.imgDivBox
+{
+    height:90%;
+    width:90%;
+}

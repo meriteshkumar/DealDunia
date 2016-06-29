@@ -30,10 +30,11 @@ namespace DealDunia.Service
                 r1["Version"] = Version;
                 r1["SubscriptionId"] = SubscriptionId;
                 r1["AssociateTag"] = AssociateTag;
-                r1["Operation"] = requestParams.Operation;
+                r1["Operation"] = requestParams.Operation;                
                 r1["SearchIndex"] = requestParams.SearchIndex;
                 r1["ResponseGroup"] = requestParams.ResponseGroup;
-                r1["Keywords"] = requestParams.Keywords;
+                r1["Keywords"] = requestParams.Keywords;                
+                r1["ItemPage"] = "1";
 
                 requestUrl = helper.Sign(r1);
 

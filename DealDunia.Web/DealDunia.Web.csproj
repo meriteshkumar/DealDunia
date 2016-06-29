@@ -140,7 +140,7 @@
     <Content Include="Content\Books.xml" />
     <Content Include="Content\Electronics.xml" />
     <Content Include="Content\Flipkart.xml" />
-    <Content Include="css\store.css" />
+    <Content Include="css\Style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -194,12 +194,13 @@
     <Content Include="Images\Categories\Women\Footwear.png" />
     <Content Include="Images\Categories\Women\Pre_Jewel.png" />
     <Content Include="Images\NoImage.png" />
+    <Content Include="Images\Stores\1mglabs\1mglabs.jpg" />
     <Content Include="Images\Stores\1mg\1mg.jpg" />
     <Content Include="Images\Stores\Abof\Abof.png" />
     <Content Include="Images\Stores\Ace2three\Ace2three.jpg" />
+    <Content Include="Images\Stores\Airtel\Airtel.jpg" />
     <Content Include="Images\Stores\Ajio\Ajio.jpg" />
     <Content Include="Images\Stores\Amazon\Amazon.jpg" />
-    <Content Include="Images\Stores\Amazon\Amazon.png" />
     <Content Include="Images\Stores\Amazon\DailyDeals.png" />
     <Content Include="Images\Stores\Amazon\Diapers.png" />
     <Content Include="Images\Stores\Amazon\Laptops.png" />
@@ -212,6 +213,7 @@
     <Content Include="Images\Stores\Biba\Biba.jpg" />
     <Content Include="Images\Stores\BlueStone\BlueStone.jpg" />
     <Content Include="Images\Stores\BookMyFlowers\BookMyFlowers.jpg" />
+    <Content Include="Images\Stores\CampusSutra\CampusSutra.jpg" />
     <Content Include="Images\Stores\Chumbak\Chumbak.png" />
     <Content Include="Images\Stores\Clovia\Clovia.jpg" />
     <Content Include="Images\Stores\Coke2Home\Coke2Home.png" />
@@ -220,6 +222,7 @@
     <Content Include="Images\Stores\DailyObjects\DailyObjects.jpg" />
     <Content Include="Images\Stores\Dominos\Dominos.jpg" />
     <Content Include="Images\Stores\eBay\eBay.jpg" />
+    <Content Include="Images\Stores\Evok\Evok.jpg" />
     <Content Include="Images\Stores\ExcitingLives\ExcitingLives.jpg" />
     <Content Include="Images\Stores\Expedia\Expedia.jpg" />
     <Content Include="Images\Stores\Faasos\Faasos.jpg" />
@@ -233,6 +236,7 @@
     <Content Include="Images\Stores\Flipkart\DailyDeals.png" />
     <Content Include="Images\Stores\Flipkart\Flipkart.jpg" />
     <Content Include="Images\Stores\FlowerAura\FlowerAura.png" />
+    <Content Include="Images\Stores\FlyingMachine\FlyingMachine.jpg" />
     <Content Include="Images\Stores\Fnp\fnp.jpg" />
     <Content Include="Images\Stores\FoodPanda\FoodPanda.jpg" />
     <Content Include="Images\Stores\FreeCharge\Freecharge.jpg" />
@@ -248,7 +252,9 @@
     <Content Include="Images\Stores\Homeshop18\homeshop18.jpg" />
     <Content Include="Images\Stores\Hopscotch\Hopscotch.jpg" />
     <Content Include="Images\Stores\Hotels\Hotels.jpg" />
+    <Content Include="Images\Stores\HouseFull\HouseFull.jpg" />
     <Content Include="Images\Stores\IndianGiftsPortal\IndianGiftsPortal.jpg" />
+    <Content Include="Images\Stores\IndiaReads\IndiaReads.jpg" />
     <Content Include="Images\Stores\IndiaTimesShop\IndiaTimesShop.jpg" />
     <Content Include="Images\Stores\IndustryBuying\IndustryBuying.jpg" />
     <Content Include="Images\Stores\Infibeam\DailyDeals.jpg" />
@@ -256,6 +262,8 @@
     <Content Include="Images\Stores\Jabong\Jabong.jpg" />
     <Content Include="Images\Stores\Jazzmyride\Jazzmyride.jpg" />
     <Content Include="Images\Stores\Just-Eat\Just-Eat.jpg" />
+    <Content Include="Images\Stores\Kazo\kazo.jpg" />
+    <Content Include="Images\Stores\KFC\KFC.jpg" />
     <Content Include="Images\Stores\Koovs\koovs.jpg" />
     <Content Include="Images\Stores\LensKart\LensKart.jpg" />
     <Content Include="Images\Stores\LimeRoad\LimeRoad.jpg" />
@@ -263,6 +271,7 @@
     <Content Include="Images\Stores\LittleApp\LittleApp.jpg" />
     <Content Include="Images\Stores\Makemytrip\Makemytrip.png" />
     <Content Include="Images\Stores\Mobikwik\Mobikwik.jpg" />
+    <Content Include="Images\Stores\Montecarlo\Montecarlo.jpg" />
     <Content Include="Images\Stores\MyBusTickets\MyBusTickets.jpg" />
     <Content Include="Images\Stores\MyFlowerTree\MyFlowerTree.jpg" />
     <Content Include="Images\Stores\Myntra\Myntra.png" />
@@ -281,6 +290,7 @@
     <Content Include="Images\Stores\SendMyGift\SendMyGift.jpg" />
     <Content Include="Images\Stores\Shopcj\Shopcj.jpg" />
     <Content Include="Images\Stores\Shopclues\shopclues.jpg" />
+    <Content Include="Images\Stores\Shopnineteen\Shopnineteen.jpg" />
     <Content Include="Images\Stores\ShoppersStop\ShoppersStop.jpg" />
     <Content Include="Images\Stores\ShoppersStop\Shoppersstop.png" />
     <Content Include="Images\Stores\SmileDrive\SmileDrive.jpg" />
@@ -288,6 +298,8 @@
     <Content Include="Images\Stores\Snapdeal\Snapdeal.jpg" />
     <Content Include="Images\Stores\Snapdeal\Snapdeal.png" />
     <Content Include="Images\Stores\Stalkbuylove\Stalkbuylove.jpg" />
+    <Content Include="Images\Stores\Suratdiamond\Suratdiamond.jpg" />
+    <Content Include="Images\Stores\Ticketgoose\Ticketgoose.jpg" />
     <Content Include="Images\Stores\Tolexo\Tolexo.png" />
     <Content Include="Images\Stores\TravelKhana\TravelKhana.jpg" />
     <Content Include="Images\Stores\TrendIn\TrendIn.jpg" />

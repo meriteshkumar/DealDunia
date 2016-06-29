@@ -1,13 +1,14 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.ExecutiveDeals>
-
+<link href="~/css/Style.css" rel="stylesheet" />
 <div class="row">
     @foreach (var deal in Model)
     {
-        <div class="text-center" style="float:left;margin-right:40px;margin-bottom:20px;">
-            <a href="@deal.URL"  target="_blank">
-                <img src="@Url.Content("~/Images/" + deal.Image)" alt="@deal.Description" /></a>
-            <br />
-            <span><a href="@deal.URL" target="_blank"><strong>@deal.Title</strong></a></span>
+        <div class="divBox">
+            <a href="@deal.URL" target="_blank">
+                <img src="@Url.Content("~/Images/" + deal.Image)" alt="@deal.Description" class="imgDivBox "/>
+                <br />
+                <strong>@deal.Title</strong>
+            </a>
         </div>
     }
 </div>

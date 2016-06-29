@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DealDunia.Domain.Entities
 {
-    public class VCommissionResponse
+    public class VCOMCoupons
     {
         public string featured { get; set; }
         public string exclusive { get; set; }

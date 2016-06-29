@@ -5,14 +5,21 @@
 @foreach (var deal in Model)
 {
     <div class="panel panel-info">
-        <div class="panel-heading">@deal.Title</div>
+        @*<div class="panel-heading">@deal.Title</div>*@
         <div class="panel-body">
-            <a href="@deal.URL" target="_blank">
-                <img src="@Url.Content("~/Images/" + deal.Image)"/></a>
-            @deal.Description
+            <table>
+                <tr>
+                    <td style="width:280px">
+                        <a href="@deal.URL" target="_blank">
+                            <img src="@Url.Content("~/Images/" + deal.Image)"/></a>
+                    </td>
+                    <td>
+                        <a href="@deal.URL" target="_blank"><b>@deal.Title</b></a><br /><br />
+                        @deal.Description
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
     <br />
 }
-
-

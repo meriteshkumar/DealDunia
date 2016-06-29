@@ -29,14 +29,14 @@ namespace DealDunia.Web.Controllers
                 if (Source == "VCOM")
                 {
                     HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://tools.vcommission.com/api/coupons.php?apikey=4cd38b37164ca7837819c4196b1ff81fae72073a15054c60ba6a50653d97ac6d");
-                    List<VCommissionResponse> deserializedResult = null;
+                    List<VCOMCoupons> deserializedResult = null;
                     JavaScriptSerializer serializer = new JavaScriptSerializer();
                     WebResponse response = request.GetResponse();
                     using (Stream responseStream = response.GetResponseStream())
                     {
                         StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
                         string json = reader.ReadToEnd();
-                        deserializedResult = serializer.Deserialize<List<VCommissionResponse>>(json);
+                        deserializedResult = serializer.Deserialize<List<VCOMCoupons>>(json);
                         DataTable dt = new DataTable();
                         dt = Utilities.ToDataTable(deserializedResult);
                         repository.UpdateVCOMCoupons(Source, dt);
@@ -51,7 +51,7 @@ namespace DealDunia.Web.Controllers
 
         public ActionResult Coupon(string Offer, string Store, string Category)
         {
-            var coupons = repository.GetCoupons(Offer, Store, Category);
+            var coupons = repository.GetCoupons(Offer, Store, Utilities.DecodeUrl(Category));
             return View(coupons);
         }
 
