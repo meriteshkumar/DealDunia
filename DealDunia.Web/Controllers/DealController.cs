@@ -37,6 +37,7 @@ namespace DealDunia.Web.Controllers
 
             selectedStore.ExclusiveDeals = repository.ExecutiveDeals(0, 0, selectedStore.StoreName).ToList();
             selectedStore.DailyDeals = repository.DailyDeals(0, selectedStore.StoreName).ToList();
+            selectedStore.OfferURLs = repository.GetOfferURL(selectedStore.SourceStoreId).ToList();
 
             return View(selectedStore);
         }

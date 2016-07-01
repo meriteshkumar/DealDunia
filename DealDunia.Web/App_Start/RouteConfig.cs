@@ -25,11 +25,11 @@ namespace DealDunia.Web
                 defaults: new { controller = "Offer", action = "Coupon" }
             );
 
-            routes.MapRoute(
-                name: "UpdateCoupons",
-                url: "Offer/UpdateCoupons/{Source}",
-                defaults: new { controller = "Offer", action = "UpdateCoupons" }
-            );            
+            //routes.MapRoute(
+            //    name: "UpdateCoupons",
+            //    url: "VCOM/UpdateCoupons/{Source}",
+            //    defaults: new { controller = "Offer", action = "UpdateCoupons" }
+            //);            
 
             routes.MapRoute(
                 name: "StoresByCategory",

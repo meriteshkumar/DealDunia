@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DealDunia.Domain.Entities
 {
-    public class VCOMCoupons
+    public class VCOMCoupon
     {
         public string featured { get; set; }
         public string exclusive { get; set; }
@@ -26,4 +26,19 @@ namespace DealDunia.Domain.Entities
         public bool status { get; set; }
         public string store_link { get; set; }
     }
+
+    public class VCOMStore
+    {
+        public int id { get; set; }
+        public string name { get; set; }        
+        public string expiration_date { get; set; }        
+    }
+
+    public class OfferURL
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        public string offer_url { get; set; }
+    }
+    
 }

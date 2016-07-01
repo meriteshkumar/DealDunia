@@ -9,9 +9,12 @@ namespace DealDunia.Domain.Entities
         public string StoreURL { get; set; }
         public string StoreImage { get; set; }
         public string StoreCategoryName { get; set; }
+        public int SourceStoreId { get; set; }
         //public bool Affiliate { get; set; }
         //public string AffiliateId { get; set; }
-        public List<ExecutiveDeals> ExclusiveDeals { get;  set; }
+        
         public List<DailyDeals> DailyDeals { get;  set; }
+        public List<OfferURL> OfferURLs { get; set; }
+        public List<ExecutiveDeals> ExclusiveDeals { get; set; }
     }
 }

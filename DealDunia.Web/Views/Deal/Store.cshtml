@@ -7,10 +7,14 @@
 <h2>@Model.StoreName</h2>
 
 <div>
-    <h3>Exclusive Deals</h3>
-    <hr />
-    @Html.Partial("ExclusiveDeal", Model.ExclusiveDeals)
     <h3>Daily Deals</h3>
     <hr />
     @Html.Partial("DailyDeal", Model.DailyDeals)
+    <h3>Offers</h3>
+    <hr />
+    @Html.Partial("OfferURL", Model.OfferURLs)
+    <h3>Exclusive Deals</h3>
+    <hr />
+    @Html.Partial("ExclusiveDeal", Model.ExclusiveDeals)
+    
 </div>

@@ -1,0 +1,17 @@
+﻿@model IEnumerable<DealDunia.Domain.Entities.OfferURL>
+
+
+<div class="table-responsive">
+    <table class="table-hover" style="width:100%">
+        @foreach (var offerURL in Model)
+        {    
+            <tr>
+                <td>
+                    <a href="@offerURL.offer_url" target="_blank"><b>@offerURL.name</b></a><br />
+                    <br />
+                </td>
+            </tr>
+                
+        }
+    </table>
+</div>

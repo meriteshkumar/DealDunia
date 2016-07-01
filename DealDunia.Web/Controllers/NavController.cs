@@ -5,6 +5,12 @@ using System.Linq;
 using DealDunia.Infrastructure.Abstract;
 using DealDunia.Infrastructure.Helpers;
 using System.Collections.Generic;
+using DealDunia.Domain.Entities;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Text;
 
 namespace DealDunia.Web.Controllers
 {
@@ -81,5 +87,7 @@ namespace DealDunia.Web.Controllers
 
             return PartialView(coupons);
         }
+
+       
     }
 }
