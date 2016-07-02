@@ -3,17 +3,14 @@
 }
 
 <div>
-    <h3><a href="@Url.Action("Daily", "Deal")">Daily Deals</a></h3>
     <hr />
-    @Html.Action("DailyDeals", "Nav")
-    <h3>Shop By Store</h3>
-    <hr />
-    @Html.Action("ShopByStore", "Nav")
-    <h3><a href="@Url.Action("Exclusive", "Deal")">Exclusive Deals</a></h3>
-    <hr />
-    @Html.Action("ExclusiveDeals", "Nav")
-    <h3>Shop By Category</h3>
-    <hr />
+    <h4 style="text-align: center; color:dodgerblue">FEATURED STORE</h4><hr />
+    @Html.Action("ShopByStore", "Nav")<hr />
+    <h4 style="text-align: center; color:dodgerblue"><a href="@Url.Action("Daily", "Deal")">DAILY DEALS</a></h4><hr />
+    @Html.Action("DailyDeals", "Nav")<hr />
+    <h4 style="text-align: center; color:dodgerblue"><a href="@Url.Action("Exclusive", "Deal")">EXCLUSIVE DEALS</a></h4><hr />
+    @Html.Action("ExclusiveDeals", "Nav")<hr />
+    <h4 style="text-align: center;  color:dodgerblue">CATEGORIES</h4><hr />
     @Html.Action("ShopByCategory", "Nav")
 </div>
 

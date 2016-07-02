@@ -6,24 +6,22 @@
 
 @*<h2>@Model.StoreName</h2>*@
 
-<link href="~/css/store.css" rel="stylesheet" />
+<link href="@Url.Content("~/css/store.css")" rel="stylesheet" type="text/css" />
 
-<div class="row">
-    @foreach (string category in Model.Select(x => x.StoreCategoryName).Distinct())
-    {
-        <div class="panel panel-info">
-            <div class="panel-heading">@category</div>
-            <div>
-                <div class="panel-body">
-                    @foreach (var store in Model.Where(x => x.StoreCategoryName == category))
-                    {
-                        <a href="@store.StoreURL" class="store_logo" style="width:100px;float:left;margin-right:34px;height:75px;overflow:hidden;" target="_blank">
-                            <img  src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" style="align-content:center" />
-                        </a>
-                    }
-                </div>
+@foreach (string category in Model.Select(x => x.StoreCategoryName).Distinct())
+{
+    <hr />
+    <h4 style="text-align: center;">@category</h4>
+    <hr />        
+    <div class="row">
+        @foreach (var store in Model.Where(x => x.StoreCategoryName == category))
+        {
+            <div style="float:left; margin:10px;">
+                <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
+                    <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" style="border:solid 1px; border-color:gray;"/>
+                </a>
             </div>
-        </div>
-    }
+        }
+    </div>
+}
 
-</div>
