@@ -39,7 +39,7 @@ namespace DealDunia.Domain.Concrete
             }
         }
 
-        #endregion 
+        #endregion
 
         public IEnumerable<Coupon> GetCoupons(string OfferType, string OfferName, string StoreCategoryName)
         {
@@ -182,7 +182,7 @@ namespace DealDunia.Domain.Concrete
             return categories;
         }
 
-        public IEnumerable<ExecutiveDeals> ExecutiveDeals(int StoreId, int CategoryId, string StoreName = null, string CategoryName = null)
+        public IEnumerable<ExecutiveDeals> ExecutiveDeals(int StoreId, int CategoryId, string StoreName = null, string CategoryName = null, string StoreCategoryId = null, string StoreCategoryName = null)
         {
             List<ExecutiveDeals> deals = new List<ExecutiveDeals>();
             ExecutiveDeals deal = null;
@@ -192,7 +192,9 @@ namespace DealDunia.Domain.Concrete
                             new SqlParameter("@StoreId", StoreId)
                         ,   new SqlParameter("@CategoryId", CategoryId) 
                         ,   new SqlParameter("@StoreName", StoreName)
-                        ,   new SqlParameter("@CategoryName", CategoryName)});
+                        ,   new SqlParameter("@CategoryName", CategoryName)
+                        ,  new SqlParameter("@StoreCategoryId", StoreCategoryId)
+                        ,   new SqlParameter("@StoreCategoryName", StoreCategoryName)});
 
             while (reader.Read())
             {
@@ -260,7 +262,7 @@ namespace DealDunia.Domain.Concrete
                 StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
                 string json = reader.ReadToEnd();
                 JObject data = JObject.Parse(json);
-                if(data["response"]["data"].ToString()!="[]")
+                if (data["response"]["data"].ToString() != "[]")
                 {
                     JObject offerURL = (JObject)data["response"]["data"];
                     foreach (var x in offerURL)

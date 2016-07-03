@@ -10,7 +10,7 @@ namespace DealDunia.Domain.Abstract
        IEnumerable<Category> Menus(string CategoryName);
        IEnumerable<Category> TopCategory { get; }
        IEnumerable<Category> SubCategory(int CategoryId, string CategoryName);
-       IEnumerable<ExecutiveDeals> ExecutiveDeals(int StoreId, int CategoryId, string StoreName = null, string CategoryName = null);
+       IEnumerable<ExecutiveDeals> ExecutiveDeals(int StoreId, int CategoryId, string StoreName = null, string CategoryName = null, string StoreCategoryId = null, string StoreCategoryName = null);
        IEnumerable<DailyDeals> DailyDeals(int StoreId, string StoreName = null);
        IEnumerable<Store> StoresByCategory(string StoreCategoryName);
        IEnumerable<Coupon> GetCoupons(string OfferType, string OfferName, string StoreCategoryName);
