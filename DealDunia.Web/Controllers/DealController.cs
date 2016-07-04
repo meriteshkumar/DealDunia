@@ -1,5 +1,6 @@
 ﻿using DealDunia.Domain.Abstract;
 using DealDunia.Domain.Concrete;
+using DealDunia.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,35 +11,31 @@ namespace DealDunia.Web.Controllers
 {
     public class DealController : Controller
     {
-        IStoreRepository repository;
-
         public DealController()
         {
-            this.repository = new SQLStoreRepository();
         }
 
         public ActionResult Daily()
         {
-            var deals = repository.DailyDeals(0);
+            IRepository<DailyDeals, DailyDealsValues> repository = new DailyDealRepository();
+            var deals = repository.Get(new DailyDealsValues { StoreId = 0, StoreName = string.Empty });
 
             return View(deals);
         }
 
         public ActionResult Exclusive()
         {
-            var deals = repository.ExecutiveDeals(0, 0);
+            IRepository<ExecutiveDeals, ExecutiveDealValues> repository = new ExclusiveDealRepository();
+            var deals = repository.Get(new ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = string.Empty, StoreId = 0, StoreName = string.Empty });
 
             return View(deals);
         }
 
         public ActionResult Store(string store)
         {
-            var selectedStore = repository.Stores.Where(s => s.StoreName.ToUpper() == store.ToUpper()).SingleOrDefault();
+            IRepository<Store, string> repository = new StoreRepository();
 
-            selectedStore.ExclusiveDeals = repository.ExecutiveDeals(0, 0, selectedStore.StoreName).ToList();
-            selectedStore.DailyDeals = repository.DailyDeals(0, selectedStore.StoreName).ToList();
-            selectedStore.OfferURLs = repository.GetOfferURL(selectedStore.SourceStoreId).ToList();
-            selectedStore.Coupons = repository.GetCoupons(null, store, null).ToList();
+            var selectedStore = repository.SelectAll().Where(s => s.StoreName.ToUpper() == store.ToUpper()).SingleOrDefault();
 
             return View(selectedStore);
         }

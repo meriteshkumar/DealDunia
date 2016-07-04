@@ -10,4 +10,10 @@ namespace DealDunia.Domain.Entities
         public int ParentId { get; set; }
         public int Level { get; set; }
     }
+
+    public class CategoryValues
+    {
+        public int CategoryId { get; set; }
+        public string CategoryName { get; set; }
+    }
 }

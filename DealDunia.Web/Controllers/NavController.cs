@@ -16,15 +16,13 @@ namespace DealDunia.Web.Controllers
 {
     public class NavController : Controller
     {
-        IStoreRepository repository;
-
         public NavController()
         {
-            this.repository = new SQLStoreRepository();
         }
 
         public PartialViewResult Menu(string position)
         {
+            var repository = new CommonRepository();
             var categories = repository.Menus(null).Distinct();
 
             if (position.ToUpper() == "HEADER")
@@ -35,26 +33,44 @@ namespace DealDunia.Web.Controllers
 
         public PartialViewResult ShopByStore()
         {
-            var stores = repository.Stores;
+            var repository = new StoreRepository();
+            var stores = repository.SelectAll();
             return PartialView("ShopByStore", stores);
         }
 
         public PartialViewResult ShopByCategory()
         {
-            var categories = repository.TopCategory;
+            var repository = new CategoryRepository();
+            var categories = repository.SelectAll();
             return PartialView("ShopByCategory", categories);
         }
 
-        public PartialViewResult ExclusiveDeals()
+        public PartialViewResult ExclusiveDeals(ExecutiveDealValues param)
         {
-            var deals = repository.ExecutiveDeals(0, 0);
+            var repository = new ExclusiveDealRepository();
+            var deals = repository.Get(param);
             return PartialView("ExclusiveDeals", deals);
         }
 
-        public PartialViewResult DailyDeals()
+        public PartialViewResult DailyDeals(DailyDealsValues param)
         {
-            var deals = repository.DailyDeals(0);
+            var repository = new DailyDealRepository();
+            var deals = repository.Get(param);
             return PartialView("DailyDeals", deals);
+        }
+
+        public PartialViewResult CouponView(CouponValues param)
+        {
+            var repository = new CouponRepository();
+            var deals = repository.Get(param);
+            return PartialView("CouponView", deals);
+        }
+
+        public PartialViewResult OfferURL(int SourceStoreId)
+        {
+            var repository = new CommonRepository();
+            var deals = repository.GetOfferURL(SourceStoreId);
+            return PartialView("OfferURL", deals);
         }
 
         public PartialViewResult SearchResult(string searchtext)
@@ -83,11 +99,10 @@ namespace DealDunia.Web.Controllers
 
         public PartialViewResult LeftSideBar()
         {
+            var repository = new CommonRepository();
             var coupons = repository.GetCouponStoreCategories();
 
             return PartialView(coupons);
         }
-
-       
     }
 }

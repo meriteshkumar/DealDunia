@@ -28,4 +28,11 @@ namespace DealDunia.Domain.Entities
         public string Featured { get; set; }
         public string Exclusive { get; set; }
     }
+
+    public class CouponValues
+    {
+        public string OfferType { get; set; } 
+        public string OfferName { get; set; }
+        public string StoreCategoryName { get; set; }
+    }
 }

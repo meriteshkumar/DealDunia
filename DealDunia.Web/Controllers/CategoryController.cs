@@ -6,12 +6,13 @@ using System.Web.Mvc;
 using DealDunia.Domain.Concrete;
 using DealDunia.Infrastructure.Helpers;
 using DealDunia.Domain.Abstract;
+using DealDunia.Domain.Entities;
 
 namespace DealDunia.Web.Controllers
 {
     public class CategoryController : Controller
     {
-        IStoreRepository repository = new SQLStoreRepository();
+        ICommonRepository repository = new CommonRepository();
 
         public ActionResult Index()
         {
@@ -41,7 +42,9 @@ namespace DealDunia.Web.Controllers
 
             ViewBag.ShowBrowse = 2;
 
-            var categories = repository.SubCategory(0, level1 + "/" + level2);
+            IRepository<Category, CategoryValues> repo = new CategoryRepository();
+
+            var categories = repo.Get(new CategoryValues { CategoryId = 0, CategoryName = level1 + "/" + level2 });
 
             return View("BrowseCategory", categories);
         }

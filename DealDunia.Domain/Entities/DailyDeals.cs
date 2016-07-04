@@ -15,4 +15,10 @@ namespace DealDunia.Domain.Entities
         public string Image { get; set; }
         public string URL { get; set; }
     }
+
+    public class DailyDealsValues
+    {
+        public int StoreId { get; set; }
+        public string StoreName { get; set; }
+    }
 }

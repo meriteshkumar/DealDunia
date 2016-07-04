@@ -15,15 +15,15 @@ namespace DealDunia.Web.Controllers
 {
     public class StoreController : Controller
     {
-        IStoreRepository repository = null;
+        IRepository<Store, string> repository = null;
         public StoreController()
         {
-            this.repository = new SQLStoreRepository();
+            this.repository = new StoreRepository();
         }    
 
         public ActionResult Stores()
-        {           
-            var deals = repository.StoresByCategory(null);
+        {
+            var deals = repository.Get(null);
             return View(deals);
         }
         

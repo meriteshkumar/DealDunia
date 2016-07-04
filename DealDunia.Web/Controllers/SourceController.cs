@@ -18,11 +18,11 @@ namespace DealDunia.Web.Controllers
     {
         //
         // GET: /VCOM/
-        IStoreRepository repository = null;
+        ICommonRepository repository = null;
 
         public SourceController()
         {
-            this.repository = new SQLStoreRepository();
+            this.repository = new CommonRepository();
         }
 
         #region VCOM

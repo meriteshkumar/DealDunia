@@ -12,4 +12,14 @@ namespace DealDunia.Domain.Entities
         public string Logo { get; set; }
         public string URL { get; set; }
     }
+
+    public class ExecutiveDealValues
+    {
+        public int StoreId { get; set; } 
+       public int CategoryId { get; set; } 
+       public string StoreName { get; set; } 
+        public string CategoryName { get; set; }
+        public int StoreCategoryId { get; set; } 
+        public string StoreCategoryName { get; set; }
+    }
 }
