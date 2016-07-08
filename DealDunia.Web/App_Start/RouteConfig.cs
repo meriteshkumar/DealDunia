@@ -40,7 +40,7 @@ namespace DealDunia.Web
             routes.MapRoute(
                 name: "Store",
                 url: "store/{store}",
-                defaults: new { controller = "Deal", action = "Store" }
+                defaults: new { controller = "Store", action = "Store" }
             );
 
             routes.MapRoute(

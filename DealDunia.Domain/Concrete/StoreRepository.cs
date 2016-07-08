@@ -10,7 +10,7 @@ using System.Data;
 
 namespace DealDunia.Domain.Concrete
 {
-    public class StoreRepository : IRepository<Store, string>
+    public class StoreRepository : IRepository<Store, StoreValues>
     {
         public List<Store> SelectAll()
         {
@@ -32,13 +32,15 @@ namespace DealDunia.Domain.Concrete
             return stores;
         }
 
-        public List<Store> Get(string criteria)
+        public List<Store> Get(StoreValues criteria)
         {
             List<Store> stores = new List<Store>();
             Store store = null;
 
             SqlDataReader reader = SqlHelper.ExecuteReader(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.GetStoreByCategories", new SqlParameter[] { 
-                new SqlParameter("@StoreCategoryName", string.IsNullOrEmpty(criteria) ? null : criteria)});
+                new SqlParameter("@StoreCategoryName", string.IsNullOrEmpty(criteria.StoreCategoryName) ? null : criteria.StoreCategoryName)
+                , new SqlParameter("@StoreName", string.IsNullOrEmpty(criteria.StoreName) ? null : criteria.StoreName)
+            });
 
             while (reader.Read())
             {
@@ -64,7 +66,7 @@ namespace DealDunia.Domain.Concrete
             throw new NotImplementedException();
         }
 
-        public void Delete(string criteria)
+        public void Delete(StoreValues criteria)
         {
             throw new NotImplementedException();
         }

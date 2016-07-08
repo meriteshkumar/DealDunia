@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.Store>
-<link href="~/css/store.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />
 <div class="row">
     @foreach (var store in Model)
     {
         
-        <div class="text-center" style="float: left; margin-right: 20px; margin-bottom: 10px;">
+        <div>
             <a href="@Url.RouteUrl("Store", new { store = store.StoreName})">
                 <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" class="store_logo"/>                
             </a>

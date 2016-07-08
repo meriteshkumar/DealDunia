@@ -1,10 +1,14 @@
 ﻿@*@model IEnumerable<DealDunia.Domain.Entities.VCommissionResponse>*@
 @model IEnumerable<DealDunia.Domain.Entities.Coupon>
+@using DealDunia.Infrastructure.Utility
 
 @{
     ViewBag.Title = "Coupons & Offers";
 }
 
-<h2>Coupons & Offers</h2>
+@*<h2>Exclusive Deals</h2>
 
+@Html.Action("ExclusiveDeals", "Nav", new DealDunia.Domain.Entities.ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = Utilities.DecodeUrl(ViewContext.RouteData.Values["Category"].ToString()), StoreName = string.Empty, StoreId = 0 });*@
+
+<h2>Coupons & Offers</h2>
 @Html.Partial("CouponView", Model)

@@ -15,7 +15,7 @@ namespace DealDunia.Web.Controllers
 {
     public class StoreController : Controller
     {
-        IRepository<Store, string> repository = null;
+        IRepository<Store, StoreValues> repository = null;
         public StoreController()
         {
             this.repository = new StoreRepository();
@@ -23,10 +23,15 @@ namespace DealDunia.Web.Controllers
 
         public ActionResult Stores()
         {
-            var deals = repository.Get(null);
-            return View(deals);
+            var stores = repository.Get(new StoreValues { StoreName = string.Empty, StoreCategoryName = string.Empty });
+            return View(stores);
         }
-        
 
+        public ActionResult Store(string store)
+        {
+            IRepository<Store, StoreValues> repository = new StoreRepository();            
+            var selectedStore = repository.Get(new StoreValues { StoreName = store, StoreCategoryName = string.Empty });
+            return View(selectedStore);
+        }
     }
 }

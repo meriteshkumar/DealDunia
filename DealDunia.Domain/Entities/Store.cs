@@ -18,4 +18,10 @@ namespace DealDunia.Domain.Entities
         //public List<ExecutiveDeals> ExclusiveDeals { get; set; }
         //public List<Coupon> Coupons { get; set; }
     }
+
+    public class StoreValues
+    {
+        public string StoreName { get; set; }
+        public string StoreCategoryName { get; set; }
+    }
 }
