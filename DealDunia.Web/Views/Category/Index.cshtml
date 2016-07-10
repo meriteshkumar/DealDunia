@@ -2,16 +2,8 @@
     ViewBag.Title = "Deal Dunia";
 }
 
-<div>
-    <hr />
-    <h4 style="text-align: center; color:dodgerblue">FEATURED STORE</h4><hr />
-    @Html.Action("ShopByStore", "Nav")<hr />
-    <h4 style="text-align: center; color:dodgerblue"><a href="@Url.Action("Daily", "Deal")">DAILY DEALS</a></h4><hr />
-    @Html.Action("DailyDeals", "Nav")<hr />
-    <h4 style="text-align: center; color:dodgerblue"><a href="@Url.Action("Exclusive", "Deal")">EXCLUSIVE DEALS</a></h4><hr />
-    @Html.Action("ExclusiveDeals", "Nav")<hr />
-    <h4 style="text-align: center;  color:dodgerblue">CATEGORIES</h4><hr />
-    @Html.Action("ShopByCategory", "Nav")
-</div>
 
-
+@Html.Action("ShopByStore", "Nav")
+@Html.Action("DailyDeals", "Nav")
+@Html.Action("ExclusiveDeals", "Nav")
+@Html.Action("ShopByCategory", "Nav")

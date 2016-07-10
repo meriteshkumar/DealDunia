@@ -1,14 +1,3 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.ExecutiveDeals>
-<link href="~/css/Style.css" rel="stylesheet" />
-<div class="row">
-    @foreach (var deal in Model)
-    {
-        <div class="divBox">
-            <a href="@deal.URL" target="_blank">
-                <img src="@Url.Content("~/Images/" + deal.Image)" alt="@deal.Description" class="imgDivBox "/>
-                <br />
-                <strong>@deal.Title</strong>
-            </a>
-        </div>
-    }
-</div>
+
+@Html.Partial("_ExclusiveDeal", Model)

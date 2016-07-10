@@ -16,13 +16,13 @@ namespace DealDunia.Web
             routes.MapRoute(
                 name: "CouponsByStore",
                 url: "Coupons/Store/{Store}",
-                defaults: new { controller = "Offer", action = "Coupon" }
+                defaults: new { controller = "Deal", action = "Coupon" }
             );
 
             routes.MapRoute(
                 name: "CouponsByCategory",
                 url: "Coupons/{Category}",
-                defaults: new { controller = "Offer", action = "Coupon" }
+                defaults: new { controller = "Deal", action = "Coupon" }
             );
 
             //routes.MapRoute(

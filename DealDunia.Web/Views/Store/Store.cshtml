@@ -12,20 +12,15 @@
 <div>
     @*<h2>@store</h2>*@
     @*<h3>@Html.ActionLink("Visit Store", storeURL)</h3>*@
-    <a href="@storeURL"><img  src="@Url.Content("~/Images/" + storeImage)" alt="@storeImage" style="align-content:center" /></a>
-    
+    <a href="@storeURL">
+        <img  src="@Url.Content("~/Images/" + storeImage)" alt="@storeImage" style="align-content:center" /></a>
 </div>
 
 <div>
-    <h3>Daily Deals</h3>
-    <hr />
     @Html.Action("DailyDeals", "Nav", new DealDunia.Domain.Entities.DailyDealsValues { StoreId = 0, StoreName = store })
-    <h3>Exclusive Deals</h3>
+    @Html.Action("ExclusiveDeals", "Nav", new DealDunia.Domain.Entities.ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = string.Empty, StoreName = store, StoreId = 0 });        
+    @Html.Action("Coupons", "Nav", new DealDunia.Domain.Entities.CouponValues { OfferType = string.Empty, OfferName = store, StoreCategoryName = string.Empty })
+    @*<h3>Other Store Offers & Links</h3>
     <hr />
-    @Html.Action("ExclusiveDeals", "Nav", new DealDunia.Domain.Entities.ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = string.Empty, StoreName = store, StoreId = 0 });
-    <h3>Coupons & Offers</h3>
-    @Html.Action("CouponView", "Nav", new DealDunia.Domain.Entities.CouponValues { OfferType = string.Empty, OfferName = store, StoreCategoryName = string.Empty })
-    <h3>Other Store Offers & Links</h3>
-    <hr />
-    @Html.Action("OfferURL", "Nav", new { SourceStoreId = Model.Select(x => x.SourceStoreId).FirstOrDefault() })
+    @Html.Action("OfferURL", "Nav", new { SourceStoreId = Model.Select(x => x.SourceStoreId).FirstOrDefault() })*@
 </div>

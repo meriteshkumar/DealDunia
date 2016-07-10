@@ -33,6 +33,8 @@ namespace DealDunia.Domain.Concrete
                 deal = new ExecutiveDeals();
                 deal.ExcDealId = (int)((IDataRecord)reader)["ExcDealId"];
                 deal.StoreId = Convert.ToInt16(((IDataRecord)reader)["StoreId"]);
+                deal.StoreName = ((IDataRecord)reader)["StoreName"].ToString();
+                deal.StoreImage = ((IDataRecord)reader)["StoreImage"].ToString();
                 deal.CategoryId = (int)((IDataRecord)reader)["CategoryId"];
                 deal.Title = ((IDataRecord)reader)["Title"].ToString();
                 deal.Description = ((IDataRecord)reader)["Description"].ToString();

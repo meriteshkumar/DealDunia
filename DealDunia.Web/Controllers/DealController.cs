@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using DealDunia.Infrastructure.Utility;
 
 namespace DealDunia.Web.Controllers
 {
@@ -30,6 +31,13 @@ namespace DealDunia.Web.Controllers
 
             return View(deals);
         }
+
+        public ActionResult Coupon(string Offer, string Store, string Category)
+        {
+            IRepository<Coupon, CouponValues> repository = new CouponRepository();
+            var coupons = repository.Get(new CouponValues { OfferType = Offer, OfferName = Store, StoreCategoryName = (Category==null?string.Empty:Utilities.DecodeUrl(Category)) });
+            return View("Coupon", coupons);
+        } 
 
        
     }

@@ -1,13 +1,16 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.Store>
 <link href="~/css/style.css" rel="stylesheet" />
 <div class="row">
+    <hr />
+    <h4 style="text-align: center; color: #337ab7; font-weight: bold;">FEATURED STORES</h4>
+    <hr />
     @foreach (var store in Model)
     {
         
         <div>
-            <a href="@Url.RouteUrl("Store", new { store = store.StoreName})">
-                <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" class="store_logo"/>                
+            <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
+                <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" class="store_logo"/>
             </a>
         </div>
-    }
+    }    
 </div>

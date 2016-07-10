@@ -39,11 +39,7 @@ namespace DealDunia.Infrastructure.Helpers
         }
 
         static void GetItemElements(XmlNode node, IItemResponse seed)
-        {
-            if (node.Name == "FormattedPrice")
-            {
-                int i = 0;
-            }
+        {            
             foreach (var prop in seed.GetType().GetProperties())
             {
                 var d = prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().DisplayName;
