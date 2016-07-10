@@ -11,6 +11,7 @@ using System.IO;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Text;
+using DealDunia.Infrastructure.Utility;
 
 namespace DealDunia.Web.Controllers
 {
@@ -59,13 +60,13 @@ namespace DealDunia.Web.Controllers
             return PartialView("DailyDeals", deals);
         }
 
-        public PartialViewResult CouponView(CouponValues param)
+        public PartialViewResult Coupons(CouponValues param)
         {
             var repository = new CouponRepository();
-            var deals = repository.Get(param);
-            return PartialView("CouponView", deals);
-        }
-
+            var coupons = repository.Get(param);
+            return PartialView("Coupons", coupons);
+        } 
+       
         public PartialViewResult OfferURL(int SourceStoreId)
         {
             var repository = new CommonRepository();

@@ -15,11 +15,11 @@ namespace DealDunia.Web.Controllers
             this.repository = new CouponRepository();
         }
 
-        public ActionResult Coupon(string Offer, string Store, string Category)
-        {
-            var coupons = repository.Get(new CouponValues { OfferType = Offer, OfferName = Store, StoreCategoryName = Utilities.DecodeUrl(Category) });
-            return View(coupons);
-        }      
+        //public PartialViewResult Coupon(string Offer, string Store, string Category)
+        //{
+        //    var coupons = repository.Get(new CouponValues { OfferType = Offer, OfferName = Store, StoreCategoryName = Utilities.DecodeUrl(Category) });
+        //    return PartialView("_CouponView", coupons);
+        //}      
 
     }
 }
