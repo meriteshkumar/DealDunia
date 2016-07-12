@@ -126,6 +126,7 @@
     <Compile Include="Controllers\OfferController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\OutController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
     <Compile Include="Controllers\SourceController.cs" />
@@ -366,6 +367,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Shared\_DailyDeals.cshtml" />
     <Content Include="Views\Nav\Coupons.cshtml" />
+    <Content Include="Views\Shared\Out.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

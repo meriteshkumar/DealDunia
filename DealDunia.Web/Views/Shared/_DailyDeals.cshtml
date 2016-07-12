@@ -1,18 +1,27 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.DailyDeals>
+
 <link href="~/css/Style.css" rel="stylesheet" />
+
 <div class="row">
     <hr />
-    <h4 style="text-align: center; color: #337ab7; font-weight: bold;">DAILY DEALS</h4>
+    <h4 style="text-align: center; color: #337ab7; font-weight: bold;">DAILY OFFERS</h4>
     <hr />
     @foreach (var deal in Model)
-    {
-        <div class="divBox">
-            <a href="@deal.URL"  target="_blank">
-                <b>@deal.Title</b>
-                <br />
-                <img  src="@Url.Content("~/Images/" + deal.Image)" alt="@deal.Title" class="imgDivBox" />
-                <br />
-            </a>
-        </div>
+    {    
+        <div class="panel panel-info" style="float: left; width: 240px; height: 150px; font-family: Verdana; margin: 5px; padding: 5px; text-align: center; vertical-align: middle">
+            <div style="padding: 5px;">
+                <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "daily-deals", id = @deal.DailyDealId })">
+                    <img alt="@deal.Title" src="@Url.Content("~/Images/" + deal.Image)" /></a></b>
+            </div>
+            <div style="font-size: 14px; padding: 5px;">
+                <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "daily-deals", id = @deal.DailyDealId })">@deal.Title</a></b>
+            </div>
+            <div style="padding: 10px;">
+                <div style="margin: auto; height: 30px; width: 140px; background-color: #bf192a; font-weight: bold; color: gray; font-size: 11px; padding: 5px; border: 1px #fff dashed;">
+                    <span><a style="color:white;" target="_blank" href="@Url.Action("Out", "Out", new { source = "daily-deals", id = @deal.DailyDealId })">VISIT OFFER</a></span>
+                    <br />
+                </div>
+            </div>
+        </div>    
     }
 </div>

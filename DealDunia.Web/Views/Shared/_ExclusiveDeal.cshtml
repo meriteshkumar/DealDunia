@@ -7,25 +7,41 @@
     <hr />
     <h4 style="text-align: center; color: #337ab7; font-weight: bold;">EXCLUSIVE DEALS</h4>
     <hr />
-    @foreach (var coupon in Model)
+    @foreach (var deal in Model)
     {
     
-        <div class="panel panel-info" style="float: left; width: 240px; height: 100px; font-family: Verdana; margin: 5px; padding: 5px;">
+        <div class="panel panel-info" style="float: left; width: 240px; height: auto; font-family: Verdana; margin: 5px; padding: 5px; text-align: center; vertical-align: middle">
+            <div>
+                <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = deal.ExcDealId })">
+                    <img alt="@deal.StoreName" src="@Url.Content("~/Images/" + deal.StoreImage)" /></a></b>
+            </div>
             <div style="font-size: 12px; margin-bottom: 5px; max-width: 220px; overflow: hidden; max-height: 20px; padding: 2px;">
-                <b><a target="_blank" href="@coupon.URL">@coupon.Title.Replace("&amp;", "&")</a></b>
+                <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = deal.ExcDealId })">@deal.Title.Replace("&amp;", "&")</a></b>
             </div>
-            <div style="padding: 5px;">
-                <div style="float: left;">
-                    <b><a target="_blank" href="@coupon.URL">
-                        <img alt="@coupon.StoreName" src="@Url.Content("~/Images/" + coupon.StoreImage)" style="width:75px; height:30px;" /></a></b>
-                </div>
-                <div style="height: 30px; width: 140px; float: right; background-color: #ff9d00; font-weight: bold; color: gray; font-size: 11px; padding-top: 4px; text-align: center; border: 1px #fff dashed;">
-                    <span><a style="color:white;" target="_blank" href="@coupon.URL">DEAL ACTIVATED</span>
+            <div style="padding: 10px;">
+                <div style="margin: auto; height: 30px; width: 140px; background-color: #bf192a; font-weight: bold; color: gray; font-size: 11px; padding: 5px; border: 1px #fff dashed;">
+                    <span><a style="color:white;" target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = @deal.ExcDealId })">VISIT OFFER</a></span>
                     <br />
-
                 </div>
             </div>
-        </div>
-    
+        </div>    
     }
+    @*  @foreach (var deal in Model)
+    {    
+        <div class="panel panel-info" style="float: left; width: 240px; height: 150px; font-family: Verdana; margin: 5px; padding: 5px; text-align: center; vertical-align: middle">
+            <div style="padding: 5px;">
+                <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = @deal.ExcDealId })">
+                    <img alt="@deal.Title" src="@Url.Content("~/Images/" + deal.StoreImage)" /></a></b>
+            </div>
+            <div style="font-size: 14px; padding: 5px; max-width:210px; overflow: hidden;">
+                <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = @deal.ExcDealId })">@deal.Title.Replace("&amp;", "&")</a></b>
+            </div>
+            <div style="padding: 10px;">
+                <div style="margin: auto; height: 30px; width: 140px; background-color: #bf192a; font-weight: bold; color: gray; font-size: 11px; padding: 5px; border: 1px #fff dashed;">
+                    <span><a style="color:white;" target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = @deal.ExcDealId })">VISIT OFFER</a></span>
+                    <br />
+                </div>
+            </div>
+        </div>    
+    }*@
 </div>

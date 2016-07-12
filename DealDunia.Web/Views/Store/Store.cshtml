@@ -6,14 +6,18 @@
 
 @{
     var store = Model.Select(x => x.StoreName).FirstOrDefault();
+    var storeId = Model.Select(x => x.StoreId).FirstOrDefault();
     var storeImage = Model.Select(x => x.StoreImage).FirstOrDefault();
     var storeURL = Model.Select(x => x.StoreURL).FirstOrDefault();
 }
 <div>
     @*<h2>@store</h2>*@
-    @*<h3>@Html.ActionLink("Visit Store", storeURL)</h3>*@
-    <a href="@storeURL">
-        <img  src="@Url.Content("~/Images/" + storeImage)" alt="@storeImage" style="align-content:center" /></a>
+    @*<h3>@Html.ActionLink("Visit Store", storeURL)</h3>*@    
+    
+   <a target="_blank" href="@Url.Action("Out", "Out", new { source = "store", id = storeId })">
+        <img  src="@Url.Content("~/Images/" + storeImage)" alt="@storeImage" style="align-content:center" /> 
+        <span style="font-family:Verdana; font-size:16px; font-weight:bold;"> Visit Store </span>
+    </a>    
 </div>
 
 <div>

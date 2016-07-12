@@ -107,6 +107,11 @@ namespace DealDunia.Domain.Concrete
             return coupons;
         }
 
-
+        public string GetOutURL(string Source, int Id)
+        {
+            return SqlHelper.ExecuteScalar(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.GetOutUrl", new SqlParameter[]{
+                new SqlParameter("@Source", Source), new SqlParameter("@Id", Id)
+            }).ToString();
+        }
     }
 }

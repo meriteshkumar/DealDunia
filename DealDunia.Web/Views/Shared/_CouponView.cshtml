@@ -10,7 +10,7 @@
     {    
         <div class="panel panel-info" style="float: left; width: 240px; height: 100px; font-family: Verdana; margin: 5px; padding: 5px;">
             <div style="font-size: 12px; margin-bottom: 5px; max-width: 220px; overflow: hidden; max-height: 20px; padding: 2px;">
-                <b><a target="_blank" href="@coupon.OfferURL">@coupon.CouponTitle.Replace("&amp;", "&")</a></b>
+                <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "coupons", id = coupon.CouponId })">@coupon.CouponTitle.Replace("&amp;", "&")</a></b>
             </div>
             <div style="padding: 5px;">
                 <div style="float: left;">
@@ -18,7 +18,7 @@
                         <img alt="@coupon.OfferName" src="@Url.Content("~/Images/" + coupon.StoreImage)" style="width:75px; height:30px;" /></a></b>
                 </div>
                 <div style="height: 30px; width: 140px; float: right; background-color: #ff9d00; font-weight: bold; color: gray; font-size: 11px; padding-top: 4px; text-align: center; border: 1px #fff dashed;">
-                    <span><a style="color:white;" target="_blank" href="@coupon.OfferURL">@if (@coupon.OfferType == "Coupon")
+                    <span><a style="color:white;" target="_blank" href="@Url.Action("Out", "Out", new { source = "coupons", id = coupon.CouponId })">@if (@coupon.OfferType == "Coupon")
                                                                                           { @coupon.CouponCode;
                                                                                           }
                                                                                           else

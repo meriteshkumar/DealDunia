@@ -28,7 +28,7 @@ namespace DealDunia.Domain.Concrete
             while (reader.Read())
             {
                 coupon = new Coupon();
-                //coupon.CouponId = Convert.ToInt16(((IDataRecord)reader)["CouponId"]);
+                coupon.CouponId = Convert.ToInt64(((IDataRecord)reader)["CouponId"]);
                 coupon.OfferId = Convert.ToInt16(((IDataRecord)reader)["OfferId"]);
                 coupon.OfferName = ((IDataRecord)reader)["OfferName"].ToString();
                 coupon.OfferType = ((IDataRecord)reader)["OfferType"].ToString();
