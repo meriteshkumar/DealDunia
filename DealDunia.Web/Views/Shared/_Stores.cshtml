@@ -11,7 +11,7 @@
 @foreach (string category in Model.Select(x => x.StoreCategoryName).Distinct())
 {
     <hr />
-    <h4 style="text-align: center;">@category</h4>
+    <h4 style="text-align: center; color: #337ab7; font-weight: bold;">@category</h4>    
     <hr />        
     <div class="row">
         @foreach (var store in Model.Where(x => x.StoreCategoryName == category))

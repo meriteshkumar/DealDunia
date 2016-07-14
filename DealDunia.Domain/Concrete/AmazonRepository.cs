@@ -5,12 +5,15 @@ using DealDunia.Service;
 using System.Collections.Generic;
 using System.Xml;
 using System.Linq;
+using DealDunia.Domain.Entities;
 
 namespace DealDunia.Domain.Concrete
 {
     public class AmazonRepository : ILookupRepository
     {
-
+        public string StoreName { get { return "Amazon"; } }
+        public string StoreImage { get { return "Stores/Amazon/Amazon.jpg"; } }
+        
         public List<IItemResponse> GetItem(Infrastructure.Helpers.ItemRequest request)
         {
             Amazon serviceRef = new Amazon();
@@ -28,6 +31,11 @@ namespace DealDunia.Domain.Concrete
             parser.MapXMLtoClass(response, itemResponse, "Item", "AmazonItemResponse");
 
             return itemResponse;
+        }
+
+        public List<DOTD> GetDODT()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

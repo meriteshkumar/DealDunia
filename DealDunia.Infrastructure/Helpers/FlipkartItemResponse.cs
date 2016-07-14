@@ -21,4 +21,19 @@ namespace DealDunia.Infrastructure.Helpers
           [DevAttribute(DisplayName = "productUrl", XPath = "productBaseInfoV1/productUrl")]
         public string DetailPageURL { get; set; }
     }
+
+    public class FlipkartDODT
+    {
+        [DevAttribute(DisplayName = "title", XPath = "dotdList/title")]
+        public string Title { get; set; }
+
+        [DevAttribute(DisplayName = "url", XPath = "dotdList/description")]
+        public string Description { get; set; }
+
+        [DevAttribute(DisplayName = "url", XPath = "dotdList/imageUrls/url", PreviousNode = "resolutionType", PreviousNodeValue = "default")]
+        public string ImageUrl { get; set; }
+
+        [DevAttribute(DisplayName = "title", XPath = "dotdList/url")]
+        public string DetailPageURL { get; set; }
+    }
 }

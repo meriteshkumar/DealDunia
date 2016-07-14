@@ -50,6 +50,7 @@ namespace DealDunia.Domain.Concrete
                 store.StoreURL = ((IDataRecord)reader)["StoreURL"].ToString();
                 store.StoreImage = ((IDataRecord)reader)["StoreImage"].ToString();
                 store.StoreCategoryName = ((IDataRecord)reader)["StoreCategoryName"].ToString();
+                store.SourceStoreId = Convert.ToInt16(((IDataRecord)reader)["SourceStoreId"]);
                 //store.AffiliateId = ((IDataRecord)reader)["AffiliateId"].ToString();
                 stores.Add(store);
             }

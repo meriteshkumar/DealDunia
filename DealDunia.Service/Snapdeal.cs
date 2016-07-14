@@ -4,19 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web;
+using System.IO;
+using System.Text;
 
 namespace DealDunia.Service
 {
     public class Snapdeal
     {
-        private const string AFFILIATE_ID = "sandeepmi3";
-        private const string AFFILIATE_TOKEN = "48e7442debe1404ab298977ddf6e0d65";
-        private const string API_URL = "affiliate-feeds.snapdeal.com/feed/api";
-
+        private const string AFFILIATE_ID = "73767";
+        private const string AFFILIATE_TOKEN = "c211bee0344f73ef6c2e6daedc07a9";
+        //private const string API_URL = "affiliate-feeds.snapdeal.com/feed/api";
+        string API_URL = string.Empty;
         public System.IO.Stream ItemSearch(ItemRequest requestParams)
         {
             try
-            {
+            {                
                 String requestUrl = string.Format("{0}?query={1}&resultCount={2}", API_URL, requestParams.Keywords, "10");
 
                 WebRequest request = HttpWebRequest.Create(requestUrl);
@@ -26,6 +28,31 @@ namespace DealDunia.Service
                 WebResponse response = request.GetResponse();
 
                 return response.GetResponseStream();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public string DOTD()
+        {
+            try
+            {
+                string json = string.Empty;
+                string API_URL = "http://affiliate-feeds.snapdeal.com/feed/api/dod/offer";
+                String requestUrl = API_URL;
+                WebRequest request = HttpWebRequest.Create(requestUrl);
+                request.Headers.Add("Snapdeal-Affiliate-Id", AFFILIATE_ID);
+                request.Headers.Add("Snapdeal-Token-Id", AFFILIATE_TOKEN);
+                //request.Headers.Add("Accept", "application/xml");
+                WebResponse response = request.GetResponse();
+                using (Stream responseStream = response.GetResponseStream())
+                {
+                    StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
+                    json = reader.ReadToEnd();
+                }
+                return json;
             }
             catch (Exception ex)
             {

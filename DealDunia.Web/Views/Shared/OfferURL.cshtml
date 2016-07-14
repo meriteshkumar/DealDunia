@@ -1,19 +1,24 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.OfferURL>
 
-
-<div class="panel panel-info">
-    <div class="panel-body">
-        <div class="table-responsive">
-
-            @foreach (var offerURL in Model)
-            {   
-                <div>
-                    <a href="@offerURL.offer_url" target="_blank"><b>@offerURL.name</b></a>
-                    @*<b>@offerURL.name</b>*@
+@if (Model.Count() > 0)
+{
+    <div class="row">
+        <hr />
+        <h4 style="text-align: center; color: #337ab7; font-weight: bold;">OFFERS / LINKS</h4>
+        <hr />
+        @foreach (var offerURL in Model)
+        {   
+            <div class="panel panel-info" style="float: left; width: 240px; height: auto; font-family: Verdana; margin: 5px; padding: 5px; text-align: center; vertical-align: middle">
+                <div style="font-size: 12px; padding: 5px;">
+                    <b><a target="_blank" href="@offerURL.offer_url">@offerURL.name</a></b>
                 </div>
-                <br />
-            }
-
-        </div>
+                <div style="padding: 10px;">
+                    <div style="margin: auto; height: 30px; width: 140px; background-color: #bf192a; font-weight: bold; color: gray; font-size: 11px; padding: 5px; border: 1px #fff dashed;">
+                        <span><a style="color:white;" target="_blank" href="@offerURL.offer_url">VISIT OFFER</a></span>
+                        <br />
+                    </div>
+                </div>
+            </div>
+        }
     </div>
-</div>
+}

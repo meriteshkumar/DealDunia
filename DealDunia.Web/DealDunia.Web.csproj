@@ -123,9 +123,6 @@
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\DealController.cs" />
     <Compile Include="Controllers\NavController.cs" />
-    <Compile Include="Controllers\OfferController.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Controllers\OutController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\StoreController.cs" />
@@ -145,7 +142,6 @@
     <Content Include="Content\Books.xml" />
     <Content Include="Content\Electronics.xml" />
     <Content Include="Content\Flipkart.xml" />
-    <Content Include="css\magicscroll.css" />
     <Content Include="css\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -368,6 +364,8 @@
     <Content Include="Views\Shared\_DailyDeals.cshtml" />
     <Content Include="Views\Nav\Coupons.cshtml" />
     <Content Include="Views\Shared\Out.cshtml" />
+    <Content Include="Views\Shared\_DOTD.cshtml" />
+    <Content Include="Views\Nav\DOTD.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

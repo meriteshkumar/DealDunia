@@ -74,6 +74,15 @@ namespace DealDunia.Web.Controllers
             return PartialView("OfferURL", deals);
         }
 
+        public PartialViewResult DOTD()
+        {
+            var FR = new FlipkartRepository();
+            var deals = FR.GetDODT();
+            var SR = new SnapdealRepository();
+            deals.AddRange(SR.GetDODT());
+            return PartialView("DOTD", deals);
+        }
+
         public PartialViewResult SearchResult(string searchtext)
         {
             List<IItemResponse> response = null;
