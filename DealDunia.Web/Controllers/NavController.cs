@@ -32,56 +32,9 @@ namespace DealDunia.Web.Controllers
                 return PartialView("Footer", categories);
         }
 
-        public PartialViewResult ShopByStore()
-        {
-            var repository = new StoreRepository();
-            var stores = repository.SelectAll();
-            return PartialView("ShopByStore", stores);
-        }
-
-        public PartialViewResult ShopByCategory()
-        {
-            var repository = new CategoryRepository();
-            var categories = repository.SelectAll();
-            return PartialView("ShopByCategory", categories);
-        }
-
-        public PartialViewResult ExclusiveDeals(ExecutiveDealValues param)
-        {
-            var repository = new ExclusiveDealRepository();
-            var deals = repository.Get(param);
-            return PartialView("ExclusiveDeals", deals);
-        }
-
-        public PartialViewResult DailyDeals(DailyDealsValues param)
-        {
-            var repository = new DailyDealRepository();
-            var deals = repository.Get(param);
-            return PartialView("DailyDeals", deals);
-        }
-
-        public PartialViewResult Coupons(CouponValues param)
-        {
-            var repository = new CouponRepository();
-            var coupons = repository.Get(param);
-            return PartialView("Coupons", coupons);
-        } 
        
-        public PartialViewResult OfferURL(int SourceStoreId)
-        {
-            var repository = new CommonRepository();
-            var deals = repository.GetOfferURL(SourceStoreId);
-            return PartialView("OfferURL", deals);
-        }
 
-        public PartialViewResult DOTD()
-        {
-            var FR = new FlipkartRepository();
-            var deals = FR.GetDODT();
-            var SR = new SnapdealRepository();
-            deals.AddRange(SR.GetDODT());
-            return PartialView("DOTD", deals);
-        }
+                    
 
         public PartialViewResult SearchResult(string searchtext)
         {

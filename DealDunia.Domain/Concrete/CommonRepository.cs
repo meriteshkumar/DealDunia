@@ -51,21 +51,22 @@ namespace DealDunia.Domain.Concrete
                 StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
                 string json = reader.ReadToEnd();
                 JObject data = JObject.Parse(json);
+                JToken offer = null;
+                OfferURL OfferURL = null;
                 if (data["response"]["data"].ToString() != "[]")
                 {
                     JObject offerURL = (JObject)data["response"]["data"];
                     foreach (var x in offerURL)
                     {
-                        JToken offer = x.Value;
-                        //if (offer["Offer"]["name"].ToString().ToLower().Contains(" india"))
-                        //{
-                        OfferURL OfferURL = new OfferURL();
-                        OfferURL.id = Convert.ToInt16(offer["OfferUrl"]["id"].ToString());
-                        OfferURL.name = offer["OfferUrl"]["name"].ToString();
-                        //OfferURL.offer_url = offer["OfferUrl"]["offer_url"].ToString().Replace("{affiliate_id}", "46159").Replace("{transaction_id}", OfferURL.id.ToString());
-                        OfferURL.offer_url = string.Format("http://tracking.vcommission.com/aff_c?offer_id={0}&aff_id={1}&url_id={2}", SourceStoreId, VCOM_Aff_Id, OfferURL.id);
-                        OfferURLs.Add(OfferURL);
-                        //}
+                        offer = x.Value;                        
+                        if(offer["OfferUrl"]["name"].ToString().ToLower().Contains("sale") || offer["OfferUrl"]["name"].ToString().ToLower().Contains("%"))
+                        {
+                            OfferURL = new OfferURL();
+                            OfferURL.id = Convert.ToInt16(offer["OfferUrl"]["id"].ToString());
+                            OfferURL.name = offer["OfferUrl"]["name"].ToString();
+                            OfferURL.offer_url = string.Format("http://tracking.vcommission.com/aff_c?offer_id={0}&aff_id={1}&url_id={2}", SourceStoreId, VCOM_Aff_Id, OfferURL.id);
+                            OfferURLs.Add(OfferURL);
+                        }
                     }
                 }
             }

@@ -12,7 +12,7 @@ namespace DealDunia.Web.Controllers
     public class ProductController : Controller
     {
         [HttpPost]
-        public ActionResult Tags(string searchtext)
+        public ActionResult Search(string searchtext)
         {
             ViewBag.SearchedItem = searchtext;
             return View();

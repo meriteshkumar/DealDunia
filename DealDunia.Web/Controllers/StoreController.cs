@@ -19,7 +19,14 @@ namespace DealDunia.Web.Controllers
         public StoreController()
         {
             this.repository = new StoreRepository();
-        }    
+        }
+
+        public PartialViewResult _ShopByStore()
+        {
+            var repository = new StoreRepository();
+            var stores = repository.SelectAll();
+            return PartialView("_ShopByStore", stores);
+        }
 
         public ActionResult Stores()
         {

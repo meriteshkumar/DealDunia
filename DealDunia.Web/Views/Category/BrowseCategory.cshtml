@@ -7,11 +7,11 @@
 <div>
     @if (Convert.ToInt16(ViewBag.ShowBrowse) == 1)
     {
-        @Html.Partial("LineItem", Model)
+        @Html.Partial("_LineItem", Model)
     }
     else if (Convert.ToInt16(ViewBag.ShowBrowse) == 2)
     {
-        @Html.Partial("LineItem2", Model)
+        @Html.Partial("_LineItem2", Model)
     }
 
 @*     @if (Convert.ToInt16(ViewBag.ShowBrowse) == 1)

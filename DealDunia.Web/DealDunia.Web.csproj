@@ -326,10 +326,10 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Views\Nav\DailyDeals.cshtml">
+    <Content Include="Views\Deal\Coupon.cshtml">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="Views\Nav\ExclusiveDeals.cshtml">
+    <Content Include="Views\Deal\_DailyDeals.cshtml">
       <SubType>Code</SubType>
     </Content>
     <Content Include="Web.config" />
@@ -342,30 +342,24 @@
     <Content Include="Views\Web.config" />
     <Content Include="Scripts\jquery-2.2.3.min.map" />
     <Content Include="Views\Nav\Menu.cshtml" />
-    <Content Include="Views\Nav\ShopByStore.cshtml" />
-    <Content Include="Views\Shared\Tags.cshtml" />
-    <Content Include="Views\Nav\ShopByCategory.cshtml" />
+    <Content Include="Views\Store\_ShopByStore.cshtml" />
+    <Content Include="Views\Shared\Search.cshtml" />
+    <Content Include="Views\Category\_ShopByCategory.cshtml" />
     <Content Include="Views\Category\BrowseCategory.cshtml" />
-    <Content Include="Views\Shared\LineItem.cshtml" />
-    <Content Include="Views\Shared\LineItem2.cshtml" />
+    <Content Include="Views\Shared\_LineItem.cshtml" />
+    <Content Include="Views\Shared\_LineItem2.cshtml" />
     <Content Include="Views\Nav\SearchResult.cshtml" />
     <Content Include="Views\Nav\Footer.cshtml" />
     <Content Include="Views\Deal\Daily.cshtml" />
     <Content Include="Views\Deal\Exclusive.cshtml" />
     <Content Include="Views\Store\Store.cshtml" />
-    <Content Include="Views\Shared\_ExclusiveDeal.cshtml" />
-    <Content Include="Views\Deal\Coupon.cshtml" />
+    <Content Include="Views\Deal\_ExclusiveDeals.cshtml" />
     <Content Include="Views\Store\Stores.cshtml" />
-    <Content Include="Views\Shared\CouponStores.cshtml" />
     <Content Include="Views\Nav\LeftSidebar.cshtml" />
-    <Content Include="Views\Shared\OfferURL.cshtml" />
-    <Content Include="Views\Shared\_CouponView.cshtml" />
+    <Content Include="Views\Deal\_OfferURL.cshtml" />
+    <Content Include="Views\Deal\_Coupons.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Shared\_DailyDeals.cshtml" />
-    <Content Include="Views\Nav\Coupons.cshtml" />
-    <Content Include="Views\Shared\Out.cshtml" />
-    <Content Include="Views\Shared\_DOTD.cshtml" />
-    <Content Include="Views\Nav\DOTD.cshtml" />
+    <Content Include="Views\Deal\_DOTD.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -389,7 +383,7 @@
     <Content Include="Views\Category\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Shared\_Stores.cshtml" />
+    <Content Include="Views\Store\_Stores.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\_ViewStart.cshtml" />

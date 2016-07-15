@@ -20,8 +20,23 @@ namespace DealDunia.Web.Controllers
         {
             IRepository<DailyDeals, DailyDealsValues> repository = new DailyDealRepository();
             var deals = repository.Get(new DailyDealsValues { StoreId = 0, StoreName = string.Empty });
-
             return View(deals);
+        }
+
+        public PartialViewResult _DailyDeals(DailyDealsValues param)
+        {
+            var repository = new DailyDealRepository();
+            var deals = repository.Get(param);
+            return PartialView("_DailyDeals", deals);
+        }
+
+        public PartialViewResult _DOTD()
+        {
+            var FR = new FlipkartRepository();
+            var deals = FR.GetDODT();
+            var SR = new SnapdealRepository();
+            deals.AddRange(SR.GetDODT());
+            return PartialView("_DOTD", deals);
         }
 
         public ActionResult Exclusive()
@@ -32,13 +47,35 @@ namespace DealDunia.Web.Controllers
             return View(deals);
         }
 
+        public PartialViewResult _ExclusiveDeals(ExecutiveDealValues param)
+        {
+            var repository = new ExclusiveDealRepository();
+            var deals = repository.Get(param);
+            return PartialView("_ExclusiveDeals", deals);
+        }
+
+
         public ActionResult Coupon(string Offer, string Store, string Category)
         {
             IRepository<Coupon, CouponValues> repository = new CouponRepository();
-            var coupons = repository.Get(new CouponValues { OfferType = Offer, OfferName = Store, StoreCategoryName = (Category==null?string.Empty:Utilities.DecodeUrl(Category)) });
-            return View("Coupon", coupons);
-        } 
+            var coupons = repository.Get(new CouponValues { OfferType = Offer, OfferName = Store, StoreCategoryName = (Category == null ? string.Empty : Utilities.DecodeUrl(Category)) });
+            return View("_Coupons", coupons);
+        }
 
-       
+        public PartialViewResult _Coupons(CouponValues param)
+        {
+            var repository = new CouponRepository();
+            var coupons = repository.Get(param);
+            return PartialView("_Coupons", coupons);
+        }
+
+        public PartialViewResult _OfferURL(int SourceStoreId)
+        {
+            var repository = new CommonRepository();
+            var deals = repository.GetOfferURL(SourceStoreId);
+            return PartialView("_OfferURL", deals);
+        }
+
+
     }
 }

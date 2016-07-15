@@ -22,8 +22,8 @@
 </div>
 
 <div>    
-    @Html.Action("DailyDeals", "Nav", new DealDunia.Domain.Entities.DailyDealsValues { StoreId = 0, StoreName = store })
-    @Html.Action("ExclusiveDeals", "Nav", new DealDunia.Domain.Entities.ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = string.Empty, StoreName = store, StoreId = 0 });        
-    @Html.Action("Coupons", "Nav", new DealDunia.Domain.Entities.CouponValues { OfferType = string.Empty, OfferName = store, StoreCategoryName = string.Empty })   
-    @Html.Action("OfferURL", "Nav", new { SourceStoreId = OfferId })
+    @Html.Action("_DailyDeals", "Deal", new DealDunia.Domain.Entities.DailyDealsValues { StoreId = 0, StoreName = store })
+    @Html.Action("_ExclusiveDeals", "Deal", new DealDunia.Domain.Entities.ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = string.Empty, StoreName = store, StoreId = 0 });        
+    @Html.Action("_Coupons", "Deal", new DealDunia.Domain.Entities.CouponValues { OfferType = string.Empty, OfferName = store, StoreCategoryName = string.Empty })   
+    @Html.Action("_OfferURL", "Deal", new { SourceStoreId = OfferId })
 </div>

@@ -61,8 +61,14 @@ namespace DealDunia.Web.Controllers
 
             ViewBag.SearchedItem = level3;
 
-            return View("Tags");
+            return View("Search");
         }
 
+        public PartialViewResult _ShopByCategory()
+        {
+            var repository = new CategoryRepository();
+            var categories = repository.SelectAll();
+            return PartialView("_ShopByCategory", categories);
+        }  
     }
 }

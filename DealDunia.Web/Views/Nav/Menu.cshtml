@@ -75,7 +75,7 @@
                 </li>
             }
         </ul>
-        @using (Html.BeginForm("Tags", "Product", FormMethod.Post, new { @class = "navbar-form navbar-left", role = "search" }))
+        @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form navbar-left", role = "search" }))
         {
             <div class="form-group">
                 <input type="text" class="form-control" placeholder="Search" name="searchtext">
