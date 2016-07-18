@@ -326,7 +326,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Views\Deal\Coupon.cshtml">
+    <Content Include="Views\Deal\Coupons.cshtml">
       <SubType>Code</SubType>
     </Content>
     <Content Include="Views\Deal\_DailyDeals.cshtml">

@@ -10,8 +10,8 @@
         <hr />
         @foreach (var coupon in Model)
         {    
-            <div class="panel panel-info" style="float: left; width: 240px; height: 100px; font-family: Verdana; margin: 5px; padding: 5px;">
-                <div style="font-size: 12px; margin-bottom: 5px; max-width: 220px; overflow: hidden; max-height: 20px; padding: 2px;">
+            <div class="panel panel-info" style="float: left; width: 240px; height: 120px; font-family: Verdana; margin: 5px; padding: 5px;">
+                <div style="font-size: 12px; text-align:center; margin-bottom: 5px; max-width: 220px; overflow: hidden; height:40px; max-height: 40px; padding: 2px;">
                     <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "coupons", id = coupon.CouponId })">@coupon.CouponTitle.Replace("&amp;", "&")</a></b>
                 </div>
                 <div style="padding: 5px;">

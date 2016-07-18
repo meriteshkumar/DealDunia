@@ -66,6 +66,7 @@
     <Compile Include="Entities\DailyDeals.cs" />
     <Compile Include="Entities\DOTD.cs" />
     <Compile Include="Entities\ExecutiveDeals.cs" />
+    <Compile Include="Entities\PAYOOM.cs" />
     <Compile Include="Entities\Store.cs" />
     <Compile Include="Entities\VCOM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

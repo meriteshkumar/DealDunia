@@ -39,5 +39,18 @@ namespace DealDunia.Infrastructure.Utility
             }
             return table;
         }
+      
+    }
+
+    public static class VCOM
+    {
+        public static string AffiliateId { get { return "46159"; } }
+        public static string APIKEY { get { return "4cd38b37164ca7837819c4196b1ff81fae72073a15054c60ba6a50653d97ac6d"; } }
+    }
+
+    public static class PAYOOM
+    {
+        public static string AffiliateId { get { return "26672"; } }
+        //public static string APIKEY { get { return "4cd38b37164ca7837819c4196b1ff81fae72073a15054c60ba6a50653d97ac6d"; } }
     }
 }

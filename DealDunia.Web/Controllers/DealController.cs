@@ -59,7 +59,7 @@ namespace DealDunia.Web.Controllers
         {
             IRepository<Coupon, CouponValues> repository = new CouponRepository();
             var coupons = repository.Get(new CouponValues { OfferType = Offer, OfferName = Store, StoreCategoryName = (Category == null ? string.Empty : Utilities.DecodeUrl(Category)) });
-            return View("_Coupons", coupons);
+            return View("Coupons", coupons);
         }
 
         public PartialViewResult _Coupons(CouponValues param)

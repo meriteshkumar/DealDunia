@@ -8,12 +8,12 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Net;
 using System.Text;
+using DealDunia.Infrastructure.Utility;
 
 namespace DealDunia.Domain.Concrete
 {
     public class CommonRepository : ICommonRepository
-    {
-        private const string VCOM_Aff_Id = "46159";
+    {        
 
         public void UpdateCoupons(String Source, DataTable dt)
         {
@@ -23,6 +23,13 @@ namespace DealDunia.Domain.Concrete
                 sqlParam[0] = new SqlParameter("@Coupons", dt);
                 sqlParam[0].SqlDbType = SqlDbType.Structured;
                 SqlHelper.ExecuteNonQuery(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.UpdateVCOMCoupons", sqlParam);
+            }
+            else if (Source.ToLower() == "payoom")
+            {
+                SqlParameter[] sqlParam = new SqlParameter[1];
+                sqlParam[0] = new SqlParameter("@Coupons", dt);
+                sqlParam[0].SqlDbType = SqlDbType.Structured;
+                SqlHelper.ExecuteNonQuery(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.UpdatePAYOOMCoupons", sqlParam);
             }
         }
 
@@ -44,7 +51,7 @@ namespace DealDunia.Domain.Concrete
             List<OfferURL> OfferURLs = new List<OfferURL>();
 
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(
-                string.Format("https://api.hasoffers.com/Apiv3/json?NetworkId=vcm&Target=Affiliate_OfferUrl&Method=findAll&api_key=4cd38b37164ca7837819c4196b1ff81fae72073a15054c60ba6a50653d97ac6d&filters%5Boffer_id%5D={0}&filters%5Bstatus%5D=active&fields%5B%5D=id&fields%5B%5D=name&fields%5B%5D=offer_url", SourceStoreId.ToString()));
+                string.Format("https://api.hasoffers.com/Apiv3/json?NetworkId=vcm&Target=Affiliate_OfferUrl&Method=findAll&api_key={0}&filters%5Boffer_id%5D={1}&filters%5Bstatus%5D=active&fields%5B%5D=id&fields%5B%5D=name&fields%5B%5D=offer_url", VCOM.APIKEY, SourceStoreId.ToString()));
             WebResponse response = request.GetResponse();
             using (Stream responseStream = response.GetResponseStream())
             {
@@ -64,7 +71,7 @@ namespace DealDunia.Domain.Concrete
                             OfferURL = new OfferURL();
                             OfferURL.id = Convert.ToInt16(offer["OfferUrl"]["id"].ToString());
                             OfferURL.name = offer["OfferUrl"]["name"].ToString();
-                            OfferURL.offer_url = string.Format("http://tracking.vcommission.com/aff_c?offer_id={0}&aff_id={1}&url_id={2}", SourceStoreId, VCOM_Aff_Id, OfferURL.id);
+                            OfferURL.offer_url = string.Format("http://tracking.vcommission.com/aff_c?offer_id={0}&aff_id={1}&url_id={2}", SourceStoreId, VCOM.AffiliateId, OfferURL.id);                            
                             OfferURLs.Add(OfferURL);
                         }
                     }

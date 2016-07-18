@@ -32,7 +32,7 @@ namespace DealDunia.Web.Controllers
             {
                 if (Source.ToLower() == "vcom")
                 {
-                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://tools.vcommission.com/api/coupons.php?apikey=4cd38b37164ca7837819c4196b1ff81fae72073a15054c60ba6a50653d97ac6d");
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create( string.Format("https://tools.vcommission.com/api/coupons.php?apikey={0}", VCOM.APIKEY));
                     List<VCOMCoupon> deserializedResult = null;
                     JavaScriptSerializer serializer = new JavaScriptSerializer();
                     WebResponse response = request.GetResponse();
@@ -46,6 +46,23 @@ namespace DealDunia.Web.Controllers
                         repository.UpdateCoupons(Source, dt);
                     }
                 }
+                //else if (Source.ToLower() == "payoom")
+                //{
+                //    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format("http://payoom.in/deeplinking/coupons-json.php/?affid={0}", PAYOOM.AffiliateId));
+                //    List<PAYOOMCoupons> deserializedResult = null;
+                //    JavaScriptSerializer serializer = new JavaScriptSerializer();
+                //    WebResponse response = request.GetResponse();
+                //    using (Stream responseStream = response.GetResponseStream())
+                //    {
+                //        StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
+                //        string json = reader.ReadToEnd();
+                //        deserializedResult = serializer.Deserialize<List<PAYOOMCoupons>>(json);
+                //        DataTable dt = new DataTable();
+                //        dt = Utilities.ToDataTable(deserializedResult);
+                //        repository.UpdateCoupons(Source, dt);
+                //    }
+                //}
+
             }
             catch (Exception ex)
             {
@@ -58,7 +75,7 @@ namespace DealDunia.Web.Controllers
             {
                 if (Source.ToLower() == "vcom")
                 {
-                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://api.hasoffers.com/Apiv3/json?NetworkId=vcm&Target=Affiliate_Offer&Method=findMyApprovedOffers&api_key=4cd38b37164ca7837819c4196b1ff81fae72073a15054c60ba6a50653d97ac6d&filters%5Bconversion_cap%5D=&sort%5Bexpiration_date%5D=asc&fields%5B%5D=id&fields%5B%5D=name&fields%5B%5D=expiration_date&fields%5B%5D=status");
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format("https://api.hasoffers.com/Apiv3/json?NetworkId=vcm&Target=Affiliate_Offer&Method=findMyApprovedOffers&api_key={0}&filters%5Bconversion_cap%5D=&sort%5Bexpiration_date%5D=asc&fields%5B%5D=id&fields%5B%5D=name&fields%5B%5D=expiration_date&fields%5B%5D=status", VCOM.APIKEY));
                     List<VCOMStore> stores = new List<VCOMStore>();
                     WebResponse response = request.GetResponse();
                     using (Stream responseStream = response.GetResponseStream())
@@ -80,8 +97,7 @@ namespace DealDunia.Web.Controllers
                             }
                         }
                         DataTable dt = new DataTable();
-                        dt = Utilities.ToDataTable(stores);
-                        repository.UpdateStores(Source, dt);
+                        dt = Utilities.ToDataTable(stores);                        repository.UpdateStores(Source, dt);
                     }
                 }
             }
