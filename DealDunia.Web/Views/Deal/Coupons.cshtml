@@ -5,6 +5,5 @@
     ViewBag.Title = "Coupons & Offers";
 }
 
-@Html.Action("_ExclusiveDeals", "Deal", new DealDunia.Domain.Entities.ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = Utilities.DecodeUrl(this.ViewContext.RouteData.Values["Category"].ToString()), StoreName = string.Empty, StoreId = 0 })
 @Html.Partial("_Coupons", Model)
 

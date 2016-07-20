@@ -42,23 +42,26 @@ namespace DealDunia.Infrastructure.Helpers
         {            
             foreach (var prop in seed.GetType().GetProperties())
             {
-                var d = prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().DisplayName;
-                var x = prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().XPath;
-                string xPath = string.Concat(node.ParentNode.Name, "/", node.Name);
-                if (x.Equals(xPath) && node.Name == d)
+                if (prop.GetCustomAttributes(typeof(DevAttribute), true).Count()>0)
                 {
-                    if (!string.IsNullOrEmpty(prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().PreviousNode))
+                    var d = prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().DisplayName;
+                    var x = prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().XPath;
+                    string xPath = string.Concat(node.ParentNode.Name, "/", node.Name);
+                    if (x.Equals(xPath) && node.Name == d)
                     {
-                        var prevNode = prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().PreviousNode;
-                        var prevNodeValue = prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().PreviousNodeValue;
-                        if (node.PreviousSibling.Name == prevNode && node.PreviousSibling.InnerText == prevNodeValue)
+                        if (!string.IsNullOrEmpty(prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().PreviousNode))
+                        {
+                            var prevNode = prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().PreviousNode;
+                            var prevNodeValue = prop.GetCustomAttributes(typeof(DevAttribute), true).Cast<DevAttribute>().Single().PreviousNodeValue;
+                            if (node.PreviousSibling.Name == prevNode && node.PreviousSibling.InnerText == prevNodeValue)
+                                seed.GetType().GetProperty(prop.Name).SetValue(seed, node.InnerText);
+                        }
+                        else
+                        {
                             seed.GetType().GetProperty(prop.Name).SetValue(seed, node.InnerText);
-                    }
-                    else
-                    {
-                        seed.GetType().GetProperty(prop.Name).SetValue(seed, node.InnerText);
-                    }
+                        }
 
+                    }
                 }
             }
             foreach (XmlNode child in node.ChildNodes)

@@ -142,6 +142,7 @@
     <Content Include="Content\Books.xml" />
     <Content Include="Content\Electronics.xml" />
     <Content Include="Content\Flipkart.xml" />
+    <Content Include="css\menu.css" />
     <Content Include="css\style.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
