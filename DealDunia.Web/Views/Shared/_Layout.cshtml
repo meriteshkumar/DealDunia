@@ -17,27 +17,25 @@
             <button type="submit" class="btn btn-default">Submit</button>
         }
     </div>*@
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 @Html.Action("Menu", "Nav", new { position = "HEADER" })
-
                 <div class="row">
                     <div class="col-md-2" style="">@Html.Action("LeftSidebar", "Nav")</div>
-                    <div class="col-md-8" style="">@RenderBody()</div>
-                    <div class="col-md-2">
+                    <div class="col-md-7" style="">@RenderBody()</div>
+                    <div class="col-md-3">
                         <iframe width='300' height='600' frameborder='0' scrolling='no' src='http://www.cuelinks.com/widgets/8097?pub_id=12521CL11357'></iframe>
                         <iframe width='300' height='600' frameborder='0' scrolling='no' src='http://www.cuelinks.com/widgets/8103?pub_id=12521CL11357'></iframe>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12 panel-footer text-center">
-                        @Html.Action("Menu", "Nav", new { position = "FOOTER" })
-                    </div>
-                </div>
-
             </div>
-    </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 panel-footer text-center">
+                @Html.Action("Menu", "Nav", new { position = "FOOTER" })
+            </div>
+        </div>
     </div>
 </body>
 </html>

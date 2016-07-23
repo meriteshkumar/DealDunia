@@ -1,8 +1,6 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.Category>
 @using DealDunia.Infrastructure.Utility
 
-<link href="~/css/menu.css" rel="stylesheet" />
-
 <script type="text/javascript">
     $(function () {
         $('#main-menu').smartmenus({
@@ -13,25 +11,18 @@
     });
 </script>
 
-
-<link href="~/css/sm-core-css.css" rel="stylesheet" />
-<link href="~/css/sm-blue/sm-blue.css" rel="stylesheet" />
-<link href="~/css/sm-simple/sm-simple.css" rel="stylesheet" />
-
-
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
     <div class="navbar-header">
-        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
+       @* <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-        </button>
+        </button>*@
         <a class="navbar-brand" href="#">HOME</a>
     </div>
 
     <div class="collapse navbar-collapse js-navbar-collapse">
-
         @foreach (var category in Model.Where(c => c.Level == 1))
         {
             <ul class="nav navbar-nav">

@@ -6,22 +6,25 @@
         @foreach (var deal in Model)
         {
             <a target="_blank" href="@deal.DetailPageURL">
-                <div class="panel panel-info" style="float: left; width: 240px; height: 270px; font-family: Verdana; margin: 5px; padding: 5px; text-align: center; vertical-align: middle">
-                    <div style="padding:5px;">
-                        <img style="float:right; display:block; width:70px; height:30px;" alt="@deal.StoreName"  src="@Url.Content("~/Images/" + deal.StoreImage)"/>
+                <div class="panel panel-default col-md-4">
+                    <div class="divProStoreImg">
+                        <img class="ProStoreImg" alt="@deal.StoreName"  src="@Url.Content("~/Images/" + deal.StoreImage)"/>
                     </div>
-                    <div style="height:200px; width:200px">
-                        <img style="margin:auto; display:block; max-width:180px; max-height:180px;" alt="@deal.Title" src="@Url.Content(deal.ImageUrl)" />
+                    <div class="divProImg">
+                        <img class="ProImg" alt="@deal.Title" src="@Url.Content(deal.ImageUrl)" />
                     </div>
-                    <div style="font-size: 12px; margin-bottom: 5px; max-width: 220px; overflow: hidden; max-height: 20px; padding: 2px;">
+                    <hr style="margin: 10px;" />
+                    <div class="divProTitle">
                         <b>@deal.Title</b>
                     </div>
-                    <div style="font-size: 12px; margin-bottom: 5px; max-width: 220px; overflow: hidden; max-height: 20px; padding: 2px;">
-                        <b>
-                            @*<a target="_blank" href="@deal.DetailPageURL">*@
-                                @deal.Description <span style="color: gray; text-decoration-line: line-through">@deal.MRP</span> @deal.EffPrice
-                            @*</a>*@
-                        </b>
+                    <hr style="margin: 10px;" />
+                    <div class="divProPriceOuter">
+                        <div class="divProPriceInner">
+                        <span>@deal.Description</span><span style="color: gray; text-decoration-line: line-through">@deal.MRP</span><span style="color:red"> @deal.EffPrice</span>
+                            </div>
+                        <span>
+                            <a style="float:right" class="btn btn-primary btn-xs" target="_blank" href="@deal.DetailPageURL">Buy</a>
+                        </span>
                     </div>
                 </div>
             </a>

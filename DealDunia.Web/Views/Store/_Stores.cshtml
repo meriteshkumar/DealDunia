@@ -10,17 +10,18 @@
 
 @foreach (string category in Model.Select(x => x.StoreCategoryName).Distinct())
 {
-    <hr />
-    <h4 style="text-align: center; color: #337ab7; font-weight: bold;">@category</h4>    
-    <hr />        
-    <div class="row">
-        @foreach (var store in Model.Where(x => x.StoreCategoryName == category))
-        {
-            <div>
-                <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
-                    <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" class="store_logo"/>
-                </a>
-            </div>
-        }
+    <div class="panel panel-default col-md-12">
+        <h4 style="text-align: center;">@category</h4>
+        <hr />
+        <div class="row">
+            @foreach (var store in Model.Where(x => x.StoreCategoryName == category))
+            {
+                <div class="div_store_logo">
+                    <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
+                        <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" class="store_logo center"/>
+                    </a>
+                </div>
+            }
+        </div>
     </div>
 }

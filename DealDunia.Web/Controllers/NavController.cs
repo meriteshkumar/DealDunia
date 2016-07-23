@@ -49,11 +49,11 @@ namespace DealDunia.Web.Controllers
                 SearchIndex = "All"
             });
 
-            FlipkartRepository rep1 = new FlipkartRepository();
-            response.AddRange(rep1.GetItem(new ItemRequest
-            {
-                Keywords = searchtext
-            }));
+            //FlipkartRepository rep1 = new FlipkartRepository();
+            //response.AddRange(rep1.GetItem(new ItemRequest
+            //{
+            //    Keywords = searchtext
+            //}));
 
             ViewBag.SearchedItem = searchtext;
 
@@ -63,9 +63,9 @@ namespace DealDunia.Web.Controllers
         public PartialViewResult LeftSideBar()
         {
             var repository = new CommonRepository();
-            var coupons = repository.GetCouponStoreCategories();
+            var categories = repository.GetCouponStoreCategories();
 
-            return PartialView(coupons);
+            return PartialView(categories);
         }
     }
 }

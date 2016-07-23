@@ -1,40 +1,29 @@
 ﻿@model IEnumerable<DealDunia.Infrastructure.Abstract.IItemResponse>
 
 <div class="row">
-    @*  @foreach (var item in Model)
-    {
-        <div class="panel panel-info" style="float: left; width: 240px; height: auto; font-family: Verdana; margin: 5px; padding: 5px; text-align: center; vertical-align: middle">
-            @item.Title
-            <br />
-            @item.Amount
-            <br />
-            <img src="@item.ImageUrl" width="100" height="160" style="max-height:200px; width:200px;" />
-            <br />
-            <br />
-            <a class="btn btn-primary" href="@item.DetailPageURL">Buy Now</a>
-        </div>
-    }*@
     @foreach (var item in Model)
     {        
-        <div class="panel panel-info" style="float: left; margin: 5px; padding: 5px; width: 240px; height: 350px; font-family: Verdana;">
-            <div style="padding: 5px;">
-                <img style="float:right; display:block; width:70px; height:30px;" alt="@item.StoreName"  src="@Url.Content("~/Images/" + item.StoreImage)"/>
+        <div class="panel panel-default col-md-4">
+            <div class="divProStoreImg">
+                <img class="ProStoreImg" alt="@item.StoreName"  src="@Url.Content("~/Images/" + item.StoreImage)"/>
             </div>
-            <div style="text-align: center; height: 220px; width: 220px; padding: 5px;">
-                <img style="margin:auto; vertical-align:middle; display:inline-block; max-width:200px; max-height:200px;" alt="@item.Title" src="@item.ImageUrl" />
+            <div class="divProImg">
+                <img class="ProImg" alt="@item.Title" src="@item.ImageUrl" />
             </div>
             <hr style="margin: 10px;" />
-            <div style="font-size: 11px; max-width: 230px; height: 30px; overflow: hidden;">
+            <div class="divProTitle">
                 <b>@item.Title</b>
             </div>
             <hr style="margin: 10px;" />
-            <div style="font-size: 12px; vertical-align: middle">
-                <span style="color: gray; text-decoration-line: overline">Rs. @item.FormattedMRP</span>&nbsp;
-                <span style="color: red;"><b>@item.FormattedAmount</b></span>
-                <span style="float: right;">
-                    <a class="btn btn-primary" target="_blank" href="@item.DetailPageURL">Buy</a>
-                </span>
+            <div class="divProPriceOuter">
+                <div class="divProPriceInner">
+                    <span style="color: gray; text-decoration-line: overline">Rs. @item.FormattedMRP</span>&nbsp;
+                        <span style="color: red;"><b>@item.FormattedAmount</b></span>
+                    <span style="float: right;">
+                        <a style="float:right" class="btn btn-primary btn-xs" target="_blank" href="@item.DetailPageURL">Buy</a>
+                    </span>
+                </div>
             </div>
-        </div>      
+        </div>
     }
 </div>

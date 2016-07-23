@@ -11,10 +11,10 @@ namespace DealDunia.Web
 
             bundles.Add(new ScriptBundle("~/bundles/js")
                 .Include("~/Scripts/jquery-{version}.js",
-                "~/Scripts/jquery.validate.js",
-                "~/Scripts/jquery.validate.unobtrusive.js",
-                "~/Scripts/jquery.unobtrusive-ajax.js",
-                "~/Scripts/bootstrap.js"));
+                "~/Scripts/jquery.validate.min.js",
+                "~/Scripts/jquery.validate.unobtrusive.min.js",
+                "~/Scripts/jquery.unobtrusive-ajax.min.js",
+                "~/Scripts/bootstrap.min.js"));
         }
     }
 }

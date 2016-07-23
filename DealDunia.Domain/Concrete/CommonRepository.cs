@@ -102,17 +102,21 @@ namespace DealDunia.Domain.Concrete
             return categories;
         }
 
-        public IEnumerable<string> GetCouponStoreCategories()
+        public IEnumerable<StoreCategory> GetCouponStoreCategories()
         {
-            List<string> coupons = new List<string>();
-
+            List<StoreCategory> categories = new List<StoreCategory>();
+            StoreCategory category = null;
             SqlDataReader reader = SqlHelper.ExecuteReader(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.GetCouponStoreCategories");
 
             while (reader.Read())
             {
-                coupons.Add(reader.GetString(0));
+                category = new StoreCategory();
+                category.StoreCategoryId = (Int16)((IDataRecord)reader)["StoreCategoryId"];
+                category.StoreCategoryName = ((IDataRecord)reader)["StoreCategoryName"].ToString();
+                category.Image = ((IDataRecord)reader)["Image"].ToString();
+                categories.Add(category);
             }
-            return coupons;
+            return categories;
         }
 
         public string GetOutURL(string Source, int Id)

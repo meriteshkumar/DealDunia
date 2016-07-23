@@ -1,18 +1,19 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.Category>
 @using DealDunia.Infrastructure.Utility
 
-<div class="row">
-    <hr />
+
+<div class="panel panel-default col-md-12" style="padding:10px;">
     <h4 style="text-align: center; color: #337ab7; font-weight: bold;">CATEGORIES</h4>
     <hr />
-    @foreach (var category in Model)
-    {
-        <div class="divBox">
-            <a href="@Url.RouteUrl("Level1", new { id1 = Utilities.EncodeUrl(category.CategoryName) })">
-                <img src="@Url.Content("~/Images/" + category.Image)" alt="@category.CategoryName" class="imgDivBox"/>
-                <br />
-                <strong>@category.CategoryName</strong>
-            </a>
-        </div>
-    }
+    <div class="row">
+        @foreach (var category in Model)
+        {
+            <div class="col-md-4" style="text-align:center;">
+                <a href="@Url.RouteUrl("Level1", new { id1 = Utilities.EncodeUrl(category.CategoryName) })">
+                    <strong>@category.CategoryName</strong>
+                    <img src="@Url.Content("~/Images/" + category.Image)" alt="@category.CategoryName"/>
+                </a>
+            </div>
+        }
+    </div>
 </div>

@@ -1,0 +1,147 @@
+﻿.store_logo
+{
+    max-width: 100px;
+    max-height: 50px;
+}
+
+.center
+{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.div_store_logo
+{
+    width: 102px;
+    height: 52px;
+    border: solid 1px;
+    margin: 6px;
+    border-color: lightgray;
+    float: left;
+    text-align: center;
+}
+
+/*---------------------------- Deal div -------------------------------------------------*/
+.divDeal
+{
+    border: solid 1px;
+    color: lightgray;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.divDealImg
+{
+    margin: 10px;
+    height: 50px;
+}
+
+.divDealTitle
+{
+    font-size: 16px;
+    margin: 10px;
+    height: 60px;
+}
+
+.divDealCodeOuter
+{
+    height: 35px;
+    width: 200px;
+    margin: auto;
+    background-color: #bf192a;
+    font-weight: bold;
+    font-size: 15px;
+    vertical-align: middle;
+    border: 1px #fff dashed;
+    padding-top: 5px;
+}
+
+.divDealCodeInner
+{
+    color: white;
+}
+
+.divDealExpiry
+{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+    font-size: 13px;
+    color: gray;
+}
+
+
+/*---------------------------- Produc div -------------------------------------------------*/
+
+.divProStoreImg
+{
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    height: 35px;
+}
+
+.ProStoreImg
+{
+    float: right;
+    display: block;
+    width: auto;
+    height: 30px;
+}
+
+.divProImg
+{
+    height: 245px;
+    width: 245px;
+}
+
+.ProImg
+{
+    margin: auto;
+    display: block;
+    max-width: 245px;
+    max-height: 245px;
+}
+
+.divProTitle
+{
+    font-size: 14px;    
+    max-width: 245px;
+    overflow: hidden;
+    height: 40px;
+    text-align:center;
+}
+
+.divProPriceOuter
+{
+    height:30px;
+    width: 245px;    
+}
+
+.divProPriceInner
+{
+    float:left;
+    font-size: 13px;
+    font-weight:bold;
+    max-width:300px; 
+}
+
+/*.divBox
+{
+   float:left;
+   height:auto;
+   width:180px;
+   margin:3px;
+   text-align:center;
+}
+
+.imgDivBox
+{
+    height:160px;
+    width:160px;
+}*/

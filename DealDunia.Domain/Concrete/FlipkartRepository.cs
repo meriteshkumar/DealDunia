@@ -46,8 +46,10 @@ namespace DealDunia.Domain.Concrete
                     DOTD dodt = new DOTD();
                     dodt.StoreName = StoreName;
                     dodt.StoreImage = StoreImage;
-                    dodt.Title = offer[i]["title"].ToString();
-                    dodt.Description = offer[i]["description"].ToString();
+                    //dodt.Title = offer[i]["title"].ToString();
+                    //dodt.Description = offer[i]["description"].ToString();
+                    dodt.Title = offer[i]["description"].ToString();
+                    dodt.Description = offer[i]["title"].ToString();
                     dodt.DetailPageURL = offer[i]["url"].ToString();
                     dodt.ImageUrl = offer[i]["imageUrls"][0]["url"].ToString();
                     listDODT.Add(dodt);
