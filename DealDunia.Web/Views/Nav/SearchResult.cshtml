@@ -27,3 +27,6 @@
         </div>
     }
 </div>
+<div style="margin: 0 auto; display: table;">
+    @Html.PageLinks(new DealDunia.Web.Models.PagingInfo { CurrentPage = ViewBag.Page, ItemsPerPage = 10, TotalItems = 50 }, x => Url.Action("Search", "Product", new { searchtext = ViewBag.SearchedItem, page = x }))
+</div>

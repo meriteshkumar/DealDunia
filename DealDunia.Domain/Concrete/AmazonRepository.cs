@@ -23,7 +23,8 @@ namespace DealDunia.Domain.Concrete
                 Keywords = request.Keywords,
                 Operation = request.Operation,
                 ResponseGroup = request.ResponseGroup,
-                SearchIndex = request.SearchIndex
+                SearchIndex = request.SearchIndex,
+                PageIndex = request.PageIndex
             });
 
             XmlParser parser = new XmlParser();

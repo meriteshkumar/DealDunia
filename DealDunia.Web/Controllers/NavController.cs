@@ -36,7 +36,7 @@ namespace DealDunia.Web.Controllers
 
                     
 
-        public PartialViewResult SearchResult(string searchtext)
+        public PartialViewResult SearchResult(string searchtext, int page)
         {
             List<IItemResponse> response = null;
 
@@ -46,16 +46,18 @@ namespace DealDunia.Web.Controllers
                 Keywords = searchtext,
                 Operation = "ItemSearch",
                 ResponseGroup = "Images,ItemAttributes,Offers",
-                SearchIndex = "All"
+                SearchIndex = "All",
+                PageIndex = page
             });
 
-            FlipkartRepository rep1 = new FlipkartRepository();
+           /* FlipkartRepository rep1 = new FlipkartRepository();
             response.AddRange(rep1.GetItem(new ItemRequest
             {
                 Keywords = searchtext
-            }));
+            }));*/
 
             ViewBag.SearchedItem = searchtext;
+            ViewBag.Page = page;
 
             return PartialView(response);
         }

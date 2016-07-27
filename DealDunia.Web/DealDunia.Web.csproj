@@ -130,6 +130,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\PagingHelpers.cs" />
+    <Compile Include="Models\PagingInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -197,6 +199,32 @@
     <Content Include="Images\Categories\Women\Ethnic_wear.png" />
     <Content Include="Images\Categories\Women\Footwear.png" />
     <Content Include="Images\Categories\Women\Pre_Jewel.png" />
+    <Content Include="Images\Category\automotive.png" />
+    <Content Include="Images\Category\baby.png" />
+    <Content Include="Images\Category\beauty.png" />
+    <Content Include="Images\Category\clothing.png" />
+    <Content Include="Images\Category\decor.png" />
+    <Content Include="Images\Category\DTH.png" />
+    <Content Include="Images\Category\ecommerce.png" />
+    <Content Include="Images\Category\education.png" />
+    <Content Include="Images\Category\electronics.png" />
+    <Content Include="Images\Category\entertainment.png" />
+    <Content Include="Images\Category\eyewear.png" />
+    <Content Include="Images\Category\food.png" />
+    <Content Include="Images\Category\footwear.png" />
+    <Content Include="Images\Category\gift.png" />
+    <Content Include="Images\Category\health.png" />
+    <Content Include="Images\Category\hotels.png" />
+    <Content Include="Images\Category\innerwear.png" />
+    <Content Include="Images\Category\jewellery.png" />
+    <Content Include="Images\Category\laptops.png" />
+    <Content Include="Images\Category\lifestyle.png" />
+    <Content Include="Images\Category\mensfashion.png" />
+    <Content Include="Images\Category\mobile.png" />
+    <Content Include="Images\Category\mobilerecharge.png" />
+    <Content Include="Images\Category\sports.png" />
+    <Content Include="Images\Category\travels.png" />
+    <Content Include="Images\Category\womensfashion.png" />
     <Content Include="Images\NoImage.png" />
     <Content Include="Images\Stores\1mglabs\1mglabs.jpg" />
     <Content Include="Images\Stores\1mg\1mg.jpg" />
@@ -365,7 +393,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>

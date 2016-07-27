@@ -34,7 +34,7 @@ namespace DealDunia.Service
                 r1["SearchIndex"] = requestParams.SearchIndex;
                 r1["ResponseGroup"] = requestParams.ResponseGroup;
                 r1["Keywords"] = requestParams.Keywords;                
-                r1["ItemPage"] = "1";
+                r1["ItemPage"] = requestParams.PageIndex.ToString();
 
                 requestUrl = helper.Sign(r1);
 
