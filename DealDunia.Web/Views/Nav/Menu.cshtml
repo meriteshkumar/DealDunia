@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.Category>
 @using DealDunia.Infrastructure.Utility
 
-<script type="text/javascript">
+@*<script type="text/javascript">
     $(function () {
         $('#main-menu').smartmenus({
             subMenusSubOffsetX: 1,
@@ -9,19 +9,13 @@
         });
         $('#main-menu').smartmenus('keyboardSetHotkey', '123', 'shiftKey');
     });
-</script>
+</script>*@
 
 <nav class="navbar navbar-inverse">
-    <div class="navbar-header">
-       @* <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".js-navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>*@
-        <a class="navbar-brand" href="#">HOME</a>
-    </div>
 
+    @*   <div class="navbar-header">
+        <a class="navbar-brand" href="#">HOME</a>
+    </div>*@
     <div class="collapse navbar-collapse js-navbar-collapse">
         @foreach (var category in Model.Where(c => c.Level == 1))
         {
@@ -43,9 +37,22 @@
                             </li>
                         }
                     </ul>
+
                 </li>
             </ul>
         }
+        <div style="float: right;">
+            @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form navbar-left", role = "search" }))
+            {
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search Product across various stores" name="searchtext">
+                    <div class="input-group-btn">
+                        <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+                    </div>
+                </div>
+            }
+        </div>
     </div>
+
 </nav>
 

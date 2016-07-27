@@ -3,7 +3,9 @@
 
 @{
     ViewBag.Title = "Coupons & Offers";
+    ViewBag.Source = "couponsbycat";
 }
 
+@Html.Action("_Stores", "Store", new DealDunia.Domain.Entities.StoreValues { StoreCategoryName = Utilities.DecodeUrl(ViewContext.RouteData.Values["category"].ToString())})
 @Html.Partial("_Coupons", Model)
 

@@ -49,11 +49,11 @@ namespace DealDunia.Web.Controllers
                 SearchIndex = "All"
             });
 
-            //FlipkartRepository rep1 = new FlipkartRepository();
-            //response.AddRange(rep1.GetItem(new ItemRequest
-            //{
-            //    Keywords = searchtext
-            //}));
+            FlipkartRepository rep1 = new FlipkartRepository();
+            response.AddRange(rep1.GetItem(new ItemRequest
+            {
+                Keywords = searchtext
+            }));
 
             ViewBag.SearchedItem = searchtext;
 

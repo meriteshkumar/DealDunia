@@ -22,6 +22,7 @@ namespace DealDunia.Domain.Entities
         public string StoreURL { get; set; }
         public string Featured { get; set; }
         public string Exclusive { get; set; }
+        public int StoreCatMapId { get; set; }
     }
 
     public class CouponValues

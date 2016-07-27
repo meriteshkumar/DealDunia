@@ -1,51 +1,23 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.StoreCategory>
+@using DealDunia.Infrastructure.Utility
+
 
 <link href="~/css/sidebar-menu.css" rel="stylesheet" />
 
-@*<div id="menu">
-    <div class="list-group">
-        <img alt="Stores" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;<a href="@Url.Action("Stores", "Store")">Online Stores</a><br />
-        <img alt="Daily Deals" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;<a href="@Url.Action("Daily", "Deal")">Daily Deals</a><br />
-        <img alt="Exclusive Deals" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;<a href="@Url.Action("Exclusive", "Deal")">Exclusive Deals</a>
-        <ul class="list-group">
-            @foreach (var category in Model)
-            {      
-                <li class="dropdown-submenu pull-left">
-                    <img alt="@category.StoreCategoryName" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;
-                    <a href="@Url.RouteUrl("CouponsByCategory", new { Category = @category.StoreCategoryName.Replace("&", "and") })">@category.StoreCategoryName</a>
-                </li>
-            }
-        </ul>
-    </div>
-</div>*@
-
-
-@*<div id="menu">
-    <div class="list-group">*@
 <ul id="sidebar" class="nav nav-pills nav-stacked" style="max-width: 100%;">
-    <li class="active"><a href="#"><span class="glyphicon glyphicon-off"></span>  Home</a></li>
+    <li class="active"><a href="#"><span class="glyphicon glyphicon-off"></span>Home</a></li>
     <li>&nbsp;<a href="@Url.Action("Stores", "Store")"><img alt="Stores" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;Online Stores</a></li>
-    <li><a href="@Url.Action("Daily", "Deal")"><img alt="Daily Deals" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;Daily Deals</a></li>
-    <li><a href="@Url.Action("Exclusive", "Deal")"><img alt="Exclusive Deals" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;Exclusive Deals</a></li>
-    @*<ul class="list-group">*@
-        @foreach (var category in Model)
-        {      
-            <li>
-                <a href="@Url.RouteUrl("CouponsByCategory", new { Category = @category.StoreCategoryName.Replace("&", "and") })"><img alt="@category.StoreCategoryName" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a>
-            </li>
-        }
-    @*</ul>*@
-</ul>
-@*</div>
-</div>*@
+    <li><a href="@Url.Action("Daily", "Deal")">
+        <img alt="Daily Deals" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;Daily Deals</a></li>
+    <li><a href="@Url.Action("Exclusive", "Deal")">
+        <img alt="Exclusive Deals" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;Exclusive Deals</a></li>
 
-@*<ul id="sidebar" class="nav nav-pills nav-stacked" style="max-width: 200px;">
-    <li class="active"><a href="#"><span class="glyphicon glyphicon-off"></span>  Home</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-user"></span>  Profile</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-lock"></span>  Access</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-envelope"></span>  Message</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-list"></span>  Schedule</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-signal"></span>  Statistics</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-comment"></span>  Chat</a></li>
-    <li><a href="#"><span class="glyphicon glyphicon-earphone"></span>  Contacts</a></li>
-</ul>*@
+    @foreach (var category in Model)
+    {      
+        <li>
+            <a href="@Url.RouteUrl("CouponsByCategory", new { Category =  Utilities.EncodeUrl(@category.StoreCategoryName)})">
+                <img alt="@category.StoreCategoryName" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a>
+        </li>
+    }
+
+</ul>

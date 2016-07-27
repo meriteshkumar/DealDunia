@@ -12,6 +12,7 @@
 #sidebar.nav > li > a:link {
     background-color: #191919;
     color: #FFF;
+    padding:5px;    
 }
 
 #sidebar.nav > li > a:hover,

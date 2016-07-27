@@ -46,22 +46,22 @@ namespace DealDunia.Web.Controllers
                         repository.UpdateCoupons(Source, dt);
                     }
                 }
-                //else if (Source.ToLower() == "payoom")
-                //{
-                //    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format("http://payoom.in/deeplinking/coupons-json.php/?affid={0}", PAYOOM.AffiliateId));
-                //    List<PAYOOMCoupons> deserializedResult = null;
-                //    JavaScriptSerializer serializer = new JavaScriptSerializer();
-                //    WebResponse response = request.GetResponse();
-                //    using (Stream responseStream = response.GetResponseStream())
-                //    {
-                //        StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
-                //        string json = reader.ReadToEnd();
-                //        deserializedResult = serializer.Deserialize<List<PAYOOMCoupons>>(json);
-                //        DataTable dt = new DataTable();
-                //        dt = Utilities.ToDataTable(deserializedResult);
-                //        repository.UpdateCoupons(Source, dt);
-                //    }
-                //}
+                else if (Source.ToLower() == "payoom")
+                {
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format("http://payoom.in/deeplinking/coupons-json.php/?affid={0}", PAYOOM.AffiliateId));
+                    List<PAYOOMCoupons> deserializedResult = null;
+                    JavaScriptSerializer serializer = new JavaScriptSerializer();
+                    WebResponse response = request.GetResponse();
+                    using (Stream responseStream = response.GetResponseStream())
+                    {
+                        StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
+                        string json = reader.ReadToEnd();
+                        deserializedResult = serializer.Deserialize<List<PAYOOMCoupons>>(json);
+                        DataTable dt = new DataTable();
+                        dt = Utilities.ToDataTable(deserializedResult);
+                        repository.UpdateCoupons(Source, dt);
+                    }
+                }
 
             }
             catch (Exception ex)

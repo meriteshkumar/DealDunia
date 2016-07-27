@@ -34,6 +34,13 @@ namespace DealDunia.Web.Controllers
             return View(stores);
         }
 
+        public PartialViewResult _Stores(StoreValues param)
+        {
+            var repository = new StoreRepository();
+            var stores = repository.Get(param);
+            return PartialView("_Stores", stores);
+        }
+
         public ActionResult Store(string store)
         {
             IRepository<Store, StoreValues> repository = new StoreRepository();            

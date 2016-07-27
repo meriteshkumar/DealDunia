@@ -26,7 +26,9 @@ namespace DealDunia.Web.Controllers
 
         public ActionResult Out(string source, int id=0)
         {
-          return Redirect(repository.GetOutURL(source, id));
+          string url = string.Empty;
+          url = repository.GetOutURL(source, id);
+          return Redirect(url);
         }
 
     }

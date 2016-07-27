@@ -10,6 +10,8 @@ namespace DealDunia.Domain.Entities
     {
         public string campaign { get; set; }
         public string title { get; set; }
+        public string details { get; set; }
+        public string category { get; set; }
         public string coupon { get; set; }
         public string start_date { get; set; }
         public string end_date { get; set; }

@@ -13,7 +13,7 @@
             {    
                 <div class="divDeal col-md-4">
                     <div class="divDealImg">
-                        <b><a target="_blank" href="@coupon.OfferURL">
+                        <b><a target="_blank"  href="@Url.Action("Out", "Out", new { source = "couponsbycat", id = coupon.StoreCatMapId })">
                             <img alt="@coupon.OfferName" src="@Url.Content("~/Images/" + coupon.StoreImage)"/></a></b>
                     </div>
                     <hr />

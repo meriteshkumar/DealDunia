@@ -40,6 +40,7 @@ namespace DealDunia.Domain.Concrete
                 coupon.CouponExpiry = ((IDataRecord)reader)["CouponExpiry"].ToString();
                 coupon.StoreImage = ((IDataRecord)reader)["StoreImage"].ToString();
                 coupon.StoreURL = ((IDataRecord)reader)["StoreURL"].ToString();
+                coupon.StoreCatMapId = Convert.ToInt32(((IDataRecord)reader)["StoreCatMapId"]);
 
                 coupons.Add(coupon);
             }
