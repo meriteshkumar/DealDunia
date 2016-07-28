@@ -1,12 +1,49 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.StoreCategory>
 @using DealDunia.Infrastructure.Utility
 
-
 <link href="~/css/sidebar-menu.css" rel="stylesheet" />
 
-<ul id="sidebar" class="nav nav-pills nav-stacked" style="max-width: 100%;">
+<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu" style="display: block; position: static; margin-bottom: 5px; width: 207px;">
+    <li><a href="@Url.Action("Stores", "Store")">
+        <img alt="Stores" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;Online Stores</a></li>
+    <li class="divider"></li>
+    <li><a href="@Url.Action("Daily", "Deal")">
+        <img alt="Daily Deals" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;Daily Deals</a></li>
+    <li class="divider"></li>
+    <li><a href="@Url.Action("Exclusive", "Deal")">
+        <img alt="Exclusive Deals" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;Exclusive Deals</a></li>
+    <li class="divider"></li>
+    <li>
+        <a href="#">
+            <img alt="Coupons by Category" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;Coupons by Category</a></li>
+    <li class="divider"></li>
+    @foreach (var category in Model.Where(c => c.ParentId == 0))
+    {
+        if (Model.Where(i => i.ParentId == category.StoreCategoryId)    .Count() > 0)
+        {
+        <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">
+                <img alt="@category.StoreCategoryName" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a>
+            <ul class="dropdown-menu">
+                @foreach (var inner in Model.Where(i => i.ParentId == category.StoreCategoryId))
+                {
+                    <li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@inner.StoreCategoryName) })">
+                        <img alt="@category.StoreCategoryName" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@inner.StoreCategoryName</a></li>
+                }
+            </ul>
+        </li>
+        }
+        else
+        {
+        <li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@category.StoreCategoryName) })">
+            <img alt="@category.StoreCategoryName" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a></li>
+        }
+    }
+</ul>
+
+@*<ul id="sidebar" class="nav nav-pills nav-stacked" style="max-width: 100%;">
     <li class="active"><a href="#"><span class="glyphicon glyphicon-off"></span>Home</a></li>
-    <li>&nbsp;<a href="@Url.Action("Stores", "Store")"><img alt="Stores" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;Online Stores</a></li>
+    <li class="active">&nbsp;<a href="@Url.Action("Stores", "Store")"><img alt="Stores" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;Online Stores</a></li>
     <li><a href="@Url.Action("Daily", "Deal")">
         <img alt="Daily Deals" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/NoImage.png")" />&nbsp;Daily Deals</a></li>
     <li><a href="@Url.Action("Exclusive", "Deal")">
@@ -15,9 +52,8 @@
     @foreach (var category in Model)
     {      
         <li>
-            <a href="@Url.RouteUrl("CouponsByCategory", new { Category =  Utilities.EncodeUrl(@category.StoreCategoryName)})">
+            <a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@category.StoreCategoryName) })">
                 <img alt="@category.StoreCategoryName" style="max-height:20px; max-width:20px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a>
         </li>
     }
-
-</ul>
+</ul>*@

@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/js")
 </head>
 <body>
- @*    <div class="navbar-header">
+    @*    <div class="navbar-header">
         @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form navbar-left", role = "search" }))
         {
             <div class="form-group">
@@ -20,7 +20,27 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                @Html.Action("Menu", "Nav", new { position = "HEADER" })
+                <div style="max-width: 1366px;">
+                    <div style="float: left;  margin-right: 10px;">
+                        <img alt="CouponWorld" src="~/Images/CouponWorld/CouponWorld.png" />
+                    </div>
+                    <div style="padding: 2px;">
+                        @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
+                        {
+                            <div class="input-group">
+                                <input type="text" style="width: 500px;" class="form-control" placeholder="Search Product across various stores" name="searchtext">
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <nav class="navbar navbar-inverse">
+                    <div>
+                        @Html.Action("Menu", "Nav", new { position = "HEADER" })
+                    </div>                    
+                </nav>
                 <div class="row">
                     <div class="col-md-2" style="">@Html.Action("LeftSidebar", "Nav")</div>
                     <div class="col-md-7" style="">@RenderBody()</div>

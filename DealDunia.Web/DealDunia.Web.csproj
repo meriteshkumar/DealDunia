@@ -225,6 +225,7 @@
     <Content Include="Images\Category\sports.png" />
     <Content Include="Images\Category\travels.png" />
     <Content Include="Images\Category\womensfashion.png" />
+    <Content Include="Images\CouponWorld\CouponWorld.png" />
     <Content Include="Images\NoImage.png" />
     <Content Include="Images\Stores\1mglabs\1mglabs.jpg" />
     <Content Include="Images\Stores\1mg\1mg.jpg" />

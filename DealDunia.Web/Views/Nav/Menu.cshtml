@@ -1,58 +1,32 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.Category>
 @using DealDunia.Infrastructure.Utility
 
-@*<script type="text/javascript">
-    $(function () {
-        $('#main-menu').smartmenus({
-            subMenusSubOffsetX: 1,
-            subMenusSubOffsetY: -8
-        });
-        $('#main-menu').smartmenus('keyboardSetHotkey', '123', 'shiftKey');
-    });
-</script>*@
+<div class="navbar-header">
+    <a class="navbar-brand" href="#">HOME</a>
+</div>
+<div class="collapse navbar-collapse js-navbar-collapse">
+    @foreach (var category in Model.Where(c => c.Level == 1))
+    {
+        <ul class="nav navbar-nav">
+            <li class="dropdown mega-dropdown">
+                <a href="@Url.RouteUrl("Level1", new { id1 = Utilities.EncodeUrl(category.CategoryName) })" class="dropdown-toggle" data-toggle="dropdown">@category.CategoryName <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                <ul class="dropdown-menu mega-dropdown-menu row">
+                    @foreach (var subcategory in Model.Where(m => m.ParentId == category.CategoryId))
+                    {
+                        <li class="col-sm-2">
+                            <ul>
+                                <li class="dropdown-header">@subcategory.CategoryName</li>
+                                <li class="divider"></li>
+                                @foreach (var inner in Model.Where(i => i.ParentId == subcategory.CategoryId))
+                                {
+                                    <li><a href="@Url.RouteUrl("Level3", new { id1 = Utilities.EncodeUrl(category.CategoryName), id2 = Utilities.EncodeUrl(subcategory.CategoryName), id3 = Utilities.EncodeUrl(inner.CategoryName) })">@inner.CategoryName</a></li>                                            
+                                }
+                            </ul>
+                        </li>
+                    }
+                </ul>
 
-<nav class="navbar navbar-inverse">
-
-    @*   <div class="navbar-header">
-        <a class="navbar-brand" href="#">HOME</a>
-    </div>*@
-    <div class="collapse navbar-collapse js-navbar-collapse">
-        @foreach (var category in Model.Where(c => c.Level == 1))
-        {
-            <ul class="nav navbar-nav">
-                <li class="dropdown mega-dropdown">
-                    <a href="@Url.RouteUrl("Level1", new { id1 = Utilities.EncodeUrl(category.CategoryName) })" class="dropdown-toggle" data-toggle="dropdown">@category.CategoryName <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
-                    <ul class="dropdown-menu mega-dropdown-menu row">
-                        @foreach (var subcategory in Model.Where(m => m.ParentId == category.CategoryId))
-                        {
-                            <li class="col-sm-3">
-                                <ul>
-                                    <li class="dropdown-header">@subcategory.CategoryName</li>
-                                    <li class="divider"></li>
-                                    @foreach (var inner in Model.Where(i => i.ParentId == subcategory.CategoryId))
-                                    {
-                                        <li><a href="@Url.RouteUrl("Level3", new { id1 = Utilities.EncodeUrl(category.CategoryName), id2 = Utilities.EncodeUrl(subcategory.CategoryName), id3 = Utilities.EncodeUrl(inner.CategoryName) })">@inner.CategoryName</a></li>                                            
-                                    }
-                                </ul>
-                            </li>
-                        }
-                    </ul>
-
-                </li>
-            </ul>
-        }
-        <div style="float: right;">
-            @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form navbar-left", role = "search" }))
-            {
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search Product across various stores" name="searchtext">
-                    <div class="input-group-btn">
-                        <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
-                    </div>
-                </div>
-            }
-        </div>
-    </div>
-
-</nav>
-
+            </li>
+        </ul>
+    }
+</div>

@@ -11,5 +11,6 @@ namespace DealDunia.Domain.Entities
         public Int16 StoreCategoryId { get; set; }
         public string StoreCategoryName { get; set; }
         public string Image { get; set; }
+        public Int16 ParentId { get; set; }
     }
 }

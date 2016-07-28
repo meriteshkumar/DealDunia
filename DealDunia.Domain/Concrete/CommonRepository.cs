@@ -13,7 +13,7 @@ using DealDunia.Infrastructure.Utility;
 namespace DealDunia.Domain.Concrete
 {
     public class CommonRepository : ICommonRepository
-    {        
+    {
 
         public void UpdateCoupons(String Source, DataTable dt)
         {
@@ -65,13 +65,13 @@ namespace DealDunia.Domain.Concrete
                     JObject offerURL = (JObject)data["response"]["data"];
                     foreach (var x in offerURL)
                     {
-                        offer = x.Value;                        
-                        if(offer["OfferUrl"]["name"].ToString().ToLower().Contains("sale") || offer["OfferUrl"]["name"].ToString().ToLower().Contains("%"))
+                        offer = x.Value;
+                        if (offer["OfferUrl"]["name"].ToString().ToLower().Contains("sale") || offer["OfferUrl"]["name"].ToString().ToLower().Contains("%"))
                         {
                             OfferURL = new OfferURL();
                             OfferURL.id = Convert.ToInt16(offer["OfferUrl"]["id"].ToString());
                             OfferURL.name = offer["OfferUrl"]["name"].ToString();
-                            OfferURL.offer_url = string.Format("http://tracking.vcommission.com/aff_c?offer_id={0}&aff_id={1}&url_id={2}", SourceStoreId, VCOM.AffiliateId, OfferURL.id);                            
+                            OfferURL.offer_url = string.Format("http://tracking.vcommission.com/aff_c?offer_id={0}&aff_id={1}&url_id={2}", SourceStoreId, VCOM.AffiliateId, OfferURL.id);
                             OfferURLs.Add(OfferURL);
                         }
                     }
@@ -114,6 +114,7 @@ namespace DealDunia.Domain.Concrete
                 category.StoreCategoryId = (Int16)((IDataRecord)reader)["StoreCategoryId"];
                 category.StoreCategoryName = ((IDataRecord)reader)["StoreCategoryName"].ToString();
                 category.Image = ((IDataRecord)reader)["Image"].ToString();
+                category.ParentId = (Int16)((IDataRecord)reader)["ParentId"];
                 categories.Add(category);
             }
             return categories;
