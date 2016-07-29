@@ -17,30 +17,55 @@ namespace DealDunia.Domain.Concrete
 
         public void UpdateCoupons(String Source, DataTable dt)
         {
-            if (Source.ToLower() == "vcom")
+            try
             {
+                string procName = string.Empty;
+                if (Source.ToLower() == "vcom")
+                {
+                    procName = "dbo.UpdateVCOMCoupons";
+                }
+                else if (Source.ToLower() == "payoom")
+                {
+                    procName = "dbo.UpdatePAYOOMCoupons";
+                }
+                else if (Source.ToLower() == "icw")
+                {
+                    procName = "dbo.UpdateICWCoupons";
+                }
+
                 SqlParameter[] sqlParam = new SqlParameter[1];
                 sqlParam[0] = new SqlParameter("@Coupons", dt);
                 sqlParam[0].SqlDbType = SqlDbType.Structured;
-                SqlHelper.ExecuteNonQuery(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.UpdateVCOMCoupons", sqlParam);
+                SqlHelper.ExecuteNonQuery(DbConfig.ConnectionString, CommandType.StoredProcedure, procName, sqlParam);
             }
-            else if (Source.ToLower() == "payoom")
+            catch (Exception ex)
             {
-                SqlParameter[] sqlParam = new SqlParameter[1];
-                sqlParam[0] = new SqlParameter("@Coupons", dt);
-                sqlParam[0].SqlDbType = SqlDbType.Structured;
-                SqlHelper.ExecuteNonQuery(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.UpdatePAYOOMCoupons", sqlParam);
+                throw ex;
             }
         }
 
         public void UpdateStores(String Source, DataTable dt)
         {
-            if (Source.ToLower() == "vcom")
+            try
             {
+                string procName = string.Empty;
+                if (Source.ToLower() == "vcom")
+                {
+                    procName = "dbo.UpdateVCOMStores";
+                }
+                else if (Source.ToLower() == "icw")
+                {
+                    procName = "dbo.UpdateICWStores";
+                }
+
                 SqlParameter[] sqlParam = new SqlParameter[1];
                 sqlParam[0] = new SqlParameter("@Stores", dt);
                 sqlParam[0].SqlDbType = SqlDbType.Structured;
-                SqlHelper.ExecuteNonQuery(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.UpdateVCOMStores", sqlParam);
+                SqlHelper.ExecuteNonQuery(DbConfig.ConnectionString, CommandType.StoredProcedure, procName, sqlParam);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
 
