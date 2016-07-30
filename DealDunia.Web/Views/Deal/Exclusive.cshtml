@@ -4,5 +4,36 @@
     ViewBag.Title = "Exclusive Deals";
 }
 
-@Html.Partial("_ExclusiveDeals", Model)
+<script>
+    $(document).ready(function () {
+        $("input[type=checkbox]").click(function () {
+            var stores = '';
+            $("input[type=checkbox]:checked").each(function () {
+                stores += $(this).val() + ",";
+            });
+
+            $.ajax({
+                url: '@Url.Action("_ExclusiveDeals", "Deal")',
+                data: { CategoryId: 0, CategoryName: '', StoreCategoryId: 0, StoreCategoryName: '', StoreId: 0, StoreName: stores }
+            }).done(function (data) {
+                //TODO
+                $("#divExclusive").html(data);
+            }).fail(function () {
+                //TODO
+            });
+        });
+    });
+</script>
+
+<ul style="list-style: none;">
+    @foreach (var storename in Model.Select(m => m.StoreName).Distinct())
+    {
+        <li>
+            <input type="checkbox" value="@storename"/>@storename</li>
+    }
+</ul>
+
+<div id="divExclusive">
+    @Html.Partial("_ExclusiveDeals", Model)
+</div>
 

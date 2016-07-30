@@ -6,6 +6,63 @@
     ViewBag.Source = "couponsbycat";
 }
 
-@Html.Action("_Stores", "Store", new DealDunia.Domain.Entities.StoreValues { StoreCategoryName = Utilities.DecodeUrl(ViewContext.RouteData.Values["category"].ToString())})
-@Html.Partial("_Coupons", Model)
+<script>
+    $(document).ready(function () {
+        $("input[type=checkbox][name=chkstore]").click(function () {
+            var stores = '';
+            $("input[type=checkbox][name=chkstore]:checked").each(function () {
+                stores += $(this).val() + ",";
+            });
 
+            $.ajax({
+                url: '@Url.Action("_Coupons", "Deal")',
+                data: { OfferType: '', OfferName: stores, StoreCategoryName: '' }
+            }).done(function (data) {
+                //TODO
+                $("#divCoupon").html(data);
+            }).fail(function () {
+                //TODO
+            });
+        });
+
+        $("input[type=checkbox][name=chktype]").click(function () {
+            var offertype = '';
+            $("input[type=checkbox][name=chktype]:checked").each(function () {
+                offertype += $(this).val() + ",";
+            });
+
+            $.ajax({
+                url: '@Url.Action("_Coupons", "Deal")',
+                data: { OfferType: offertype, OfferName: '', StoreCategoryName: '' }
+            }).done(function (data) {
+                //TODO
+                $("#divCoupon").html(data);
+            }).fail(function () {
+                //TODO
+            });
+        });
+    });
+</script>
+
+@Html.Action("_Stores", "Store", new DealDunia.Domain.Entities.StoreValues { StoreCategoryName = Utilities.DecodeUrl(ViewContext.RouteData.Values["category"].ToString()) })
+<div>
+    <ul style="list-style: none;">
+        @foreach (var storename in Model.Select(m => m.OfferName).Distinct())
+        {
+            <li>
+                <input type="checkbox" value="@storename" name="chkstore"/>@storename</li>
+        }
+    </ul>
+</div>
+<div>
+    <ul style="list-style: none;">
+        @foreach (var offertype in Model.Select(m => m.OfferType).Distinct())
+        {
+            <li>
+                <input type="checkbox" value="@offertype" name="chktype"/>@offertype</li>
+        }
+    </ul>
+</div>
+<div id="divCoupon">
+    @Html.Partial("_Coupons", Model)
+</div>
