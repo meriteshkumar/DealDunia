@@ -2,7 +2,7 @@
 @using DealDunia.Infrastructure.Utility
 
 <div class="navbar-header">
-    <a class="navbar-brand" href="#">HOME</a>
+    <a class="navbar-brand" href='@Url.Action("Index","Category")'>HOME</a>
 </div>
 <div class="collapse navbar-collapse js-navbar-collapse">
     @foreach (var category in Model.Where(c => c.Level == 1))

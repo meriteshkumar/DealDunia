@@ -8,15 +8,30 @@
 
 <script>
     $(document).ready(function () {
-        $("input[type=checkbox][name=chkstore]").click(function () {
-            var stores = '';
+        var stores = '';
+        var offertype = '';
+
+
+        function Init() {
+
+            stores = '';
+            offertype = '';
+
             $("input[type=checkbox][name=chkstore]:checked").each(function () {
                 stores += $(this).val() + ",";
             });
 
+            $("input[type=checkbox][name=chktype]:checked").each(function () {
+                offertype += $(this).val() + ",";
+            });
+        }
+
+        $("input[type=checkbox][name=chkstore]").click(function () {
+            Init();
+
             $.ajax({
                 url: '@Url.Action("_Coupons", "Deal")',
-                data: { OfferType: '', OfferName: stores, StoreCategoryName: '' }
+                data: { OfferType: offertype, OfferName: stores, StoreCategoryName: '@ViewContext.RouteData.Values["Category"].ToString()' }
             }).done(function (data) {
                 //TODO
                 $("#divCoupon").html(data);
@@ -26,14 +41,11 @@
         });
 
         $("input[type=checkbox][name=chktype]").click(function () {
-            var offertype = '';
-            $("input[type=checkbox][name=chktype]:checked").each(function () {
-                offertype += $(this).val() + ",";
-            });
+            Init();
 
             $.ajax({
                 url: '@Url.Action("_Coupons", "Deal")',
-                data: { OfferType: offertype, OfferName: '', StoreCategoryName: '' }
+                data: { OfferType: offertype, OfferName: stores, StoreCategoryName: '@ViewContext.RouteData.Values["Category"].ToString()' }
             }).done(function (data) {
                 //TODO
                 $("#divCoupon").html(data);

@@ -65,6 +65,7 @@ namespace DealDunia.Web.Controllers
         public PartialViewResult _Coupons(CouponValues param)
         {
             var repository = new CouponRepository();
+            param.StoreCategoryName = param.StoreCategoryName == null ? string.Empty : Utilities.DecodeUrl(param.StoreCategoryName);
             var coupons = repository.Get(param);
             return PartialView("_Coupons", coupons);
         }
