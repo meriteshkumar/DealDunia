@@ -8,7 +8,7 @@ namespace DealDunia.Domain.Entities
 {
     public class Coupon
     {
-        public Int64 CouponId { get; set; }        
+        public string CouponId { get; set; }        
         public int OfferId { get; set; }
         public string OfferName { get; set; }
         public string OfferType { get; set; }

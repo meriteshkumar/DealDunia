@@ -11,6 +11,6 @@ namespace DealDunia.Domain.Abstract
        void UpdateStores(string Source, DataTable dt);
        IEnumerable<StoreCategory> GetCouponStoreCategories();
        IEnumerable<OfferURL> GetOfferURL(int SourceStoreId);
-       string GetOutURL(string Source, int Id);
+       string GetOutURL(string Source, string Id);
     }
 }

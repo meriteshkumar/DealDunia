@@ -120,7 +120,8 @@ namespace DealDunia.Web.Controllers
                 }
                 else if (Source.ToLower() == "icw")
                 {
-                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format("https://api.hasoffers.com/Apiv3/json?NetworkId={0}&Target=Affiliate_Offer&Method=findMyApprovedOffers&api_key={1}&filters%5Bconversion_cap%5D=&sort%5Bexpiration_date%5D=asc&fields%5B%5D=id&fields%5B%5D=name&fields%5B%5D=expiration_date&fields%5B%5D=status", ICW.NetworkId, ICW.APIKEY));
+                    //HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format("https://api.hasoffers.com/Apiv3/json?NetworkId={0}&Target=Affiliate_Offer&Method=findMyApprovedOffers&api_key={1}&filters%5Bconversion_cap%5D=&sort%5Bexpiration_date%5D=asc&fields%5B%5D=id&fields%5B%5D=name&fields%5B%5D=expiration_date&fields%5B%5D=status", ICW.NetworkId, ICW.APIKEY));
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format("https://api.hasoffers.com/Apiv3/json?NetworkId={0}&Target=Affiliate_Offer&Method=findMyApprovedOffers&api_key={1}&filters%5Bconversion_cap%5D=", ICW.NetworkId, ICW.APIKEY));                
                     List<ICWStore> stores = new List<ICWStore>();
                     WebResponse response = request.GetResponse();
                     using (Stream responseStream = response.GetResponseStream())

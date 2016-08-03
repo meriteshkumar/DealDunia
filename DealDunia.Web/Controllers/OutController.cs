@@ -24,7 +24,7 @@ namespace DealDunia.Web.Controllers
 
         //}
 
-        public ActionResult Out(string source, int id=0)
+        public ActionResult Out(string source, string id)
         {
           string url = string.Empty;
           url = repository.GetOutURL(source, id);

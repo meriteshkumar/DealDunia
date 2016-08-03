@@ -145,7 +145,7 @@ namespace DealDunia.Domain.Concrete
             return categories;
         }
 
-        public string GetOutURL(string Source, int Id)
+        public string GetOutURL(string Source, string Id)
         {
             return SqlHelper.ExecuteScalar(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.GetOutUrl", new SqlParameter[]{
                 new SqlParameter("@Source", Source), new SqlParameter("@Id", Id)
