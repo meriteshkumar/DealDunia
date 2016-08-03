@@ -49,7 +49,7 @@ namespace DealDunia.Web.Controllers
             return View("BrowseCategory", categories);
         }
 
-        public ActionResult Browse3()
+        public ActionResult Browse3(int page = 1)
         {
             var level1 = RouteData.Values["id1"].ToString();
             var level2 = RouteData.Values["id2"].ToString();
@@ -60,6 +60,7 @@ namespace DealDunia.Web.Controllers
             level3 = DealDunia.Infrastructure.Utility.Utilities.DecodeUrl(level3);
 
             ViewBag.SearchedItem = level3;
+            ViewBag.Page = page;
 
             return View("Search");
         }

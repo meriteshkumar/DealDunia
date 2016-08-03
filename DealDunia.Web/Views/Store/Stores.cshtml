@@ -6,4 +6,32 @@
 
 @*<h2>@Model.StoreName</h2>*@
 
-@Html.Partial("_Stores", Model)
+<link href="@Url.Content("~/css/style.css")" rel="stylesheet" type="text/css" />
+
+<div class="panel panel-default col-md-12" style="padding-bottom:20px; padding-top:20px;">
+    <div style="text-align:center;">
+        @foreach (string alphabet in Model.OrderBy(o => o.Alphabet).Select(x => x.Alphabet).Distinct())
+        {
+            <a href="#@alphabet" style="font-size:20px;" >&nbsp;@alphabet&nbsp;</a>
+        }
+    </div>
+    @foreach (string alphabet in Model.OrderBy(o => o.Alphabet).Select(x => x.Alphabet).Distinct())
+    {
+        <hr />
+        <h4 style="text-align: center;" id="@alphabet">@alphabet</h4>
+        <hr />
+        <div class="row">
+            @foreach (var store in Model.Where(x => x.Alphabet == alphabet).Select(s => new { StoreName = s.StoreName, StoreImage = s.StoreImage }).Distinct())
+            {
+                <div class="col-md-2">
+                    <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
+                        @* <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" class="store_logo center" />*@
+                        <b>@store.StoreName</b>
+                    </a>
+                </div>
+              
+            }
+        </div>
+   
+    }
+</div>

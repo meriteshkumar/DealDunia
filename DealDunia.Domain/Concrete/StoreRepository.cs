@@ -52,6 +52,7 @@ namespace DealDunia.Domain.Concrete
                 store.StoreCategoryName = ((IDataRecord)reader)["StoreCategoryName"].ToString();
                 store.SourceStoreId = Convert.ToInt16(((IDataRecord)reader)["SourceStoreId"]);
                 store.StoreCatMapId = Convert.ToInt32(((IDataRecord)reader)["StoreCatMapId"]);
+                store.Alphabet = ((IDataRecord)reader)["Alphabet"].ToString();
                 stores.Add(store);
             }
             return stores;

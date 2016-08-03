@@ -59,7 +59,7 @@
 @Html.Action("_Stores", "Store", new DealDunia.Domain.Entities.StoreValues { StoreCategoryName = Utilities.DecodeUrl(ViewContext.RouteData.Values["category"].ToString()) })
 <div>
     <ul style="list-style: none;">
-        @foreach (var storename in Model.Select(m => m.OfferName).Distinct())
+        @foreach (var storename in Model.OrderBy(o => o.OfferName).Select(p => p.OfferName).Distinct())
         {
             <li>
                 <input type="checkbox" value="@storename" name="chkstore"/>@storename</li>
@@ -68,7 +68,7 @@
 </div>
 <div>
     <ul style="list-style: none;">
-        @foreach (var offertype in Model.Select(m => m.OfferType).Distinct())
+        @foreach (var offertype in Model.OrderBy(o => o.OfferType).Select(p => p.OfferType).Distinct())
         {
             <li>
                 <input type="checkbox" value="@offertype" name="chktype"/>@offertype</li>

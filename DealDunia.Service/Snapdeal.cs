@@ -12,7 +12,7 @@ namespace DealDunia.Service
     public class Snapdeal
     {
         private const string AFFILIATE_ID = "73767";
-        private const string AFFILIATE_TOKEN = "c211bee0344f73ef6c2e6daedc07a9";
+        private const string AFFILIATE_TOKEN = "e1c33ba925c45276d76a1c7bffacbc";
         //private const string API_URL = "affiliate-feeds.snapdeal.com/feed/api";
         string API_URL = string.Empty;
         public System.IO.Stream ItemSearch(ItemRequest requestParams)
