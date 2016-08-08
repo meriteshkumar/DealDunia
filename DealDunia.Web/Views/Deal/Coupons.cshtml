@@ -11,16 +11,12 @@
         var stores = '';
         var offertype = '';
 
-
         function Init() {
-
             stores = '';
             offertype = '';
-
             $("input[type=checkbox][name=chkstore]:checked").each(function () {
                 stores += $(this).val() + ",";
             });
-
             $("input[type=checkbox][name=chktype]:checked").each(function () {
                 offertype += $(this).val() + ",";
             });
@@ -28,52 +24,56 @@
 
         $("input[type=checkbox][name=chkstore]").click(function () {
             Init();
-
             $.ajax({
                 url: '@Url.Action("_Coupons", "Deal")',
                 data: { OfferType: offertype, OfferName: stores, StoreCategoryName: '@ViewContext.RouteData.Values["Category"].ToString()' }
             }).done(function (data) {
-                //TODO
                 $("#divCoupon").html(data);
             }).fail(function () {
-                //TODO
             });
         });
 
         $("input[type=checkbox][name=chktype]").click(function () {
             Init();
-
             $.ajax({
                 url: '@Url.Action("_Coupons", "Deal")',
                 data: { OfferType: offertype, OfferName: stores, StoreCategoryName: '@ViewContext.RouteData.Values["Category"].ToString()' }
             }).done(function (data) {
-                //TODO
                 $("#divCoupon").html(data);
             }).fail(function () {
-                //TODO
             });
         });
     });
 </script>
 
 @Html.Action("_Stores", "Store", new DealDunia.Domain.Entities.StoreValues { StoreCategoryName = Utilities.DecodeUrl(ViewContext.RouteData.Values["category"].ToString()) })
-<div>
-    <ul style="list-style: none;">
-        @foreach (var storename in Model.OrderBy(o => o.OfferName).Select(p => p.OfferName).Distinct())
-        {
-            <li>
-                <input type="checkbox" value="@storename" name="chkstore"/>@storename</li>
-        }
-    </ul>
-</div>
-<div>
-    <ul style="list-style: none;">
-        @foreach (var offertype in Model.OrderBy(o => o.OfferType).Select(p => p.OfferType).Distinct())
-        {
-            <li>
-                <input type="checkbox" value="@offertype" name="chktype"/>@offertype</li>
-        }
-    </ul>
+<div class="col-md-12" style="padding: 0px;">
+    <div class="col-md-9" style="padding: 0px;">
+        <div class="panel panel-default">
+            <h4>Stores</h4>
+            <hr />
+            <div class="checkbox" style="padding-left: 5px; padding-right: 5px;">
+                @foreach (var storename in Model.OrderBy(o => o.OfferName).Select(p => p.OfferName).Distinct())
+                {          
+                    <label>
+                        <input type="checkbox" value="@storename" name="chkstore"/>@storename</label>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3" style="padding: 0px;">
+        <div class="panel panel-default">
+            <h4>Offer Type</h4>
+            <hr />
+            <div class="checkbox" style="padding-left: 5px;">
+                @foreach (var offertype in Model.OrderBy(o => o.OfferType).Select(p => p.OfferType).Distinct())
+                {                    
+                    <label>
+                        <input type="checkbox" value="@offertype" name="chktype"/>@offertype</label>
+                }
+            </div>
+        </div>
+    </div>
 </div>
 <div id="divCoupon">
     @Html.Partial("_Coupons", Model)

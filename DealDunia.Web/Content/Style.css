@@ -1,4 +1,21 @@
-﻿.store_logo
+﻿label
+{
+    width: 140px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    max-height: 10px;
+    overflow: hidden;
+}
+
+h4
+{
+    text-align: center;
+    color: #337ab7;
+    font-weight: bold;
+}
+
+.store_logo
 {
     max-width: 100px;
     max-height: 50px;
@@ -41,9 +58,11 @@
 
 .divDealTitle
 {
-    font-size: 16px;
+    font-size: 15px;
     margin: 10px;
     height: 60px;
+    max-height: 60px;
+    overflow: hidden;
 }
 
 .divDealCodeOuter
@@ -98,37 +117,41 @@
 {
     height: 245px;
     width: 245px;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }
 
 .ProImg
 {
     margin: auto;
     display: block;
+    position: relative;
     max-width: 245px;
     max-height: 245px;
 }
 
 .divProTitle
 {
-    font-size: 14px;    
+    font-size: 14px;
     max-width: 245px;
     overflow: hidden;
     height: 40px;
-    text-align:center;
+    text-align: center;
 }
 
 .divProPriceOuter
 {
-    height:30px;
-    width: 245px;    
+    height: 30px;
+    width: 245px;
 }
 
 .divProPriceInner
 {
-    float:left;
+    float: left;
     font-size: 13px;
-    font-weight:bold;
-    max-width:300px; 
+    font-weight: bold;
+    max-width: 300px;
 }
 
 /*.divBox

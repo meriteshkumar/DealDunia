@@ -16,22 +16,23 @@
                 url: '@Url.Action("_ExclusiveDeals", "Deal")',
                 data: { CategoryId: 0, CategoryName: '', StoreCategoryId: 0, StoreCategoryName: '', StoreId: 0, StoreName: stores }
             }).done(function (data) {
-                //TODO
                 $("#divExclusive").html(data);
             }).fail(function () {
-                //TODO
             });
         });
     });
 </script>
-
-<ul style="list-style: none;">
-    @foreach (var storename in Model.Select(m => m.StoreName).Distinct())
-    {
-        <li>
-            <input type="checkbox" value="@storename"/>@storename</li>
-    }
-</ul>
+<div class="panel panel-default">
+    <h4>Stores</h4>
+    <hr />
+    <div class="checkbox" style="padding-left: 5px; padding-right: 5px;">
+        @foreach (var storename in Model.Select(m => m.StoreName).Distinct())
+        {
+            <label>
+                <input type="checkbox" value="@storename" name="chkstore"/>@storename</label>
+        }
+    </div>
+</div>
 
 <div id="divExclusive">
     @Html.Partial("_ExclusiveDeals", Model)

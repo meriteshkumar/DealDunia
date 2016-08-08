@@ -6,15 +6,15 @@
 {
     
     <div class="panel panel-default col-md-12">
-        <h4 style="text-align: center; color: #337ab7; font-weight: bold;">COUPONS & DEALS</h4>
+        <h4>COUPONS & DEALS</h4>
         <hr />
         <div class="row">
             @foreach (var coupon in Model)
             {    
                 <div class="divDeal col-md-4">
                     <div class="divDealImg">
-                        <b><a target="_blank"  href="@Url.Action("Out", "Out", new { source = "couponsbycat", id = coupon.StoreCatMapId })">
-                            <img alt="@coupon.OfferName" src="@Url.Content("~/Images/" + coupon.StoreImage)"/></a></b>
+                        <a target="_blank"  href="@Url.Action("Out", "Out", new { source = "couponsbycat", id = coupon.StoreCatMapId })">
+                            <img alt="@coupon.OfferName" src="@Url.Content("~/Images/" + coupon.StoreImage)"/></a>
                     </div>
                     <hr />
                     <div class="divDealTitle">
