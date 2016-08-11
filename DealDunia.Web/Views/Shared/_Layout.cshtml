@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div style="max-width: 1366px;">
-                    <div style="float: left;  margin-right: 10px;">
+                    <div style="float: left; margin-right: 10px;">
                         <img alt="CouponWorld" src="~/Images/CouponWorld/CouponWorld.png" />
                     </div>
                     <div style="padding: 2px;">
@@ -39,7 +39,7 @@
                 <nav class="navbar navbar-inverse">
                     <div>
                         @Html.Action("Menu", "Nav", new { position = "HEADER" })
-                    </div>                    
+                    </div>
                 </nav>
                 <div class="row">
                     <div class="col-md-2" style="">@Html.Action("LeftSidebar", "Nav")</div>
@@ -56,6 +56,25 @@
                 @Html.Action("Menu", "Nav", new { position = "FOOTER" })
             </div>
         </div>
+        <a href="#" class="scrollToTop"></a>
     </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+        });
+    </script>
 </body>
 </html>

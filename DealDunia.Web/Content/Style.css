@@ -1,5 +1,4 @@
-﻿label
-{
+﻿label {
     width: 140px;
     position: relative;
     display: inline-block;
@@ -8,29 +7,25 @@
     overflow: hidden;
 }
 
-h4
-{
+h4 {
     text-align: center;
     color: #337ab7;
     font-weight: bold;
 }
 
-.store_logo
-{
+.store_logo {
     max-width: 100px;
     max-height: 50px;
 }
 
-.center
-{
+.center {
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     text-align: center;
 }
 
-.div_store_logo
-{
+.div_store_logo {
     width: 102px;
     height: 52px;
     border: solid 1px;
@@ -41,8 +36,7 @@ h4
 }
 
 /*---------------------------- Deal div -------------------------------------------------*/
-.divDeal
-{
+.divDeal {
     border: solid 1px;
     color: lightgray;
     padding: 10px;
@@ -50,14 +44,12 @@ h4
     vertical-align: middle;
 }
 
-.divDealImg
-{
+.divDealImg {
     margin: 10px;
     height: 50px;
 }
 
-.divDealTitle
-{
+.divDealTitle {
     font-size: 15px;
     margin: 10px;
     height: 60px;
@@ -65,8 +57,7 @@ h4
     overflow: hidden;
 }
 
-.divDealCodeOuter
-{
+.divDealCodeOuter {
     height: 35px;
     width: 200px;
     margin: auto;
@@ -78,13 +69,11 @@ h4
     padding-top: 5px;
 }
 
-.divDealCodeInner
-{
+.divDealCodeInner {
     color: white;
 }
 
-.divDealExpiry
-{
+.divDealExpiry {
     display: block;
     width: 100%;
     text-align: center;
@@ -97,24 +86,21 @@ h4
 
 /*---------------------------- Produc div -------------------------------------------------*/
 
-.divProStoreImg
-{
+.divProStoreImg {
     width: 100%;
     padding-top: 5px;
     padding-bottom: 5px;
     height: 35px;
 }
 
-.ProStoreImg
-{
+.ProStoreImg {
     float: right;
     display: block;
     width: auto;
     height: 30px;
 }
 
-.divProImg
-{
+.divProImg {
     height: 245px;
     width: 245px;
     display: table-cell;
@@ -122,8 +108,7 @@ h4
     text-align: center;
 }
 
-.ProImg
-{
+.ProImg {
     margin: auto;
     display: block;
     position: relative;
@@ -131,8 +116,7 @@ h4
     max-height: 245px;
 }
 
-.divProTitle
-{
+.divProTitle {
     font-size: 14px;
     max-width: 245px;
     overflow: hidden;
@@ -140,14 +124,12 @@ h4
     text-align: center;
 }
 
-.divProPriceOuter
-{
+.divProPriceOuter {
     height: 30px;
     width: 245px;
 }
 
-.divProPriceInner
-{
+.divProPriceInner {
     float: left;
     font-size: 13px;
     font-weight: bold;
@@ -168,3 +150,42 @@ h4
     height:160px;
     width:160px;
 }*/
+
+.scrollToTop {
+    width: 143px;
+    height: 166px;
+    padding: 10px;
+    text-align: center;
+    /*background: whiteSmoke !important;*/
+    font-weight: bold;
+    color: #444;
+    text-decoration: none;
+    position: fixed;
+    top: 400px;
+    right: -3px;
+    display: none;
+    background: url('../Images/Scroll-to-top-button.png') no-repeat 0px 20px;
+}
+
+    .scrollToTop:hover {
+        text-decoration: none;
+    }
+
+
+.field-validation-error {
+    color: #f00;
+}
+
+.validation-summary-errors {
+    color: #f00;
+    font-weight: bold;
+}
+
+.input-validation-error {
+    border: 2px solid #f00;
+    background-color: #fee;
+}
+
+input[type="checkbox"].input-validation-error {
+    outline: 2px solid #f00;
+}

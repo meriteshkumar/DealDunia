@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EcomModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EComEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="ExcDeals" EntityType="EcomModel.ExcDeal" />
+    <EntitySet Name="StoreCategories" EntityType="EcomModel.StoreCategory" />
+    <EntitySet Name="Stores" EntityType="EcomModel.Store" />
+    <AssociationSet Name="FK_ExcDeals_Store" Association="EcomModel.FK_ExcDeals_Store">
+      <End Role="Store" EntitySet="Stores" />
+      <End Role="ExcDeal" EntitySet="ExcDeals" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ExcDeal">
+    <Key>
+      <PropertyRef Name="ExcDealId" />
+    </Key>
+    <Property Name="ExcDealId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreId" Type="Int16" Nullable="false" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="StoreCategoryId" Type="Int16" />
+    <Property Name="Title" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="Image" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="Logo" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+    <Property Name="URL" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+    <Property Name="IsFeatured" Type="Boolean" />
+    <Property Name="Active" Type="Boolean" />
+    <Property Name="StartDate" Type="DateTime" Precision="0" />
+    <Property Name="EndDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Store" Relationship="EcomModel.FK_ExcDeals_Store" FromRole="ExcDeal" ToRole="Store" />
+  </EntityType>
+  <EntityType Name="StoreCategory">
+    <Key>
+      <PropertyRef Name="StoreCategoryId" />
+    </Key>
+    <Property Type="Int16" Name="StoreCategoryId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="StoreCategoryName" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Image" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="ParentId" />
+    <Property Type="Int16" Name="DisplayOrder" />
+    <Property Type="Boolean" Name="Active" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreId" />
+    </Key>
+    <Property Type="Int16" Name="StoreId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="StoreName" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="StoreURL" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="StoreImage" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="DisplayOrder" />
+    <Property Type="Boolean" Name="Affiliate" />
+    <Property Type="String" Name="AffiliateId" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Int16" Name="StoreSourceId" />
+    <Property Type="Int32" Name="SourceStoreId" />
+    <Property Type="Boolean" Name="IsFeatured" />
+    <Property Type="DateTime" Name="ExpirationDate" Precision="3" />
+    <Property Type="Boolean" Name="Active" />
+    <Property Type="DateTime" Name="CreatedOn" Precision="3" />
+    <Property Type="DateTime" Name="ModifiedOn" Precision="3" />
+    <NavigationProperty Name="ExcDeals" Relationship="EcomModel.FK_ExcDeals_Store" FromRole="Store" ToRole="ExcDeal" />
+  </EntityType>
+  <Association Name="FK_ExcDeals_Store">
+    <End Type="EcomModel.Store" Role="Store" Multiplicity="1" />
+    <End Type="EcomModel.ExcDeal" Role="ExcDeal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="ExcDeal">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -32,10 +32,6 @@ namespace DealDunia.Web.Controllers
                 return PartialView("Footer", categories);
         }
 
-       
-
-                    
-
         public PartialViewResult SearchResult(string searchtext, int page)
         {
             List<IItemResponse> response = null;

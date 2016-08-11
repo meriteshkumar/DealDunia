@@ -1,0 +1,59 @@
+﻿@model IEnumerable<DealDunia.Web.Areas.ExcDeal>
+@{
+    ViewBag.Title = "Exclusive Deal";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Exclusive Deal</h2>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+    </div>
+</div>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"].ToString()</div>
+}
+
+<table class="table table-hover">
+    <tr class="success">
+        <td><strong>Title</strong></td>
+        <td><strong>Status</strong></td>
+        <td>&nbsp;</td>
+    </tr>
+    @foreach (var deal in Model)
+    {
+        <tr>
+            <td>@deal.Title</td>
+            <td>@Html.CheckBox("Status", new { value = deal.Active, @checked = deal.Active })</td>
+            <td>
+                <button class="btn btn-primary edit-person" value="@deal.ExcDealId">
+                    Edit</button>
+            </td>
+        </tr>
+    }
+</table>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".edit-person").click(function () {
+            var excDealId = $(this).val();
+            $.ajax({
+                url: '@Url.Action("_EditExcDeal", "ExclusiveDeal")',
+                data: { id: excDealId }
+            }).done(function (data) {
+                $(".modal-dialog").html(data);
+                $("#myModal").modal();
+
+                //Need to register unobtrusive validation for dynamically added elements
+                var form = $("#myForm");
+                form.removeData('validator');
+                form.removeData('unobtrusiveValidation');
+                $.validator.unobtrusive.parse(form);
+            }).fail(function () {
+            });
+        });
+    });
+</script>

@@ -1,0 +1,8 @@
+﻿@model IEnumerable<DealDunia.Web.Areas.Store>
+
+<select class="form-control" name="@ViewBag.ControlName" id="@ViewBag.ControlName">
+    @foreach (var store in Model)
+    {
+        <option value="@store.StoreId">@store.StoreName</option>
+    }
+</select>

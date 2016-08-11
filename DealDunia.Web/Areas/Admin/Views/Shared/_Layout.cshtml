@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Conent/css")
+    @Scripts.Render("~/bundles/js")
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="list-group">
+                    <a href="@Url.Action("Index", "ExclusiveDeal")" class="list-group-item">Exclusive Deal</a>
+                </div>
+            </div>
+            <div class="col-md-8">
+                @RenderBody()
+            </div>
+            <div class="col-md-2">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

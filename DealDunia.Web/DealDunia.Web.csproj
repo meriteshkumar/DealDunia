@@ -43,6 +43,9 @@
     <Reference Include="Antlr3.Runtime">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -50,7 +53,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,6 +126,34 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ExclusiveDealController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Models\MetaData\ExcDealMetaData.cs" />
+    <Compile Include="Areas\EComModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EComModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\EComModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EComModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\EComModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EComModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\ExcDeal.cs">
+      <DependentUpon>EComModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\Store.cs">
+      <DependentUpon>EComModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\StoreCategory.cs">
+      <DependentUpon>EComModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\DealController.cs" />
     <Compile Include="Controllers\NavController.cs" />
@@ -137,6 +171,16 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="Areas\EComModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EComModel.edmx</DependentUpon>
+      <LastGenOutput>EComModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Areas\EComModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EComModel.edmx</DependentUpon>
+      <LastGenOutput>EComModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -144,6 +188,8 @@
     <Content Include="Content\Books.xml" />
     <Content Include="Content\Electronics.xml" />
     <Content Include="Content\Flipkart.xml" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\menu.css" />
     <Content Include="Content\sidebar-menu.css" />
     <Content Include="Content\style.css" />
@@ -153,6 +199,20 @@
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <EntityDeploy Include="Areas\EComModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EComModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Areas\EComModel.edmx.diagram">
+      <DependentUpon>EComModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\Shared\_EditExcDeal.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\ExclusiveDeal\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ExclusiveDeal\_StoreCategoryDropDown.cshtml" />
+    <Content Include="Areas\Admin\Views\ExclusiveDeal\_StoreDropDown.cshtml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Images\Categories\Baby_Kids.png" />
     <Content Include="Images\Categories\Baby_Kids\Accessories.png" />
@@ -201,38 +261,77 @@
     <Content Include="Images\Categories\Women\Pre_Jewel.png" />
     <Content Include="Images\Category\automotive.png" />
     <Content Include="Images\Category\baby.png" />
+    <Content Include="Images\Category\babycare.png" />
     <Content Include="Images\Category\beauty.png" />
+    <Content Include="Images\Category\book.png" />
+    <Content Include="Images\Category\Bus.png" />
     <Content Include="Images\Category\clothing.png" />
+    <Content Include="Images\Category\computer.png" />
+    <Content Include="Images\Category\comp_lap.png" />
+    <Content Include="Images\Category\datacard.png" />
     <Content Include="Images\Category\decor.png" />
+    <Content Include="Images\Category\dining.png" />
     <Content Include="Images\Category\DTH.png" />
     <Content Include="Images\Category\ecommerce.png" />
     <Content Include="Images\Category\education.png" />
     <Content Include="Images\Category\electronics.png" />
     <Content Include="Images\Category\entertainment.png" />
+    <Content Include="Images\Category\eyewear.jpg" />
     <Content Include="Images\Category\eyewear.png" />
+    <Content Include="Images\Category\fashion.png" />
+    <Content Include="Images\Category\flight.png" />
     <Content Include="Images\Category\food.png" />
     <Content Include="Images\Category\footwear.png" />
+    <Content Include="Images\Category\furniture.png" />
+    <Content Include="Images\Category\games.png" />
     <Content Include="Images\Category\gift.png" />
     <Content Include="Images\Category\health.png" />
+    <Content Include="Images\Category\health_beauty.png" />
+    <Content Include="Images\Category\homeappliances.png" />
+    <Content Include="Images\Category\homedecor.png" />
+    <Content Include="Images\Category\home_kit.png" />
+    <Content Include="Images\Category\hotel.png" />
     <Content Include="Images\Category\hotels.png" />
     <Content Include="Images\Category\innerwear.png" />
     <Content Include="Images\Category\jewellery.png" />
+    <Content Include="Images\Category\kidscloth.png" />
+    <Content Include="Images\Category\laptop.png" />
     <Content Include="Images\Category\laptops.png" />
     <Content Include="Images\Category\lifestyle.png" />
+    <Content Include="Images\Category\menfashion.png" />
+    <Content Include="Images\Category\menfootwear.jpg" />
     <Content Include="Images\Category\mensfashion.png" />
+    <Content Include="Images\Category\metro.png" />
     <Content Include="Images\Category\mobile.png" />
     <Content Include="Images\Category\mobilerecharge.png" />
+    <Content Include="Images\Category\mobile_tab.png" />
+    <Content Include="Images\Category\noimage.png" />
+    <Content Include="Images\Category\recharge.png" />
+    <Content Include="Images\Category\refmobile.png" />
     <Content Include="Images\Category\sports.png" />
+    <Content Include="Images\Category\tab.png" />
+    <Content Include="Images\Category\toys.gif" />
+    <Content Include="Images\Category\toys.png" />
     <Content Include="Images\Category\travels.png" />
+    <Content Include="Images\Category\utilitybills.png" />
+    <Content Include="Images\Category\womenfashion.png" />
+    <Content Include="Images\Category\womenfootwear.png" />
+    <Content Include="Images\Category\womeninnerwear.png" />
     <Content Include="Images\Category\womensfashion.png" />
     <Content Include="Images\CouponWorld\CouponWorld.png" />
     <Content Include="Images\NoImage.png" />
+    <Content Include="Images\Scroll-to-top-button.png" />
+    <Content Include="Images\Stores\1mgAyush\1mgAyush.png" />
     <Content Include="Images\Stores\1mglabs\1mglabs.jpg" />
     <Content Include="Images\Stores\1mg\1mg.jpg" />
+    <Content Include="Images\Stores\99tshirts\99tshirts.jpeg" />
     <Content Include="Images\Stores\Abof\Abof.png" />
     <Content Include="Images\Stores\Ace2three\Ace2three.jpg" />
+    <Content Include="Images\Stores\Adidas\Adidas.png" />
+    <Content Include="Images\Stores\Agoda\Agoda.jpg" />
     <Content Include="Images\Stores\Airtel\Airtel.jpg" />
     <Content Include="Images\Stores\Ajio\Ajio.jpg" />
+    <Content Include="Images\Stores\Amante\Amante.png" />
     <Content Include="Images\Stores\Amazon\Amazon.jpg" />
     <Content Include="Images\Stores\Amazon\DailyDeals.png" />
     <Content Include="Images\Stores\Amazon\Diapers.png" />
@@ -241,19 +340,37 @@
     <Content Include="Images\Stores\Amazon\Televsions.png" />
     <Content Include="Images\Stores\AmericanSwan\AmericanSwan.jpg" />
     <Content Include="Images\Stores\Amzer\Amzer.jpg" />
+    <Content Include="Images\Stores\Aplava\Aplava.png" />
+    <Content Include="Images\Stores\Aquaguard\Aquaguard.png" />
     <Content Include="Images\Stores\ArchiesOnline\ArchiesOnline.jpg" />
+    <Content Include="Images\Stores\Art4u\Art4u.png" />
+    <Content Include="Images\Stores\Askme\Askme.png" />
+    <Content Include="Images\Stores\Avis\Avis.png" />
+    <Content Include="Images\Stores\Babyoye\Babyoye.png" />
     <Content Include="Images\Stores\BasicsLife\BasicsLife.jpg" />
+    <Content Include="Images\Stores\Bata\Bata.png" />
+    <Content Include="Images\Stores\BehrouzBiryani\BehrouzBiryani.jpg" />
     <Content Include="Images\Stores\Biba\Biba.jpg" />
+    <Content Include="Images\Stores\Bigbasket\Bigbasket.png" />
+    <Content Include="Images\Stores\Blackberry\Blackberry.png" />
     <Content Include="Images\Stores\BlueStone\BlueStone.jpg" />
     <Content Include="Images\Stores\BookMyFlowers\BookMyFlowers.jpg" />
+    <Content Include="Images\Stores\BucketKart\BucketKart.gif" />
     <Content Include="Images\Stores\CampusSutra\CampusSutra.jpg" />
+    <Content Include="Images\Stores\Chainrooms\Chainrooms.png" />
+    <Content Include="Images\Stores\Chaipoint\chaipoint.png" />
     <Content Include="Images\Stores\Chumbak\Chumbak.png" />
+    <Content Include="Images\Stores\Cleartrip\Cleartrip.gif" />
     <Content Include="Images\Stores\Clovia\Clovia.jpg" />
     <Content Include="Images\Stores\Coke2Home\Coke2Home.png" />
+    <Content Include="Images\Stores\CollegeDekho\CollegeDekho.png" />
     <Content Include="Images\Stores\CompuIndia\CompuIndia.png" />
     <Content Include="Images\Stores\CoolWinks\CoolWinks.jpg" />
+    <Content Include="Images\Stores\Craftsvilla\craftsvilla.jpg" />
     <Content Include="Images\Stores\DailyObjects\DailyObjects.jpg" />
+    <Content Include="Images\Stores\DinoDirect\DinoDirect.png" />
     <Content Include="Images\Stores\Dominos\Dominos.jpg" />
+    <Content Include="Images\Stores\Droom\droom.JPG" />
     <Content Include="Images\Stores\eBay\eBay.jpg" />
     <Content Include="Images\Stores\Evok\Evok.jpg" />
     <Content Include="Images\Stores\ExcitingLives\ExcitingLives.jpg" />
@@ -266,22 +383,29 @@
     <Content Include="Images\Stores\Fashionandyou\Fashionandyou.jpg" />
     <Content Include="Images\Stores\Fashionara\Fashionara.jpg" />
     <Content Include="Images\Stores\FirstCry\FirstCry.jpg" />
+    <Content Include="Images\Stores\Flintobox\Flintobox.png" />
     <Content Include="Images\Stores\Flipkart\DailyDeals.png" />
     <Content Include="Images\Stores\Flipkart\Flipkart.jpg" />
     <Content Include="Images\Stores\FlowerAura\FlowerAura.png" />
     <Content Include="Images\Stores\FlyingMachine\FlyingMachine.jpg" />
     <Content Include="Images\Stores\Fnp\fnp.jpg" />
+    <Content Include="Images\Stores\Foodcloud\Foodcloud.png" />
+    <Content Include="Images\Stores\Foodfeasta\Foodfeasta.png" />
     <Content Include="Images\Stores\FoodPanda\FoodPanda.jpg" />
     <Content Include="Images\Stores\FreeCharge\Freecharge.jpg" />
     <Content Include="Images\Stores\Freecultr\Freecultr.jpg" />
+    <Content Include="Images\Stores\Fynd\Fynd.png" />
     <Content Include="Images\Stores\GiftaLove\GiftaLove.jpg" />
     <Content Include="Images\Stores\GiftEase\GiftEase.jpg" />
     <Content Include="Images\Stores\GiftsByMeeta\GiftsByMeeta.jpg" />
     <Content Include="Images\Stores\Goibibo\Goibibo.jpg" />
     <Content Include="Images\Stores\Grabmore\Grabmore.jpg" />
     <Content Include="Images\Stores\GreenDust\GreenDust.jpg" />
+    <Content Include="Images\Stores\HappilyUnmarried\HappilyUnmarried.png" />
+    <Content Include="Images\Stores\HealthBuffet\HealthBuffet.png" />
     <Content Include="Images\Stores\HealthGenie\HealthGenie.jpg" />
     <Content Include="Images\Stores\Healthkart\Healthkart.png" />
+    <Content Include="Images\Stores\Hidesign\Hidesign.png" />
     <Content Include="Images\Stores\Homeshop18\homeshop18.jpg" />
     <Content Include="Images\Stores\Hopscotch\Hopscotch.jpg" />
     <Content Include="Images\Stores\Hotels\Hotels.jpg" />
@@ -294,63 +418,101 @@
     <Content Include="Images\Stores\Infibeam\Infibeam.jpg" />
     <Content Include="Images\Stores\Jabong\Jabong.jpg" />
     <Content Include="Images\Stores\Jazzmyride\Jazzmyride.jpg" />
+    <Content Include="Images\Stores\JoyByNature\Joybynature.jpg" />
+    <Content Include="Images\Stores\Junglee\Junglee.jpg" />
     <Content Include="Images\Stores\Just-Eat\Just-Eat.jpg" />
     <Content Include="Images\Stores\Kazo\kazo.jpg" />
     <Content Include="Images\Stores\KFC\KFC.jpg" />
     <Content Include="Images\Stores\Koovs\koovs.jpg" />
+    <Content Include="Images\Stores\Landmark\Landmark.jpg" />
+    <Content Include="Images\Stores\Lemall\Lemall.png" />
+    <Content Include="Images\Stores\Lensclues\Lensclues.png" />
     <Content Include="Images\Stores\LensKart\LensKart.jpg" />
     <Content Include="Images\Stores\LimeRoad\LimeRoad.jpg" />
     <Content Include="Images\Stores\LinoPerros\LinoPerros.png" />
     <Content Include="Images\Stores\LittleApp\LittleApp.jpg" />
     <Content Include="Images\Stores\Makemytrip\Makemytrip.png" />
+    <Content Include="Images\Stores\McDonalds\McDonalds.jpg" />
+    <Content Include="Images\Stores\Metro\Metro.png" />
     <Content Include="Images\Stores\Mobikwik\Mobikwik.jpg" />
     <Content Include="Images\Stores\Montecarlo\Montecarlo.jpg" />
+    <Content Include="Images\Stores\Musafir\Musafir.jpg" />
     <Content Include="Images\Stores\MyBusTickets\MyBusTickets.jpg" />
     <Content Include="Images\Stores\MyFlowerTree\MyFlowerTree.jpg" />
     <Content Include="Images\Stores\Myntra\Myntra.png" />
+    <Content Include="Images\Stores\Naaptol\Naaptol.png" />
     <Content Include="Images\Stores\NaturesBasket\NaturesBasket.jpg" />
+    <Content Include="Images\Stores\Nearbuy\Nearbuy.jpg" />
     <Content Include="Images\Stores\Netmeds\Netmeds.jpg" />
     <Content Include="Images\Stores\Newu\Newu.png" />
+    <Content Include="Images\Stores\Nnnow\Nnnow.jpg" />
     <Content Include="Images\Stores\NutcaseShop\NutcaseShop.jpg" />
     <Content Include="Images\Stores\Nykaa\Nykaa.jpg" />
+    <Content Include="Images\Stores\Ohdmart\Ohdmart.png" />
+    <Content Include="Images\Stores\OrderVenue\OrderVenue.jpg" />
     <Content Include="Images\Stores\OyoRooms\OyoRooms.jpg" />
+    <Content Include="Images\Stores\PapaJohnsPizza\PapaJohnsPizza.jpg" />
+    <Content Include="Images\Stores\Paybackbazaar\Paybackbazaar.jpg" />
     <Content Include="Images\Stores\Paytm\Paytm.jpg" />
     <Content Include="Images\Stores\Pepperfry\pepperfry.jpg" />
+    <Content Include="Images\Stores\Pizzahut\Pizzahut.jpg" />
     <Content Include="Images\Stores\Pressie\Pressie.jpg" />
     <Content Include="Images\Stores\PrettySecrets\PrettySecrets.jpg" />
     <Content Include="Images\Stores\Printland\Printland.jpg" />
     <Content Include="Images\Stores\Printvenue\Printvenue.jpg" />
+    <Content Include="Images\Stores\Provogue\Provogue.png" />
+    <Content Include="Images\Stores\Puma\Puma.png" />
+    <Content Include="Images\Stores\Redbus\Redbus.jpg" />
     <Content Include="Images\Stores\SendMyGift\SendMyGift.jpg" />
     <Content Include="Images\Stores\Shopcj\Shopcj.jpg" />
     <Content Include="Images\Stores\Shopclues\shopclues.jpg" />
     <Content Include="Images\Stores\Shopnineteen\Shopnineteen.jpg" />
     <Content Include="Images\Stores\ShoppersStop\ShoppersStop.jpg" />
     <Content Include="Images\Stores\ShoppersStop\Shoppersstop.png" />
+    <Content Include="Images\Stores\Shudhbuy\Shudhbuy.jpg" />
     <Content Include="Images\Stores\SmileDrive\SmileDrive.jpg" />
     <Content Include="Images\Stores\Snapdeal\DailyDeals.jpg" />
     <Content Include="Images\Stores\Snapdeal\Snapdeal.jpg" />
     <Content Include="Images\Stores\Snapdeal\Snapdeal.png" />
+    <Content Include="Images\Stores\Sports365\sports365.png" />
     <Content Include="Images\Stores\Stalkbuylove\Stalkbuylove.jpg" />
+    <Content Include="Images\Stores\StyleTag\StyleTag.PNG" />
     <Content Include="Images\Stores\Suratdiamond\Suratdiamond.jpg" />
+    <Content Include="Images\Stores\Swiggy\Swiggy.png" />
+    <Content Include="Images\Stores\Tatacliq\Tatacliq.jpg" />
+    <Content Include="Images\Stores\Tatasky\Tatasky.gif" />
+    <Content Include="Images\Stores\TheFitSlim\TheFitSlim.jpg" />
+    <Content Include="Images\Stores\Thomascook\Thomascook.jpg" />
     <Content Include="Images\Stores\Ticketgoose\Ticketgoose.jpg" />
     <Content Include="Images\Stores\Tolexo\Tolexo.png" />
     <Content Include="Images\Stores\TravelKhana\TravelKhana.jpg" />
+    <Content Include="Images\Stores\Treebo\Treebo.png" />
     <Content Include="Images\Stores\TrendIn\TrendIn.jpg" />
     <Content Include="Images\Stores\TrendyBharat\TrendyBharat.png" />
+    <Content Include="Images\Stores\VioletStreet\VioletStreet.PNG" />
     <Content Include="Images\Stores\VistaPrint\VistaPrint.jpg" />
     <Content Include="Images\Stores\Voylla\Voylla.png" />
     <Content Include="Images\Stores\WearYourShine\WearYourShine.jpg" />
     <Content Include="Images\Stores\Wonderchef\Wonderchef.jpg" />
+    <Content Include="Images\Stores\WOW\WOW.jpg" />
     <Content Include="Images\Stores\Yatra\Yatra.jpg" />
     <Content Include="Images\Stores\Yepme\yepme.gif" />
     <Content Include="Images\Stores\Zivame\Zivame.jpg" />
     <Content Include="Images\Stores\Zotezo\Zotezo.jpg" />
     <Content Include="Images\Stores\Zovi\Zovi.jpg" />
+    <Content Include="Images\ui-icons_444444_256x240.png" />
+    <Content Include="Images\ui-icons_555555_256x240.png" />
+    <Content Include="Images\ui-icons_777620_256x240.png" />
+    <Content Include="Images\ui-icons_777777_256x240.png" />
+    <Content Include="Images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Images\ui-icons_ffffff_256x240.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
     <Content Include="Scripts\jquery-2.2.3.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-ui.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -391,6 +553,7 @@
     <Content Include="Views\Deal\_Coupons.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Deal\_DOTD.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -423,6 +586,9 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap.min.css.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

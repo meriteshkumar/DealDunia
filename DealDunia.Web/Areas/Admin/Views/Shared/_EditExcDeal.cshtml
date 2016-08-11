@@ -1,0 +1,120 @@
+﻿@model DealDunia.Web.Areas.ExcDeal
+
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit</h4>
+    </div>
+    @using (Html.BeginForm("Edit", "ExclusiveDeal", FormMethod.Post, new { enctype = "multipart/form-data", id = "myForm" }))
+    { 
+        @Html.ValidationSummary();
+        <div class="modal-body">
+            @Html.HiddenFor(h => h.ExcDealId)
+            <input type="hidden" id="hdStore" name="StoreName" />
+            <div class="form-group">
+                <label for="StoreId" style="max-height: none;">Store</label>
+                <div id="DivStore"></div>
+            </div>
+            @Html.HiddenFor(h => h.CategoryId, new { value = '0' })
+            <div class="form-group">
+                <label for="StoreCategoryId" style="max-height: none;">Store Category</label>
+                <div id="DivStoreCategory"></div>
+            </div>
+            <div class="form-group">
+                <label for="Title" style="max-height: none;">Title</label>
+                @Html.TextBoxFor(t => t.Title, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="Active" style="max-height: none;">Active</label>
+                @Html.CheckBox("Active", new { value = Model.Active, @checked = Model.Active })
+            </div>
+            <div class="form-group">
+                <label for="IsFeatured" style="max-height: none;">Is Featured</label>
+                @Html.EditorFor(m => m.IsFeatured)
+            </div>
+            <div class="form-group">
+                <label for="Description" style="max-height: none; vertical-align: top;">Description</label>
+                @Html.TextAreaFor(t => t.Description, new { cols = "40", rows = "4", @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="URL" style="max-height: none; vertical-align: top;">URL</label>
+                @Html.TextAreaFor(t => t.URL, new { cols = "40", rows = "4", @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label for="StartDate" style="max-height: none;">Start Date</label>
+                @Html.TextBoxFor(t => t.StartDate, new { @class = "form-control startdate" })
+            </div>
+            <div class="form-group">
+                <label for="EndDate" style="max-height: none;">End Date</label>
+                @Html.TextBoxFor(t => t.EndDate, new { @class = "form-control enddate" })
+            </div>
+            <div class="form-group">
+                <div style="position: relative;">
+                    <label style="max-height: none;">Image</label>
+                    <a class="btn" href="javascript:;">Choose File...
+                <input type="file" name="Image1" size="40" style="position: absolute; z-index: 2; top: 0; left: 0; filter: alpha(opacity=0); opacity: 0; background-color: transparent; color: transparent;" onchange='$("#upload-file-info").html($(this).val()); $(".upload-file-info").val($(this).val());' />
+                    </a>
+                    <span class="label label-info" id="upload-file-info"></span>
+                    @Html.Hidden("Image", Model.Image, new { @class = "upload-file-info" })
+                </div>
+                @if (!string.IsNullOrEmpty(Model.Image))
+                {
+                    <img class="img-thumbnail" width="150" height="150" src="@Url.Content(string.Format("~/Images/{0}", Model.Image))" />
+                }
+                else
+                {
+                    <div class="form-control-static">No Image</div>
+                }
+            </div>
+            <div class="form-group">
+                <div style="position: relative;">
+                    <label style="max-height: none;">Logo</label>
+                    <a class="btn" href="javascript:;">Choose File...
+                <input type="file" name="Logo1" size="40" style="position: absolute; z-index: 2; top: 0; left: 0; filter: alpha(opacity=0); opacity: 0; background-color: transparent; color: transparent;" onchange='$("#upload-file-info1").html($(this).val());$(".upload-file-info1").val($(this).val());' />
+                    </a>
+                    <span class="label label-info" id="upload-file-info1"></span>
+                    @Html.Hidden("Logo", Model.Logo, new { @class = "upload-file-info1" })
+                </div>
+                @if (!string.IsNullOrEmpty(Model.Logo))
+                {
+                    <img class="img-thumbnail" width="150" height="150" src="@Url.Content(string.Format("~/Images/{0}", Model.Logo))" />
+                }
+                else
+                {
+                    <div class="form-control-static">No Image</div>
+                }
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <input type="submit" value="Save changes" class="btn btn-primary" />
+        </div>
+    }
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".startdate").datepicker({ dateFormat: 'dd/mm/yy' });
+        $(".enddate").datepicker({ dateFormat: 'dd/mm/yy' });
+
+        $.ajax({
+            url: '@Url.Action("_StoreCategoryDropDown", "ExclusiveDeal")',
+            data: { controlName: "StoreCategoryId" }
+        }).done(function (data) {
+            $("#DivStoreCategory").html(data);
+            $("#StoreCategoryId").val(@Model.StoreCategoryId);
+        }).fail(function () {
+        });
+
+        $.ajax({
+            url: '@Url.Action("_StoreDropDown", "ExclusiveDeal")',
+            data: { controlName: "StoreId" }
+        }).done(function (data) {
+            $("#DivStore").html(data);
+            $("#StoreId").val(@Model.StoreId);
+            $("#hdStore").val($("#StoreId option:selected").text());
+        }).fail(function (error) {
+        });
+    });
+</script>
