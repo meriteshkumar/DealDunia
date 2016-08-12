@@ -29,12 +29,13 @@
     }
 </div>
 <div style="margin: 0 auto; display: table;">
-    @if (ViewContext.RouteData.Values["id3"] != null)
+   @* @if (ViewContext.RouteData.Values["id3"] != null)
     {
-        @Html.PageLinks(new DealDunia.Web.Models.PagingInfo { CurrentPage = ViewBag.Page, ItemsPerPage = 10, TotalItems = 50 }, x => Url.Action("Browse3", "Category", new { id1 = DealDunia.Infrastructure.Utility.Utilities.EncodeUrl(ViewContext.RouteData.Values["id1"].ToString()), id2 = DealDunia.Infrastructure.Utility.Utilities.EncodeUrl(ViewContext.RouteData.Values["id2"].ToString()), id3 = DealDunia.Infrastructure.Utility.Utilities.EncodeUrl(ViewBag.SearchedItem), page = x }))
+        @Html.PageLinks(new DealDunia.Web.Models.PagingInfo { CurrentPage = ViewBag.Page, ItemsPerPage = 10, TotalItems = 50 }, x => Url.Action("Browse3", "Category", new { id1 = DealDunia.Infrastructure.Utility.Utilities.EncodeUrl(ViewContext.RouteData.Values["id1"].ToString()), id2 = DealDunia.Infrastructure.Utility.Utilities.EncodeUrl(ViewContext.RouteData.Values["id2"].ToString()), id3 = DealDunia.Infrastructure.Utility.Utilities.EncodeUrl(ViewContext.RouteData.Values["id1"].ToString()), page = x }))
     }
     else
     {
         @Html.PageLinks(new DealDunia.Web.Models.PagingInfo { CurrentPage = ViewBag.Page, ItemsPerPage = 10, TotalItems = 50 }, x => Url.Action("Search", "Product", new { searchtext = ViewBag.SearchedItem, page = x }))
-    }
+    }*@
+     @Html.PageLinks(new DealDunia.Web.Models.PagingInfo { CurrentPage = ViewBag.Page, ItemsPerPage = 10, TotalItems = 50 }, x => Url.Action("Search", "Product", new { searchtext = ViewBag.SearchedItem, page = x }))
 </div>

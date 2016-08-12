@@ -154,6 +154,46 @@ h4
     max-width: 300px;
 }
 
+.scrollToTop {
+    width: 100px;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    /*background: whiteSmoke !important;*/
+    font-weight: bold;
+    color: #444;
+    text-decoration: none;
+    position: fixed;
+    /*top: 400px;*/
+    right: 0px;
+    bottom:0px;
+    display: none;
+    background: url('../Images/Scroll-to-top-button.png') no-repeat 0px 20px;
+}
+
+    .scrollToTop:hover {
+        text-decoration: none;
+    }
+
+
+.field-validation-error {
+    color: #f00;
+}
+
+.validation-summary-errors {
+    color: #f00;
+    font-weight: bold;
+}
+
+.input-validation-error {
+    border: 2px solid #f00;
+    background-color: #fee;
+}
+
+input[type="checkbox"].input-validation-error {
+    outline: 2px solid #f00;
+}
+
 /*.divBox
 {
    float:left;

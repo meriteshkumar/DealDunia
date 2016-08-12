@@ -54,12 +54,21 @@ namespace DealDunia.Web.Controllers
             var level1 = RouteData.Values["id1"].ToString();
             var level2 = RouteData.Values["id2"].ToString();
             var level3 = RouteData.Values["id3"].ToString();
+            var Search = string.Empty;
 
             level1 = DealDunia.Infrastructure.Utility.Utilities.DecodeUrl(level1);
             level2 = DealDunia.Infrastructure.Utility.Utilities.DecodeUrl(level2);
             level3 = DealDunia.Infrastructure.Utility.Utilities.DecodeUrl(level3);
 
-            ViewBag.SearchedItem = level3;
+            if (level1 == "Men" || level1 == "Women")
+                Search = level3 + " for " + level1;
+            else if (level1.Contains("Baby"))
+                Search = level3 + " for Baby " + level2;
+            else
+                Search = level3 + " in " + level2;
+
+
+            ViewBag.SearchedItem = Search;
             ViewBag.Page = page;
 
             return View("Search");
