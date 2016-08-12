@@ -15,6 +15,11 @@ namespace DealDunia.Web.Areas.Admin.Controllers
             return View(context.ExcDeals);
         }
 
+        public ActionResult _AddExcDeal()
+        {
+            return PartialView("_EditExcDeal", new DealDunia.Web.Areas.ExcDeal());
+        }
+
         public ActionResult _EditExcDeal(int id)
         {
             EComEntities context = new EComEntities();
@@ -29,6 +34,7 @@ namespace DealDunia.Web.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
+                EComEntities context = new EComEntities();
                 var folderPath = string.Format("~/Images/Stores/{0}/", storeName);
                 var ImagePath = string.Format("Stores/{0}/{1}", storeName, System.IO.Path.GetFileName(model.Image));
 
@@ -38,25 +44,48 @@ namespace DealDunia.Web.Areas.Admin.Controllers
                     Image1.SaveAs(path);
                 }
 
-                EComEntities context = new EComEntities();
+                if (model.ExcDealId == 0)
+                {
+                    var newExcDeal = new DealDunia.Web.Areas.ExcDeal()
+                    {
+                        StoreId = model.StoreId,
+                        CategoryId = model.CategoryId,
+                        StoreCategoryId = model.StoreCategoryId,
+                        Title = model.Title,
+                        Description = model.Description,
+                        Image = ImagePath,
+                        Logo = model.Logo,
+                        URL = model.URL,
+                        IsFeatured = model.IsFeatured,
+                        Active = model.Active,
+                        StartDate = model.StartDate,
+                        EndDate = model.EndDate,
+                    };
 
-                var execDeal = context.ExcDeals.Single(s => s.ExcDealId == model.ExcDealId);
-                execDeal.StoreId = model.StoreId;
-                execDeal.CategoryId = model.CategoryId;
-                execDeal.StoreCategoryId = model.StoreCategoryId;
-                execDeal.Title = model.Title;
-                execDeal.Description = model.Description;
-                execDeal.Image = ImagePath;
-                execDeal.Logo = model.Logo;
-                execDeal.URL = model.URL;
-                execDeal.IsFeatured = model.IsFeatured;
-                execDeal.Active = model.Active;
-                execDeal.StartDate = model.StartDate;
-                execDeal.EndDate = model.EndDate;
+                    context.ExcDeals.Add(newExcDeal);
+
+                    TempData["Message"] = "Record saved";
+                }
+                else
+                {
+                    var execDeal = context.ExcDeals.Single(s => s.ExcDealId == model.ExcDealId);
+                    execDeal.StoreId = model.StoreId;
+                    execDeal.CategoryId = model.CategoryId;
+                    execDeal.StoreCategoryId = model.StoreCategoryId;
+                    execDeal.Title = model.Title;
+                    execDeal.Description = model.Description;
+                    execDeal.Image = ImagePath;
+                    execDeal.Logo = model.Logo;
+                    execDeal.URL = model.URL;
+                    execDeal.IsFeatured = model.IsFeatured;
+                    execDeal.Active = model.Active;
+                    execDeal.StartDate = model.StartDate;
+                    execDeal.EndDate = model.EndDate;
+
+                    TempData["Message"] = "Record Updated";
+                }
 
                 context.SaveChanges();
-
-                TempData["Message"] = "Record updated";
 
                 return RedirectToAction("Index");
             }
@@ -80,8 +109,7 @@ namespace DealDunia.Web.Areas.Admin.Controllers
         {
             EComEntities context = new EComEntities();
 
-            var stores = context.Stores.Where(s => s.Active == true).OrderBy(d => d.DisplayOrder).ToList();
-            ViewBag.ControlName = controlName;
+            var stores = context.Stores.Where(s => s.Active == true).OrderBy(d => d.StoreName).ToList();
 
             return PartialView(stores);
         }

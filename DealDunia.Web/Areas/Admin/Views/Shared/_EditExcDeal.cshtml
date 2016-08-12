@@ -1,10 +1,9 @@
 ﻿@model DealDunia.Web.Areas.ExcDeal
 
-
 <div class="modal-content">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Edit</h4>
+        <h4 class="modal-title" id="myModalLabel">Add/Edit Exclusive Deal</h4>
     </div>
     @using (Html.BeginForm("Edit", "ExclusiveDeal", FormMethod.Post, new { enctype = "multipart/form-data", id = "myForm" }))
     { 
@@ -27,7 +26,7 @@
             </div>
             <div class="form-group">
                 <label for="Active" style="max-height: none;">Active</label>
-                @Html.CheckBox("Active", new { value = Model.Active, @checked = Model.Active })
+                @Html.EditorFor(m => m.Active)
             </div>
             <div class="form-group">
                 <label for="IsFeatured" style="max-height: none;">Is Featured</label>
@@ -94,9 +93,25 @@
 </div>
 
 <script type="text/javascript">
+
     $(document).ready(function () {
-        $(".startdate").datepicker({ dateFormat: 'dd/mm/yy' });
-        $(".enddate").datepicker({ dateFormat: 'dd/mm/yy' });
+        //overriding JQuery validator method so it works fine for dd/mm/yyyy in chorme (It works fine in IE without the override)
+        //$.validator.methods.date = function (value, element) {
+        //    if ($.browser.webkit) {
+        //        var d = new Date();
+        //        return this.optional(element) || !/Invalid|NaN/.test(new Date(d.toLocaleDateString(value)));
+        //    }
+        //    else {
+        //        return this.optional(element) || !/Invalid|NaN/.test(new Date(value));
+        //    }
+        //};
+
+        $(".startdate").datepicker();
+        $(".enddate").datepicker();
+
+        $(document).on("change", "[id='cc-dropdown']", function () {
+            $("#hdStore").val($("[id='cc-dropdown'] option:selected").text());
+        });
 
         $.ajax({
             url: '@Url.Action("_StoreCategoryDropDown", "ExclusiveDeal")',
@@ -112,9 +127,10 @@
             data: { controlName: "StoreId" }
         }).done(function (data) {
             $("#DivStore").html(data);
-            $("#StoreId").val(@Model.StoreId);
-            $("#hdStore").val($("#StoreId option:selected").text());
+            $("[id='cc-dropdown']").val(@Model.StoreId);
+            $("#hdStore").val($("[id='cc-dropdown'] option:selected").text());
         }).fail(function (error) {
         });
+
     });
 </script>

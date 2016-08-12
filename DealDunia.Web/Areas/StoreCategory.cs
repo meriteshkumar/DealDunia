@@ -14,11 +14,18 @@ namespace DealDunia.Web.Areas
     
     public partial class StoreCategory
     {
+        public StoreCategory()
+        {
+            this.ExcDeals = new HashSet<ExcDeal>();
+        }
+    
         public short StoreCategoryId { get; set; }
         public string StoreCategoryName { get; set; }
         public string Image { get; set; }
         public Nullable<short> ParentId { get; set; }
         public Nullable<short> DisplayOrder { get; set; }
         public Nullable<bool> Active { get; set; }
+    
+        public virtual ICollection<ExcDeal> ExcDeals { get; set; }
     }
 }

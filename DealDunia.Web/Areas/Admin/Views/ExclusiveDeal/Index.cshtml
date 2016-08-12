@@ -4,7 +4,14 @@
     Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Exclusive Deal</h2>
+<div class="row">
+    <div class="col-md-6">
+        <h2>Exclusive Deal</h2>
+    </div>
+    <div class="col-md-6" style="float: right; text-align: right; top: 21px;">
+        <button class="btn btn-primary add-deal">Add Exclusive Deal</button>
+    </div>
+</div>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -19,17 +26,23 @@
 
 <table class="table table-hover">
     <tr class="success">
+        <td><strong>Store</strong></td>
+        <td><strong>Store Category</strong></td>
         <td><strong>Title</strong></td>
         <td><strong>Status</strong></td>
+        <td><strong>Is Featured</strong></td>
         <td>&nbsp;</td>
     </tr>
     @foreach (var deal in Model)
     {
         <tr>
+            <td>@deal.Store.StoreName</td>
+            <td>@(deal.StoreCategory == null ? "N/A" : deal.StoreCategory.StoreCategoryName)</td>
             <td>@deal.Title</td>
-            <td>@Html.CheckBox("Status", new { value = deal.Active, @checked = deal.Active })</td>
+            <td>@Html.EditorFor(m => deal.Active)</td>
+            <td>@Html.EditorFor(m => deal.IsFeatured)</td>
             <td>
-                <button class="btn btn-primary edit-person" value="@deal.ExcDealId">
+                <button class="btn btn-primary edit-deal" value="@deal.ExcDealId">
                     Edit</button>
             </td>
         </tr>
@@ -38,11 +51,27 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".edit-person").click(function () {
+        $(".edit-deal").click(function () {
             var excDealId = $(this).val();
             $.ajax({
                 url: '@Url.Action("_EditExcDeal", "ExclusiveDeal")',
                 data: { id: excDealId }
+            }).done(function (data) {
+                $(".modal-dialog").html(data);
+                $("#myModal").modal();
+
+                //Need to register unobtrusive validation for dynamically added elements
+                var form = $("#myForm");
+                form.removeData('validator');
+                form.removeData('unobtrusiveValidation');
+                $.validator.unobtrusive.parse(form);
+            }).fail(function () {
+            });
+        });
+
+        $(".add-deal").click(function () {
+            $.ajax({
+                url: '@Url.Action("_AddExcDeal", "ExclusiveDeal")',
             }).done(function (data) {
                 $(".modal-dialog").html(data);
                 $("#myModal").modal();

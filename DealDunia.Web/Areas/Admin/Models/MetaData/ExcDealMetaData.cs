@@ -13,5 +13,7 @@ namespace DealDunia.Web.Areas
         public short StoreId { get; set; }
         [Required]
         public string Title { get; set; }
+        [Required]
+        public string URL { get; set; }
     }
 }

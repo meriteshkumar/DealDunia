@@ -13,6 +13,10 @@
             <End Role="Store" EntitySet="Store" />
             <End Role="ExcDeals" EntitySet="ExcDeals" />
           </AssociationSet>
+          <AssociationSet Name="FK_ExcDeals_StoreCategory" Association="EcomModel.Store.FK_ExcDeals_StoreCategory">
+            <End Role="StoreCategory" EntitySet="StoreCategory" />
+            <End Role="ExcDeals" EntitySet="ExcDeals" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="ExcDeals">
           <Key>
@@ -74,6 +78,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ExcDeals_StoreCategory">
+          <End Role="StoreCategory" Type="EcomModel.Store.StoreCategory" Multiplicity="0..1" />
+          <End Role="ExcDeals" Type="EcomModel.Store.ExcDeals" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreCategory">
+              <PropertyRef Name="StoreCategoryId" />
+            </Principal>
+            <Dependent Role="ExcDeals">
+              <PropertyRef Name="StoreCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -84,6 +100,10 @@
           <EntitySet Name="Stores" EntityType="EcomModel.Store" />
           <AssociationSet Name="FK_ExcDeals_Store" Association="EcomModel.FK_ExcDeals_Store">
             <End Role="Store" EntitySet="Stores" />
+            <End Role="ExcDeal" EntitySet="ExcDeals" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExcDeals_StoreCategory" Association="EcomModel.FK_ExcDeals_StoreCategory">
+            <End Role="StoreCategory" EntitySet="StoreCategories" />
             <End Role="ExcDeal" EntitySet="ExcDeals" />
           </AssociationSet>
         </EntityContainer>
@@ -105,6 +125,7 @@
           <Property Name="StartDate" Type="DateTime" Precision="0" />
           <Property Name="EndDate" Type="DateTime" Precision="0" />
           <NavigationProperty Name="Store" Relationship="EcomModel.FK_ExcDeals_Store" FromRole="ExcDeal" ToRole="Store" />
+          <NavigationProperty Name="StoreCategory" Relationship="EcomModel.FK_ExcDeals_StoreCategory" FromRole="ExcDeal" ToRole="StoreCategory" />
         </EntityType>
         <EntityType Name="StoreCategory">
           <Key>
@@ -116,6 +137,7 @@
           <Property Type="Int16" Name="ParentId" />
           <Property Type="Int16" Name="DisplayOrder" />
           <Property Type="Boolean" Name="Active" />
+          <NavigationProperty Name="ExcDeals" Relationship="EcomModel.FK_ExcDeals_StoreCategory" FromRole="StoreCategory" ToRole="ExcDeal" />
         </EntityType>
         <EntityType Name="Store">
           <Key>
@@ -146,6 +168,18 @@
             </Principal>
             <Dependent Role="ExcDeal">
               <PropertyRef Name="StoreId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExcDeals_StoreCategory">
+          <End Type="EcomModel.StoreCategory" Role="StoreCategory" Multiplicity="0..1" />
+          <End Type="EcomModel.ExcDeal" Role="ExcDeal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreCategory">
+              <PropertyRef Name="StoreCategoryId" />
+            </Principal>
+            <Dependent Role="ExcDeal">
+              <PropertyRef Name="StoreCategoryId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

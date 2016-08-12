@@ -29,5 +29,6 @@ namespace DealDunia.Web.Areas
         public Nullable<System.DateTime> EndDate { get; set; }
     
         public virtual Store Store { get; set; }
+        public virtual StoreCategory StoreCategory { get; set; }
     }
 }

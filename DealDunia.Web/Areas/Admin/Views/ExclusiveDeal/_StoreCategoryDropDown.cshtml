@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<DealDunia.Web.Areas.StoreCategory>
 
 <select class="form-control" name="@ViewBag.ControlName" id="@ViewBag.ControlName">
-    @foreach (var category in Model.Where(c => c.ParentId == 0))
+    @foreach (var category in Model.OrderBy(o => o.StoreCategoryName).Where(c => c.ParentId == 0))
     {
         if (Model.Where(i => i.ParentId == category.StoreCategoryId).Count() > 0)
         {
         <optgroup label="@category.StoreCategoryName">
-            @foreach (var inner in Model.Where(i => i.ParentId == category.StoreCategoryId))
+            @foreach (var inner in Model.OrderBy(o => o.StoreCategoryName).Where(i => i.ParentId == category.StoreCategoryId))
             {
                 <option value="@inner.StoreCategoryId">@inner.StoreCategoryName</option>
             }
