@@ -1,8 +1,9 @@
 ﻿@model IEnumerable<DealDunia.Web.Areas.StoreCategory>
 
 <select class="form-control" name="@ViewBag.ControlName" id="@ViewBag.ControlName">
+    <option value="0">Please Select</option>
     @foreach (var category in Model.OrderBy(o => o.StoreCategoryName).Where(c => c.ParentId == 0))
-    {
+    {        
         if (Model.Where(i => i.ParentId == category.StoreCategoryId).Count() > 0)
         {
         <optgroup label="@category.StoreCategoryName">

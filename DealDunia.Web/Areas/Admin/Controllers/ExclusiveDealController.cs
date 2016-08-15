@@ -8,11 +8,22 @@ namespace DealDunia.Web.Areas.Admin.Controllers
 {
     public class ExclusiveDealController : Controller
     {
-        public ActionResult Index()
+        public ActionResult Index(int storeId = 0, int storeCategoryId = 0, bool? isFeatured = null)
         {
             EComEntities context = new EComEntities();
 
-            return View(context.ExcDeals);
+            var execDeals = context.ExcDeals.Where(e => (storeId == 0 || e.StoreId == storeId) && (storeCategoryId == 0 || e.StoreCategoryId == storeCategoryId) && (bool)(isFeatured == null || e.IsFeatured == isFeatured) && (bool)e.Active).ToList();
+
+            return View(execDeals);
+        }
+
+        public PartialViewResult _IndexView(int storeId = 0, int storeCategoryId = 0, bool? isFeatured = null)
+        {
+            EComEntities context = new EComEntities();
+
+            var execDeals = context.ExcDeals.Where(e => (storeId == 0 || e.StoreId == storeId) && (storeCategoryId == 0 || e.StoreCategoryId == storeCategoryId) && (bool)(isFeatured == null || e.IsFeatured == isFeatured) && (bool)e.Active).ToList();
+
+            return PartialView(execDeals);
         }
 
         public ActionResult _AddExcDeal()

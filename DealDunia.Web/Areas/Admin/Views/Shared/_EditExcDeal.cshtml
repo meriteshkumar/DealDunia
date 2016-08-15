@@ -12,7 +12,7 @@
             @Html.HiddenFor(h => h.ExcDealId)
             <input type="hidden" id="hdStore" name="StoreName" />
             <div class="form-group">
-                <label for="StoreId" style="max-height: none;">Store</label>
+                <label for="StoreID" style="max-height: none;">Store</label>
                 <div id="DivStore"></div>
             </div>
             @Html.HiddenFor(h => h.CategoryId, new { value = '0' })
@@ -95,17 +95,6 @@
 <script type="text/javascript">
 
     $(document).ready(function () {
-        //overriding JQuery validator method so it works fine for dd/mm/yyyy in chorme (It works fine in IE without the override)
-        //$.validator.methods.date = function (value, element) {
-        //    if ($.browser.webkit) {
-        //        var d = new Date();
-        //        return this.optional(element) || !/Invalid|NaN/.test(new Date(d.toLocaleDateString(value)));
-        //    }
-        //    else {
-        //        return this.optional(element) || !/Invalid|NaN/.test(new Date(value));
-        //    }
-        //};
-
         $(".startdate").datepicker();
         $(".enddate").datepicker();
 
@@ -131,6 +120,5 @@
             $("#hdStore").val($("[id='cc-dropdown'] option:selected").text());
         }).fail(function (error) {
         });
-
     });
 </script>
