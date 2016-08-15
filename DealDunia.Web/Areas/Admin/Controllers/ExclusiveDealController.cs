@@ -17,11 +17,11 @@ namespace DealDunia.Web.Areas.Admin.Controllers
             return View(execDeals);
         }
 
-        public PartialViewResult _IndexView(int storeId = 0, int storeCategoryId = 0, bool? isFeatured = null)
+        public PartialViewResult _IndexView(int storeId = 0, int storeCategoryId = 0, bool? isFeatured = null, bool? active = null)
         {
             EComEntities context = new EComEntities();
 
-            var execDeals = context.ExcDeals.Where(e => (storeId == 0 || e.StoreId == storeId) && (storeCategoryId == 0 || e.StoreCategoryId == storeCategoryId) && (bool)(isFeatured == null || e.IsFeatured == isFeatured) && (bool)e.Active).ToList();
+            var execDeals = context.ExcDeals.Where(e => (storeId == 0 || e.StoreId == storeId) && (storeCategoryId == 0 || e.StoreCategoryId == storeCategoryId) && (bool)(e.IsFeatured == (isFeatured ?? e.IsFeatured)) && (bool)(e.Active == (active ?? e.Active))).ToList();
 
             return PartialView(execDeals);
         }
