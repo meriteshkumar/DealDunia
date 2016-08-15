@@ -47,21 +47,13 @@ namespace DealDunia.Domain.Concrete
         public void UpdateStores(String Source, DataTable dt)
         {
             try
-            {
-                string procName = string.Empty;
-                if (Source.ToLower() == "vcom")
-                {
-                    procName = "dbo.UpdateVCOMStores";
-                }
-                else if (Source.ToLower() == "icw")
-                {
-                    procName = "dbo.UpdateICWStores";
-                }
-
-                SqlParameter[] sqlParam = new SqlParameter[1];
+            {               
+                SqlParameter[] sqlParam = new SqlParameter[2];
                 sqlParam[0] = new SqlParameter("@Stores", dt);
                 sqlParam[0].SqlDbType = SqlDbType.Structured;
-                SqlHelper.ExecuteNonQuery(DbConfig.ConnectionString, CommandType.StoredProcedure, procName, sqlParam);
+                sqlParam[1] = new SqlParameter("@StoreSourceId", Source);
+                sqlParam[1].SqlDbType = SqlDbType.VarChar;
+                SqlHelper.ExecuteNonQuery(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.UpdateSourceStores", sqlParam);
             }
             catch (Exception ex)
             {

@@ -68,6 +68,7 @@
     <Compile Include="Entities\ExecutiveDeals.cs" />
     <Compile Include="Entities\ICW.cs" />
     <Compile Include="Entities\PAYOOM.cs" />
+    <Compile Include="Entities\SourceStore.cs" />
     <Compile Include="Entities\Store.cs" />
     <Compile Include="Entities\StoreCategory.cs" />
     <Compile Include="Entities\VCOM.cs" />

@@ -295,6 +295,7 @@
     <Content Include="Images\Category\innerwear.png" />
     <Content Include="Images\Category\jewellery.png" />
     <Content Include="Images\Category\kidscloth.png" />
+    <Content Include="Images\Category\lab.png" />
     <Content Include="Images\Category\laptop.png" />
     <Content Include="Images\Category\laptops.png" />
     <Content Include="Images\Category\lifestyle.png" />
@@ -309,6 +310,7 @@
     <Content Include="Images\Category\recharge.png" />
     <Content Include="Images\Category\refmobile.png" />
     <Content Include="Images\Category\sports.png" />
+    <Content Include="Images\Category\sunglasses.png" />
     <Content Include="Images\Category\tab.png" />
     <Content Include="Images\Category\toys.gif" />
     <Content Include="Images\Category\toys.png" />
@@ -369,6 +371,7 @@
     <Content Include="Images\Stores\Craftsvilla\craftsvilla.jpg" />
     <Content Include="Images\Stores\DailyObjects\DailyObjects.jpg" />
     <Content Include="Images\Stores\DinoDirect\DinoDirect.png" />
+    <Content Include="Images\Stores\Divineflowerncakes.png" />
     <Content Include="Images\Stores\Dominos\Dominos.jpg" />
     <Content Include="Images\Stores\Droom\droom.JPG" />
     <Content Include="Images\Stores\eBay\eBay.jpg" />

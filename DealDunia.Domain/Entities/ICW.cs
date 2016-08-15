@@ -21,10 +21,10 @@ namespace DealDunia.Domain.Entities
         public string Expiry_Date { get; set; }
     }
 
-    public class ICWStore
-    {
-        public int id { get; set; }
-        public string name { get; set; }
-        public string expiration_date { get; set; }
-    }
+    //public class ICWStore
+    //{
+    //    public int id { get; set; }
+    //    public string name { get; set; }
+    //    public string expiration_date { get; set; }
+    //}
 }

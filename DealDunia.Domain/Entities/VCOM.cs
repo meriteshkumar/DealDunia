@@ -27,12 +27,12 @@ namespace DealDunia.Domain.Entities
         public string store_link { get; set; }
     }
 
-    public class VCOMStore
-    {
-        public int id { get; set; }
-        public string name { get; set; }        
-        public string expiration_date { get; set; }        
-    }
+    //public class VCOMStore
+    //{
+    //    public int id { get; set; }
+    //    public string name { get; set; }        
+    //    public string expiration_date { get; set; }        
+    //}
 
     public class OfferURL
     {
