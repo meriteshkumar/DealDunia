@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DealDunia.Web.Areas.Coupon>
+@{
+    WebGrid grid = new WebGrid(Model, rowsPerPage: 10);    
+}
+
+@grid.GetHtml(tableStyle: "table table-hover",
+                headerStyle: "success",
+                mode: WebGridPagerModes.All,
+                firstText: "<<First", previousText: "<Previous", nextText: "Next>", lastText: "Last>>",
+                columns: new[]{
+                                grid.Column( columnName:"StoreSource.StoreSourceName",header:"Store Source") 
+                                ,grid.Column(columnName:"StoreCategory",header:"Store Category", format: @<text><span class="display-mode">
+                                    <label id="lbStoreCategory" style="max-height: 15px;">@(item.StoreCategory == null ? "N/A" : item.StoreCategory.StoreCategoryName)</label>
+                                </span>
+<div class="divStoreCategoryId edit-mode"></div></text>) 
+                                ,grid.Column(columnName:"CouponTitle",header:"Title") 
+                                ,grid.Column(columnName:"Status",header:"Status") 
+                                ,grid.Column(columnName:"Featured",header:"Featured") 
+                                ,grid.Column(format: @<text><button class="btn btn-primary display-mode edit-coupon" value="@item.CouponId">Edit</button>
+<button class="btn btn-primary save-user edit-mode" value="@item.CouponId">Save</button>
+<button class="btn btn-primary cancel-user edit-mode">Cancel</button></text>)
+                              }
+)
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.edit-mode').hide();
+
+        $.ajax({
+            url: '@Url.Action("_StoreCategoryDropDown", "ExclusiveDeal")',
+            data: { controlName: "StoreCategoryId" }
+        }).done(function (data) {
+            $(".divStoreCategoryId").html(data);
+        }).fail(function () {
+        });
+
+        $(".edit-coupon, .cancel-user").on("click", function () {
+            var tr = $(this).parents('tr:first');
+            tr.find('.edit-mode, .display-mode').toggle();
+        });
+
+        $('.save-user').on('click', function () {
+            var tr = $(this).parents('tr:first');
+            var storeCategoryId = tr.find("#StoreCategoryId").val();
+            var storeCategoryName = tr.find("#StoreCategoryId option:selected").text();
+            var couponId = $(this).val();
+
+            var couponModel = {
+                couponId: couponId,
+                storeCateogoryId: storeCategoryId
+            }
+
+            $.ajax({
+                url: '@Url.Action("EditCoupon", "Coupons")',
+                data: couponModel,
+                type: 'POST'
+            }).done(function (data) { }).fail(function () { });
+
+
+            $("#lbStoreCategory").text(storeCategoryName);
+
+            tr.find('.edit-mode, .display-mode').toggle();
+        });
+    });
+</script>

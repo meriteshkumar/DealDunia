@@ -127,9 +127,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\CouponsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ExclusiveDealController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Models\MetaData\ExcDealMetaData.cs" />
+    <Compile Include="Areas\Coupon.cs">
+      <DependentUpon>EComModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\EComModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -152,6 +156,9 @@
       <DependentUpon>EComModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Areas\StoreCategory.cs">
+      <DependentUpon>EComModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Areas\StoreSource.cs">
       <DependentUpon>EComModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Controllers\CategoryController.cs" />
@@ -213,6 +220,10 @@
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
     <Content Include="Areas\Admin\Views\ExclusiveDeal\_StoreCategoryDropDown.cshtml" />
     <Content Include="Areas\Admin\Views\ExclusiveDeal\_StoreDropDown.cshtml" />
+    <Content Include="Areas\Admin\Views\ExclusiveDeal\_IndexView.cshtml" />
+    <Content Include="Areas\Admin\Views\Coupons\_CouponGrid.cshtml" />
+    <Content Include="Areas\Admin\Views\Coupons\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Coupons\_StoreSourceDropDown.cshtml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Images\Categories\Baby_Kids.png" />
     <Content Include="Images\Categories\Baby_Kids\Accessories.png" />

@@ -28,5 +28,7 @@ namespace DealDunia.Web.Areas
         public DbSet<ExcDeal> ExcDeals { get; set; }
         public DbSet<StoreCategory> StoreCategories { get; set; }
         public DbSet<Store> Stores { get; set; }
+        public DbSet<Coupon> Coupons { get; set; }
+        public DbSet<StoreSource> StoreSources { get; set; }
     }
 }

@@ -10,6 +10,11 @@
         <EntityTypeShape EntityType="EcomModel.Store" Width="1.5" PointX="0.75" PointY="1" />
         <AssociationConnector Association="EcomModel.FK_ExcDeals_Store" />
         <AssociationConnector Association="EcomModel.FK_ExcDeals_StoreCategory" />
+        <EntityTypeShape EntityType="EcomModel.Coupon" Width="1.5" PointX="4.8852001469979065" PointY="10.752845724463857" />
+        <EntityTypeShape EntityType="EcomModel.StoreSource" Width="1.5" PointX="4.4746816421275408" PointY="20.908345679244189" />
+        <AssociationConnector Association="EcomModel.FK_Coupons_StoreCategory" />
+        <AssociationConnector Association="EcomModel.FK_Coupons_StoreSource" />
+        <AssociationConnector Association="EcomModel.FK_Store_StoreSource" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

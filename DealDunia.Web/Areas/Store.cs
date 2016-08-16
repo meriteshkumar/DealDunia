@@ -33,7 +33,9 @@ namespace DealDunia.Web.Areas
         public Nullable<bool> Active { get; set; }
         public Nullable<System.DateTime> CreatedOn { get; set; }
         public Nullable<System.DateTime> ModifiedOn { get; set; }
+        public Nullable<bool> Status { get; set; }
     
         public virtual ICollection<ExcDeal> ExcDeals { get; set; }
+        public virtual StoreSource StoreSource { get; set; }
     }
 }

@@ -12,22 +12,19 @@ namespace DealDunia.Web.Areas
     using System;
     using System.Collections.Generic;
     
-    public partial class StoreCategory
+    public partial class StoreSource
     {
-        public StoreCategory()
+        public StoreSource()
         {
-            this.ExcDeals = new HashSet<ExcDeal>();
             this.Coupons = new HashSet<Coupon>();
+            this.Stores = new HashSet<Store>();
         }
     
-        public short StoreCategoryId { get; set; }
-        public string StoreCategoryName { get; set; }
-        public string Image { get; set; }
-        public Nullable<short> ParentId { get; set; }
-        public Nullable<short> DisplayOrder { get; set; }
-        public Nullable<bool> Active { get; set; }
+        public short StoreSourceId { get; set; }
+        public string StoreSourceCode { get; set; }
+        public string StoreSourceName { get; set; }
     
-        public virtual ICollection<ExcDeal> ExcDeals { get; set; }
         public virtual ICollection<Coupon> Coupons { get; set; }
+        public virtual ICollection<Store> Stores { get; set; }
     }
 }
