@@ -21,8 +21,14 @@
     <div class="panel-body">
         <div class="form-horizontal">
             <div class="form-group">
-                <label for="StoreID" class="col-sm-2 control-label" style="max-height: none;">Store Source</label>
+                <label for="StoreSourceID" class="col-sm-2 control-label" style="max-height: none;">Store Source</label>
                 <div class="col-sm-10 divSearchStoreSourceID">
+                    <!-- placeholder for store source dropdown -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="StoreID" class="col-sm-2 control-label" style="max-height: none;">Store</label>
+                <div class="col-sm-10 divSearchStoreID">
                     <!-- placeholder for store source dropdown -->
                 </div>
             </div>
@@ -30,6 +36,16 @@
                 <label for="StoreCategoryId" class="col-sm-2 control-label" style="max-height: none;">Store Category</label>
                 <div class="col-sm-10 divSearchStoreCategoryId">
                     <!-- placeholder for storecategory dropdown -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="OfferType" class="col-sm-2 control-label" style="max-height: none;">Offer Type</label>
+                <div class="col-sm-10">
+                    <select class="form-control" id="searchOfferType">
+                        <option value="">All</option>
+                        <option value="Coupon">Coupon</option>
+                        <option value="Deal">Deal</option>
+                    </select>
                 </div>
             </div>
             <div class="form-group">
@@ -71,7 +87,6 @@
     @Html.Partial("_CouponGrid", Model)
 </div>
 
-
 <script type="text/javascript">
     $(document).ready(function () {
         $.ajax({
@@ -90,15 +105,25 @@
         }).fail(function () {
         });
 
+        $.ajax({
+            url: '@Url.Action("_StoreDropDown", "Coupons")',
+            data: { controlName: "StoreName" }
+        }).done(function (data) {
+            $(".divSearchStoreID").html(data);
+        }).fail(function () {
+        });
+
         $(".btnSearch").click(function () {
             var storeSourceId = $("[id='ss-dropdown']").val();
             var storeCategoryId = $("[id='StoreCategoryId']").val();
             var featured = $("[id='SearchFeatured']").val();
             var active = $("[id='SearchActive']").val();
+            var offerType = $("[id='searchOfferType']").val();
+            var store = $("[id='st-dropdown']").val();
 
             $.ajax({
                 url: '@Url.Action("_CouponGrid", "Coupons")',
-                data: { storeSourceId: storeSourceId, storeCategoryId: storeCategoryId, featured: featured, status: active }
+                data: { storeSourceId: storeSourceId, storeCategoryId: storeCategoryId, featured: featured, status: active, offerType: offerType, store : store }
             }).done(function (data) {
                 $("#divCouponGrid").html(data);
             }).fail(function (error) {

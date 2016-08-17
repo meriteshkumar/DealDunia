@@ -224,6 +224,7 @@
     <Content Include="Areas\Admin\Views\Coupons\_CouponGrid.cshtml" />
     <Content Include="Areas\Admin\Views\Coupons\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Coupons\_StoreSourceDropDown.cshtml" />
+    <Content Include="Areas\Admin\Views\Coupons\_StoreDropDown.cshtml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Images\Categories\Baby_Kids.png" />
     <Content Include="Images\Categories\Baby_Kids\Accessories.png" />
