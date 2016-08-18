@@ -47,12 +47,18 @@ namespace DealDunia.Web.Areas.Admin.Controllers
             {
                 EComEntities context = new EComEntities();
                 var folderPath = string.Format("~/Images/Stores/{0}/", storeName);
-                var ImagePath = string.Format("Stores/{0}/{1}", storeName, System.IO.Path.GetFileName(model.Image));
+                var ImagePath = string.Empty;
 
                 if (Image1 != null)
                 {
                     var path = System.IO.Path.Combine(Server.MapPath(folderPath), System.IO.Path.GetFileName(model.Image));
                     Image1.SaveAs(path);
+
+                    ImagePath = string.Format("Stores/{0}/{1}", storeName, System.IO.Path.GetFileName(model.Image));
+                }
+                else
+                {
+                    ImagePath = model.Image;
                 }
 
                 if (model.ExcDealId == 0)

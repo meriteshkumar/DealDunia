@@ -112,7 +112,7 @@
         $(".enddate").datepicker();
 
         $(document).on("change", "[id='cc-dropdown']", function () {
-            $("#hdStore").val($("[id='cc-dropdown'] option:selected").text());
+            $("#hdStore").val($("[id='cc-dropdown'] option:selected").first().text());
         });
 
         $.ajax({
@@ -130,7 +130,9 @@
         }).done(function (data) {
             $("#DivStore").html(data);
             $("[id='cc-dropdown']").val(@Model.StoreId);
-            $("#hdStore").val($("[id='cc-dropdown'] option:selected").text());
+            $("#hdStore").val($("[id='cc-dropdown'] option:selected").first().text());
+            alert($("[id='cc-dropdown'] option:selected").first().text());
+            alert($("#hdStore").val());
         }).fail(function (error) {
         });
     });

@@ -120,7 +120,7 @@
             });
         });
 
-        $("#divCouponGrid").on("click", "tfoot a", function (e) {
+        $("#divCouponGrid").on("click", "thead a,tfoot a", function (e) {
             e.preventDefault();
             var param = $(this).attr("href").split("?")[1];
             var url = '@Url.Action("_CouponGrid","Coupons")' + '?' + param;
