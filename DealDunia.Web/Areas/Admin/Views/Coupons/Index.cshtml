@@ -112,7 +112,23 @@
 
             $.ajax({
                 url: '@Url.Action("_CouponGrid", "Coupons")',
-                data: { storeSourceId: storeSourceId, storeCategoryId: storeCategoryId, featured: featured, status: active, offerType: offerType, store : store }
+                data: { storeSourceId: storeSourceId, storeCategoryId: storeCategoryId, featured: featured, status: active, offerType: offerType, store: store },
+                type: 'GET'
+            }).done(function (data) {
+                $("#divCouponGrid").html(data);
+            }).fail(function (error) {
+            });
+        });
+
+        $("#divCouponGrid").on("click", "tfoot a", function (e) {
+            e.preventDefault();
+            var param = $(this).attr("href").split("?")[1];
+            var url = '@Url.Action("_CouponGrid","Coupons")' + '?' + param;
+
+            $.ajax({
+                url: url,
+                data: '',
+                type: 'GET'
             }).done(function (data) {
                 $("#divCouponGrid").html(data);
             }).fail(function (error) {
