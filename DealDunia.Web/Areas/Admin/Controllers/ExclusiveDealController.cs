@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace DealDunia.Web.Areas.Admin.Controllers
 {
+    [Authorize]
     public class ExclusiveDealController : Controller
     {
         public ActionResult Index(int storeId = 0, int storeCategoryId = 0, bool? isFeatured = null)

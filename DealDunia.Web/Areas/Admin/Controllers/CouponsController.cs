@@ -6,11 +6,9 @@ using System.Web.Mvc;
 
 namespace DealDunia.Web.Areas.Admin.Controllers
 {
+    [Authorize]
     public class CouponsController : Controller
     {
-        //
-        // GET: /Admin/Coupons/
-
         public ActionResult Index()
         {
             EComEntities context = new EComEntities();
@@ -84,6 +82,7 @@ namespace DealDunia.Web.Areas.Admin.Controllers
         }
     }
 
+    [Authorize]
     public class StoreDropDown
     {
         public string StoreName { get; set; }

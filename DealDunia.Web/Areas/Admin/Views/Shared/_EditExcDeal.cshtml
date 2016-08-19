@@ -131,8 +131,6 @@
             $("#DivStore").html(data);
             $("[id='cc-dropdown']").val(@Model.StoreId);
             $("#hdStore").val($("[id='cc-dropdown'] option:selected").first().text());
-            alert($("[id='cc-dropdown'] option:selected").first().text());
-            alert($("#hdStore").val());
         }).fail(function (error) {
         });
     });
