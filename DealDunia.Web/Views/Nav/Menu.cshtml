@@ -2,14 +2,14 @@
 @using DealDunia.Infrastructure.Utility
 
 <div class="navbar-header">
-    <a class="navbar-brand" href='@Url.Action("Index","Category")'>HOME</a>
+    <a class="navbar-brand" href='@Url.Action("Index", "Category")'>HOME</a>
 </div>
 <div class="collapse navbar-collapse js-navbar-collapse">
     @foreach (var category in Model.Where(c => c.Level == 1))
     {
         <ul class="nav navbar-nav">
-            <li class="dropdown mega-dropdown">
-                <a href="@Url.RouteUrl("Level1", new { id1 = Utilities.EncodeUrl(category.CategoryName) })" class="dropdown-toggle" data-toggle="dropdown">@category.CategoryName <span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+            <li class="dropdown mega-dropdown" style="vertical-align: middle;">
+                <a href="@Url.RouteUrl("Level1", new { id1 = Utilities.EncodeUrl(category.CategoryName) })" class="dropdown-toggle" data-toggle="dropdown">@category.CategoryName&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
                 <ul class="dropdown-menu mega-dropdown-menu row">
                     @foreach (var subcategory in Model.Where(m => m.ParentId == category.CategoryId))
                     {
@@ -25,7 +25,6 @@
                         </li>
                     }
                 </ul>
-
             </li>
         </ul>
     }

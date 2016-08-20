@@ -46,11 +46,11 @@ namespace DealDunia.Web.Controllers
                 PageIndex = page
             });
 
-           /* FlipkartRepository rep1 = new FlipkartRepository();
+            FlipkartRepository rep1 = new FlipkartRepository();
             response.AddRange(rep1.GetItem(new ItemRequest
             {
                 Keywords = searchtext
-            }));*/
+            }));
 
             ViewBag.SearchedItem = searchtext;
             ViewBag.Page = page;
