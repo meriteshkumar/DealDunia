@@ -40,7 +40,8 @@ namespace DealDunia.Domain.Concrete
             foreach (var x in data)
             {
                 JToken offer = x.Value;
-                if (x.Value[0]["errorCode"]==null)
+
+                if (x.Value.Count() > 0 && x.Value[0]["errorCode"]==null)
                 {
                     for (int i = 0; i < offer.Count(); i++)
                     {

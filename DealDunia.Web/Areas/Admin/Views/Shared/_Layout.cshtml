@@ -12,14 +12,29 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2">
-                <div class="list-group">
-                    <a href="@Url.Action("Index", "ExclusiveDeal")" class="list-group-item">Exclusive Deal</a>
-                    <a href="@Url.Action("Index", "Coupons")" class="list-group-item">Coupons</a>
-                </div>
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="@Url.Action("Index", "ExclusiveDeal")" class="list-group-item">Exclusive Deal</a></li>
+                    <li><a href="@Url.Action("Index", "Coupons")" class="list-group-item">Coupons</a></li>
+                    <li><a href="#" data-toggle="collapse" data-target="#drilldown-1" class="list-group-item">Update Store</a>
+                        <div style="padding-left: 0px;">
+                            <ul id="drilldown-1" class="nav nav-pills nav-stacked collapse">
+                                <li>@Html.ActionLink("VCommission", "UpdateStores", "Source", new { area = "", source = "1" }, null)</li>
+                                <li>@Html.ActionLink("iCubeWires", "UpdateStores", "Source", new { area = "", source = "4" }, null)</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#" data-toggle="collapse" data-target="#drilldown-2" class="list-group-item">Update Coupon</a>
+                        <ul id="drilldown-2" class="nav nav-pills nav-stacked collapse">
+                            <li>@Html.ActionLink("Payoom", "UpdateCoupons", "Source", new { area = "", source = "payoom" }, null)</li>
+                            <li>@Html.ActionLink("VCommission", "UpdateCoupons", "Source", new { area = "", source = "vcom" }, null)</li>
+                            <li>@Html.ActionLink("iCubeWires", "UpdateCoupons", "Source", new { area = "", source = "icw" }, null)</li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
             <div class="col-md-10">
                 @RenderBody()
-            </div>         
+            </div>
         </div>
     </div>
 </body>
