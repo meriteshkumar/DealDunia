@@ -6,8 +6,6 @@
 
 @*<h2>@Model.StoreName</h2>*@
 
-<link href="@Url.Content("~/css/style.css")" rel="stylesheet" type="text/css" />
-
 @foreach (string category in Model.Select(x => x.StoreCategoryName).Distinct())
 {
     <div class="panel panel-default col-md-12">

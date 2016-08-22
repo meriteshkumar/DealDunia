@@ -228,6 +228,7 @@
     <Content Include="Areas\Admin\Views\Coupons\_StoreSourceDropDown.cshtml" />
     <Content Include="Areas\Admin\Views\Coupons\_StoreDropDown.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
+    <None Include="Properties\PublishProfiles\GMD.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Images\Categories\Baby_Kids.png" />
     <Content Include="Images\Categories\Baby_Kids\Accessories.png" />
@@ -284,19 +285,13 @@
     <Content Include="Images\Category\computer.png" />
     <Content Include="Images\Category\comp_lap.png" />
     <Content Include="Images\Category\datacard.png" />
-    <Content Include="Images\Category\decor.png" />
     <Content Include="Images\Category\dining.png" />
     <Content Include="Images\Category\DTH.png" />
-    <Content Include="Images\Category\ecommerce.png" />
-    <Content Include="Images\Category\education.png" />
     <Content Include="Images\Category\electronics.png" />
-    <Content Include="Images\Category\entertainment.png" />
     <Content Include="Images\Category\eyewear.jpg" />
-    <Content Include="Images\Category\eyewear.png" />
     <Content Include="Images\Category\fashion.png" />
     <Content Include="Images\Category\flight.png" />
     <Content Include="Images\Category\food.png" />
-    <Content Include="Images\Category\footwear.png" />
     <Content Include="Images\Category\furniture.png" />
     <Content Include="Images\Category\games.png" />
     <Content Include="Images\Category\gift.png" />
@@ -306,26 +301,22 @@
     <Content Include="Images\Category\homedecor.png" />
     <Content Include="Images\Category\home_kit.png" />
     <Content Include="Images\Category\hotel.png" />
-    <Content Include="Images\Category\hotels.png" />
-    <Content Include="Images\Category\innerwear.png" />
     <Content Include="Images\Category\jewellery.png" />
     <Content Include="Images\Category\kidscloth.png" />
     <Content Include="Images\Category\lab.png" />
     <Content Include="Images\Category\laptop.png" />
-    <Content Include="Images\Category\laptops.png" />
-    <Content Include="Images\Category\lifestyle.png" />
+    <Content Include="Images\Category\medicines.png" />
     <Content Include="Images\Category\menfashion.png" />
     <Content Include="Images\Category\menfootwear.jpg" />
-    <Content Include="Images\Category\mensfashion.png" />
     <Content Include="Images\Category\metro.png" />
     <Content Include="Images\Category\mobile.png" />
-    <Content Include="Images\Category\mobilerecharge.png" />
     <Content Include="Images\Category\mobile_tab.png" />
     <Content Include="Images\Category\noimage.png" />
     <Content Include="Images\Category\recharge.png" />
     <Content Include="Images\Category\refmobile.png" />
     <Content Include="Images\Category\sports.png" />
     <Content Include="Images\Category\sunglasses.png" />
+    <Content Include="Images\Category\supplements.png" />
     <Content Include="Images\Category\tab.png" />
     <Content Include="Images\Category\toys.gif" />
     <Content Include="Images\Category\toys.png" />
@@ -334,8 +325,7 @@
     <Content Include="Images\Category\womenfashion.png" />
     <Content Include="Images\Category\womenfootwear.png" />
     <Content Include="Images\Category\womeninnerwear.png" />
-    <Content Include="Images\Category\womensfashion.png" />
-    <Content Include="Images\CouponWorld\CouponWorld.png" />
+    <Content Include="Images\GrabMeDeal\GrabMeDeal.png" />
     <Content Include="Images\NoImage.png" />
     <Content Include="Images\Scroll-to-top-button.png" />
     <Content Include="Images\Stores\1mgAyush\1mgAyush.png" />
@@ -350,10 +340,14 @@
     <Content Include="Images\Stores\Ajio\Ajio.jpg" />
     <Content Include="Images\Stores\Amante\Amante.png" />
     <Content Include="Images\Stores\Amazon\Amazon.jpg" />
+    <Content Include="Images\Stores\Amazon\AV.PNG" />
     <Content Include="Images\Stores\Amazon\DailyDeals.png" />
     <Content Include="Images\Stores\Amazon\Diapers.png" />
+    <Content Include="Images\Stores\Amazon\Kitchen.PNG" />
     <Content Include="Images\Stores\Amazon\Laptops.png" />
     <Content Include="Images\Stores\Amazon\SmartPhones.png" />
+    <Content Include="Images\Stores\Amazon\Speakers.png" />
+    <Content Include="Images\Stores\Amazon\Tablets.PNG" />
     <Content Include="Images\Stores\Amazon\Televsions.png" />
     <Content Include="Images\Stores\AmericanSwan\AmericanSwan.jpg" />
     <Content Include="Images\Stores\Amzer\Amzer.jpg" />
@@ -369,6 +363,7 @@
     <Content Include="Images\Stores\BehrouzBiryani\BehrouzBiryani.jpg" />
     <Content Include="Images\Stores\Biba\Biba.jpg" />
     <Content Include="Images\Stores\Bigbasket\Bigbasket.png" />
+    <Content Include="Images\Stores\Bigchemist\Bigchemist.png" />
     <Content Include="Images\Stores\Blackberry\Blackberry.png" />
     <Content Include="Images\Stores\BlueStone\BlueStone.jpg" />
     <Content Include="Images\Stores\BookMyFlowers\BookMyFlowers.jpg" />
@@ -386,7 +381,6 @@
     <Content Include="Images\Stores\Craftsvilla\craftsvilla.jpg" />
     <Content Include="Images\Stores\DailyObjects\DailyObjects.jpg" />
     <Content Include="Images\Stores\DinoDirect\DinoDirect.png" />
-    <Content Include="Images\Stores\Divineflowerncakes.png" />
     <Content Include="Images\Stores\Dominos\Dominos.jpg" />
     <Content Include="Images\Stores\Droom\droom.JPG" />
     <Content Include="Images\Stores\eBay\eBay.jpg" />
@@ -398,8 +392,10 @@
     <Content Include="Images\Stores\Fabfurnish\fabfurnish.jpg" />
     <Content Include="Images\Stores\FabHotels\FabHotels.jpg" />
     <Content Include="Images\Stores\Fabindia\Fabindia.png" />
+    <Content Include="Images\Stores\Fasherati\Fasherati.png" />
     <Content Include="Images\Stores\Fashionandyou\Fashionandyou.jpg" />
     <Content Include="Images\Stores\Fashionara\Fashionara.jpg" />
+    <Content Include="Images\Stores\Fern_n_petals\ferns_n_petals.jpg" />
     <Content Include="Images\Stores\FirstCry\FirstCry.jpg" />
     <Content Include="Images\Stores\Flintobox\Flintobox.png" />
     <Content Include="Images\Stores\Flipkart\DailyDeals.png" />
@@ -412,13 +408,16 @@
     <Content Include="Images\Stores\FoodPanda\FoodPanda.jpg" />
     <Content Include="Images\Stores\FreeCharge\Freecharge.jpg" />
     <Content Include="Images\Stores\Freecultr\Freecultr.jpg" />
+    <Content Include="Images\Stores\Freshmneu\Freshmneu.png" />
     <Content Include="Images\Stores\Fynd\Fynd.png" />
     <Content Include="Images\Stores\GiftaLove\GiftaLove.jpg" />
     <Content Include="Images\Stores\GiftEase\GiftEase.jpg" />
     <Content Include="Images\Stores\GiftsByMeeta\GiftsByMeeta.jpg" />
+    <Content Include="Images\Stores\Giftsmate\Giftsmate.png" />
     <Content Include="Images\Stores\Goibibo\Goibibo.jpg" />
     <Content Include="Images\Stores\Grabmore\Grabmore.jpg" />
     <Content Include="Images\Stores\GreenDust\GreenDust.jpg" />
+    <Content Include="Images\Stores\Grocermax\Grocermax.png" />
     <Content Include="Images\Stores\HappilyUnmarried\HappilyUnmarried.png" />
     <Content Include="Images\Stores\HealthBuffet\HealthBuffet.png" />
     <Content Include="Images\Stores\HealthGenie\HealthGenie.jpg" />
@@ -434,6 +433,7 @@
     <Content Include="Images\Stores\IndustryBuying\IndustryBuying.jpg" />
     <Content Include="Images\Stores\Infibeam\DailyDeals.jpg" />
     <Content Include="Images\Stores\Infibeam\Infibeam.jpg" />
+    <Content Include="Images\Stores\Intimodo\Intimodo.png" />
     <Content Include="Images\Stores\Jabong\Jabong.jpg" />
     <Content Include="Images\Stores\Jazzmyride\Jazzmyride.jpg" />
     <Content Include="Images\Stores\JoyByNature\Joybynature.jpg" />
@@ -449,7 +449,12 @@
     <Content Include="Images\Stores\LimeRoad\LimeRoad.jpg" />
     <Content Include="Images\Stores\LinoPerros\LinoPerros.png" />
     <Content Include="Images\Stores\LittleApp\LittleApp.jpg" />
-    <Content Include="Images\Stores\Makemytrip\Makemytrip.png" />
+    <Content Include="Images\Stores\Lotusherbals\Lotusherbals.png" />
+    <Content Include="Images\Stores\Makemytrip\Makemytrip_Bus.png" />
+    <Content Include="Images\Stores\Makemytrip\Makemytrip_DF.png" />
+    <Content Include="Images\Stores\Makemytrip\Makemytrip_Hotel.png" />
+    <Content Include="Images\Stores\Makemytrip\Makemytrip_IF.png" />
+    <Content Include="Images\Stores\ManglamJewellers\ManglamJewellers.png" />
     <Content Include="Images\Stores\McDonalds\McDonalds.jpg" />
     <Content Include="Images\Stores\Metro\Metro.png" />
     <Content Include="Images\Stores\Mobikwik\Mobikwik.jpg" />
@@ -472,7 +477,10 @@
     <Content Include="Images\Stores\PapaJohnsPizza\PapaJohnsPizza.jpg" />
     <Content Include="Images\Stores\Paybackbazaar\Paybackbazaar.jpg" />
     <Content Include="Images\Stores\Paytm\Paytm.jpg" />
+    <Content Include="Images\Stores\Peachmode\Peachmode.png" />
+    <Content Include="Images\Stores\Peopleskart\Peopleskart.jpg" />
     <Content Include="Images\Stores\Pepperfry\pepperfry.jpg" />
+    <Content Include="Images\Stores\Pinkcukoo\Pinkcukoo.png" />
     <Content Include="Images\Stores\Pizzahut\Pizzahut.jpg" />
     <Content Include="Images\Stores\Pressie\Pressie.jpg" />
     <Content Include="Images\Stores\PrettySecrets\PrettySecrets.jpg" />
@@ -481,6 +489,8 @@
     <Content Include="Images\Stores\Provogue\Provogue.png" />
     <Content Include="Images\Stores\Puma\Puma.png" />
     <Content Include="Images\Stores\Redbus\Redbus.jpg" />
+    <Content Include="Images\Stores\Rewardme\Rewardme.jpg" />
+    <Content Include="Images\Stores\Rostaa\Rostaa.png" />
     <Content Include="Images\Stores\SendMyGift\SendMyGift.jpg" />
     <Content Include="Images\Stores\Shopcj\Shopcj.jpg" />
     <Content Include="Images\Stores\Shopclues\shopclues.jpg" />
@@ -491,7 +501,7 @@
     <Content Include="Images\Stores\SmileDrive\SmileDrive.jpg" />
     <Content Include="Images\Stores\Snapdeal\DailyDeals.jpg" />
     <Content Include="Images\Stores\Snapdeal\Snapdeal.jpg" />
-    <Content Include="Images\Stores\Snapdeal\Snapdeal.png" />
+    <Content Include="Images\Stores\Soie\Soie..png" />
     <Content Include="Images\Stores\Sports365\sports365.png" />
     <Content Include="Images\Stores\Stalkbuylove\Stalkbuylove.jpg" />
     <Content Include="Images\Stores\StyleTag\StyleTag.PNG" />
@@ -501,6 +511,7 @@
     <Content Include="Images\Stores\Tatasky\Tatasky.gif" />
     <Content Include="Images\Stores\TheFitSlim\TheFitSlim.jpg" />
     <Content Include="Images\Stores\Thomascook\Thomascook.jpg" />
+    <Content Include="Images\Stores\Thyrocare\Thyrocare.png" />
     <Content Include="Images\Stores\Ticketgoose\Ticketgoose.jpg" />
     <Content Include="Images\Stores\Tolexo\Tolexo.png" />
     <Content Include="Images\Stores\TravelKhana\TravelKhana.jpg" />
@@ -513,7 +524,10 @@
     <Content Include="Images\Stores\WearYourShine\WearYourShine.jpg" />
     <Content Include="Images\Stores\Wonderchef\Wonderchef.jpg" />
     <Content Include="Images\Stores\WOW\WOW.jpg" />
-    <Content Include="Images\Stores\Yatra\Yatra.jpg" />
+    <Content Include="Images\Stores\Yatra\Yatra.png" />
+    <Content Include="Images\Stores\Yatra\Yatra_DF.png" />
+    <Content Include="Images\Stores\Yatra\Yatra_Hotel.png" />
+    <Content Include="Images\Stores\Yatra\Yatra_IF.png" />
     <Content Include="Images\Stores\Yepme\yepme.gif" />
     <Content Include="Images\Stores\Zivame\Zivame.jpg" />
     <Content Include="Images\Stores\Zotezo\Zotezo.jpg" />
@@ -575,6 +589,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\Stores\Divineflowerncakes\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>
