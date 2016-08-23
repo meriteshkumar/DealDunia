@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.ExecutiveDeals>
 
 @{
-    ViewBag.Title = "Exclusive Deals";
+    ViewBag.Title = "GrabMeDeal: Exclusive Deals";
 }
 
 <script>
@@ -23,7 +23,7 @@
     });
 </script>
 <div class="panel panel-default">
-    <h4>Stores</h4>
+    <h4>STORES</h4>
     <hr />
     <div class="checkbox" style="padding-left: 5px; padding-right: 5px;">
         @foreach (var storename in Model.Select(m => m.StoreName).Distinct())

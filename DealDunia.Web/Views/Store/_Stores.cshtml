@@ -9,7 +9,7 @@
 @foreach (string category in Model.Select(x => x.StoreCategoryName).Distinct())
 {
     <div class="panel panel-default col-md-12">
-        <h4 style="text-align: center;">@category</h4>
+        <h4>@category</h4>
         <hr />
         <div class="row">
             @foreach (var store in Model.Where(x => x.StoreCategoryName == category))

@@ -17,12 +17,12 @@
         {
         <li class="dropdown-submenu">
             <a tabindex="-1" href="#">
-                <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a>
+                @*<img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;*@@category.StoreCategoryName</a>
             <ul class="dropdown-menu">
                 @foreach (var inner in Model.Where(i => i.ParentId == category.StoreCategoryId))
                 {
                     <li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@inner.StoreCategoryName) })">
-                        <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + inner.Image)" />&nbsp;@inner.StoreCategoryName</a></li>
+                        @*<img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + inner.Image)" />&nbsp;*@@inner.StoreCategoryName</a></li>
                 }
             </ul>
         </li>
@@ -30,7 +30,7 @@
         else
         {
         <li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@category.StoreCategoryName) })">
-            <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a></li>
+@*            <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;*@@category.StoreCategoryName</a></li>
         }
     }
 </ul>
