@@ -47,7 +47,7 @@ h4
 /*---------------------------- Deal div -------------------------------------------------*/
 .divDeal
 {
-    width: 190px;
+    width: 180px;
     border: solid 1px;
     color: lightgray;
     padding: 5px;
@@ -104,7 +104,8 @@ h4
 
 .divProBox
 {
-    width: 190px;
+    width: 180px;
+    height: 335px;
     border: solid 1px;
     color: lightgray;
     padding: 5px;
@@ -121,6 +122,7 @@ h4
     padding-bottom: 5px;
     height: 35px;
     float: left;
+    margin-bottom:5px;
 }
 
 .ProStoreImg
@@ -133,8 +135,8 @@ h4
 
 .divProImg
 {
-    height: 170px;
-    width: 170px;
+    height: 166px;
+    width: 166px;
     display: table-cell;
     vertical-align: middle;
     text-align: center;
@@ -145,14 +147,14 @@ h4
     margin: auto;
     display: block;
     position: relative;
-    max-width: 170px;
-    max-height: 170px;
+    max-width: 166px;
+    max-height: 166px;
 }
 
 .divProTitle
 {
     font-size: 14px;
-    max-width: 170px;
+    max-width: 166px;
     overflow: hidden;
     height: 40px;
     text-align: center;
@@ -161,7 +163,7 @@ h4
 .divProPriceOuter
 {
     height: 30px;
-    width: 170px;
+    width: 166px;
 }
 
 .divProPriceInner
