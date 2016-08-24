@@ -8,9 +8,9 @@
     @Styles.Render("~/Conent/css")
     @Scripts.Render("~/bundles/js")
     <link rel="stylesheet" type="text/css"
-          href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+        href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
 </head>
-   
+
 <body>
     <script>
         (function (i, s, o, g, r, a, m) {
@@ -24,48 +24,47 @@
         ga('send', 'pageview');
     </script>
     <style>
-
     </style>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <div style="max-width: 1366px;">
-                    <div style="float: left; margin-right: 10px;">
-                        <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/GrabMeDeal.png" />
-                    </div>
-                    <div style="padding: 2px;">
-                        @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
-                        {
-                            <div class="input-group">
-                                <input type="text" style="width: 500px;" class="form-control" placeholder="Search Product across various stores" name="searchtext" value="@ViewBag.SearchedItem">
-                                <div class="input-group-btn">
-                                    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
-                                </div>
-                            </div>
-                        }
-                    </div>
+                <div class="col-md-2">
+                    <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/GrabMeDeal.png" />
                 </div>
+                <div class="col-md-10">
+                    @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
+                    {
+                        <div class="input-group col-md-6">
+                            <input type="text" class="form-control" placeholder="Search Product across various stores" name="searchtext" value="@ViewBag.SearchedItem">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="col-md-12">
                 <nav class="navbar navbar-inverse">
-                    <div>
-                        @Html.Action("Menu", "Nav", new { position = "HEADER" })
-                    </div>
+                    @Html.Action("Menu", "Nav", new { position = "HEADER" })
+
                 </nav>
-                <div class="row">
-                    <div class="col-md-2">@Html.Action("LeftSidebar", "Nav")</div>
-                    <div class="col-md-7">@RenderBody()</div>
-                    <div class="col-md-3">
-                        <iframe width='300' height='600' frameborder='0' scrolling='no' src='http://www.cuelinks.com/widgets/8097?pub_id=12521CL11357'></iframe>
-                        <iframe width='300' height='600' frameborder='0' scrolling='no' src='http://www.cuelinks.com/widgets/8103?pub_id=12521CL11357'></iframe>
-                    </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-2">@Html.Action("LeftSidebar", "Nav")</div>
+                <div class="col-md-7">@RenderBody()</div>
+                <div class="col-md-3">
+                    <iframe width='300' height='600' frameborder='0' scrolling='no' src='http://www.cuelinks.com/widgets/8097?pub_id=12521CL11357'></iframe>
+                    <iframe width='300' height='600' frameborder='0' scrolling='no' src='http://www.cuelinks.com/widgets/8103?pub_id=12521CL11357'></iframe>
                 </div>
             </div>
         </div>
-        @* <div class="row">
+    </div>
+    @* <div class="row">
             <div class="col-md-12 panel-footer text-center">
                 @Html.Action("Menu", "Nav", new { position = "FOOTER" })
             </div>
         </div>*@
-        <a href="#" class="scrollToTop"></a>
+    <a href="#" class="scrollToTop"></a>
     </div>
     <script type="text/javascript">
         $(document).ready(function () {

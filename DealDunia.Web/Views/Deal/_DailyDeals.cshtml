@@ -8,7 +8,7 @@
         <div class="row">
             @foreach (var deal in Model)
             {                    
-                <div class="divDeal col-md-4">
+                <div class="divDeal">
                     <div class="divDealImg">
                         <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "daily-deals", id = @deal.DailyDealId })">
                             <img class="store_logo" alt="@deal.Title" src="@Url.Content("~/Images/" + deal.Image)" /></a></b>

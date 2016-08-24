@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.Category>
 @using DealDunia.Infrastructure.Utility
 
-<div class="navbar-header">
+<div class="navbar-header col-md-2">
     <a class="navbar-brand" href='@Url.Action("Index", "Category")'>HOME</a>
 </div>
-<div class="collapse navbar-collapse js-navbar-collapse">
+<div class="collapse navbar-collapse js-navbar-collape">
     @foreach (var category in Model.Where(c => c.Level == 1))
     {
         <ul class="nav navbar-nav">
