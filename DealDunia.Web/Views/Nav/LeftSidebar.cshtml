@@ -2,37 +2,40 @@
 @using DealDunia.Infrastructure.Utility
 
 @*<div class="dropdown col-md-12">*@
-    <ul class="dropdown-menu show col-md-12" role="menu" aria-labelledby="dropdownMenu">
-        <li class=""><a href="@Url.Action("Stores", "Store")">Online Stores</a></li>
-        <li class="divider"></li>
-        <li><a href="@Url.Action("Daily", "Deal")">Daily Deals</a></li>
-        <li class="divider"></li>
-        <li><a href="@Url.Action("Exclusive", "Deal")">Exclusive Deals</a></li>
-        <li class="divider"></li>
-        <li>
-            <a href="#">Coupons by Category</a></li>
-        <li class="divider"></li>
-        @foreach (var category in Model.Where(c => c.ParentId == 0))
+<ul class="dropdown-menu show col-md-12" role="menu" aria-labelledby="dropdownMenu">
+    <li class=""><a href="@Url.Action("Stores", "Store")">Online Stores</a></li>
+    <li class="divider"></li>
+    <li><a href="@Url.Action("Daily", "Deal")">Daily Deals</a></li>
+    <li class="divider"></li>
+    <li><a href="@Url.Action("Exclusive", "Deal")">Exclusive Deals</a></li>
+    <li class="divider"></li>
+    <li>
+        <a href="#">Coupons by Category</a></li>
+    <li class="divider"></li>
+    @foreach (var category in Model.Where(c => c.ParentId == 0))
+    {
+        if (Model.Where(i => i.ParentId == category.StoreCategoryId).Count() > 0)
         {
-            if (Model.Where(i => i.ParentId == category.StoreCategoryId).Count() > 0)
-            {
-            <li class="dropdown-submenu">
-                <a tabindex="-1" href="#">
-                    @*<img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;*@@category.StoreCategoryName</a>
-                <ul class="dropdown-menu">
-                    @foreach (var inner in Model.Where(i => i.ParentId == category.StoreCategoryId))
-                    {
-                        <li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@inner.StoreCategoryName) })">
-                            @*<img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + inner.Image)" />&nbsp;*@@inner.StoreCategoryName</a></li>
-                    }
-                </ul>
-            </li>
-            }
-            else
-            {
-            <li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@category.StoreCategoryName) })">
-                @*            <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;*@@category.StoreCategoryName</a></li>
-            }
+        <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">
+                @*<img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;*@@category.StoreCategoryName</a>
+            <ul class="dropdown-menu">
+                @foreach (var inner in Model.Where(i => i.ParentId == category.StoreCategoryId))
+                {
+@*<li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@inner.StoreCategoryName) })">
+                            <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + inner.Image)" />&nbsp;@inner.StoreCategoryName</a></li>*@
+                     <li><a href="~/Coupons/@Utilities.EncodeUrl(@inner.StoreCategoryName)">@inner.StoreCategoryName</a></li>
+                }
+            </ul>
+        </li>
         }
-    </ul>
+        else
+        {
+        
+@*<li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@category.StoreCategoryName) })">
+            <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a></li>*@
+        <li><a href="~/Coupons/@Utilities.EncodeUrl(@category.StoreCategoryName)">@category.StoreCategoryName</a></li>
+        }
+    }
+</ul>
 @*</div>*@

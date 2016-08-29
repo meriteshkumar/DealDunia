@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DealDunia.Infrastructure.Utility
 {
@@ -12,11 +8,13 @@ namespace DealDunia.Infrastructure.Utility
     {
         public static string EncodeUrl(string param)
         {
-            return param.Replace(' ', '_').Replace("&", "and");
+            //return param.Replace(' ', '_').Replace("&", "and");
+            return param.Replace(' ', '-').Replace("&", "and");
         }
         public static string DecodeUrl(string param)
         {
-            return param.Replace('_', ' ').Replace("and", "&");
+            //return param.Replace('_', ' ').Replace("and", "&");
+            return param.Replace('-', ' ').Replace("and", "&");
         }
 
         public static DataTable ToDataTable<T>(this IList<T> data)

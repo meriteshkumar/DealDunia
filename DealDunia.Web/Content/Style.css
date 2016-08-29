@@ -21,8 +21,8 @@ h4
 
 .store_logo
 {
-    max-width: 100px;
-    max-height: 50px;
+    max-width: 98px;
+    max-height: 48px;
 }
 
 .center
@@ -35,10 +35,10 @@ h4
 
 .div_store_logo
 {
-    width: 102px;
-    height: 52px;
+    width: 100px;
+    height: 50px;
     border: solid 1px;
-    margin: 4px;
+    margin: 2px;
     border-color: lightgray;
     float: left;
     text-align: center;
@@ -59,15 +59,22 @@ h4
 
 .divDealImg
 {
-    margin: 10px;
-    height: 50px;
+    margin: 5px;    
+    max-width: 158px;
+    max-height: 50px;    
+}
+
+.dealImg
+{
+    max-width:100%;
+    max-height:100%;
 }
 
 .divDealTitle
 {
     font-size: 14px;
     margin: 5px;
-    height: 60px;
+    height: 64px;
     overflow: hidden;
 }
 
@@ -87,6 +94,7 @@ h4
 .divDealCodeInner
 {
     color: white;
+    font-size: 12px;
 }
 
 .divDealExpiry
@@ -96,7 +104,7 @@ h4
     text-align: center;
     margin: auto;
     padding: 5px;
-    font-size: 12px;
+    font-size: 11px;
     color: gray;
 }
 
@@ -122,7 +130,7 @@ h4
     padding-bottom: 5px;
     height: 35px;
     float: left;
-    margin-bottom:5px;
+    margin-bottom: 5px;
 }
 
 .ProStoreImg
@@ -196,7 +204,6 @@ h4
     {
         text-decoration: none;
     }
-
 
 .field-validation-error
 {

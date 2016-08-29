@@ -13,6 +13,11 @@ namespace DealDunia.Web
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(
+                name: "CouponsByCategory",
+                url: "Coupons/{Category}",
+                defaults: new { controller = "Deal", action = "Coupon" }
+            );
 
             routes.MapRoute(
                name: "Out",
@@ -26,11 +31,7 @@ namespace DealDunia.Web
                 defaults: new { controller = "Deal", action = "Coupon" }
             );
 
-            routes.MapRoute(
-                name: "CouponsByCategory",
-                url: "Coupons/{Category}",
-                defaults: new { controller = "Deal", action = "Coupon" }
-            );
+            
 
             //routes.MapRoute(
             //    name: "UpdateCoupons",

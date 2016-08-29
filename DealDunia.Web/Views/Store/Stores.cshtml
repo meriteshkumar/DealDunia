@@ -1,7 +1,8 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.Store>
 
 @{
-    ViewBag.Title = "Store";
+    
+    ViewBag.Title = "GrabMeDeal: Online Shopping Sites";
 }
 
 @*<h2>@Model.StoreName</h2>*@
@@ -17,11 +18,11 @@
     {
         <hr />
         <h4 style="text-align: center;" id="@alphabet">@alphabet</h4>
-        <hr />
+        <hr />      
         <div class="row">
             @foreach (var store in Model.Where(x => x.Alphabet == alphabet).Select(s => new { StoreName = s.StoreName, StoreImage = s.StoreImage }).Distinct())
             {
-                <div style="float: left; width: 125px;">
+                <div style="float: left; width: 120px;">
                     <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
                         <b>@store.StoreName</b>
                     </a>

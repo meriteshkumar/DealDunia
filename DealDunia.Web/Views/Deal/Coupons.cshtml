@@ -2,7 +2,7 @@
 @using DealDunia.Infrastructure.Utility
 
 @{
-    ViewBag.Title = "GrabMeDeal: Coupons & Offers";
+    ViewBag.Title = "GrabMeDeal: " + Utilities.DecodeUrl(@ViewContext.RouteData.Values["Category"].ToString()) + " Deals & Coupons Offers";
     ViewBag.Source = "couponsbycat";
 }
 
