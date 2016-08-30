@@ -1,10 +1,14 @@
 ﻿<!DOCTYPE html>
 
-<html>
+<html lang="en">
 <head>
+    @*Meta Tags*@
     <meta name="viewport" content="width=device-width" />
-    <meta name="description" content="Get the latest deals & coupons offers from India’s top online shopping sites like Amazon, Flipkart, Snapdeal, Myntra, eBay, Jabong, Paytm any many more on GrabMeDeal" />
-    <title>@ViewBag.Title</title>
+    <meta name="description" content="Get the latest deals & coupons offers from India’s top online shopping sites like Amazon, Flipkart, Snapdeal, Myntra, eBay, Paytm any many more on GrabMeDeal" />
+    <meta name="keywords" content="Deals,Offers,Coupons,Daily Offers,Daily Deals,Exclusive Deals,Deals of the day">
+
+    <title>@ViewBag.Title</title>    
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/js")
     <link rel="stylesheet" type="text/css"
@@ -23,13 +27,13 @@
         ga('create', 'UA-6934011-6', 'auto');
         ga('send', 'pageview');
     </script>
-    <style>
-    </style>
+   
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
                 <div class="col-md-2">
-                    <a href="@Url.Action("Index", "Category")"><img alt="GrabMeDeal" src="~/Images/GrabMeDeal/GrabMeDeal.png" /></a>
+                    <a href="@Url.Action("Index", "Category")">
+                        <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/GrabMeDeal.png" /></a>
                 </div>
                 <div class="col-md-10">
                     @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
@@ -52,9 +56,8 @@
             <div class="col-md-12">
                 <div class="col-md-2">@Html.Action("LeftSidebar", "Nav")</div>
                 <div class="col-md-7">@RenderBody()</div>
-                <div class="col-md-3">
-                    <script type="text/javascript" language="javascript"> var aax_size = '300x600'; var aax_pubname = 'gmed-21'; var aax_src = '302'; </script><script type="text/javascript" language="javascript" src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
-                   @* <iframe width='300' height='600' frameborder='0' scrolling='no' src='http://www.cuelinks.com/widgets/8097?pub_id=12521CL11357'></iframe>*@
+                <div class="col-md-3">         
+                     <iframe width='300' height='600' frameborder='0' scrolling='no' src='http://www.cuelinks.com/widgets/8097?pub_id=12521CL11357'></iframe>
                     @*<iframe width='300' height='600' frameborder='0' scrolling='no' src='http://www.cuelinks.com/widgets/8103?pub_id=12521CL11357'></iframe>*@
                 </div>
             </div>
@@ -66,7 +69,7 @@
             </div>
         </div>*@
     <a href="#" class="scrollToTop"></a>
-    </div>
+    
     <script type="text/javascript">
         $(document).ready(function () {
             //Check to see if the window is top if not then display button

@@ -228,6 +228,7 @@
     <Content Include="Areas\Admin\Views\Coupons\_StoreSourceDropDown.cshtml" />
     <Content Include="Areas\Admin\Views\Coupons\_StoreDropDown.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
+    <None Include="Properties\PublishProfiles\DealDunia.pubxml" />
     <None Include="Properties\PublishProfiles\GMD.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="Images\Categories\Baby_Kids.png" />
@@ -369,6 +370,7 @@
     <Content Include="Images\Stores\BookMyFlowers\BookMyFlowers.jpg" />
     <Content Include="Images\Stores\BucketKart\BucketKart.gif" />
     <Content Include="Images\Stores\CampusSutra\CampusSutra.jpg" />
+    <Content Include="Images\Stores\Carzonrent\carzonrent.jpg" />
     <Content Include="Images\Stores\Chainrooms\Chainrooms.png" />
     <Content Include="Images\Stores\Chaipoint\chaipoint.png" />
     <Content Include="Images\Stores\Chumbak\Chumbak.png" />
@@ -423,7 +425,7 @@
     <Content Include="Images\Stores\HealthGenie\HealthGenie.jpg" />
     <Content Include="Images\Stores\Healthkart\Healthkart.png" />
     <Content Include="Images\Stores\Hidesign\Hidesign.png" />
-    <Content Include="Images\Stores\Homeshop18\homeshop18.jpg" />
+    <Content Include="Images\Stores\Homeshop18\homeshop18.png" />
     <Content Include="Images\Stores\Hopscotch\Hopscotch.jpg" />
     <Content Include="Images\Stores\Hotels\Hotels.jpg" />
     <Content Include="Images\Stores\HouseFull\HouseFull.jpg" />
@@ -538,6 +540,7 @@
     <Content Include="Images\ui-icons_777777_256x240.png" />
     <Content Include="Images\ui-icons_cc0000_256x240.png" />
     <Content Include="Images\ui-icons_ffffff_256x240.png" />
+    <Content Include="robots.txt" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />

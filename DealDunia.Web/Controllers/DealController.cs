@@ -15,14 +15,15 @@ namespace DealDunia.Web.Controllers
         public DealController()
         {
         }
-
+        
+        [OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Daily()
         {
             IRepository<DailyDeals, DailyDealsValues> repository = new DailyDealRepository();
             var deals = repository.Get(new DailyDealsValues { StoreId = 0, StoreName = string.Empty });
             return View(deals);
         }
-
+       
         public PartialViewResult _DailyDeals(DailyDealsValues param)
         {
             var repository = new DailyDealRepository();
@@ -39,11 +40,11 @@ namespace DealDunia.Web.Controllers
             return PartialView("_DOTD", deals);
         }
 
+         [OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Exclusive()
         {
             IRepository<ExecutiveDeals, ExecutiveDealValues> repository = new ExclusiveDealRepository();
             var deals = repository.Get(new ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = string.Empty, StoreId = 0, StoreName = string.Empty });
-
             return View(deals);
         }
 
@@ -53,7 +54,6 @@ namespace DealDunia.Web.Controllers
             var deals = repository.Get(param);
             return PartialView("_ExclusiveDeals", deals);
         }
-
 
         public ActionResult Coupon(string Offer, string Store, string Category)
         {

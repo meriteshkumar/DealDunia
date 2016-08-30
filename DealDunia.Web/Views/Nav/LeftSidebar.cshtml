@@ -1,8 +1,126 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.StoreCategory>
 @using DealDunia.Infrastructure.Utility
 
-@*<div class="dropdown col-md-12">*@
-<ul class="dropdown-menu show col-md-12" role="menu" aria-labelledby="dropdownMenu">
+
+@*<ul class="dropdown-menu show col-md-12" role="menu" aria-labelledby="dropdownMenu">
+    <li class=""><a href="/stores">Online Stores</a></li>
+    <li class="divider"></li>
+    <li><a href="/daily-deals">Daily Deals</a></li>
+    <li class="divider"></li>
+    <li><a href="/exclusive-deals">Exclusive Deals</a></li>
+    <li class="divider"></li>
+    <li>
+        <a href="#">Coupons by Category</a></li>
+    <li class="divider"></li>
+        <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">
+                Recharge &amp; Bill</a>
+          
+            <ul class="dropdown-menu">
+                     <li><a href="/Coupons/Mobile-Recharge">Mobile Recharge</a></li>
+                     <li><a href="/Coupons/Bill-Payments">Bill Payments</a></li>
+                     <li><a href="/Coupons/DTH-Recharge">DTH Recharge</a></li>
+                     <li><a href="/Coupons/Metro-Recharge">Metro Recharge</a></li>
+                     <li><a href="/Coupons/Data-Card">Data Card</a></li>
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">
+                Travels &amp; Hotels</a>
+          
+            <ul class="dropdown-menu">
+                     <li><a href="/Coupons/Hotels">Hotels</a></li>
+                     <li><a href="/Coupons/Flight">Flight</a></li>
+                     <li><a href="/Coupons/Bus">Bus</a></li>
+                     <li><a href="/Coupons/Car">Car</a></li>
+            </ul>
+        </li>
+        <li><a href="/Coupons/Food-and-Beverage">Food &amp; Beverage</a></li>
+        <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">
+                Fashion</a>
+          
+            <ul class="dropdown-menu">
+                     <li><a href="/Coupons/Women-Fashion">Women Fashion</a></li>
+                     <li><a href="/Coupons/Men-Fashion">Men Fashion</a></li>
+                     <li><a href="/Coupons/Clothing-and-Accessories">Clothing &amp; Accessories</a></li>
+                     <li><a href="/Coupons/Women-InnerWear">Women InnerWear</a></li>
+                     <li><a href="/Coupons/Men-Footwear">Men Footwear</a></li>
+                     <li><a href="/Coupons/Women-Footwear">Women Footwear</a></li>
+                     <li><a href="/Coupons/Jewellery">Jewellery</a></li>
+                     <li><a href="/Coupons/Sunglasses">Sunglasses</a></li>
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">
+                Baby &amp; Kids</a>
+          
+            <ul class="dropdown-menu">
+                     <li><a href="/Coupons/Kids-Clothing">Kids Clothing</a></li>
+                     <li><a href="/Coupons/Toys-and-Games">Toys &amp; Games</a></li>
+                     <li><a href="/Coupons/Baby-Care">Baby Care</a></li>
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">
+                Mobiles &amp; Tablets</a>
+          
+            <ul class="dropdown-menu">
+                     <li><a href="/Coupons/Mobiles-and-Accessories">Mobiles &amp; Accessories</a></li>
+                     <li><a href="/Coupons/Refurbished-Mobiles">Refurbished Mobiles</a></li>
+                     <li><a href="/Coupons/Tablet--and-Accessories">Tablet  &amp; Accessories</a></li>
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">
+                Computer &amp; Laptops</a>
+          
+            <ul class="dropdown-menu">
+                     <li><a href="/Coupons/Computer-and-Accessories">Computer &amp; Accessories</a></li>
+                     <li><a href="/Coupons/Laptops-and-Accessories">Laptops &amp; Accessories</a></li>
+            </ul>
+        </li>
+        <li><a href="/Coupons/Electronics">Electronics</a></li>
+        <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">
+                Home &amp; Kitchen</a>
+          
+            <ul class="dropdown-menu">
+                     <li><a href="/Coupons/Kitchen-and-Home-Appliances">Kitchen &amp; Home Appliances</a></li>
+                     <li><a href="/Coupons/Kitchen-and-Dining">Kitchen &amp; Dining</a></li>
+                     <li><a href="/Coupons/Furntiture">Furntiture</a></li>
+                     <li><a href="/Coupons/Home-Decor">Home Decor</a></li>
+                     <li><a href="/Coupons/Home-Furnishing">Home Furnishing</a></li>
+            </ul>
+        </li>
+        <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">
+                Health &amp; Beauty</a>
+          
+            <ul class="dropdown-menu">
+                     <li><a href="/Coupons/Health">Health</a></li>
+                     <li><a href="/Coupons/Beauty">Beauty</a></li>
+            </ul>
+        </li>
+        <li><a href="/Coupons/Sports-and-Fitness">Sports &amp; Fitness</a></li>
+        <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">
+                Healthcare</a>
+          
+            <ul class="dropdown-menu">
+                     <li><a href="/Coupons/Medicines">Medicines</a></li>
+                     <li><a href="/Coupons/Supplements">Supplements</a></li>
+                     <li><a href="/Coupons/Lab-and-Medical-Tests">Lab &amp; Medical Tests</a></li>
+                     <li><a href="/Coupons/Eyewear">Eyewear</a></li>
+            </ul>
+        </li>
+        <li><a href="/Coupons/Books-and-Education">Books &amp; Education</a></li>
+        <li><a href="/Coupons/Flowers-and-Gifts">Flowers &amp; Gifts</a></li>
+        <li><a href="/Coupons/Games-and-Entertainment">Games &amp; Entertainment</a></li>
+        <li><a href="/Coupons/Automotive">Automotive</a></li>
+</ul>*@
+
+<ul class="dropdown-menu show col-md-12" role="menu">
     <li class=""><a href="@Url.Action("Stores", "Store")">Online Stores</a></li>
     <li class="divider"></li>
     <li><a href="@Url.Action("Daily", "Deal")">Daily Deals</a></li>
@@ -18,7 +136,9 @@
         {
         <li class="dropdown-submenu">
             <a tabindex="-1" href="#">
-                @*<img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;*@@category.StoreCategoryName</a>
+                @category.StoreCategoryName</a>
+          @*  <a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@category.StoreCategoryName) })">
+                            <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a>*@
             <ul class="dropdown-menu">
                 @foreach (var inner in Model.Where(i => i.ParentId == category.StoreCategoryId))
                 {
@@ -30,12 +150,10 @@
         </li>
         }
         else
-        {
-        
+        {        
 @*<li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@category.StoreCategoryName) })">
             <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a></li>*@
         <li><a href="~/Coupons/@Utilities.EncodeUrl(@category.StoreCategoryName)">@category.StoreCategoryName</a></li>
         }
     }
 </ul>
-@*</div>*@

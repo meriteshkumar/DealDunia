@@ -21,6 +21,7 @@ namespace DealDunia.Web.Controllers
             this.repository = new StoreRepository();
         }
 
+        [OutputCache(Duration = 7200, VaryByParam = "none")]
         public PartialViewResult _ShopByStore()
         {
             var repository = new StoreRepository();

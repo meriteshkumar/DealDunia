@@ -21,15 +21,22 @@ namespace DealDunia.Web.Controllers
         {
         }
 
+        [OutputCache(Duration = 10, VaryByParam = "none")]
         public PartialViewResult Menu(string position)
         {
             var repository = new CommonRepository();
-            var categories = repository.Menus(null).Distinct();
+            //var categories = repository.Menus(null).Distinct();
 
             if (position.ToUpper() == "HEADER")
-                return PartialView("Menu", categories);
+            {
+                //return PartialView("Menu", categories);
+                return PartialView("Menu", null);
+            }
             else
-                return PartialView("Footer", categories);
+            {
+                //return PartialView("Footer", categories);
+                return PartialView("Footer", null);
+            }
         }
 
         public PartialViewResult SearchResult(string searchtext, int page)
@@ -54,15 +61,14 @@ namespace DealDunia.Web.Controllers
 
             ViewBag.SearchedItem = searchtext;
             ViewBag.Page = page;
-
             return PartialView(response);
         }
 
+        [OutputCache(Duration = 10, VaryByParam = "none")]
         public PartialViewResult LeftSideBar()
         {
-            var repository = new CommonRepository();
-            var categories = repository.GetCouponStoreCategories();
-
+            var repository = new CommonRepository();            
+            var categories = repository.GetCouponStoreCategories();            
             return PartialView(categories);
         }
     }
