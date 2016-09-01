@@ -195,6 +195,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Books.xml" />
+    <Content Include="Content\category.css" />
     <Content Include="Content\Electronics.xml" />
     <Content Include="Content\Flipkart.xml" />
     <Content Include="Content\jquery-ui.css" />
@@ -202,6 +203,7 @@
     <Content Include="Content\menu.css" />
     <Content Include="Content\sidebar-menu.css" />
     <Content Include="Content\style.css" />
+    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -282,6 +284,8 @@
     <Content Include="Images\Category\beauty.png" />
     <Content Include="Images\Category\book.png" />
     <Content Include="Images\Category\Bus.png" />
+    <Content Include="Images\Category\car.png" />
+    <Content Include="Images\Category\ui-icons_category.png" />
     <Content Include="Images\Category\clothing.png" />
     <Content Include="Images\Category\computer.png" />
     <Content Include="Images\Category\comp_lap.png" />

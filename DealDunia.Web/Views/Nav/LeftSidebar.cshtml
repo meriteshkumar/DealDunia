@@ -1,159 +1,207 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.StoreCategory>
 @using DealDunia.Infrastructure.Utility
 
-
-@*<ul class="dropdown-menu show col-md-12" role="menu" aria-labelledby="dropdownMenu">
-    <li class=""><a href="/stores">Online Stores</a></li>
-    <li class="divider"></li>
-    <li><a href="/daily-deals">Daily Deals</a></li>
-    <li class="divider"></li>
-    <li><a href="/exclusive-deals">Exclusive Deals</a></li>
-    <li class="divider"></li>
-    <li>
-        <a href="#">Coupons by Category</a></li>
-    <li class="divider"></li>
-        <li class="dropdown-submenu">
-            <a tabindex="-1" href="#">
-                Recharge &amp; Bill</a>
-          
-            <ul class="dropdown-menu">
-                     <li><a href="/Coupons/Mobile-Recharge">Mobile Recharge</a></li>
-                     <li><a href="/Coupons/Bill-Payments">Bill Payments</a></li>
-                     <li><a href="/Coupons/DTH-Recharge">DTH Recharge</a></li>
-                     <li><a href="/Coupons/Metro-Recharge">Metro Recharge</a></li>
-                     <li><a href="/Coupons/Data-Card">Data Card</a></li>
-            </ul>
-        </li>
-        <li class="dropdown-submenu">
-            <a tabindex="-1" href="#">
-                Travels &amp; Hotels</a>
-          
-            <ul class="dropdown-menu">
-                     <li><a href="/Coupons/Hotels">Hotels</a></li>
-                     <li><a href="/Coupons/Flight">Flight</a></li>
-                     <li><a href="/Coupons/Bus">Bus</a></li>
-                     <li><a href="/Coupons/Car">Car</a></li>
-            </ul>
-        </li>
-        <li><a href="/Coupons/Food-and-Beverage">Food &amp; Beverage</a></li>
-        <li class="dropdown-submenu">
-            <a tabindex="-1" href="#">
-                Fashion</a>
-          
-            <ul class="dropdown-menu">
-                     <li><a href="/Coupons/Women-Fashion">Women Fashion</a></li>
-                     <li><a href="/Coupons/Men-Fashion">Men Fashion</a></li>
-                     <li><a href="/Coupons/Clothing-and-Accessories">Clothing &amp; Accessories</a></li>
-                     <li><a href="/Coupons/Women-InnerWear">Women InnerWear</a></li>
-                     <li><a href="/Coupons/Men-Footwear">Men Footwear</a></li>
-                     <li><a href="/Coupons/Women-Footwear">Women Footwear</a></li>
-                     <li><a href="/Coupons/Jewellery">Jewellery</a></li>
-                     <li><a href="/Coupons/Sunglasses">Sunglasses</a></li>
-            </ul>
-        </li>
-        <li class="dropdown-submenu">
-            <a tabindex="-1" href="#">
-                Baby &amp; Kids</a>
-          
-            <ul class="dropdown-menu">
-                     <li><a href="/Coupons/Kids-Clothing">Kids Clothing</a></li>
-                     <li><a href="/Coupons/Toys-and-Games">Toys &amp; Games</a></li>
-                     <li><a href="/Coupons/Baby-Care">Baby Care</a></li>
-            </ul>
-        </li>
-        <li class="dropdown-submenu">
-            <a tabindex="-1" href="#">
-                Mobiles &amp; Tablets</a>
-          
-            <ul class="dropdown-menu">
-                     <li><a href="/Coupons/Mobiles-and-Accessories">Mobiles &amp; Accessories</a></li>
-                     <li><a href="/Coupons/Refurbished-Mobiles">Refurbished Mobiles</a></li>
-                     <li><a href="/Coupons/Tablet--and-Accessories">Tablet  &amp; Accessories</a></li>
-            </ul>
-        </li>
-        <li class="dropdown-submenu">
-            <a tabindex="-1" href="#">
-                Computer &amp; Laptops</a>
-          
-            <ul class="dropdown-menu">
-                     <li><a href="/Coupons/Computer-and-Accessories">Computer &amp; Accessories</a></li>
-                     <li><a href="/Coupons/Laptops-and-Accessories">Laptops &amp; Accessories</a></li>
-            </ul>
-        </li>
-        <li><a href="/Coupons/Electronics">Electronics</a></li>
-        <li class="dropdown-submenu">
-            <a tabindex="-1" href="#">
-                Home &amp; Kitchen</a>
-          
-            <ul class="dropdown-menu">
-                     <li><a href="/Coupons/Kitchen-and-Home-Appliances">Kitchen &amp; Home Appliances</a></li>
-                     <li><a href="/Coupons/Kitchen-and-Dining">Kitchen &amp; Dining</a></li>
-                     <li><a href="/Coupons/Furntiture">Furntiture</a></li>
-                     <li><a href="/Coupons/Home-Decor">Home Decor</a></li>
-                     <li><a href="/Coupons/Home-Furnishing">Home Furnishing</a></li>
-            </ul>
-        </li>
-        <li class="dropdown-submenu">
-            <a tabindex="-1" href="#">
-                Health &amp; Beauty</a>
-          
-            <ul class="dropdown-menu">
-                     <li><a href="/Coupons/Health">Health</a></li>
-                     <li><a href="/Coupons/Beauty">Beauty</a></li>
-            </ul>
-        </li>
-        <li><a href="/Coupons/Sports-and-Fitness">Sports &amp; Fitness</a></li>
-        <li class="dropdown-submenu">
-            <a tabindex="-1" href="#">
-                Healthcare</a>
-          
-            <ul class="dropdown-menu">
-                     <li><a href="/Coupons/Medicines">Medicines</a></li>
-                     <li><a href="/Coupons/Supplements">Supplements</a></li>
-                     <li><a href="/Coupons/Lab-and-Medical-Tests">Lab &amp; Medical Tests</a></li>
-                     <li><a href="/Coupons/Eyewear">Eyewear</a></li>
-            </ul>
-        </li>
-        <li><a href="/Coupons/Books-and-Education">Books &amp; Education</a></li>
-        <li><a href="/Coupons/Flowers-and-Gifts">Flowers &amp; Gifts</a></li>
-        <li><a href="/Coupons/Games-and-Entertainment">Games &amp; Entertainment</a></li>
-        <li><a href="/Coupons/Automotive">Automotive</a></li>
-</ul>*@
-
 <ul class="dropdown-menu show col-md-12" role="menu">
-    <li class=""><a href="@Url.Action("Stores", "Store")">Online Stores</a></li>
-    <li class="divider"></li>
-    <li><a href="@Url.Action("Daily", "Deal")">Daily Deals</a></li>
-    <li class="divider"></li>
-    <li><a href="@Url.Action("Exclusive", "Deal")">Exclusive Deals</a></li>
-    <li class="divider"></li>
-    <li>
-        <a href="#">Coupons by Category</a></li>
-    <li class="divider"></li>
-    @foreach (var category in Model.Where(c => c.ParentId == 0))
-    {
-        if (Model.Where(i => i.ParentId == category.StoreCategoryId).Count() > 0)
+        <li class=""><a href="/stores">Online Stores</a></li>
+        <li class="divider"></li>
+        <li><a href="/daily-deals">Daily Deals</a></li>
+        <li class="divider"></li>
+        <li><a href="/exclusive-deals">Exclusive Deals</a></li>
+        <li class="divider"></li>
+        <li>
+            <a href="#">Coupons by Category</a></li>
+        <li class="divider"></li>
+            <li class="dropdown-submenu">
+               
+                 <a href="/Coupons/Recharge-and-Bill">
+                                <div class="caticon recharge"></div><span class="categorytitle">Recharge &amp; Bill</span></a>
+                <ul class="dropdown-menu">
+                         <li><a href="/Coupons/Mobile-Recharge">
+                                 <div class="caticon mobile"></div><span class="categorytitle"> Recharge</span></a></li>
+                         <li><a href="/Coupons/Bill-Payments">
+                                 <div class="caticon utilitybills"></div><span class="categorytitle">Bill Payments</span></a></li>
+                         <li><a href="/Coupons/DTH-Recharge">
+                                 <div class="caticon dth"></div><span class="categorytitle">DTH Recharge</span></a></li>
+                         <li><a href="/Coupons/Metro-Recharge">
+                                 <div class="caticon metro"></div><span class="categorytitle">Metro Recharge</span></a></li>
+                         <li><a href="/Coupons/Data-Card">
+                                 <div class="caticon datacard"></div><span class="categorytitle">Data Card</span></a></li>
+                </ul>
+            </li>
+            <li class="dropdown-submenu">
+               
+                 <a href="/Coupons/Travels-and-Hotels">
+                                <div class="caticon travels"></div><span class="categorytitle">Travels &amp; Hotels</span></a>
+                <ul class="dropdown-menu">
+                         <li><a href="/Coupons/Hotels">
+                                 <div class="caticon hotel"></div><span class="categorytitle">Hotels</span></a></li>
+                         <li><a href="/Coupons/Flight">
+                                 <div class="caticon flight"></div><span class="categorytitle">Flight</span></a></li>
+                         <li><a href="/Coupons/Bus">
+                                 <div class="caticon bus"></div><span class="categorytitle">Bus</span></a></li>
+                         <li><a href="/Coupons/Car">
+                                 <div class="caticon car"></div><span class="categorytitle">Car</span></a></li>
+                </ul>
+            </li>
+                 <li><a href="/Coupons/Food-and-Beverage">
+                <div class="caticon food"></div><span class="categorytitle">Food &amp; Beverage</span></a></li>
+            <li class="dropdown-submenu">
+               
+                 <a href="/Coupons/Fashion">
+                                <div class="caticon fashion"></div><span class="categorytitle">Fashion</span></a>
+                <ul class="dropdown-menu">
+                         <li><a href="/Coupons/Women-Fashion">
+                                 <div class="caticon womenfashion"></div><span class="categorytitle">Women Fashion</span></a></li>
+                         <li><a href="/Coupons/Men-Fashion">
+                                 <div class="caticon menfashion"></div><span class="categorytitle">Men Fashion</span></a></li>
+                         <li><a href="/Coupons/Clothing-and-Accessories">
+                                 <div class="caticon clothing"></div><span class="categorytitle">Clothing &amp; Accessories</span></a></li>
+                         <li><a href="/Coupons/Women-InnerWear">
+                                 <div class="caticon womeninnerwear"></div><span class="categorytitle">Women InnerWear</span></a></li>
+                         <li><a href="/Coupons/Men-Footwear">
+                                 <div class="caticon menfootwear"></div><span class="categorytitle">Men Footwear</span></a></li>
+                         <li><a href="/Coupons/Women-Footwear">
+                                 <div class="caticon womenfootwea"></div><span class="categorytitle">Women Footwear</span></a></li>
+                         <li><a href="/Coupons/Jewellery">
+                                 <div class="caticon jewellery"></div><span class="categorytitle">Jewellery</span></a></li>
+                         <li><a href="/Coupons/Sunglasses">
+                                 <div class="caticon sunglasses"></div><span class="categorytitle">Sunglasses</span></a></li>
+                </ul>
+            </li>
+            <li class="dropdown-submenu">
+               
+                 <a href="/Coupons/Baby-and-Kids">
+                                <div class="caticon baby"></div><span class="categorytitle">Baby &amp; Kids</span></a>
+                <ul class="dropdown-menu">
+                         <li><a href="/Coupons/Kids-Clothing">
+                                 <div class="caticon kidscloth"></div><span class="categorytitle">Kids Clothing</span></a></li>
+                         <li><a href="/Coupons/Toys-and-Games">
+                                 <div class="caticon toys"></div><span class="categorytitle">Toys &amp; Games</span></a></li>
+                         <li><a href="/Coupons/Baby-Care">
+                                 <div class="caticon babycare"></div><span class="categorytitle">Baby Care</span></a></li>
+                </ul>
+            </li>
+            <li class="dropdown-submenu">
+               
+                 <a href="/Coupons/Mobiles-and-Tablets">
+                                <div class="caticon mobile_tab"></div><span class="categorytitle">Mobiles &amp; Tablets</span></a>
+                <ul class="dropdown-menu">
+                         <li><a href="/Coupons/Mobiles-and-Accessories">
+                                 <div class="caticon mobile"></div><span class="categorytitle">Mobiles &amp; Accessories</span></a></li>
+                         <li><a href="/Coupons/Refurbished-Mobiles">
+                                 <div class="caticon refmobile"></div><span class="categorytitle">Refurbished Mobiles</span></a></li>
+                         <li><a href="/Coupons/Tablet--and-Accessories">
+                                 <div class="caticon tab"></div><span class="categorytitle">Tablet  &amp; Accessories</span></a></li>
+                </ul>
+            </li>
+            <li class="dropdown-submenu">
+               
+                 <a href="/Coupons/Computer-and-Laptops">
+                                <div class="caticon comp_lap"></div><span class="categorytitle">Computer &amp; Laptops</span></a>
+                <ul class="dropdown-menu">
+                         <li><a href="/Coupons/Computer-and-Accessories">
+                                 <div class="caticon computer"></div><span class="categorytitle">Computer &amp; Accessories</span></a></li>
+                         <li><a href="/Coupons/Laptops-and-Accessories">
+                                 <div class="caticon laptop"></div><span class="categorytitle">Laptops &amp; Accessories</span></a></li>
+                </ul>
+            </li>
+                 <li><a href="/Coupons/Electronics">
+                <div class="caticon electronics"></div><span class="categorytitle">Electronics</span></a></li>
+            <li class="dropdown-submenu">
+               
+                 <a href="/Coupons/Home-and-Kitchen">
+                                <div class="caticon home_kit"></div><span class="categorytitle">Home &amp; Kitchen</span></a>
+                <ul class="dropdown-menu">
+                         <li><a href="/Coupons/Kitchen-and-Home-Appliances">
+                                 <div class="caticon homeappliances"></div><span class="categorytitle">Kitchen &amp; Home Appliances</span></a></li>
+                         <li><a href="/Coupons/Kitchen-and-Dining">
+                                 <div class="caticon dining"></div><span class="categorytitle">Kitchen &amp; Dining</span></a></li>
+                         <li><a href="/Coupons/Furntiture">
+                                 <div class="caticon furniture"></div><span class="categorytitle">Furntiture</span></a></li>
+                         <li><a href="/Coupons/Home-Decor">
+                                 <div class="caticon homedecor"></div><span class="categorytitle">Home Decor</span></a></li>
+                         <li><a href="/Coupons/Home-Furnishing">
+                                 <div class="caticon home_kit"></div><span class="categorytitle">Home Furnishing</span></a></li>
+                </ul>
+            </li>
+            <li class="dropdown-submenu">
+               
+                 <a href="/Coupons/Health-and-Beauty">
+                                <div class="caticon health_beauty"></div><span class="categorytitle">Health &amp; Beauty</span></a>
+                <ul class="dropdown-menu">
+                         <li><a href="/Coupons/Health">
+                                 <div class="caticon health"></div><span class="categorytitle">Health</span></a></li>
+                         <li><a href="/Coupons/Beauty">
+                                 <div class="caticon beauty"></div><span class="categorytitle">Beauty</span></a></li>
+                </ul>
+            </li>
+                 <li><a href="/Coupons/Sports-and-Fitness">
+                <div class="caticon sports"></div><span class="categorytitle">Sports &amp; Fitness</span></a></li>
+            <li class="dropdown-submenu">
+               
+                 <a href="/Coupons/Healthcare">
+                                <div class="caticon health"></div><span class="categorytitle">Healthcare</span></a>
+                <ul class="dropdown-menu">
+                         <li><a href="/Coupons/Medicines">
+                                 <div class="caticon medicines"></div><span class="categorytitle">Medicines</span></a></li>
+                         <li><a href="/Coupons/Supplements">
+                                 <div class="caticon supplements"></div><span class="categorytitle">Supplements</span></a></li>
+                         <li><a href="/Coupons/Lab-and-Medical-Tests">
+                                 <div class="caticon lab"></div><span class="categorytitle">Lab &amp; Medical Tests</span></a></li>
+                         <li><a href="/Coupons/Eyewear">
+                                 <div class="caticon eyewear"></div><span class="categorytitle">Eyewear</span></a></li>
+                </ul>
+            </li>
+                 <li><a href="/Coupons/Books-and-Education">
+                <div class="caticon book"></div><span class="categorytitle">Books &amp; Education</span></a></li>
+                 <li><a href="/Coupons/Flowers-and-Gifts">
+                <div class="caticon gift"></div><span class="categorytitle">Flowers &amp; Gifts</span></a></li>
+                 <li><a href="/Coupons/Games-and-Entertainment">
+                <div class="caticon games"></div><span class="categorytitle">Games &amp; Entertainment</span></a></li>
+                 <li><a href="/Coupons/Automotive">
+                <div class="caticon automotive"></div><span class="categorytitle">Automotive</span></a></li>
+    </ul>
+
+   @* <ul class="dropdown-menu show col-md-12" role="menu">
+        <li class=""><a href="@Url.Action("Stores", "Store")">Online Stores</a></li>
+        <li class="divider"></li>
+        <li><a href="@Url.Action("Daily", "Deal")">Daily Deals</a></li>
+        <li class="divider"></li>
+        <li><a href="@Url.Action("Exclusive", "Deal")">Exclusive Deals</a></li>
+        <li class="divider"></li>
+        <li>
+            <a href="#">Coupons by Category</a></li>
+        <li class="divider"></li>
+        @foreach (var category in Model.Where(c => c.ParentId == 0))
         {
-        <li class="dropdown-submenu">
-            <a tabindex="-1" href="#">
-                @category.StoreCategoryName</a>
-          @*  <a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@category.StoreCategoryName) })">
-                            <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a>*@
-            <ul class="dropdown-menu">
-                @foreach (var inner in Model.Where(i => i.ParentId == category.StoreCategoryId))
-                {
-@*<li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@inner.StoreCategoryName) })">
-                            <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + inner.Image)" />&nbsp;@inner.StoreCategoryName</a></li>*@
-                     <li><a href="~/Coupons/@Utilities.EncodeUrl(@inner.StoreCategoryName)">@inner.StoreCategoryName</a></li>
-                }
-            </ul>
-        </li>
+            if (Model.Where(i => i.ParentId == category.StoreCategoryId).Count() > 0)
+            {
+            <li class="dropdown-submenu">
+                <a tabindex="-1" href="#">
+                    @category.StoreCategoryName</a>
+                <a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@category.StoreCategoryName) })">
+                                <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a>
+                 <a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@category.StoreCategoryName) })">
+                                <div class="caticon automotive"></div><span class="categorytitle" >@category.StoreCategoryName</span></a>
+                <ul class="dropdown-menu">
+                    @foreach (var inner in Model.Where(i => i.ParentId == category.StoreCategoryId))
+                    {
+                         <li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@inner.StoreCategoryName) })">
+                                 <div class="caticon automotive"></div><span class="categorytitle" >@inner.StoreCategoryName</span></a></li>
+    <li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@inner.StoreCategoryName) })">
+                                <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + inner.Image)" />&nbsp;@inner.StoreCategoryName</a></li>
+                         <li><a href="~/Coupons/@Utilities.EncodeUrl(@inner.StoreCategoryName)">@inner.StoreCategoryName</a></li>
+                    }
+                </ul>
+            </li>
+            }
+            else
+            {        
+                 <li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@category.StoreCategoryName) })">
+                <div class="caticon automotive"></div><span class="categorytitle" >@category.StoreCategoryName</span></a></li>
+    <li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@category.StoreCategoryName) })">
+                <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a></li>
+            <li><a href="~/Coupons/@Utilities.EncodeUrl(@category.StoreCategoryName)">@category.StoreCategoryName</a></li>
+            }
         }
-        else
-        {        
-@*<li><a href="@Url.RouteUrl("CouponsByCategory", new { Category = Utilities.EncodeUrl(@category.StoreCategoryName) })">
-            <img alt="@category.StoreCategoryName" style="max-height:15px; max-width:15px;" src="@Url.Content("~/Images/" + category.Image)" />&nbsp;@category.StoreCategoryName</a></li>*@
-        <li><a href="~/Coupons/@Utilities.EncodeUrl(@category.StoreCategoryName)">@category.StoreCategoryName</a></li>
-        }
-    }
-</ul>
+    </ul>*@
