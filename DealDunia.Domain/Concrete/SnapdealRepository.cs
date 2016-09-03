@@ -45,15 +45,18 @@ namespace DealDunia.Domain.Concrete
                 {
                     for (int i = 0; i < offer.Count(); i++)
                     {
-                        DOTD dodt = new DOTD();
-                        dodt.StoreName = StoreName;
-                        dodt.StoreImage = StoreImage;
-                        dodt.Title = offer[i]["title"].ToString();
-                        dodt.MRP = string.Concat("Rs.", offer[i]["mrp"].ToString());
-                        dodt.EffPrice = string.Concat("Rs.", offer[i]["effectivePrice"].ToString());
-                        dodt.DetailPageURL = offer[i]["link"].ToString();
-                        dodt.ImageUrl = offer[i]["imageLink"].ToString();
-                        listDODT.Add(dodt);
+                        if (!string.IsNullOrEmpty(offer[i]["imageLink"].ToString()))
+                        {
+                            DOTD dodt = new DOTD();
+                            dodt.StoreName = StoreName;
+                            dodt.StoreImage = StoreImage;
+                            dodt.Title = offer[i]["title"].ToString();
+                            dodt.MRP = string.Concat("Rs.", offer[i]["mrp"].ToString());
+                            dodt.EffPrice = string.Concat("Rs.", offer[i]["effectivePrice"].ToString());
+                            dodt.DetailPageURL = offer[i]["link"].ToString();
+                            dodt.ImageUrl = offer[i]["imageLink"].ToString();
+                            listDODT.Add(dodt);
+                        }
                     }
                 }
             }

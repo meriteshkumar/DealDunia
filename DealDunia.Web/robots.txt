@@ -1,2 +1,3 @@
-﻿User-agent: *
-Disallow: /Admin
+﻿User-Agent: *
+Disallow: /admin
+Disallow: /source
