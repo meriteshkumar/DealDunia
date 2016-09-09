@@ -46,9 +46,10 @@
     });
 </script>
 
-@Html.Action("_Stores", "Store", new DealDunia.Domain.Entities.StoreValues { StoreCategoryName = Utilities.DecodeUrl(ViewContext.RouteData.Values["category"].ToString()) })
-<div class="col-md-12" style="padding: 0px;">
-    <div class="col-md-10" style="padding: 0px;">
+
+
+<div class="row">
+    <div class="col-md-2 col-sm-2 col-sx-2">
         <div class="panel panel-default">
             <h4>Stores</h4>
             <hr />
@@ -60,8 +61,6 @@
                 }
             </div>
         </div>
-    </div>
-    <div class="col-md-2" style="padding: 0px;">
         <div class="panel panel-default">
             <h4>Offer Type</h4>
             <hr />
@@ -73,8 +72,14 @@
                 }
             </div>
         </div>
+
     </div>
-</div>
-<div id="divCoupon">
-    @Html.Partial("_Coupons", Model)
+    <div class="col-md-10 col-sm-10 col-sx-10">
+        @Html.Action("_Stores", "Store", new DealDunia.Domain.Entities.StoreValues { StoreCategoryName = Utilities.DecodeUrl(ViewContext.RouteData.Values["category"].ToString()) })
+        <div id="divCoupon">
+            @Html.Partial("_Coupons", Model)
+        </div>
+
+    </div>
+
 </div>

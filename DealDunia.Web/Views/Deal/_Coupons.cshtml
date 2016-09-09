@@ -1,44 +1,42 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.Coupon>
 
+
 @if (Model.Count() > 0)
 {
-    
-    <div class="panel panel-default col-md-12">
-        <h4>COUPONS & DEALS</h4>
-        <hr />
-        <div class="row">
-            @foreach (var coupon in Model)
-            {    
-                <div class="divDeal col-md-4">
-                    <div class="divDealImg">
-                        <a target="_blank" href="@Url.Action("Out", "Out", new { source = "couponsbycat", id = coupon.StoreCatMapId })">
-                            <img class="dealImg" alt="@coupon.OfferName" src="@Url.Content("~/Images/" + coupon.StoreImage)"/></a>
-                    </div>
-                    <hr />
-                    <div class="divDealTitle">
-                        <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "coupons", id = coupon.CouponId })">@coupon.CouponTitle.Replace("&amp;", "&")</a></b>
-                    </div>
+    <h4>COUPONS & DEALS</h4>
+    <hr />  
+    <div class="row">
+        @foreach (var coupon in Model)
+        {    
+            <div class="divDeal">
+                <div class="divDealImg">
+                    <a target="_blank" href="@Url.Action("Out", "Out", new { source = "couponsbycat", id = coupon.StoreCatMapId })">
+                        <img class="dealImg" alt="@coupon.OfferName" src="@Url.Content("~/Images/" + coupon.StoreImage)"/></a>
+                </div>
+                <hr />
+                <div class="divDealTitle">
+                    <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "coupons", id = coupon.CouponId })">@coupon.CouponTitle.Replace("&amp;", "&")</a></b>
+                </div>
 
-                    <div class="divDealCodeOuter">
-                        <span><a class="divDealCodeInner" target="_blank" href="@Url.Action("Out", "Out", new { source = "coupons", id = coupon.CouponId })">@if (@coupon.OfferType == "Coupon")
-                                                                                                                                                             { @coupon.CouponCode;
-                                                                                                                                                             }
-                                                                                                                                                             else
-                                                                                                                                                             { <span>DEAL ACTIVATED</span>} </a></span>
-                    </div>
+                <div class="divDealCodeOuter">
+                    <span><a class="divDealCodeInner" target="_blank" href="@Url.Action("Out", "Out", new { source = "coupons", id = coupon.CouponId })">@if (@coupon.OfferType == "Coupon")
+                                                                                                                                                         { @coupon.CouponCode;
+                                                                                                                                                         }
+                                                                                                                                                         else
+                                                                                                                                                         { <span>DEAL ACTIVATED</span>} </a></span>
+                </div>
 
-                    <div class="divDealExpiry">
-                        @if (@coupon.OfferType == "Coupon")
-                        {
-                            <span>Coupon valid till @coupon.CouponExpiry</span>
-                        }
-                        else
-                        {
-                            <span>Deal valid till @coupon.CouponExpiry</span>
-                        }
-                    </div>
-                </div>          
-            }
-        </div>
+                <div class="divDealExpiry">
+                    @if (@coupon.OfferType == "Coupon")
+                    {
+                        <span>Coupon valid till @coupon.CouponExpiry</span>
+                    }
+                    else
+                    {
+                        <span>Deal valid till @coupon.CouponExpiry</span>
+                    }
+                </div>
+            </div>          
+        }
     </div>
 }

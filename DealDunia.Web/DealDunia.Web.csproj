@@ -180,6 +180,7 @@
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Content Include="404.html" />
     <Content Include="Areas\EComModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EComModel.edmx</DependentUpon>
@@ -201,6 +202,7 @@
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\jquery-ui.min.css" />
     <Content Include="Content\menu.css" />
+    <Content Include="Content\menu1.css" />
     <Content Include="Content\sidebar-menu.css" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
@@ -433,6 +435,7 @@
     <Content Include="Images\Stores\Hopscotch\Hopscotch.jpg" />
     <Content Include="Images\Stores\Hotels\Hotels.jpg" />
     <Content Include="Images\Stores\HouseFull\HouseFull.jpg" />
+    <Content Include="Images\Stores\Indiaflowermall\indiaflowermall.png" />
     <Content Include="Images\Stores\IndianGiftsPortal\IndianGiftsPortal.jpg" />
     <Content Include="Images\Stores\IndiaReads\IndiaReads.jpg" />
     <Content Include="Images\Stores\IndiaTimesShop\IndiaTimesShop.jpg" />
@@ -441,6 +444,7 @@
     <Content Include="Images\Stores\Infibeam\Infibeam.jpg" />
     <Content Include="Images\Stores\Intimodo\Intimodo.png" />
     <Content Include="Images\Stores\Jabong\Jabong.jpg" />
+    <Content Include="Images\Stores\Jagranjosh\jagranjosh.jpg" />
     <Content Include="Images\Stores\Jazzmyride\Jazzmyride.jpg" />
     <Content Include="Images\Stores\JoyByNature\Joybynature.jpg" />
     <Content Include="Images\Stores\Junglee\Junglee.jpg" />
@@ -468,6 +472,7 @@
     <Content Include="Images\Stores\Musafir\Musafir.jpg" />
     <Content Include="Images\Stores\MyBusTickets\MyBusTickets.jpg" />
     <Content Include="Images\Stores\MyFlowerTree\MyFlowerTree.jpg" />
+    <Content Include="Images\Stores\Myles\myles.jpg" />
     <Content Include="Images\Stores\Myntra\Myntra.png" />
     <Content Include="Images\Stores\Naaptol\Naaptol.png" />
     <Content Include="Images\Stores\NaturesBasket\NaturesBasket.jpg" />
@@ -526,6 +531,7 @@
     <Content Include="Images\Stores\TrendyBharat\TrendyBharat.png" />
     <Content Include="Images\Stores\VioletStreet\VioletStreet.PNG" />
     <Content Include="Images\Stores\VistaPrint\VistaPrint.jpg" />
+    <Content Include="Images\Stores\Voonik\voonik.png" />
     <Content Include="Images\Stores\Voylla\Voylla.png" />
     <Content Include="Images\Stores\WearYourShine\WearYourShine.jpg" />
     <Content Include="Images\Stores\Wonderchef\Wonderchef.jpg" />
@@ -536,6 +542,7 @@
     <Content Include="Images\Stores\Yatra\Yatra_IF.png" />
     <Content Include="Images\Stores\Yepme\yepme.gif" />
     <Content Include="Images\Stores\Zivame\Zivame.jpg" />
+    <Content Include="Images\Stores\Zoomcar\ZoomCar.png" />
     <Content Include="Images\Stores\Zotezo\Zotezo.jpg" />
     <Content Include="Images\Stores\Zovi\Zovi.jpg" />
     <Content Include="Images\ui-icons_444444_256x240.png" />
@@ -558,6 +565,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="sitemap.xml" />
     <Content Include="Views\Deal\Coupons.cshtml">
       <SubType>Code</SubType>
     </Content>
@@ -593,10 +601,14 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Deal\_DOTD.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Carousel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\Stores\Divineflowerncakes\" />
+    <Folder Include="Images\Stores\Dininefnc\" />
+    <Folder Include="Images\Stores\Flaberry\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>

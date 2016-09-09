@@ -22,10 +22,11 @@
         });
     });
 </script>
-<div class="panel panel-default">
+
+<div class="panel panel-default col-md-2 col-sm-2 col-sx-2">
     <h4>STORES</h4>
     <hr />
-    <div class="checkbox" style="padding-left: 5px; padding-right: 5px;">
+    <div class="checkbox">
         @foreach (var storename in Model.Select(m => m.StoreName).Distinct())
         {
             <label>
@@ -33,8 +34,7 @@
         }
     </div>
 </div>
-
-<div id="divExclusive">
+<div id="divExclusive" class="container col-md-10 col-sm-10 col-sx-10">
     @Html.Partial("_ExclusiveDeals", Model)
 </div>
 

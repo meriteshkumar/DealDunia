@@ -7,17 +7,17 @@
 
 @*<h2>@Model.StoreName</h2>*@
 
-<div class="panel panel-default col-md-12" style="padding: 20px;">
+<div style="padding: 20px;">
     <div style="text-align: center;">
         @foreach (string alphabet in Model.OrderBy(o => o.Alphabet).Select(x => x.Alphabet).Distinct())
         {
-            <a href="#@alphabet" style="font-size:20px;" >&nbsp;@alphabet&nbsp;</a>
+            <a href="#@alphabet" style="font-size:22px;">&nbsp;@alphabet&nbsp;</a>
         }
     </div>
     @foreach (string alphabet in Model.OrderBy(o => o.Alphabet).Select(x => x.Alphabet).Distinct())
     {
         <hr />
-        <h4 style="text-align: center;" id="@alphabet">@alphabet</h4>
+        <h4 id="@alphabet">@alphabet</h4>
         <hr />      
         <div class="row">
             @foreach (var store in Model.Where(x => x.Alphabet == alphabet).Select(s => new { StoreName = s.StoreName, StoreImage = s.StoreImage }).Distinct())

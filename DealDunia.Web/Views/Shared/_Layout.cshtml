@@ -2,22 +2,22 @@
 
 <html lang="en">
 <head>
-    <title>@ViewBag.Title</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-    
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
-
-    @Styles.Render("~/Content/css")
-    @*@Scripts.Render("~/bundles/js")*@
-    
-    @*Meta Tags*@    
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta charset="UTF-8" />
+    @*Meta Tags Start*@
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get the latest deals & coupons offers from India’s top online shopping sites like Amazon, Flipkart, Snapdeal, Myntra, eBay, Paytm any many more on GrabMeDeal" />
     <meta name="keywords" content="Deals,Offers,Coupons,Daily Offers,Daily Deals,Exclusive Deals,Deals of the day" />
-    <meta name="msvalidate.01" content="6B8D54E234D62A229129F6D240CE18FA" />           
+    @*Meta Tags End*@
+
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+
+    @*Style sheets Start*@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+    @Styles.Render("~/Content/css")
+    @*Style sheets End*@
 </head>
 
 <body>
@@ -35,50 +35,85 @@
         ga('create', 'UA-6934011-6', 'auto');
         ga('send', 'pageview');
     </script>
-   
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="col-md-2">
-                    <a href="@Url.Action("Index", "Category")">
-                        <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/GrabMeDeal.png" /></a>
-                </div>
-                <div class="col-md-10">
-                    @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
-                    {
-                        <div class="input-group col-md-6">
-                            <input type="text" class="form-control" placeholder="Search Product across various stores" name="searchtext" value="@ViewBag.SearchedItem">
-                            <div class="input-group-btn">
-                                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
-                            </div>
-                        </div>
-                    }
-                </div>
-            </div>
-            <div class="col-md-12">
-                <nav class="navbar navbar-inverse">
-                    @Html.Action("Menu", "Nav", new { position = "HEADER" })
 
-                </nav>
+
+
+    @*  <header class="navbar navbar-default navbar-fixed-top bs-docs-nav" role="banner">
+        <div class="container">
+            <div class="col-md-2 col-sm-2 col-sx-2">
+                <a href="@Url.Action("Index", "Category")">
+                    <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/GrabMeDeal.png" /></a>
             </div>
-            <div class="col-md-12">
-                <div class="col-md-2">@Html.Action("LeftSidebar", "Nav")</div>
-                <div class="col-md-7">@RenderBody()</div>
-                <div class="col-md-3">         
-<script type="text/javascript"> var aax_size = '300x600'; var aax_pubname = 'gmed-21'; var aax_src = '302'; </script><script type="text/javascript" src="http://c.amazon-adsystem.com/aax2/assoc.js"></script>
-                     @*<iframe width='300' height='600' frameborder='0' scrolling='no' src='http://www.cuelinks.com/widgets/8097?pub_id=12521CL11357'></iframe>*@
-                    @*<iframe width='300' height='600' frameborder='0' scrolling='no' src='http://www.cuelinks.com/widgets/8103?pub_id=12521CL11357'></iframe>*@
-                </div>
+            <div class="col-md-10 col-sm-10 col-sx-10">
+                @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
+                {
+                    <div class="input-group col-md-6 col-sm-6 col-sx-6">
+                        <input type="text" class="form-control" placeholder="Search Product across various stores" name="searchtext" value="@ViewBag.SearchedItem">
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="navbar navbar-inverse">
+                @Html.Action("Menu", "Nav", new { position = "HEADER" })
             </div>
         </div>
-    </div>
-    @* <div class="row">
-            <div class="col-md-12 panel-footer text-center">
-                @Html.Action("Menu", "Nav", new { position = "FOOTER" })
+
+    </header>*@
+
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @*<a class="navbar-brand" href="@Url.Action("Index", "Category")">Grab Me Deal</a>*@
+                <a class="navbar-brand" style="padding-top:0px;" href="@Url.Action("Index", "Category")">
+                    <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/GrabMeDeal.png" /></a>
             </div>
-        </div>*@
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
+                        {
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search Product across various stores" name="searchtext" value="@ViewBag.SearchedItem">
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+                                </div>
+                            </div>
+                        }
+                    </li>
+                </ul>
+                @{Html.RenderPartial("_Menu");}
+            </div>
+            <!--/.nav-collapse -->
+
+        </div>
+    </div>
+    @* <div class="container">
+        @{Html.RenderPartial("_Carousel");}
+    </div>*@
+
+    <div id="body" class="container">
+        @* <div class="col-md-2 col-sm-2 col-sx-2">@Html.Action("LeftSidebar", "Nav")</div>*@
+        <div>@RenderBody()</div>
+    </div>
+
+    <footer>
+        <div class="container">
+            @* <div class="col-md-12 panel-footer text-center">
+                @Html.Action("Menu", "Nav", new { position = "FOOTER" })
+            </div>*@
+        </div>
+    </footer>
     <a href="#" class="scrollToTop"></a>
-    
+
     <script type="text/javascript">
         $(document).ready(function () {
             //Check to see if the window is top if not then display button

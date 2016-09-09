@@ -5,27 +5,26 @@
 
 @if (Model.Count() > 0)
 {
-    <div class="panel panel-default col-md-12">
-        <h4>EXCLUSIVE DEALS</h4>
-        <hr />
-        <div class="row">
-            @foreach (var deal in Model)
-            {    
-                <div class="divDeal col-md-4">
-                    <div class="divDealImg">
-                        <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = deal.ExcDealId })">
-                            <img alt="@deal.StoreName" src="@Url.Content("~/Images/" + deal.StoreImage)" /></a></b>
-                    </div>
-                    <hr />
-                    <div class="divDealTitle">
-                        <a target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = deal.ExcDealId })"><b>@deal.Title.Replace("&amp;", "&")</b></a>
-                    </div>
-                    <div class="divDealCodeOuter">
-                        <span><a class="divDealCodeInner" target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = @deal.ExcDealId })">VISIT OFFER</a></span>
-                        <br />
-                    </div>
-                </div>    
-            }
-        </div>
-    </div>
+    <h4>EXCLUSIVE DEALS</h4>
+    <hr />
+    <div class="row">
+        @foreach (var deal in Model)
+        {    
+            <div class="divDeal">
+                <div class="divDealImg">
+                    <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = deal.ExcDealId })">
+                        <img alt="@deal.StoreName" src="@Url.Content("~/Images/" + deal.StoreImage)" /></a></b>
+                </div>
+                <hr />
+                <div class="divDealTitle">
+                    <a target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = deal.ExcDealId })"><b>@deal.Title.Replace("&amp;", "&")</b></a>
+                </div>
+                <div class="divDealCodeOuter">
+                    <span><a class="divDealCodeInner" target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = @deal.ExcDealId })">VISIT OFFER</a></span>
+                    <br />
+                </div>
+            </div>    
+        }
+    </div>   
 }
+

@@ -21,10 +21,17 @@ namespace DealDunia.Web.Areas.Admin.Controllers
         public PartialViewResult _CouponGrid(int storeSourceId = 0, int storeCategoryId = 0, bool? featured = null, bool? status = null, string offerType = null, string store = null)
         {
             EComEntities context = new EComEntities();
+            //IQueryable query = context.Coupons.Where(e => (storeSourceId == 0 || e.StoreSourceId == storeSourceId)
+            //                                        && (storeCategoryId == 0 || e.StoreCategoryId == storeCategoryId)
+            //                                        && (bool)(e.Featured == (featured ?? e.Featured))
+            //                                        && (bool)(e.Status == (status ?? e.Status))
+            //                                        && (e.OfferType == (string.IsNullOrEmpty(offerType) ? e.OfferType : offerType))
+            //                                        && (e.OfferName.Contains((string.IsNullOrEmpty(store) ? e.OfferName : store))));
+            //var sql = ((System.Data.Objects.ObjectQuery)query).ToTraceString();
 
             var coupons = context.Coupons.Where(e => (storeSourceId == 0 || e.StoreSourceId == storeSourceId)
                                                     && (storeCategoryId == 0 || e.StoreCategoryId == storeCategoryId)
-                                                    && (bool)(e.Featured == (featured ?? e.Featured))
+                                                    //&& (bool)(e.Featured == (featured ?? e.Featured))
                                                     && (bool)(e.Status == (status ?? e.Status))
                                                     && (e.OfferType == (string.IsNullOrEmpty(offerType) ? e.OfferType : offerType))
                                                     && (e.OfferName.Contains((string.IsNullOrEmpty(store) ? e.OfferName : store)))).ToList();

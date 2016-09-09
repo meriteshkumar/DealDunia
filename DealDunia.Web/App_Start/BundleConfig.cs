@@ -9,10 +9,9 @@ namespace DealDunia.Web
         {
             //bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/*.css"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/category.css",
-                "~/Content/menu.css",
-                "~/Content/sidebar-menu.css",
+            bundles.Add(new StyleBundle("~/Content/css").Include(                
+                "~/Content/menu1.css",
+                //"~/Content/category.css",
                 "~/Content/style.css"
                 ));
 

@@ -16,7 +16,7 @@ namespace DealDunia.Web.Controllers
         {
         }
         
-        [OutputCache(Duration = 3600, VaryByParam = "none")]
+        //[OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Daily()
         {
             IRepository<DailyDeals, DailyDealsValues> repository = new DailyDealRepository();
@@ -40,7 +40,7 @@ namespace DealDunia.Web.Controllers
             return PartialView("_DOTD", deals);
         }
 
-         [OutputCache(Duration = 3600, VaryByParam = "none")]
+         //[OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Exclusive()
         {
             IRepository<ExecutiveDeals, ExecutiveDealValues> repository = new ExclusiveDealRepository();

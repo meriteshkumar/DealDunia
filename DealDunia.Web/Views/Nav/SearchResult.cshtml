@@ -1,36 +1,36 @@
 ﻿@model IEnumerable<DealDunia.Infrastructure.Abstract.IItemResponse>
 
-<div class="panel panel-default col-md-12">
-    <div class="row">
-        @foreach (var item in Model)
-        {        
-            <div class="divProBox">
-                <a href="@item.DetailPageURL"  target="_blank">
-                    <div class="divProStoreImg">
-                        <img class="ProStoreImg" alt="@item.StoreName"  src="@Url.Content("~/Images/" + item.StoreImage)"/>
-                    </div>
-                    <div class="divProImg">
-                        <img class="ProImg" alt="@item.Title" src="@item.ImageUrl" />
-                    </div>
-                    <hr style="margin: 10px;" />
-                    <div class="divProTitle">
-                        <b>@item.Title</b>
-                    </div>
-                    <hr style="margin: 10px;" />
-                    <div class="divProPriceOuter">
-                        <div class="divProPriceInner">
-                            <span style="color: gray; text-decoration-line: overline">Rs. @item.FormattedMRP</span>&nbsp;
+@*<div class="col-md-12">*@
+<div class="row">
+    @foreach (var item in Model)
+    {        
+        <div class="divProBox">
+            <a href="@item.DetailPageURL"  target="_blank">
+                <div class="divProStoreImg">
+                    <img class="ProStoreImg" alt="@item.StoreName"  src="@Url.Content("~/Images/" + item.StoreImage)"/>
+                </div>
+                <div class="divProImg">
+                    <img class="ProImg" alt="@item.Title" src="@item.ImageUrl" />
+                </div>
+                <hr style="margin: 10px;" />
+                <div class="divProTitle">
+                    <b>@item.Title</b>
+                </div>
+                <hr style="margin: 10px;" />
+                <div class="divProPriceOuter">
+                    <div class="divProPriceInner">
+                        <span style="color: gray; text-decoration-line: overline">Rs. @item.FormattedMRP</span>&nbsp;
                             <span style="color: red;"><b>@item.FormattedAmount</b></span>
-                        </div>
-                        <span>
-                            <a style="float: right" class="btn btn-primary btn-xs" target="_blank" href="@item.DetailPageURL">Buy</a>
-                        </span>
                     </div>
-                </a>
-            </div>
-        }
-    </div>
+                    <span>
+                        <a style="float: right" class="btn btn-primary btn-xs" target="_blank" href="@item.DetailPageURL">Buy</a>
+                    </span>
+                </div>
+            </a>
+        </div>
+    }
 </div>
+@*</div>*@
 <div style="margin: 0 auto; display: table;">
     @Html.PageLinks(new DealDunia.Web.Models.PagingInfo { CurrentPage = ViewBag.Page, ItemsPerPage = 10, TotalItems = 50 }, x => Url.Action("Search", "Product", new { searchtext = ViewBag.SearchedItem, page = x }))
 </div>
