@@ -196,6 +196,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Books.xml" />
+    <Content Include="Content\carousel.css" />
     <Content Include="Content\category.css" />
     <Content Include="Content\Electronics.xml" />
     <Content Include="Content\Flipkart.xml" />
@@ -235,6 +236,7 @@
     <None Include="Properties\PublishProfiles\DealDunia.pubxml" />
     <None Include="Properties\PublishProfiles\GMD.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
+    <Content Include="Images\Carousel\amazon.jpg" />
     <Content Include="Images\Categories\Baby_Kids.png" />
     <Content Include="Images\Categories\Baby_Kids\Accessories.png" />
     <Content Include="Images\Categories\Baby_Kids\Baby_Care.png" />
@@ -389,6 +391,7 @@
     <Content Include="Images\Stores\Craftsvilla\craftsvilla.jpg" />
     <Content Include="Images\Stores\DailyObjects\DailyObjects.jpg" />
     <Content Include="Images\Stores\DinoDirect\DinoDirect.png" />
+    <Content Include="Images\Stores\Ditto\ditto.png" />
     <Content Include="Images\Stores\Dominos\Dominos.jpg" />
     <Content Include="Images\Stores\Droom\droom.JPG" />
     <Content Include="Images\Stores\eBay\eBay.jpg" />
@@ -414,6 +417,7 @@
     <Content Include="Images\Stores\Foodcloud\Foodcloud.png" />
     <Content Include="Images\Stores\Foodfeasta\Foodfeasta.png" />
     <Content Include="Images\Stores\FoodPanda\FoodPanda.jpg" />
+    <Content Include="Images\Stores\Footprints360\Footprints360.jpg" />
     <Content Include="Images\Stores\FreeCharge\Freecharge.jpg" />
     <Content Include="Images\Stores\Freecultr\Freecultr.jpg" />
     <Content Include="Images\Stores\Freshmneu\Freshmneu.png" />
@@ -443,6 +447,7 @@
     <Content Include="Images\Stores\Infibeam\DailyDeals.jpg" />
     <Content Include="Images\Stores\Infibeam\Infibeam.jpg" />
     <Content Include="Images\Stores\Intimodo\Intimodo.png" />
+    <Content Include="Images\Stores\Ixigo\ixigo.png" />
     <Content Include="Images\Stores\Jabong\Jabong.jpg" />
     <Content Include="Images\Stores\Jagranjosh\jagranjosh.jpg" />
     <Content Include="Images\Stores\Jazzmyride\Jazzmyride.jpg" />
@@ -559,6 +564,7 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.flexisel.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />

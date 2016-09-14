@@ -2,6 +2,8 @@
     ViewBag.Title = "GrabMeDeal: Deals & Coupon Offers";
 }
 
+
+@{Html.RenderPartial("_Carousel");}
 @Html.Action("_ShopByStore", "Store")
 @Html.Action("_DailyDeals", "Deal")
 @Html.Action("_ExclusiveDeals", "Deal")

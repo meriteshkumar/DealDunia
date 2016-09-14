@@ -14,7 +14,7 @@ namespace DealDunia.Service
         private const string Service = "AWSECommerceService";
         private const string Version = "2011-08-01";
         private const string SubscriptionId = "AKIAI5MQ3KTFHR6HFMUA";
-        private const string AssociateTag = "itdezo-21";
+        private const string AssociateTag = "gmed-21";
 
         //public System.IO.Stream ItemSearch(ItemRequest requestParams)
         public XmlDocument ItemSearch(ItemRequest requestParams)

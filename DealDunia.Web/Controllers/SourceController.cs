@@ -68,6 +68,7 @@ namespace DealDunia.Web.Controllers
                     List<ICWCoupons> deserializedResult = null;
                     JavaScriptSerializer serializer = new JavaScriptSerializer();
                     WebResponse response = request.GetResponse();
+                    DateTime Expirydate;
                     using (Stream responseStream = response.GetResponseStream())
                     {
                         StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
@@ -76,6 +77,21 @@ namespace DealDunia.Web.Controllers
                         deserializedResult = serializer.Deserialize<List<ICWCoupons>>(json);
                         DataTable dt = new DataTable();
                         dt = Utilities.ToDataTable(deserializedResult);
+                        for (int i = dt.Rows.Count-1; i >= 0; i--)
+                        {
+                            if (DateTime.TryParse(dt.Rows[i]["Expiry_Date"].ToString(), out Expirydate))
+                            {
+                                if (Expirydate < DateTime.Now.Date)
+                                {
+                                    dt.Rows.RemoveAt(i);                                    
+                                }
+                            }
+                            else
+                            {
+                                dt.Rows.RemoveAt(i);                               
+                            }
+                        }
+                        dt.AcceptChanges();
                         repository.UpdateCoupons(Source, dt);
                     }
                 }
@@ -103,7 +119,7 @@ namespace DealDunia.Web.Controllers
                 {
                     return;
                 }
-                HttpWebRequest httpRequest = null;                
+                HttpWebRequest httpRequest = null;
                 httpRequest = (HttpWebRequest)WebRequest.Create(request);
                 List<SourceStore> stores = new List<SourceStore>();
                 WebResponse response = httpRequest.GetResponse();
@@ -120,22 +136,22 @@ namespace DealDunia.Web.Controllers
                         {
                             SourceStore store = new SourceStore();
                             store.id = Convert.ToInt16(offer["Offer"]["id"]);
-                            store.name = offer["Offer"]["name"].ToString();                                
+                            store.name = offer["Offer"]["name"].ToString();
                             store.expiration_date = offer["Offer"]["expiration_date"].ToString();
                             stores.Add(store);
                         }
                     }
                     DataTable dt = new DataTable();
-                    dt = Utilities.ToDataTable(stores);                        
+                    dt = Utilities.ToDataTable(stores);
                     repository.UpdateStores(Source, dt);
-                }               
+                }
             }
             catch (Exception ex)
             {
                 string errorText = ex.Message;
             }
         }
-        
+
         #endregion
 
     }
