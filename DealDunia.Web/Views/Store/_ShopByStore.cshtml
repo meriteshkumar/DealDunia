@@ -21,20 +21,20 @@
 
 @*<h4>FEATURED STORE</h4>
 <hr />*@
-<ul id="flexisel">
-    @foreach (var store in Model)
-    {               
-        <li>
-            @* <div class="div_store_logo">*@
-            <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
-                <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName"/>
-            </a>
-            @*</div>*@
-        </li>
-    }
-</ul>
-
-
+<div class="row">   
+    <ul id="flexisel">
+        @foreach (var store in Model)
+        {               
+            <li>
+                @* <div class="div_store_logo">*@
+                <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
+                    <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName"/>
+                </a>
+                @*</div>*@
+            </li>
+        }
+    </ul>
+</div>
 @*<h4>FEATURED STORE</h4>
 <hr />
 <div class="row">

@@ -23,7 +23,7 @@
 <body>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+
 
     <script>
         (function (i, s, o, g, r, a, m) {
@@ -89,12 +89,12 @@
                         }
                     </li>
                 </ul>
-                @{Html.RenderPartial("_Menu");}
+                @*@{Html.RenderPartial("_Menu");}*@
+                @{Html.RenderPartial("_MegaMenu");}
             </div>
             <!--/.nav-collapse -->
 
         </div>
-    </div>   
 
     <div id="body" class="container">
         @* <div class="col-md-2 col-sm-2 col-sx-2">@Html.Action("LeftSidebar", "Nav")</div>*@

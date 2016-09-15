@@ -202,6 +202,7 @@
     <Content Include="Content\Flipkart.xml" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\jquery-ui.min.css" />
+    <Content Include="Content\megamenu.css" />
     <Content Include="Content\menu.css" />
     <Content Include="Content\menu1.css" />
     <Content Include="Content\sidebar-menu.css" />
@@ -517,7 +518,7 @@
     <Content Include="Images\Stores\SmileDrive\SmileDrive.jpg" />
     <Content Include="Images\Stores\Snapdeal\DailyDeals.jpg" />
     <Content Include="Images\Stores\Snapdeal\Snapdeal.jpg" />
-    <Content Include="Images\Stores\Soie\Soie..png" />
+    <Content Include="Images\Stores\Soie\Soie.png" />
     <Content Include="Images\Stores\Sports365\sports365.png" />
     <Content Include="Images\Stores\Stalkbuylove\Stalkbuylove.jpg" />
     <Content Include="Images\Stores\StyleTag\StyleTag.PNG" />
@@ -610,6 +611,7 @@
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Carousel.cshtml" />
+    <Content Include="Views\Shared\_MegaMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

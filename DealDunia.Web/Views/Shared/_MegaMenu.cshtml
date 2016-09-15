@@ -1,0 +1,137 @@
+﻿<script type="text/javascript">
+    $(document).ready(function () {
+        $(".dropdown").hover(
+            function () {
+                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideDown("400");
+                $(this).toggleClass('open');
+            },
+            function () {
+                $('.dropdown-menu', this).not('.in .dropdown-menu').stop(true, true).slideUp("400");
+                $(this).toggleClass('open');
+            }
+        );
+    });
+</script>
+
+<link href="~/Content/megamenu.css" rel="stylesheet" />
+
+
+
+<ul class="nav navbar-nav">
+    <li class="dropdown mega-dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories <span class="caret"></span></a>
+        <ul class="dropdown-menu mega-dropdown-menu">
+            <li class="col-sm-2">
+                <ul>
+                    <a href="/Coupons/Electronics">
+                        <li class="dropdown-header">Electronics</li>
+                    </a>
+                    <li class="divider"></li>
+                    <a href="/Coupons/Books-and-Education">
+                        <li class="dropdown-header">Books &amp; Education</li>
+                    </a>
+                    <li class="divider"></li>
+                    <a href="/Coupons/Flowers-and-Gifts">
+                        <li class="dropdown-header">Flowers &amp; Gifts</li>
+                    </a>
+                    <li class="divider"></li>
+                    <a href="/Coupons/Games-and-Entertainment">
+                        <li class="dropdown-header">Games &amp; Entertainment</li>
+                    </a>
+                    <li class="divider"></li>
+                    <a href="/Coupons/Automotive">
+                        <li class="dropdown-header">Automotive</li>
+                    </a>
+                </ul>
+            </li>
+            <li class="col-sm-2">
+                <ul>
+                    <li class="dropdown-header">Recharge &amp; Bill</li>
+                    <li><a href="/Coupons/Mobile-Recharge">Mobile Recharge</a></li>
+                    <li><a href="/Coupons/Bill-Payments">Bill Payments</a></li>
+                    <li><a href="/Coupons/DTH-Recharge">DTH Recharge</a></li>
+                    <li><a href="/Coupons/Metro-Recharge">Metro Recharge</a></li>
+                    <li><a href="/Coupons/Data-Card">Data Card</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Travels &amp; Hotels</li>
+                    <li><a href="/Coupons/Hotels">Hotels</a></li>
+                    <li><a href="/Coupons/Flight">Flight</a></li>
+                    <li><a href="/Coupons/Bus">Bus</a></li>
+                    <li><a href="/Coupons/Car">Car</a></li>
+                    <li><a href="/Coupons/Self-Drive-Car">Self Drive Car</a></li>
+                </ul>
+            </li>
+            <li class="col-sm-2">
+                <ul>
+                    <li class="dropdown-header">Fashion</li>
+                    <li><a href="/Coupons/Women-Fashion">Women Fashion</a></li>
+                    <li><a href="/Coupons/Men-Fashion">Men Fashion</a></li>
+                    <li><a href="/Coupons/Clothing-and-Accessories">Clothing &amp; Accessories</a></li>
+                    <li><a href="/Coupons/Women-InnerWear">Women InnerWear</a></li>
+                    <li><a href="/Coupons/Men-Footwear">Men Footwear</a></li>
+                    <li><a href="/Coupons/Women-Footwear">Women Footwear</a></li>
+                    <li><a href="/Coupons/Jewellery">Jewellery</a></li>
+                    <li><a href="/Coupons/Sunglasses">Sunglasses</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Baby &amp; Kids</li>
+                    <li><a href="/Coupons/Kids-Clothing">Kids Clothing</a></li>
+                    <li><a href="/Coupons/Toys-and-Games">Toys &amp; Games</a></li>
+                    <li><a href="/Coupons/Baby-Care">Baby Care</a></li>
+                </ul>
+            </li>
+            <li class="col-sm-2">
+                <ul>
+
+                    <li class="dropdown-header">Mobiles &amp; Tablets</li>
+                    <li><a href="/Coupons/Mobiles-and-Accessories">Mobiles &amp; Accessories</a></li>
+                    <li><a href="/Coupons/Refurbished-Mobiles">Refurbished Mobiles</a></li>
+                    <li><a href="/Coupons/Tablet--and-Accessories">Tablet  &amp; Accessories</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Computer &amp; Laptops</li>
+                    <li><a href="/Coupons/Computer-and-Accessories">Computer &amp; Accessories</a></li>
+                    <li><a href="/Coupons/Laptops-and-Accessories">Laptops &amp; Accessories</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Home &amp; Kitchen</li>
+                    <li><a href="/Coupons/Kitchen-and-Home-Appliances">Kitchen &amp; Home Appliances</a></li>
+                    <li><a href="/Coupons/Kitchen-and-Dining">Kitchen &amp; Dining</a></li>
+                    <li><a href="/Coupons/Furntiture">Furntiture</a></li>
+                    <li><a href="/Coupons/Home-Decor">Home Decor</a></li>
+                    <li><a href="/Coupons/Home-Furnishing">Home Furnishing</a></li>
+                </ul>
+            </li>
+            <li class="col-sm-2">
+                <ul>
+                    <li class="dropdown-header">Health &amp; Beauty</li>
+                    <li><a href="/Coupons/Health">Health</a></li>
+                    <li><a href="/Coupons/Beauty">Beauty</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Healthcare</li>
+                    <li><a href="/Coupons/Medicines">Medicines</a></li>
+                    <li><a href="/Coupons/Supplements">Supplements</a></li>
+                    <li><a href="/Coupons/Lab-and-Medical-Tests">Lab &amp; Medical Tests</a></li>
+                    <li><a href="/Coupons/Eyewear">Eyewear</a></li>
+                    <li class="divider"></li>
+                    <li class="dropdown-header">Others</li>
+                    <li><a href="/Coupons/Print">Print</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </li>
+    <li><a href="/stores">Online Stores</a></li>
+    <li><a href="/daily-deals">Daily Deals</a></li>
+    <li><a href="/exclusive-deals">Exclusive Deals</a></li>
+</ul>
+@*<ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">My account <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+    </li>
+    <li><a href="#">My cart (0) items</a></li>
+</ul>*@
