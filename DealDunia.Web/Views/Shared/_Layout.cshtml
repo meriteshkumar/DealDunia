@@ -35,6 +35,63 @@
 
         ga('create', 'UA-6934011-6', 'auto');
         ga('send', 'pageview');
+
+        /*Start - Search function*/
+        function GetFilteredResult(searchterm) {
+            res = [];
+            if (searchterm != '') {
+                $.ajax({
+                    url: '/Content/search.json',
+                    dataType: 'json',
+                    async: false,
+                }).done(function (data) {
+                    res = $(data).filter(function (i, n) {
+                        return JSON.stringify(n.value).toUpperCase().indexOf(searchterm.toUpperCase()) > 0;
+                    });
+                }).fail(function (error) {
+                    //TODO
+                });
+            }
+            return res;
+        }
+
+        function addToDom(ar, elementId) {
+            $('#' + elementId).css("background-color", "silver");
+            $('#' + elementId).html(ar.join(''));
+        }
+
+        function wrapElements(arr) {
+            o = $.map(arr, function (el) { return el; });
+            return o.map(function (item) {
+                var content = '<div class="result-container" onclick="setSelected(this)"><div class="result-value">' + item.value + '</div><div class="result-source">' + item.source + '</div></div>';
+                return content;
+            });
+        }
+
+        function searchResult(obj) {
+            result = GetFilteredResult(obj.value);
+            wrapped = wrapElements(result);
+            addToDom(wrapped, "results");
+        }
+
+        function setSelected(obj) {
+
+            value = $(obj.innerHTML).filter(".result-value").html();
+            source = $(obj.innerHTML).filter(".result-source").html();
+
+            alert(value);
+            alert(source);
+
+            if (source == 'Category') {
+                url = '@Url.Action("Store", "Store", new { store = "__store__" })';
+                window.location.href = url.replace("__store__", value);
+            }
+            else {
+                url = '@Url.Action("Store", "Store", new { store = "__store__" })';
+                window.location.href = url.replace("__store__", value);
+            }
+        }
+        /*Start - Search function*/
     </script>
 
     @*  <header class="navbar navbar-default navbar-fixed-top bs-docs-nav" role="banner">
@@ -81,7 +138,7 @@
                         @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
                         {
                             <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search Product across various stores" name="searchtext" value="@ViewBag.SearchedItem">
+                                <input type="text" class="form-control" placeholder="Search Product across various stores" name="searchtext" value="@ViewBag.SearchedItem" onkeyup="searchResult(this);">
                                 <div class="input-group-btn">
                                     <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
                                 </div>
@@ -95,7 +152,24 @@
             <!--/.nav-collapse -->
 
         </div>
+    </div>
+    <!--  Start - Search function -->
+    <style>
+        .resultDiv {
+            position: absolute;
+            width: 325px;
+            left: 1023px;
+            z-index: 1001;
+            top: 51px;
+        }
+        .result-container {
+            cursor:pointer;
+        }
+    </style>
 
+    <div id="results" class="resultDiv">
+    </div>
+    <!--  Start - Search function -->
     <div id="body" class="container">
         @* <div class="col-md-2 col-sm-2 col-sx-2">@Html.Action("LeftSidebar", "Nav")</div>*@
         <div>@RenderBody()</div>
