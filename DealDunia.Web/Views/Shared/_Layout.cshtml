@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using DealDunia.Infrastructure.Utility
+<!DOCTYPE html>
 
 <html lang="en">
 <head>
@@ -18,13 +19,12 @@
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
     @Styles.Render("~/Content/css")
     @*Style sheets End*@
+
 </head>
 
 <body>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-
     <script>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
@@ -46,7 +46,7 @@
                     async: false,
                 }).done(function (data) {
                     res = $(data).filter(function (i, n) {
-                        return JSON.stringify(n.value).toUpperCase().indexOf(searchterm.toUpperCase()) > 0;
+                        return JSON.stringify(n.value).toUpperCase().indexOf(searchterm.toUpperCase()) >0;
                     });
                 }).fail(function (error) {
                     //TODO
@@ -56,7 +56,7 @@
         }
 
         function addToDom(ar, elementId) {
-            $('#' + elementId).css("background-color", "silver");
+            $('#' + elementId).css("background-color", "white");
             $('#' + elementId).html(ar.join(''));
         }
 
@@ -79,12 +79,13 @@
             value = $(obj.innerHTML).filter(".result-value").html();
             source = $(obj.innerHTML).filter(".result-source").html();
 
-            alert(value);
-            alert(source);
+            //alert(value);
+            //alert(source);
 
-            if (source == 'Category') {
-                url = '@Url.Action("Store", "Store", new { store = "__store__" })';
-                window.location.href = url.replace("__store__", value);
+            if (source == 'category') {
+                value = value.replace(" ", "-").replace("&amp;", "and");
+                url = '/coupons/' + value;
+                window.location.href = url;
             }
             else {
                 url = '@Url.Action("Store", "Store", new { store = "__store__" })';
@@ -94,82 +95,53 @@
         /*Start - Search function*/
     </script>
 
-    @*  <header class="navbar navbar-default navbar-fixed-top bs-docs-nav" role="banner">
+    <div id="nav1" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <div class="col-md-2 col-sm-2 col-sx-2">
-                <a href="@Url.Action("Index", "Category")">
-                    <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/GrabMeDeal.png" /></a>
+            <div class="navbar-collapse col-lg-2 col-md-2">
+                <a class="navbar-brand" style="padding-top:0px;" href="@Url.Action("Index", "Category")">
+                    <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/grabmedeal_200x57.png" /></a>
             </div>
-            <div class="col-md-10 col-sm-10 col-sx-10">
+            <div class="navbar-collapse">
                 @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
                 {
-                    <div class="input-group col-md-6 col-sm-6 col-sx-6">
-                        <input type="text" class="form-control" placeholder="Search Product across various stores" name="searchtext" value="@ViewBag.SearchedItem">
-                        <div class="input-group-btn">
-                            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+                    <div class="input-group col-md-5">
+                        <input type="text"  class="form-control search-text" autocomplete="off" placeholder="Search for Store & Category" name="searchtext" value="@ViewBag.SearchedItem" onkeyup="searchResult(this);">
+                        <div id="results" class="result-div"></div>
+                        <div class="input-group-btn" style="display: inline">
+                            <button type="submit" style="height: 40px; border-radius: 0px;" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
                         </div>
+
                     </div>
                 }
             </div>
-            <div class="navbar navbar-inverse">
-                @Html.Action("Menu", "Nav", new { position = "HEADER" })
-            </div>
+
+
         </div>
-
-    </header>*@
-
-
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    </div>
+    <div id="nav2" class="navbar navbar-default navbar-fixed-top" style="z-index:10!important;" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @*<a class="navbar-brand" href="@Url.Action("Index", "Category")">Grab Me Deal</a>*@
-                <a class="navbar-brand" style="padding-top:0px;" href="@Url.Action("Index", "Category")">
-                    <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/GrabMeDeal.png" /></a>
             </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
-                        {
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Search Product across various stores" name="searchtext" value="@ViewBag.SearchedItem" onkeyup="searchResult(this);">
-                                <div class="input-group-btn">
-                                    <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
-                                </div>
-                            </div>
-                        }
-                    </li>
-                </ul>
-                @*@{Html.RenderPartial("_Menu");}*@
-                @{Html.RenderPartial("_MegaMenu");}
-            </div>
-            <!--/.nav-collapse -->
 
+            <div class="row">
+                @*<div class="col-md-2">
+                  <button type="button" class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true">Home</span>
+                    </button>
+                </div>*@    
+                @*<div class="col-md-12">*@
+                    <div class="collapse navbar-collapse" id="mainNav">
+                        @{Html.RenderPartial("_MegaMenu");}
+                    </div>
+                @*</div>*@
+            </div>
         </div>
     </div>
-    <!--  Start - Search function -->
-    <style>
-        .resultDiv {
-            position: absolute;
-            width: 325px;
-            left: 1023px;
-            z-index: 1001;
-            top: 51px;
-        }
-        .result-container {
-            cursor:pointer;
-        }
-    </style>
-
-    <div id="results" class="resultDiv">
-    </div>
-    <!--  Start - Search function -->
     <div id="body" class="container">
         @* <div class="col-md-2 col-sm-2 col-sx-2">@Html.Action("LeftSidebar", "Nav")</div>*@
         <div>@RenderBody()</div>
@@ -200,6 +172,9 @@
                 $('html, body').animate({ scrollTop: 0 }, 800);
                 return false;
             });
+
+            $("#nav2").css('margin-top', $("#nav1").height() + "px");
+            $("#body").css('margin-top', $("#nav1").height() + $("#nav2").height() + 10 + "px");
         });
     </script>
 </body>

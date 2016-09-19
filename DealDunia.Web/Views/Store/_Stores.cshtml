@@ -6,30 +6,61 @@
 
 @*<h2>@Model.StoreName</h2>*@
 
+<script type="text/javascript">
+    @{
+        var items= "";
+        if (Model.Count() < 6)
+        {
+            items = Model.Count().ToString();
+        }
+        else
+        {
+            items = "6";                
+        }
+    }
+    $(window).on('load', function () {
+        $("#flexisel").flexisel({
+            visibleItems: '@items',
+            itemsToScroll: 1,
+            autoPlay: {
+                enable: true,
+                interval: 5000,
+                pauseOnHover: true
+            }
+        });
+    });
+
+</script>
+
+@Styles.Render("~/Content/css/carousel")
+@Scripts.Render("~/bundles/js/slider")
+
 @foreach (string category in Model.Select(x => x.StoreCategoryName).Distinct())
 {
-    <h4>@category</h4>
-    <hr />
+    <h4>Stores in @category</h4>
     <div class="row">
-        @foreach (var store in Model.Where(x => x.StoreCategoryName == category))
-        {
-            var url = string.Empty;
-            if (ViewContext.RouteData.Values["category"] != null)
+        <ul id="flexisel">
+            @foreach (var store in Model.Where(x => x.StoreCategoryName == category))
             {
-            <div class="div_store_logo">
-                <a target="_blank" href="@Url.Action("Out", "Out", new { source = "couponsbycat", id = store.StoreCatMapId })">
-                    <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" class="store_logo center"/>
-                </a>
-            </div>                                
+                var url = string.Empty;
+                if (ViewContext.RouteData.Values["category"] != null)
+                {               
+                <li style="align-content:center; vertical-align:middle">
+                    <a target="_blank" href="@Url.Action("Out", "Out", new { source = "couponsbycat", id = store.StoreCatMapId })">
+                        <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" class="store_logo" />
+                    </a>
+                </li>
+                }
+                else
+                {
+                <li>
+                    <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
+                        <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName"  class="store_logo"/>
+                    </a>
+                </li>
+                }
             }
-            else
-            {
-            <div class="div_store_logo">
-                <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
-                    <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" class="store_logo center"/>
-                </a>
-            </div>
-            }
-        }
+        </ul>
     </div>
+    
 }

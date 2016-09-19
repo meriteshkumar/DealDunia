@@ -234,10 +234,14 @@
     <Content Include="Areas\Admin\Views\Coupons\_StoreSourceDropDown.cshtml" />
     <Content Include="Areas\Admin\Views\Coupons\_StoreDropDown.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
+    <Content Include="Content\search.json" />
     <None Include="Properties\PublishProfiles\DealDunia.pubxml" />
     <None Include="Properties\PublishProfiles\GMD.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
-    <Content Include="Images\Carousel\amazon.jpg" />
+    <Content Include="Images\Carousel\c1.jpg" />
+    <Content Include="Images\Carousel\c2.jpg" />
+    <Content Include="Images\Carousel\c3.jpg" />
+    <Content Include="Images\Carousel\c4.jpg" />
     <Content Include="Images\Categories\Baby_Kids.png" />
     <Content Include="Images\Categories\Baby_Kids\Accessories.png" />
     <Content Include="Images\Categories\Baby_Kids\Baby_Care.png" />
@@ -336,6 +340,8 @@
     <Content Include="Images\Category\womenfootwear.png" />
     <Content Include="Images\Category\womeninnerwear.png" />
     <Content Include="Images\GrabMeDeal\GrabMeDeal.png" />
+    <Content Include="Images\GrabMeDeal\grabmedeal_200x56.png" />
+    <Content Include="Images\GrabMeDeal\grabmedeal_200x57.png" />
     <Content Include="Images\NoImage.png" />
     <Content Include="Images\Scroll-to-top-button.png" />
     <Content Include="Images\Stores\1mgAyush\1mgAyush.png" />
@@ -348,6 +354,7 @@
     <Content Include="Images\Stores\Agoda\Agoda.jpg" />
     <Content Include="Images\Stores\Airtel\Airtel.jpg" />
     <Content Include="Images\Stores\Ajio\Ajio.jpg" />
+    <Content Include="Images\Stores\Aliexpress\aliexpress.jpg" />
     <Content Include="Images\Stores\Amante\Amante.png" />
     <Content Include="Images\Stores\Amazon\Amazon.jpg" />
     <Content Include="Images\Stores\Amazon\AV.PNG" />
@@ -379,6 +386,7 @@
     <Content Include="Images\Stores\BookMyFlowers\BookMyFlowers.jpg" />
     <Content Include="Images\Stores\BucketKart\BucketKart.gif" />
     <Content Include="Images\Stores\CampusSutra\CampusSutra.jpg" />
+    <Content Include="Images\Stores\Candere\candere.jpg" />
     <Content Include="Images\Stores\Carzonrent\carzonrent.jpg" />
     <Content Include="Images\Stores\Chainrooms\Chainrooms.png" />
     <Content Include="Images\Stores\Chaipoint\chaipoint.png" />
@@ -409,6 +417,7 @@
     <Content Include="Images\Stores\Fashionara\Fashionara.jpg" />
     <Content Include="Images\Stores\Fern_n_petals\ferns_n_petals.jpg" />
     <Content Include="Images\Stores\FirstCry\FirstCry.jpg" />
+    <Content Include="Images\Stores\Flaberry\Flaberry.png" />
     <Content Include="Images\Stores\Flintobox\Flintobox.png" />
     <Content Include="Images\Stores\Flipkart\DailyDeals.png" />
     <Content Include="Images\Stores\Flipkart\Flipkart.jpg" />
@@ -615,8 +624,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\Stores\Dininefnc\" />
-    <Folder Include="Images\Stores\Flaberry\" />
+    <Folder Include="Images\Stores\Divinefnc\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>

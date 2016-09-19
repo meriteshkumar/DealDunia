@@ -1,9 +1,11 @@
-﻿body
+﻿
+/*body
 {
-    margin-top: 75px;
-}
+    margin-top: 125px;
+}*/
 
-.row {
+.row
+{
     margin-left: 0 !important;
     margin-right: 0 !important;
 }
@@ -236,3 +238,54 @@ input[type="checkbox"].input-validation-error
 {
     outline: 2px solid #f00;
 }
+
+
+/*------------------------------------------------------*/
+.search-text
+{
+    height: 40px;
+    border-radius: 0px;
+    width: 301px!important;
+}
+
+.result-div
+{
+    position: absolute;
+    z-index: 1030;
+    width: 100%;
+    top: 40px;
+    max-height: 340px;
+    overflow: scroll;
+    overflow-x: hidden;
+    width: 340px;    
+}
+
+.result-container
+{
+    height: 40px;
+    line-height: 40px;
+    padding: 0 15px;
+    border-bottom: 1px solid #D8E0E2;
+    cursor: pointer;
+}
+
+    .result-container:hover
+    {
+        background-color: #E43539;
+        color: white;
+    }
+
+.result-value
+{
+    display: inline-block;
+    max-width: 250px;
+    max-height: 40px;
+    overflow: hidden;
+}
+
+.result-source
+{
+    float: right;
+    padding-right: 10px;
+}
+/*----------------------------------------------------------*/

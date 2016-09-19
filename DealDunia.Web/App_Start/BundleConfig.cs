@@ -9,10 +9,15 @@ namespace DealDunia.Web
         {
             //bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/*.css"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(                
+            bundles.Add(new StyleBundle("~/Content/css").Include(
                 //"~/Content/menu1.css",
                 //"~/Content/category.css",
-                "~/Content/style.css"
+                "~/Content/style.css",
+                "~/Content/megamenu.css"
+                ));
+
+            bundles.Add(new StyleBundle("~/Content/css/carousel").Include(
+                "~/Content/carousel.css"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/js")
@@ -23,7 +28,12 @@ namespace DealDunia.Web
                 "~/Scripts/jquery.validate.unobtrusive.min.js",
                 "~/Scripts/jquery.unobtrusive-ajax.min.js",
                 "~/Scripts/bootstrap.min.js"
-                ));   
+                ));
+
+            bundles.Add(new ScriptBundle("~/bundles/js/slider")
+                .Include(
+                    "~/Scripts/jquery.flexisel.js"
+                ));
         }
     }
 }
