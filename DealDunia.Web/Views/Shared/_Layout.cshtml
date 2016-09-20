@@ -20,6 +20,36 @@
     @Styles.Render("~/Content/css")
     @*Style sheets End*@
 
+    <style type="text/css">
+        /* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   speak for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba( 255, 255, 255, .8 ) url('../../Images/loading.gif') 50% 50% no-repeat;
+        }
+
+        /* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+        body.loading {
+            overflow: hidden;
+        }
+
+            /* Anytime the body has the loading class, our
+   modal element will be visible */
+            body.loading .modal {
+                display: block;
+            }
+    </style>
+
 </head>
 
 <body>
@@ -46,7 +76,7 @@
                     async: false,
                 }).done(function (data) {
                     res = $(data).filter(function (i, n) {
-                        return JSON.stringify(n.value).toUpperCase().indexOf(searchterm.toUpperCase()) >0;
+                        return JSON.stringify(n.value).toUpperCase().indexOf(searchterm.toUpperCase()) > 0;
                     });
                 }).fail(function (error) {
                     //TODO
@@ -68,10 +98,15 @@
             });
         }
 
-        function searchResult(obj) {
-            result = GetFilteredResult(obj.value);
-            wrapped = wrapElements(result);
-            addToDom(wrapped, "results");
+        function searchResult(obj, e) {
+            if (e.keyCode === 27) { //'escap' key
+                obj.value = '';
+                $('#results').html('');
+            } else {
+                result = GetFilteredResult(obj.value);
+                wrapped = wrapElements(result);
+                addToDom(wrapped, "results");
+            }
         }
 
         function setSelected(obj) {
@@ -79,11 +114,8 @@
             value = $(obj.innerHTML).filter(".result-value").html();
             source = $(obj.innerHTML).filter(".result-source").html();
 
-            //alert(value);
-            //alert(source);
-
             if (source == 'category') {
-                value = value.replace(" ", "-").replace("&amp;", "and");
+                value = value.split(" ").join("-").replace("&amp;", "and");
                 url = '/coupons/' + value;
                 window.location.href = url;
             }
@@ -105,7 +137,7 @@
                 @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
                 {
                     <div class="input-group col-md-5">
-                        <input type="text"  class="form-control search-text" autocomplete="off" placeholder="Search for Store & Category" name="searchtext" value="@ViewBag.SearchedItem" onkeyup="searchResult(this);">
+                        <input type="text"  class="form-control search-text" autocomplete="off" placeholder="Search for Store & Category" name="searchtext" value="@ViewBag.SearchedItem" onkeyup="searchResult(this, event);">
                         <div id="results" class="result-div"></div>
                         <div class="input-group-btn" style="display: inline">
                             <button type="submit" style="height: 40px; border-radius: 0px;" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
@@ -118,7 +150,7 @@
 
         </div>
     </div>
-    <div id="nav2" class="navbar navbar-default navbar-fixed-top" style="z-index:10!important;" role="navigation">
+    <div id="nav2" class="navbar navbar-default navbar-fixed-top" style="z-index: 10!important;" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
@@ -133,11 +165,11 @@
                   <button type="button" class="btn btn-default" aria-label="Left Align">
                         <span class="glyphicon glyphicon-home" aria-hidden="true">Home</span>
                     </button>
-                </div>*@    
+                </div>*@
                 @*<div class="col-md-12">*@
-                    <div class="collapse navbar-collapse" id="mainNav">
-                        @{Html.RenderPartial("_MegaMenu");}
-                    </div>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    @{Html.RenderPartial("_MegaMenu");}
+                </div>
                 @*</div>*@
             </div>
         </div>
@@ -155,7 +187,8 @@
         </div>
     </footer>
     <a href="#" class="scrollToTop"></a>
-
+    <!--Loading modal -->
+    <div class="modal"></div>
     <script type="text/javascript">
         $(document).ready(function () {
             //Check to see if the window is top if not then display button
@@ -175,6 +208,14 @@
 
             $("#nav2").css('margin-top', $("#nav1").height() + "px");
             $("#body").css('margin-top', $("#nav1").height() + $("#nav2").height() + 10 + "px");
+
+            //Loading modal script
+            $body = $("body");
+
+            $(document).on({
+                ajaxStart: function () { $body.addClass("loading"); },
+                ajaxStop: function () { $body.removeClass("loading"); }
+            });
         });
     </script>
 </body>

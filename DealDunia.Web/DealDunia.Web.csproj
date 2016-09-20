@@ -342,6 +342,7 @@
     <Content Include="Images\GrabMeDeal\GrabMeDeal.png" />
     <Content Include="Images\GrabMeDeal\grabmedeal_200x56.png" />
     <Content Include="Images\GrabMeDeal\grabmedeal_200x57.png" />
+    <Content Include="Images\loading.gif" />
     <Content Include="Images\NoImage.png" />
     <Content Include="Images\Scroll-to-top-button.png" />
     <Content Include="Images\Stores\1mgAyush\1mgAyush.png" />

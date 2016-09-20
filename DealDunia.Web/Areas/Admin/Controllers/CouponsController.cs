@@ -13,7 +13,7 @@ namespace DealDunia.Web.Areas.Admin.Controllers
         {
             EComEntities context = new EComEntities();
 
-            var coupons = context.Coupons.Where(e => (bool)e.Status).ToList();
+            var coupons = context.Coupons.Where(e => (bool)e.Status && e.StoreCategoryId == -1).ToList();
 
             return View(coupons);
         }
