@@ -12,6 +12,7 @@ namespace DealDunia.Domain.Entities
         public int SourceStoreId { get; set; }
         public int StoreCatMapId { get; set; }
         public string Alphabet { get; set; }
+        public string StoreDescription { get; set; }
     }
 
     public class StoreValues

@@ -11,19 +11,19 @@
     var storeURL = Model.Select(x => x.StoreURL).FirstOrDefault();
     var OfferId = Model.Select(x => x.SourceStoreId).FirstOrDefault();
 }
-<div>
-    @*<h2>@store</h2>*@
-    @*<h3>@Html.ActionLink("Visit Store", storeURL)</h3>*@
-
-    <a target="_blank" href="@Url.Action("Out", "Out", new { source = "store", id = storeId })">
-        <img  src="@Url.Content("~/Images/" + storeImage)" alt="@storeImage" style="align-content:center" />
-        @* <span style="font-family:Verdana; font-size:16px; font-weight:bold;"> Visit Store </span>*@
-    </a>
+<div class="row">
+    <div class="col-md-2">       
+        <a target="_blank" href="@Url.Action("Out", "Out", new { source = "store", id = storeId })">
+            <img  src="@Url.Content("~/Images/" + storeImage)" alt="@storeImage" style="align-content:center" />                 </a>
+    </div>
+    <div class="col-md-10 storeTitle">@Model.Select(x => x.StoreDescription).FirstOrDefault()</div>
 </div>
-
 <div>
-    @Html.Action("_DailyDeals", "Deal", new DealDunia.Domain.Entities.DailyDealsValues { StoreId = 0, StoreName = store })
-    @Html.Action("_ExclusiveDeals", "Deal", new DealDunia.Domain.Entities.ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = string.Empty, StoreName = store, StoreId = 0 })
-    @Html.Action("_Coupons", "Deal", new DealDunia.Domain.Entities.CouponValues { OfferType = string.Empty, OfferName = store, StoreCategoryName = string.Empty })
-    @Html.Action("_OfferURL", "Deal", new { SourceStoreId = OfferId })
+    <div class="col-md-2"></div>
+    <div class="col-md-10">
+        @Html.Action("_DailyDeals", "Deal", new DealDunia.Domain.Entities.DailyDealsValues { StoreId = 0, StoreName = store })
+        @Html.Action("_ExclusiveDeals", "Deal", new DealDunia.Domain.Entities.ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = string.Empty, StoreName = store, StoreId = 0 })
+        @Html.Action("_Coupons", "Deal", new DealDunia.Domain.Entities.CouponValues { OfferType = string.Empty, OfferName = store, StoreCategoryName = string.Empty })
+        @Html.Action("_OfferURL", "Deal", new { SourceStoreId = OfferId })
+    </div>
 </div>

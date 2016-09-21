@@ -56,6 +56,13 @@ h4
     text-align: center;
 }
 
+.storeTitle
+{
+    font-size:16px;    
+    color:gray;
+
+}
+
 /*---------------------------- Deal div -------------------------------------------------*/
 .divDeal
 {
