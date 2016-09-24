@@ -465,6 +465,7 @@
     <Content Include="Images\Stores\JoyByNature\Joybynature.jpg" />
     <Content Include="Images\Stores\Junglee\Junglee.jpg" />
     <Content Include="Images\Stores\Just-Eat\Just-Eat.jpg" />
+    <Content Include="Images\Stores\kaaryah\kaaryah.jpg" />
     <Content Include="Images\Stores\Kazo\kazo.jpg" />
     <Content Include="Images\Stores\KFC\KFC.jpg" />
     <Content Include="Images\Stores\Koovs\koovs.jpg" />
@@ -490,6 +491,7 @@
     <Content Include="Images\Stores\MyFlowerTree\MyFlowerTree.jpg" />
     <Content Include="Images\Stores\Myles\myles.jpg" />
     <Content Include="Images\Stores\Myntra\Myntra.png" />
+    <Content Include="Images\Stores\mytaxiindia\mytaxiindia.png" />
     <Content Include="Images\Stores\Naaptol\Naaptol.png" />
     <Content Include="Images\Stores\NaturesBasket\NaturesBasket.jpg" />
     <Content Include="Images\Stores\Nearbuy\Nearbuy.jpg" />
@@ -537,6 +539,7 @@
     <Content Include="Images\Stores\Tatacliq\Tatacliq.jpg" />
     <Content Include="Images\Stores\Tatasky\Tatasky.gif" />
     <Content Include="Images\Stores\TheFitSlim\TheFitSlim.jpg" />
+    <Content Include="Images\Stores\thelotter\thelotter.png" />
     <Content Include="Images\Stores\Thomascook\Thomascook.jpg" />
     <Content Include="Images\Stores\Thyrocare\Thyrocare.png" />
     <Content Include="Images\Stores\Ticketgoose\Ticketgoose.jpg" />

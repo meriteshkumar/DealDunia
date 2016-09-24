@@ -22,7 +22,7 @@
             });
         }
 
-        $("input[type=checkbox][name=chkstore]").click(function () {
+        function LoadCoupons() {
             Init();
             $.ajax({
                 url: '@Url.Action("_Coupons", "Deal")',
@@ -31,29 +31,46 @@
                 $("#divCoupon").html(data);
             }).fail(function () {
             });
+        }
+
+        $("input[type=checkbox][name=chkstore]").click(function () {
+            LoadCoupons();
         });
 
         $("input[type=checkbox][name=chktype]").click(function () {
-            Init();
-            $.ajax({
-                url: '@Url.Action("_Coupons", "Deal")',
-                data: { OfferType: offertype, OfferName: stores, StoreCategoryName: '@ViewContext.RouteData.Values["Category"].ToString()' }
-            }).done(function (data) {
-                $("#divCoupon").html(data);
-            }).fail(function () {
-            });
+            LoadCoupons();
         });
+
+        $("#clearType").click(function () {
+            $("input[type=checkbox][name=chktype]:checked").each(function () {
+                this.checked = false;
+            });
+            LoadCoupons();
+        });
+
+        $("#clearStore").click(function () {
+            $("input[type=checkbox][name=chkstore]:checked").each(function () {
+                this.checked = false;
+            });
+            LoadCoupons();
+        });
+
+
     });
 </script>
 
-
-
 <div class="row">
+    <div class="container">
+        @Html.Action("_Stores", "Store", new DealDunia.Domain.Entities.StoreValues { StoreCategoryName = Utilities.DecodeUrl(ViewContext.RouteData.Values["category"].ToString()) })
+    </div>
+    <div class="container">
+        <h4>Deals & Coupons</h4>
+    </div>
     <div class="col-md-3 col-sm-3 col-sx-3">
-
         <div class="panel panel-default">
-            <h4>Offer Type</h4>
-            <hr />
+            <div class="panel-heading">
+                <b>Offer Type</b><div id="clearType" class="clear">Clear</div>
+            </div>
             <div class="checkbox" style="padding-left: 5px;">
                 @foreach (var offertype in Model.OrderBy(o => o.OfferType).Select(p => p.OfferType).Distinct())
                 {                    
@@ -63,8 +80,9 @@
             </div>
         </div>
         <div class="panel panel-default">
-            <h4>Stores</h4>
-            <hr />
+            <div class="panel-heading">
+                <b>Category</b><div id="clearStore" class="clear">Clear</div>
+            </div>
             <div class="checkbox" style="padding-left: 5px; padding-right: 5px;">
                 @foreach (var storename in Model.OrderBy(o => o.OfferName).Select(p => p.OfferName).Distinct())
                 {          
@@ -76,11 +94,9 @@
 
     </div>
     <div class="col-md-9 col-sm-9 col-sx-9">
-        @Html.Action("_Stores", "Store", new DealDunia.Domain.Entities.StoreValues { StoreCategoryName = Utilities.DecodeUrl(ViewContext.RouteData.Values["category"].ToString()) })
         <div id="divCoupon">
             @Html.Partial("_Coupons", Model)
         </div>
-
     </div>
 
 </div>

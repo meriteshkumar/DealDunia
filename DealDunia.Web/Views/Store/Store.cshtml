@@ -23,7 +23,8 @@
             offertype = offertype.replace(/,\s*$/, "");
         }
 
-        $("input[type=checkbox][name=chkcat]").click(function () {
+        function LoadCoupons()
+        {
             Init();
             $.ajax({
                 url: '@Url.Action("_Coupons", "Deal")',
@@ -32,18 +33,30 @@
                 $("#divCoupon").html(data);
             }).fail(function () {
             });
+        }
+
+        $("input[type=checkbox][name=chkcat]").click(function () {
+            LoadCoupons()
         });
 
         $("input[type=checkbox][name=chktype]").click(function () {
-            Init();
-            $.ajax({
-                url: '@Url.Action("_Coupons", "Deal")',
-                data: { OfferType: offertype, StoreCategoryName: categories, OfferName: '@ViewContext.RouteData.Values["store"].ToString()' }
-            }).done(function (data) {
-                $("#divCoupon").html(data);
-            }).fail(function () {
-            });
+            LoadCoupons()
         });
+
+        $("#clearType").click(function () {
+            $("input[type=checkbox][name=chktype]:checked").each(function () {
+                this.checked = false;
+            });
+            LoadCoupons();
+        });
+
+        $("#clearCat").click(function () {
+            $("input[type=checkbox][name=chkcat]:checked").each(function () {
+                this.checked = false;
+            });
+            LoadCoupons();
+        });
+
     });
 </script>
 
@@ -54,19 +67,26 @@
     var storeURL = Model.Select(x => x.StoreURL).FirstOrDefault();
     var OfferId = Model.Select(x => x.SourceStoreId).FirstOrDefault();
 }
-<div class="row">
-    <div class="col-md-2">
+
+
+<div class="col-md-12" style="padding-bottom: 10px;">
+    <div class="col-md-3" style="text-align: center">
         <a target="_blank" href="@Url.Action("Out", "Out", new { source = "store", id = storeId })">
-            <img  src="@Url.Content("~/Images/" + storeImage)" alt="@storeImage" style="align-content:center" />
+            <img  src="@Url.Content("~/Images/" + storeImage)" alt="@storeImage"/>
         </a>
     </div>
-    <div class="col-md-10 storeTitle">@Model.Select(x => x.StoreDescription).FirstOrDefault()</div>
+    <div class="col-md-9">
+        <h4>About @store</h4>
+        @Model.Select(x => x.StoreDescription).FirstOrDefault()
+    </div>
 </div>
+
 <div>
     <div class="col-md-3">
         <div class="panel panel-default">
-            <h4>Offer Type</h4>
-            <hr>
+            <div class="panel-heading">
+                <b>Offer Type</b><div id="clearType" class="clear">Clear</div>
+            </div>
             <div class="checkbox" style="padding-left: 5px;">
                 <label>
                     <input type="checkbox" value="Coupon" name="chktype">Coupon</label>
@@ -75,9 +95,10 @@
             </div>
         </div>
         <div class="panel panel-default">
-            <h4>Category</h4>
-            <hr />
-            <div class="checkbox" style="padding-left: 5px; padding-right: 5px;">
+            <div class="panel-heading">
+                <b>Category</b><div id="clearCat" class="clear">Clear</div>
+            </div>
+            <div class="checkbox" style="padding-left: 5px;">
                 @foreach (var catname in Model.OrderBy(o => o.StoreCategoryName).Select(p => p.StoreCategoryName).Distinct())
                 {          
                     <label>
