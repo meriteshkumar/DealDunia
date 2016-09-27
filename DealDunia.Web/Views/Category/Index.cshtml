@@ -4,8 +4,11 @@
 
 
 @*@{Html.RenderPartial("_Carousel");}*@
+<h4>Featured Store</h4>
 @Html.Action("_ShopByStore", "Store")
-@Html.Action("_DailyDeals", "Deal")
+<h4>Exclusive Deals</h4>
 @Html.Action("_ExclusiveDeals", "Deal")
+<h4>Daily Deals</h4>
+@Html.Action("_DailyDeals", "Deal")
 @*@Html.Action("_ShopByCategory", "Category")*@
 
