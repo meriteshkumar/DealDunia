@@ -10,6 +10,7 @@
           <EntitySet Name="ExcDeals" EntityType="EcomModel.Store.ExcDeals" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Store" EntityType="EcomModel.Store.Store" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="StoreCategory" EntityType="EcomModel.Store.StoreCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="StoreCategoryMap" EntityType="EcomModel.Store.StoreCategoryMap" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="StoreSource" EntityType="EcomModel.Store.StoreSource" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="FK_Coupons_StoreCategory" Association="EcomModel.Store.FK_Coupons_StoreCategory">
             <End Role="StoreCategory" EntitySet="StoreCategory" />
@@ -30,6 +31,10 @@
           <AssociationSet Name="FK_Store_StoreSource" Association="EcomModel.Store.FK_Store_StoreSource">
             <End Role="StoreSource" EntitySet="StoreSource" />
             <End Role="Store" EntitySet="Store" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StoreCategoryMap_StoreCategory" Association="EcomModel.Store.FK_StoreCategoryMap_StoreCategory">
+            <End Role="StoreCategory" EntitySet="StoreCategory" />
+            <End Role="StoreCategoryMap" EntitySet="StoreCategoryMap" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="Coupons">
@@ -80,6 +85,7 @@
           </Key>
           <Property Name="StoreId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="StoreName" Type="varchar" MaxLength="100" />
+          <Property Name="StoreDescription" Type="varchar(max)" />
           <Property Name="StoreURL" Type="varchar" MaxLength="500" />
           <Property Name="StoreImage" Type="varchar" MaxLength="500" />
           <Property Name="DisplayOrder" Type="smallint" />
@@ -103,6 +109,17 @@
           <Property Name="Image" Type="varchar" MaxLength="100" />
           <Property Name="ParentId" Type="smallint" />
           <Property Name="DisplayOrder" Type="smallint" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="Logo" Type="varchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="StoreCategoryMap">
+          <Key>
+            <PropertyRef Name="StoreCatMapId" />
+          </Key>
+          <Property Name="StoreCatMapId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StoreId" Type="smallint" Nullable="false" />
+          <Property Name="StoreCategoryId" Type="smallint" Nullable="false" />
+          <Property Name="URL" Type="varchar(max)" />
           <Property Name="Active" Type="bit" />
         </EntityType>
         <EntityType Name="StoreSource">
@@ -173,6 +190,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_StoreCategoryMap_StoreCategory">
+          <End Role="StoreCategory" Type="EcomModel.Store.StoreCategory" Multiplicity="1" />
+          <End Role="StoreCategoryMap" Type="EcomModel.Store.StoreCategoryMap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreCategory">
+              <PropertyRef Name="StoreCategoryId" />
+            </Principal>
+            <Dependent Role="StoreCategoryMap">
+              <PropertyRef Name="StoreCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -202,6 +231,11 @@
           <AssociationSet Name="FK_Store_StoreSource" Association="EcomModel.FK_Store_StoreSource">
             <End Role="StoreSource" EntitySet="StoreSources" />
             <End Role="Store" EntitySet="Stores" />
+          </AssociationSet>
+          <EntitySet Name="StoreCategoryMaps" EntityType="EcomModel.StoreCategoryMap" />
+          <AssociationSet Name="FK_StoreCategoryMap_StoreCategory" Association="EcomModel.FK_StoreCategoryMap_StoreCategory">
+            <End Role="StoreCategory" EntitySet="StoreCategories" />
+            <End Role="StoreCategoryMap" EntitySet="StoreCategoryMaps" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="ExcDeal">
@@ -236,6 +270,8 @@
           <Property Type="Boolean" Name="Active" />
           <NavigationProperty Name="ExcDeals" Relationship="EcomModel.FK_ExcDeals_StoreCategory" FromRole="StoreCategory" ToRole="ExcDeal" />
           <NavigationProperty Name="Coupons" Relationship="EcomModel.FK_Coupons_StoreCategory" FromRole="StoreCategory" ToRole="Coupon" />
+          <Property Type="String" Name="Logo" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="StoreCategoryMaps" Relationship="EcomModel.FK_StoreCategoryMap_StoreCategory" FromRole="StoreCategory" ToRole="StoreCategoryMap" />
         </EntityType>
         <EntityType Name="Store">
           <Key>
@@ -258,6 +294,7 @@
           <NavigationProperty Name="ExcDeals" Relationship="EcomModel.FK_ExcDeals_Store" FromRole="Store" ToRole="ExcDeal" />
           <Property Type="Boolean" Name="Status" />
           <NavigationProperty Name="StoreSource" Relationship="EcomModel.FK_Store_StoreSource" FromRole="Store" ToRole="StoreSource" />
+          <Property Type="String" Name="StoreDescription" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_ExcDeals_Store">
           <End Type="EcomModel.Store" Role="Store" Multiplicity="1" />
@@ -355,6 +392,29 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="StoreCategoryMap">
+          <Key>
+            <PropertyRef Name="StoreCatMapId" />
+          </Key>
+          <Property Type="Int32" Name="StoreCatMapId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int16" Name="StoreId" Nullable="false" />
+          <Property Type="Int16" Name="StoreCategoryId" Nullable="false" />
+          <Property Type="String" Name="URL" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="Active" />
+          <NavigationProperty Name="StoreCategory" Relationship="EcomModel.FK_StoreCategoryMap_StoreCategory" FromRole="StoreCategoryMap" ToRole="StoreCategory" />
+        </EntityType>
+        <Association Name="FK_StoreCategoryMap_StoreCategory">
+          <End Type="EcomModel.StoreCategory" Role="StoreCategory" Multiplicity="1" />
+          <End Type="EcomModel.StoreCategoryMap" Role="StoreCategoryMap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="StoreCategory">
+              <PropertyRef Name="StoreCategoryId" />
+            </Principal>
+            <Dependent Role="StoreCategoryMap">
+              <PropertyRef Name="StoreCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -383,6 +443,7 @@
           <EntitySetMapping Name="StoreCategories">
             <EntityTypeMapping TypeName="EcomModel.StoreCategory">
               <MappingFragment StoreEntitySet="StoreCategory">
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
                 <ScalarProperty Name="Active" ColumnName="Active" />
                 <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
                 <ScalarProperty Name="ParentId" ColumnName="ParentId" />
@@ -395,6 +456,7 @@
           <EntitySetMapping Name="Stores">
             <EntityTypeMapping TypeName="EcomModel.Store">
               <MappingFragment StoreEntitySet="Store">
+                <ScalarProperty Name="StoreDescription" ColumnName="StoreDescription" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
@@ -444,6 +506,17 @@
                 <ScalarProperty Name="StoreSourceName" ColumnName="StoreSourceName" />
                 <ScalarProperty Name="StoreSourceCode" ColumnName="StoreSourceCode" />
                 <ScalarProperty Name="StoreSourceId" ColumnName="StoreSourceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StoreCategoryMaps">
+            <EntityTypeMapping TypeName="EcomModel.StoreCategoryMap">
+              <MappingFragment StoreEntitySet="StoreCategoryMap">
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="URL" ColumnName="URL" />
+                <ScalarProperty Name="StoreCategoryId" ColumnName="StoreCategoryId" />
+                <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+                <ScalarProperty Name="StoreCatMapId" ColumnName="StoreCatMapId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

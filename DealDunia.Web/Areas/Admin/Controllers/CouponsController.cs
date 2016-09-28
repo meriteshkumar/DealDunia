@@ -31,12 +31,17 @@ namespace DealDunia.Web.Areas.Admin.Controllers
 
             var coupons = context.Coupons.Where(e => (storeSourceId == 0 || e.StoreSourceId == storeSourceId)
                                                     && (storeCategoryId == 0 || e.StoreCategoryId == storeCategoryId)
-                                                    //&& (bool)(e.Featured == (featured ?? e.Featured))
+                //&& (bool)(e.Featured == (featured ?? e.Featured))
                                                     && (bool)(e.Status == (status ?? e.Status))
                                                     && (e.OfferType == (string.IsNullOrEmpty(offerType) ? e.OfferType : offerType))
                                                     && (e.OfferName.Contains((string.IsNullOrEmpty(store) ? e.OfferName : store)))).ToList();
 
             return PartialView(coupons);
+        }
+
+        public ActionResult _AddCoupon()
+        {
+            return PartialView("_EditCoupon", new DealDunia.Web.Areas.Coupon());
         }
 
         public PartialViewResult _StoreSourceDropDown(string controlName)
@@ -86,6 +91,30 @@ namespace DealDunia.Web.Areas.Admin.Controllers
                 storeName = "N/A";
 
             return storeName;
+        }
+
+        public JsonResult GetStoreByStoreSource(short StoreSourceId)
+        {
+            EComEntities context = new EComEntities();
+
+            var stores = context.Stores.OrderBy(o => o.StoreName).Where(s => s.StoreSourceId == StoreSourceId && s.Status == true).Select(m => new { m.SourceStoreId, m.StoreName }).ToList();
+
+            return Json(stores);
+        }
+
+        public JsonResult _CouponStoreCategory(short StoreSourceId, int SourceStoreId)
+        {
+            EComEntities context = new EComEntities();
+
+            var StoreId = context.Stores.Where(store => store.SourceStoreId == SourceStoreId && store.StoreSourceId == StoreSourceId).First().StoreId;
+            var StoreCategories = context.StoreCategoryMaps
+                .Join(context.StoreCategories,
+                map => map.StoreCategoryId,
+                category => category.StoreCategoryId,
+                (map, category) => new { StoreCategoryId =map.StoreCategoryId, StoreCategoryName = category.StoreCategoryName, StoreId = map.StoreId })
+                .Where(mapAndCategory => mapAndCategory.StoreId == StoreId).ToList();
+
+            return Json(StoreCategories);
         }
     }
 

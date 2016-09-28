@@ -12,8 +12,8 @@
 <button class="btn btn-primary save-user edit-mode" value="@item.CouponId">Save</button>
 <button class="btn btn-primary cancel-user edit-mode">Cancel</button></text>)
                                 ,grid.Column(columnName:"StoreCategory.StoreCategoryName",header:"Store Category", format: @<text><span class="display-mode">
-                                     <label id="lbStoreCategory" style="max-height: 15px;">@(item.StoreCategory == null ? "" : item.StoreCategory.StoreCategoryName)</label>
-                                 </span>
+                                    <label id="lbStoreCategory" style="max-height: 15px;">@(item.StoreCategory == null ? "" : item.StoreCategory.StoreCategoryName)</label>
+                                </span>
 <div class="divStoreCategoryId edit-mode"></div></text>, canSort:true) 
                                  ,grid.Column(columnName:"Category",header:"Coupon Category", canSort:true)                                 
                                  ,grid.Column(columnName:"StoreSource.StoreSourceName",header:"Store Source", canSort:false) 
@@ -31,15 +31,19 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        var settings = {
+            storeCategoryURL: '@Url.Action("_StoreCategoryDropDown", "ExclusiveDeal")',
+            editCouponURL: '@Url.Action("EditCoupon", "Coupons")'
+        };
+
         $('.edit-mode').hide();
 
-        $.ajax({
-            url: '@Url.Action("_StoreCategoryDropDown", "ExclusiveDeal")',
-            data: { controlName: "StoreCategoryId" }
-        }).done(function (data) {
-            $(".divStoreCategoryId").html(data);
-        }).fail(function () {
-        });
+        callAjaxURLWithSingleParam(settings.storeCategoryURL, { controlName: 'StoreCategoryId' })
+            .done(function (data) {
+                $(".divStoreCategoryId").html(data);
+            }).fail(function () {
+                //TODO:Debugging
+            });
 
         $(".edit-coupon, .cancel-user").on("click", function () {
             var tr = $(this).parents('tr:first');
@@ -59,11 +63,10 @@
                 storeCateogoryId: storeCategoryId
             }
 
-            $.ajax({
-                url: '@Url.Action("EditCoupon", "Coupons")',
-                data: couponModel,
-                type: 'POST'
-            }).done(function (data) { }).fail(function () { });
+            callAjaxPostURLWithSingleParam(settings.editCouponURL, couponModel)
+                .done(function (data) { }).fail(function () {
+                    //TODO:Debugging
+                });
 
             tr.find("#lbStoreCategory").text(storeCategoryName);
 

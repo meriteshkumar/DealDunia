@@ -30,5 +30,6 @@ namespace DealDunia.Web.Areas
         public DbSet<Store> Stores { get; set; }
         public DbSet<Coupon> Coupons { get; set; }
         public DbSet<StoreSource> StoreSources { get; set; }
+        public DbSet<StoreCategoryMap> StoreCategoryMaps { get; set; }
     }
 }

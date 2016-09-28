@@ -55,7 +55,7 @@
                 <div class="col-sm-1">
                     <button class="btn btn-default btnSearch">Search</button>
                 </div>
-            </div>                    
+            </div>
         </div>
     </div>
 </div>
@@ -71,37 +71,43 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
+        var settings = {
+            storeURL: '@Url.Action("_StoreDropDown", "ExclusiveDeal")',
+            storeCategoryURL: '@Url.Action("_StoreCategoryDropDown", "ExclusiveDeal")',
+            exclusiveDealURL: '@Url.Action("_IndexView", "ExclusiveDeal")',
+            addExclusiveDealViewURL: '@Url.Action("_AddExcDeal", "ExclusiveDeal")'
+        };
+
         $(".add-deal").click(function () {
-            $.ajax({
-                url: '@Url.Action("_AddExcDeal", "ExclusiveDeal")',
-            }).done(function (data) {
-                $(".modal-dialog").html(data);
-                $("#myModal").modal();
+            callAjaxURLWithSingleParam(settings.addExclusiveDealViewURL, null)
+                .done(function (data) {
+                    $(".modal-dialog").html(data);
+                    $("#myModal").modal();
 
-                //Need to register unobtrusive validation for dynamically added elements
-                var form = $("#myForm");
-                form.removeData('validator');
-                form.removeData('unobtrusiveValidation');
-                $.validator.unobtrusive.parse(form);
-            }).fail(function () {
+                    //Need to register unobtrusive validation for dynamically added elements
+                    var form = $("#myForm");
+                    form.removeData('validator');
+                    form.removeData('unobtrusiveValidation');
+                    $.validator.unobtrusive.parse(form);
+                }).fail(function () {
+                    //TODO:Debugging code
+                });
+        });
+
+        callAjaxURLWithSingleParam(settings.storeURL, { controlName: 'StoreId' })
+         .done(function (data) {
+             $(".divSearchStoreID").html(data);
+         }).fail(function (error) {
+             //TODO:Debugging code
+         });
+
+
+        callAjaxURLWithSingleParam(settings.storeCategoryURL, { controlName: 'StoreCategoryId' })
+            .done(function (data) {
+                $(".divSearchStoreCategoryId").html(data);
+            }).fail(function (error) {
+                //TODO:Debugging code
             });
-        });
-
-        $.ajax({
-            url: '@Url.Action("_StoreDropDown", "ExclusiveDeal")',
-            data: { controlName: "StoreId" }
-        }).done(function (data) {
-            $(".divSearchStoreID").html(data);
-        }).fail(function (error) {
-        });
-
-        $.ajax({
-            url: '@Url.Action("_StoreCategoryDropDown", "ExclusiveDeal")',
-            data: { controlName: "StoreCategoryId" }
-        }).done(function (data) {
-            $(".divSearchStoreCategoryId").html(data);
-        }).fail(function () {
-        });
 
         $(".btnSearch").click(function () {
             var storeId = $("[id='cc-dropdown']").val();
@@ -109,12 +115,11 @@
             var isFeatured = $("[id='SearchIsFeatured']").val();
             var active = $("[id='SearchActive']").val();
 
-            $.ajax({
-                url: '@Url.Action("_IndexView", "ExclusiveDeal")',
-                data: { storeId: storeId, storeCategoryId: storeCategoryId, isFeatured: isFeatured, active: active }
-            }).done(function (data) {
+            callAjaxURLWithSingleParam(settings.exclusiveDealURL, { storeId: storeId, storeCategoryId: storeCategoryId, isFeatured: isFeatured, active: active })
+            .done(function (data) {
                 $("#divMainGrid").html(data);
             }).fail(function (error) {
+                //TODO:Debugging code
             });
         });
     });

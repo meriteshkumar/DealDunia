@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using System.Web.Optimization;
 
 namespace DealDunia.Web.Areas.Admin
 {
@@ -19,6 +20,8 @@ namespace DealDunia.Web.Areas.Admin
                 "Admin/{controller}/{action}/{id}",
                 new { action = "Index", id = UrlParameter.Optional }
             );
+
+            BundleTable.Bundles.Add(new Bundle("~/Admin/bundles/js").Include("~/Areas/Admin/Scripts/admin.js"));
         }
     }
 }

@@ -10,7 +10,13 @@
         <h2>Coupon</h2>
     </div>
     <div class="col-md-6" style="float: right; text-align: right; top: 21px;">
-        @*<button class="btn btn-primary add-coupon">Add Exclusive Deal</button>*@
+        <button class="btn btn-primary add-coupon">Add Coupon</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
     </div>
 </div>
 
@@ -27,13 +33,13 @@
                 </div>
                 <label for="StoreID" class="col-sm-1 control-label" style="max-height: none;">Store</label>
                 <div class="col-sm-2 divSearchStoreID">
-                    <!-- placeholder for store source dropdown -->
+                    <!-- placeholder for store dropdown -->
                 </div>
-                 <label for="StoreCategoryId" class="col-sm-1 control-label" style="max-height: none;">Category</label>
+                <label for="StoreCategoryId" class="col-sm-1 control-label" style="max-height: none;">Category</label>
                 <div class="col-sm-3 divSearchStoreCategoryId">
                     <!-- placeholder for storecategory dropdown -->
                 </div>
-            </div>                     
+            </div>
             <div class="form-group">
                 <label for="OfferType" class="col-sm-1 control-label" style="max-height: none;">Offer</label>
                 <div class="col-sm-2">
@@ -43,7 +49,7 @@
                         <option value="Deal">Deal</option>
                     </select>
                 </div>
-                 <label for="IsFeatured" class="col-sm-1 control-label" style="max-height: none;">Featured</label>
+                <label for="IsFeatured" class="col-sm-1 control-label" style="max-height: none;">Featured</label>
                 <div class="col-sm-2 dropdown">
                     <select class="form-control" id="SearchFeatured">
                         <option value="">All</option>
@@ -51,7 +57,7 @@
                         <option value="false">No</option>
                     </select>
                 </div>
-                 <label for="Active" class="col-sm-1 control-label" style="max-height: none;">Active</label>
+                <label for="Active" class="col-sm-1 control-label" style="max-height: none;">Active</label>
                 <div class="col-sm-2 dropdown">
                     <select class="form-control" id="SearchActive">
                         <option value="">All</option>
@@ -62,7 +68,7 @@
                 <div class="col-sm-2">
                     <button class="btn btn-default btnSearch">Search</button>
                 </div>
-            </div>                       
+            </div>
         </div>
     </div>
 </div>
@@ -78,29 +84,50 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $.ajax({
-            url: '@Url.Action("_StoreSourceDropDown", "Coupons")',
-            data: { controlName: "StoreSourceId" }
-        }).done(function (data) {
+        var settings = {
+            storeURL: '@Url.Action("_StoreDropDown", "Coupons")',
+            storeCategoryURL: '@Url.Action("_StoreCategoryDropDown", "ExclusiveDeal")',
+            storeSourceDropDown: '@Url.Action("_StoreSourceDropDown", "Coupons")',
+            couponURL: '@Url.Action("_CouponGrid", "Coupons")',
+            addCouponViewURL: '@Url.Action("_AddCoupon", "Coupons")',
+        };
+
+        $(".add-coupon").click(function () {
+            callAjaxURLWithSingleParam(settings.addCouponViewURL, null)
+                .done(function (data) {
+                    $(".modal-dialog").html(data);
+                    $("#myModal").modal();
+
+                    //Need to register unobtrusive validation for dynamically added elements
+                    var form = $("#myForm");
+                    form.removeData('validator');
+                    form.removeData('unobtrusiveValidation');
+                    $.validator.unobtrusive.parse(form);
+                }).fail(function () {
+                    //TODO:Debugging code
+                });
+        });
+
+        callAjaxURLWithSingleParam(settings.storeSourceDropDown, { controlName: "StoreSourceId" })
+        .done(function (data) {
             $(".divSearchStoreSourceID").html(data);
         }).fail(function (error) {
+            //TODO:Debugging
         });
 
-        $.ajax({
-            url: '@Url.Action("_StoreCategoryDropDown", "ExclusiveDeal")',
-            data: { controlName: "StoreCategoryId" }
-        }).done(function (data) {
-            $(".divSearchStoreCategoryId").html(data);
-        }).fail(function () {
-        });
+        callAjaxURLWithSingleParam(settings.storeCategoryURL, { controlName: 'StoreCategoryId' })
+            .done(function (data) {
+                $(".divSearchStoreCategoryId").html(data);
+            }).fail(function () {
+                //TODO:Debugging
+            });
 
-        $.ajax({
-            url: '@Url.Action("_StoreDropDown", "Coupons")',
-            data: { controlName: "StoreName" }
-        }).done(function (data) {
-            $(".divSearchStoreID").html(data);
-        }).fail(function () {
-        });
+        callAjaxURLWithSingleParam(settings.storeURL, { controlName: 'StoreName' })
+            .done(function (data) {
+                $(".divSearchStoreID").html(data);
+            }).fail(function () {
+                //TODO:Debugging
+            });
 
         $(".btnSearch").click(function () {
             var storeSourceId = $("[id='ss-dropdown']").val();
@@ -110,29 +137,25 @@
             var offerType = $("[id='searchOfferType']").val();
             var store = $("[id='st-dropdown']").val();
 
-            $.ajax({
-                url: '@Url.Action("_CouponGrid", "Coupons")',
-                data: { storeSourceId: storeSourceId, storeCategoryId: storeCategoryId, featured: featured, status: active, offerType: offerType, store: store },
-                type: 'GET'
-            }).done(function (data) {
-                $("#divCouponGrid").html(data);
-            }).fail(function (error) {
-            });
+            callAjaxURLWithSingleParam(settings.couponURL, { storeSourceId: storeSourceId, storeCategoryId: storeCategoryId, featured: featured, status: active, offerType: offerType, store: store })
+                .done(function (data) {
+                    $("#divCouponGrid").html(data);
+                }).fail(function (error) {
+                    //TODO:Debugging
+                });
         });
 
         $("#divCouponGrid").on("click", "thead a,tfoot a", function (e) {
             e.preventDefault();
             var param = $(this).attr("href").split("?")[1];
-            var url = '@Url.Action("_CouponGrid","Coupons")' + '?' + param;
+            var url = '@Url.Action("_CouponGrid", "Coupons")' + '?' + param;
 
-            $.ajax({
-                url: url,
-                data: '',
-                type: 'GET'
-            }).done(function (data) {
-                $("#divCouponGrid").html(data);
-            }).fail(function (error) {
-            });
+            callAjaxURLWithSingleParam(url, null)
+                .done(function (data) {
+                    $("#divCouponGrid").html(data);
+                }).fail(function (error) {
+                    //TODO:Debugging
+                });
         });
     });
 </script>

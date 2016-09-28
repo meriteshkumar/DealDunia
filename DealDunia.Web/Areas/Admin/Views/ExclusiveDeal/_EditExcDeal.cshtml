@@ -108,6 +108,11 @@
 <script type="text/javascript">
 
     $(document).ready(function () {
+        var settings = {
+            storeURL: '@Url.Action("_StoreDropDown", "ExclusiveDeal")',
+            storeCategoryURL: '@Url.Action("_StoreCategoryDropDown", "ExclusiveDeal")'
+        };
+
         $(".startdate").datepicker();
         $(".enddate").datepicker();
 
@@ -115,23 +120,21 @@
             $("#hdStore").val($("[id='cc-dropdown'] option:selected").first().text());
         });
 
-        $.ajax({
-            url: '@Url.Action("_StoreCategoryDropDown", "ExclusiveDeal")',
-            data: { controlName: "StoreCategoryId" }
-        }).done(function (data) {
-            $("#DivStoreCategory").html(data);
-            $("#StoreCategoryId").val(@Model.StoreCategoryId);
-        }).fail(function () {
-        });
+        callAjaxURLWithSingleParam(settings.storeCategoryURL, { controlName: 'StoreCategoryId' })
+            .done(function (data) {
+                $("#DivStoreCategory").html(data);
+                $("#StoreCategoryId").val(@Model.StoreCategoryId);
+            }).fail(function () {
+                //TODO:Debugging code
+            });
 
-        $.ajax({
-            url: '@Url.Action("_StoreDropDown", "ExclusiveDeal")',
-            data: { controlName: "StoreId" }
-        }).done(function (data) {
-            $("#DivStore").html(data);
-            $("[id='cc-dropdown']").val(@Model.StoreId);
-            $("#hdStore").val($("[id='cc-dropdown'] option:selected").first().text());
-        }).fail(function (error) {
-        });
+        callAjaxURLWithSingleParam(settings.storeURL, { controlName: 'StoreId' })
+            .done(function (data) {
+                $("#DivStore").html(data);
+                $("[id='cc-dropdown']").val(@Model.StoreId);
+                $("#hdStore").val($("[id='cc-dropdown'] option:selected").first().text());
+            }).fail(function (error) {
+                //TODO:Debugging code
+            });
     });
 </script>

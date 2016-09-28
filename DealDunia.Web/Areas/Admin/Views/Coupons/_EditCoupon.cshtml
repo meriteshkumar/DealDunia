@@ -1,0 +1,170 @@
+﻿@model DealDunia.Web.Areas.Coupon
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add/Edit Coupon</h4>
+    </div>
+    @using (Html.BeginForm("", "", FormMethod.Post, new { enctype = "multipart/form-data", id = "myForm" }))
+    { 
+        @Html.ValidationSummary();
+        <div class="modal-body">
+            <div class="form-horizontal">
+                @Html.HiddenFor(h => h.CouponId)
+                <input type="hidden" id="hdStore" name="StoreName" />
+                <div class="form-group">
+                    <label for="StoreSource" class="col-sm-2" style="max-height: none;">Source</label>
+                    <div class="col-sm-10 divStoreSourceID">
+                        <!-- placeholder for store source dropdown -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2" for="PromoId" style="max-height: none;">Promo ID</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(t => t.PromoId, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="StoreSource" class="col-sm-2" style="max-height: none;">Offer ID</label>
+                    <div class="col-sm-10 divStoreID">
+                        <!-- placeholder for store dropdown -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="StoreSource" class="col-sm-2" style="max-height: none;">Offer Name</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(t => t.OfferName, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2" for="OfferType" style="max-height: none;">Offer Type</label>
+                    <div class="col-sm-10">
+                        @Html.DropDownList("OfferType", new SelectList(new SelectListItem[]{ 
+                                    new SelectListItem { Value = "Coupon", Text= "Coupon" }, 
+                                    new SelectListItem { Value = "Deal", Text= "Deal"} 
+                   }, "Value", "Text"), "Please select", new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2" for="CouponTitle" style="max-height: none;">Coupon Title</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(t => t.CouponTitle, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2" for="Category" style="max-height: none;">Category</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(t => t.Category, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="StoreSource" class="col-sm-2" style="max-height: none;">Store Category</label>
+                    <div class="col-sm-10 divStoreCategoryID">
+                        <!-- placeholder for store category dropdown -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2" for="Description" style="max-height: none;">Description</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(t => t.Description, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2" for="CouponCode" style="max-height: none;">Coupon Code</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(t => t.CouponCode, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2" for="OfferURL" style="max-height: none;">Offer URL</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(t => t.OfferURL, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2" for="CouponStart" style="max-height: none;">Coupon Start</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(t => t.CouponStart, new { @class = "form-control startdate" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2" for="CouponExpiry" style="max-height: none;">Coupon Expiry</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(t => t.CouponExpiry, new { @class = "form-control enddate" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2" for="Featured" style="max-height: none;">Featured</label>
+                    <div class="col-sm-2">
+                        @Html.EditorFor(m => m.Featured)
+                    </div>
+                    <label class="col-sm-2" for="Exclusive" style="max-height: none;">Exclusive</label>
+                    <div class="col-sm-2">
+                        @Html.EditorFor(m => m.Exclusive)
+                    </div>
+                    <label class="col-sm-1" for="Status" style="max-height: none;">Status</label>
+                    <div class="col-sm-1">
+                        @Html.EditorFor(m => m.Status)
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="submit" value="Save changes" class="btn btn-primary" />
+            </div>
+        </div>
+    }
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var settings = {
+            storeSourceDropDown: '@Url.Action("_StoreSourceDropDown", "Coupons")',
+            storeURL: '@Url.Action("GetStoreByStoreSource", "Coupons")',
+            couponStoreCategoryURL: '@Url.Action("_CouponStoreCategory", "Coupons")'
+        };
+
+        callAjaxURLWithSingleParam(settings.storeSourceDropDown, { controlName: "StoreSourceId" })
+        .done(function (data) {
+            $(".divStoreSourceID").html(data);
+        }).fail(function (error) {
+            //TODO:Debugging
+        });
+
+        $(document).on("change", ".divStoreSourceID #ss-dropdown", function () {
+            $(".divStoreID").html('');
+
+            var storeSourceId = $(".divStoreSourceID #ss-dropdown option:selected").first().val();
+
+            callAjaxPostURLWithSingleParamJSON(settings.storeURL, { StoreSourceId: storeSourceId })
+            .done(function (data) {
+                var html = "<select class='form-control' id='OfferId' name='OfferId'>";
+                $.each(data, function (index, value) {
+                    html += '<option value="' + value.SourceStoreId + '">' + value.StoreName + '</option>';
+                });
+                html += "</select>";
+
+                $(".divStoreID").html(html);
+            }).fail(function (error) {
+                //TODO:Debugging
+            });
+        });
+
+        $(document).on("change", ".divStoreID #OfferId", function () {
+            var storeSourceId = $(".divStoreSourceID #ss-dropdown option:selected").first().val();
+            var sourceStoreId = $(".divStoreID #OfferId option:selected").first().val();
+
+            callAjaxPostURLWithSingleParamJSON(settings.couponStoreCategoryURL, { StoreSourceId: storeSourceId, SourceStoreId: sourceStoreId })
+            .done(function (categories) {
+                var html = "";
+                $.each(categories, function (index, value) {
+                    html += '<span>' + value.StoreCategoryName + '</span>' + '<input type="checkbox" value="' + value.StoreCategoryId + '"></input>';
+                });
+                $(".divStoreCategoryID").html(html);
+            })
+            .fail(function (data, status, headers, config) {
+                //TODO:Debugging
+            });
+        });
+    });
+</script>

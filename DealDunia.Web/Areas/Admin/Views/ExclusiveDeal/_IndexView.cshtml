@@ -28,21 +28,25 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $(".edit-deal").click(function () {
-            var excDealId = $(this).val();
-            $.ajax({
-                url: '@Url.Action("_EditExcDeal", "ExclusiveDeal")',
-                data: { id: excDealId }
-            }).done(function (data) {
-                $(".modal-dialog").html(data);
-                $("#myModal").modal();
+            var settings = {
+                editExclusiveDealURL: '@Url.Action("_EditExcDeal", "ExclusiveDeal")'
+            };
 
-                //Need to register unobtrusive validation for dynamically added elements
-                var form = $("#myForm");
-                form.removeData('validator');
-                form.removeData('unobtrusiveValidation');
-                $.validator.unobtrusive.parse(form);
-            }).fail(function () {
-            });
+            var excDealId = $(this).val();
+
+            callAjaxURLWithSingleParam(settings.editExclusiveDealURL, { id: excDealId })
+                .done(function (data) {
+                    $(".modal-dialog").html(data);
+                    $("#myModal").modal();
+
+                    //Need to register unobtrusive validation for dynamically added elements
+                    var form = $("#myForm");
+                    form.removeData('validator');
+                    form.removeData('unobtrusiveValidation');
+                    $.validator.unobtrusive.parse(form);
+                }).fail(function () {
+                    //TODO:Debugging
+                });
         });
     });
 </script>
