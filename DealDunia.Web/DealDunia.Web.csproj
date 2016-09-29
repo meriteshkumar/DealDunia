@@ -160,6 +160,9 @@
     <Compile Include="Areas\StoreCategory.cs">
       <DependentUpon>EComModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Areas\StoreCategoryMap.cs">
+      <DependentUpon>EComModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\StoreSource.cs">
       <DependentUpon>EComModel.tt</DependentUpon>
     </Compile>
@@ -181,6 +184,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="404.html" />
+    <Content Include="Areas\Admin\Scripts\admin.js" />
     <Content Include="Areas\EComModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EComModel.edmx</DependentUpon>
@@ -222,7 +226,6 @@
     <Content Include="Areas\EComModel.edmx.diagram">
       <DependentUpon>EComModel.edmx</DependentUpon>
     </Content>
-    <Content Include="Areas\Admin\Views\Shared\_EditExcDeal.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\ExclusiveDeal\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
@@ -235,6 +238,8 @@
     <Content Include="Areas\Admin\Views\Coupons\_StoreDropDown.cshtml" />
     <Content Include="Areas\Admin\Views\Account\Login.cshtml" />
     <Content Include="Content\search.json" />
+    <Content Include="Areas\Admin\Views\Coupons\_EditCoupon.cshtml" />
+    <Content Include="Areas\Admin\Views\ExclusiveDeal\_EditExcDeal.cshtml" />
     <None Include="Properties\PublishProfiles\DealDunia.pubxml" />
     <None Include="Properties\PublishProfiles\GMD.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
@@ -530,6 +535,7 @@
     <Content Include="Images\Stores\SmileDrive\SmileDrive.jpg" />
     <Content Include="Images\Stores\Snapdeal\DailyDeals.jpg" />
     <Content Include="Images\Stores\Snapdeal\Snapdeal.jpg" />
+    <Content Include="Images\Stores\Snapdeal\snapdeal.png" />
     <Content Include="Images\Stores\Soie\Soie.png" />
     <Content Include="Images\Stores\Sports365\sports365.png" />
     <Content Include="Images\Stores\Stalkbuylove\Stalkbuylove.jpg" />

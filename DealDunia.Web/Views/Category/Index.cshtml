@@ -4,11 +4,42 @@
 
 
 @*@{Html.RenderPartial("_Carousel");}*@
-<h4>Featured Store</h4>
-@Html.Action("_ShopByStore", "Store")
-<h4>Exclusive Deals</h4>
-@Html.Action("_ExclusiveDeals", "Deal")
-<h4>Daily Deals</h4>
-@Html.Action("_DailyDeals", "Deal")
+
+<div class="row">
+    <h4>Featured Store</h4>
+    @Html.Action("_ShopByStore", "Store")
+</div>
+<div class="row">
+    <div class="col-lg-9 col-md-9 col-sm-9 col-sx-9 paddingzero">
+        <h4>Exclusive Deals</h4>
+        @Html.Action("_ExclusiveDeals", "Deal")
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-sx-3" style="padding-top: 10px;">
+        <div data-wrid="WRID-147512161567598547" data-widgettype="Push Content" data-class="affiliateAdsByFlipkart" height="250" width="300"></div>        
+        <script async src="//affiliate.flipkart.com/affiliate/widgets/FKAffiliateWidgets.js"></script>
+        <br />
+        <a href="http://tracking.vcommission.com/aff_c?offer_id=44&aff_id=46159&file_id=79711" target="_blank">
+            <img src="http://media.vcommission.com/brand/files/vcm/44/Makemytrip_Flat50OFFonHotels_300x250.jpg" width="300" height="250" border="0" /></a><img src="http://tracking.vcommission.com/aff_i?offer_id=44&file_id=79711&aff_id=46159" width="1" height="1" />        
+        <!-- Place This code where you want widget -->
+        <script type="text/javascript" src="http://asset-a2.infibeam.com/scripts/affiliateJS/affiliateHotMagicWidget.js" id="div10318680"> </script>
+        <script language="javascript" type="text/javascript">
+            var infibeamWidget = new infibeamWidgetCall();
+            infibeamWidget.scriptId = 'div10318680';
+            infibeamWidget.affiliateId = 'sandeeee5';
+            infibeamWidget.subTrackId = '';
+            infibeamWidget.widgetType = 'hot-deals';
+            infibeamWidget.siteName = 'http://www.infibeam.com';
+            infibeamWidget.sizeType = 'autoSize';
+            infibeamWidget.display();
+        </script>
+        <!-- Widget End -->
+        <div data-sdid="552704778" data-identifier="SnapdealAffiliateAds" data-height="300" data-width="250"></div>
+        <script async id="snap_zxcvbnhg" src="https://affiliate-ads.snapdeal.com/affiliate/js/snapdealAffiliate.js"></script>
+    </div>
+</div>
+<div class="row">
+    <h4>Daily Deals</h4>
+    @Html.Action("_DailyDeals", "Deal")
+</div>
 @*@Html.Action("_ShopByCategory", "Category")*@
 

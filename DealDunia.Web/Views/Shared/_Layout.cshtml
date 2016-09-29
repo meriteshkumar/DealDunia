@@ -129,14 +129,14 @@
 
     <div id="nav1" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <div class="navbar-collapse col-lg-2 col-md-2">
+            <div class="navbar-collapse col-lg-2 col-md-2 col-sm-2 col-sx-2">
                 <a class="navbar-brand" style="padding-top:0px;" href="@Url.Action("Index", "Category")">
                     <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/grabmedeal_200x57.png" /></a>
             </div>
             <div class="navbar-collapse">
                 @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
                 {
-                    <div class="input-group col-md-5">
+                    <div class="input-group col-lg-5 col-md-5 col-sm-5 col-sx-5">
                         <input type="text"  class="form-control search-text" autocomplete="off" placeholder="Search for Store & Category" name="searchtext" value="@ViewBag.SearchedItem" onkeyup="searchResult(this, event);">
                         <div id="results" class="result-div"></div>
                         <div class="input-group-btn" style="display: inline">

@@ -87,7 +87,7 @@ h4
     margin: 2px;
     text-align: center;
     vertical-align: middle;
-    border-color:lightgray;    
+    border-color:#eee;
 }
 
 /*.divDealImg
@@ -125,7 +125,7 @@ h4
 .divDealCodeOuter
 {
     height: 35px;
-    width: 200px;
+    width: 70%;
     margin: auto;
     background-color: #bf192a;
     font-weight: bold;
