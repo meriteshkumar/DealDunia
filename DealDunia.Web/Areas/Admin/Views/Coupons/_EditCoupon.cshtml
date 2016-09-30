@@ -5,7 +5,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Add/Edit Coupon</h4>
     </div>
-    @using (Html.BeginForm("", "", FormMethod.Post, new { enctype = "multipart/form-data", id = "myForm" }))
+    @using (Html.BeginForm("Save", "Coupons", FormMethod.Post, new { enctype = "multipart/form-data", id = "myForm" }))
     { 
         @Html.ValidationSummary();
         <div class="modal-body">
@@ -63,8 +63,9 @@
                         @Html.TextBoxFor(t => t.Category, new { @class = "form-control" })
                     </div>
                     <label for="StoreCategory" class="col-md-2">Store Category</label>
+                    <input type="hidden" id="StoreCategoryIdCSV" name="StoreCategoryIdCSV" />
                     <div class="col-md-5 divStoreCategoryID">
-                        <!-- placeholder for store category dropdown -->
+                        <!-- placeholder for store category checkboxes -->
                     </div>
                 </div>
                 <div class="form-group">
@@ -113,17 +114,45 @@
             couponStoreCategoryURL: '@Url.Action("_CouponStoreCategory", "Coupons")'
         };
 
+        $(".startdate").datepicker();
+        $(".enddate").datepicker();
+
         callAjaxURLWithSingleParam(settings.storeSourceDropDown, { controlName: "StoreSourceId" })
         .done(function (data) {
             $(".divStoreSourceID").html(data);
+
+            fillStore(0, ".divStoreID");
         }).fail(function (error) {
             //TODO:Debugging
         });
 
         $(document).on("change", ".divStoreSourceID #ss-dropdown", function () {
-            $(".divStoreID").html('');
-
             var storeSourceId = $(".divStoreSourceID #ss-dropdown option:selected").first().val();
+            fillStore(storeSourceId, ".divStoreID");
+        });
+
+        $(document).on("change", ".divStoreID #OfferId", function () {
+            var storeSourceId = $(".divStoreSourceID #ss-dropdown option:selected").first().val();
+            var sourceStoreId = $(".divStoreID #OfferId option:selected").first().val();
+
+            fillStoreCategory(storeSourceId, sourceStoreId, ".divStoreCategoryID");
+        });
+
+        $(document).on("change", ".catvalue", function () {
+            $("#StoreCategoryIdCSV").val("");
+            var categoryIds = '';
+
+            $(".catvalue").each(function () {
+                if (this.checked)
+                    categoryIds += $(this).val() + ",";
+            });
+
+            categoryIds = categoryIds.replace(/,\s*$/, "");
+            $("#StoreCategoryIdCSV").val(categoryIds);
+        });
+
+        function fillStore(storeSourceId, containerSelector) {
+            $(containerSelector).html('');
 
             callAjaxPostURLWithSingleParamJSON(settings.storeURL, { StoreSourceId: storeSourceId })
             .done(function (data) {
@@ -132,27 +161,29 @@
                     html += '<option value="' + value.SourceStoreId + '">' + value.StoreName + '</option>';
                 });
                 html += "</select>";
-                $(".divStoreID").html(html);
+                $(containerSelector).html(html);
+
+                var sourceStoreId = $(".divStoreID #OfferId option:selected").first().val();
+                fillStoreCategory(storeSourceId, sourceStoreId, ".divStoreCategoryID");
             }).fail(function (error) {
                 //TODO:Debugging
             });
-        });
+        }
 
-        $(document).on("change", ".divStoreID #OfferId", function () {
-            var storeSourceId = $(".divStoreSourceID #ss-dropdown option:selected").first().val();
-            var sourceStoreId = $(".divStoreID #OfferId option:selected").first().val();
+        function fillStoreCategory(storeSourceId, sourceStoreId, containerSelector) {
+            $(containerSelector).html('');
 
             callAjaxPostURLWithSingleParamJSON(settings.couponStoreCategoryURL, { StoreSourceId: storeSourceId, SourceStoreId: sourceStoreId })
             .done(function (categories) {
                 var html = "";
                 $.each(categories, function (index, value) {
-                    html += '<input type="checkbox" value="' + value.StoreCategoryId + '"></input>&nbsp;' + '<span>' + value.StoreCategoryName + '</span>&nbsp;';
+                    html += '<input class="catvalue" type="checkbox" value="' + value.StoreCategoryId + '"></input>&nbsp;' + '<span>' + value.StoreCategoryName + '</span>&nbsp;';
                 });
-                $(".divStoreCategoryID").html(html);
+                $(containerSelector).html(html);
             })
             .fail(function (data, status, headers, config) {
                 //TODO:Debugging
             });
-        });
+        }
     });
 </script>

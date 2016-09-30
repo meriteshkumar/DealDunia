@@ -202,6 +202,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="GetCouponStoreCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="SaveCoupon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="StoreSourceId" Type="smallint" Mode="In" />
+          <Parameter Name="PromoId" Type="varchar" Mode="In" />
+          <Parameter Name="OfferId" Type="int" Mode="In" />
+          <Parameter Name="OfferName" Type="varchar" Mode="In" />
+          <Parameter Name="OfferType" Type="varchar" Mode="In" />
+          <Parameter Name="CouponTitle" Type="varchar" Mode="In" />
+          <Parameter Name="Category" Type="varchar" Mode="In" />
+          <Parameter Name="StoreCategoryId" Type="smallint" Mode="In" />
+          <Parameter Name="Description" Type="varchar(max)" Mode="In" />
+          <Parameter Name="CouponCode" Type="varchar" Mode="In" />
+          <Parameter Name="OfferURL" Type="varchar(max)" Mode="In" />
+          <Parameter Name="CouponStart" Type="varchar" Mode="In" />
+          <Parameter Name="CouponExpiry" Type="varchar" Mode="In" />
+          <Parameter Name="Featured" Type="bit" Mode="In" />
+          <Parameter Name="Exclusive" Type="bit" Mode="In" />
+          <Parameter Name="Status" Type="bit" Mode="In" />
+          <Parameter Name="StoreCategoryCSV" Type="varchar" Mode="In" />
+        </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -237,6 +257,25 @@
             <End Role="StoreCategory" EntitySet="StoreCategories" />
             <End Role="StoreCategoryMap" EntitySet="StoreCategoryMaps" />
           </AssociationSet>
+          <FunctionImport Name="SaveCoupon">
+            <Parameter Name="StoreSourceId" Mode="In" Type="Int16" />
+            <Parameter Name="PromoId" Mode="In" Type="String" />
+            <Parameter Name="OfferId" Mode="In" Type="Int32" />
+            <Parameter Name="OfferName" Mode="In" Type="String" />
+            <Parameter Name="OfferType" Mode="In" Type="String" />
+            <Parameter Name="CouponTitle" Mode="In" Type="String" />
+            <Parameter Name="Category" Mode="In" Type="String" />
+            <Parameter Name="StoreCategoryId" Mode="In" Type="Int16" />
+            <Parameter Name="Description" Mode="In" Type="String" />
+            <Parameter Name="CouponCode" Mode="In" Type="String" />
+            <Parameter Name="OfferURL" Mode="In" Type="String" />
+            <Parameter Name="CouponStart" Mode="In" Type="String" />
+            <Parameter Name="CouponExpiry" Mode="In" Type="String" />
+            <Parameter Name="Featured" Mode="In" Type="Boolean" />
+            <Parameter Name="Exclusive" Mode="In" Type="Boolean" />
+            <Parameter Name="Status" Mode="In" Type="Boolean" />
+            <Parameter Name="StoreCategoryCSV" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="ExcDeal">
           <Key>
@@ -520,6 +559,7 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="SaveCoupon" FunctionName="EcomModel.Store.SaveCoupon" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

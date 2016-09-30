@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 
 namespace DealDunia.Web.Areas.Admin.Controllers
@@ -42,6 +39,48 @@ namespace DealDunia.Web.Areas.Admin.Controllers
         public ActionResult _AddCoupon()
         {
             return PartialView("_EditCoupon", new DealDunia.Web.Areas.Coupon());
+        }
+
+        [HttpPost]
+        public ActionResult Save(DealDunia.Web.Areas.Coupon coupon, string StoreCategoryIdCSV)
+        {
+            if (ModelState.IsValid)
+            {
+                EComEntities context = new EComEntities();
+
+                if (coupon.CouponId == 0)
+                {
+                    int RowAffected = context.SaveCoupon(
+                         coupon.StoreSourceId,
+                         coupon.PromoId,
+                         coupon.OfferId,
+                         coupon.OfferName,
+                         coupon.OfferType,
+                         coupon.CouponTitle,
+                         coupon.Category,
+                         -1,
+                         coupon.Description,
+                         coupon.CouponCode,
+                         coupon.OfferURL,
+                         coupon.CouponStart,
+                         coupon.CouponExpiry,
+                         coupon.Featured,
+                         coupon.Exclusive,
+                         coupon.Status,
+                         StoreCategoryIdCSV);
+
+                    TempData["Message"] = "Record saved";
+                }
+                else { }
+
+                context.SaveChanges();
+            }
+            else
+            {
+                return PartialView("", coupon);
+            }
+
+            return RedirectToAction("Index");
         }
 
         public PartialViewResult _StoreSourceDropDown(string controlName)
@@ -111,7 +150,7 @@ namespace DealDunia.Web.Areas.Admin.Controllers
                 .Join(context.StoreCategories,
                 map => map.StoreCategoryId,
                 category => category.StoreCategoryId,
-                (map, category) => new { StoreCategoryId =map.StoreCategoryId, StoreCategoryName = category.StoreCategoryName, StoreId = map.StoreId })
+                (map, category) => new { StoreCategoryId = map.StoreCategoryId, StoreCategoryName = category.StoreCategoryName, StoreId = map.StoreId })
                 .Where(mapAndCategory => mapAndCategory.StoreId == StoreId).ToList();
 
             return Json(StoreCategories);
