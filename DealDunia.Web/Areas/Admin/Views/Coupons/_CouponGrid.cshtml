@@ -8,11 +8,15 @@
                 mode: WebGridPagerModes.All,
                 firstText: "<<First", previousText: "<Previous", nextText: "Next>", lastText: "Last>>",
                 columns: new[]{
-                                 grid.Column(format: @<text><button class="btn btn-primary display-mode edit-coupon" value="@item.CouponId">Edit</button></text>)
-                                @*,grid.Column(columnName:"StoreCategory.StoreCategoryName",header:"Store Category", format: @<text><span class="display-mode">
+                                  grid.Column(format: @<text><button class="btn btn-primary map-coupon" value="@item.CouponId">Map</button>
+                                                       </text>)
+                                 ,grid.Column(format: @<text><button class="btn btn-primary display-mode edit-coupon" value="@item.CouponId">Edit</button>
+<button class="btn btn-primary save-user edit-mode" value="@item.CouponId">Save</button>
+<button class="btn btn-primary cancel-user edit-mode">Cancel</button></text>)
+                                ,grid.Column(columnName:"StoreCategory.StoreCategoryName",header:"Store Category", format: @<text><span class="display-mode">
                                     <label id="lbStoreCategory" style="max-height: 15px;">@(item.StoreCategory == null ? "" : item.StoreCategory.StoreCategoryName)</label>
                                 </span>
-<div class="divStoreCategoryId edit-mode"></div></text>, canSort:true)*@ 
+<div class="divStoreCategoryId edit-mode"></div></text>, canSort:true) 
                                  ,grid.Column(columnName:"Category",header:"Coupon Category", canSort:true)                                 
                                  ,grid.Column(columnName:"StoreSource.StoreSourceName",header:"Store Source", canSort:false) 
                                  ,grid.Column(header:"Store", format: @<text>@DealDunia.Web.Areas.Admin.Controllers.CouponsController.GetStoreName(item.StoreSourceId,item.OfferId)</text>)                                 
@@ -44,7 +48,18 @@
                 //TODO:Debugging
             });
 
-        $(".edit-coupon").on("click", function () {
+        $(".edit-coupon, .cancel-user").on("click", function () {            
+            var tr = $(this).parents('tr:first');
+
+            var editVal = $('#StoreCategoryId option').filter(function () {
+                                                    return $(this).text() == $("#lbStoreCategory").text();
+            }).val();
+
+            tr.find("#StoreCategoryId").val(editVal);
+            tr.find('.edit-mode, .display-mode').toggle();
+        });
+
+        $(".map-coupon").on("click", function () {
             var couponId = $(this).val();
 
             callAjaxURLWithSingleParam(settings.editCouponURL, { CouponId: couponId })
@@ -60,6 +75,34 @@
                 }).fail(function () {
                     //TODO:Debugging
                 });
+        });
+
+        $('.save-user').on('click', function () {
+            var tr = $(this).parents('tr:first');
+            var storeCategoryId = tr.find("#StoreCategoryId").val();
+            var storeCategoryName = tr.find("#StoreCategoryId option:selected").text();
+
+            var couponId = $(this).val();
+
+            var couponModel = {
+                couponId: couponId,
+                storeCateogoryId: storeCategoryId
+            }
+
+            callAjaxPostURLWithSingleParam(settings.editCouponCategoryURL, couponModel)
+                .done(function (data) { }).fail(function () {
+                    //Need to register unobtrusive validation for dynamically added elements
+                    var form = $("#myForm");
+                    form.removeData('validator');
+                    form.removeData('unobtrusiveValidation');
+                    $.validator.unobtrusive.parse(form);
+                }).fail(function () {
+                    //TODO:Debugging
+                });
+
+            tr.find("#lbStoreCategory").text(storeCategoryName);
+
+            tr.find('.edit-mode, .display-mode').toggle();
         });
     });
 </script>
