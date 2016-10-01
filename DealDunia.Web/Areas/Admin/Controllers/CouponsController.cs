@@ -41,16 +41,26 @@ namespace DealDunia.Web.Areas.Admin.Controllers
             return PartialView("_EditCoupon", new DealDunia.Web.Areas.Coupon());
         }
 
+        public ActionResult _EditCoupon(long CouponId)
+        {
+            EComEntities context = new EComEntities();
+
+            var viewModel = context.Coupons.Where(e => e.CouponId == CouponId).First();
+
+            return PartialView("_EditCoupon", viewModel);
+        }
+
         [HttpPost]
         public ActionResult Save(DealDunia.Web.Areas.Coupon coupon, string StoreCategoryIdCSV)
         {
             if (ModelState.IsValid)
             {
                 EComEntities context = new EComEntities();
+                int RowAffected = 0;
 
                 if (coupon.CouponId == 0)
                 {
-                    int RowAffected = context.SaveCoupon(
+                    RowAffected = context.SaveCoupon(
                          coupon.StoreSourceId,
                          coupon.PromoId,
                          coupon.OfferId,
@@ -71,13 +81,37 @@ namespace DealDunia.Web.Areas.Admin.Controllers
 
                     TempData["Message"] = "Record saved";
                 }
-                else { }
+                else
+                {
+
+                    RowAffected = context.UpdateCoupon(
+                           coupon.CouponId,
+                           coupon.StoreSourceId,
+                           coupon.PromoId,
+                           coupon.OfferId,
+                           coupon.OfferName,
+                           coupon.OfferType,
+                           coupon.CouponTitle,
+                           coupon.Category,
+                           -1,
+                           coupon.Description,
+                           coupon.CouponCode,
+                           coupon.OfferURL,
+                           coupon.CouponStart,
+                           coupon.CouponExpiry,
+                           coupon.Featured,
+                           coupon.Exclusive,
+                           coupon.Status,
+                           StoreCategoryIdCSV);
+
+                    TempData["Message"] = "Record Updated";
+                }
 
                 context.SaveChanges();
             }
             else
             {
-                return PartialView("", coupon);
+                return PartialView("_EditCoupon", coupon);
             }
 
             return RedirectToAction("Index");
@@ -136,7 +170,10 @@ namespace DealDunia.Web.Areas.Admin.Controllers
         {
             EComEntities context = new EComEntities();
 
-            var stores = context.Stores.OrderBy(o => o.StoreName).Where(s => s.StoreSourceId == StoreSourceId && s.Status == true).Select(m => new { m.SourceStoreId, m.StoreName }).ToList();
+            var stores = context.Stores
+                        .OrderBy(o => o.StoreName)
+                        .Where(s => (s.StoreSourceId == StoreSourceId || StoreSourceId == 0) && s.Status == true)
+                        .Select(m => new { m.SourceStoreId, m.StoreName }).ToList();
 
             return Json(stores);
         }
@@ -145,7 +182,11 @@ namespace DealDunia.Web.Areas.Admin.Controllers
         {
             EComEntities context = new EComEntities();
 
-            var StoreId = context.Stores.Where(store => store.SourceStoreId == SourceStoreId && store.StoreSourceId == StoreSourceId).First().StoreId;
+            var StoreId = context.Stores
+                .Where(store => store.SourceStoreId == SourceStoreId && (store.StoreSourceId == StoreSourceId || StoreSourceId == 0))
+                .First()
+                .StoreId;
+
             var StoreCategories = context.StoreCategoryMaps
                 .Join(context.StoreCategories,
                 map => map.StoreCategoryId,

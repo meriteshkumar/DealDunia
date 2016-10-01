@@ -34,6 +34,7 @@ namespace DealDunia.Web.Areas
         public DbSet<Coupon> Coupons { get; set; }
         public DbSet<StoreSource> StoreSources { get; set; }
         public DbSet<StoreCategoryMap> StoreCategoryMaps { get; set; }
+        public DbSet<CouponCategoryMap> CouponCategoryMaps { get; set; }
     
         public virtual int SaveCoupon(Nullable<short> storeSourceId, string promoId, Nullable<int> offerId, string offerName, string offerType, string couponTitle, string category, Nullable<short> storeCategoryId, string description, string couponCode, string offerURL, string couponStart, string couponExpiry, Nullable<bool> featured, Nullable<bool> exclusive, Nullable<bool> status, string storeCategoryCSV)
         {
@@ -106,6 +107,83 @@ namespace DealDunia.Web.Areas
                 new ObjectParameter("StoreCategoryCSV", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SaveCoupon", storeSourceIdParameter, promoIdParameter, offerIdParameter, offerNameParameter, offerTypeParameter, couponTitleParameter, categoryParameter, storeCategoryIdParameter, descriptionParameter, couponCodeParameter, offerURLParameter, couponStartParameter, couponExpiryParameter, featuredParameter, exclusiveParameter, statusParameter, storeCategoryCSVParameter);
+        }
+    
+        public virtual int UpdateCoupon(Nullable<long> couponId, Nullable<short> storeSourceId, string promoId, Nullable<int> offerId, string offerName, string offerType, string couponTitle, string category, Nullable<short> storeCategoryId, string description, string couponCode, string offerURL, string couponStart, string couponExpiry, Nullable<bool> featured, Nullable<bool> exclusive, Nullable<bool> status, string storeCategoryCSV)
+        {
+            var couponIdParameter = couponId.HasValue ?
+                new ObjectParameter("CouponId", couponId) :
+                new ObjectParameter("CouponId", typeof(long));
+    
+            var storeSourceIdParameter = storeSourceId.HasValue ?
+                new ObjectParameter("StoreSourceId", storeSourceId) :
+                new ObjectParameter("StoreSourceId", typeof(short));
+    
+            var promoIdParameter = promoId != null ?
+                new ObjectParameter("PromoId", promoId) :
+                new ObjectParameter("PromoId", typeof(string));
+    
+            var offerIdParameter = offerId.HasValue ?
+                new ObjectParameter("OfferId", offerId) :
+                new ObjectParameter("OfferId", typeof(int));
+    
+            var offerNameParameter = offerName != null ?
+                new ObjectParameter("OfferName", offerName) :
+                new ObjectParameter("OfferName", typeof(string));
+    
+            var offerTypeParameter = offerType != null ?
+                new ObjectParameter("OfferType", offerType) :
+                new ObjectParameter("OfferType", typeof(string));
+    
+            var couponTitleParameter = couponTitle != null ?
+                new ObjectParameter("CouponTitle", couponTitle) :
+                new ObjectParameter("CouponTitle", typeof(string));
+    
+            var categoryParameter = category != null ?
+                new ObjectParameter("Category", category) :
+                new ObjectParameter("Category", typeof(string));
+    
+            var storeCategoryIdParameter = storeCategoryId.HasValue ?
+                new ObjectParameter("StoreCategoryId", storeCategoryId) :
+                new ObjectParameter("StoreCategoryId", typeof(short));
+    
+            var descriptionParameter = description != null ?
+                new ObjectParameter("Description", description) :
+                new ObjectParameter("Description", typeof(string));
+    
+            var couponCodeParameter = couponCode != null ?
+                new ObjectParameter("CouponCode", couponCode) :
+                new ObjectParameter("CouponCode", typeof(string));
+    
+            var offerURLParameter = offerURL != null ?
+                new ObjectParameter("OfferURL", offerURL) :
+                new ObjectParameter("OfferURL", typeof(string));
+    
+            var couponStartParameter = couponStart != null ?
+                new ObjectParameter("CouponStart", couponStart) :
+                new ObjectParameter("CouponStart", typeof(string));
+    
+            var couponExpiryParameter = couponExpiry != null ?
+                new ObjectParameter("CouponExpiry", couponExpiry) :
+                new ObjectParameter("CouponExpiry", typeof(string));
+    
+            var featuredParameter = featured.HasValue ?
+                new ObjectParameter("Featured", featured) :
+                new ObjectParameter("Featured", typeof(bool));
+    
+            var exclusiveParameter = exclusive.HasValue ?
+                new ObjectParameter("Exclusive", exclusive) :
+                new ObjectParameter("Exclusive", typeof(bool));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(bool));
+    
+            var storeCategoryCSVParameter = storeCategoryCSV != null ?
+                new ObjectParameter("StoreCategoryCSV", storeCategoryCSV) :
+                new ObjectParameter("StoreCategoryCSV", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCoupon", couponIdParameter, storeSourceIdParameter, promoIdParameter, offerIdParameter, offerNameParameter, offerTypeParameter, couponTitleParameter, categoryParameter, storeCategoryIdParameter, descriptionParameter, couponCodeParameter, offerURLParameter, couponStartParameter, couponExpiryParameter, featuredParameter, exclusiveParameter, statusParameter, storeCategoryCSVParameter);
         }
     }
 }

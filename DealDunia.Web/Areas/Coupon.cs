@@ -14,6 +14,11 @@ namespace DealDunia.Web.Areas
     
     public partial class Coupon
     {
+        public Coupon()
+        {
+            this.CouponCategoryMaps = new HashSet<CouponCategoryMap>();
+        }
+    
         public long CouponId { get; set; }
         public short StoreSourceId { get; set; }
         public string PromoId { get; set; }
@@ -36,5 +41,6 @@ namespace DealDunia.Web.Areas
     
         public virtual StoreCategory StoreCategory { get; set; }
         public virtual StoreSource StoreSource { get; set; }
+        public virtual ICollection<CouponCategoryMap> CouponCategoryMaps { get; set; }
     }
 }

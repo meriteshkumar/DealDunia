@@ -136,6 +136,9 @@
     <Compile Include="Areas\Coupon.cs">
       <DependentUpon>EComModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Areas\CouponCategoryMap.cs">
+      <DependentUpon>EComModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Areas\EComModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

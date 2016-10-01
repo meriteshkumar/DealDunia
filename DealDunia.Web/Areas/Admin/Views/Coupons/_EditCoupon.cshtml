@@ -121,7 +121,21 @@
         .done(function (data) {
             $(".divStoreSourceID").html(data);
 
+             @if (Model.StoreSourceId != 0)
+             {
+                        <text>
+            $("div.divStoreSourceID select").val(@Model.StoreSourceId);
+            fillStore($("div.divStoreSourceID select").val(), ".divStoreID");
+                        </text>
+             }
+             else
+             {
+                        <text>
             fillStore(0, ".divStoreID");
+                        </text>
+             }
+
+            fillStore($("div.divStoreSourceID select").val(), ".divStoreID");
         }).fail(function (error) {
             //TODO:Debugging
         });
@@ -163,6 +177,13 @@
                 html += "</select>";
                 $(containerSelector).html(html);
 
+                @if (Model.OfferId != 0)
+                {
+                        <text>
+                $("div" + containerSelector + " select").val(@Model.OfferId);
+                        </text>
+                }
+
                 var sourceStoreId = $(".divStoreID #OfferId option:selected").first().val();
                 fillStoreCategory(storeSourceId, sourceStoreId, ".divStoreCategoryID");
             }).fail(function (error) {
@@ -180,6 +201,20 @@
                     html += '<input class="catvalue" type="checkbox" value="' + value.StoreCategoryId + '"></input>&nbsp;' + '<span>' + value.StoreCategoryName + '</span>&nbsp;';
                 });
                 $(containerSelector).html(html);
+
+                @if (Model.CouponCategoryMaps != null && Model.CouponCategoryMaps.Count > 0)
+                {
+                     foreach(var map in Model.CouponCategoryMaps)
+                     {
+                      <text>
+                $("div" + containerSelector + " input[type=checkbox]").each(function () {
+                    if ($(this).val() == parseInt(@map.StoreCategoryId)) {
+                        $(this).prop("checked", true);
+                    }
+                });
+                      </text>
+                     }
+                }
             })
             .fail(function (data, status, headers, config) {
                 //TODO:Debugging

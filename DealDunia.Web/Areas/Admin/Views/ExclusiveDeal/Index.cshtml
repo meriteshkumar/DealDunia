@@ -115,9 +115,10 @@
             var isFeatured = $("[id='SearchIsFeatured']").val();
             var active = $("[id='SearchActive']").val();
 
+            
             callAjaxURLWithSingleParam(settings.exclusiveDealURL, { storeId: storeId, storeCategoryId: storeCategoryId, isFeatured: isFeatured, active: active })
             .done(function (data) {
-                $("#divMainGrid").html(data);
+                $body.removeClass("loading");
             }).fail(function (error) {
                 //TODO:Debugging code
             });
