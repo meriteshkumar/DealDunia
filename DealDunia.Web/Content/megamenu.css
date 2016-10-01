@@ -1,6 +1,7 @@
 ﻿body
 {
     font-family: 'Open Sans', 'sans-serif';
+    background-color:#f2f2f2;
 }
 
 .mega-dropdown
@@ -30,7 +31,7 @@
             .mega-dropdown-menu > li > ul > li > a
             {
                 display: block;
-                color: #9d9d9d;
+                color: #333;
                 padding: 3px 5px;
             }
 
@@ -68,12 +69,12 @@
     background-color: #fff;
     line-height: 30px;
     text-shadow: none;
-    color: #333;
+    color: #444;
     border: 1px solid #ddd;
 }
 
 .divider
-{    
-    border-right:1px inset;
-    border-left:1px outset;    
+{
+    border-right: 1px inset;
+    border-left: 1px outset;
 }

@@ -5,33 +5,24 @@
 {   
 @*<h4>DAILY OFFERS</h4>*@
     <div class="row">
-        <div class="col-lg-9 col-md-9 col-sm-9 col-sx-9 paddingzero">
-            @foreach (var deal in Model)
-            {                
-                <div class="col-lg-4 col-md-4 col-sm-4 col-sx-4 paddingzero">
-                    <div class="divDeal">
-                        <div class="divDealImg">
-                            <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "daily-deals", id = @deal.DailyDealId })">
-                                <img class="store_logo" alt="@deal.Title" src="@Url.Content("~/Images/" + deal.Image)" /></a></b>
-                        </div>
-                        <hr class="margin5" />
-                        <div class="divDealTitle">
-                            <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "daily-deals", id = @deal.DailyDealId })">@deal.Title</a></b>
-                        </div>
-                        <div class="divDealCodeOuter">
-                            <span><a class="divDealCodeInner" target="_blank" href="@Url.Action("Out", "Out", new { source = "daily-deals", id = @deal.DailyDealId })">VISIT OFFER</a></span>
-                            <br />
-                        </div>
-
+        @foreach (var deal in Model)
+        {                
+            <div class="col-lg-4 col-md-4 col-sm-4 col-sx-4 paddingzero">
+                <div class="divDeal">
+                    <div class="divDealImg">
+                        <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "daily-deals", id = @deal.DailyDealId })">
+                            <img class="store_logo" alt="@deal.Title" src="@Url.Content("~/Images/" + deal.Image)" /></a></b>
+                    </div>
+                    <hr class="margin5" />
+                    <div class="divDealTitle">
+                        <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "daily-deals", id = @deal.DailyDealId })">@deal.Title</a></b>
+                    </div>
+                    <div class="divDealCodeOuter">
+                        <span><a class="divDealCodeInner" target="_blank" href="@Url.Action("Out", "Out", new { source = "daily-deals", id = @deal.DailyDealId })">VISIT OFFER</a></span>
+                        <br />
                     </div>
                 </div>
-            }
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-sx-3">
-            <div data-wrid="WRID-146216668176213358" data-widgettype="staticBanner" data-class="affiliateAdsByFlipkart"></div><br />
-            <script async src="//affiliate.flipkart.com/affiliate/widgets/FKAffiliateWidgets.js"></script>
-            <div data-sdid="522646623" data-identifier="SnapdealAffiliateAds" data-height="300" data-width="250"></div>
-            <script async id="snap_zxcvbnhg" src="https://affiliate-ads.snapdeal.com/affiliate/js/snapdealAffiliate.js"></script>
-        </div>
-    </div>   
+            </div>
+        }
+    </div>           
 }

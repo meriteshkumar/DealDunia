@@ -4,5 +4,17 @@
     ViewBag.Title = "GrabMeDeal: Daily Deals";
 }
 
-@Html.Partial("_DailyDeals", Model)
+<div class="row">
+    <div class="col-lg-9 col-md-9 col-sm-9 col-sx-9 paddingzero">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-sx-12 paddingzero">
+            @Html.Partial("_DailyDeals", Model)
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-sx-3">
+        <script async src="//affiliate.flipkart.com/affiliate/widgets/FKAffiliateWidgets.js"></script>
+        <div data-sdid="522646623" data-identifier="SnapdealAffiliateAds" data-height="300" data-width="250"></div>
+        <script async id="snap_zxcvbnhg" src="https://affiliate-ads.snapdeal.com/affiliate/js/snapdealAffiliate.js"></script>
+        <div data-wrid="WRID-146216668176213358" data-widgettype="staticBanner" data-class="affiliateAdsByFlipkart" height="250" width="250"></div>        
+    </div>
+</div>
 @Html.Action("_DOTD", "Deal")

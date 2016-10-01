@@ -6,12 +6,11 @@
 
 <script>
     $(document).ready(function () {
-        $("input[type=checkbox]").click(function () {
+        function LoadCoupons() {
             var stores = '';
             $("input[type=checkbox]:checked").each(function () {
                 stores += $(this).val() + ",";
             });
-
             $.ajax({
                 url: '@Url.Action("_ExclusiveDeals", "Deal")',
                 data: { CategoryId: 0, CategoryName: '', StoreCategoryId: 0, StoreCategoryName: '', StoreId: 0, StoreName: stores }
@@ -19,21 +18,39 @@
                 $("#divExclusive").html(data);
             }).fail(function () {
             });
+        }
+        $("input[type=checkbox]").click(function () {
+            LoadCoupons();
+        });
+
+        $("#clearStore").click(function () {
+            $("input[type=checkbox][name=chkstore]:checked").each(function () {
+                this.checked = false;
+            });
+            LoadCoupons();
         });
     });
 </script>
 
-<div class="panel panel-default col-md-2 col-sm-2 col-sx-2">
-    <h4>STORES</h4>    
-    <div class="checkbox">
-        @foreach (var storename in Model.Select(m => m.StoreName).Distinct())
-        {
-            <label>
-                <input type="checkbox" value="@storename" name="chkstore"/>@storename</label>
-        }
+<div class="container">
+    <h3>Exclsive Deals
+    </h3>
+</div>
+<div class="col-md-3 col-sm-3 col-sx-3">
+    <div class="panel panel-default ">
+        <div class="panel-heading">
+            <b>Stores</b><div id="clearStore" class="clear">Clear</div>
+        </div>
+        <div class="checkbox" style="padding-left: 5px;">
+            @foreach (var storename in Model.Select(m => m.StoreName).Distinct())
+            {
+                <label>
+                    <input type="checkbox" value="@storename" name="chkstore"/>@storename</label>
+            }
+        </div>
     </div>
 </div>
-<div id="divExclusive" class="container col-md-10 col-sm-10 col-sx-10">
+<div id="divExclusive" class="container col-md-9 col-sm-9 col-sx-9">
     @Html.Partial("_ExclusiveDeals", Model)
 </div>
 

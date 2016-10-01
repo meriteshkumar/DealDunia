@@ -99,16 +99,18 @@
         }
 
         function searchResult(obj, e) {
+            //alert(e.keyCode);
             if (e.keyCode === 27) { //'escap' key
                 obj.value = '';
                 $('#results').html('');
-            } else {
+            }
+            else {
                 result = GetFilteredResult(obj.value);
                 wrapped = wrapElements(result);
                 addToDom(wrapped, "results");
             }
         }
-
+       
         function setSelected(obj) {
 
             value = $(obj.innerHTML).filter(".result-value").html();
@@ -137,7 +139,8 @@
                 @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
                 {
                     <div class="input-group col-lg-5 col-md-5 col-sm-5 col-sx-5">
-                        <input type="text"  class="form-control search-text" autocomplete="off" placeholder="Search for Store & Category" name="searchtext" value="@ViewBag.SearchedItem" onkeyup="searchResult(this, event);">
+                        <input id="searchtext" name="searchtext" type="hidden" />
+                        <input type="text" class="form-control search-text" autocomplete="off" placeholder="Search for Store & Category" value="@ViewBag.SearchedItem" onkeyup="searchResult(this, event);">
                         <div id="results" class="result-div"></div>
                         <div class="input-group-btn" style="display: inline">
                             <button type="submit" style="height: 40px; border-radius: 0px;" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
