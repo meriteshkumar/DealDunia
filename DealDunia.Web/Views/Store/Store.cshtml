@@ -23,8 +23,7 @@
             offertype = offertype.replace(/,\s*$/, "");
         }
 
-        function LoadCoupons()
-        {
+        function LoadCoupons() {
             Init();
             $.ajax({
                 url: '@Url.Action("_Coupons", "Deal")',
@@ -35,12 +34,17 @@
             });
         }
 
-        $("input[type=checkbox][name=chkcat]").click(function () {
-            LoadCoupons()
+        $("input[type=checkbox][name=chkcat]").change(function () {            
+            $("input[type=checkbox][name=chkcat]").not(this).prop('checked', false);
+            LoadCoupons();
         });
 
+        //$("input[type=checkbox][name=chkcat]").click(function () {            
+        //    LoadCoupons();
+        //});
+
         $("input[type=checkbox][name=chktype]").click(function () {
-            LoadCoupons()
+            LoadCoupons();
         });
 
         $("#clearType").click(function () {
