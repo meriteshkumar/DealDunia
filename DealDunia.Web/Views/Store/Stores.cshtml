@@ -1,13 +1,12 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.Store>
 
-@{
-    
+@{    
     ViewBag.Title = "GrabMeDeal: Online Shopping Sites";
 }
 
 @*<h2>@Model.StoreName</h2>*@
 
-<div style="padding: 20px;">
+<div>
     <div style="text-align: center;">
         @foreach (string alphabet in Model.OrderBy(o => o.Alphabet).Select(x => x.Alphabet).Distinct())
         {
@@ -16,20 +15,17 @@
     </div>
     @foreach (string alphabet in Model.OrderBy(o => o.Alphabet).Select(x => x.Alphabet).Distinct())
     {
-        <hr />
-        <h4 id="@alphabet">@alphabet</h4>
-        <hr />      
-        <div class="row">
+        <div class="row box padding5">
+            <h4 id="@alphabet">@alphabet</h4>
             @foreach (var store in Model.Where(x => x.Alphabet == alphabet).Select(s => new { StoreName = s.StoreName, StoreImage = s.StoreImage }).Distinct())
             {
                 <div style="float: left; width: 120px;">
                     <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
                         <b>@store.StoreName</b>
                     </a>
-                </div>
-              
+                </div>              
             }
         </div>
-   
+        <hr class="margin5" />
     }
 </div>

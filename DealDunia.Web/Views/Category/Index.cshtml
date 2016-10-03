@@ -3,12 +3,14 @@
 }
 
 @{Html.RenderPartial("_Carousel");}
-<div class="row">
-    <h3>Featured Store</h3>
+<hr class="margin5" />
+<div class="row box">
+    <h3>FEATURED STORE</h3>
     @Html.Action("_ShopByStore", "Store")
 </div>
-<h3>Exclusive Deals</h3>
-<div class="row">
+<hr class="margin5" />
+<div class="row box">
+    <h3>EXCLUSIVE DEALS</h3>
     <div class="col-lg-9 col-md-9 col-sm-9 col-sx-9 paddingzero">
         @Html.Action("_ExclusiveDeals", "Deal")
     </div>
@@ -19,7 +21,7 @@
         <a href="http://tracking.vcommission.com/aff_c?offer_id=44&aff_id=46159&file_id=79711" target="_blank">
             <img src="http://media.vcommission.com/brand/files/vcm/44/Makemytrip_Flat50OFFonHotels_300x250.jpg" width="300" height="250" border="0" /></a><img src="http://tracking.vcommission.com/aff_i?offer_id=44&file_id=79711&aff_id=46159" width="1" height="1" />
         <!-- Place This code where you want widget -->
-        <script type="text/javascript" src="http://asset-a2.infibeam.com/scripts/affiliateJS/affiliateHotMagicWidget.js" id="div10318680"> </script>
+       @* <script type="text/javascript" src="http://asset-a2.infibeam.com/scripts/affiliateJS/affiliateHotMagicWidget.js" id="div10318680"> </script>
         <script language="javascript" type="text/javascript">
             var infibeamWidget = new infibeamWidgetCall();
             infibeamWidget.scriptId = 'div10318680';
@@ -29,23 +31,16 @@
             infibeamWidget.siteName = 'http://www.infibeam.com';
             infibeamWidget.sizeType = 'autoSize';
             infibeamWidget.display();
-        </script>
+        </script>*@
         <!-- Widget End -->
         <div data-sdid="552704778" data-identifier="SnapdealAffiliateAds" data-height="300" data-width="250"></div>
         <script async id="snap_zxcvbnhg" src="https://affiliate-ads.snapdeal.com/affiliate/js/snapdealAffiliate.js"></script>
     </div>
 </div>
-<div class="row">
-    <h3>Daily Deals</h3>
-    <div class="col-md-9">
-        @Html.Action("_DailyDeals", "Deal")
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-3 col-sx-3">
-        <script async src="//affiliate.flipkart.com/affiliate/widgets/FKAffiliateWidgets.js"></script>
-        <div data-sdid="522646623" data-identifier="SnapdealAffiliateAds" data-height="300" data-width="250"></div>
-        <script async id="snap_zxcvbnhg" src="https://affiliate-ads.snapdeal.com/affiliate/js/snapdealAffiliate.js"></script>
-        <div data-wrid="WRID-146216668176213358" data-widgettype="staticBanner" data-class="affiliateAdsByFlipkart" height="250" width="250"></div>
-    </div>
+<hr class="margin5" />
+<div class="row box">
+    <h3>DAILY DEALS</h3>
+    @Html.Action("_DailyDeals", "Deal")
 </div>
 @*@Html.Action("_ShopByCategory", "Category")*@
 

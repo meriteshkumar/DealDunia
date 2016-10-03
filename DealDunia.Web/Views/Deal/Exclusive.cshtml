@@ -32,25 +32,26 @@
     });
 </script>
 
-<div class="container">
-    <h3>Exclsive Deals
-    </h3>
-</div>
-<div class="col-md-3 col-sm-3 col-sx-3">
-    <div class="panel panel-default ">
-        <div class="panel-heading">
-            <b>Stores</b><div id="clearStore" class="clear">Clear</div>
-        </div>
-        <div class="checkbox" style="padding-left: 5px;">
-            @foreach (var storename in Model.Select(m => m.StoreName).Distinct())
-            {
-                <label>
-                    <input type="checkbox" value="@storename" name="chkstore"/>@storename</label>
-            }
+<div class="row box">
+    <div class="container" style="text-align:center;">
+        <h3>EXCLUSIVE DEALS</h3>
+    </div>
+    <div class="col-md-3 col-sm-3 col-sx-3">
+        <div class="panel panel-default ">
+            <div class="panel-heading">
+                <b>Stores</b><div id="clearStore" class="clear">Clear</div>
+            </div>
+            <div class="checkbox" style="padding-left: 5px;">
+                @foreach (var storename in Model.Select(m => m.StoreName).Distinct())
+                {
+                    <label>
+                        <input type="checkbox" value="@storename" name="chkstore"/>@storename</label>
+                }
+            </div>
         </div>
     </div>
-</div>
-<div id="divExclusive" class="container col-md-9 col-sm-9 col-sx-9">
-    @Html.Partial("_ExclusiveDeals", Model)
-</div>
+    <div id="divExclusive" class="container col-md-9 col-sm-9 col-sx-9">        
+        @Html.Partial("_ExclusiveDeals", Model)
+    </div>
 
+</div>

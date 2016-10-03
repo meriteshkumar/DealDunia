@@ -1,16 +1,41 @@
-﻿.paddingzero
+﻿body
 {
-    padding:0px;
+    font-family: 'Open Sans', 'sans-serif';
+    background-color:#f2f2f2;
 }
 
+.box
+{
+    /*background-color:#fbfbfb;*/
+    background-color:#fff;
+    padding:10px;
+}
+
+.copyright
+{    
+    text-align: center;
+    height: 50px;
+    color: white;
+    padding-top: 15px;
+}
+
+.paddingzero
+{
+    padding: 0px;
+}
+
+.padding5
+{
+    padding: 5px;
+}
 .margin5
 {
-    margin:5px;
+    margin: 5px;
 }
 
 .margin10
 {
-    margin:10px;
+    margin: 10px;
 }
 
 .row
@@ -31,14 +56,17 @@ label
 
 h1, h2, h3, h4
 {
-    font-weight:300;    
-    color: #4d4d4d;    
+    font-weight: 300;
+    color: #4d4d4d;
+    padding-left:20px;
+    /*border-bottom: solid 1px;
+    border-color:#bf192a;*/
 }
 
 h4
 {
-    font-weight: bold;    
-    padding:5px;
+    font-weight: bold;
+    padding: 5px;
 }
 
 .store_logo
@@ -68,36 +96,37 @@ h4
 
 .storeTitle
 {
-    font-size:13px;    
-    color:#444;
+    font-size: 13px;
+    color: #444;
 }
 
 /*---------------------------- Deal div -------------------------------------------------*/
 .divDeal
-{ 
-    border: solid 1px;    
+{
+    border: solid 1px;
     padding-top: 5px;
-    padding:5px;
+    padding: 5px;
     margin: 2px;
     text-align: center;
     vertical-align: middle;
-    border-color:#eee;
-    background-color:#fff;
-    border-radius:5px;
+    border-color: #eee;
+    /*background-color:#fbfbfb;*/
+    background-color: #fff;
+    border-radius: 5px;
 }
 
 .divDealImg
-{    
-    height:50px;    
+{
+    height: 50px;
 }
 
 .div50
 {
-    height:50px;    
+    height: 50px;
 }
 
 .Img10050
-{       
+{
     max-width: 100px;
     max-height: 50px;
 }
@@ -109,11 +138,11 @@ h4
 }*/
 
 .divDealTitle
-{    
-    font-size:13px;
-    font-weight:bold;
-    margin:2px;    
-    padding-bottom:10px;
+{
+    font-size: 13px;
+    font-weight: bold;
+    margin: 2px;
+    padding-bottom: 10px;
     height: 75px;
     overflow: hidden;
 }
@@ -128,7 +157,7 @@ h4
     font-size: 15px;
     vertical-align: middle;
     border: 1px #fff dashed;
-    padding:5px;    
+    padding: 5px;
 }
 
 .divDealCodeInner
@@ -144,7 +173,7 @@ h4
     text-align: center;
     margin: auto;
     padding: 5px;
-    font-weight:bold;
+    font-weight: bold;
     font-size: 12px;
     color: #555;
 }
@@ -162,7 +191,7 @@ h4
     text-align: center;
     vertical-align: middle;
     float: left;
-    background-color:#fff;
+    background-color: #fff;
 }
 
 .divProStoreImg
@@ -221,7 +250,7 @@ h4
     float: left;
     font-size: 13px;
     font-weight: bold;
-    max-width: 300px;    
+    max-width: 300px;
 }
 
 .scrollToTop
@@ -287,7 +316,7 @@ input[type="checkbox"].input-validation-error
     max-height: 340px;
     overflow: scroll;
     overflow-x: hidden;
-    width: 340px;    
+    width: 340px;
 }
 
 .result-container
@@ -322,7 +351,7 @@ input[type="checkbox"].input-validation-error
 
 .clear
 {
-    cursor:pointer;
-    float:right;
-    color:#555;
+    cursor: pointer;
+    float: right;
+    color: #555;
 }

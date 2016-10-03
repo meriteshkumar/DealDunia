@@ -59,12 +59,12 @@
     });
 </script>
 
-<div class="row">
-    <div class="container">
-        @Html.Action("_Stores", "Store", new DealDunia.Domain.Entities.StoreValues { StoreCategoryName = Utilities.DecodeUrl(ViewContext.RouteData.Values["category"].ToString()) })
-    </div>
-    <div class="container">
-        <h4>Deals & Coupons</h4>
+
+@Html.Action("_Stores", "Store", new DealDunia.Domain.Entities.StoreValues { StoreCategoryName = Utilities.DecodeUrl(ViewContext.RouteData.Values["category"].ToString()) })
+<hr class="margin5" />
+<div class="row box">
+    <div class="container" style="text-align:center;">
+        <h4>DEALS & COUPONS</h4>
     </div>
     <div class="col-md-3 col-sm-3 col-sx-3">
         <div class="panel panel-default">
