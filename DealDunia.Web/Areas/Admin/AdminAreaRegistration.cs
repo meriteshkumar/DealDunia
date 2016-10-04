@@ -21,7 +21,15 @@ namespace DealDunia.Web.Areas.Admin
                 new { action = "Index", id = UrlParameter.Optional }
             );
 
-            BundleTable.Bundles.Add(new Bundle("~/Admin/bundles/js").Include("~/Areas/Admin/Scripts/admin.js"));
+            BundleTable.Bundles.Add(new Bundle("~/Admin/bundles/js").Include(
+                "~/Areas/Admin/Scripts/admin.js",
+                "~/Scripts/jquery-2.2.3.min.js",
+                "~/Scripts/jquery-ui.min.js",
+                "~/Scripts/jquery.validate.min.js",
+                "~/Scripts/jquery.validate.unobtrusive.min.js",
+                "~/Scripts/jquery.unobtrusive-ajax.min.js",
+                "~/Scripts/bootstrap.min.js"                
+                ));
         }
     }
 }
