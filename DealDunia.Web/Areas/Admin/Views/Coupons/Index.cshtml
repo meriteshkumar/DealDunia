@@ -110,7 +110,7 @@
 
         callAjaxURLWithSingleParam(settings.storeSourceDropDown, { controlName: "StoreSourceId" })
         .done(function (data) {
-            $(".divSearchStoreSourceID").html(data);
+            $(".divSearchStoreSourceID").html(data);           
         }).fail(function (error) {
             //TODO:Debugging
         });
@@ -118,6 +118,7 @@
         callAjaxURLWithSingleParam(settings.storeCategoryURL, { controlName: 'StoreCategoryId' })
             .done(function (data) {
                 $(".divSearchStoreCategoryId").html(data);
+                $("[id='StoreCategoryId']").val("-1");
             }).fail(function () {
                 //TODO:Debugging
             });
@@ -137,8 +138,11 @@
             var offerType = $("[id='searchOfferType']").val();
             var store = $("[id='st-dropdown']").val();
 
+            $body = $("body");
+            $body.addClass("loading");
             callAjaxURLWithSingleParam(settings.couponURL, { storeSourceId: storeSourceId, storeCategoryId: storeCategoryId, featured: featured, status: active, offerType: offerType, store: store })
                 .done(function (data) {
+                    $body.removeClass("loading");
                     $("#divCouponGrid").html(data);
                 }).fail(function (error) {
                     //TODO:Debugging

@@ -107,7 +107,8 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <input type="submit" value="Save changes" class="btn btn-primary" />
+                @*<input type="submit" value="Save changes" class="btn btn-primary" />*@
+                <button type="button" id="savebtn" class="btn btn-primary">Save changes</button>
             </div>
         </div>
     }
@@ -221,12 +222,12 @@
                     foreach (var map in Model.CouponCategoryMaps)
                     {
                       <text>
-                            $("div" + containerSelector + " input[type=checkbox]").each(function () {
-                                if ($(this).val() == parseInt(@map.StoreCategoryId)) {
-                                    $(this).prop("checked", true);
-                                }
-                            });
-                      </text>
+                $("div" + containerSelector + " input[type=checkbox]").each(function () {
+                    if ($(this).val() == parseInt(@map.StoreCategoryId)) {
+                        $(this).prop("checked", true);
+                    }
+                });
+                </text>
                     }
                 }
                 @if (Model.StoreCategoryId != 0)
@@ -241,5 +242,18 @@
                 //TODO:Debugging
             });
         }
+
+        $("#savebtn").on("click", function () {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Save", "Coupons")',
+                data: $('#myForm').serialize(),
+                datatype: "html",
+                success: function (data) {
+                    $("#myModal").modal("hide");
+                    alert("Record Saved.");
+                }
+            });
+        });
     });
 </script>

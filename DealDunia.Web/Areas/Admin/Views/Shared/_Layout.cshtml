@@ -11,13 +11,13 @@
     @Scripts.Render("~/Admin/bundles/js")
     
 
-    @*<style type="text/css">
+    <style type="text/css">
         /* Start by setting display:none to make this hidden.
    Then we position it in relation to the viewport window
    with position:fixed. Width, height, top and left speak
    speak for themselves. Background we set to 80% white with
    our animation centered, and no-repeating */
-        .modal {
+        .modaloading {
             display: none;
             position: fixed;
             z-index: 1000;
@@ -36,10 +36,10 @@
 
             /* Anytime the body has the loading class, our
    modal element will be visible */
-            body.loading .modal {
+            body.loading .modaloading {
                 display: block;
             }
-    </style>*@
+    </style>
 </head>
 <body>
     <div class="container-fluid">
@@ -71,8 +71,13 @@
         </div>
     </div>
     <!--Loading modal -->
+<<<<<<< HEAD
     @*<div class="modal"></div>
     <script type="text/javascript">
+=======
+    <div class="modaloading"></div>
+    @*<script type="text/javascript">
+>>>>>>> origin/master
         $(document).ready(function () {
             //Loading modal script
             $body = $("body");
