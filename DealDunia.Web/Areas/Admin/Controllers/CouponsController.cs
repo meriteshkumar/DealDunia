@@ -72,7 +72,7 @@ namespace DealDunia.Web.Areas.Admin.Controllers
                          coupon.Status,
                          StoreCategoryIdCSV);
 
-                    TempData["Message"] = "Record saved";
+                    //TempData["Message"] = "Record saved";
                 }
                 else
                 {
@@ -97,7 +97,7 @@ namespace DealDunia.Web.Areas.Admin.Controllers
                            coupon.Status,
                            StoreCategoryIdCSV);
 
-                    TempData["Message"] = "Record Updated";
+                    //TempData["Message"] = "Record Updated";
                 }
 
                 context.SaveChanges();

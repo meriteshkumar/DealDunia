@@ -73,10 +73,10 @@
     </div>
 </div>
 
-@if (TempData["Message"] != null)
+@*@if (TempData["Message"] != null)
 {
     <div class="alert alert-success">@TempData["Message"].ToString()</div>
-}
+}*@
 
 <div id="divCouponGrid">
     @Html.Partial("_CouponGrid", Model)
@@ -131,13 +131,13 @@
             });
 
         $(".btnSearch").click(function () {
-            var storeSourceId = $("[id='ss-dropdown']").val();
-            var storeCategoryId = $("[id='StoreCategoryId']").val();
+            var storeSourceId = $("div.divSearchStoreSourceID #ss-dropdown").val();
+            var storeCategoryId = $("div.divSearchStoreCategoryId #StoreCategoryId").val();
             var featured = $("[id='SearchFeatured']").val();
             var active = $("[id='SearchActive']").val();
             var offerType = $("[id='searchOfferType']").val();
             var store = $("[id='st-dropdown']").val();
-
+            //alert(storeCategoryId);
             $body = $("body");
             $body.addClass("loading");
             callAjaxURLWithSingleParam(settings.couponURL, { storeSourceId: storeSourceId, storeCategoryId: storeCategoryId, featured: featured, status: active, offerType: offerType, store: store })

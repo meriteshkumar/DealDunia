@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
 
     @Scripts.Render("~/Admin/bundles/js")
-    
+
 
     <style type="text/css">
         /* Start by setting display:none to make this hidden.
@@ -17,7 +17,8 @@
    with position:fixed. Width, height, top and left speak
    speak for themselves. Background we set to 80% white with
    our animation centered, and no-repeating */
-        .modaloading {
+        .modaloading
+        {
             display: none;
             position: fixed;
             z-index: 1000;
@@ -30,13 +31,15 @@
 
         /* When the body has the loading class, we turn
    the scrollbar off with overflow:hidden */
-        body.loading {
+        body.loading
+        {
             overflow: hidden;
         }
 
             /* Anytime the body has the loading class, our
    modal element will be visible */
-            body.loading .modaloading {
+            body.loading .modaloading
+            {
                 display: block;
             }
     </style>
@@ -71,13 +74,9 @@
         </div>
     </div>
     <!--Loading modal -->
-<<<<<<< HEAD
-    @*<div class="modal"></div>
-    <script type="text/javascript">
-=======
     <div class="modaloading"></div>
+    @*<div class="modal"></div>
     @*<script type="text/javascript">
->>>>>>> origin/master
         $(document).ready(function () {
             //Loading modal script
             $body = $("body");
