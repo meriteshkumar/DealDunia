@@ -81,47 +81,49 @@
                 </a>
             </div>
             <div class="col-md-9">
-                <h4>About @store</h4>
+                <h4><span class="boxtitle">About @store</span></h4>
                 @Model.Select(x => x.StoreDescription).FirstOrDefault()
             </div>
         </div>
     </div>
-    <hr class="margin5" />
-    <div class="row box">
-        <div class="col-md-12 box">
-            <div class="col-md-3">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <b>Offer Type</b><div id="clearType" class="clear">Clear</div>
-                    </div>
-                    <div class="checkbox" style="padding-left: 5px;">
-                        <label>
-                            <input type="checkbox" value="Coupon" name="chktype">Coupon</label>
-                        <label>
-                            <input type="checkbox" value="Deal" name="chktype">Deal</label>
-                    </div>
+
+</div>
+<div class="row">
+    <div class="col-md-3 col-sm-3 col-sx-3 paddingzero">
+        <div class="box">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <b>Offer Type</b><div id="clearType" class="clear">Clear</div>
                 </div>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <b>Category</b><div id="clearCat" class="clear">Clear</div>
-                    </div>
-                    <div class="checkbox" style="padding-left: 5px;">
-                        @foreach (var catname in Model.OrderBy(o => o.StoreCategoryName).Select(p => p.StoreCategoryName).Distinct())
-                        {          
-                            <label>
-                                <input type="checkbox" value="@catname" name="chkcat"/>@catname</label>
-                        }
-                    </div>
+                <div class="checkbox" style="padding-left: 5px;">
+                    <label>
+                        <input type="checkbox" value="Coupon" name="chktype">Coupon</label>
+                    <label>
+                        <input type="checkbox" value="Deal" name="chktype">Deal</label>
                 </div>
             </div>
-            <div class="col-md-9">
-                @Html.Action("_DailyDeals", "Deal", new DealDunia.Domain.Entities.DailyDealsValues { StoreId = 0, StoreName = store })
-                @Html.Action("_ExclusiveDeals", "Deal", new DealDunia.Domain.Entities.ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = string.Empty, StoreName = store, StoreId = 0 })
-                <div id="divCoupon">
-                    @Html.Action("_Coupons", "Deal", new DealDunia.Domain.Entities.CouponValues { OfferType = string.Empty, OfferName = store, StoreCategoryName = string.Empty })
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <b>Category</b><div id="clearCat" class="clear">Clear</div>
                 </div>
-                @Html.Action("_OfferURL", "Deal", new { SourceStoreId = OfferId })
+                <div class="checkbox" style="padding-left: 5px;">
+                    @foreach (var catname in Model.OrderBy(o => o.StoreCategoryName).Select(p => p.StoreCategoryName).Distinct())
+                    {          
+                        <label>
+                            <input type="checkbox" value="@catname" name="chkcat"/>@catname</label>
+                    }
+                </div>
             </div>
+        </div>
+    </div>
+    <div class="col-md-9 col-sm-9 col-sx-9 paddingright0">
+        <div class="box">
+            @Html.Action("_DailyDeals", "Deal", new DealDunia.Domain.Entities.DailyDealsValues { StoreId = 0, StoreName = store })
+            @Html.Action("_ExclusiveDeals", "Deal", new DealDunia.Domain.Entities.ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = string.Empty, StoreName = store, StoreId = 0 })
+            <div id="divCoupon">
+                @Html.Action("_Coupons", "Deal", new DealDunia.Domain.Entities.CouponValues { OfferType = string.Empty, OfferName = store, StoreCategoryName = string.Empty })
+            </div>
+            @Html.Action("_OfferURL", "Deal", new { SourceStoreId = OfferId })
         </div>
     </div>
 </div>

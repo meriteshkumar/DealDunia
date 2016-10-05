@@ -12,7 +12,7 @@ namespace DealDunia.Domain.Concrete
     public class SnapdealRepository : ILookupRepository
     {
         public string StoreName { get { return "Snapdeal"; } }
-        public string StoreImage { get { return "Stores/Snapdeal/Snapdeal.jpg"; } }
+        public string StoreImage { get { return "Stores/Snapdeal/Snapdeal.png"; } }
 
         public List<IItemResponse> GetItem(Infrastructure.Helpers.ItemRequest request)
         {

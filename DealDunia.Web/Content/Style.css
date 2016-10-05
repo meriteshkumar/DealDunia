@@ -1,14 +1,41 @@
 ﻿body
 {
-    font-family: 'Open Sans', 'sans-serif';
+    /*font-family: 'Open Sans', 'sans-serif';*/
     background-color:#f2f2f2;
+}
+
+h1, h2, h3, h4
+{
+    font-weight: 300;    
+    border-bottom: solid 1px;
+    /*color:#4d4d4d;*/
+    /*border-color:#E8E8E8;*/    
+    /*border-bottom: solid 1px;*/    
+    /*border-color:#ED1B24;*/
+    border-color: #333333;
 }
 
 .box
 {
     /*background-color:#fbfbfb;*/
     background-color:#fff;
-    padding:10px;
+    padding:10px;    
+    margin-bottom:10px;    
+}
+
+.boxtitle
+{
+    /*background-color: #d9534f;*/
+    background-color: #333333;
+    color: white;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 5px;
+    margin-bottom: 5px;
+    -webkit-border-top-left-radius: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
 .copyright
@@ -28,6 +55,12 @@
 {
     padding: 5px;
 }
+
+.paddingright0
+{
+    padding-right:0px;
+}
+
 .margin5
 {
     margin: 5px;
@@ -54,20 +87,14 @@ label
     overflow: hidden;
 }
 
-h1, h2, h3, h4
+/*h1, h2, h3, h4
 {
     font-weight: 300;
     color: #4d4d4d;
     padding-left:20px;
-    /*border-bottom: solid 1px;
-    border-color:#bf192a;*/
-}
-
-h4
-{
-    font-weight: bold;
-    padding: 5px;
-}
+    border-bottom: solid 1px;
+    border-color:#E8E8E8;
+}*/
 
 .store_logo
 {
@@ -79,6 +106,10 @@ h4
 {
     position: relative;
     top: 50%;
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
     transform: translateY(-50%);
     text-align: center;
 }
@@ -112,12 +143,16 @@ h4
     border-color: #eee;
     /*background-color:#fbfbfb;*/
     background-color: #fff;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
     border-radius: 5px;
 }
 
 .divDealImg
 {
-    height: 50px;
+    height: 55px;
+    border-bottom:solid 1px;
+    border-bottom:1px solid #eee;
 }
 
 .div50
@@ -139,25 +174,32 @@ h4
 
 .divDealTitle
 {
-    font-size: 13px;
-    font-weight: bold;
-    margin: 2px;
-    padding-bottom: 10px;
-    height: 75px;
+    /*font-size: 13px;*/
+    /*font-weight: bold;*/
+    width:100%;    
+    height: 80px;
     overflow: hidden;
+    display: flex;
+    text-align:center;
+    vertical-align:middle;    
+}
+
+.dealTitle{          
+    overflow: hidden;    
+    margin:auto;
 }
 
 .divDealCodeOuter
 {
-    height: 35px;
+    height: 30px;
     width: 70%;
     margin: auto;
-    background-color: #bf192a;
+    background-color: #d9534f;
     font-weight: bold;
     font-size: 15px;
     vertical-align: middle;
     border: 1px #fff dashed;
-    padding: 5px;
+    padding: 3px;
 }
 
 .divDealCodeInner
@@ -172,10 +214,9 @@ h4
     width: 100%;
     text-align: center;
     margin: auto;
-    padding: 5px;
-    font-weight: bold;
+    padding: 5px;    
     font-size: 12px;
-    color: #555;
+    color: #666666;
 }
 
 /*---------------------------- Produc div -------------------------------------------------*/
@@ -303,6 +344,8 @@ input[type="checkbox"].input-validation-error
 .search-text
 {
     height: 40px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
     border-radius: 0px;
     width: 301px!important;
 }
@@ -316,7 +359,7 @@ input[type="checkbox"].input-validation-error
     max-height: 340px;
     overflow: scroll;
     overflow-x: hidden;
-    width: 340px;
+    /*width: 340px;*/
 }
 
 .result-container

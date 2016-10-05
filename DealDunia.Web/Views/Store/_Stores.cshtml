@@ -32,20 +32,20 @@
 
 </script>
 
-@Styles.Render("~/Content/css/carousel")
-@Scripts.Render("~/bundles/js/slider")
+@*@Styles.Render("~/Content/css/carousel")
+@Scripts.Render("~/bundles/js/slider")*@
 
 @foreach (string category in Model.Select(x => x.StoreCategoryName).Distinct())
 {
-    <div class="row box" style="text-align:center;">
-        <h4>STORES IN @category.ToUpper()</h4>
+    <div class="row box">
+        <h4><span class="boxtitle">STORES IN @category.ToUpper()</span></h4>
         <ul id="flexisel">
             @foreach (var store in Model.Where(x => x.StoreCategoryName == category))
             {
                 var url = string.Empty;
                 if (ViewContext.RouteData.Values["category"] != null)
                 {               
-                <li style="align-content: center; vertical-align: middle">
+                <li>
                     <a target="_blank" href="@Url.Action("Out", "Out", new { source = "couponsbycat", id = store.StoreCatMapId })">
                         <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" class="store_logo" />
                     </a>
@@ -61,6 +61,5 @@
                 }
             }
         </ul>
-    </div>
-    
+    </div>    
 }

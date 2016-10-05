@@ -26,6 +26,6 @@ namespace DealDunia.Infrastructure.Helpers
         public string DetailPageURL { get; set; }
 
         public string StoreName { get { return "Snapdeal"; } }
-        public string StoreImage { get { return "Stores/Snapdeal/Snapdeal.jpg"; } }
+        public string StoreImage { get { return "Stores/Snapdeal/Snapdeal.png"; } }
     }
 }

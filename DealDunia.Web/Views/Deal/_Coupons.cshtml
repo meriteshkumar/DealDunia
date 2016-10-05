@@ -10,14 +10,12 @@
             <div class="col-md-4 paddingzero">
                 <a target="_blank" href="@Url.Action("Out", "Out", new { source = "coupons", id = coupon.CouponId })">
                     <div class="divDeal">
-
                         @*<a target="_blank" href="@Url.Action("Out", "Out", new { source = "couponsbycat", id = coupon.StoreCatMapId })">*@
-                        <div class="div50">
+                        <div class="divDealImg">
                             <img class="Img10050" alt="@coupon.OfferName" src="@Url.Content("~/Images/" + coupon.StoreImage)"/>
                         </div>
-                        <hr class="margin5" />
                         <div class="divDealTitle">
-                            @coupon.CouponTitle.Replace("&amp;", "&")
+                            <span class="dealTitle">@coupon.CouponTitle.Replace("&amp;", "&")</span>
                         </div>
                         <div class="divDealCodeOuter">
                             <span><a class="divDealCodeInner" target="_blank" href="@Url.Action("Out", "Out", new { source = "coupons", id = coupon.CouponId })">@if (@coupon.OfferType == "Coupon")

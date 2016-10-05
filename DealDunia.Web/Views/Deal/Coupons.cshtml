@@ -61,42 +61,41 @@
 
 
 @Html.Action("_Stores", "Store", new DealDunia.Domain.Entities.StoreValues { StoreCategoryName = Utilities.DecodeUrl(ViewContext.RouteData.Values["category"].ToString()) })
-<hr class="margin5" />
-<div class="row box">
-    <div class="container" style="text-align:center;">
-        <h4>DEALS & COUPONS</h4>
-    </div>
-    <div class="col-md-3 col-sm-3 col-sx-3">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <b>Offer Type</b><div id="clearType" class="clear">Clear</div>
+<div class="row">
+    @* <h4><span class="boxtitle">DEALS & COUPONS</span></h4>*@
+    <div class="col-md-3 col-sm-3 col-sx-3 paddingzero">
+        <div class="box">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <b>Offer Type</b><div id="clearType" class="clear">Clear</div>
+                </div>
+                <div class="checkbox" style="padding-left: 5px;">
+                    @foreach (var offertype in Model.OrderBy(o => o.OfferType).Select(p => p.OfferType).Distinct())
+                    {                    
+                        <label>
+                            <input type="checkbox" value="@offertype" name="chktype"/>@offertype</label>
+                    }
+                </div>
             </div>
-            <div class="checkbox" style="padding-left: 5px;">
-                @foreach (var offertype in Model.OrderBy(o => o.OfferType).Select(p => p.OfferType).Distinct())
-                {                    
-                    <label>
-                        <input type="checkbox" value="@offertype" name="chktype"/>@offertype</label>
-                }
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <b>Category</b><div id="clearStore" class="clear">Clear</div>
+                </div>
+                <div class="checkbox" style="padding-left: 5px; padding-right: 5px;">
+                    @foreach (var storename in Model.OrderBy(o => o.OfferName).Select(p => p.OfferName).Distinct())
+                    {          
+                        <label>
+                            <input type="checkbox" value="@storename" name="chkstore"/>@storename</label>
+                    }
+                </div>
             </div>
         </div>
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <b>Category</b><div id="clearStore" class="clear">Clear</div>
-            </div>
-            <div class="checkbox" style="padding-left: 5px; padding-right: 5px;">
-                @foreach (var storename in Model.OrderBy(o => o.OfferName).Select(p => p.OfferName).Distinct())
-                {          
-                    <label>
-                        <input type="checkbox" value="@storename" name="chkstore"/>@storename</label>
-                }
+    </div>
+    <div class="col-md-9 col-sm-9 col-sx-9 paddingright0">
+        <div class="box">
+            <div id="divCoupon">
+                @Html.Partial("_Coupons", Model)
             </div>
         </div>
-
     </div>
-    <div class="col-md-9 col-sm-9 col-sx-9">
-        <div id="divCoupon">
-            @Html.Partial("_Coupons", Model)
-        </div>
-    </div>
-
 </div>

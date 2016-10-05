@@ -15,9 +15,9 @@
                         <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = deal.ExcDealId })">
                             <img alt="@deal.StoreName" src="@Url.Content("~/Images/" + deal.StoreImage)" /></a></b>
                     </div>
-                    <hr class="margin5" />
+                    @*<hr class="margin5" />*@
                     <div class="divDealTitle">
-                        <a target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = deal.ExcDealId })"><b>@deal.Title.Replace("&amp;", "&")</b></a>
+                        <a class="dealTitle" target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = deal.ExcDealId })">@deal.Title.Replace("&amp;", "&")</a>
                     </div>
                     <div class="divDealCodeOuter">
                         <span><a class="divDealCodeInner" target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = @deal.ExcDealId })">VISIT OFFER</a></span>
