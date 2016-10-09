@@ -23,5 +23,6 @@ namespace DealDunia.Domain.Entities
         public string CategoryName { get; set; }
         public int StoreCategoryId { get; set; }
         public string StoreCategoryName { get; set; }
+        public bool IsFeatured { get; set; }
     }
 }

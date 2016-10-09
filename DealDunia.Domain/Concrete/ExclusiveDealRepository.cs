@@ -7,7 +7,7 @@ using System.Data.SqlClient;
 
 namespace DealDunia.Domain.Concrete
 {
-   public class ExclusiveDealRepository : IRepository<ExecutiveDeals, ExecutiveDealValues>
+    public class ExclusiveDealRepository : IRepository<ExecutiveDeals, ExecutiveDealValues>
     {
         public List<ExecutiveDeals> SelectAll()
         {
@@ -26,7 +26,8 @@ namespace DealDunia.Domain.Concrete
                         ,   new SqlParameter("@StoreName", criteria.StoreName)
                         ,   new SqlParameter("@CategoryName", criteria.CategoryName)
                         ,  new SqlParameter("@StoreCategoryId", criteria.StoreCategoryId)
-                        ,   new SqlParameter("@StoreCategoryName", criteria.StoreCategoryName)});
+                        ,   new SqlParameter("@StoreCategoryName", criteria.StoreCategoryName)
+                        ,   new SqlParameter("@IsFeatured", criteria.IsFeatured)});
 
             while (reader.Read())
             {

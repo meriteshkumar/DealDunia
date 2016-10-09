@@ -354,12 +354,12 @@ input[type="checkbox"].input-validation-error
 {
     position: absolute;
     z-index: 1030;
-    width: 100%;
+    /*width: 100%;*/
     top: 40px;
     max-height: 340px;
-    overflow: scroll;
+    /*overflow: scroll;*/
     overflow-x: hidden;
-    /*width: 340px;*/
+    width: 340px;
 }
 
 .result-container

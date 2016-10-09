@@ -126,7 +126,7 @@ namespace DealDunia.Web.Areas.Admin.Controllers
             var store = context.Stores.Join(context.Coupons,
                 s => new { StoreSourceId = (int?)s.StoreSourceId, SourceStoreId = (int?)s.SourceStoreId },
                 c => new { StoreSourceId = (int?)c.StoreSourceId, SourceStoreId = (int?)c.OfferId },
-                (s, c) => new StoreDropDown { StoreName = s.StoreName }).Distinct().ToList();
+                (s, c) => new StoreDropDown { StoreName = s.StoreName }).Distinct().ToList().OrderBy(o=>o.StoreName);
 
             return PartialView(store);
         }
@@ -185,7 +185,7 @@ namespace DealDunia.Web.Areas.Admin.Controllers
                 map => map.StoreCategoryId,
                 category => category.StoreCategoryId,
                 (map, category) => new { StoreCategoryId = map.StoreCategoryId, StoreCategoryName = category.StoreCategoryName, StoreId = map.StoreId })
-                .Where(mapAndCategory => mapAndCategory.StoreId == StoreId).ToList();
+                .Where(mapAndCategory => mapAndCategory.StoreId == StoreId).ToList().OrderBy(o=>o.StoreCategoryName);
 
             return Json(StoreCategories);
         }
