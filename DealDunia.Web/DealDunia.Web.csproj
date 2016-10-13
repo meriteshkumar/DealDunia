@@ -363,6 +363,7 @@
     <Content Include="Images\Category\womenfootwear.png" />
     <Content Include="Images\Category\womeninnerwear.png" />
     <Content Include="Images\GrabMeDeal\GrabMeDeal.png" />
+    <Content Include="Images\GrabMeDeal\grabmedeal_200x40.png" />
     <Content Include="Images\GrabMeDeal\grabmedeal_200x56.png" />
     <Content Include="Images\GrabMeDeal\grabmedeal_200x57.png" />
     <Content Include="Images\loading.gif" />
@@ -508,7 +509,9 @@
     <Content Include="Images\Stores\Makemytrip\Makemytrip_IF.png" />
     <Content Include="Images\Stores\ManglamJewellers\ManglamJewellers.png" />
     <Content Include="Images\Stores\McDonalds\McDonalds.jpg" />
+    <Content Include="Images\Stores\Medlife\medlife.jpg" />
     <Content Include="Images\Stores\Metro\Metro.png" />
+    <Content Include="Images\Stores\MI\MI.png" />
     <Content Include="Images\Stores\Mobikwik\Mobikwik.jpg" />
     <Content Include="Images\Stores\Montecarlo\Montecarlo.jpg" />
     <Content Include="Images\Stores\Musafir\Musafir.jpg" />
@@ -580,6 +583,7 @@
     <Content Include="Images\Stores\Voonik\voonik.png" />
     <Content Include="Images\Stores\Voylla\Voylla.png" />
     <Content Include="Images\Stores\WearYourShine\WearYourShine.jpg" />
+    <Content Include="Images\Stores\Welspun\welspun.jpg" />
     <Content Include="Images\Stores\Wonderchef\Wonderchef.jpg" />
     <Content Include="Images\Stores\WOW\WOW.jpg" />
     <Content Include="Images\Stores\Yatra\Yatra.png" />

@@ -23,9 +23,7 @@ namespace DealDunia.Web.Controllers
         public SourceController()
         {
             this.repository = new CommonRepository();
-        }
-
-        #region VCOM
+        }        
         public void UpdateCoupons(string Source)
         {
             try
@@ -132,14 +130,14 @@ namespace DealDunia.Web.Controllers
                     foreach (var x in Offers)
                     {
                         JToken offer = x.Value;
-                        if (offer["Offer"]["name"].ToString().ToLower().Contains(" india"))
-                        {
+                        //if (offer["Offer"]["name"].ToString().ToLower().Contains(" india"))
+                        //{
                             SourceStore store = new SourceStore();
                             store.id = Convert.ToInt16(offer["Offer"]["id"]);
                             store.name = offer["Offer"]["name"].ToString();
                             store.expiration_date = offer["Offer"]["expiration_date"].ToString();
                             stores.Add(store);
-                        }
+                        //}
                     }
                     DataTable dt = new DataTable();
                     dt = Utilities.ToDataTable(stores);
@@ -150,9 +148,7 @@ namespace DealDunia.Web.Controllers
             {
                 string errorText = ex.Message;
             }
-        }
-
-        #endregion
+        }        
 
     }
 }

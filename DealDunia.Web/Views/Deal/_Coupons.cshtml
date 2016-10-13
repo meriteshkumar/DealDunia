@@ -17,7 +17,12 @@
                         <div class="divDealTitle">
                             <span class="dealTitle">@coupon.CouponTitle.Replace("&amp;", "&")</span>
                         </div>
-                        <div class="divDealCodeOuter">
+                        @{
+
+            var divDealCouponOuter = (coupon.OfferType == "Coupon" ? "divCouponOuter" : "divDealCodeOuter");
+
+                        }
+                        <div class="@divDealCouponOuter">
                             <span><a class="divDealCodeInner" target="_blank" href="@Url.Action("Out", "Out", new { source = "coupons", id = coupon.CouponId })">@if (@coupon.OfferType == "Coupon")
                                                                                                                                                                  { @coupon.CouponCode;
                                                                                                                                                                  }

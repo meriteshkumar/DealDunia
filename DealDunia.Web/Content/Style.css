@@ -4,6 +4,17 @@
     background-color:#f2f2f2;
 }
 
+/*.brandlogo
+{
+    background-color:#d43f3a;
+    color:white;
+    font-size:30px;
+    padding:5px;
+}*/
+.showcouopon{
+
+}
+
 h1, h2, h3, h4
 {
     font-weight: 300;    
@@ -140,7 +151,7 @@ label
     margin: 2px;
     text-align: center;
     vertical-align: middle;
-    border-color: #eee;
+    border-color: lightgray;
     /*background-color:#fbfbfb;*/
     background-color: #fff;
     -moz-border-radius: 5px;
@@ -202,6 +213,19 @@ label
     padding: 3px;
 }
 
+.divCouponOuter
+{
+    height: 30px;
+    width: 70%;
+    margin: auto;
+    background-color: #98c44b;
+    font-weight: bold;
+    font-size: 15px;
+    vertical-align: middle;
+    border: 1px #fff dashed;
+    padding: 3px;    
+}
+
 .divDealCodeInner
 {
     color: white;
@@ -223,7 +247,7 @@ label
 
 .divProBox
 {
-    width: 180px;
+    /*width: 180px;*/
     height: 335px;
     border: solid 1px;
     color: lightgray;
