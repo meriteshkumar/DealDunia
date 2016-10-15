@@ -1,0 +1,97 @@
+﻿@model IEnumerable<DealDunia.Web.Areas.Admin.Controllers.StoreViewModel>
+
+@{
+    ViewBag.Title = "Stores";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Store</h2>
+    </div>
+    <div class="col-md-6" style="float: right; text-align: right; top: 21px;">
+        <button class="btn btn-primary add-store">Add Store</button>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+    </div>
+</div>
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">Search</h3>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-1 control-label" style="max-height: none;">Store Source</label>
+                <div class="col-sm-3 container-store-source">
+                    <!-- placeholder for store source dropdown -->
+                </div>
+                <label class="col-sm-2 control-label" style="max-height: none;">Store Name</label>
+                <div class="col-sm-3">
+                    <input type="text" class="form-control" id="search-store-name" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-1 control-label" style="max-height: none;">Status</label>
+                <div class="col-sm-2">
+                    <select class="form-control" id="search-status">
+                        <option value="">All</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
+                <label class="col-sm-1 control-label" style="max-height: none;">Featured</label>
+                <div class="col-sm-2 dropdown">
+                    <select class="form-control" id="search-featured">
+                        <option value="">All</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
+                <label class="col-sm-1 control-label" style="max-height: none;">Active</label>
+                <div class="col-sm-2 dropdown">
+                    <select class="form-control" id="search-active">
+                        <option value="">All</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </div>
+                <div class="col-sm-2">
+                    <button class="btn btn-default btnSearch">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="container-store-grid">
+    @Html.Partial("StoreGrid", Model)
+</div>
+<script type="text/javascript" src="~/Areas/Admin/Scripts/store.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var settings = {
+            storeSourceDropDown: '@Url.Action("_StoreSourceDropDown", "Coupons")',
+            storeUrl: '@Url.Action("StoreGrid", "Stores")'
+        };
+
+        init();
+
+        function init() {
+            loadStoreSource(settings.storeSourceDropDown);
+        }
+
+        $(".btnSearch").click(function () {
+            var storeSourceId = $("div.container-store-source #ss-dropdown").val();
+            var storeName = $("#search-store-name").val();
+            var featured = $("#search-featured").val();
+            var active = $("#search-active").val();
+            var status = $("#search-status").val();
+
+            getStores(settings.storeUrl, { storeSourceId: storeSourceId, storeName: storeName, featured: featured, status: status, active: active });
+
+        });
+    });
+</script>

@@ -131,6 +131,7 @@
     <Compile Include="Areas\Admin\Controllers\CouponsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ExclusiveDealController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\StoresController.cs" />
     <Compile Include="Areas\Admin\Models\LoginViewModel.cs" />
     <Compile Include="Areas\Admin\Models\MetaData\ExcDealMetaData.cs" />
     <Compile Include="Areas\Coupon.cs">
@@ -188,6 +189,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Content Include="404.html" />
     <Content Include="Areas\Admin\Scripts\admin.js" />
+    <Content Include="Areas\Admin\Scripts\store.js" />
     <Content Include="Areas\EComModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>EComModel.edmx</DependentUpon>
@@ -258,6 +260,8 @@
     <Content Include="Content\search.json" />
     <Content Include="Areas\Admin\Views\Coupons\_EditCoupon.cshtml" />
     <Content Include="Areas\Admin\Views\ExclusiveDeal\_EditExcDeal.cshtml" />
+    <Content Include="Areas\Admin\Views\Stores\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Stores\StoreGrid.cshtml" />
     <None Include="Properties\PublishProfiles\DealDunia.pubxml" />
     <None Include="Properties\PublishProfiles\GMD.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
