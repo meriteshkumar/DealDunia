@@ -23,6 +23,7 @@
     <EntitySetMapping Name="StoreCategories">
       <EntityTypeMapping TypeName="EcomModel.StoreCategory">
         <MappingFragment StoreEntitySet="StoreCategory">
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
           <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
           <ScalarProperty Name="ParentId" ColumnName="ParentId" />
@@ -35,6 +36,8 @@
     <EntitySetMapping Name="Stores">
       <EntityTypeMapping TypeName="EcomModel.Store">
         <MappingFragment StoreEntitySet="Store">
+          <ScalarProperty Name="StoreDescription" ColumnName="StoreDescription" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
           <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="Active" ColumnName="Active" />
@@ -52,5 +55,61 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Coupons">
+      <EntityTypeMapping TypeName="EcomModel.Coupon">
+        <MappingFragment StoreEntitySet="Coupons">
+          <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Exclusive" ColumnName="Exclusive" />
+          <ScalarProperty Name="Featured" ColumnName="Featured" />
+          <ScalarProperty Name="CouponExpiry" ColumnName="CouponExpiry" />
+          <ScalarProperty Name="CouponStart" ColumnName="CouponStart" />
+          <ScalarProperty Name="OfferURL" ColumnName="OfferURL" />
+          <ScalarProperty Name="CouponCode" ColumnName="CouponCode" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="StoreCategoryId" ColumnName="StoreCategoryId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="CouponTitle" ColumnName="CouponTitle" />
+          <ScalarProperty Name="OfferType" ColumnName="OfferType" />
+          <ScalarProperty Name="OfferName" ColumnName="OfferName" />
+          <ScalarProperty Name="OfferId" ColumnName="OfferId" />
+          <ScalarProperty Name="PromoId" ColumnName="PromoId" />
+          <ScalarProperty Name="StoreSourceId" ColumnName="StoreSourceId" />
+          <ScalarProperty Name="CouponId" ColumnName="CouponId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreSources">
+      <EntityTypeMapping TypeName="EcomModel.StoreSource">
+        <MappingFragment StoreEntitySet="StoreSource">
+          <ScalarProperty Name="StoreSourceName" ColumnName="StoreSourceName" />
+          <ScalarProperty Name="StoreSourceCode" ColumnName="StoreSourceCode" />
+          <ScalarProperty Name="StoreSourceId" ColumnName="StoreSourceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StoreCategoryMaps">
+      <EntityTypeMapping TypeName="EcomModel.StoreCategoryMap">
+        <MappingFragment StoreEntitySet="StoreCategoryMap">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="StoreCategoryId" ColumnName="StoreCategoryId" />
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="StoreCatMapId" ColumnName="StoreCatMapId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="SaveCoupon" FunctionName="EcomModel.Store.SaveCoupon" />
+    <EntitySetMapping Name="CouponCategoryMaps">
+      <EntityTypeMapping TypeName="EcomModel.CouponCategoryMap">
+        <MappingFragment StoreEntitySet="CouponCategoryMap">
+          <ScalarProperty Name="StoreCategoryId" ColumnName="StoreCategoryId" />
+          <ScalarProperty Name="CouponId" ColumnName="CouponId" />
+          <ScalarProperty Name="CouponCatMapId" ColumnName="CouponCatMapId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="UpdateCoupon" FunctionName="EcomModel.Store.UpdateCoupon" />
   </EntityContainerMapping>
 </Mapping>

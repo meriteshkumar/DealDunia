@@ -22,12 +22,11 @@
 
     <style type="text/css">
         /* Start by setting display:none to make this hidden.
-   Then we position it in relation to the viewport window
-   with position:fixed. Width, height, top and left speak
-   speak for themselves. Background we set to 80% white with
-   our animation centered, and no-repeating */
-        .modal
-        {
+        Then we position it in relation to the viewport window
+        with position:fixed. Width, height, top and left speak
+        speak for themselves. Background we set to 80% white with
+        our animation centered, and no-repeating */
+        .modal {
             display: none;
             position: fixed;
             z-index: 1000;
@@ -39,16 +38,14 @@
         }
 
         /* When the body has the loading class, we turn
-   the scrollbar off with overflow:hidden */
-        body.loading
-        {
+        the scrollbar off with overflow:hidden */
+        body.loading {
             overflow: hidden;
         }
 
             /* Anytime the body has the loading class, our
-   modal element will be visible */
-            body.loading .modal
-            {
+        modal element will be visible */
+            body.loading .modal {
                 display: block;
             }
     </style>
@@ -102,7 +99,7 @@
             });
         }
 
-        function searchResult(obj, e) {            
+        function searchResult(obj, e) {
             if (e.keyCode === 27) { //'escap' key
                 obj.value = '';
                 $('#results').html('');
@@ -134,26 +131,30 @@
 
     <div id="nav1" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-            <div class="navbar-collapse col-lg-2 col-md-2 col-sm-2 col-sx-2">
-                <a class="navbar-brand" style="padding-top:0px;" href="@Url.Action("Index", "Category")">
-                    <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/grabmedeal_200x57.png" /></a>
-            </div>
-            <div class="navbar-collapse">
-                @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
-                {
-                    <div class="input-group col-lg-5 col-md-5 col-sm-5 col-sx-5">
-                        <input id="searchtext" name="searchtext" type="hidden" />
-                        <input type="text" class="form-control search-text" autocomplete="off" placeholder="Search for Store & Category" value="@ViewBag.SearchedItem" onkeyup="searchResult(this, event);">
-                        <div id="results" class="result-div"></div>
-                        <div class="input-group-btn" style="display: inline">
-                            <button type="submit" style="height: 40px; -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;"
-                                class="btn btn-danger">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </div>
+            <div class="row">
+                <div class="navbar-collapse col-lg-2 col-md-2 col-sm-2 col-sx-2">
+                    <a class="navbar-brand" style="padding-top:0px;" href="@Url.Action("Index", "Category")">
+                        <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/grabmedeal_200x57.png" />
+                    </a>
+                </div>
 
-                    </div>
-                }
+                <div class="navbar-collapse">
+                    @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
+                    {
+                        <div class="input-group col-lg-5 col-md-5 col-sm-5 col-sx-5">
+                            <input id="searchtext" name="searchtext" type="hidden" />
+                            <input type="text" class="form-control search-text" autocomplete="off" placeholder="Search for Store & Category" value="@ViewBag.SearchedItem" onkeyup="searchResult(this, event);">
+                            <div id="results" class="result-div"></div>
+                            <div class="input-group-btn" style="display: inline">
+                                <button type="submit" style="height: 40px; -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;"
+                                        class="btn btn-danger">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </div>
+
+                        </div>
+                    }
+                </div>
             </div>
         </div>
     </div>
@@ -169,10 +170,10 @@
 
             <div class="row">
                 @*<div class="col-md-2">
-                  <button type="button" class="btn btn-default" aria-label="Left Align">
-                        <span class="glyphicon glyphicon-home" aria-hidden="true">Home</span>
-                    </button>
-                </div>*@
+                      <button type="button" class="btn btn-default" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true">Home</span>
+                        </button>
+                    </div>*@
                 @*<div class="col-md-12">*@
                 <div class="collapse navbar-collapse" id="mainNav">
                     @{Html.RenderPartial("_MegaMenu");}
@@ -189,43 +190,57 @@
 
     <footer class="navbar-bottom" style="margin-top: 10px;">
         <!-- Javascript Ad Tag: 534 -->
-<div id="vcm5341laPZT"></div>
-<script src="http://tracking.vcommission.com/aff_ad?campaign_id=534&aff_id=46159&format=javascript&format=js&divid=vcm5341laPZT" type="text/javascript"></script>
-<noscript><iframe src="http://tracking.vcommission.com/aff_ad?campaign_id=534&aff_id=46159&format=javascript&format=iframe" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" width="728" height="90"></iframe></noscript>
-<!-- // End Ad Tag -->
+        <div id="vcm5341laPZT"></div>
+        <script src="http://tracking.vcommission.com/aff_ad?campaign_id=534&aff_id=46159&format=javascript&format=js&divid=vcm5341laPZT" type="text/javascript"></script>
+        <noscript><iframe src="http://tracking.vcommission.com/aff_ad?campaign_id=534&aff_id=46159&format=javascript&format=iframe" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" width="728" height="90"></iframe></noscript>
+        <!-- // End Ad Tag -->
         <div class="container-fluid" style="padding-top: 10px; background-color: #555555;">
-            <div class="col-md-3">
-                <!-- Javascript Ad Tag: 2086 -->
-                <div id="vcm20868zB4Xt"></div>
-                <script src="http://tracking.vcommission.com/aff_ad?campaign_id=2086&aff_id=46159&format=javascript&format=js&divid=vcm20868zB4Xt" type="text/javascript"></script>
-                <noscript>
-                    <iframe src="http://tracking.vcommission.com/aff_ad?campaign_id=2086&aff_id=46159&format=javascript&format=iframe" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" width="300" height="250"></iframe>
-                </noscript>
-                <!-- // End Ad Tag -->
-            </div>
-            <div class="col-md-3">
-                <!-- Javascript Ad Tag: 2082 Hotels -->
-                <div id="vcm2082aJCDK8" style="padding-bottom: 10px;"></div>
-                <script src="http://tracking.vcommission.com/aff_ad?campaign_id=2082&aff_id=46159&format=javascript&format=js&divid=vcm2082aJCDK8" type="text/javascript"></script>
-                <noscript>
-                    <iframe src="http://tracking.vcommission.com/aff_ad?campaign_id=2082&aff_id=46159&format=javascript&format=iframe" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" width="300" height="250"></iframe>
-                </noscript>
-                <!-- // End Ad Tag -->
-            </div>
-            <div class="col-md-3">
-                <!-- Javascript Ad Tag: 2088 -->
-                <div id="vcm2088zpo193" style="padding-bottom: 10px;"></div>
-                <script src="http://tracking.vcommission.com/aff_ad?campaign_id=2088&aff_id=46159&format=javascript&format=js&divid=vcm2088zpo193" type="text/javascript"></script>
-                <noscript>
-                    <iframe src="http://tracking.vcommission.com/aff_ad?campaign_id=2088&aff_id=46159&format=javascript&format=iframe" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" width="300" height="250"></iframe>
-                </noscript>
-                <!-- // End Ad Tag -->
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Javascript Ad Tag: 2086 -->
+                    <div id="vcm20868zB4Xt"></div>
+                    <script src="http://tracking.vcommission.com/aff_ad?campaign_id=2086&aff_id=46159&format=javascript&format=js&divid=vcm20868zB4Xt" type="text/javascript"></script>
+                    <noscript>
+                        <iframe src="http://tracking.vcommission.com/aff_ad?campaign_id=2086&aff_id=46159&format=javascript&format=iframe" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" width="300" height="250"></iframe>
+                    </noscript>
+                    <!-- // End Ad Tag -->
+                </div>
+                <div class="col-md-3">
+                    <!-- Javascript Ad Tag: 2082 Hotels -->
+                    <div id="vcm2082aJCDK8" style="padding-bottom: 10px;"></div>
+                    <script src="http://tracking.vcommission.com/aff_ad?campaign_id=2082&aff_id=46159&format=javascript&format=js&divid=vcm2082aJCDK8" type="text/javascript"></script>
+                    <noscript>
+                        <iframe src="http://tracking.vcommission.com/aff_ad?campaign_id=2082&aff_id=46159&format=javascript&format=iframe" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" width="300" height="250"></iframe>
+                    </noscript>
+                    <!-- // End Ad Tag -->
+                </div>
+                <div class="col-md-3">
+                    <!-- Javascript Ad Tag: 2088 -->
+                    <div id="vcm2088zpo193" style="padding-bottom: 10px;"></div>
+                    <script src="http://tracking.vcommission.com/aff_ad?campaign_id=2088&aff_id=46159&format=javascript&format=js&divid=vcm2088zpo193" type="text/javascript"></script>
+                    <noscript>
+                        <iframe src="http://tracking.vcommission.com/aff_ad?campaign_id=2088&aff_id=46159&format=javascript&format=iframe" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" width="300" height="250"></iframe>
+                    </noscript>
+                    <!-- // End Ad Tag -->
+                </div>
+                <div class="col-md-3">
+                    <div id="fb-root"></div>
+                    <script>
+                        (function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s); js.id = id;
+                            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                    <div class="fb-page" data-href="https://www.facebook.com/GrabMeDeal" data-tabs="timeline" data-width="300" data-height="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GrabMeDeal" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GrabMeDeal">Grabmedeal</a></blockquote></div>
+                </div>
             </div>
         </div>
         <div class="container-fluid" style="background-color: #333;">
             @* <div class="col-md-12 panel-footer text-center">
-                @Html.Action("Menu", "Nav", new { position = "FOOTER" })
-            </div>*@
+                    @Html.Action("Menu", "Nav", new { position = "FOOTER" })
+                </div>*@
 
             <div class="copyright">
                 Copyright © GrabMeDeal 2016. All Rights Reserved

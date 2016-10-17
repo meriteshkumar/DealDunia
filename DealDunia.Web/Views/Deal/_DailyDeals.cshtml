@@ -11,7 +11,7 @@
                 <div class="divDeal">
                     <div class="divDealImg">
                         <a target="_blank" href="@Url.Action("Out", "Out", new { source = "daily-deals", id = @deal.DailyDealId })">
-                            <img class="store_logo" alt="@deal.Title" src="@Url.Content("~/Images/" + deal.Image)" /></a>
+                            <img itemprop="image" class="store_logo" alt="@deal.Title" src="@Url.Content("~/Images/" + deal.Image)" /></a>
                     </div>                    
                     <div class="divDealTitle">
                         <a class="dealTitle" target="_blank" href="@Url.Action("Out", "Out", new { source = "daily-deals", id = @deal.DailyDealId })">@deal.Title</a>

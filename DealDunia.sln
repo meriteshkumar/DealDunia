@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealDunia.Service", "DealDunia.Service\DealDunia.Service.csproj", "{5BE7CA64-4E32-47ED-BA30-0945956CF1C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DealDunia.Domain", "DealDunia.Domain\DealDunia.Domain.csproj", "{479E8F62-110D-47E2-B71E-C04D50E80CB9}"

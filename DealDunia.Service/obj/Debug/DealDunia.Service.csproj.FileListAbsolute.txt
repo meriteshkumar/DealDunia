@@ -5,3 +5,11 @@ E:\DealDunia\DealDunia.Service\bin\DealDunia.Infrastructure.pdb
 E:\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.csprojResolveAssemblyReference.cache
 E:\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.dll
 E:\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.pdb
+F:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Service.dll.config
+F:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Service.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Service.pdb
+F:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Infrastructure.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Infrastructure.pdb
+F:\Affiliate\Application\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.csprojResolveAssemblyReference.cache
+F:\Affiliate\Application\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.pdb

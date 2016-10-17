@@ -1,0 +1,1399 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\Users\Admin\Desktop\GMD</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="404.html">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Areas/Admin/Scripts/admin.js">
+      <publishTime>09/28/2016 21:01:02</publishTime>
+    </File>
+    <File Include="Areas/Admin/Scripts/store.js">
+      <publishTime>10/16/2016 10:49:31</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Account/Login.cshtml">
+      <publishTime>10/17/2016 12:48:29</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Coupons/Index.cshtml">
+      <publishTime>10/04/2016 16:44:57</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Coupons/_CouponGrid.cshtml">
+      <publishTime>10/04/2016 16:04:28</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Coupons/_EditCoupon.cshtml">
+      <publishTime>10/04/2016 16:04:28</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Coupons/_StoreDropDown.cshtml">
+      <publishTime>08/17/2016 14:59:52</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Coupons/_StoreSourceDropDown.cshtml">
+      <publishTime>08/16/2016 15:38:49</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/ExclusiveDeal/Index.cshtml">
+      <publishTime>10/04/2016 16:04:28</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/ExclusiveDeal/_EditExcDeal.cshtml">
+      <publishTime>09/30/2016 16:44:14</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/ExclusiveDeal/_IndexView.cshtml">
+      <publishTime>09/28/2016 21:01:03</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/ExclusiveDeal/_StoreCategoryDropDown.cshtml">
+      <publishTime>08/15/2016 13:14:21</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/ExclusiveDeal/_StoreDropDown.cshtml">
+      <publishTime>08/15/2016 13:14:21</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Home/Index.cshtml">
+      <publishTime>10/06/2016 12:36:44</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Shared/_Layout.cshtml">
+      <publishTime>10/16/2016 10:49:31</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Stores/Index.cshtml">
+      <publishTime>10/16/2016 10:49:31</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Stores/StoreGrid.cshtml">
+      <publishTime>10/16/2016 10:49:31</publishTime>
+    </File>
+    <File Include="Areas/Admin/Views/Web.config">
+      <publishTime>10/06/2016 12:37:13</publishTime>
+    </File>
+    <File Include="Areas/EComModel.edmx.diagram">
+      <publishTime>10/01/2016 20:34:01</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>05/16/2016 15:24:01</publishTime>
+    </File>
+    <File Include="bin/DealDunia.Domain.dll">
+      <publishTime>10/17/2016 13:19:20</publishTime>
+    </File>
+    <File Include="bin/DealDunia.Infrastructure.dll">
+      <publishTime>10/17/2016 13:19:19</publishTime>
+    </File>
+    <File Include="bin/DealDunia.Service.dll">
+      <publishTime>10/17/2016 13:19:20</publishTime>
+    </File>
+    <File Include="bin/DealDunia.Web.dll">
+      <publishTime>10/17/2016 13:19:21</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>08/11/2016 12:40:15</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>05/16/2016 15:24:02</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Mvc.FixedDisplayModes.dll">
+      <publishTime>05/16/2016 15:24:02</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/30/2016 19:11:05</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>05/16/2016 15:24:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>05/16/2016 15:24:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>05/16/2016 15:24:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>05/16/2016 15:24:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>05/16/2016 15:24:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>05/16/2016 15:24:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>05/16/2016 15:24:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>05/16/2016 15:24:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>05/16/2016 15:24:02</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>05/16/2016 15:24:02</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>05/16/2016 15:24:03</publishTime>
+    </File>
+    <File Include="Content/Books.xml">
+      <publishTime>07/01/2016 15:24:58</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>05/16/2016 15:23:59</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>05/16/2016 15:23:59</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>05/16/2016 15:23:59</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css.map">
+      <publishTime>05/16/2016 15:23:59</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>05/16/2016 15:23:59</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>05/16/2016 15:23:59</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>07/15/2016 11:09:44</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>05/16/2016 15:23:59</publishTime>
+    </File>
+    <File Include="Content/carousel.css">
+      <publishTime>10/04/2016 16:00:49</publishTime>
+    </File>
+    <File Include="Content/carousel.min.css">
+      <publishTime>10/04/2016 16:04:27</publishTime>
+    </File>
+    <File Include="Content/category.css">
+      <publishTime>09/04/2016 12:56:24</publishTime>
+    </File>
+    <File Include="Content/category.min.css">
+      <publishTime>10/04/2016 16:04:27</publishTime>
+    </File>
+    <File Include="Content/Electronics.xml">
+      <publishTime>07/01/2016 15:24:59</publishTime>
+    </File>
+    <File Include="Content/Flipkart.xml">
+      <publishTime>05/22/2016 14:26:01</publishTime>
+    </File>
+    <File Include="Content/jquery-ui.css">
+      <publishTime>08/11/2016 12:40:14</publishTime>
+    </File>
+    <File Include="Content/jquery-ui.min.css">
+      <publishTime>08/11/2016 12:40:14</publishTime>
+    </File>
+    <File Include="Content/megamenu.css">
+      <publishTime>10/13/2016 13:04:47</publishTime>
+    </File>
+    <File Include="Content/megamenu.min.css">
+      <publishTime>10/13/2016 13:04:47</publishTime>
+    </File>
+    <File Include="Content/menu.css">
+      <publishTime>08/31/2016 12:20:19</publishTime>
+    </File>
+    <File Include="Content/menu.min.css">
+      <publishTime>10/04/2016 16:04:27</publishTime>
+    </File>
+    <File Include="Content/menu1.css">
+      <publishTime>09/07/2016 13:19:40</publishTime>
+    </File>
+    <File Include="Content/search.json">
+      <publishTime>10/17/2016 12:42:57</publishTime>
+    </File>
+    <File Include="Content/sidebar-menu.css">
+      <publishTime>08/31/2016 12:44:29</publishTime>
+    </File>
+    <File Include="Content/style.css">
+      <publishTime>10/17/2016 13:16:37</publishTime>
+    </File>
+    <File Include="Content/Style.min.css">
+      <publishTime>10/17/2016 13:17:13</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>09/19/2016 12:38:12</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>05/17/2016 11:53:26</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>05/17/2016 11:53:26</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>05/17/2016 11:53:26</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>05/17/2016 11:53:26</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>05/17/2016 11:53:26</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>05/16/2016 15:23:59</publishTime>
+    </File>
+    <File Include="Images/Carousel/Category_01-revised._UX1500_SX1500_CB277090537_.jpg">
+      <publishTime>10/17/2016 11:57:09</publishTime>
+    </File>
+    <File Include="Images/Carousel/flikart_16102016_1.PNG">
+      <publishTime>10/17/2016 11:57:17</publishTime>
+    </File>
+    <File Include="Images/Carousel/PCfinal._UX1500_SX1500_CB279837412_.jpg">
+      <publishTime>10/17/2016 11:57:09</publishTime>
+    </File>
+    <File Include="Images/Carousel/W2_1500x150_D1_.jpg">
+      <publishTime>10/17/2016 11:57:02</publishTime>
+    </File>
+    <File Include="Images/Categories/Baby_Kids.png">
+      <publishTime>10/17/2016 10:53:43</publishTime>
+    </File>
+    <File Include="Images/Categories/Baby_Kids/Accessories.png">
+      <publishTime>10/17/2016 12:09:16</publishTime>
+    </File>
+    <File Include="Images/Categories/Baby_Kids/Baby_Care.png">
+      <publishTime>10/17/2016 12:09:31</publishTime>
+    </File>
+    <File Include="Images/Categories/Baby_Kids/Boys_Shoes.png">
+      <publishTime>10/17/2016 12:09:46</publishTime>
+    </File>
+    <File Include="Images/Categories/Baby_Kids/Boy_Cloth.png">
+      <publishTime>10/17/2016 12:06:52</publishTime>
+    </File>
+    <File Include="Images/Categories/Baby_Kids/Girls_Cloth.png">
+      <publishTime>10/17/2016 10:53:43</publishTime>
+    </File>
+    <File Include="Images/Categories/Baby_Kids/Girls_Shoes.png">
+      <publishTime>10/17/2016 10:53:54</publishTime>
+    </File>
+    <File Include="Images/Categories/Baby_Kids/Infant_Cloth.png">
+      <publishTime>10/17/2016 10:54:07</publishTime>
+    </File>
+    <File Include="Images/Categories/Baby_Kids/Toys.png">
+      <publishTime>10/17/2016 12:07:40</publishTime>
+    </File>
+    <File Include="Images/Categories/Electronics.png">
+      <publishTime>10/17/2016 10:53:54</publishTime>
+    </File>
+    <File Include="Images/Categories/Electronics/AV.png">
+      <publishTime>10/17/2016 12:07:53</publishTime>
+    </File>
+    <File Include="Images/Categories/Electronics/Cam_Accessories.png">
+      <publishTime>10/17/2016 12:08:07</publishTime>
+    </File>
+    <File Include="Images/Categories/Electronics/Game_SW.png">
+      <publishTime>10/17/2016 12:08:20</publishTime>
+    </File>
+    <File Include="Images/Categories/Electronics/Laptop_Desktop.png">
+      <publishTime>10/17/2016 12:08:36</publishTime>
+    </File>
+    <File Include="Images/Categories/Home_Kitchen.png">
+      <publishTime>10/17/2016 10:54:06</publishTime>
+    </File>
+    <File Include="Images/Categories/Home_Kitchen/Furnture.png">
+      <publishTime>10/17/2016 12:08:50</publishTime>
+    </File>
+    <File Include="Images/Categories/Home_Kitchen/Home_Appliance.png">
+      <publishTime>10/17/2016 12:09:05</publishTime>
+    </File>
+    <File Include="Images/Categories/Home_Kitchen/Home_Decor.png">
+      <publishTime>10/17/2016 12:09:22</publishTime>
+    </File>
+    <File Include="Images/Categories/Home_Kitchen/Home_Furnishing.png">
+      <publishTime>10/17/2016 10:53:43</publishTime>
+    </File>
+    <File Include="Images/Categories/Home_Kitchen/Kithcen_Dining.png">
+      <publishTime>10/17/2016 10:53:54</publishTime>
+    </File>
+    <File Include="Images/Categories/Men.png">
+      <publishTime>10/17/2016 12:08:16</publishTime>
+    </File>
+    <File Include="Images/Categories/Men/Accessories.png">
+      <publishTime>10/17/2016 10:54:06</publishTime>
+    </File>
+    <File Include="Images/Categories/Men/Bags_Belts.png">
+      <publishTime>10/17/2016 12:10:10</publishTime>
+    </File>
+    <File Include="Images/Categories/Men/Clothing.png">
+      <publishTime>10/17/2016 12:07:41</publishTime>
+    </File>
+    <File Include="Images/Categories/Men/Footwear.png">
+      <publishTime>10/17/2016 12:07:54</publishTime>
+    </File>
+    <File Include="Images/Categories/Men/Grooming.png">
+      <publishTime>10/17/2016 12:08:08</publishTime>
+    </File>
+    <File Include="Images/Categories/Men/Jewellery.png">
+      <publishTime>10/17/2016 12:08:20</publishTime>
+    </File>
+    <File Include="Images/Categories/Mobiles.png">
+      <publishTime>10/17/2016 12:08:31</publishTime>
+    </File>
+    <File Include="Images/Categories/Mobiles/Mobiles.png">
+      <publishTime>10/17/2016 12:08:35</publishTime>
+    </File>
+    <File Include="Images/Categories/Mobiles/Mobiles_Access.png">
+      <publishTime>10/17/2016 12:08:49</publishTime>
+    </File>
+    <File Include="Images/Categories/Others.png">
+      <publishTime>10/17/2016 12:08:46</publishTime>
+    </File>
+    <File Include="Images/Categories/Others/Automobiles.png">
+      <publishTime>10/17/2016 12:09:06</publishTime>
+    </File>
+    <File Include="Images/Categories/Others/Health_Fitness.png">
+      <publishTime>10/17/2016 10:53:43</publishTime>
+    </File>
+    <File Include="Images/Categories/Others/Office_Supplies.png">
+      <publishTime>10/17/2016 10:53:55</publishTime>
+    </File>
+    <File Include="Images/Categories/Others/Sports.png">
+      <publishTime>10/17/2016 10:54:07</publishTime>
+    </File>
+    <File Include="Images/Categories/Others/Unisex.png">
+      <publishTime>10/17/2016 12:08:40</publishTime>
+    </File>
+    <File Include="Images/Categories/Women.png">
+      <publishTime>10/17/2016 12:09:01</publishTime>
+    </File>
+    <File Include="Images/Categories/Women/Accessories.png">
+      <publishTime>10/17/2016 12:08:55</publishTime>
+    </File>
+    <File Include="Images/Categories/Women/Art_Jewel.png">
+      <publishTime>10/17/2016 12:09:09</publishTime>
+    </File>
+    <File Include="Images/Categories/Women/Bags.png">
+      <publishTime>10/17/2016 12:09:26</publishTime>
+    </File>
+    <File Include="Images/Categories/Women/Beauty.png">
+      <publishTime>10/17/2016 12:09:41</publishTime>
+    </File>
+    <File Include="Images/Categories/Women/Clothing.png">
+      <publishTime>10/17/2016 12:09:53</publishTime>
+    </File>
+    <File Include="Images/Categories/Women/Ethnic_wear.png">
+      <publishTime>10/17/2016 12:10:03</publishTime>
+    </File>
+    <File Include="Images/Categories/Women/Footwear.png">
+      <publishTime>10/17/2016 12:10:12</publishTime>
+    </File>
+    <File Include="Images/Categories/Women/Pre_Jewel.png">
+      <publishTime>10/17/2016 12:10:18</publishTime>
+    </File>
+    <File Include="Images/Category/automotive.png">
+      <publishTime>10/17/2016 10:53:13</publishTime>
+    </File>
+    <File Include="Images/Category/baby.png">
+      <publishTime>10/17/2016 10:53:13</publishTime>
+    </File>
+    <File Include="Images/Category/babycare.png">
+      <publishTime>10/17/2016 10:53:14</publishTime>
+    </File>
+    <File Include="Images/Category/beauty.png">
+      <publishTime>10/17/2016 10:53:15</publishTime>
+    </File>
+    <File Include="Images/Category/book.png">
+      <publishTime>10/17/2016 10:53:15</publishTime>
+    </File>
+    <File Include="Images/Category/Bus.png">
+      <publishTime>10/17/2016 10:53:16</publishTime>
+    </File>
+    <File Include="Images/Category/car.png">
+      <publishTime>10/17/2016 10:53:16</publishTime>
+    </File>
+    <File Include="Images/Category/clothing.png">
+      <publishTime>10/17/2016 10:53:17</publishTime>
+    </File>
+    <File Include="Images/Category/computer.png">
+      <publishTime>10/17/2016 10:53:17</publishTime>
+    </File>
+    <File Include="Images/Category/comp_lap.png">
+      <publishTime>10/17/2016 10:53:18</publishTime>
+    </File>
+    <File Include="Images/Category/datacard.png">
+      <publishTime>10/17/2016 10:53:18</publishTime>
+    </File>
+    <File Include="Images/Category/dining.png">
+      <publishTime>10/17/2016 10:53:19</publishTime>
+    </File>
+    <File Include="Images/Category/DTH.png">
+      <publishTime>10/17/2016 10:53:19</publishTime>
+    </File>
+    <File Include="Images/Category/electronics.png">
+      <publishTime>10/17/2016 10:53:13</publishTime>
+    </File>
+    <File Include="Images/Category/eyewear.jpg">
+      <publishTime>10/17/2016 10:53:13</publishTime>
+    </File>
+    <File Include="Images/Category/fashion.png">
+      <publishTime>10/17/2016 10:53:13</publishTime>
+    </File>
+    <File Include="Images/Category/flight.png">
+      <publishTime>10/17/2016 10:53:14</publishTime>
+    </File>
+    <File Include="Images/Category/food.png">
+      <publishTime>10/17/2016 10:53:14</publishTime>
+    </File>
+    <File Include="Images/Category/furniture.png">
+      <publishTime>10/17/2016 10:53:15</publishTime>
+    </File>
+    <File Include="Images/Category/games.png">
+      <publishTime>10/17/2016 10:53:15</publishTime>
+    </File>
+    <File Include="Images/Category/gift.png">
+      <publishTime>10/17/2016 10:53:16</publishTime>
+    </File>
+    <File Include="Images/Category/health.png">
+      <publishTime>10/17/2016 10:53:16</publishTime>
+    </File>
+    <File Include="Images/Category/health_beauty.png">
+      <publishTime>10/17/2016 10:53:17</publishTime>
+    </File>
+    <File Include="Images/Category/homeappliances.png">
+      <publishTime>10/17/2016 10:53:17</publishTime>
+    </File>
+    <File Include="Images/Category/homedecor.png">
+      <publishTime>10/17/2016 10:53:18</publishTime>
+    </File>
+    <File Include="Images/Category/home_kit.png">
+      <publishTime>10/17/2016 10:53:19</publishTime>
+    </File>
+    <File Include="Images/Category/hotel.png">
+      <publishTime>10/17/2016 10:53:13</publishTime>
+    </File>
+    <File Include="Images/Category/jewellery.png">
+      <publishTime>10/17/2016 10:53:14</publishTime>
+    </File>
+    <File Include="Images/Category/kidscloth.png">
+      <publishTime>10/17/2016 10:53:14</publishTime>
+    </File>
+    <File Include="Images/Category/lab.png">
+      <publishTime>10/17/2016 10:53:14</publishTime>
+    </File>
+    <File Include="Images/Category/laptop.png">
+      <publishTime>10/17/2016 10:53:15</publishTime>
+    </File>
+    <File Include="Images/Category/medicines.png">
+      <publishTime>10/17/2016 10:53:15</publishTime>
+    </File>
+    <File Include="Images/Category/menfashion.png">
+      <publishTime>10/17/2016 10:53:16</publishTime>
+    </File>
+    <File Include="Images/Category/menfootwear.jpg">
+      <publishTime>10/17/2016 10:53:16</publishTime>
+    </File>
+    <File Include="Images/Category/metro.png">
+      <publishTime>10/17/2016 10:53:16</publishTime>
+    </File>
+    <File Include="Images/Category/mobile.png">
+      <publishTime>10/17/2016 10:53:17</publishTime>
+    </File>
+    <File Include="Images/Category/mobile_tab.png">
+      <publishTime>10/17/2016 10:53:17</publishTime>
+    </File>
+    <File Include="Images/Category/noimage.png">
+      <publishTime>10/17/2016 10:53:17</publishTime>
+    </File>
+    <File Include="Images/Category/recharge.png">
+      <publishTime>10/17/2016 10:53:18</publishTime>
+    </File>
+    <File Include="Images/Category/refmobile.png">
+      <publishTime>10/17/2016 10:53:13</publishTime>
+    </File>
+    <File Include="Images/Category/sports.png">
+      <publishTime>10/17/2016 10:53:13</publishTime>
+    </File>
+    <File Include="Images/Category/sunglasses.png">
+      <publishTime>10/17/2016 10:53:13</publishTime>
+    </File>
+    <File Include="Images/Category/supplements.png">
+      <publishTime>10/17/2016 10:53:14</publishTime>
+    </File>
+    <File Include="Images/Category/tab.png">
+      <publishTime>10/17/2016 10:53:14</publishTime>
+    </File>
+    <File Include="Images/Category/toys.gif">
+      <publishTime>08/23/2016 17:20:56</publishTime>
+    </File>
+    <File Include="Images/Category/toys.png">
+      <publishTime>10/17/2016 10:53:15</publishTime>
+    </File>
+    <File Include="Images/Category/travels.png">
+      <publishTime>10/17/2016 10:53:16</publishTime>
+    </File>
+    <File Include="Images/Category/ui-icons_category.png">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Category/utilitybills.png">
+      <publishTime>10/17/2016 10:53:18</publishTime>
+    </File>
+    <File Include="Images/Category/womenfashion.png">
+      <publishTime>10/17/2016 10:53:18</publishTime>
+    </File>
+    <File Include="Images/Category/womenfootwear.png">
+      <publishTime>10/17/2016 10:53:18</publishTime>
+    </File>
+    <File Include="Images/Category/womeninnerwear.png">
+      <publishTime>10/17/2016 10:53:18</publishTime>
+    </File>
+    <File Include="Images/GrabMeDeal/GrabMeDeal.png">
+      <publishTime>10/17/2016 10:52:12</publishTime>
+    </File>
+    <File Include="Images/GrabMeDeal/grabmedeal_200x40.png">
+      <publishTime>10/17/2016 10:52:11</publishTime>
+    </File>
+    <File Include="Images/GrabMeDeal/grabmedeal_200x56.png">
+      <publishTime>10/17/2016 10:52:12</publishTime>
+    </File>
+    <File Include="Images/GrabMeDeal/grabmedeal_200x57.png">
+      <publishTime>10/17/2016 10:52:12</publishTime>
+    </File>
+    <File Include="Images/loading.gif">
+      <publishTime>10/17/2016 10:52:21</publishTime>
+    </File>
+    <File Include="Images/NoImage.png">
+      <publishTime>10/17/2016 10:52:26</publishTime>
+    </File>
+    <File Include="Images/Scroll-to-top-button.png">
+      <publishTime>10/17/2016 10:52:33</publishTime>
+    </File>
+    <File Include="Images/Stores/1mg/1mg.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/1mgAyush/1mgAyush.png">
+      <publishTime>10/17/2016 10:48:45</publishTime>
+    </File>
+    <File Include="Images/Stores/1mglabs/1mglabs.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/99tshirts/99tshirts.jpeg">
+      <publishTime>08/15/2016 13:34:30</publishTime>
+    </File>
+    <File Include="Images/Stores/Abof/Abof.png">
+      <publishTime>10/17/2016 10:48:46</publishTime>
+    </File>
+    <File Include="Images/Stores/Ace2three/Ace2three.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Adidas/Adidas.png">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Agoda/Agoda.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Airtel/Airtel.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Ajio/Ajio.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Aliexpress/aliexpress.jpg">
+      <publishTime>09/19/2016 11:20:53</publishTime>
+    </File>
+    <File Include="Images/Stores/Amante/Amante.png">
+      <publishTime>10/17/2016 10:51:26</publishTime>
+    </File>
+    <File Include="Images/Stores/Amazon/Amazon.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Amazon/AV.PNG">
+      <publishTime>10/17/2016 10:48:59</publishTime>
+    </File>
+    <File Include="Images/Stores/Amazon/DailyDeals.png">
+      <publishTime>10/17/2016 10:49:06</publishTime>
+    </File>
+    <File Include="Images/Stores/Amazon/Diapers.png">
+      <publishTime>10/17/2016 10:49:13</publishTime>
+    </File>
+    <File Include="Images/Stores/Amazon/Kitchen.PNG">
+      <publishTime>10/17/2016 10:51:58</publishTime>
+    </File>
+    <File Include="Images/Stores/Amazon/Laptops.png">
+      <publishTime>10/17/2016 10:52:04</publishTime>
+    </File>
+    <File Include="Images/Stores/Amazon/SmartPhones.png">
+      <publishTime>10/17/2016 12:07:07</publishTime>
+    </File>
+    <File Include="Images/Stores/Amazon/Speakers.png">
+      <publishTime>10/17/2016 12:07:15</publishTime>
+    </File>
+    <File Include="Images/Stores/Amazon/Tablets.PNG">
+      <publishTime>10/17/2016 12:07:23</publishTime>
+    </File>
+    <File Include="Images/Stores/Amazon/Televsions.png">
+      <publishTime>10/17/2016 12:07:33</publishTime>
+    </File>
+    <File Include="Images/Stores/AmericanSwan/AmericanSwan.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Amzer/Amzer.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Aplava/Aplava.png">
+      <publishTime>10/17/2016 12:07:34</publishTime>
+    </File>
+    <File Include="Images/Stores/Aquaguard/Aquaguard.png">
+      <publishTime>10/17/2016 12:07:36</publishTime>
+    </File>
+    <File Include="Images/Stores/ArchiesOnline/ArchiesOnline.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Art4u/Art4u.png">
+      <publishTime>10/17/2016 12:07:37</publishTime>
+    </File>
+    <File Include="Images/Stores/Askme/Askme.png">
+      <publishTime>10/17/2016 12:07:39</publishTime>
+    </File>
+    <File Include="Images/Stores/Avis/Avis.png">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Babyoye/Babyoye.png">
+      <publishTime>10/17/2016 12:07:41</publishTime>
+    </File>
+    <File Include="Images/Stores/BajajElecticals/BajajElecticals.png">
+      <publishTime>10/17/2016 10:51:50</publishTime>
+    </File>
+    <File Include="Images/Stores/BasicsLife/BasicsLife.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Bata/Bata.png">
+      <publishTime>10/17/2016 10:51:50</publishTime>
+    </File>
+    <File Include="Images/Stores/BehrouzBiryani/BehrouzBiryani.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Biba/Biba.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Bigbasket/Bigbasket.png">
+      <publishTime>10/17/2016 10:51:53</publishTime>
+    </File>
+    <File Include="Images/Stores/Bigchemist/Bigchemist.png">
+      <publishTime>10/17/2016 10:51:54</publishTime>
+    </File>
+    <File Include="Images/Stores/Blackberry/Blackberry.png">
+      <publishTime>10/17/2016 10:51:55</publishTime>
+    </File>
+    <File Include="Images/Stores/BlueStone/BlueStone.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/BookMyFlowers/BookMyFlowers.jpg">
+      <publishTime>10/17/2016 10:51:55</publishTime>
+    </File>
+    <File Include="Images/Stores/BucketKart/BucketKart.gif">
+      <publishTime>10/17/2016 10:51:55</publishTime>
+    </File>
+    <File Include="Images/Stores/CampusSutra/CampusSutra.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Candere/candere.jpg">
+      <publishTime>09/19/2016 10:42:15</publishTime>
+    </File>
+    <File Include="Images/Stores/Carzonrent/carzonrent.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Chainrooms/Chainrooms.png">
+      <publishTime>10/17/2016 10:51:56</publishTime>
+    </File>
+    <File Include="Images/Stores/Chaipoint/chaipoint.png">
+      <publishTime>10/17/2016 10:51:58</publishTime>
+    </File>
+    <File Include="Images/Stores/Chumbak/Chumbak.png">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Cleartrip/Cleartrip.gif">
+      <publishTime>10/17/2016 10:51:55</publishTime>
+    </File>
+    <File Include="Images/Stores/Clovia/Clovia.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Coke2Home/Coke2Home.png">
+      <publishTime>10/17/2016 10:51:56</publishTime>
+    </File>
+    <File Include="Images/Stores/CollegeDekho/CollegeDekho.png">
+      <publishTime>10/17/2016 10:51:57</publishTime>
+    </File>
+    <File Include="Images/Stores/CompuIndia/CompuIndia.png">
+      <publishTime>10/17/2016 10:51:58</publishTime>
+    </File>
+    <File Include="Images/Stores/CoolWinks/CoolWinks.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Craftsvilla/craftsvilla.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/DailyObjects/DailyObjects.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/DinoDirect/DinoDirect.png">
+      <publishTime>10/17/2016 10:48:44</publishTime>
+    </File>
+    <File Include="Images/Stores/Ditto/ditto.png">
+      <publishTime>10/17/2016 10:48:46</publishTime>
+    </File>
+    <File Include="Images/Stores/Dominos/Dominos.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Droom/droom.JPG">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/eBay/eBay.jpg">
+      <publishTime>09/26/2016 19:54:28</publishTime>
+    </File>
+    <File Include="Images/Stores/Evok/Evok.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/ExcitingLives/ExcitingLives.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Expedia/Expedia.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Faasos/Faasos.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Faballey/Faballey.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Fabfurnish/fabfurnish.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/FabHotels/FabHotels.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Fabindia/Fabindia.png">
+      <publishTime>10/17/2016 10:48:49</publishTime>
+    </File>
+    <File Include="Images/Stores/Fasherati/Fasherati.png">
+      <publishTime>10/17/2016 10:48:50</publishTime>
+    </File>
+    <File Include="Images/Stores/Fashionandyou/Fashionandyou.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Fashionara/Fashionara.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Fern_n_petals/ferns_n_petals.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/FirstCry/FirstCry.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Flaberry/Flaberry.png">
+      <publishTime>10/17/2016 10:48:53</publishTime>
+    </File>
+    <File Include="Images/Stores/Flintobox/Flintobox.png">
+      <publishTime>10/17/2016 10:48:55</publishTime>
+    </File>
+    <File Include="Images/Stores/Flipkart/DailyDeals.png">
+      <publishTime>10/17/2016 10:49:06</publishTime>
+    </File>
+    <File Include="Images/Stores/Flipkart/Flipkart.jpg">
+      <publishTime>09/26/2016 19:54:28</publishTime>
+    </File>
+    <File Include="Images/Stores/FlowerAura/FlowerAura.png">
+      <publishTime>10/17/2016 10:49:08</publishTime>
+    </File>
+    <File Include="Images/Stores/FlyingMachine/FlyingMachine.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Fnp/fnp.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Foodcloud/Foodcloud.png">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Foodfeasta/Foodfeasta.png">
+      <publishTime>10/17/2016 10:49:10</publishTime>
+    </File>
+    <File Include="Images/Stores/FoodPanda/FoodPanda.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Footprints360/Footprints360.jpg">
+      <publishTime>09/11/2016 12:13:16</publishTime>
+    </File>
+    <File Include="Images/Stores/FreeCharge/Freecharge.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Freecultr/Freecultr.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Freshmneu/Freshmneu.png">
+      <publishTime>10/17/2016 10:51:47</publishTime>
+    </File>
+    <File Include="Images/Stores/Fynd/Fynd.png">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/GiftaLove/GiftaLove.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/GiftEase/GiftEase.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/GiftsByMeeta/GiftsByMeeta.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Giftsmate/Giftsmate.png">
+      <publishTime>10/17/2016 10:51:49</publishTime>
+    </File>
+    <File Include="Images/Stores/Goibibo/Goibibo.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Grabmore/Grabmore.jpg">
+      <publishTime>08/15/2016 13:34:31</publishTime>
+    </File>
+    <File Include="Images/Stores/GreenDust/GreenDust.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Grocermax/Grocermax.png">
+      <publishTime>10/17/2016 10:51:51</publishTime>
+    </File>
+    <File Include="Images/Stores/HappilyUnmarried/HappilyUnmarried.png">
+      <publishTime>10/17/2016 10:51:52</publishTime>
+    </File>
+    <File Include="Images/Stores/HealthBuffet/HealthBuffet.png">
+      <publishTime>10/17/2016 10:51:52</publishTime>
+    </File>
+    <File Include="Images/Stores/HealthGenie/HealthGenie.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Healthkart/Healthkart.png">
+      <publishTime>10/17/2016 10:51:54</publishTime>
+    </File>
+    <File Include="Images/Stores/Hidesign/Hidesign.png">
+      <publishTime>10/17/2016 10:51:55</publishTime>
+    </File>
+    <File Include="Images/Stores/Homeshop18/homeshop18.png">
+      <publishTime>10/17/2016 10:51:57</publishTime>
+    </File>
+    <File Include="Images/Stores/Hopscotch/Hopscotch.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Hotels/Hotels.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/HouseFull/HouseFull.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Indiaflowermall/indiaflowermall.png">
+      <publishTime>10/17/2016 10:51:59</publishTime>
+    </File>
+    <File Include="Images/Stores/IndianGiftsPortal/IndianGiftsPortal.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/IndiaReads/IndiaReads.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/IndiaTimesShop/IndiaTimesShop.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/IndustryBuying/IndustryBuying.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Infibeam/DailyDeals.jpg">
+      <publishTime>10/17/2016 10:48:44</publishTime>
+    </File>
+    <File Include="Images/Stores/Infibeam/Infibeam.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Intimodo/Intimodo.png">
+      <publishTime>10/17/2016 10:48:45</publishTime>
+    </File>
+    <File Include="Images/Stores/Ixigo/ixigo.png">
+      <publishTime>10/17/2016 10:48:47</publishTime>
+    </File>
+    <File Include="Images/Stores/Jabong/Jabong.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Jagranjosh/jagranjosh.jpg">
+      <publishTime>09/09/2016 12:33:59</publishTime>
+    </File>
+    <File Include="Images/Stores/Jazzmyride/Jazzmyride.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/JoyByNature/Joybynature.jpg">
+      <publishTime>08/15/2016 13:34:32</publishTime>
+    </File>
+    <File Include="Images/Stores/Junglee/Junglee.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Just-Eat/Just-Eat.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/kaaryah/kaaryah.jpg">
+      <publishTime>09/24/2016 13:32:05</publishTime>
+    </File>
+    <File Include="Images/Stores/Kazo/kazo.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/KFC/KFC.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Koovs/koovs.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Landmark/Landmark.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Latestone/latestone.png">
+      <publishTime>10/17/2016 10:48:49</publishTime>
+    </File>
+    <File Include="Images/Stores/Lemall/Lemall.png">
+      <publishTime>10/17/2016 10:48:50</publishTime>
+    </File>
+    <File Include="Images/Stores/Lensclues/Lensclues.png">
+      <publishTime>10/17/2016 10:48:51</publishTime>
+    </File>
+    <File Include="Images/Stores/LensKart/LensKart.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/LimeRoad/LimeRoad.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/LinoPerros/LinoPerros.png">
+      <publishTime>10/17/2016 10:48:52</publishTime>
+    </File>
+    <File Include="Images/Stores/LittleApp/LittleApp.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Lotusherbals/Lotusherbals.png">
+      <publishTime>10/17/2016 10:48:53</publishTime>
+    </File>
+    <File Include="Images/Stores/Makemytrip/Makemytrip_Bus.png">
+      <publishTime>10/17/2016 10:48:54</publishTime>
+    </File>
+    <File Include="Images/Stores/Makemytrip/Makemytrip_DF.png">
+      <publishTime>10/17/2016 10:48:55</publishTime>
+    </File>
+    <File Include="Images/Stores/Makemytrip/Makemytrip_Hotel.png">
+      <publishTime>10/17/2016 10:48:56</publishTime>
+    </File>
+    <File Include="Images/Stores/Makemytrip/Makemytrip_IF.png">
+      <publishTime>10/17/2016 10:48:56</publishTime>
+    </File>
+    <File Include="Images/Stores/ManglamJewellers/ManglamJewellers.png">
+      <publishTime>10/17/2016 10:48:57</publishTime>
+    </File>
+    <File Include="Images/Stores/McDonalds/McDonalds.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Medlife/medlife.jpg">
+      <publishTime>10/10/2016 11:07:45</publishTime>
+    </File>
+    <File Include="Images/Stores/Metro/Metro.png">
+      <publishTime>10/17/2016 10:48:59</publishTime>
+    </File>
+    <File Include="Images/Stores/MI/MI.png">
+      <publishTime>10/17/2016 10:49:00</publishTime>
+    </File>
+    <File Include="Images/Stores/Mobikwik/Mobikwik.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Montecarlo/Montecarlo.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Musafir/Musafir.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/MyBusTickets/MyBusTickets.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/MyFlowerTree/MyFlowerTree.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Myles/myles.jpg">
+      <publishTime>10/17/2016 10:49:01</publishTime>
+    </File>
+    <File Include="Images/Stores/Myntra/Myntra.png">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/mytaxiindia/mytaxiindia.png">
+      <publishTime>10/17/2016 10:49:03</publishTime>
+    </File>
+    <File Include="Images/Stores/Naaptol/Naaptol.png">
+      <publishTime>10/17/2016 10:49:06</publishTime>
+    </File>
+    <File Include="Images/Stores/NaturesBasket/NaturesBasket.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Nearbuy/Nearbuy.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Netmeds/Netmeds.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Newu/Newu.png">
+      <publishTime>10/17/2016 10:49:07</publishTime>
+    </File>
+    <File Include="Images/Stores/Nnnow/Nnnow.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/NutcaseShop/NutcaseShop.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Nykaa/Nykaa.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Ohdmart/Ohdmart.png">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/OrderVenue/OrderVenue.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/OyoRooms/OyoRooms.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/PapaJohnsPizza/PapaJohnsPizza.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Paybackbazaar/Paybackbazaar.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Paytm/Paytm.jpg">
+      <publishTime>09/26/2016 19:54:28</publishTime>
+    </File>
+    <File Include="Images/Stores/Peachmode/Peachmode.png">
+      <publishTime>10/17/2016 10:49:09</publishTime>
+    </File>
+    <File Include="Images/Stores/Peopleskart/Peopleskart.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Pepperfry/pepperfry.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Pinkcukoo/Pinkcukoo.png">
+      <publishTime>10/17/2016 10:48:45</publishTime>
+    </File>
+    <File Include="Images/Stores/Pizzahut/Pizzahut.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Pressie/Pressie.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/PrettySecrets/PrettySecrets.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Printland/Printland.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Printvenue/Printvenue.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Provogue/Provogue.png">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Puma/Puma.png">
+      <publishTime>10/17/2016 10:48:48</publishTime>
+    </File>
+    <File Include="Images/Stores/Redbus/Redbus.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Rewardme/Rewardme.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Rostaa/Rostaa.png">
+      <publishTime>10/17/2016 10:51:26</publishTime>
+    </File>
+    <File Include="Images/Stores/SendMyGift/SendMyGift.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Shopcj/Shopcj.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Shopclues/shopclues.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Shopnineteen/Shopnineteen.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/ShoppersStop/ShoppersStop.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/ShoppersStop/Shoppersstop.png">
+      <publishTime>10/17/2016 10:51:29</publishTime>
+    </File>
+    <File Include="Images/Stores/Shudhbuy/Shudhbuy.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/SmileDrive/SmileDrive.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Snapdeal/DailyDeals.jpg">
+      <publishTime>10/17/2016 10:48:53</publishTime>
+    </File>
+    <File Include="Images/Stores/Snapdeal/Snapdeal.jpg">
+      <publishTime>08/15/2016 13:34:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Snapdeal/snapdeal.png">
+      <publishTime>10/17/2016 10:48:54</publishTime>
+    </File>
+    <File Include="Images/Stores/Soie/Soie.png">
+      <publishTime>10/17/2016 10:48:56</publishTime>
+    </File>
+    <File Include="Images/Stores/Sports365/sports365.png">
+      <publishTime>10/17/2016 10:48:57</publishTime>
+    </File>
+    <File Include="Images/Stores/Stalkbuylove/Stalkbuylove.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/StyleTag/StyleTag.PNG">
+      <publishTime>10/17/2016 10:48:59</publishTime>
+    </File>
+    <File Include="Images/Stores/Suratdiamond/Suratdiamond.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Swiggy/Swiggy.png">
+      <publishTime>10/17/2016 10:49:00</publishTime>
+    </File>
+    <File Include="Images/Stores/Tatacliq/Tatacliq.jpg">
+      <publishTime>09/04/2016 10:46:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Tatasky/Tatasky.gif">
+      <publishTime>10/17/2016 10:49:01</publishTime>
+    </File>
+    <File Include="Images/Stores/TheFitSlim/TheFitSlim.jpg">
+      <publishTime>09/04/2016 10:46:34</publishTime>
+    </File>
+    <File Include="Images/Stores/thelotter/thelotter.png">
+      <publishTime>10/17/2016 10:49:05</publishTime>
+    </File>
+    <File Include="Images/Stores/Thomascook/Thomascook.jpg">
+      <publishTime>09/04/2016 10:46:34</publishTime>
+    </File>
+    <File Include="Images/Stores/Thyrocare/Thyrocare.png">
+      <publishTime>10/17/2016 10:51:42</publishTime>
+    </File>
+    <File Include="Images/Stores/Ticketgoose/Ticketgoose.jpg">
+      <publishTime>09/04/2016 10:46:34</publishTime>
+    </File>
+    <File Include="Images/Stores/Tolexo/Tolexo.png">
+      <publishTime>09/04/2016 10:46:34</publishTime>
+    </File>
+    <File Include="Images/Stores/TravelKhana/TravelKhana.jpg">
+      <publishTime>09/04/2016 10:46:34</publishTime>
+    </File>
+    <File Include="Images/Stores/Treebo/Treebo.png">
+      <publishTime>10/17/2016 10:51:44</publishTime>
+    </File>
+    <File Include="Images/Stores/TrendIn/TrendIn.jpg">
+      <publishTime>09/04/2016 10:46:34</publishTime>
+    </File>
+    <File Include="Images/Stores/TrendyBharat/TrendyBharat.png">
+      <publishTime>10/17/2016 10:51:45</publishTime>
+    </File>
+    <File Include="Images/Stores/VioletStreet/VioletStreet.PNG">
+      <publishTime>10/17/2016 10:51:49</publishTime>
+    </File>
+    <File Include="Images/Stores/VistaPrint/VistaPrint.jpg">
+      <publishTime>08/15/2016 13:34:33</publishTime>
+    </File>
+    <File Include="Images/Stores/Vistara/vistara.png">
+      <publishTime>10/17/2016 10:51:50</publishTime>
+    </File>
+    <File Include="Images/Stores/Voonik/voonik.png">
+      <publishTime>09/04/2016 10:46:34</publishTime>
+    </File>
+    <File Include="Images/Stores/Voylla/Voylla.png">
+      <publishTime>10/17/2016 10:51:54</publishTime>
+    </File>
+    <File Include="Images/Stores/WearYourShine/WearYourShine.jpg">
+      <publishTime>09/04/2016 10:46:34</publishTime>
+    </File>
+    <File Include="Images/Stores/Welspun/welspun.jpg">
+      <publishTime>10/13/2016 10:09:59</publishTime>
+    </File>
+    <File Include="Images/Stores/Wonderchef/Wonderchef.jpg">
+      <publishTime>09/04/2016 10:46:34</publishTime>
+    </File>
+    <File Include="Images/Stores/WOW/WOW.jpg">
+      <publishTime>09/04/2016 10:46:34</publishTime>
+    </File>
+    <File Include="Images/Stores/Yatra/Yatra.png">
+      <publishTime>10/17/2016 10:51:44</publishTime>
+    </File>
+    <File Include="Images/Stores/Yatra/Yatra_DF.png">
+      <publishTime>10/17/2016 10:51:45</publishTime>
+    </File>
+    <File Include="Images/Stores/Yatra/Yatra_Hotel.png">
+      <publishTime>10/17/2016 10:51:45</publishTime>
+    </File>
+    <File Include="Images/Stores/Yatra/Yatra_IF.png">
+      <publishTime>10/17/2016 10:51:46</publishTime>
+    </File>
+    <File Include="Images/Stores/Yepme/yepme.gif">
+      <publishTime>09/07/2016 09:20:26</publishTime>
+    </File>
+    <File Include="Images/Stores/Zivame/Zivame.jpg">
+      <publishTime>09/04/2016 10:46:34</publishTime>
+    </File>
+    <File Include="Images/Stores/Zoomcar/ZoomCar.png">
+      <publishTime>09/09/2016 13:30:08</publishTime>
+    </File>
+    <File Include="Images/Stores/Zotezo/Zotezo.jpg">
+      <publishTime>09/04/2016 10:46:34</publishTime>
+    </File>
+    <File Include="Images/Stores/Zovi/Zovi.jpg">
+      <publishTime>09/04/2016 10:46:34</publishTime>
+    </File>
+    <File Include="Images/ui-icons_444444_256x240.png">
+      <publishTime>10/17/2016 10:52:50</publishTime>
+    </File>
+    <File Include="Images/ui-icons_555555_256x240.png">
+      <publishTime>10/17/2016 10:52:49</publishTime>
+    </File>
+    <File Include="Images/ui-icons_777620_256x240.png">
+      <publishTime>10/17/2016 10:52:49</publishTime>
+    </File>
+    <File Include="Images/ui-icons_777777_256x240.png">
+      <publishTime>10/17/2016 10:52:51</publishTime>
+    </File>
+    <File Include="Images/ui-icons_cc0000_256x240.png">
+      <publishTime>10/17/2016 10:53:01</publishTime>
+    </File>
+    <File Include="Images/ui-icons_ffffff_256x240.png">
+      <publishTime>10/17/2016 10:53:02</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>08/30/2016 16:01:51</publishTime>
+    </File>
+    <File Include="robots.txt">
+      <publishTime>09/05/2016 13:32:27</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>05/17/2016 11:53:26</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>05/17/2016 11:53:26</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.2.3.js">
+      <publishTime>05/16/2016 15:24:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.2.3.min.js">
+      <publishTime>05/16/2016 15:24:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.2.3.min.map">
+      <publishTime>05/16/2016 15:24:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.js">
+      <publishTime>08/11/2016 12:40:14</publishTime>
+    </File>
+    <File Include="Scripts/jquery-ui.min.js">
+      <publishTime>08/11/2016 12:40:14</publishTime>
+    </File>
+    <File Include="Scripts/jquery.flexisel.js">
+      <publishTime>09/14/2016 13:00:33</publishTime>
+    </File>
+    <File Include="Scripts/jquery.flexisel.min.js">
+      <publishTime>10/06/2016 12:37:14</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.js">
+      <publishTime>05/16/2016 15:24:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery.unobtrusive-ajax.min.js">
+      <publishTime>05/16/2016 15:24:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>05/16/2016 15:24:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>05/16/2016 15:24:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>05/16/2016 15:24:00</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>05/16/2016 15:24:00</publishTime>
+    </File>
+    <File Include="sitemap.xml">
+      <publishTime>10/17/2016 13:01:37</publishTime>
+    </File>
+    <File Include="Views/Category/BrowseCategory.cshtml">
+      <publishTime>08/30/2016 16:12:07</publishTime>
+    </File>
+    <File Include="Views/Category/Index.cshtml">
+      <publishTime>10/17/2016 11:27:22</publishTime>
+    </File>
+    <File Include="Views/Category/_ShopByCategory.cshtml">
+      <publishTime>10/03/2016 10:53:01</publishTime>
+    </File>
+    <File Include="Views/Deal/Coupons.cshtml">
+      <publishTime>10/11/2016 12:06:17</publishTime>
+    </File>
+    <File Include="Views/Deal/Daily.cshtml">
+      <publishTime>10/13/2016 12:59:47</publishTime>
+    </File>
+    <File Include="Views/Deal/Exclusive.cshtml">
+      <publishTime>10/05/2016 13:56:09</publishTime>
+    </File>
+    <File Include="Views/Deal/_Coupons.cshtml">
+      <publishTime>10/17/2016 11:35:16</publishTime>
+    </File>
+    <File Include="Views/Deal/_DailyDeals.cshtml">
+      <publishTime>10/17/2016 11:28:32</publishTime>
+    </File>
+    <File Include="Views/Deal/_DOTD.cshtml">
+      <publishTime>10/17/2016 11:48:29</publishTime>
+    </File>
+    <File Include="Views/Deal/_ExclusiveDeals.cshtml">
+      <publishTime>10/17/2016 11:30:31</publishTime>
+    </File>
+    <File Include="Views/Deal/_OfferURL.cshtml">
+      <publishTime>10/17/2016 11:29:38</publishTime>
+    </File>
+    <File Include="Views/Nav/Footer.cshtml">
+      <publishTime>08/30/2016 16:12:08</publishTime>
+    </File>
+    <File Include="Views/Nav/LeftSidebar.cshtml">
+      <publishTime>09/05/2016 13:22:40</publishTime>
+    </File>
+    <File Include="Views/Nav/Menu.cshtml">
+      <publishTime>09/04/2016 12:25:44</publishTime>
+    </File>
+    <File Include="Views/Nav/SearchResult.cshtml">
+      <publishTime>10/17/2016 11:40:51</publishTime>
+    </File>
+    <File Include="Views/Shared/EditorTemplates/Boolean.cshtml">
+      <publishTime>08/30/2016 16:12:08</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>09/24/2016 13:30:38</publishTime>
+    </File>
+    <File Include="Views/Shared/Search.cshtml">
+      <publishTime>08/30/2016 16:12:08</publishTime>
+    </File>
+    <File Include="Views/Shared/_Carousel.cshtml">
+      <publishTime>10/17/2016 12:05:00</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>10/17/2016 12:05:04</publishTime>
+    </File>
+    <File Include="Views/Shared/_LineItem.cshtml">
+      <publishTime>08/30/2016 16:12:08</publishTime>
+    </File>
+    <File Include="Views/Shared/_LineItem2.cshtml">
+      <publishTime>08/30/2016 16:12:08</publishTime>
+    </File>
+    <File Include="Views/Shared/_MegaMenu.cshtml">
+      <publishTime>10/13/2016 13:00:15</publishTime>
+    </File>
+    <File Include="Views/Shared/_Menu.cshtml">
+      <publishTime>09/15/2016 13:18:02</publishTime>
+    </File>
+    <File Include="Views/Store/Store.cshtml">
+      <publishTime>10/05/2016 15:19:36</publishTime>
+    </File>
+    <File Include="Views/Store/Stores.cshtml">
+      <publishTime>10/05/2016 14:55:55</publishTime>
+    </File>
+    <File Include="Views/Store/_ShopByStore.cshtml">
+      <publishTime>10/07/2016 11:26:10</publishTime>
+    </File>
+    <File Include="Views/Store/_Stores.cshtml">
+      <publishTime>10/05/2016 14:07:00</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>08/30/2016 16:10:31</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>08/30/2016 16:12:08</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>10/17/2016 13:19:21</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

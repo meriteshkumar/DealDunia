@@ -13,7 +13,7 @@
                 <div class="divDeal">
                     <div class="divDealImg">
                         <b><a target="_blank" href="@Url.Action("Out", "Out", new { source = "exclusive-deals", id = deal.ExcDealId })">
-                            <img alt="@deal.StoreName" src="@Url.Content("~/Images/" + deal.StoreImage)" /></a></b>
+                            <img itemprop="image"  alt="@deal.StoreName" src="@Url.Content("~/Images/" + deal.StoreImage)" /></a></b>
                     </div>
                     @*<hr class="margin5" />*@
                     <div class="divDealTitle">
