@@ -1,0 +1,60 @@
+﻿
+@*<style>
+    .icon-prev,
+    .icon-next,
+    .glyphicon-chevron-left,
+    .glyphicon-chevron-right
+    {
+        position: absolute;
+        top: 50%;
+        margin-top: -10px; /* fix */
+        z-index: 5;
+        display: inline-block;
+    }
+</style>*@
+
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+ <div class="item active">
+       <a  target="_blank" href="http://amzn.to/2dZNVff">
+                <img src="~/Images/Carousel/W2_1500x150_D1_.jpg" alt="Amazon"></a>
+        </div>
+
+    <div class="item">
+       <a  target="_blank" href="https://dl.flipkart.com/dl/offers/appliances?affid=sandeepmi3&pk=offer2">
+                <img src="~/Images/Carousel/flikart_16102016_1.png" alt="Flipkart"></a>
+        </div>
+	      
+
+        <div class="item">
+	<a  target="_blank" href="http://amzn.to/2dJbLdj">
+                <img src="~/Images/Carousel/Category_01-revised._UX1500_SX1500_CB277090537_.jpg" alt="Amazon"></a>
+        </div>
+        <div class="item">
+            <a target="_blank" href="http://amzn.to/2dRRrDB">
+                <img src="~/Images/Carousel/PCfinal._UX1500_SX1500_CB279837412_.jpg" alt="Amazon"></a>           
+        </div>
+
+	
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>

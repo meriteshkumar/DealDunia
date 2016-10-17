@@ -1,0 +1,283 @@
+﻿@using DealDunia.Infrastructure.Utility
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    @*Meta Tags Start*@
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get the latest deals & coupons offers from India’s top online shopping sites like Amazon, Flipkart, Snapdeal, Myntra, eBay, Paytm any many more on GrabMeDeal" />
+    <meta name="keywords" content="Deals, Offers, Coupons, Daily Offers, Daily Deals, Exclusive Deals, Deals of the day" />
+    @*Meta Tags End*@
+
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="~/favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+
+    @*Style sheets Start*@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    @*<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">*@
+    @Styles.Render("~/Content/css")
+    @*Style sheets End*@
+
+    <style type="text/css">
+        /* Start by setting display:none to make this hidden.
+        Then we position it in relation to the viewport window
+        with position:fixed. Width, height, top and left speak
+        speak for themselves. Background we set to 80% white with
+        our animation centered, and no-repeating */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba( 255, 255, 255, .8 ) url('../../Images/loading.gif') 50% 50% no-repeat;
+        }
+
+        /* When the body has the loading class, we turn
+        the scrollbar off with overflow:hidden */
+        body.loading {
+            overflow: hidden;
+        }
+
+            /* Anytime the body has the loading class, our
+        modal element will be visible */
+            body.loading .modal {
+                display: block;
+            }
+    </style>
+
+</head>
+
+<body>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script async src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script async src="https://cdnjs.cloudflare.com/ajax/libs/flexisel/2.1.0/js/jquery.flexisel.min.js"></script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-6934011-6', 'auto');
+        ga('send', 'pageview');
+
+        /*Start - Search function*/
+        function GetFilteredResult(searchterm) {
+            res = [];
+            if (searchterm != '') {
+                $.ajax({
+                    url: '/Content/search.json',
+                    dataType: 'json',
+                    async: false,
+                }).done(function (data) {
+                    res = $(data).filter(function (i, n) {
+                        return JSON.stringify(n.value).toUpperCase().indexOf(searchterm.toUpperCase()) > 0;
+                    });
+                }).fail(function (error) {
+                    //TODO
+                });
+            }
+            return res;
+        }
+
+        function addToDom(ar, elementId) {
+            $('#' + elementId).css("background-color", "white");
+            $('#' + elementId).html(ar.join(''));
+        }
+
+        function wrapElements(arr) {
+            o = $.map(arr, function (el) { return el; });
+            return o.map(function (item) {
+                var content = '<div class="result-container" onclick="setSelected(this)"><div class="result-value">' + item.value + '</div><div class="result-source">' + item.source + '</div></div>';
+                return content;
+            });
+        }
+
+        function searchResult(obj, e) {
+            if (e.keyCode === 27) { //'escap' key
+                obj.value = '';
+                $('#results').html('');
+            }
+            else {
+                result = GetFilteredResult(obj.value);
+                wrapped = wrapElements(result);
+                addToDom(wrapped, "results");
+            }
+        }
+
+        function setSelected(obj) {
+
+            value = $(obj.innerHTML).filter(".result-value").html();
+            source = $(obj.innerHTML).filter(".result-source").html();
+
+            if (source == 'category') {
+                value = value.split(" ").join("-").replace("&amp;", "and");
+                url = '/coupons/' + value;
+                window.location.href = url;
+            }
+            else {
+                url = '@Url.Action("Store", "Store", new { store = "__store__" })';
+                window.location.href = url.replace("__store__", value);
+            }
+        }
+        /*Start - Search function*/
+    </script>
+
+    <div id="nav1" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-collapse col-lg-2 col-md-2 col-sm-2 col-sx-2">
+                    <a class="navbar-brand" style="padding-top:0px;" href="@Url.Action("Index", "Category")">
+                        <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/grabmedeal_200x57.png" />
+                    </a>
+                </div>
+
+                <div class="navbar-collapse">
+                    @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
+                    {
+                        <div class="input-group col-lg-5 col-md-5 col-sm-5 col-sx-5">
+                            <input id="searchtext" name="searchtext" type="hidden" />
+                            <input type="text" class="form-control search-text" autocomplete="off" placeholder="Search for Store & Category" value="@ViewBag.SearchedItem" onkeyup="searchResult(this, event);">
+                            <div id="results" class="result-div"></div>
+                            <div class="input-group-btn" style="display: inline">
+                                <button type="submit" style="height: 40px; -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;"
+                                        class="btn btn-danger">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="nav2" class="navbar navbar-default navbar-fixed-top" style="z-index: 10!important;" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+
+            <div class="row">
+                @*<div class="col-md-2">
+                      <button type="button" class="btn btn-default" aria-label="Left Align">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true">Home</span>
+                        </button>
+                    </div>*@
+                @*<div class="col-md-12">*@
+                <div class="collapse navbar-collapse" id="mainNav">
+                    @{Html.RenderPartial("_MegaMenu");}
+                </div>
+                @*</div>*@
+            </div>
+        </div>
+    </div>
+    <div id="body" class="container-fluid">
+        @* <div class="col-md-2 col-sm-2 col-sx-2">@Html.Action("LeftSidebar", "Nav")</div>*@
+        <div>@RenderBody()</div>
+    </div>
+
+
+    <footer class="navbar-bottom" style="margin-top: 10px;">
+        <!-- Javascript Ad Tag: 534 -->
+        <div id="vcm5341laPZT"></div>
+        <script src="http://tracking.vcommission.com/aff_ad?campaign_id=534&aff_id=46159&format=javascript&format=js&divid=vcm5341laPZT" type="text/javascript"></script>
+        <noscript><iframe src="http://tracking.vcommission.com/aff_ad?campaign_id=534&aff_id=46159&format=javascript&format=iframe" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" width="728" height="90"></iframe></noscript>
+        <!-- // End Ad Tag -->
+        <div class="container-fluid" style="padding-top: 10px; background-color: #555555;">
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Javascript Ad Tag: 2086 -->
+                    <div id="vcm20868zB4Xt"></div>
+                    <script src="http://tracking.vcommission.com/aff_ad?campaign_id=2086&aff_id=46159&format=javascript&format=js&divid=vcm20868zB4Xt" type="text/javascript"></script>
+                    <noscript>
+                        <iframe src="http://tracking.vcommission.com/aff_ad?campaign_id=2086&aff_id=46159&format=javascript&format=iframe" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" width="300" height="250"></iframe>
+                    </noscript>
+                    <!-- // End Ad Tag -->
+                </div>
+                <div class="col-md-3">
+                    <!-- Javascript Ad Tag: 2082 Hotels -->
+                    <div id="vcm2082aJCDK8" style="padding-bottom: 10px;"></div>
+                    <script src="http://tracking.vcommission.com/aff_ad?campaign_id=2082&aff_id=46159&format=javascript&format=js&divid=vcm2082aJCDK8" type="text/javascript"></script>
+                    <noscript>
+                        <iframe src="http://tracking.vcommission.com/aff_ad?campaign_id=2082&aff_id=46159&format=javascript&format=iframe" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" width="300" height="250"></iframe>
+                    </noscript>
+                    <!-- // End Ad Tag -->
+                </div>
+                <div class="col-md-3">
+                    <!-- Javascript Ad Tag: 2088 -->
+                    <div id="vcm2088zpo193" style="padding-bottom: 10px;"></div>
+                    <script src="http://tracking.vcommission.com/aff_ad?campaign_id=2088&aff_id=46159&format=javascript&format=js&divid=vcm2088zpo193" type="text/javascript"></script>
+                    <noscript>
+                        <iframe src="http://tracking.vcommission.com/aff_ad?campaign_id=2088&aff_id=46159&format=javascript&format=iframe" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" width="300" height="250"></iframe>
+                    </noscript>
+                    <!-- // End Ad Tag -->
+                </div>
+                <div class="col-md-3">
+                    <div id="fb-root"></div>
+                    <script>
+                        (function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0];
+                            if (d.getElementById(id)) return;
+                            js = d.createElement(s); js.id = id;
+                            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }(document, 'script', 'facebook-jssdk'));</script>
+                    <div class="fb-page" data-href="https://www.facebook.com/GrabMeDeal" data-tabs="timeline" data-width="300" data-height="250" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/GrabMeDeal" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/GrabMeDeal">Grabmedeal</a></blockquote></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="background-color: #333;">
+            @* <div class="col-md-12 panel-footer text-center">
+                    @Html.Action("Menu", "Nav", new { position = "FOOTER" })
+                </div>*@
+
+            <div class="copyright">
+                Copyright © GrabMeDeal 2016. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+    <a href="#" class="scrollToTop"></a>
+    <!--Loading modal -->
+    <div class="modal"></div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    $('.scrollToTop').fadeIn();
+                } else {
+                    $('.scrollToTop').fadeOut();
+                }
+            });
+
+            //Click event to scroll to top
+            $('.scrollToTop').click(function () {
+                $('html, body').animate({ scrollTop: 0 }, 800);
+                return false;
+            });
+
+            $("#nav2").css('margin-top', $("#nav1").height() + "px");
+            $("#body").css('margin-top', $("#nav1").height() + $("#nav2").height() + 10 + "px");
+
+            //Loading modal script
+            $body = $("body");
+
+            $(document).on({
+                ajaxStart: function () { $body.addClass("loading"); },
+                ajaxStop: function () { $body.removeClass("loading"); }
+            });
+        });
+    </script>
+</body>
+</html>

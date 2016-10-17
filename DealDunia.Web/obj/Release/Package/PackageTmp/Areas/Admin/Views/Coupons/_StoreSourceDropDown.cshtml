@@ -1,0 +1,3 @@
+﻿@model IEnumerable<DealDunia.Web.Areas.StoreSource>
+
+@Html.DropDownList("StoreSourceId", new SelectList(Model, "StoreSourceId", "StoreSourceName"), "Please Select" ,new { id = "ss-dropdown", @class = "form-control" })

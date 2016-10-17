@@ -1,0 +1,523 @@
+﻿@model IEnumerable<DealDunia.Domain.Entities.Category>
+@using DealDunia.Infrastructure.Utility
+
+<div class="navbar-header col-md-2 col-sm-2 col-sx-2">
+    <a class="navbar-brand" href='@Url.Action("Index", "Category")'>HOME</a>
+</div>
+<div class="collapse navbar-collapse js-navbar-collape" role="navigation">
+    <ul class="nav navbar-nav">
+        <li class="dropdown mega-dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Women&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+            <ul class="dropdown-menu mega-dropdown-menu row">
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Clothing</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Women/Clothing/Dresses-and-Skirts">Dresses &amp; Skirts</a></li>
+                        <li><a href="/category/Women/Clothing/Shirts%2c-Tops-and-Tunics">Shirts, Tops &amp; Tunics</a></li>
+                        <li><a href="/category/Women/Clothing/Jeans-and-Trousers">Jeans &amp; Trousers</a></li>
+                        <li><a href="/category/Women/Clothing/Lingerie-and-Sleepwear">Lingerie &amp; Sleepwear</a></li>
+                        <li><a href="/category/Women/Clothing/Leggings-and-Jeggings">Leggings &amp; Jeggings</a></li>
+                        <li><a href="/category/Women/Clothing/Shorts-and-Capris">Shorts &amp; Capris</a></li>
+                        <li><a href="/category/Women/Clothing/Formalwear">Formalwear</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Ethnic Wear</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Women/Ethnic-Wear/Kurtas-and-Kurtis">Kurtas &amp; Kurtis</a></li>
+                        <li><a href="/category/Women/Ethnic-Wear/Sarees">Sarees</a></li>
+                        <li><a href="/category/Women/Ethnic-Wear/Salwar-Kurta">Salwar Kurta</a></li>
+                        <li><a href="/category/Women/Ethnic-Wear/Dress-Material">Dress Material</a></li>
+                        <li><a href="/category/Women/Ethnic-Wear/Lehengas">Lehengas</a></li>
+                        <li><a href="/category/Women/Ethnic-Wear/Ethnic-Bottoms">Ethnic Bottoms</a></li>
+                        <li><a href="/category/Women/Ethnic-Wear/Dupattas">Dupattas</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Footwear</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Women/Footwear/Flats">Flats</a></li>
+                        <li><a href="/category/Women/Footwear/Heels">Heels</a></li>
+                        <li><a href="/category/Women/Footwear/Bellies">Bellies</a></li>
+                        <li><a href="/category/Women/Footwear/Wedges">Wedges</a></li>
+                        <li><a href="/category/Women/Footwear/Sports-Shoes">Sports Shoes</a></li>
+                        <li><a href="/category/Women/Footwear/Casual-Shoes">Casual Shoes</a></li>
+                        <li><a href="/category/Women/Footwear/Formal-Shoes">Formal Shoes</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Bags</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Women/Bags/Handbags">Handbags</a></li>
+                        <li><a href="/category/Women/Bags/Wallets-and-Clutches">Wallets &amp; Clutches</a></li>
+                        <li><a href="/category/Women/Bags/Totes">Totes</a></li>
+                        <li><a href="/category/Women/Bags/Sling-Bags">Sling Bags</a></li>
+                        <li><a href="/category/Women/Bags/Pouches-and-Potlis">Pouches &amp; Potlis</a></li>
+                        <li><a href="/category/Women/Bags/Accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Artificial Jewellery</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Women/Artificial-Jewellery/Earrings">Earrings</a></li>
+                        <li><a href="/category/Women/Artificial-Jewellery/Rings">Rings</a></li>
+                        <li><a href="/category/Women/Artificial-Jewellery/Neckpieces">Neckpieces</a></li>
+                        <li><a href="/category/Women/Artificial-Jewellery/Bangles-and-Bracelets">Bangles &amp; Bracelets</a></li>
+                        <li><a href="/category/Women/Artificial-Jewellery/Pendants">Pendants</a></li>
+                        <li><a href="/category/Women/Artificial-Jewellery/Jewellery-Sets">Jewellery Sets</a></li>
+                        <li><a href="/category/Women/Artificial-Jewellery/Accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Precious Jewellery</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Women/Precious-Jewellery/Earrings">Earrings</a></li>
+                        <li><a href="/category/Women/Precious-Jewellery/Rings">Rings</a></li>
+                        <li><a href="/category/Women/Precious-Jewellery/Neckpieces">Neckpieces</a></li>
+                        <li><a href="/category/Women/Precious-Jewellery/Bangles-and-Bracelets">Bangles &amp; Bracelets</a></li>
+                        <li><a href="/category/Women/Precious-Jewellery/Pendants">Pendants</a></li>
+                        <li><a href="/category/Women/Precious-Jewellery/Jewellery-Sets">Jewellery Sets</a></li>
+                        <li><a href="/category/Women/Precious-Jewellery/Accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Beauty &amp; Personal Care</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Women/Beauty-and-Personal-Care/Skin-Care">Skin Care</a></li>
+                        <li><a href="/category/Women/Beauty-and-Personal-Care/Hair-Care">Hair Care</a></li>
+                        <li><a href="/category/Women/Beauty-and-Personal-Care/Makeup">Makeup</a></li>
+                        <li><a href="/category/Women/Beauty-and-Personal-Care/Bath-and-Beauty">Bath &amp; Beauty</a></li>
+                        <li><a href="/category/Women/Beauty-and-Personal-Care/Eye-Care">Eye Care</a></li>
+                        <li><a href="/category/Women/Beauty-and-Personal-Care/Personal-Care">Personal Care</a></li>
+                        <li><a href="/category/Women/Beauty-and-Personal-Care/Accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Accessories</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Women/Accessories/Watches">Watches</a></li>
+                        <li><a href="/category/Women/Accessories/Sunglasses">Sunglasses</a></li>
+                        <li><a href="/category/Women/Accessories/Belts">Belts</a></li>
+                        <li><a href="/category/Women/Accessories/Fragrances">Fragrances</a></li>
+                        <li><a href="/category/Women/Accessories/Hair-Accessories">Hair Accessories</a></li>
+                        <li><a href="/category/Women/Accessories/Caps-and-Hats">Caps &amp; Hats</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav">
+        <li class="dropdown mega-dropdown" style="vertical-align: middle;">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Men&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+            <ul class="dropdown-menu mega-dropdown-menu row">
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Clothing</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Men/Clothing/Shirts-and-T-Shirts">Shirts &amp; T Shirts</a></li>
+                        <li><a href="/category/Men/Clothing/Jeans-and-Trousers">Jeans &amp; Trousers</a></li>
+                        <li><a href="/category/Men/Clothing/Shorts-and-Capris">Shorts &amp; Capris</a></li>
+                        <li><a href="/category/Men/Clothing/Sportswear">Sportswear</a></li>
+                        <li><a href="/category/Men/Clothing/Winterwear">Winterwear</a></li>
+                        <li><a href="/category/Men/Clothing/Inner-and-Sleepwear">Inner &amp; Sleepwear</a></li>
+                        <li><a href="/category/Men/Clothing/Ethnic-Wear">Ethnic Wear</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Jewellery</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Men/Jewellery/Bracelets">Bracelets</a></li>
+                        <li><a href="/category/Men/Jewellery/Rings">Rings</a></li>
+                        <li><a href="/category/Men/Jewellery/Pendants">Pendants</a></li>
+                        <li><a href="/category/Men/Jewellery/Chains">Chains</a></li>
+                        <li><a href="/category/Men/Jewellery/Accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Accessories</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Men/Accessories/Watches">Watches</a></li>
+                        <li><a href="/category/Men/Accessories/Sunglasses">Sunglasses</a></li>
+                        <li><a href="/category/Men/Accessories/Fragrances">Fragrances</a></li>
+                        <li><a href="/category/Men/Accessories/Belts">Belts</a></li>
+                        <li><a href="/category/Men/Accessories/Caps-and-Hats">Caps &amp; Hats</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Grooming</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Men/Grooming/Shaving">Shaving</a></li>
+                        <li><a href="/category/Men/Grooming/Skin-Care">Skin Care</a></li>
+                        <li><a href="/category/Men/Grooming/Hair-Care">Hair Care</a></li>
+                        <li><a href="/category/Men/Grooming/Bath-and-Spa">Bath &amp; Spa</a></li>
+                        <li><a href="/category/Men/Grooming/Oral-Care">Oral Care</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Footwear</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Men/Footwear/Sports-Shoes">Sports Shoes</a></li>
+                        <li><a href="/category/Men/Footwear/Casual-Shoes">Casual Shoes</a></li>
+                        <li><a href="/category/Men/Footwear/Formal-Shoes">Formal Shoes</a></li>
+                        <li><a href="/category/Men/Footwear/Sandals-and-Floaters">Sandals &amp; Floaters</a></li>
+                        <li><a href="/category/Men/Footwear/Slippers-and-Flip-Flops">Slippers &amp; Flip Flops</a></li>
+                        <li><a href="/category/Men/Footwear/Ethnic-Shoes">Ethnic Shoes</a></li>
+                        <li><a href="/category/Men/Footwear/Shoe-Care">Shoe Care</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Bags, Belts &amp; Wallets</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Men/Bags%2c-Belts-and-Wallets/Laptop-Bags">Laptop Bags</a></li>
+                        <li><a href="/category/Men/Bags%2c-Belts-and-Wallets/Wallets">Wallets</a></li>
+                        <li><a href="/category/Men/Bags%2c-Belts-and-Wallets/Travel-Bags">Travel Bags</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav">
+        <li class="dropdown mega-dropdown" style="vertical-align: middle;">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Baby &amp; Kids&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+            <ul class="dropdown-menu mega-dropdown-menu row">
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Boys Clothing</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Baby-and-Kids/Boys-Clothing/T-Shirts-and-Shirts">T Shirts &amp; Shirts</a></li>
+                        <li><a href="/category/Baby-and-Kids/Boys-Clothing/Accessories">Accessories</a></li>
+                        <li><a href="/category/Baby-and-Kids/Boys-Clothing/Trousers-and-Shorts">Trousers &amp; Shorts</a></li>
+                        <li><a href="/category/Baby-and-Kids/Boys-Clothing/Winterwear">Winterwear</a></li>
+                        <li><a href="/category/Baby-and-Kids/Boys-Clothing/Inner-and-Sleepwear">Inner &amp; Sleepwear</a></li>
+                        <li><a href="/category/Baby-and-Kids/Boys-Clothing/Ethnic-Wear">Ethnic Wear</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Girls Clothing</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Baby-and-Kids/Girls-Clothing/Dresses">Dresses</a></li>
+                        <li><a href="/category/Baby-and-Kids/Girls-Clothing/Tops-and-T-Shirts">Tops &amp; T Shirts</a></li>
+                        <li><a href="/category/Baby-and-Kids/Girls-Clothing/Bottomwear">Bottomwear</a></li>
+                        <li><a href="/category/Baby-and-Kids/Girls-Clothing/Winterwear">Winterwear</a></li>
+                        <li><a href="/category/Baby-and-Kids/Girls-Clothing/Ethnic-wear">Ethnic wear</a></li>
+                        <li><a href="/category/Baby-and-Kids/Girls-Clothing/Accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Infant Clothing</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Baby-and-Kids/Infant-Clothing/Baby-Boys">Baby Boys</a></li>
+                        <li><a href="/category/Baby-and-Kids/Infant-Clothing/Baby-Girls">Baby Girls</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Girls Shoes</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Baby-and-Kids/Girls-Shoes/School-Shoes">School Shoes</a></li>
+                        <li><a href="/category/Baby-and-Kids/Girls-Shoes/Sandals-and-Clogs">Sandals &amp; Clogs</a></li>
+                        <li><a href="/category/Baby-and-Kids/Girls-Shoes/Flats-and-Bellies">Flats &amp; Bellies</a></li>
+                        <li><a href="/category/Baby-and-Kids/Girls-Shoes/Sports-Shoes">Sports Shoes</a></li>
+                        <li><a href="/category/Baby-and-Kids/Girls-Shoes/Slippers-and-Flip-Flops">Slippers &amp; Flip Flops</a></li>
+                        <li><a href="/category/Baby-and-Kids/Girls-Shoes/Casual-Shoes">Casual Shoes</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Boys Shoes</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Baby-and-Kids/Boys-Shoes/Casual-Shoes">Casual Shoes</a></li>
+                        <li><a href="/category/Baby-and-Kids/Boys-Shoes/Sports-Shoes">Sports Shoes</a></li>
+                        <li><a href="/category/Baby-and-Kids/Boys-Shoes/Neckpieces">Neckpieces</a></li>
+                        <li><a href="/category/Baby-and-Kids/Boys-Shoes/Sandals-and-Clogs">Sandals &amp; Clogs</a></li>
+                        <li><a href="/category/Baby-and-Kids/Boys-Shoes/School-Shoes">School Shoes</a></li>
+                        <li><a href="/category/Baby-and-Kids/Boys-Shoes/Slippers-and-Flip-Flops">Slippers &amp; Flip Flops</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Baby Care</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Baby-and-Kids/Baby-Care/Feeding-and-Nursing">Feeding &amp; Nursing</a></li>
+                        <li><a href="/category/Baby-and-Kids/Baby-Care/Grooming">Grooming</a></li>
+                        <li><a href="/category/Baby-and-Kids/Baby-Care/Furniture-and-Furnishings">Furniture &amp; Furnishings</a></li>
+                        <li><a href="/category/Baby-and-Kids/Baby-Care/Diapering-and-Potty-Training">Diapering &amp; Potty Training</a></li>
+                        <li><a href="/category/Baby-and-Kids/Baby-Care/Health-and-Safety">Health &amp; Safety</a></li>
+                        <li><a href="/category/Baby-and-Kids/Baby-Care/Strollers-and-Activity-Gear">Strollers &amp; Activity Gear</a></li>
+                        <li><a href="/category/Baby-and-Kids/Baby-Care/Baby-Bedding">Baby Bedding</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Toys</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Baby-and-Kids/Toys/Action-Figures">Action Figures</a></li>
+                        <li><a href="/category/Baby-and-Kids/Toys/Board-Games">Board Games</a></li>
+                        <li><a href="/category/Baby-and-Kids/Toys/Dolls-and-Doll-Houses">Dolls &amp; Doll Houses</a></li>
+                        <li><a href="/category/Baby-and-Kids/Toys/Educational-Toys">Educational Toys</a></li>
+                        <li><a href="/category/Baby-and-Kids/Toys/Play-Kits">Play Kits</a></li>
+                        <li><a href="/category/Baby-and-Kids/Toys/Soft-Toys">Soft Toys</a></li>
+                        <li><a href="/category/Baby-and-Kids/Toys/Vehicles">Vehicles</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Accessories</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Baby-and-Kids/Accessories/Watches">Watches</a></li>
+                        <li><a href="/category/Baby-and-Kids/Accessories/Pets">Pets</a></li>
+                        <li><a href="/category/Baby-and-Kids/Accessories/School-Supplies">School Supplies</a></li>
+                        <li><a href="/category/Baby-and-Kids/Accessories/Party-Supplies">Party Supplies</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav">
+        <li class="dropdown mega-dropdown" style="vertical-align: middle;">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home &amp; Kitchen&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+            <ul class="dropdown-menu mega-dropdown-menu row">
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Home Furnishings</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Furnishings/Bed">Bed</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Furnishings/Kitchen">Kitchen</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Furnishings/Bath">Bath</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Furnishings/Curtains">Curtains</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Furnishings/Carpets-and-Rugs">Carpets &amp; Rugs</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Furnishings/Cushions">Cushions</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Furniture</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Home-and-Kitchen/Furniture/Bedroom">Bedroom</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Furniture/Living-Room">Living Room</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Furniture/Storage">Storage</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Furniture/Dining-Room">Dining Room</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Furniture/Office-Furniture">Office Furniture</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Furniture/Hardware">Hardware</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Furniture/Outdoor-Furniture">Outdoor Furniture</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Home Decor</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Decor/Showpieces">Showpieces</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Decor/Clocks">Clocks</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Decor/Wall-Decor">Wall Decor</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Decor/Garden-and-Outdoor">Garden &amp; Outdoor</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Decor/Lighting">Lighting</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Decor/Candles-and-Fragrances">Candles &amp; Fragrances</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Decor/Photo-Frames">Photo Frames</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Home Appliances</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Appliances/TV-and-Home-Theatre">TV &amp; Home Theatre</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Appliances/Telephone">Telephone</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Appliances/Cooling">Cooling</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Appliances/Heating">Heating</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Appliances/Cleaning">Cleaning</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Home-Appliances/Accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Kitchen &amp; Dining</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Home-and-Kitchen/Kitchen-and-Dining/Bar-and-Drinkware">Bar &amp; Drinkware</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Kitchen-and-Dining/Kitchen-Appliances">Kitchen Appliances</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Kitchen-and-Dining/Kitchen-Tools">Kitchen Tools</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Kitchen-and-Dining/Tableware">Tableware</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Kitchen-and-Dining/Cookware">Cookware</a></li>
+                        <li><a href="/category/Home-and-Kitchen/Kitchen-and-Dining/Storage">Storage</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav">
+        <li class="dropdown mega-dropdown" style="vertical-align: middle;">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Electronics&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+            <ul class="dropdown-menu mega-dropdown-menu row">
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Gaming &amp; Software</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Electronics/Gaming-and-Software/Gaming-Consoles">Gaming Consoles</a></li>
+                        <li><a href="/category/Electronics/Gaming-and-Software/Gaming-Titles">Gaming Titles</a></li>
+                        <li><a href="/category/Electronics/Gaming-and-Software/Gaming-Accessories">Gaming Accessories</a></li>
+                        <li><a href="/category/Electronics/Gaming-and-Software/Antivirus">Antivirus</a></li>
+                        <li><a href="/category/Electronics/Gaming-and-Software/Operating-Systems">Operating Systems</a></li>
+                        <li><a href="/category/Electronics/Gaming-and-Software/Business-Tools">Business Tools</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Laptops &amp; Desktops</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Electronics/Laptops-and-Desktops/Laptops">Laptops</a></li>
+                        <li><a href="/category/Electronics/Laptops-and-Desktops/Desktops">Desktops</a></li>
+                        <li><a href="/category/Electronics/Laptops-and-Desktops/Laptop-Accessories">Laptop Accessories</a></li>
+                        <li><a href="/category/Electronics/Laptops-and-Desktops/PC-Components">PC Components</a></li>
+                        <li><a href="/category/Electronics/Laptops-and-Desktops/PC-Accessories">PC Accessories</a></li>
+                        <li><a href="/category/Electronics/Laptops-and-Desktops/Computer-Peripherals">Computer Peripherals</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Audio &amp; Video</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Electronics/Audio-and-Video/Audio-Players">Audio Players</a></li>
+                        <li><a href="/category/Electronics/Audio-and-Video/Video-Players">Video Players</a></li>
+                        <li><a href="/category/Electronics/Audio-and-Video/Accessories">Accessories</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Camera &amp; Accessories</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Electronics/Camera-and-Accessories/Camcorders">Camcorders</a></li>
+                        <li><a href="/category/Electronics/Camera-and-Accessories/Camera-Accessories">Camera Accessories</a></li>
+                        <li><a href="/category/Electronics/Camera-and-Accessories/Cameras">Cameras</a></li>
+                        <li><a href="/category/Electronics/Camera-and-Accessories/Binoculars-and-Telescopes">Binoculars &amp; Telescopes</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav">
+        <li class="dropdown mega-dropdown" style="vertical-align: middle;">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mobiles &amp; Accessories&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+            <ul class="dropdown-menu mega-dropdown-menu row">
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Mobiles</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Mobiles-and-Accessories/Mobiles/Samsung">Samsung</a></li>
+                        <li><a href="/category/Mobiles-and-Accessories/Mobiles/Micromax">Micromax</a></li>
+                        <li><a href="/category/Mobiles-and-Accessories/Mobiles/Karbonn">Karbonn</a></li>
+                        <li><a href="/category/Mobiles-and-Accessories/Mobiles/Xolo">Xolo</a></li>
+                        <li><a href="/category/Mobiles-and-Accessories/Mobiles/Apple">Apple</a></li>
+                        <li><a href="/category/Mobiles-and-Accessories/Mobiles/Lava">Lava</a></li>
+                        <li><a href="/category/Mobiles-and-Accessories/Mobiles/Nokia">Nokia</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Mobile Accessories</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Mobiles-and-Accessories/Mobile-Accessories/Chargers-and-Batteries">Chargers &amp; Batteries</a></li>
+                        <li><a href="/category/Mobiles-and-Accessories/Mobile-Accessories/Cases-and-Covers">Cases &amp; Covers</a></li>
+                        <li><a href="/category/Mobiles-and-Accessories/Mobile-Accessories/Earphones">Earphones</a></li>
+                        <li><a href="/category/Mobiles-and-Accessories/Mobile-Accessories/Memory-Cards">Memory Cards</a></li>
+                        <li><a href="/category/Mobiles-and-Accessories/Mobile-Accessories/Cables-and-Accessories">Cables &amp; Accessories</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav">
+        <li class="dropdown mega-dropdown" style="vertical-align: middle;">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Others&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+            <ul class="dropdown-menu mega-dropdown-menu row">
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Office Supplies</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Others/Office-Supplies/Corporate-Gifts">Corporate Gifts</a></li>
+                        <li><a href="/category/Others/Office-Supplies/Office-Accessories">Office Accessories</a></li>
+                        <li><a href="/category/Others/Office-Supplies/Stationary">Stationary</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Sports</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Others/Sports/Badminton">Badminton</a></li>
+                        <li><a href="/category/Others/Sports/Table-Tennis">Table Tennis</a></li>
+                        <li><a href="/category/Others/Sports/Tennis-and-Squash">Tennis &amp; Squash</a></li>
+                        <li><a href="/category/Others/Sports/Outdoor-and-Adventure">Outdoor &amp; Adventure</a></li>
+                        <li><a href="/category/Others/Sports/Other-Sports">Other Sports</a></li>
+                        <li><a href="/category/Others/Sports/Football">Football</a></li>
+                        <li><a href="/category/Others/Sports/Cricket">Cricket</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Health &amp; Fitness</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Others/Health-and-Fitness/Protein-Supplements">Protein Supplements</a></li>
+                        <li><a href="/category/Others/Health-and-Fitness/Vitamins-and-Supplements">Vitamins &amp; Supplements</a></li>
+                        <li><a href="/category/Others/Health-and-Fitness/Health-Drinks">Health Drinks</a></li>
+                        <li><a href="/category/Others/Health-and-Fitness/Sexual-Wellness">Sexual Wellness</a></li>
+                        <li><a href="/category/Others/Health-and-Fitness/Elderly-and-Patient-Care">Elderly &amp; Patient Care</a></li>
+                        <li><a href="/category/Others/Health-and-Fitness/Health-Devices">Health Devices</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Unisex</li>
+                        <li class="divider"></li>
+                        <li><a href="/category/Others/Unisex/Fragrances">Fragrances</a></li>
+                        <li><a href="/category/Others/Unisex/Accessories">Accessories</a></li>
+                        <li><a href="/category/Others/Unisex/Personal-Care">Personal Care</a></li>
+                    </ul>
+                </li>
+                <li class="col-sm-2">
+                    <ul>
+                        <li class="dropdown-header">Automobiles</li>
+                        <li class="divider"></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+@*<div class="collapse navbar-collapse js-navbar-collape">
+    @foreach (var category in Model.Where(c => c.Level == 1))
+    {
+        <ul class="nav navbar-nav">
+            <li class="dropdown mega-dropdown" style="vertical-align: middle;">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">@category.CategoryName&nbsp;&nbsp;<span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+                <ul class="dropdown-menu mega-dropdown-menu row">
+                    @foreach (var subcategory in Model.Where(m => m.ParentId == category.CategoryId))
+                    {
+                        <li class="col-sm-2">
+                            <ul>
+                                <li class="dropdown-header">@subcategory.CategoryName</li>
+                                <li class="divider"></li>
+                                @foreach (var inner in Model.Where(i => i.ParentId == subcategory.CategoryId))
+                                {                                                                    
+                                    <li><a href="@Url.RouteUrl("Level3", new { id1 = Utilities.EncodeUrl(category.CategoryName), id2 = Utilities.EncodeUrl(subcategory.CategoryName), id3 = Utilities.EncodeUrl(inner.CategoryName) })">@inner.CategoryName</a></li>
+                                    <li><a href="~/Category/@Utilities.EncodeUrl(category.CategoryName)/@Utilities.EncodeUrl(subcategory.CategoryName)/@Utilities.EncodeUrl(inner.CategoryName)">@inner.CategoryName</a></li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </li>
+        </ul>
+    }
+</div>*@

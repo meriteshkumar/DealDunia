@@ -1,0 +1,12 @@
+F:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Release\DealDunia.Domain.dll.config
+F:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Release\DealDunia.Domain.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Release\DealDunia.Domain.pdb
+F:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Release\DealDunia.Infrastructure.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Release\DealDunia.Service.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Release\Newtonsoft.Json.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Release\DealDunia.Infrastructure.pdb
+F:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Release\DealDunia.Service.pdb
+F:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Release\Newtonsoft.Json.xml
+F:\Affiliate\Application\DealDunia\DealDunia.Domain\obj\Release\DealDunia.Domain.csprojResolveAssemblyReference.cache
+F:\Affiliate\Application\DealDunia\DealDunia.Domain\obj\Release\DealDunia.Domain.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Domain\obj\Release\DealDunia.Domain.pdb

@@ -19,3 +19,4 @@ F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Debug\Microsoft.
 F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Debug\System.Web.WebPages.Deployment.xml
 F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\obj\Debug\DealDunia.Infrastructure.dll
 F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\obj\Debug\DealDunia.Infrastructure.pdb
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\obj\Debug\DealDunia.Infrastructure.csprojResolveAssemblyReference.cache

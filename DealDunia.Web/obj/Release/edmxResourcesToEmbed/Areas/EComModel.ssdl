@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EcomModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="EcomModelStoreContainer">
+    <EntitySet Name="CouponCategoryMap" EntityType="EcomModel.Store.CouponCategoryMap" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Coupons" EntityType="EcomModel.Store.Coupons" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExcDeals" EntityType="EcomModel.Store.ExcDeals" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Store" EntityType="EcomModel.Store.Store" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StoreCategory" EntityType="EcomModel.Store.StoreCategory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StoreCategoryMap" EntityType="EcomModel.Store.StoreCategoryMap" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="StoreSource" EntityType="EcomModel.Store.StoreSource" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_CouponCategoryMap_Coupons" Association="EcomModel.Store.FK_CouponCategoryMap_Coupons">
+      <End Role="Coupons" EntitySet="Coupons" />
+      <End Role="CouponCategoryMap" EntitySet="CouponCategoryMap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CouponCategoryMap_StoreCategory" Association="EcomModel.Store.FK_CouponCategoryMap_StoreCategory">
+      <End Role="StoreCategory" EntitySet="StoreCategory" />
+      <End Role="CouponCategoryMap" EntitySet="CouponCategoryMap" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Coupons_StoreCategory" Association="EcomModel.Store.FK_Coupons_StoreCategory">
+      <End Role="StoreCategory" EntitySet="StoreCategory" />
+      <End Role="Coupons" EntitySet="Coupons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Coupons_StoreSource" Association="EcomModel.Store.FK_Coupons_StoreSource">
+      <End Role="StoreSource" EntitySet="StoreSource" />
+      <End Role="Coupons" EntitySet="Coupons" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExcDeals_Store" Association="EcomModel.Store.FK_ExcDeals_Store">
+      <End Role="Store" EntitySet="Store" />
+      <End Role="ExcDeals" EntitySet="ExcDeals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExcDeals_StoreCategory" Association="EcomModel.Store.FK_ExcDeals_StoreCategory">
+      <End Role="StoreCategory" EntitySet="StoreCategory" />
+      <End Role="ExcDeals" EntitySet="ExcDeals" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Store_StoreSource" Association="EcomModel.Store.FK_Store_StoreSource">
+      <End Role="StoreSource" EntitySet="StoreSource" />
+      <End Role="Store" EntitySet="Store" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StoreCategoryMap_StoreCategory" Association="EcomModel.Store.FK_StoreCategoryMap_StoreCategory">
+      <End Role="StoreCategory" EntitySet="StoreCategory" />
+      <End Role="StoreCategoryMap" EntitySet="StoreCategoryMap" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CouponCategoryMap">
+    <Key>
+      <PropertyRef Name="CouponCatMapId" />
+    </Key>
+    <Property Name="CouponCatMapId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="CouponId" Type="bigint" Nullable="false" />
+    <Property Name="StoreCategoryId" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Coupons">
+    <Key>
+      <PropertyRef Name="CouponId" />
+    </Key>
+    <Property Name="CouponId" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StoreSourceId" Type="smallint" Nullable="false" />
+    <Property Name="PromoId" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="OfferId" Type="int" Nullable="false" />
+    <Property Name="OfferName" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="OfferType" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="CouponTitle" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="Category" Type="varchar" MaxLength="100" />
+    <Property Name="StoreCategoryId" Type="smallint" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="CouponCode" Type="varchar" MaxLength="100" />
+    <Property Name="OfferURL" Type="varchar(max)" Nullable="false" />
+    <Property Name="CouponStart" Type="varchar" MaxLength="20" />
+    <Property Name="CouponExpiry" Type="varchar" MaxLength="20" />
+    <Property Name="Featured" Type="bit" />
+    <Property Name="Exclusive" Type="bit" />
+    <Property Name="Status" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="ModifiedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ExcDeals">
+    <Key>
+      <PropertyRef Name="ExcDealId" />
+    </Key>
+    <Property Name="ExcDealId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StoreId" Type="smallint" Nullable="false" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="StoreCategoryId" Type="smallint" />
+    <Property Name="Title" Type="varchar" MaxLength="200" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="Image" Type="varchar" MaxLength="200" />
+    <Property Name="Logo" Type="varchar" MaxLength="200" />
+    <Property Name="URL" Type="varchar" MaxLength="1000" />
+    <Property Name="IsFeatured" Type="bit" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="StartDate" Type="date" />
+    <Property Name="EndDate" Type="date" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreId" />
+    </Key>
+    <Property Name="StoreId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StoreName" Type="varchar" MaxLength="100" />
+    <Property Name="StoreDescription" Type="varchar(max)" />
+    <Property Name="StoreURL" Type="varchar" MaxLength="500" />
+    <Property Name="StoreImage" Type="varchar" MaxLength="500" />
+    <Property Name="DisplayOrder" Type="smallint" />
+    <Property Name="Affiliate" Type="bit" />
+    <Property Name="AffiliateId" Type="varchar" MaxLength="50" />
+    <Property Name="StoreSourceId" Type="smallint" />
+    <Property Name="SourceStoreId" Type="int" />
+    <Property Name="IsFeatured" Type="bit" />
+    <Property Name="ExpirationDate" Type="datetime" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="ModifiedOn" Type="datetime" />
+    <Property Name="Status" Type="bit" />
+  </EntityType>
+  <EntityType Name="StoreCategory">
+    <Key>
+      <PropertyRef Name="StoreCategoryId" />
+    </Key>
+    <Property Name="StoreCategoryId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StoreCategoryName" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Image" Type="varchar" MaxLength="100" />
+    <Property Name="ParentId" Type="smallint" />
+    <Property Name="DisplayOrder" Type="smallint" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="Logo" Type="varchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="StoreCategoryMap">
+    <Key>
+      <PropertyRef Name="StoreCatMapId" />
+    </Key>
+    <Property Name="StoreCatMapId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StoreId" Type="smallint" Nullable="false" />
+    <Property Name="StoreCategoryId" Type="smallint" Nullable="false" />
+    <Property Name="URL" Type="varchar(max)" />
+    <Property Name="Active" Type="bit" />
+  </EntityType>
+  <EntityType Name="StoreSource">
+    <Key>
+      <PropertyRef Name="StoreSourceId" />
+    </Key>
+    <Property Name="StoreSourceId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="StoreSourceCode" Type="varchar" MaxLength="10" />
+    <Property Name="StoreSourceName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK_CouponCategoryMap_Coupons">
+    <End Role="Coupons" Type="EcomModel.Store.Coupons" Multiplicity="1" />
+    <End Role="CouponCategoryMap" Type="EcomModel.Store.CouponCategoryMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Coupons">
+        <PropertyRef Name="CouponId" />
+      </Principal>
+      <Dependent Role="CouponCategoryMap">
+        <PropertyRef Name="CouponId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CouponCategoryMap_StoreCategory">
+    <End Role="StoreCategory" Type="EcomModel.Store.StoreCategory" Multiplicity="1" />
+    <End Role="CouponCategoryMap" Type="EcomModel.Store.CouponCategoryMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StoreCategory">
+        <PropertyRef Name="StoreCategoryId" />
+      </Principal>
+      <Dependent Role="CouponCategoryMap">
+        <PropertyRef Name="StoreCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Coupons_StoreCategory">
+    <End Role="StoreCategory" Type="EcomModel.Store.StoreCategory" Multiplicity="0..1" />
+    <End Role="Coupons" Type="EcomModel.Store.Coupons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StoreCategory">
+        <PropertyRef Name="StoreCategoryId" />
+      </Principal>
+      <Dependent Role="Coupons">
+        <PropertyRef Name="StoreCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Coupons_StoreSource">
+    <End Role="StoreSource" Type="EcomModel.Store.StoreSource" Multiplicity="1" />
+    <End Role="Coupons" Type="EcomModel.Store.Coupons" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StoreSource">
+        <PropertyRef Name="StoreSourceId" />
+      </Principal>
+      <Dependent Role="Coupons">
+        <PropertyRef Name="StoreSourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExcDeals_Store">
+    <End Role="Store" Type="EcomModel.Store.Store" Multiplicity="1" />
+    <End Role="ExcDeals" Type="EcomModel.Store.ExcDeals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="ExcDeals">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExcDeals_StoreCategory">
+    <End Role="StoreCategory" Type="EcomModel.Store.StoreCategory" Multiplicity="0..1" />
+    <End Role="ExcDeals" Type="EcomModel.Store.ExcDeals" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StoreCategory">
+        <PropertyRef Name="StoreCategoryId" />
+      </Principal>
+      <Dependent Role="ExcDeals">
+        <PropertyRef Name="StoreCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Store_StoreSource">
+    <End Role="StoreSource" Type="EcomModel.Store.StoreSource" Multiplicity="0..1" />
+    <End Role="Store" Type="EcomModel.Store.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StoreSource">
+        <PropertyRef Name="StoreSourceId" />
+      </Principal>
+      <Dependent Role="Store">
+        <PropertyRef Name="StoreSourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreCategoryMap_StoreCategory">
+    <End Role="StoreCategory" Type="EcomModel.Store.StoreCategory" Multiplicity="1" />
+    <End Role="StoreCategoryMap" Type="EcomModel.Store.StoreCategoryMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StoreCategory">
+        <PropertyRef Name="StoreCategoryId" />
+      </Principal>
+      <Dependent Role="StoreCategoryMap">
+        <PropertyRef Name="StoreCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetCouponStoreCategories" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="SaveCoupon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="StoreSourceId" Type="smallint" Mode="In" />
+    <Parameter Name="PromoId" Type="varchar" Mode="In" />
+    <Parameter Name="OfferId" Type="int" Mode="In" />
+    <Parameter Name="OfferName" Type="varchar" Mode="In" />
+    <Parameter Name="OfferType" Type="varchar" Mode="In" />
+    <Parameter Name="CouponTitle" Type="varchar" Mode="In" />
+    <Parameter Name="Category" Type="varchar" Mode="In" />
+    <Parameter Name="StoreCategoryId" Type="smallint" Mode="In" />
+    <Parameter Name="Description" Type="varchar(max)" Mode="In" />
+    <Parameter Name="CouponCode" Type="varchar" Mode="In" />
+    <Parameter Name="OfferURL" Type="varchar(max)" Mode="In" />
+    <Parameter Name="CouponStart" Type="varchar" Mode="In" />
+    <Parameter Name="CouponExpiry" Type="varchar" Mode="In" />
+    <Parameter Name="Featured" Type="bit" Mode="In" />
+    <Parameter Name="Exclusive" Type="bit" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="StoreCategoryCSV" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="UpdateCoupon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CouponId" Type="bigint" Mode="In" />
+    <Parameter Name="StoreSourceId" Type="smallint" Mode="In" />
+    <Parameter Name="PromoId" Type="varchar" Mode="In" />
+    <Parameter Name="OfferId" Type="int" Mode="In" />
+    <Parameter Name="OfferName" Type="varchar" Mode="In" />
+    <Parameter Name="OfferType" Type="varchar" Mode="In" />
+    <Parameter Name="CouponTitle" Type="varchar" Mode="In" />
+    <Parameter Name="Category" Type="varchar" Mode="In" />
+    <Parameter Name="StoreCategoryId" Type="smallint" Mode="In" />
+    <Parameter Name="Description" Type="varchar(max)" Mode="In" />
+    <Parameter Name="CouponCode" Type="varchar" Mode="In" />
+    <Parameter Name="OfferURL" Type="varchar(max)" Mode="In" />
+    <Parameter Name="CouponStart" Type="varchar" Mode="In" />
+    <Parameter Name="CouponExpiry" Type="varchar" Mode="In" />
+    <Parameter Name="Featured" Type="bit" Mode="In" />
+    <Parameter Name="Exclusive" Type="bit" Mode="In" />
+    <Parameter Name="Status" Type="bit" Mode="In" />
+    <Parameter Name="StoreCategoryCSV" Type="varchar" Mode="In" />
+  </Function>
+</Schema>

@@ -73,16 +73,16 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/16/2016 15:24:01</publishTime>
     </File>
     <File Include="bin/DealDunia.Domain.dll">
-      <publishTime>10/17/2016 13:19:20</publishTime>
+      <publishTime>10/17/2016 15:12:21</publishTime>
     </File>
     <File Include="bin/DealDunia.Infrastructure.dll">
-      <publishTime>10/17/2016 13:19:19</publishTime>
+      <publishTime>10/17/2016 15:12:20</publishTime>
     </File>
     <File Include="bin/DealDunia.Service.dll">
-      <publishTime>10/17/2016 13:19:20</publishTime>
+      <publishTime>10/17/2016 15:12:20</publishTime>
     </File>
     <File Include="bin/DealDunia.Web.dll">
-      <publishTime>10/17/2016 13:19:21</publishTime>
+      <publishTime>10/17/2016 15:12:23</publishTime>
     </File>
     <File Include="bin/EntityFramework.dll">
       <publishTime>08/11/2016 12:40:15</publishTime>
@@ -202,10 +202,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/31/2016 12:44:29</publishTime>
     </File>
     <File Include="Content/style.css">
-      <publishTime>10/17/2016 13:16:37</publishTime>
+      <publishTime>10/17/2016 15:09:58</publishTime>
     </File>
     <File Include="Content/Style.min.css">
-      <publishTime>10/17/2016 13:17:13</publishTime>
+      <publishTime>10/17/2016 15:09:54</publishTime>
     </File>
     <File Include="favicon.ico">
       <publishTime>09/19/2016 12:38:12</publishTime>
@@ -733,7 +733,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>09/04/2016 10:46:33</publishTime>
     </File>
     <File Include="Images/Stores/eBay/eBay.jpg">
-      <publishTime>09/26/2016 19:54:28</publishTime>
+      <publishTime>10/17/2016 15:01:14</publishTime>
     </File>
     <File Include="Images/Stores/Evok/Evok.jpg">
       <publishTime>09/04/2016 10:46:33</publishTime>
@@ -1321,7 +1321,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/05/2016 13:56:09</publishTime>
     </File>
     <File Include="Views/Deal/_Coupons.cshtml">
-      <publishTime>10/17/2016 11:35:16</publishTime>
+      <publishTime>10/17/2016 15:08:07</publishTime>
     </File>
     <File Include="Views/Deal/_DailyDeals.cshtml">
       <publishTime>10/17/2016 11:28:32</publishTime>
@@ -1330,7 +1330,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>10/17/2016 11:48:29</publishTime>
     </File>
     <File Include="Views/Deal/_ExclusiveDeals.cshtml">
-      <publishTime>10/17/2016 11:30:31</publishTime>
+      <publishTime>10/17/2016 15:08:49</publishTime>
     </File>
     <File Include="Views/Deal/_OfferURL.cshtml">
       <publishTime>10/17/2016 11:29:38</publishTime>
@@ -1393,7 +1393,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>08/30/2016 16:12:08</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>10/17/2016 13:19:21</publishTime>
+      <publishTime>10/17/2016 15:12:25</publishTime>
     </File>
   </ItemGroup>
 </Project>

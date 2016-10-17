@@ -1,0 +1,140 @@
+﻿@model DealDunia.Web.Areas.ExcDeal
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add/Edit Exclusive Deal</h4>
+    </div>
+    @using (Html.BeginForm("Edit", "ExclusiveDeal", FormMethod.Post, new { enctype = "multipart/form-data", id = "myForm" }))
+    { 
+        @Html.ValidationSummary();
+        <div class="modal-body">
+            <div class="form-horizontal">
+                @Html.HiddenFor(h => h.ExcDealId)
+                <input type="hidden" id="hdStore" name="StoreName" />
+                <div class="form-group">
+                    <label for="StoreID" class="col-sm-2" style="max-height: none;">Store</label>
+                    <div class="col-sm-4" id="DivStore"></div>
+                    @Html.HiddenFor(h => h.CategoryId, new { value = '0' })
+                    <label class="col-sm-2" for="StoreCategoryId" style="max-height: none;">Category</label>
+                    <div class="col-sm-4" id="DivStoreCategory"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2" for="Title" style="max-height: none;">Title</label>
+                    <div class="col-sm-10">
+                        @Html.TextBoxFor(t => t.Title, new { @class = "form-control col-sm-10" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2" for="Description" style="max-height: none;">Description</label>
+                    <div class="col-sm-10">
+                        @Html.TextAreaFor(t => t.Description, new { cols = "40", rows = "3", @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2" for="URL" style="max-height: none;">URL</label>
+                    <div class="col-sm-10">
+                        @Html.TextAreaFor(t => t.URL, new { cols = "40", rows = "3", @class = "form-control" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2" for="StartDate" style="max-height: none;">St. Date</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(t => t.StartDate, new { @class = "form-control startdate" })
+                    </div>
+                    <label class="col-sm-2" for="EndDate" style="max-height: none;">End Date</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(t => t.EndDate, new { @class = "form-control enddate" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2" for="Active" style="max-height: none;">Active</label>
+                    <div class="col-sm-4">
+                        @Html.EditorFor(m => m.Active)
+                    </div>
+                    <label class="col-sm-2" for="IsFeatured" style="max-height: none;">Featured</label>
+                    <div class="col-sm-4">
+                        @Html.EditorFor(m => m.IsFeatured)
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <label style="max-height: none;">Image</label>
+                        <a class="btn" href="javascript:;">Choose File...
+                <input type="file" name="Image1" style="position: absolute; z-index: 2; top: 0; left: 0; filter: alpha(opacity=0); opacity: 0; background-color: transparent; color: transparent;" onchange='$("#upload-file-info").html($(this).val()); $(".upload-file-info").val($(this).val());' />
+                        </a>
+                        <span class="label label-info" id="upload-file-info"></span>
+                        @Html.Hidden("Image", Model.Image, new { @class = "upload-file-info" })
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.Image))
+                    {
+                        <img class="img-thumbnail" style="max-height:200px; max-width:200px;" src="@Url.Content(string.Format("~/Images/{0}", Model.Image))" />
+                    }
+                    else
+                    {
+                        <div class="form-control-static">No Image</div>
+                    }
+
+                    <div class="col-sm-6">
+                        <label style="max-height: none;">Logo</label>
+                        <a class="btn" href="javascript:;">Choose File...
+                <input type="file" name="Logo1" style="position: absolute; z-index: 2; top: 0; left: 0; filter: alpha(opacity=0); opacity: 0; background-color: transparent; color: transparent;" onchange='$("#upload-file-info1").html($(this).val());$(".upload-file-info1").val($(this).val());' />
+                        </a>
+                        <span class="label label-info" id="upload-file-info1"></span>
+                        @Html.Hidden("Logo", Model.Logo, new { @class = "upload-file-info1" })
+                    </div>
+                    @if (!string.IsNullOrEmpty(Model.Logo))
+                    {
+                        <img class="img-thumbnail" width="100" height="100" src="@Url.Content(string.Format("~/Images/{0}", Model.Logo))" />
+                    }
+                    else
+                    {
+                        <div class="form-control-static">No Image</div>
+                    }
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <input type="submit" value="Save changes" class="btn btn-primary" />
+            </div>
+        </div>
+    }
+</div>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        var settings = {
+            storeURL: '@Url.Action("_StoreDropDown", "ExclusiveDeal")',
+            storeCategoryURL: '@Url.Action("_StoreCategoryDropDown", "ExclusiveDeal")'
+        };
+
+        $(".startdate").datepicker();
+        $(".enddate").datepicker();
+
+        $(document).on("change", "[id='cc-dropdown']", function () {
+            $("#hdStore").val($("[id='cc-dropdown'] option:selected").first().text());
+        });
+
+        callAjaxURLWithSingleParam(settings.storeCategoryURL, { controlName: 'StoreCategoryId' })
+            .done(function (data) {
+                $("#DivStoreCategory").html(data);
+                $("#StoreCategoryId").val(@Model.StoreCategoryId);
+            }).fail(function () {
+                //TODO:Debugging code
+            });
+
+        callAjaxURLWithSingleParam(settings.storeURL, { controlName: 'StoreId' })
+            .done(function (data) {
+                $("#DivStore").html(data);
+                $("[id='cc-dropdown']").val(@Model.StoreId);
+                $("#hdStore").val($("[id='cc-dropdown'] option:selected").first().text());
+            }).fail(function (error) {
+                //TODO:Debugging code
+            });
+    });
+</script>

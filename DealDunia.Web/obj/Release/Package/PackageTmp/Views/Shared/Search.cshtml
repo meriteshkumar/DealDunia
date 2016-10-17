@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = ViewBag.SearchedItem.ToString();
+}
+
+@*<h2>@ViewBag.SearchedItem</h2>*@
+<div>
+    @Html.Action("SearchResult", "Nav", new { searchtext = ViewBag.SearchedItem, page = ViewBag.Page })
+</div>

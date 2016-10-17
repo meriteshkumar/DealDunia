@@ -1,0 +1,259 @@
+﻿@model DealDunia.Web.Areas.Coupon
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add/Edit Coupon</h4>
+    </div>
+    @using (Html.BeginForm("Save", "Coupons", FormMethod.Post, new { enctype = "multipart/form-data", id = "myForm" }))
+    { 
+        @Html.ValidationSummary();
+        <div class="modal-body">
+            <div class="form-horizontal">
+                @Html.HiddenFor(h => h.CouponId)
+                <input type="hidden" id="hdStore" name="StoreName" />
+                <div class="form-group">
+                    <label for="StoreSource" class="col-md-2">Source</label>
+                    <div class="col-md-3 divStoreSourceID">
+                        <!-- placeholder for store source dropdown -->
+                    </div>
+                    <label for="OfferId" class="col-md-2">Offer ID</label>
+                    <div class="col-md-5 divStoreID">
+                        <!-- placeholder for store dropdown -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="PromoId" class="col-md-2">Promo ID</label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(t => t.PromoId, new { @class = "form-control" })
+                    </div>
+                    <label for="OfferName" class="col-md-2">Offer Name</label>
+                    <div class="col-md-5">
+                        @Html.TextBoxFor(t => t.OfferName, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="CouponTitle" class="col-md-2">Title</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(t => t.CouponTitle, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Description" class="col-md-2">Description</label>
+                    <div class="col-md-10">
+                        @Html.TextAreaFor(t => t.Description, new { cols = "40", rows = "2", @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="OfferType" class="col-md-2">Type</label>
+                    <div class="col-md-3">
+                        @Html.DropDownList("OfferType", new SelectList(new SelectListItem[]{ 
+                                    new SelectListItem { Value = "Coupon", Text= "Coupon" }, 
+                                    new SelectListItem { Value = "Deal", Text= "Deal"} 
+                   }, "Value", "Text"), "Please select", new { @class = "form-control" })
+                    </div>
+                    <label for="CouponCode" class="col-md-2">Code</label>
+                    <div class="col-md-5">
+                        @Html.TextBoxFor(t => t.CouponCode, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Category" class="col-md-2">Category</label>
+                    <div class="col-md-3">
+                        @Html.TextBoxFor(t => t.Category, new { @class = "form-control" })
+                    </div>
+                    <label for="CouponCategory" class="col-md-2">Category</label>
+                    <div class="col-md-3 divStoreCatDDL">
+                        <!-- placeholder for store category dropdown -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="StoreCategory" class="col-md-2">Store Category</label>
+                    <input type="hidden" id="StoreCategoryIdCSV" name="StoreCategoryIdCSV" />
+                    <div class="col-md-10 divStoreCategoryID">
+                        <!-- placeholder for store category checkboxes -->
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="OfferURL" class="col-md-2">Offer URL</label>
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(t => t.OfferURL, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="CouponStart" class="col-md-2">St. Date</label>
+                    <div class="col-md-4">
+                        @Html.TextBoxFor(t => t.CouponStart, new { @class = "form-control startdate" })
+                    </div>
+                    <label for="CouponExpiry" class="col-md-2">Expiry</label>
+                    <div class="col-md-4">
+                        @Html.TextBoxFor(t => t.CouponExpiry, new { @class = "form-control enddate" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="Featured" class="col-md-2">Featured</label>
+                    <div class="col-md-2">
+                        @Html.EditorFor(m => m.Featured)
+                    </div>
+                    <label for="Exclusive" class="col-md-2">Exclusive</label>
+                    <div class="col-md-2">
+                        @Html.EditorFor(m => m.Exclusive)
+                    </div>
+                    <label for="Status" class="col-md-2">Status</label>
+                    <div class="col-md-2">
+                        @Html.EditorFor(m => m.Status)
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                @*<input type="submit" value="Save changes" class="btn btn-primary" />*@
+                <button type="button" id="savebtn" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    }
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var settings = {
+            storeSourceDropDown: '@Url.Action("_StoreSourceDropDown", "Coupons")',
+            storeURL: '@Url.Action("GetStoreByStoreSource", "Coupons")',
+            couponStoreCategoryURL: '@Url.Action("_CouponStoreCategory", "Coupons")'
+        };
+
+        $(".startdate").datepicker();
+        $(".enddate").datepicker();
+
+        callAjaxURLWithSingleParam(settings.storeSourceDropDown, { controlName: "StoreSourceId" })
+        .done(function (data) {
+            $(".divStoreSourceID").html(data);
+
+             @if (Model.StoreSourceId != 0)
+             {
+                        <text>
+            $("div.divStoreSourceID select").val(@Model.StoreSourceId);
+            fillStore($("div.divStoreSourceID select").val(), ".divStoreID");
+                        </text>
+             }
+             else
+             {
+                        <text>
+            fillStore(0, ".divStoreID");
+                        </text>
+             }
+
+            fillStore($("div.divStoreSourceID select").val(), ".divStoreID");
+        }).fail(function (error) {
+            //TODO:Debugging
+        });
+
+        $(document).on("change", ".divStoreSourceID #ss-dropdown", function () {
+            var storeSourceId = $(".divStoreSourceID #ss-dropdown option:selected").first().val();
+            fillStore(storeSourceId, ".divStoreID");
+        });
+
+        $(document).on("change", ".divStoreID #OfferId", function () {
+            var storeSourceId = $(".divStoreSourceID #ss-dropdown option:selected").first().val();
+            var sourceStoreId = $(".divStoreID #OfferId option:selected").first().val();
+
+            fillStoreCategory(storeSourceId, sourceStoreId, ".divStoreCategoryID");
+        });
+
+        $(document).on("change", ".catvalue", function () {
+            $("#StoreCategoryIdCSV").val("");
+            var categoryIds = '';
+
+            $(".catvalue").each(function () {
+                if (this.checked)
+                    categoryIds += $(this).val() + ",";
+            });
+
+            categoryIds = categoryIds.replace(/,\s*$/, "");
+            $("#StoreCategoryIdCSV").val(categoryIds);
+        });
+
+        function fillStore(storeSourceId, containerSelector) {
+            $(containerSelector).html('');
+
+            callAjaxPostURLWithSingleParamJSON(settings.storeURL, { StoreSourceId: storeSourceId })
+            .done(function (data) {
+                var html = "<select class='form-control' id='OfferId' name='OfferId'>";
+                $.each(data, function (index, value) {
+                    html += '<option value="' + value.SourceStoreId + '">' + value.StoreName + '</option>';
+                });
+                html += "</select>";
+                $(containerSelector).html(html);
+
+                @if (Model.OfferId != 0)
+                {
+                        <text>
+                $("div" + containerSelector + " select").val(@Model.OfferId);
+                        </text>
+                }
+
+                var sourceStoreId = $(".divStoreID #OfferId option:selected").first().val();
+                fillStoreCategory(storeSourceId, sourceStoreId, ".divStoreCategoryID");
+            }).fail(function (error) {
+                //TODO:Debugging
+            });
+        }
+
+        function fillStoreCategory(storeSourceId, sourceStoreId, containerSelector) {
+            $(containerSelector).html('');
+
+            callAjaxPostURLWithSingleParamJSON(settings.couponStoreCategoryURL, { StoreSourceId: storeSourceId, SourceStoreId: sourceStoreId })
+            .done(function (categories) {
+                var html = "";
+                var storeCatHtml = "<select class='form-control' id='StoreCategoryId' name='StoreCategoryId'>";
+                storeCatHtml += '<option value="-2">ALL</option>';
+
+                $.each(categories, function (index, value) {
+                    html += '<input class="catvalue" type="checkbox" value="' + value.StoreCategoryId + '"></input>&nbsp;' + '<span>' + value.StoreCategoryName + '</span>&nbsp;';
+                    storeCatHtml += '<option value="' + value.StoreCategoryId + '">' + value.StoreCategoryName + '</option>';
+                });
+
+                storeCatHtml += "</select>";
+
+                $(containerSelector).html(html);
+                $("div.divStoreCatDDL").html(storeCatHtml);
+
+                @if (Model.CouponCategoryMaps != null && Model.CouponCategoryMaps.Count > 0)
+                {
+                    foreach (var map in Model.CouponCategoryMaps)
+                    {
+                      <text>
+                $("div" + containerSelector + " input[type=checkbox]").each(function () {
+                    if ($(this).val() == parseInt(@map.StoreCategoryId)) {
+                        $(this).prop("checked", true);
+                    }
+                });
+                </text>
+                    }
+                }
+                @if (Model.StoreCategoryId != 0)
+                {
+                        <text>
+                $("div.divStoreCatDDL select").val(@Model.StoreCategoryId);
+                        </text>
+                }
+
+            })
+            .fail(function (data, status, headers, config) {
+                //TODO:Debugging
+            });
+        }
+
+        $("#savebtn").on("click", function () {
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Save", "Coupons")',
+                data: $('#myForm').serialize(),
+                datatype: "html",
+                success: function (data) {
+                    $("#myModal").modal("hide");
+                    alert("Record Saved.");
+                }
+            });
+        });
+    });
+</script>

@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DealDunia.Domain.Entities.Store>
+
+<script type="text/javascript">
+    var items;
+    
+    $(window).on('load', function () {
+        $("#flexisel").flexisel({
+            visibleItems: 8,
+            itemsToScroll: 1,
+            autoPlay: {
+                enable: true,
+                interval: 5000,
+                pauseOnHover: true
+            }
+        });
+    });
+
+</script>
+
+@*<h4>FEATURED STORE</h4>
+<hr />*@
+<div class="row ">   
+    <ul id="flexisel">
+        @foreach (var store in Model)
+        {               
+            <li>
+                @* <div class="div_store_logo">*@
+                <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
+                    <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName"/>
+                </a>
+                @*</div>*@
+            </li>
+        }
+    </ul>
+</div>
+@*<h4>FEATURED STORE</h4>
+<hr />
+<div class="row">
+    @foreach (var store in Model)
+    {        
+        <div class="div_store_logo">
+            <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
+                <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" class="store_logo store_logo_center"/>
+            </a>
+        </div>
+    }
+</div>*@

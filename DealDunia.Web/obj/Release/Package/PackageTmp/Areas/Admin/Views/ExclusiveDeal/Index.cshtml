@@ -1,0 +1,129 @@
+﻿@model IEnumerable<DealDunia.Web.Areas.ExcDeal>
+@{
+    ViewBag.Title = "Exclusive Deal";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Exclusive Deal</h2>
+    </div>
+    <div class="col-md-6" style="float: right; text-align: right; top: 21px;">
+        <button class="btn btn-primary add-deal">Add Exclusive Deal</button>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+    </div>
+</div>
+
+
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h3 class="panel-title">Search</h3>
+    </div>
+    <div class="panel-body">
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label for="StoreID" class="col-sm-1 control-label" style="max-height: none;">Store</label>
+                <div class="col-sm-2 divSearchStoreID">
+                    <!-- placeholder for store dropdown -->
+                </div>
+                <label for="StoreCategoryId" class="col-sm-1 control-label" style="max-height: none;">Category</label>
+                <div class="col-sm-3 divSearchStoreCategoryId">
+                    <!-- placeholder for storecategory dropdown -->
+                </div>
+                <label for="IsFeatured" class="col-sm-1 control-label" style="max-height: none;">Featured</label>
+                <div class="col-sm-1 dropdown">
+                    <select class="form-control" id="SearchIsFeatured">
+                        <option value="">All</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <label for="Active" class="col-sm-1 control-label" style="max-height: none;">Active</label>
+                <div class="col-sm-1 dropdown">
+                    <select class="form-control" id="SearchActive">
+                        <option value="">All</option>
+                        <option value="true" selected="selected">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <div class="col-sm-1">
+                    <button class="btn btn-default btnSearch">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-success">@TempData["Message"].ToString()</div>
+}
+
+<div id="divMainGrid">
+    @Html.Partial("_IndexView", Model)
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var settings = {
+            storeURL: '@Url.Action("_StoreDropDown", "ExclusiveDeal")',
+            storeCategoryURL: '@Url.Action("_StoreCategoryDropDown", "ExclusiveDeal")',
+            exclusiveDealURL: '@Url.Action("_IndexView", "ExclusiveDeal")',
+            addExclusiveDealViewURL: '@Url.Action("_AddExcDeal", "ExclusiveDeal")'
+        };
+
+        $(".add-deal").click(function () {
+            callAjaxURLWithSingleParam(settings.addExclusiveDealViewURL, null)
+                .done(function (data) {
+                    $(".modal-dialog").html(data);
+                    $("#myModal").modal();
+
+                    //Need to register unobtrusive validation for dynamically added elements
+                    var form = $("#myForm");
+                    form.removeData('validator');
+                    form.removeData('unobtrusiveValidation');
+                    $.validator.unobtrusive.parse(form);
+                }).fail(function () {
+                    //TODO:Debugging code
+                });
+        });
+
+        callAjaxURLWithSingleParam(settings.storeURL, { controlName: 'StoreId' })
+         .done(function (data) {
+             $(".divSearchStoreID").html(data);
+         }).fail(function (error) {
+             //TODO:Debugging code
+         });
+
+
+        callAjaxURLWithSingleParam(settings.storeCategoryURL, { controlName: 'StoreCategoryId' })
+            .done(function (data) {
+                $(".divSearchStoreCategoryId").html(data);
+            }).fail(function (error) {
+                //TODO:Debugging code
+            });
+
+        $(".btnSearch").click(function () {
+            var storeId = $("[id='cc-dropdown']").val();
+            var storeCategoryId = $("[id='StoreCategoryId']").val();
+            var isFeatured = $("[id='SearchIsFeatured']").val();
+            var active = $("[id='SearchActive']").val();
+
+            $body = $("body");
+            $body.addClass("loading");
+            callAjaxURLWithSingleParam(settings.exclusiveDealURL, { storeId: storeId, storeCategoryId: storeCategoryId, isFeatured: isFeatured, active: active })
+            .done(function (data) {
+                $body.removeClass("loading");
+                $("#divMainGrid").html(data);
+            }).fail(function (error) {
+                //TODO:Debugging code
+            });
+        });
+    });
+</script>

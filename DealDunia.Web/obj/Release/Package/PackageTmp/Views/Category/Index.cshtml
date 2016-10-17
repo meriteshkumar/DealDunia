@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "GrabMeDeal: Deals & Coupon Offers";
+}
+<div class="row box">
+    @{Html.RenderPartial("_Carousel");}
+</div>
+<div class="row box">
+    <h4><span itemprop="name" class="boxtitle">FEATURED STORES</span></h4>
+    @Html.Action("_ShopByStore", "Store")
+</div>
+<div class="row">
+    <div class="col-lg-9 col-md-9 col-sm-9 col-sx-9 paddingzero">
+        <div class="box">
+            <h4><span itemprop="name" class="boxtitle">FEATURED DEALS</span></h4>
+            <div id="exclusive-deal-container"></div>
+            <div id="exclusive-deal-container-loader" style="display: none;">
+                <img src="~/Images/loading.gif" />
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-sx-3" style="padding-right: 0px;">
+        <div class="box">
+            <!-- Javascript Ad Tag: 2090 -->
+            <div id="vcm209045nlXO"></div>
+            <script src="http://tracking.vcommission.com/aff_ad?campaign_id=2090&aff_id=46159&format=javascript&format=js&divid=vcm209045nlXO" type="text/javascript"></script>
+            <noscript>
+                <iframe src="http://tracking.vcommission.com/aff_ad?campaign_id=2090&aff_id=46159&format=javascript&format=iframe" scrolling="no" frameborder="0" marginheight="0" marginwidth="0" width="300" height="600"></iframe>
+            </noscript>
+            <!-- // End Ad Tag -->
+        </div>
+    </div>
+    <div class="box">
+        <h4><span itemprop="name" class="boxtitle">DAILY DEALS</span></h4>
+        <div id="daily-deal-container">
+            @*@Html.Action("_DailyDeals", "Deal")*@
+        </div>
+    </div>
+    @*@Html.Action("_ExclusiveDeals", "Deal")*@
+</div>
+
+@*@Html.Action("_ShopByCategory", "Category")*@
+<script>
+    $(document).ready(function () {
+        var settings = {
+            EXCLUSIVE_DEAL: '@Url.Action("_ExclusiveDeals", "Deal", new { IsFeatured = true })',
+            DAILY_DEAL: '@Url.Action("_DailyDeals", "Deal")'
+        };
+
+        $("#exclusive-deal-container-loader").show();
+        $.ajax({
+            url: settings.EXCLUSIVE_DEAL,
+            data: {}
+        })
+        .done(function (response) {
+            $("#exclusive-deal-container-loader").hide();
+            $("#exclusive-deal-container").html(response);
+        })
+        .fail(function (data, status, headers, config) {
+
+        });
+
+        $.ajax({
+            url: settings.DAILY_DEAL,
+            data: {}
+        })
+        .done(function (response) {
+            $("#daily-deal-container").html(response);
+        })
+        .fail(function (data, status, headers, config) {
+
+        });
+    });
+</script>

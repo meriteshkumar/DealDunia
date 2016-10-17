@@ -1,0 +1,16 @@
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\DealDunia.Infrastructure.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\DealDunia.Infrastructure.pdb
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\System.Web.Mvc.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\System.Web.Razor.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\System.Web.WebPages.Razor.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\System.Web.WebPages.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\Microsoft.Web.Infrastructure.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\System.Web.WebPages.Deployment.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\System.Web.Mvc.xml
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\System.Web.Razor.xml
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\System.Web.WebPages.Razor.xml
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\System.Web.WebPages.xml
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\Microsoft.Web.Infrastructure.xml
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\bin\Release\System.Web.WebPages.Deployment.xml
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\obj\Release\DealDunia.Infrastructure.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Infrastructure\obj\Release\DealDunia.Infrastructure.pdb

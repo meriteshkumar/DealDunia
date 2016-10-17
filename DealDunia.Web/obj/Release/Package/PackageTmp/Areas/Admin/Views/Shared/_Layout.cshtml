@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,700">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.0/themes/smoothness/jquery-ui.css">
+
+    @Scripts.Render("~/Admin/bundles/js")
+
+
+    <style type="text/css">
+        /* Start by setting display:none to make this hidden.
+   Then we position it in relation to the viewport window
+   with position:fixed. Width, height, top and left speak
+   speak for themselves. Background we set to 80% white with
+   our animation centered, and no-repeating */
+        .modaloading
+        {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba( 255, 255, 255, .8 ) url('../../../Images/loading.gif') 50% 50% no-repeat;
+        }
+
+        /* When the body has the loading class, we turn
+   the scrollbar off with overflow:hidden */
+        body.loading
+        {
+            overflow: hidden;
+        }
+
+            /* Anytime the body has the loading class, our
+   modal element will be visible */
+            body.loading .modaloading
+            {
+                display: block;
+            }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="@Url.Action("Index", "ExclusiveDeal")" class="list-group-item">Exclusive Deal</a></li>
+                    <li><a href="@Url.Action("Index", "Coupons")" class="list-group-item">Coupons</a></li>
+                    <li><a href="@Url.Action("Index", "Stores")" class="list-group-item">Stores</a></li>
+                    <li><a href="#" data-toggle="collapse" data-target="#drilldown-1" class="list-group-item">Update Store</a>
+                        <div style="padding-left: 0px;">
+                            <ul id="drilldown-1" class="nav nav-pills nav-stacked collapse">
+                                <li>@Html.ActionLink("VCommission", "UpdateStores", "Source", new { area = "", source = "1" }, null)</li>
+                                <li>@Html.ActionLink("iCubeWires", "UpdateStores", "Source", new { area = "", source = "4" }, null)</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#" data-toggle="collapse" data-target="#drilldown-2" class="list-group-item">Update Coupon</a>
+                        <ul id="drilldown-2" class="nav nav-pills nav-stacked collapse">
+                            <li>@Html.ActionLink("Payoom", "UpdateCoupons", "Source", new { area = "", source = "payoom" }, null)</li>
+                            <li>@Html.ActionLink("VCommission", "UpdateCoupons", "Source", new { area = "", source = "vcom" }, null)</li>
+                            <li>@Html.ActionLink("iCubeWires", "UpdateCoupons", "Source", new { area = "", source = "icw" }, null)</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-10">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <!--Loading modal -->
+    <div class="modaloading"></div>
+    @*<div class="modal"></div>
+    @*<script type="text/javascript">
+        $(document).ready(function () {
+            //Loading modal script
+            $body = $("body");
+
+            $(document).on({
+                ajaxStart: function () { $body.addClass("loading"); },
+                ajaxStop: function () { $body.removeClass("loading"); }
+            });
+        });
+    </script>*@
+</body>
+</html>

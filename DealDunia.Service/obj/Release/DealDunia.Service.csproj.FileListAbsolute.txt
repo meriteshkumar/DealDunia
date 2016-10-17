@@ -1,0 +1,8 @@
+F:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Service.dll.config
+F:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Service.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Service.pdb
+F:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Infrastructure.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Infrastructure.pdb
+F:\Affiliate\Application\DealDunia\DealDunia.Service\obj\Release\DealDunia.Service.csprojResolveAssemblyReference.cache
+F:\Affiliate\Application\DealDunia\DealDunia.Service\obj\Release\DealDunia.Service.dll
+F:\Affiliate\Application\DealDunia\DealDunia.Service\obj\Release\DealDunia.Service.pdb
