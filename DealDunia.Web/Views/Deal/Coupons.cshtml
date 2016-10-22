@@ -1,8 +1,12 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.Coupon>
 @using DealDunia.Infrastructure.Utility
 
+    <meta name="description" content="@Utilities.DecodeUrl(@ViewContext.RouteData.Values["Category"].ToString()) + " Deals & Coupons Offers";" />
+
 @{
-    ViewBag.Title = "GrabMeDeal: " + Utilities.DecodeUrl(@ViewContext.RouteData.Values["Category"].ToString()) + " Deals & Coupons Offers";
+    ViewBag.Title = Utilities.DecodeUrl(@ViewContext.RouteData.Values["Category"].ToString()) + " Deals & Coupons Offers - GrabMeDeal";
+    ViewBag.MetaDescription = Utilities.DecodeUrl(@ViewContext.RouteData.Values["Category"].ToString()) + " coupons, discount codes & deals from various online stores across India.";
+    ViewBag.keywords = Utilities.DecodeUrl(@ViewContext.RouteData.Values["Category"].ToString()) + " Coupons, " + Utilities.DecodeUrl(@ViewContext.RouteData.Values["Category"].ToString()) + " Offers";
     ViewBag.Source = "couponsbycat";
 }
 
@@ -55,6 +59,14 @@
             LoadCoupons();
         });
 
+        $.ajax({
+            type: "POST",
+            url: "/Source/getCampaignCode",
+            data: { categoryName: '@Utilities.DecodeUrl(ViewContext.RouteData.Values["Category"].ToString())' }
+        }).done(function (data) {
+            $("#divCampaign").html(data);
+        }).fail(function () {
+        });
 
     });
 </script>
@@ -71,9 +83,10 @@
                 </div>
                 <div class="checkbox" style="padding-left: 5px;">
                     @foreach (var offertype in Model.OrderBy(o => o.OfferType).Select(p => p.OfferType).Distinct())
-                    {                    
+                    {
                         <label>
-                            <input type="checkbox" value="@offertype" name="chktype"/>@offertype</label>
+                            <input type="checkbox" value="@offertype" name="chktype" />@offertype
+                        </label>
                     }
                 </div>
             </div>
@@ -83,12 +96,14 @@
                 </div>
                 <div class="checkbox" style="padding-left: 5px; padding-right: 5px;">
                     @foreach (var storename in Model.OrderBy(o => o.OfferName).Select(p => p.OfferName).Distinct())
-                    {          
+                    {
                         <label>
-                            <input type="checkbox" value="@storename" name="chkstore"/>@storename</label>
+                            <input type="checkbox" value="@storename" name="chkstore" />@storename
+                        </label>
                     }
                 </div>
             </div>
+            <div id="divCampaign"></div>
         </div>
     </div>
     <div class="col-md-9 col-sm-9 col-sx-9 paddingright0">

@@ -11,6 +11,7 @@ using DealDunia.Domain.Concrete;
 using DealDunia.Domain.Entities;
 using DealDunia.Infrastructure.Utility;
 using Newtonsoft.Json.Linq;
+using System.Linq;
 
 namespace DealDunia.Web.Controllers
 {
@@ -23,14 +24,14 @@ namespace DealDunia.Web.Controllers
         public SourceController()
         {
             this.repository = new CommonRepository();
-        }        
+        }
         public void UpdateCoupons(string Source)
         {
             try
             {
                 if (Source.ToLower() == "vcom")
                 {
-                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create( string.Format("https://tools.vcommission.com/api/coupons.php?apikey={0}", VCOM.APIKEY));
+                    HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format("https://tools.vcommission.com/api/coupons.php?apikey={0}", VCOM.APIKEY));
                     List<VCOMCoupon> deserializedResult = null;
                     JavaScriptSerializer serializer = new JavaScriptSerializer();
                     WebResponse response = request.GetResponse();
@@ -75,18 +76,18 @@ namespace DealDunia.Web.Controllers
                         deserializedResult = serializer.Deserialize<List<ICWCoupons>>(json);
                         DataTable dt = new DataTable();
                         dt = Utilities.ToDataTable(deserializedResult);
-                        for (int i = dt.Rows.Count-1; i >= 0; i--)
+                        for (int i = dt.Rows.Count - 1; i >= 0; i--)
                         {
                             if (DateTime.TryParse(dt.Rows[i]["Expiry_Date"].ToString(), out Expirydate))
                             {
                                 if (Expirydate < DateTime.Now.Date)
                                 {
-                                    dt.Rows.RemoveAt(i);                                    
+                                    dt.Rows.RemoveAt(i);
                                 }
                             }
                             else
                             {
-                                dt.Rows.RemoveAt(i);                               
+                                dt.Rows.RemoveAt(i);
                             }
                         }
                         dt.AcceptChanges();
@@ -132,11 +133,11 @@ namespace DealDunia.Web.Controllers
                         JToken offer = x.Value;
                         //if (offer["Offer"]["name"].ToString().ToLower().Contains(" india"))
                         //{
-                            SourceStore store = new SourceStore();
-                            store.id = Convert.ToInt16(offer["Offer"]["id"]);
-                            store.name = offer["Offer"]["name"].ToString();
-                            store.expiration_date = offer["Offer"]["expiration_date"].ToString();
-                            stores.Add(store);
+                        SourceStore store = new SourceStore();
+                        store.id = Convert.ToInt16(offer["Offer"]["id"]);
+                        store.name = offer["Offer"]["name"].ToString();
+                        store.expiration_date = offer["Offer"]["expiration_date"].ToString();
+                        stores.Add(store);
                         //}
                     }
                     DataTable dt = new DataTable();
@@ -148,7 +149,34 @@ namespace DealDunia.Web.Controllers
             {
                 string errorText = ex.Message;
             }
-        }        
+        }
 
+        public string getCampaignCode(string categoryName)
+        {
+            var category = repository.GetCouponStoreCategories(categoryName).Single();
+            if (category != null)
+            {
+                if (category.CampaignId > 0)
+                {
+                    string request = string.Empty;
+                    if (category.StoreSourceId == 1)
+                    {
+                        request = string.Format("https://api.hasoffers.com/Apiv3/json?NetworkId={0}&Target=Affiliate_AdManager&Method=getCampaignCode&api_key={1}&campaign_id={2}", VCOM.NetworkId, VCOM.APIKEY, category.CampaignId);
+                    }
+                    HttpWebRequest httpRequest = null;
+                    httpRequest = (HttpWebRequest)WebRequest.Create(request);
+                    List<SourceStore> stores = new List<SourceStore>();
+                    WebResponse response = httpRequest.GetResponse();
+                    using (Stream responseStream = response.GetResponseStream())
+                    {
+                        StreamReader reader = new StreamReader(responseStream, Encoding.UTF8);
+                        string json = reader.ReadToEnd();
+                        JObject data = JObject.Parse(json);
+                        return ((JToken)((JObject)data["response"]["data"])["CampaignCode"]).ToString();
+                    }
+                }
+            }
+            return string.Empty;
+        }
     }
 }
