@@ -1,7 +1,10 @@
 ﻿@model IEnumerable<DealDunia.Domain.Entities.Store>
+@using DealDunia.Infrastructure.Utility
 
 @{
-    ViewBag.Title = "GrabMeDeal: " + @ViewContext.RouteData.Values["Store"].ToString() + " Deals & Coupons Offers ";             
+    ViewBag.Title =  @ViewContext.RouteData.Values["Store"].ToString() + " Deals & Coupons Offers - GrabMeDeal";
+    ViewBag.MetaDescription = Utilities.DecodeUrl(@ViewContext.RouteData.Values["Store"].ToString()) + " coupons, discount codes & deals";
+    ViewBag.keywords = Utilities.DecodeUrl(@ViewContext.RouteData.Values["Store"].ToString()) + " Coupons, " + Utilities.DecodeUrl(@ViewContext.RouteData.Values["Store"].ToString()) + " Offers";
 }
 
 <script>

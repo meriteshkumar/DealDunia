@@ -270,8 +270,12 @@
     <None Include="Properties\PublishProfiles\DealDunia.pubxml" />
     <None Include="Properties\PublishProfiles\GMD.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
+    <Content Include="Images\Carousel\1013959_GW-Superhero_gps._UX1500_SX1500_CB528153909_.jpg" />
+    <Content Include="Images\Carousel\11477059788109-top-banner01.jpg" />
+    <Content Include="Images\Carousel\AE-GW-PC._UX1500_SX1500_CB528129233_.jpg" />
     <Content Include="Images\Carousel\Category_01-revised._UX1500_SX1500_CB277090537_.jpg" />
     <Content Include="Images\Carousel\flikart_16102016_1.PNG" />
+    <Content Include="Images\Carousel\flipkart_20161020.png" />
     <Content Include="Images\Carousel\PCfinal._UX1500_SX1500_CB279837412_.jpg" />
     <Content Include="Images\Carousel\W2_1500x150_D1_.jpg" />
     <Content Include="Images\Categories\Baby_Kids.png" />
@@ -438,6 +442,7 @@
     <Content Include="Images\Stores\Ditto\ditto.png" />
     <Content Include="Images\Stores\Dominos\Dominos.jpg" />
     <Content Include="Images\Stores\Droom\droom.JPG" />
+    <Content Include="Images\Stores\DuckinDonuts\dunkindonuts.png" />
     <Content Include="Images\Stores\eBay\eBay.jpg" />
     <Content Include="Images\Stores\Evok\Evok.jpg" />
     <Content Include="Images\Stores\ExcitingLives\ExcitingLives.jpg" />
@@ -674,6 +679,8 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\Stores\Divinefnc\" />
+    <Folder Include="Images\Stores\IndigoRummy\" />
+    <Folder Include="Views\Home\" />
     <Folder Include="Views\Product\" />
   </ItemGroup>
   <ItemGroup>

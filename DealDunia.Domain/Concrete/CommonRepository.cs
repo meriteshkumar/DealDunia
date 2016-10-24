@@ -47,7 +47,7 @@ namespace DealDunia.Domain.Concrete
         public void UpdateStores(String Source, DataTable dt)
         {
             try
-            {               
+            {
                 SqlParameter[] sqlParam = new SqlParameter[2];
                 sqlParam[0] = new SqlParameter("@Stores", dt);
                 sqlParam[0].SqlDbType = SqlDbType.Structured;
@@ -102,7 +102,7 @@ namespace DealDunia.Domain.Concrete
             List<Category> categories = new List<Category>();
             Category category = null;
 
-            SqlDataReader reader = SqlHelper.ExecuteReader(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.GetMenu", new SqlParameter[] { 
+            SqlDataReader reader = SqlHelper.ExecuteReader(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.GetMenu", new SqlParameter[] {
                     new SqlParameter("@CategoryName", string.IsNullOrEmpty(CategoryName) ? null : CategoryName)});
 
             while (reader.Read())
@@ -119,11 +119,12 @@ namespace DealDunia.Domain.Concrete
             return categories;
         }
 
-        public IEnumerable<StoreCategory> GetCouponStoreCategories()
+        public IEnumerable<StoreCategory> GetCouponStoreCategories(string categoryName = null)
         {
             List<StoreCategory> categories = new List<StoreCategory>();
             StoreCategory category = null;
-            SqlDataReader reader = SqlHelper.ExecuteReader(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.GetCouponStoreCategories");
+            SqlDataReader reader = SqlHelper.ExecuteReader(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.GetCouponStoreCategories", new SqlParameter[] {
+                    new SqlParameter("@CategoryName", string.IsNullOrEmpty(categoryName) ? null : categoryName)});
 
             while (reader.Read())
             {
@@ -132,6 +133,8 @@ namespace DealDunia.Domain.Concrete
                 category.StoreCategoryName = ((IDataRecord)reader)["StoreCategoryName"].ToString();
                 category.Image = ((IDataRecord)reader)["Image"].ToString();
                 category.ParentId = (Int16)((IDataRecord)reader)["ParentId"];
+                category.StoreSourceId = (Int16)((IDataRecord)reader)["StoreSourceId"];
+                category.CampaignId = (Int32)((IDataRecord)reader)["CampaignId"];
                 categories.Add(category);
             }
             return categories;
