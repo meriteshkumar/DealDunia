@@ -1,0 +1,12 @@
+﻿@model DealDunia.Web.Areas.StoreCategoryMap
+
+<div class="col-sm-12 categorymapline">
+    <label class="col-sm-2" style="max-height: none;">Store Category</label>
+    <div class="col-sm-4 mapline-storecategory">
+        @Html.Action("_StoreCategoryDropDown", "ExclusiveDeal", new { controlName = "StoreCategoryId" })
+    </div>
+    <label class="col-sm-2" style="max-height: none;">URL</label>
+    <div class="col-sm-4 mapline-url">
+        @Html.TextBoxFor(t => t.URL, new { @class = "form-control" })
+    </div>
+</div>

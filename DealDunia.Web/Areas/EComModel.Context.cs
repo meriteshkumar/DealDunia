@@ -185,5 +185,70 @@ namespace DealDunia.Web.Areas
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCoupon", couponIdParameter, storeSourceIdParameter, promoIdParameter, offerIdParameter, offerNameParameter, offerTypeParameter, couponTitleParameter, categoryParameter, storeCategoryIdParameter, descriptionParameter, couponCodeParameter, offerURLParameter, couponStartParameter, couponExpiryParameter, featuredParameter, exclusiveParameter, statusParameter, storeCategoryCSVParameter);
         }
+    
+        public virtual int SaveStore(string mode, Nullable<short> storeId, string storeName, string storeDescription, string storeURL, string storeImage, Nullable<bool> affiliate, string affiliateId, Nullable<short> storeSourceId, Nullable<int> sourceStoreId, Nullable<bool> isFeatured, Nullable<System.DateTime> expirationDate, Nullable<bool> active, Nullable<bool> status, string storeCategoryMapList)
+        {
+            var modeParameter = mode != null ?
+                new ObjectParameter("Mode", mode) :
+                new ObjectParameter("Mode", typeof(string));
+    
+            var storeIdParameter = storeId.HasValue ?
+                new ObjectParameter("StoreId", storeId) :
+                new ObjectParameter("StoreId", typeof(short));
+    
+            var storeNameParameter = storeName != null ?
+                new ObjectParameter("StoreName", storeName) :
+                new ObjectParameter("StoreName", typeof(string));
+    
+            var storeDescriptionParameter = storeDescription != null ?
+                new ObjectParameter("StoreDescription", storeDescription) :
+                new ObjectParameter("StoreDescription", typeof(string));
+    
+            var storeURLParameter = storeURL != null ?
+                new ObjectParameter("StoreURL", storeURL) :
+                new ObjectParameter("StoreURL", typeof(string));
+    
+            var storeImageParameter = storeImage != null ?
+                new ObjectParameter("StoreImage", storeImage) :
+                new ObjectParameter("StoreImage", typeof(string));
+    
+            var affiliateParameter = affiliate.HasValue ?
+                new ObjectParameter("Affiliate", affiliate) :
+                new ObjectParameter("Affiliate", typeof(bool));
+    
+            var affiliateIdParameter = affiliateId != null ?
+                new ObjectParameter("AffiliateId", affiliateId) :
+                new ObjectParameter("AffiliateId", typeof(string));
+    
+            var storeSourceIdParameter = storeSourceId.HasValue ?
+                new ObjectParameter("StoreSourceId", storeSourceId) :
+                new ObjectParameter("StoreSourceId", typeof(short));
+    
+            var sourceStoreIdParameter = sourceStoreId.HasValue ?
+                new ObjectParameter("SourceStoreId", sourceStoreId) :
+                new ObjectParameter("SourceStoreId", typeof(int));
+    
+            var isFeaturedParameter = isFeatured.HasValue ?
+                new ObjectParameter("IsFeatured", isFeatured) :
+                new ObjectParameter("IsFeatured", typeof(bool));
+    
+            var expirationDateParameter = expirationDate.HasValue ?
+                new ObjectParameter("ExpirationDate", expirationDate) :
+                new ObjectParameter("ExpirationDate", typeof(System.DateTime));
+    
+            var activeParameter = active.HasValue ?
+                new ObjectParameter("Active", active) :
+                new ObjectParameter("Active", typeof(bool));
+    
+            var statusParameter = status.HasValue ?
+                new ObjectParameter("Status", status) :
+                new ObjectParameter("Status", typeof(bool));
+    
+            var storeCategoryMapListParameter = storeCategoryMapList != null ?
+                new ObjectParameter("StoreCategoryMapList", storeCategoryMapList) :
+                new ObjectParameter("StoreCategoryMapList", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SaveStore", modeParameter, storeIdParameter, storeNameParameter, storeDescriptionParameter, storeURLParameter, storeImageParameter, affiliateParameter, affiliateIdParameter, storeSourceIdParameter, sourceStoreIdParameter, isFeaturedParameter, expirationDateParameter, activeParameter, statusParameter, storeCategoryMapListParameter);
+        }
     }
 }

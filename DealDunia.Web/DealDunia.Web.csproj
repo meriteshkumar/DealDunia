@@ -264,6 +264,8 @@
     <Content Include="Areas\Admin\Views\ExclusiveDeal\_EditExcDeal.cshtml" />
     <Content Include="Areas\Admin\Views\Stores\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Stores\StoreGrid.cshtml" />
+    <Content Include="Areas\Admin\Views\Stores\SaveStore.cshtml" />
+    <Content Include="Areas\Admin\Views\Stores\CategoryMapLine.cshtml" />
     <None Include="bundleconfig.json" />
     <None Include="Properties\PublishProfiles\DealDunia.pubxml" />
     <None Include="Properties\PublishProfiles\GMD.pubxml" />

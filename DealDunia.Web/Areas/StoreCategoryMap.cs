@@ -21,5 +21,6 @@ namespace DealDunia.Web.Areas
         public Nullable<bool> Active { get; set; }
     
         public virtual StoreCategory StoreCategory { get; set; }
+        public virtual Store Store { get; set; }
     }
 }

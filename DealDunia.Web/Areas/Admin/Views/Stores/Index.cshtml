@@ -74,13 +74,19 @@
     $(document).ready(function () {
         var settings = {
             storeSourceDropDown: '@Url.Action("_StoreSourceDropDown", "Coupons")',
-            storeUrl: '@Url.Action("StoreGrid", "Stores")'
+            storeUrl: '@Url.Action("StoreGrid", "Stores")',
+            StoreViewUrl: '@Url.Action("SaveStore", "Stores")',
         };
 
         init();
 
         function init() {
-            loadStoreSource(settings.storeSourceDropDown);
+            loadStoreSource(settings.storeSourceDropDown, "container-store-source")
+            .done(function (data) {
+                $(".container-store-source").html(data);
+            }).fail(function (data, status, headers, config) {
+                //TODO:Debugging
+            });
         }
 
         $(".btnSearch").click(function () {
@@ -92,6 +98,10 @@
 
             getStores(settings.storeUrl, { storeSourceId: storeSourceId, storeName: storeName, featured: featured, status: status, active: active });
 
+        });
+
+        $(".add-store").click(function () {
+            loadStoreView(settings.StoreViewUrl, null);
         });
     });
 </script>

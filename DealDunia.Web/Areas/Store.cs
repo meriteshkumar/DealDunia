@@ -17,6 +17,7 @@ namespace DealDunia.Web.Areas
         public Store()
         {
             this.ExcDeals = new HashSet<ExcDeal>();
+            this.StoreCategoryMaps = new HashSet<StoreCategoryMap>();
         }
     
         public short StoreId { get; set; }
@@ -38,5 +39,6 @@ namespace DealDunia.Web.Areas
     
         public virtual ICollection<ExcDeal> ExcDeals { get; set; }
         public virtual StoreSource StoreSource { get; set; }
+        public virtual ICollection<StoreCategoryMap> StoreCategoryMaps { get; set; }
     }
 }
