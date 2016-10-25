@@ -48,7 +48,7 @@ namespace DealDunia.Web.Areas.Admin.Controllers
                                                && (featured == null || e.IsFeatured == featured)
                                                && (status == null || e.Status == status)
                                                && (active == null || e.Active == active)
-                                               ).ToList().OrderBy(o => o.StoreName);
+                                               ).OrderBy(o => o.StoreName).ToList();
 
             return stores;
         }

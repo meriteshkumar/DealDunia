@@ -9,14 +9,14 @@
                 columns: new[]{
                  grid.Column(columnName:"StoreName",header:"Store Name", canSort:true)
                 ,grid.Column(columnName:"StoreImage",header:"Image Path", canSort:false)
-                ,grid.Column(columnName:"SourceStoreId",header:"Source Store", canSort:true)
-                ,grid.Column(columnName:"StoreSourceName",header:"Store Source", canSort:true)
-                ,grid.Column(columnName:"Status",header:"Status", canSort:false)
-                ,grid.Column(columnName:"IsFeatured",header:"Featured", canSort:false)
+                ,grid.Column(columnName:"StoreSourceName",header:"Source", canSort:true)
+                ,grid.Column(columnName:"SourceStoreId",header:"Offer Id", canSort:true)                
                 ,grid.Column(columnName:"Active",header:"Active", canSort:false)
-                ,grid.Column(columnName:"CreatedOn",header:"Created Date", canSort:true, format: (item) => string.Format("{0:dd-MM-yyyy}", item.CreatedOn ?? string.Empty))
-                ,grid.Column(columnName:"ModifiedOn",header:"Modified Date", canSort:true, format: (item) => string.Format("{0:dd-MM-yyyy}", item.ModifiedOn ?? string.Empty))
-                ,grid.Column(format: @<text><button class="btn btn-primary edit-store" value="@item.StoreId">Edit</button></text>)
+                ,grid.Column(columnName:"Status",header:"Status", canSort:false)
+                ,grid.Column(columnName:"IsFeatured",header:"Featured", canSort:false)                
+                ,grid.Column(columnName:"CreatedOn",header:"Created On", canSort:true, format: (item) => string.Format("{0:dd-MM-yyyy}", item.CreatedOn ?? string.Empty))
+                ,grid.Column(columnName:"ModifiedOn",header:"Modified On", canSort:true, format: (item) => string.Format("{0:dd-MM-yyyy}", item.ModifiedOn ?? string.Empty))
+                ,grid.Column(format: @<text><button class="btn btn-primary  btn-xs edit-store" value="@item.StoreId">Edit</button></text>)
                     }
 )
 <script type="text/javascript">

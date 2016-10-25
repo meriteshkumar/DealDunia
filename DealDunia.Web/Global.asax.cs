@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using System.IO;
 
 namespace DealDunia.Web
 {
@@ -20,6 +21,15 @@ namespace DealDunia.Web
 
         void Application_error(object sender, EventArgs e)
         {
+            var path = Server.MapPath("~/Log/log.txt");
+            var ex = Server.GetLastError();
+            var msg = System.DateTime.Now.ToString() + ":" + ex.Message;
+            if (File.Exists(path))
+            {
+                TextWriter tw = new StreamWriter(path, true);
+                tw.WriteLine(msg);
+                tw.Close();
+            }
         }
     }
 }
