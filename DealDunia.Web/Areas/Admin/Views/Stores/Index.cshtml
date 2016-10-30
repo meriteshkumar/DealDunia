@@ -36,9 +36,23 @@
 
         });
 
+        $("#container-store-grid").on("click", "thead a,tfoot a", function (e) {            
+            e.preventDefault();
+            var param = $(this).attr("href").split("?")[1];
+            var url = '@Url.Action("StoreGrid", "Stores")' + '?' + param;
+
+            callAjaxURLWithSingleParam(url, null)
+                .done(function (data) {
+                    $("#container-store-grid").html(data);
+                }).fail(function (error) {
+                    //TODO:Debugging
+                });
+        });
+
         $(".add-store").click(function () {
             loadStoreView(settings.StoreViewUrl, null);
         });
+       
     });
 </script>
 

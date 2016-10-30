@@ -14,6 +14,20 @@ function getStores(url, params) {
     });
 }
 
+//$("#container-store-grid").on("click", "thead a,tfoot a", function (e) {
+//    alert('test');
+//    e.preventDefault();
+//    var param = $(this).attr("href").split("?")[1];
+//    var url = '@Url.Action("StoreGrid", "Stores")' + '?' + param;
+
+//    callAjaxURLWithSingleParam(url, null)
+//        .done(function (data) {
+//            $("#container-store-grid").html(data);
+//        }).fail(function (error) {
+//            //TODO:Debugging
+//        });
+//});
+
 function loadStoreView(url, params) {
     callAjaxURLWithSingleParam(url, params)
     .done(function (data) {
