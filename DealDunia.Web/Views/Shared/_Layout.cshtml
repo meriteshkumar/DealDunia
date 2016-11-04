@@ -121,14 +121,14 @@
         function setSelected(obj) {
 
             value = $(obj.innerHTML).filter(".result-value").html();
+            value = value.split(" ").join("-").replace("&amp;", "and");
             source = $(obj.innerHTML).filter(".result-source").html();
 
-            if (source == 'category') {
-                value = value.split(" ").join("-").replace("&amp;", "and");
+            if (source == 'category') {                
                 url = '/coupons/' + value;
                 window.location.href = url;
             }
-            else {
+            else {                
                 url = '@Url.Action("Store", "Store", new { store = "__store__" })';
                 window.location.href = url.replace("__store__", value);
             }

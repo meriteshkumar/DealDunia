@@ -92,7 +92,7 @@
             </div>
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <b>Category</b><div id="clearStore" class="clear">Clear</div>
+                    <b>Stores</b><div id="clearStore" class="clear">Clear</div>
                 </div>
                 <div class="checkbox" style="padding-left: 5px; padding-right: 5px;">
                     @foreach (var storename in Model.OrderBy(o => o.OfferName).Select(p => p.OfferName).Distinct())

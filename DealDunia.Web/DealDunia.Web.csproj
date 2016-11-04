@@ -495,6 +495,7 @@
     <Content Include="Images\Stores\HealthGenie\HealthGenie.jpg" />
     <Content Include="Images\Stores\Healthkart\Healthkart.png" />
     <Content Include="Images\Stores\Hidesign\Hidesign.png" />
+    <Content Include="Images\Stores\HNS\hns.png" />
     <Content Include="Images\Stores\Homeshop18\homeshop18.png" />
     <Content Include="Images\Stores\Hoppingo\hoppingo.jpg" />
     <Content Include="Images\Stores\Hopscotch\Hopscotch.jpg" />
@@ -549,6 +550,7 @@
     <Content Include="Images\Stores\mytaxiindia\mytaxiindia.png" />
     <Content Include="Images\Stores\Naaptol\Naaptol.png" />
     <Content Include="Images\Stores\NaturesBasket\NaturesBasket.jpg" />
+    <Content Include="Images\Stores\Nazara\nazara.jpg" />
     <Content Include="Images\Stores\Nearbuy\Nearbuy.jpg" />
     <Content Include="Images\Stores\Netmeds\Netmeds.jpg" />
     <Content Include="Images\Stores\Newu\Newu.png" />
@@ -567,6 +569,7 @@
     <Content Include="Images\Stores\Pepperfry\pepperfry.jpg" />
     <Content Include="Images\Stores\Pinkcukoo\Pinkcukoo.png" />
     <Content Include="Images\Stores\Pizzahut\Pizzahut.jpg" />
+    <Content Include="Images\Stores\PlayLottery\playlottery.jpg" />
     <Content Include="Images\Stores\Pressie\Pressie.jpg" />
     <Content Include="Images\Stores\PrettySecrets\PrettySecrets.jpg" />
     <Content Include="Images\Stores\Printland\Printland.jpg" />
@@ -577,6 +580,7 @@
     <Content Include="Images\Stores\Redbus\Redbus.jpg" />
     <Content Include="Images\Stores\Rewardme\Rewardme.jpg" />
     <Content Include="Images\Stores\Rostaa\Rostaa.png" />
+    <Content Include="Images\Stores\SBI\sbicc.png" />
     <Content Include="Images\Stores\SendMyGift\SendMyGift.jpg" />
     <Content Include="Images\Stores\Shopcj\Shopcj.jpg" />
     <Content Include="Images\Stores\Shopclues\shopclues.jpg" />
@@ -589,6 +593,7 @@
     <Content Include="Images\Stores\Snapdeal\Snapdeal.jpg" />
     <Content Include="Images\Stores\Snapdeal\snapdeal.png" />
     <Content Include="Images\Stores\Soie\Soie.png" />
+    <Content Include="Images\Stores\Spinsvilla\spinsvilla.png" />
     <Content Include="Images\Stores\Sports365\sports365.png" />
     <Content Include="Images\Stores\Stalkbuylove\Stalkbuylove.jpg" />
     <Content Include="Images\Stores\StandardChartered\sccc.png" />
@@ -622,6 +627,7 @@
     <Content Include="Images\Stores\Yatra\Yatra_Hotel.png" />
     <Content Include="Images\Stores\Yatra\Yatra_IF.png" />
     <Content Include="Images\Stores\Yepme\yepme.gif" />
+    <Content Include="Images\Stores\Yumist\yumist.jpg" />
     <Content Include="Images\Stores\Zivame\Zivame.jpg" />
     <Content Include="Images\Stores\Zoomcar\ZoomCar.png" />
     <Content Include="Images\Stores\Zotezo\Zotezo.jpg" />

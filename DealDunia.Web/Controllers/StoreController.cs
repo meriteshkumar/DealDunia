@@ -45,7 +45,7 @@ namespace DealDunia.Web.Controllers
         public ActionResult Store(string store)
         {
             IRepository<Store, StoreValues> repository = new StoreRepository();            
-            var selectedStore = repository.Get(new StoreValues { StoreName = store, StoreCategoryName = string.Empty });
+            var selectedStore = repository.Get(new StoreValues { StoreName = Utilities.DecodeUrl(store), StoreCategoryName = string.Empty });
             return View(selectedStore);
         }
     }

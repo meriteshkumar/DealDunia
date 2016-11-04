@@ -98,7 +98,8 @@ namespace DealDunia.Web.Controllers
             }
             catch (Exception ex)
             {
-                string errorText = ex.Message;
+                //string errorText = ex.Message;
+                throw ex;
             }
         }
         public void UpdateStores(string Source)
