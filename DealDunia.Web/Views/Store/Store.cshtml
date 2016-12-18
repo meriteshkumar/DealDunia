@@ -121,8 +121,8 @@
     </div>
     <div class="col-md-9 col-sm-9 col-sx-9 paddingright0">
         <div class="box">
-            @Html.Action("_DailyDeals", "Deal", new DealDunia.Domain.Entities.DailyDealsValues { StoreId = 0, StoreName = store })
-            @Html.Action("_ExclusiveDeals", "Deal", new DealDunia.Domain.Entities.ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = string.Empty, StoreName = store, StoreId = 0 })
+            @*@Html.Action("_DailyDeals", "Deal", new DealDunia.Domain.Entities.DailyDealsValues { StoreId = 0, StoreName = store })*@
+            @*@Html.Action("_ExclusiveDeals", "Deal", new DealDunia.Domain.Entities.ExecutiveDealValues { CategoryId = 0, CategoryName = string.Empty, StoreCategoryId = 0, StoreCategoryName = string.Empty, StoreName = store, StoreId = 0 })*@
             <div id="divCoupon">
                 @Html.Action("_Coupons", "Deal", new DealDunia.Domain.Entities.CouponValues { OfferType = string.Empty, OfferName = store, StoreCategoryName = string.Empty })
             </div>

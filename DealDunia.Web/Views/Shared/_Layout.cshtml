@@ -3,6 +3,9 @@
 
 <html lang="en">
 <head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+
+    <link rel="alternate" href="grabmedeal.in" hreflang="en-us" />
+
     <title>@ViewBag.Title</title>
     <link rel="icon" href="~/favicon.ico" type="image/x-icon" />
     <link rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
@@ -139,28 +142,30 @@
     <div id="nav1" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="row">
-                <div class="navbar-collapse col-lg-2 col-md-2 col-sm-2 col-sx-2">
-                    <a class="navbar-brand" style="padding-top:0px;" href="@Url.Action("Index", "Category")">
-                        <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/grabmedeal_200x57.png" />
-                    </a>
-                </div>
-
                 <div class="navbar-collapse">
-                    @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
-                    {
-                        <div class="input-group col-lg-5 col-md-5 col-sm-5 col-sx-5">
-                            <input id="searchtext" name="searchtext" type="hidden" />
-                            <input type="text" class="form-control search-text" autocomplete="off" placeholder="Search for Store & Category" value="@ViewBag.SearchedItem" onkeyup="searchResult(this, event);">
-                            <div id="results" class="result-div"></div>
-                            <div class="input-group-btn" style="display: inline">
-                                <button type="submit" style="height: 40px; -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;"
-                                        class="btn btn-danger">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </div>
+                    <div class="navbar-collapse col-lg-2 col-md-2 col-sm-2">
+                        <a class="navbar-brand" style="padding-top:0px;" href="@Url.Action("Index", "Category")">
+                            <img alt="GrabMeDeal" src="~/Images/GrabMeDeal/grabmedeal_200x57.png" />
+                        </a>
+                    </div>
 
-                        </div>
-                    }
+                    <div class="navbar-collapse col-lg-10 col-md-10 col-sm-10">
+                        @using (Html.BeginForm("Search", "Product", FormMethod.Post, new { @class = "navbar-form", role = "search" }))
+                        {
+                            <div class="input-group">
+                                <input id="searchtext" name="searchtext" type="hidden" />
+                                <input type="text" class="form-control search-text" autocomplete="off" placeholder="Search for Store & Category" value="@ViewBag.SearchedItem" onkeyup="searchResult(this, event);">
+                                <div id="results" class="result-div"></div>
+                                <div class="input-group-btn" style="display: inline">
+                                    <button type="submit" style="height: 40px; -moz-border-radius: 0px; -webkit-border-radius: 0px; border-radius: 0px;"
+                                            class="btn btn-danger">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </div>
+
+                            </div>
+                        }
+                    </div>
                 </div>
             </div>
         </div>

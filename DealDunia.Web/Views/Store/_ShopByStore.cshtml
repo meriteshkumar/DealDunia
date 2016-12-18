@@ -24,9 +24,9 @@
         @foreach (var store in Model)
         {               
             <li>
-                @* <div class="div_store_logo">*@
+                @*<div class="div_store_logo">*@
                 <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
-                    <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName"/>
+                    <img style="max-width:100px; max-height:50px;" src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName"/>
                 </a>
                 @*</div>*@
             </li>

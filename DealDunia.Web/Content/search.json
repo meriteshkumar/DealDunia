@@ -1,253 +1,1086 @@
 ﻿[
-{"source":"store", "value":"1mg"},
-{"source":"store", "value":"1mgLabs"},
-{"source":"store", "value":"Abof"},
-{"source":"store", "value":"Ace2three"},
-{"source":"store", "value":"Adda52"},
-{"source":"store", "value":"Adidas"},
-{"source":"store", "value":"Agoda"},
-{"source":"store", "value":"Airtel"},
-{"source":"store", "value":"Airvistara"},
-{"source":"store", "value":"Ajio"},
-{"source":"store", "value":"AliExpress"},
-{"source":"store", "value":"Amazon"},
-{"source":"store", "value":"Amzer"},
-{"source":"store", "value":"Aplava"},
-{"source":"store", "value":"Aquaguard"},
-{"source":"store", "value":"ArchiesOnline"},
-{"source":"category", "value":"Art"},
-{"source":"store", "value":"Art4u"},
-{"source":"category", "value":"Baby Care"},
-{"source":"store", "value":"BajajElecticals"},
-{"source":"store", "value":"Bata"},
-{"source":"category", "value":"Beauty"},
-{"source":"store", "value":"BehrouzBiryani"},
-{"source":"store", "value":"Biba"},
-{"source":"store", "value":"Bigbasket"},
-{"source":"store", "value":"Bigchemist"},
-{"source":"store", "value":"BigRock"},
-{"source":"category", "value":"Bike Accessories"},
-{"source":"category", "value":"Bill Payments"},
-{"source":"store", "value":"Blackberry"},
-{"source":"store", "value":"BlueStone"},
-{"source":"store", "value":"BookMyFlowers"},
-{"source":"category", "value":"Books & Education"},
-{"source":"store", "value":"BurgerKing"},
-{"source":"category", "value":"Bus"},
-{"source":"store", "value":"CampusSutra"},
-{"source":"store", "value":"Candere"},
-{"source":"category", "value":"Car"},
-{"source":"category", "value":"Car Accessories"},
-{"source":"store", "value":"ChaiPoint"},
-{"source":"store", "value":"Chumbak"},
-{"source":"store", "value":"CitiBank"},
-{"source":"store", "value":"Cleartrip"},
-{"source":"category", "value":"Clothing & Accessories"},
-{"source":"store", "value":"Clovia"},
-{"source":"store", "value":"Coke2Home"},
-{"source":"store", "value":"CollegeDekho"},
-{"source":"category", "value":"Computer & Accessories"},
-{"source":"store", "value":"CoolWinks"},
-{"source":"store", "value":"CraftsVilla"},
-{"source":"category", "value":"Credit Card"},
-{"source":"store", "value":"Crocs"},
-{"source":"store", "value":"DailyObjects"},
-{"source":"category", "value":"Data Card"},
-{"source":"store", "value":"Decathlon"},
-{"source":"store", "value":"DinoDirect"},
-{"source":"store", "value":"Ditto"},
-{"source":"store", "value":"Dominos"},
-{"source":"category", "value":"Drinks & Beverages"},
-{"source":"store", "value":"Droom"},
-{"source":"category", "value":"DTH Recharge"},
-{"source":"store", "value":"DunkinDonuts"},
-{"source":"store", "value":"EasyPolicy"},
-{"source":"store", "value":"eBay"},
-{"source":"category", "value":"Electricals"},
-{"source":"category", "value":"Electronics"},
-{"source":"store", "value":"Evok"},
-{"source":"store", "value":"Expedia"},
-{"source":"category", "value":"Eyewear"},
-{"source":"store", "value":"eZone"},
-{"source":"store", "value":"Faasos"},
-{"source":"store", "value":"Faballey"},
-{"source":"store", "value":"Fabfurnish"},
-{"source":"store", "value":"FabHotels"},
-{"source":"store", "value":"FabIndia"},
-{"source":"store", "value":"Fasherati"},
-{"source":"store", "value":"Fashionandyou"},
-{"source":"store", "value":"Ferns & Petals"},
-{"source":"store", "value":"FirstCry"},
-{"source":"store", "value":"Flaberry"},
-{"source":"category", "value":"Flight"},
-{"source":"store", "value":"Flintobox"},
-{"source":"store", "value":"Flipkart"},
-{"source":"store", "value":"FlowerAura"},
-{"source":"category", "value":"Flowers & Gifts"},
-{"source":"store", "value":"FlyingMachine"},
-{"source":"category", "value":"Food"},
-{"source":"store", "value":"Foodpanda"},
-{"source":"store", "value":"Footprints360"},
-{"source":"store", "value":"FreeCharge"},
-{"source":"store", "value":"FreshMenu"},
-{"source":"store", "value":"Fullerton"},
-{"source":"category", "value":"Furniture"},
-{"source":"store", "value":"Fynd"},
-{"source":"category", "value":"Gambling"},
-{"source":"category", "value":"Gaming"},
-{"source":"store", "value":"GiftaLove"},
-{"source":"store", "value":"GiftEase"},
-{"source":"store", "value":"GiftsByMeeta"},
-{"source":"store", "value":"Giftsmate"},
-{"source":"store", "value":"Godaddy"},
-{"source":"store", "value":"GreenDust"},
-{"source":"store", "value":"GrocerMax"},
-{"source":"category", "value":"Grocery"},
-{"source":"store", "value":"HappilyUnmarried"},
-{"source":"category", "value":"Health"},
-{"source":"store", "value":"HealthGenie"},
-{"source":"store", "value":"Healthkart"},
-{"source":"store", "value":"Hidesign"},
-{"source":"category", "value":"Home Decor"},
-{"source":"category", "value":"Home Furnishing"},
-{"source":"store", "value":"Homeshop18"},
-{"source":"store", "value":"Hoppingo"},
-{"source":"store", "value":"Hopscotch"},
-{"source":"store", "value":"HostGator"},
-{"source":"store", "value":"Hotels"},
-{"source":"category", "value":"Hotels"},
-{"source":"store", "value":"HouseFull"},
-{"source":"store", "value":"ICICI PL"},
-{"source":"store", "value":"Indiaflowermall"},
-{"source":"store", "value":"IndianGiftsPortal"},
-{"source":"store", "value":"Indiareads"},
-{"source":"store", "value":"IndigoRummy"},
-{"source":"store", "value":"IndustryBuying"},
-{"source":"store", "value":"Infibeam"},
-{"source":"category", "value":"Insurance/Loans"},
-{"source":"store", "value":"Intimodo"},
-{"source":"store", "value":"Ixigo"},
-{"source":"store", "value":"Jabong"},
-{"source":"store", "value":"JagranJosh"},
-{"source":"store", "value":"JazzMyRide"},
-{"source":"category", "value":"Jewellery"},
-{"source":"store", "value":"JoyByNature"},
-{"source":"store", "value":"Kaaryah"},
-{"source":"store", "value":"Kazo"},
-{"source":"store", "value":"KFC"},
-{"source":"store", "value":"Khojdeal"},
-{"source":"category", "value":"Kids Clothing"},
-{"source":"category", "value":"Kitchen & Dining"},
-{"source":"category", "value":"Kitchen & Home Appliances"},
-{"source":"store", "value":"Koovs"},
-{"source":"category", "value":"Lab & Medical Tests"},
-{"source":"store", "value":"Landmark"},
-{"source":"category", "value":"Laptops & Accessories"},
-{"source":"store", "value":"LatestOne"},
-{"source":"store", "value":"LeEco (CPS) India"},
-{"source":"store", "value":"LeMall"},
-{"source":"store", "value":"Lensclues"},
-{"source":"store", "value":"LensKart"},
-{"source":"store", "value":"LimeRoad"},
-{"source":"store", "value":"LinoPerros"},
-{"source":"store", "value":"Lotusherbals"},
-{"source":"store", "value":"MakeMyTrip Bus"},
-{"source":"store", "value":"MakeMyTrip Flights"},
-{"source":"store", "value":"MakeMyTrip Hotels"},
-{"source":"store", "value":"MakeMyTrip Int. Flights"},
-{"source":"store", "value":"McDonalds"},
-{"source":"category", "value":"Medicines"},
-{"source":"store", "value":"Medlife"},
-{"source":"category", "value":"Men Fashion"},
-{"source":"category", "value":"Men Footwear"},
-{"source":"category", "value":"Men Grooming"},
-{"source":"store", "value":"Metro"},
-{"source":"category", "value":"Metro Recharge"},
-{"source":"store", "value":"MI"},
-{"source":"store", "value":"Mobikwik"},
-{"source":"category", "value":"Mobile Recharge"},
-{"source":"category", "value":"Mobiles & Accessories"},
-{"source":"store", "value":"Montecarlo"},
-{"source":"category", "value":"Movies"},
-{"source":"store", "value":"Musafir"},
-{"source":"store", "value":"MyBusTickets"},
-{"source":"store", "value":"MyFlowerTree"},
-{"source":"store", "value":"Myles"},
-{"source":"store", "value":"Myntra"},
-{"source":"store", "value":"Mytaxi"},
-{"source":"store", "value":"Naaptol"},
-{"source":"store", "value":"NaturesBasket"},
-{"source":"store", "value":"Netmeds"},
-{"source":"store", "value":"Newu"},
-{"source":"store", "value":"Nnnow"},
-{"source":"store", "value":"NutcaseShop"},
-{"source":"store", "value":"Nykaa"},
-{"source":"store", "value":"OrderVenue"},
-{"source":"store", "value":"OyoRooms"},
-{"source":"store", "value":"PaisaBazaar CC"},
-{"source":"store", "value":"PapaJohnsPizza"},
-{"source":"store", "value":"Paytm"},
-{"source":"store", "value":"Peopleskart"},
-{"source":"store", "value":"Pepperfry"},
-{"source":"category", "value":"Pizza"},
-{"source":"store", "value":"Pizzahut"},
-{"source":"category", "value":"Policy"},
-{"source":"store", "value":"Pressie"},
-{"source":"store", "value":"PrettySecrets"},
-{"source":"category", "value":"Print"},
-{"source":"store", "value":"Printland"},
-{"source":"store", "value":"Printvenue"},
-{"source":"store", "value":"QatarAirways"},
-{"source":"store", "value":"QuackQuack"},
-{"source":"store", "value":"Redbus"},
-{"source":"category", "value":"Refurbished Mobiles"},
-{"source":"category", "value":"Self Drive Car"},
-{"source":"store", "value":"SendMyGift"},
-{"source":"store", "value":"Shopcj"},
-{"source":"store", "value":"Shopclues"},
-{"source":"store", "value":"Shopnineteen"},
-{"source":"store", "value":"ShoppersStop"},
-{"source":"store", "value":"SmileDrive"},
-{"source":"store", "value":"Snapdeal"},
-{"source":"category", "value":"Sports & Fitness"},
-{"source":"store", "value":"Sports365"},
-{"source":"store", "value":"Stalkbuylove"},
-{"source":"store", "value":"StandardChartered CC"},
-{"source":"store", "value":"StyleTag"},
-{"source":"category", "value":"Sunglasses"},
-{"source":"category", "value":"Supplements"},
-{"source":"store", "value":"Suratdiamond"},
-{"source":"store", "value":"Swiggy"},
-{"source":"category", "value":"Tablet  & Accessories"},
-{"source":"store", "value":"Tatacliq"},
-{"source":"store", "value":"Tatasky"},
-{"source":"store", "value":"Thyrocare"},
-{"source":"store", "value":"Ticketgoose"},
-{"source":"category", "value":"Toys & Games"},
-{"source":"store", "value":"TravelKhana"},
-{"source":"store", "value":"TreeboHotels"},
-{"source":"store", "value":"TrendyBharat"},
-{"source":"store", "value":"TripHobo"},
-{"source":"store", "value":"VistaRooms"},
-{"source":"store", "value":"Voonik"},
-{"source":"store", "value":"Voylla"},
-{"source":"store", "value":"WearYourShine"},
-{"source":"category", "value":"Web Hosting & Domains"},
   {
     "source": "store",
-    "value": "Welspun.com (CPS)"
+    "value": "1mg"
   },
-{"source":"store", "value":"WishnBuy"},
-{"source":"category", "value":"Women Fashion"},
-{"source":"category", "value":"Women Footwear"},
-{"source":"category", "value":"Women InnerWear"},
-{"source":"store", "value":"Wonderchef"},
-{"source":"store", "value":"Yatra"},
-{"source":"store", "value":"Yatra Int. Flights"},
-{"source":"store", "value":"Yatra- Domestic Hotel"},
-{"source":"store", "value":"Yatra-Domestic Flight"},
-{"source":"store", "value":"Yepme"},
-{"source":"store", "value":"Zivame"},
-{"source":"store", "value":"ZoomCar"},
-{"source":"store", "value":"Zotezo"}
+  {
+    "source": "store",
+    "value": "1mgLabs"
+  },
+  {
+    "source": "store",
+    "value": "Abof"
+  },
+  {
+    "source": "store",
+    "value": "Ace2three"
+  },
+  {
+    "source": "store",
+    "value": "Adda52"
+  },
+  {
+    "source": "store",
+    "value": "Adidas"
+  },
+  {
+    "source": "store",
+    "value": "Agoda"
+  },
+  {
+    "source": "store",
+    "value": "Airbnb"
+  },
+  {
+    "source": "store",
+    "value": "Airtel"
+  },
+  {
+    "source": "store",
+    "value": "Airvistara"
+  },
+  {
+    "source": "store",
+    "value": "Ajio"
+  },
+  {
+    "source": "store",
+    "value": "AliExpress"
+  },
+  {
+    "source": "store",
+    "value": "Amazon"
+  },
+  {
+    "source": "store",
+    "value": "Amzer"
+  },
+  {
+    "source": "store",
+    "value": "AndIndia"
+  },
+  {
+    "source": "store",
+    "value": "Aplava"
+  },
+  {
+    "source": "store",
+    "value": "Aquaguard"
+  },
+  {
+    "source": "store",
+    "value": "ArchiesOnline"
+  },
+  {
+    "source": "category",
+    "value": "Art"
+  },
+  {
+    "source": "store",
+    "value": "Art4u"
+  },
+  {
+    "source": "store",
+    "value": "AutoPortal"
+  },
+  {
+    "source": "category",
+    "value": "Baby Care"
+  },
+  {
+    "source": "store",
+    "value": "BajajElecticals"
+  },
+  {
+    "source": "store",
+    "value": "Bata"
+  },
+  {
+    "source": "category",
+    "value": "Beauty"
+  },
+  {
+    "source": "store",
+    "value": "BehrouzBiryani"
+  },
+  {
+    "source": "store",
+    "value": "Biba"
+  },
+  {
+    "source": "store",
+    "value": "Bigbasket"
+  },
+  {
+    "source": "store",
+    "value": "Bigchemist"
+  },
+  {
+    "source": "store",
+    "value": "BigRock"
+  },
+  {
+    "source": "category",
+    "value": "Bike Accessories"
+  },
+  {
+    "source": "category",
+    "value": "Bill Payments"
+  },
+  {
+    "source": "store",
+    "value": "Billbachao"
+  },
+  {
+    "source": "store",
+    "value": "Blackberry"
+  },
+  {
+    "source": "store",
+    "value": "BlueStone"
+  },
+  {
+    "source": "store",
+    "value": "BookMyFlowers"
+  },
+  {
+    "source": "category",
+    "value": "Books & Education"
+  },
+  {
+    "source": "store",
+    "value": "Burger King"
+  },
+  {
+    "source": "category",
+    "value": "Bus"
+  },
+  {
+    "source": "category",
+    "value": "Cameras"
+  },
+  {
+    "source": "store",
+    "value": "CampusSutra"
+  },
+  {
+    "source": "store",
+    "value": "Candere"
+  },
+  {
+    "source": "category",
+    "value": "Car"
+  },
+  {
+    "source": "category",
+    "value": "Car Accessories"
+  },
+  {
+    "source": "store",
+    "value": "ChaiPoint"
+  },
+  {
+    "source": "store",
+    "value": "Chumbak"
+  },
+  {
+    "source": "store",
+    "value": "CitiBank"
+  },
+  {
+    "source": "store",
+    "value": "Cleartrip"
+  },
+  {
+    "source": "category",
+    "value": "Clothing & Accessories"
+  },
+  {
+    "source": "store",
+    "value": "Clovia"
+  },
+  {
+    "source": "store",
+    "value": "Coke2Home"
+  },
+  {
+    "source": "store",
+    "value": "CollegeDekho"
+  },
+  {
+    "source": "store",
+    "value": "CompuIndia"
+  },
+  {
+    "source": "category",
+    "value": "Computer & Accessories"
+  },
+  {
+    "source": "store",
+    "value": "CoolWinks"
+  },
+  {
+    "source": "store",
+    "value": "CraftsVilla"
+  },
+  {
+    "source": "category",
+    "value": "Credit Card"
+  },
+  {
+    "source": "store",
+    "value": "Crocs"
+  },
+  {
+    "source": "store",
+    "value": "DailyObjects"
+  },
+  {
+    "source": "category",
+    "value": "Data Card"
+  },
+  {
+    "source": "store",
+    "value": "Decathlon"
+  },
+  {
+    "source": "store",
+    "value": "DinoDirect"
+  },
+  {
+    "source": "store",
+    "value": "Ditto"
+  },
+  {
+    "source": "store",
+    "value": "Dominos"
+  },
+  {
+    "source": "category",
+    "value": "Drinks & Beverages"
+  },
+  {
+    "source": "store",
+    "value": "Droom"
+  },
+  {
+    "source": "category",
+    "value": "DTH Recharge"
+  },
+  {
+    "source": "store",
+    "value": "DunkinDonuts"
+  },
+  {
+    "source": "store",
+    "value": "EasyPolicy"
+  },
+  {
+    "source": "store",
+    "value": "eBay"
+  },
+  {
+    "source": "category",
+    "value": "Electricals"
+  },
+  {
+    "source": "category",
+    "value": "Electronics"
+  },
+  {
+    "source": "store",
+    "value": "Etihad"
+  },
+  {
+    "source": "store",
+    "value": "Expedia"
+  },
+  {
+    "source": "category",
+    "value": "Eyewear"
+  },
+  {
+    "source": "store",
+    "value": "eZone"
+  },
+  {
+    "source": "store",
+    "value": "Faasos"
+  },
+  {
+    "source": "store",
+    "value": "Faballey"
+  },
+  {
+    "source": "store",
+    "value": "Fabfurnish"
+  },
+  {
+    "source": "store",
+    "value": "FabIndia"
+  },
+  {
+    "source": "store",
+    "value": "Fasherati"
+  },
+  {
+    "source": "store",
+    "value": "Fashionandyou"
+  },
+  {
+    "source": "store",
+    "value": "Ferns & Petals"
+  },
+  {
+    "source": "store",
+    "value": "FirstCry"
+  },
+  {
+    "source": "store",
+    "value": "Flaberry"
+  },
+  {
+    "source": "category",
+    "value": "Flight"
+  },
+  {
+    "source": "store",
+    "value": "Flintobox"
+  },
+  {
+    "source": "store",
+    "value": "Flipkart"
+  },
+  {
+    "source": "store",
+    "value": "FlowerAura"
+  },
+  {
+    "source": "category",
+    "value": "Flowers & Gifts"
+  },
+  {
+    "source": "store",
+    "value": "FlyingMachine"
+  },
+  {
+    "source": "category",
+    "value": "Food"
+  },
+  {
+    "source": "store",
+    "value": "Foodpanda"
+  },
+  {
+    "source": "store",
+    "value": "Footprints360"
+  },
+  {
+    "source": "store",
+    "value": "FreeCharge"
+  },
+  {
+    "source": "store",
+    "value": "FreshMenu"
+  },
+  {
+    "source": "store",
+    "value": "Fullerton"
+  },
+  {
+    "source": "category",
+    "value": "Furniture"
+  },
+  {
+    "source": "store",
+    "value": "Fynd"
+  },
+  {
+    "source": "category",
+    "value": "Gambling"
+  },
+  {
+    "source": "category",
+    "value": "Gaming"
+  },
+  {
+    "source": "store",
+    "value": "GiftaLove"
+  },
+  {
+    "source": "store",
+    "value": "GiftEase"
+  },
+  {
+    "source": "store",
+    "value": "GiftsByMeeta"
+  },
+  {
+    "source": "store",
+    "value": "Giftsmate"
+  },
+  {
+    "source": "store",
+    "value": "GlobalDesi"
+  },
+  {
+    "source": "store",
+    "value": "Godaddy"
+  },
+  {
+    "source": "store",
+    "value": "GreenDust"
+  },
+  {
+    "source": "store",
+    "value": "GrocerMax"
+  },
+  {
+    "source": "category",
+    "value": "Grocery"
+  },
+  {
+    "source": "store",
+    "value": "HappilyUnmarried"
+  },
+  {
+    "source": "category",
+    "value": "Health"
+  },
+  {
+    "source": "store",
+    "value": "HealthGenie"
+  },
+  {
+    "source": "store",
+    "value": "Healthkart"
+  },
+  {
+    "source": "store",
+    "value": "Henry & Smith"
+  },
+  {
+    "source": "store",
+    "value": "Hidesign"
+  },
+  {
+    "source": "category",
+    "value": "Home Decor"
+  },
+  {
+    "source": "category",
+    "value": "Home Furnishing"
+  },
+  {
+    "source": "store",
+    "value": "Homeshop18"
+  },
+  {
+    "source": "store",
+    "value": "Hoppingo"
+  },
+  {
+    "source": "store",
+    "value": "Hopscotch"
+  },
+  {
+    "source": "store",
+    "value": "HostGator"
+  },
+  {
+    "source": "store",
+    "value": "Hotels"
+  },
+  {
+    "source": "category",
+    "value": "Hotels"
+  },
+  {
+    "source": "store",
+    "value": "HouseFull"
+  },
+  {
+    "source": "store",
+    "value": "ICICI PL"
+  },
+  {
+    "source": "store",
+    "value": "Indiaflowermall"
+  },
+  {
+    "source": "store",
+    "value": "IndianGiftsPortal"
+  },
+  {
+    "source": "store",
+    "value": "Indiareads"
+  },
+  {
+    "source": "store",
+    "value": "IndigoRummy"
+  },
+  {
+    "source": "store",
+    "value": "IndustryBuying"
+  },
+  {
+    "source": "store",
+    "value": "Infibeam"
+  },
+  {
+    "source": "category",
+    "value": "Insurance & Loans"
+  },
+  {
+    "source": "store",
+    "value": "Intimodo"
+  },
+  {
+    "source": "store",
+    "value": "Ixigo"
+  },
+  {
+    "source": "store",
+    "value": "Jabong"
+  },
+  {
+    "source": "store",
+    "value": "JagranJosh"
+  },
+  {
+    "source": "store",
+    "value": "JazzMyRide"
+  },
+  {
+    "source": "category",
+    "value": "Jewellery"
+  },
+  {
+    "source": "store",
+    "value": "JoyByNature"
+  },
+  {
+    "source": "store",
+    "value": "Junglee"
+  },
+  {
+    "source": "store",
+    "value": "Kaaryah"
+  },
+  {
+    "source": "store",
+    "value": "Kazo"
+  },
+  {
+    "source": "store",
+    "value": "KFC"
+  },
+  {
+    "source": "store",
+    "value": "Khojdeal"
+  },
+  {
+    "source": "category",
+    "value": "Kids Clothing"
+  },
+  {
+    "source": "category",
+    "value": "Kitchen & Dining"
+  },
+  {
+    "source": "category",
+    "value": "Kitchen & Home Appliances"
+  },
+  {
+    "source": "store",
+    "value": "Koovs"
+  },
+  {
+    "source": "category",
+    "value": "Lab & Medical Tests"
+  },
+  {
+    "source": "store",
+    "value": "Landmark"
+  },
+  {
+    "source": "category",
+    "value": "Laptops & Accessories"
+  },
+  {
+    "source": "store",
+    "value": "LatestOne"
+  },
+  {
+    "source": "store",
+    "value": "LeEco (CPS) India"
+  },
+  {
+    "source": "store",
+    "value": "Lensclues"
+  },
+  {
+    "source": "store",
+    "value": "LensKart"
+  },
+  {
+    "source": "store",
+    "value": "LimeRoad"
+  },
+  {
+    "source": "store",
+    "value": "LinoPerros"
+  },
+  {
+    "source": "store",
+    "value": "Lotusherbals"
+  },
+  {
+    "source": "store",
+    "value": "MakeMyTrip Bus"
+  },
+  {
+    "source": "store",
+    "value": "MakeMyTrip Dom Flights"
+  },
+  {
+    "source": "store",
+    "value": "MakeMyTrip Hotels"
+  },
+  {
+    "source": "store",
+    "value": "MakeMyTrip Int. Flights"
+  },
+  {
+    "source": "store",
+    "value": "McDonalds"
+  },
+  {
+    "source": "category",
+    "value": "Medicines"
+  },
+  {
+    "source": "store",
+    "value": "Medlife"
+  },
+  {
+    "source": "category",
+    "value": "Men Fashion"
+  },
+  {
+    "source": "category",
+    "value": "Men Footwear"
+  },
+  {
+    "source": "category",
+    "value": "Men Grooming"
+  },
+  {
+    "source": "store",
+    "value": "Metro"
+  },
+  {
+    "source": "category",
+    "value": "Metro Recharge"
+  },
+  {
+    "source": "store",
+    "value": "MI"
+  },
+  {
+    "source": "store",
+    "value": "Mobikwik"
+  },
+  {
+    "source": "category",
+    "value": "Mobile Recharge"
+  },
+  {
+    "source": "category",
+    "value": "Mobiles & Accessories"
+  },
+  {
+    "source": "store",
+    "value": "Montecarlo"
+  },
+  {
+    "source": "category",
+    "value": "Movies"
+  },
+  {
+    "source": "store",
+    "value": "Musafir"
+  },
+  {
+    "source": "store",
+    "value": "MyBusTickets"
+  },
+  {
+    "source": "store",
+    "value": "MyFlowerTree"
+  },
+  {
+    "source": "store",
+    "value": "Myles"
+  },
+  {
+    "source": "store",
+    "value": "Myntra"
+  },
+  {
+    "source": "store",
+    "value": "Mytaxi"
+  },
+  {
+    "source": "store",
+    "value": "Naaptol"
+  },
+  {
+    "source": "store",
+    "value": "NaturesBasket"
+  },
+  {
+    "source": "store",
+    "value": "Nazara - Kuwait"
+  },
+  {
+    "source": "store",
+    "value": "Nazara - Saudi Arabia"
+  },
+  {
+    "source": "store",
+    "value": "Nazara - UAE"
+  },
+  {
+    "source": "store",
+    "value": "Netmeds"
+  },
+  {
+    "source": "store",
+    "value": "Newu"
+  },
+  {
+    "source": "store",
+    "value": "Nnnow"
+  },
+  {
+    "source": "store",
+    "value": "NutcaseShop"
+  },
+  {
+    "source": "store",
+    "value": "Nykaa"
+  },
+  {
+    "source": "store",
+    "value": "OrderVenue"
+  },
+  {
+    "source": "store",
+    "value": "OyoRooms"
+  },
+  {
+    "source": "store",
+    "value": "PaisaBazaar CC"
+  },
+  {
+    "source": "store",
+    "value": "Papajohnspizza"
+  },
+  {
+    "source": "store",
+    "value": "Paybackbazaar"
+  },
+  {
+    "source": "store",
+    "value": "Paytm"
+  },
+  {
+    "source": "store",
+    "value": "Peopleskart"
+  },
+  {
+    "source": "store",
+    "value": "Pepperfry"
+  },
+  {
+    "source": "category",
+    "value": "Pizza"
+  },
+  {
+    "source": "store",
+    "value": "Pizzahut"
+  },
+  {
+    "source": "category",
+    "value": "Policy"
+  },
+  {
+    "source": "store",
+    "value": "Pressie"
+  },
+  {
+    "source": "store",
+    "value": "PrettySecrets"
+  },
+  {
+    "source": "category",
+    "value": "Print"
+  },
+  {
+    "source": "store",
+    "value": "Printland"
+  },
+  {
+    "source": "store",
+    "value": "QatarAirways"
+  },
+  {
+    "source": "store",
+    "value": "QuackQuack"
+  },
+  {
+    "source": "store",
+    "value": "Raymond Raywool"
+  },
+  {
+    "source": "store",
+    "value": "Redbus"
+  },
+  {
+    "source": "category",
+    "value": "Refurbished Mobiles"
+  },
+  {
+    "source": "store",
+    "value": "Rewardme"
+  },
+  {
+    "source": "store",
+    "value": "Rightstay"
+  },
+  {
+    "source": "store",
+    "value": "SBI SimplySave CC"
+  },
+  {
+    "source": "category",
+    "value": "Self Drive Car"
+  },
+  {
+    "source": "store",
+    "value": "SendMyGift"
+  },
+  {
+    "source": "store",
+    "value": "Shopcj"
+  },
+  {
+    "source": "store",
+    "value": "Shopclues"
+  },
+  {
+    "source": "store",
+    "value": "Shopnineteen"
+  },
+  {
+    "source": "store",
+    "value": "ShoppersStop"
+  },
+  {
+    "source": "store",
+    "value": "SmileDrive"
+  },
+  {
+    "source": "store",
+    "value": "Snapdeal"
+  },
+  {
+    "source": "category",
+    "value": "Speakers"
+  },
+  {
+    "source": "store",
+    "value": "SpinsVilla"
+  },
+  {
+    "source": "category",
+    "value": "Sports & Fitness"
+  },
+  {
+    "source": "store",
+    "value": "Sports365"
+  },
+  {
+    "source": "store",
+    "value": "Stalkbuylove"
+  },
+  {
+    "source": "store",
+    "value": "StandardChartered CC"
+  },
+  {
+    "source": "store",
+    "value": "StyleTag"
+  },
+  {
+    "source": "category",
+    "value": "Sunglasses"
+  },
+  {
+    "source": "category",
+    "value": "Supplements"
+  },
+  {
+    "source": "store",
+    "value": "Suratdiamond"
+  },
+  {
+    "source": "store",
+    "value": "Swiggy"
+  },
+  {
+    "source": "category",
+    "value": "Tablet  & Accessories"
+  },
+  {
+    "source": "store",
+    "value": "Tatacliq"
+  },
+  {
+    "source": "store",
+    "value": "Tatasky"
+  },
+  {
+    "source": "category",
+    "value": "Televisions"
+  },
+  {
+    "source": "store",
+    "value": "Thatspersonal"
+  },
+  {
+    "source": "store",
+    "value": "Thedostore"
+  },
+  {
+    "source": "store",
+    "value": "Thepalaces"
+  },
+  {
+    "source": "store",
+    "value": "Thyrocare"
+  },
+  {
+    "source": "store",
+    "value": "Ticketgoose"
+  },
+  {
+    "source": "store",
+    "value": "Tolexo"
+  },
+  {
+    "source": "category",
+    "value": "Toys & Games"
+  },
+  {
+    "source": "store",
+    "value": "TravelKhana"
+  },
+  {
+    "source": "store",
+    "value": "TreeboHotels"
+  },
+  {
+    "source": "store",
+    "value": "TrendyBharat"
+  },
+  {
+    "source": "store",
+    "value": "TripHobo"
+  },
+  {
+    "source": "store",
+    "value": "TVF"
+  },
+  {
+    "source": "store",
+    "value": "UBER"
+  },
+  {
+    "source": "store",
+    "value": "VistaRooms"
+  },
+  {
+    "source": "store",
+    "value": "Voonik"
+  },
+  {
+    "source": "store",
+    "value": "Voylla"
+  },
+  {
+    "source": "category",
+    "value": "Watches"
+  },
+  {
+    "source": "store",
+    "value": "WearYourShine"
+  },
+  {
+    "source": "category",
+    "value": "Web Hosting & Domains"
+  },
+  {
+    "source": "store",
+    "value": "Welspun"
+  },
+  {
+    "source": "category",
+    "value": "Women Fashion"
+  },
+  {
+    "source": "category",
+    "value": "Women Footwear"
+  },
+  {
+    "source": "category",
+    "value": "Women InnerWear"
+  },
+  {
+    "source": "store",
+    "value": "Wonderchef"
+  },
+  {
+    "source": "store",
+    "value": "Yatra Int. Flights"
+  },
+  {
+    "source": "store",
+    "value": "Yatra- Domestic Hotel"
+  },
+  {
+    "source": "store",
+    "value": "Yatra-Domestic Flight"
+  },
+  {
+    "source": "store",
+    "value": "Yepme"
+  },
+  {
+    "source": "store",
+    "value": "Yumist"
+  },
+  {
+    "source": "store",
+    "value": "Zivame"
+  },
+  {
+    "source": "store",
+    "value": "ZoomCar"
+  },
+  {
+    "source": "store",
+    "value": "Zotezo"
+  }
 ]

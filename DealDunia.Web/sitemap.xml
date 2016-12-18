@@ -13,9 +13,6 @@
   <loc>http://grabmedeal.in/</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/Coupons/Electronics</loc>
-</url>
-<url>
   <loc>http://grabmedeal.in/Coupons/Electricals</loc>
 </url>
 <url>
@@ -23,6 +20,18 @@
 </url>
 <url>
   <loc>http://grabmedeal.in/Coupons/Flowers-and-Gifts</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/Coupons/Electronics</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/Coupons/Cameras</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/Coupons/Televisions</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/Coupons/Speakers</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/Coupons/Mobile-Recharge</loc>
@@ -79,6 +88,9 @@
   <loc>http://grabmedeal.in/Coupons/Sunglasses</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/Coupons/Watches</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/Coupons/Kids-Clothing</loc>
 </url>
 <url>
@@ -127,6 +139,9 @@
   <loc>http://grabmedeal.in/Coupons/Men-Grooming</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/Coupons/Sports-and-Fitness</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/Coupons/Medicines</loc>
 </url>
 <url>
@@ -148,10 +163,28 @@
   <loc>http://grabmedeal.in/Coupons/Movies</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/Coupons/Gaming</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/Coupons/Web-Hosting-and-Domains</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/Coupons/Print</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/Coupons/Art</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/Coupons/Gambling</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/Coupons/Insurance-and-Loans</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/Coupons/Credit-Card</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/Coupons/Policy</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/daily-deals</loc>
@@ -163,10 +196,10 @@
   <loc>http://grabmedeal.in/store/1mg</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/1mgAyush</loc>
+  <loc>http://grabmedeal.in/store/1mgLabs</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/1mgLabs</loc>
+  <loc>http://grabmedeal.in/store/AutoPortal</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Amazon</loc>
@@ -178,10 +211,19 @@
   <loc>http://grabmedeal.in/store/Amzer</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/store/Airbnb</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Agoda</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/store/Abof</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Aplava</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Ace2three</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Ajio</loc>
@@ -190,28 +232,31 @@
   <loc>http://grabmedeal.in/store/Art4u</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/store/AliExpress</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/store/Airvistara</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/AliExpress</loc>
+  <loc>http://grabmedeal.in/store/Adda52</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/AndIndia</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Adidas</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/store/Aquaguard</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/store/ArchiesOnline</loc>
-</url>
-<url>
-  <loc>http://grabmedeal.in/store/Ace2three</loc>
-</url>
-<url>
-  <loc>http://grabmedeal.in/store/Babyoye</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Bigchemist</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/Bigbasket</loc>
+  <loc>http://grabmedeal.in/store/Burger%20King</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Biba</loc>
@@ -220,10 +265,16 @@
   <loc>http://grabmedeal.in/store/Bata</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/Blackberry</loc>
+  <loc>http://grabmedeal.in/store/Bigbasket</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/BehrouzBiryani</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Blackberry</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/BigRock</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/BlueStone</loc>
@@ -244,16 +295,28 @@
   <loc>http://grabmedeal.in/store/CraftsVilla</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/Coke2Home</loc>
+  <loc>http://grabmedeal.in/store/CompuIndia</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/Chaipoint</loc>
+  <loc>http://grabmedeal.in/store/Coke2Home</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/CampusSutra</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/store/Chaipoint</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/ChaiPoint</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/store/Clovia</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/CitiBank</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Crocs</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Candere</loc>
@@ -265,13 +328,19 @@
   <loc>http://grabmedeal.in/store/CollegeDekho</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/DinoDirect</loc>
-</url>
-<url>
   <loc>http://grabmedeal.in/store/DailyObjects</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/store/DinoDirect</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/DunkinDonuts</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/store/Dominos</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Decathlon</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Ditto</loc>
@@ -281,6 +350,18 @@
 </url>
 <url>
   <loc>http://grabmedeal.in/store/eBay</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Expedia</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/eZone</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Etihad</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/EasyPolicy</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Flipkart</loc>
@@ -295,19 +376,28 @@
   <loc>http://grabmedeal.in/store/Faasos</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/Foodpanda</loc>
-</url>
-<url>
-  <loc>http://grabmedeal.in/store/FabHotels</loc>
-</url>
-<url>
   <loc>http://grabmedeal.in/store/Fabfurnish</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Foodpanda</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/FreshMenu</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Faballey</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Fashionandyou</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Fynd</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/FabIndia</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Fullerton</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/FlyingMachine</loc>
@@ -317,6 +407,9 @@
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Fasherati</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Flintobox</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Flaberry</loc>
@@ -329,6 +422,12 @@
 </url>
 <url>
   <loc>http://grabmedeal.in/store/GrocerMax</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/GlobalDesi</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Godaddy</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Giftsmate</loc>
@@ -352,10 +451,13 @@
   <loc>http://grabmedeal.in/store/HealthGenie</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/Hidesign</loc>
+  <loc>http://grabmedeal.in/store/Hoppingo</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Healthkart</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Hidesign</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/HouseFull</loc>
@@ -364,13 +466,13 @@
   <loc>http://grabmedeal.in/store/Hopscotch</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/store/HostGator</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/store/HappilyUnmarried</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Infibeam</loc>
-</url>
-<url>
-  <loc>http://grabmedeal.in/store/Ixigo</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Intimodo</loc>
@@ -388,25 +490,31 @@
   <loc>http://grabmedeal.in/store/IndianGiftsPortal</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/store/JoyByNature</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/store/Jabong</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/JagranJosh</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/KFC</loc>
+  <loc>http://grabmedeal.in/store/JazzMyRide</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/Kazo</loc>
+  <loc>http://grabmedeal.in/store/KFC</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Koovs</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/LatestOne</loc>
+  <loc>http://grabmedeal.in/store/Kazo</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/LeMall</loc>
+  <loc>http://grabmedeal.in/store/Kaaryah</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/LatestOne</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/LimeRoad</loc>
@@ -415,10 +523,10 @@
   <loc>http://grabmedeal.in/store/LinoPerros</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/Landmark</loc>
+  <loc>http://grabmedeal.in/store/Lotusherbals</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/Lotusherbals</loc>
+  <loc>http://grabmedeal.in/store/Landmark</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/LensKart</loc>
@@ -430,43 +538,130 @@
   <loc>http://grabmedeal.in/store/MakeMyTrip%20Hotels</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/store/Myntra</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/store/Mobikwik</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Musafir</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/McDonalds</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/Myntra</loc>
+  <loc>http://grabmedeal.in/store/Medlife</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/MI</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/MakeMyTrip%20Dom%20Flights</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/MakeMyTrip%20Bus</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/MyBusTickets</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Montecarlo</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Mytaxi</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Myles</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Metro</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/MyFlowerTree</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Netmeds</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Nnnow</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Naaptol</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Nykaa</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Newu</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/NaturesBasket</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Nazara%20-%20Saudi%20Arabia</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Nazara%20-%20UAE</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/NutcaseShop</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/OyoRooms</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/OrderVenue</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Printland</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/store/Paybackbazaar</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Paytm</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/store/Pepperfry</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/Printvenue</loc>
-</url>
-<url>
-  <loc>http://grabmedeal.in/store/Pizzahut</loc>
+  <loc>http://grabmedeal.in/store/Peopleskart</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/PapaJohnsPizza</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/store/Pizzahut</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/store/PrettySecrets</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/PaisaBazaar%20CC</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Pressie</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/store/QatarAirways</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/store/Redbus</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Rightstay</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Raymond%20Raywool</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Snapdeal</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Shopclues</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/SmileDrive</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Shopcj</loc>
@@ -478,22 +673,28 @@
   <loc>http://grabmedeal.in/store/ShoppersStop</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/SmileDrive</loc>
-</url>
-<url>
-  <loc>http://grabmedeal.in/store/StyleTag</loc>
-</url>
-<url>
   <loc>http://grabmedeal.in/store/Stalkbuylove</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Shopnineteen</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/Suratdiamond</loc>
+  <loc>http://grabmedeal.in/store/StyleTag</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Sports365</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/SpinsVilla</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/StandardChartered%20CC</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/SBI%20SimplySave%20CC</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Suratdiamond</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/SendMyGift</loc>
@@ -508,10 +709,13 @@
   <loc>http://grabmedeal.in/store/Tatacliq</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/TripHobo</loc>
+  <loc>http://grabmedeal.in/store/TreeboHotels</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/TreeboHotels</loc>
+  <loc>http://grabmedeal.in/store/Thedostore</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/TripHobo</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/Ticketgoose</loc>
@@ -520,7 +724,16 @@
   <loc>http://grabmedeal.in/store/Thyrocare</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/store/Thepalaces</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/TVF</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/store/Tatasky</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/UBER</loc>
 </url>
 <url>
   <loc>http://grabmedeal.in/store/VistaRooms</loc>
@@ -532,9 +745,36 @@
   <loc>http://grabmedeal.in/store/Voylla</loc>
 </url>
 <url>
+  <loc>http://grabmedeal.in/store/Wonderchef</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Welspun</loc>
+</url>
+<url>
   <loc>http://grabmedeal.in/store/WearYourShine</loc>
 </url>
 <url>
-  <loc>http://grabmedeal.in/store/Wonderchef</loc>
+  <loc>http://grabmedeal.in/store/Yumist</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Yepme</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Yatra-%20Domestic%20Hotel</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Yatra-Domestic%20Flight</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Zotezo</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Zivame</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/ZoomCar</loc>
+</url>
+<url>
+  <loc>http://grabmedeal.in/store/Billbachao</loc>
 </url>
 </urlset>
