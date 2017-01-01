@@ -21,10 +21,6 @@
   },
   {
     "source": "store",
-    "value": "Adidas"
-  },
-  {
-    "source": "store",
     "value": "Agoda"
   },
   {
@@ -65,10 +61,6 @@
   },
   {
     "source": "store",
-    "value": "Aquaguard"
-  },
-  {
-    "source": "store",
     "value": "ArchiesOnline"
   },
   {
@@ -80,16 +72,16 @@
     "value": "Art4u"
   },
   {
-    "source": "store",
-    "value": "AutoPortal"
-  },
-  {
     "source": "category",
     "value": "Baby Care"
   },
   {
     "source": "store",
-    "value": "BajajElecticals"
+    "value": "Bajaj Electicals"
+  },
+  {
+    "source": "store",
+    "value": "Bajaj Finserv"
   },
   {
     "source": "store",
@@ -129,11 +121,11 @@
   },
   {
     "source": "store",
-    "value": "Billbachao"
+    "value": "Blackberry"
   },
   {
     "source": "store",
-    "value": "Blackberry"
+    "value": "Bluehost"
   },
   {
     "source": "store",
@@ -174,6 +166,10 @@
   {
     "source": "category",
     "value": "Car Accessories"
+  },
+  {
+    "source": "store",
+    "value": "Cars24"
   },
   {
     "source": "store",
@@ -258,10 +254,6 @@
   {
     "source": "category",
     "value": "Drinks & Beverages"
-  },
-  {
-    "source": "store",
-    "value": "Droom"
   },
   {
     "source": "category",
@@ -396,6 +388,10 @@
     "value": "Fynd"
   },
   {
+    "source": "store",
+    "value": "Gadgetsnow"
+  },
+  {
     "source": "category",
     "value": "Gambling"
   },
@@ -442,6 +438,10 @@
   {
     "source": "store",
     "value": "HappilyUnmarried"
+  },
+  {
+    "source": "category",
+    "value": "Headphones"
   },
   {
     "source": "category",
@@ -502,10 +502,6 @@
   {
     "source": "store",
     "value": "ICICI PL"
-  },
-  {
-    "source": "store",
-    "value": "Indiaflowermall"
   },
   {
     "source": "store",
@@ -785,7 +781,7 @@
   },
   {
     "source": "store",
-    "value": "Papajohnspizza"
+    "value": "PapaJohnsPizza"
   },
   {
     "source": "store",
@@ -814,6 +810,10 @@
   {
     "source": "category",
     "value": "Policy"
+  },
+  {
+    "source": "category",
+    "value": "Power Bank"
   },
   {
     "source": "store",
@@ -1054,10 +1054,6 @@
   {
     "source": "store",
     "value": "Yatra Int. Flights"
-  },
-  {
-    "source": "store",
-    "value": "Yatra- Domestic Hotel"
   },
   {
     "source": "store",
