@@ -5,7 +5,7 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="17ee6daf3e594c9e995a21ca1ff7e1f0" Name="Diagram1" ShowGrid="false">
-        <EntityTypeShape EntityType="EcomModel.ExcDeal" Width="1.5" PointX="3" PointY="4" IsExpanded="false" />
+        <EntityTypeShape EntityType="EcomModel.ExcDeal" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="EcomModel.StoreCategory" Width="1.5" PointX="0.75" PointY="4" IsExpanded="false" />
         <EntityTypeShape EntityType="EcomModel.Store" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
         <AssociationConnector Association="EcomModel.FK_ExcDeals_Store" />
@@ -15,12 +15,13 @@
         <AssociationConnector Association="EcomModel.FK_Coupons_StoreCategory" />
         <AssociationConnector Association="EcomModel.FK_Coupons_StoreSource" />
         <AssociationConnector Association="EcomModel.FK_Store_StoreSource" />
-        <EntityTypeShape EntityType="EcomModel.StoreCategoryMap" Width="1.5" PointX="3" PointY="5.375" />
+        <EntityTypeShape EntityType="EcomModel.StoreCategoryMap" Width="1.5" PointX="4.875" PointY="5.75" />
         <AssociationConnector Association="EcomModel.FK_StoreCategoryMap_StoreCategory" />
         <EntityTypeShape EntityType="EcomModel.CouponCategoryMap" Width="1.5" PointX="5.25" PointY="2.125" />
         <AssociationConnector Association="EcomModel.FK_CouponCategoryMap_Coupons" />
         <AssociationConnector Association="EcomModel.FK_CouponCategoryMap_StoreCategory" />
         <AssociationConnector Association="EcomModel.FK_StoreCategoryMap_Store" />
+        <AssociationConnector Association="EcomModel.FK_StoreCategory_StoreSource" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

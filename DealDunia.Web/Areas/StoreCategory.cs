@@ -29,10 +29,13 @@ namespace DealDunia.Web.Areas
         public Nullable<short> DisplayOrder { get; set; }
         public Nullable<bool> Active { get; set; }
         public string Logo { get; set; }
+        public Nullable<short> StoreSourceId { get; set; }
+        public Nullable<int> CampaignId { get; set; }
     
         public virtual ICollection<ExcDeal> ExcDeals { get; set; }
         public virtual ICollection<Coupon> Coupons { get; set; }
         public virtual ICollection<StoreCategoryMap> StoreCategoryMaps { get; set; }
         public virtual ICollection<CouponCategoryMap> CouponCategoryMaps { get; set; }
+        public virtual StoreSource StoreSource { get; set; }
     }
 }

@@ -2,24 +2,31 @@
 
 <table class="table table-hover">
     <tr class="success">
+        <td><input type="checkbox" id="chk_all" /><br /><button id="del-deal"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
         <td><strong>Store</strong></td>
         <td><strong>Store Category</strong></td>
         <td><strong>Title</strong></td>
         <td><strong>Status</strong></td>
         <td><strong>Is Featured</strong></td>
+        <td><strong>Offer Zone</strong></td>
+        <td><strong>Sale</strong></td>
         <td>&nbsp;</td>
     </tr>
     @foreach (var deal in Model)
     {
         <tr>
+            <td><input type="checkbox" id="chk_select" value="@deal.ExcDealId" /></td>
             <td>@deal.Store.StoreName</td>
             <td>@(deal.StoreCategory == null ? "N/A" : deal.StoreCategory.StoreCategoryName)</td>
             <td>@deal.Title</td>
             <td>@Html.EditorFor(m => deal.Active)</td>
             <td>@Html.EditorFor(m => deal.IsFeatured)</td>
+            <td>@Html.EditorFor(m => deal.OfferZone)</td>
+            <td>@Html.EditorFor(m => deal.Sale)</td>
             <td>
                 <button class="btn btn-primary edit-deal" value="@deal.ExcDealId">
-                    Edit</button>
+                    Edit
+                </button>
             </td>
         </tr>
     }
@@ -47,6 +54,49 @@
                 }).fail(function () {
                     //TODO:Debugging
                 });
+        });
+
+        $("#del-deal").click(function () {
+            if ($("#chk_select:checked").length === 0) {
+                alert("Please select record/s to delete.");
+                return;
+            }
+            var deals = '';
+            $("#chk_select:checked").each(function (index, element) {
+                deals += $(element).val() + ",";
+            });
+
+            deals = deals.replace(/,\s*$/, "");
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("Delete", "ExclusiveDeal")',
+                data: { csv: deals },
+                datatype: "html",
+                success: function (data) {
+                    alert("Record/s deleted.");
+                    window.location.href = '@Url.Action("Index", "ExclusiveDeal")';
+                }
+            });
+
+        });
+
+        $("#chk_all").click(function () {
+            if ($(this).is(":checked")) {
+                $("input[id=chk_select]").prop("checked", true);
+            } else {
+                $("input[id=chk_select]").prop("checked", false);
+            }
+        });
+
+        $("[id^=chk_select]").click(function () {
+            var total_cbox = $("[id^=chk_select]").length;
+            var len = $("#chk_select:checked").length;
+            if (len == total_cbox) {
+                $("input[id=chk_all]").prop("checked", true);
+            } else {
+                $("input[id=chk_all]").prop("checked", false);
+            }
         });
     });
 </script>

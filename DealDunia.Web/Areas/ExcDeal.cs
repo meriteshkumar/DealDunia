@@ -27,6 +27,8 @@ namespace DealDunia.Web.Areas
         public Nullable<bool> Active { get; set; }
         public Nullable<System.DateTime> StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
+        public Nullable<bool> OfferZone { get; set; }
+        public Nullable<bool> Sale { get; set; }
     
         public virtual Store Store { get; set; }
         public virtual StoreCategory StoreCategory { get; set; }

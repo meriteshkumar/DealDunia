@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
@@ -76,6 +77,8 @@ namespace DealDunia.Web.Areas.Admin.Controllers
                         Active = model.Active,
                         StartDate = model.StartDate,
                         EndDate = model.EndDate,
+                        OfferZone = model.OfferZone,
+                        Sale = model.Sale
                     };
 
                     context.ExcDeals.Add(newExcDeal);
@@ -97,6 +100,8 @@ namespace DealDunia.Web.Areas.Admin.Controllers
                     execDeal.Active = model.Active;
                     execDeal.StartDate = model.StartDate;
                     execDeal.EndDate = model.EndDate;
+                    execDeal.OfferZone = model.OfferZone;
+                    execDeal.Sale = model.Sale;
 
                     TempData["Message"] = "Record Updated";
                 }
@@ -109,6 +114,19 @@ namespace DealDunia.Web.Areas.Admin.Controllers
             {
                 return PartialView("_EditExcDeal", model);
             }
+        }
+
+        [HttpPost]
+        public ActionResult Delete(string csv)
+        {
+            EComEntities context = new EComEntities();
+
+            List<int> Ids = csv.Split(',').Select(str => int.Parse(str)).ToList();
+            context.ExcDeals.Where(x => Ids.Contains(x.ExcDealId)).ToList().ForEach(d => context.ExcDeals.Remove(d));
+           
+            context.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
         public PartialViewResult _StoreCategoryDropDown(string controlName)
