@@ -9,12 +9,14 @@ namespace DealDunia.Infrastructure.Utility
         public static string EncodeUrl(string param)
         {
             //return param.Replace(' ', '_').Replace("&", "and");
-            return param.Replace(' ', '-').Replace("&", "and");
+            //return param.Replace(' ', '-').Replace("&", "and");
+            return param.Replace(" & ", "-and-").Replace(" ", "-");
         }
         public static string DecodeUrl(string param)
         {
             //return param.Replace('_', ' ').Replace("and", "&");
-            return param.Replace('-', ' ').Replace("and", "&");
+            //return param.Replace('-', ' ').Replace("and", "&");
+            return param.Replace("-and-", " & ").Replace('-', ' ');
         }
 
         public static DataTable ToDataTable<T>(this IList<T> data)
