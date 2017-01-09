@@ -36,7 +36,7 @@ namespace DealDunia.Web.Areas
         public DbSet<StoreCategoryMap> StoreCategoryMaps { get; set; }
         public DbSet<CouponCategoryMap> CouponCategoryMaps { get; set; }
     
-        public virtual int SaveCoupon(Nullable<short> storeSourceId, string promoId, Nullable<int> offerId, string offerName, string offerType, string couponTitle, string category, Nullable<short> storeCategoryId, string description, string couponCode, string offerURL, string couponStart, string couponExpiry, Nullable<bool> featured, Nullable<bool> exclusive, Nullable<bool> status, string storeCategoryCSV)
+        public virtual int SaveCoupon(Nullable<short> storeSourceId, string promoId, Nullable<int> offerId, string offerName, string offerType, string couponTitle, string category, Nullable<short> storeCategoryId, string description, string couponCode, string offerURL, string couponStart, string couponExpiry, Nullable<bool> featured, Nullable<bool> exclusive, Nullable<bool> status, string storeCategoryCSV, Nullable<bool> offerZone, Nullable<bool> sale)
         {
             var storeSourceIdParameter = storeSourceId.HasValue ?
                 new ObjectParameter("StoreSourceId", storeSourceId) :
@@ -106,10 +106,18 @@ namespace DealDunia.Web.Areas
                 new ObjectParameter("StoreCategoryCSV", storeCategoryCSV) :
                 new ObjectParameter("StoreCategoryCSV", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SaveCoupon", storeSourceIdParameter, promoIdParameter, offerIdParameter, offerNameParameter, offerTypeParameter, couponTitleParameter, categoryParameter, storeCategoryIdParameter, descriptionParameter, couponCodeParameter, offerURLParameter, couponStartParameter, couponExpiryParameter, featuredParameter, exclusiveParameter, statusParameter, storeCategoryCSVParameter);
+            var offerZoneParameter = offerZone.HasValue ?
+                new ObjectParameter("OfferZone", offerZone) :
+                new ObjectParameter("OfferZone", typeof(bool));
+    
+            var saleParameter = sale.HasValue ?
+                new ObjectParameter("Sale", sale) :
+                new ObjectParameter("Sale", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("SaveCoupon", storeSourceIdParameter, promoIdParameter, offerIdParameter, offerNameParameter, offerTypeParameter, couponTitleParameter, categoryParameter, storeCategoryIdParameter, descriptionParameter, couponCodeParameter, offerURLParameter, couponStartParameter, couponExpiryParameter, featuredParameter, exclusiveParameter, statusParameter, storeCategoryCSVParameter, offerZoneParameter, saleParameter);
         }
     
-        public virtual int UpdateCoupon(Nullable<long> couponId, Nullable<short> storeSourceId, string promoId, Nullable<int> offerId, string offerName, string offerType, string couponTitle, string category, Nullable<short> storeCategoryId, string description, string couponCode, string offerURL, string couponStart, string couponExpiry, Nullable<bool> featured, Nullable<bool> exclusive, Nullable<bool> status, string storeCategoryCSV)
+        public virtual int UpdateCoupon(Nullable<long> couponId, Nullable<short> storeSourceId, string promoId, Nullable<int> offerId, string offerName, string offerType, string couponTitle, string category, Nullable<short> storeCategoryId, string description, string couponCode, string offerURL, string couponStart, string couponExpiry, Nullable<bool> featured, Nullable<bool> exclusive, Nullable<bool> status, string storeCategoryCSV, Nullable<bool> offerZone, Nullable<bool> sale)
         {
             var couponIdParameter = couponId.HasValue ?
                 new ObjectParameter("CouponId", couponId) :
@@ -183,7 +191,15 @@ namespace DealDunia.Web.Areas
                 new ObjectParameter("StoreCategoryCSV", storeCategoryCSV) :
                 new ObjectParameter("StoreCategoryCSV", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCoupon", couponIdParameter, storeSourceIdParameter, promoIdParameter, offerIdParameter, offerNameParameter, offerTypeParameter, couponTitleParameter, categoryParameter, storeCategoryIdParameter, descriptionParameter, couponCodeParameter, offerURLParameter, couponStartParameter, couponExpiryParameter, featuredParameter, exclusiveParameter, statusParameter, storeCategoryCSVParameter);
+            var offerZoneParameter = offerZone.HasValue ?
+                new ObjectParameter("OfferZone", offerZone) :
+                new ObjectParameter("OfferZone", typeof(bool));
+    
+            var saleParameter = sale.HasValue ?
+                new ObjectParameter("Sale", sale) :
+                new ObjectParameter("Sale", typeof(bool));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("UpdateCoupon", couponIdParameter, storeSourceIdParameter, promoIdParameter, offerIdParameter, offerNameParameter, offerTypeParameter, couponTitleParameter, categoryParameter, storeCategoryIdParameter, descriptionParameter, couponCodeParameter, offerURLParameter, couponStartParameter, couponExpiryParameter, featuredParameter, exclusiveParameter, statusParameter, storeCategoryCSVParameter, offerZoneParameter, saleParameter);
         }
     
         public virtual int SaveStore(string mode, Nullable<short> storeId, string storeName, string storeDescription, string storeURL, string storeImage, Nullable<bool> affiliate, string affiliateId, Nullable<short> storeSourceId, Nullable<int> sourceStoreId, Nullable<bool> isFeatured, Nullable<System.DateTime> expirationDate, Nullable<bool> active, Nullable<bool> status, string storeCategoryMapList)

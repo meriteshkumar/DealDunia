@@ -36,6 +36,8 @@
           <Property Name="Status" Type="bit" />
           <Property Name="CreatedOn" Type="datetime" />
           <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="OfferZone" Type="bit" />
+          <Property Name="Sale" Type="bit" />
         </EntityType>
         <EntityType Name="ExcDeals">
           <Key>
@@ -251,6 +253,8 @@
           <Parameter Name="Exclusive" Type="bit" Mode="In" />
           <Parameter Name="Status" Type="bit" Mode="In" />
           <Parameter Name="StoreCategoryCSV" Type="varchar" Mode="In" />
+          <Parameter Name="OfferZone" Type="bit" Mode="In" />
+          <Parameter Name="Sale" Type="bit" Mode="In" />
         </Function>
         <Function Name="SaveStore" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="Mode" Type="char" Mode="In" />
@@ -288,6 +292,8 @@
           <Parameter Name="Exclusive" Type="bit" Mode="In" />
           <Parameter Name="Status" Type="bit" Mode="In" />
           <Parameter Name="StoreCategoryCSV" Type="varchar" Mode="In" />
+          <Parameter Name="OfferZone" Type="bit" Mode="In" />
+          <Parameter Name="Sale" Type="bit" Mode="In" />
         </Function>
         <EntityContainer Name="EcomModelStoreContainer">
           <EntitySet Name="CouponCategoryMap" EntityType="Self.CouponCategoryMap" Schema="dbo" store:Type="Tables" />
@@ -391,6 +397,8 @@
             <Parameter Name="Exclusive" Mode="In" Type="Boolean" />
             <Parameter Name="Status" Mode="In" Type="Boolean" />
             <Parameter Name="StoreCategoryCSV" Mode="In" Type="String" />
+            <Parameter Name="OfferZone" Mode="In" Type="Boolean" />
+            <Parameter Name="Sale" Mode="In" Type="Boolean" />
           </FunctionImport>
           <EntitySet Name="CouponCategoryMaps" EntityType="EcomModel.CouponCategoryMap" />
           <AssociationSet Name="FK_CouponCategoryMap_Coupons" Association="EcomModel.FK_CouponCategoryMap_Coupons">
@@ -420,6 +428,8 @@
             <Parameter Name="Exclusive" Mode="In" Type="Boolean" />
             <Parameter Name="Status" Mode="In" Type="Boolean" />
             <Parameter Name="StoreCategoryCSV" Mode="In" Type="String" />
+            <Parameter Name="OfferZone" Mode="In" Type="Boolean" />
+            <Parameter Name="Sale" Mode="In" Type="Boolean" />
           </FunctionImport>
           <AssociationSet Name="FK_StoreCategoryMap_Store" Association="EcomModel.FK_StoreCategoryMap_Store">
             <End Role="Store" EntitySet="Stores" />
@@ -562,6 +572,8 @@
           <NavigationProperty Name="StoreCategory" Relationship="EcomModel.FK_Coupons_StoreCategory" FromRole="Coupon" ToRole="StoreCategory" />
           <NavigationProperty Name="StoreSource" Relationship="EcomModel.FK_Coupons_StoreSource" FromRole="Coupon" ToRole="StoreSource" />
           <NavigationProperty Name="CouponCategoryMaps" Relationship="EcomModel.FK_CouponCategoryMap_Coupons" FromRole="Coupon" ToRole="CouponCategoryMap" />
+          <Property Name="OfferZone" Type="Boolean" />
+          <Property Name="Sale" Type="Boolean" />
         </EntityType>
         <EntityType Name="StoreSource">
           <Key>
@@ -759,6 +771,8 @@
           <EntitySetMapping Name="Coupons">
             <EntityTypeMapping TypeName="EcomModel.Coupon">
               <MappingFragment StoreEntitySet="Coupons">
+                <ScalarProperty Name="Sale" ColumnName="Sale" />
+                <ScalarProperty Name="OfferZone" ColumnName="OfferZone" />
                 <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="Status" ColumnName="Status" />

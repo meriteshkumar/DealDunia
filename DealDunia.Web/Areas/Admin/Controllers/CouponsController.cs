@@ -70,7 +70,9 @@ namespace DealDunia.Web.Areas.Admin.Controllers
                          coupon.Featured,
                          coupon.Exclusive,
                          coupon.Status,
-                         StoreCategoryIdCSV);
+                         StoreCategoryIdCSV,
+                         coupon.OfferZone,
+                         coupon.Sale);
 
                     //TempData["Message"] = "Record saved";
                 }
@@ -95,7 +97,9 @@ namespace DealDunia.Web.Areas.Admin.Controllers
                            coupon.Featured,
                            coupon.Exclusive,
                            coupon.Status,
-                           StoreCategoryIdCSV);
+                           StoreCategoryIdCSV,
+                           coupon.OfferZone,
+                           coupon.Sale);
 
                     //TempData["Message"] = "Record Updated";
                 }

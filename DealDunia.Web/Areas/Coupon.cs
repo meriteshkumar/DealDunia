@@ -38,6 +38,8 @@ namespace DealDunia.Web.Areas
         public Nullable<bool> Status { get; set; }
         public Nullable<System.DateTime> CreatedOn { get; set; }
         public Nullable<System.DateTime> ModifiedOn { get; set; }
+        public Nullable<bool> OfferZone { get; set; }
+        public Nullable<bool> Sale { get; set; }
     
         public virtual StoreCategory StoreCategory { get; set; }
         public virtual StoreSource StoreSource { get; set; }

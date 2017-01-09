@@ -19,15 +19,17 @@
 <div class="divStoreCategoryId edit-mode"></div></text>, canSort:true) 
                                  ,grid.Column(columnName:"Category",header:"Coupon Category", canSort:true)                                 
                                  ,grid.Column(columnName:"StoreSource.StoreSourceName",header:"Store Source", canSort:false) 
-                                 ,grid.Column(header:"Store", format: @<text>@DealDunia.Web.Areas.Admin.Controllers.CouponsController.GetStoreName(item.StoreSourceId,item.OfferId)</text>)                                 
-                                ,grid.Column(columnName:"OfferName",header:"Offer Name", canSort:true) 
-                                ,grid.Column(columnName:"CouponTitle",header:"Title", canSort:false)                                 
-                                ,grid.Column(columnName:"OfferType",header:"Offer Type", canSort:false) 
-                                ,grid.Column(columnName:"CouponCode",header:"Coupon Code", canSort:false) 
-                                ,grid.Column(columnName:"Status",header:"Status", canSort:false) 
-                                ,grid.Column(columnName:"Featured",header:"Featured", canSort:false) 
-                                ,grid.Column(columnName:"Exclusive",header:"Exclusive", canSort:false) 
-                                
+                                 ,grid.Column(header:"Store", format: @<text>@DealDunia.Web.Areas.Admin.Controllers.CouponsController.GetStoreName(item.StoreSourceId,item.OfferId)</text>)
+                                ,grid.Column(columnName:"OfferName",header:"Offer Name", canSort:true)
+                                ,grid.Column(columnName:"CouponTitle",header:"Title", canSort:false)
+                                ,grid.Column(columnName:"OfferType",header:"Offer Type", canSort:false)
+                                ,grid.Column(columnName:"CouponCode",header:"Coupon Code", canSort:false)
+                                ,grid.Column(columnName:"Status",header:"Status", canSort:false)
+                                ,grid.Column(columnName:"Featured",header:"Featured", canSort:false)
+                                ,grid.Column(columnName:"Exclusive",header:"Exclusive", canSort:false)
+                                ,grid.Column(columnName:"OfferZone",header:"OfferZone", canSort:false)
+                                ,grid.Column(columnName:"Sale",header:"Sale", canSort:false)
+
                               }
 )
 @*<input type="hidden" name="storeSourceId" id="storeSourceId"/>
