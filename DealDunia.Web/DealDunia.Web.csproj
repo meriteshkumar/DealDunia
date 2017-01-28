@@ -699,6 +699,8 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Carousel.cshtml" />
     <Content Include="Views\Shared\_MegaMenu.cshtml" />
+    <Content Include="Views\Deal\Sale.cshtml" />
+    <Content Include="Views\Deal\OfferZone.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

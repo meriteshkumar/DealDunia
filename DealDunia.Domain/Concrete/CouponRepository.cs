@@ -19,10 +19,12 @@ namespace DealDunia.Domain.Concrete
             List<Coupon> coupons = new List<Coupon>();
             Coupon coupon = null;
 
-            SqlDataReader reader = SqlHelper.ExecuteReader(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.GetCoupons", new SqlParameter[] { 
+            SqlDataReader reader = SqlHelper.ExecuteReader(DbConfig.ConnectionString, CommandType.StoredProcedure, "dbo.GetCoupons", new SqlParameter[] {
                 new SqlParameter("@OfferType", string.IsNullOrEmpty(criteria.OfferType) ? null : criteria.OfferType)
                 , new SqlParameter("@OfferName", string.IsNullOrEmpty(criteria.OfferName) ? null : criteria.OfferName)
                 , new SqlParameter("@StoreCategoryName", string.IsNullOrEmpty(criteria.StoreCategoryName) ? null : criteria.StoreCategoryName)
+                , new SqlParameter("@OfferZone", criteria.OfferZone)
+                , new SqlParameter("@Sale", criteria.Sale)
             });
 
             while (reader.Read())

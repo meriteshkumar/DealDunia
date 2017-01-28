@@ -15,7 +15,7 @@ namespace DealDunia.Web.Controllers
         public DealController()
         {
         }
-        
+
         //[OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Daily()
         {
@@ -23,7 +23,7 @@ namespace DealDunia.Web.Controllers
             var deals = repository.Get(new DailyDealsValues { StoreId = 0, StoreName = string.Empty });
             return View(deals);
         }
-       
+
         public PartialViewResult _DailyDeals(DailyDealsValues param)
         {
             var repository = new DailyDealRepository();
@@ -40,7 +40,7 @@ namespace DealDunia.Web.Controllers
             return PartialView("_DOTD", deals);
         }
 
-         //[OutputCache(Duration = 3600, VaryByParam = "none")]
+        //[OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Exclusive()
         {
             IRepository<ExecutiveDeals, ExecutiveDealValues> repository = new ExclusiveDealRepository();
@@ -60,6 +60,20 @@ namespace DealDunia.Web.Controllers
             IRepository<Coupon, CouponValues> repository = new CouponRepository();
             var coupons = repository.Get(new CouponValues { OfferType = Offer, OfferName = Store, StoreCategoryName = (Category == null ? string.Empty : Utilities.DecodeUrl(Category)) });
             return View("Coupons", coupons);
+        }
+
+        public ActionResult Sale(bool? Sale)
+        {
+            IRepository<Coupon, CouponValues> repository = new CouponRepository();
+            var coupons = repository.Get(new CouponValues { Sale = Sale });
+            return View("Sale", coupons);
+        }
+
+        public ActionResult OfferZone(bool? OfferZone)
+        {
+            IRepository<Coupon, CouponValues> repository = new CouponRepository();
+            var coupons = repository.Get(new CouponValues { OfferZone = OfferZone });
+            return View("OfferZone", coupons);
         }
 
         public PartialViewResult _Coupons(CouponValues param)

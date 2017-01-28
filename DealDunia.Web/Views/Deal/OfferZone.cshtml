@@ -1,0 +1,102 @@
+﻿@model IEnumerable<DealDunia.Domain.Entities.Coupon>
+
+@{
+    ViewBag.Title = "Offer Zone";
+}
+
+<script>
+    $(document).ready(function () {
+        var stores = '';
+        var categories = '';
+
+        function Init() {
+            stores = '';
+            categories = '';
+
+            $("input[type=checkbox][name=chkstore]:checked").each(function () {
+                stores += $(this).val() + ",";
+            });
+            $("input[type=checkbox][name=chkCategory]:checked").each(function () {
+                categories += $(this).val() + ",";
+            });
+        }
+
+        $("input[type=checkbox][name=chkstore]").click(function () {
+            LoadCoupons();
+        });
+
+        $("input[type=checkbox][name=chkCategory]").click(function () {
+            LoadCoupons();
+        });
+
+        $("#clearStore").click(function () {
+            $("input[type=checkbox][name=chkstore]:checked").each(function () {
+                this.checked = false;
+            });
+            LoadCoupons();
+        });
+
+        $("#clearCategory").click(function () {
+            $("input[type=checkbox][name=chkCategory]:checked").each(function () {
+                this.checked = false;
+            });
+            LoadCoupons();
+        });
+
+        function LoadCoupons() {
+            Init();
+            $.ajax({
+                url: '@Url.Action("_Coupons", "Deal")',
+                data: { OfferName: stores, StoreCategoryName: categories, OfferZone: true }
+            }).done(function (data) {
+                $("#divCoupon").html(data);
+            }).fail(function () {
+            });
+        }
+    });
+</script>
+
+<div class="row">
+    <!-- Filters -->
+    <div class="col-md-3 col-sm-3 col-sx-3 paddingzero">
+        <div class="box">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <b>Category</b><div id="clearCategory" class="clear">Clear</div>
+                </div>
+                <div class="checkbox" style="padding-left: 5px;">
+                    @foreach (var categoryName in Model.OrderBy(o => o.StoreCategoryName).Select(p => p.StoreCategoryName).Distinct())
+                    {
+                        <label>
+                            <input type="checkbox" value="@categoryName" name="chkCategory" />@categoryName
+                        </label>
+                    }
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <b>Stores</b><div id="clearStore" class="clear">Clear</div>
+                </div>
+                <div class="checkbox" style="padding-left: 5px; padding-right: 5px;">
+                    @foreach (var storename in Model.OrderBy(o => o.OfferName).Select(p => p.OfferName).Distinct())
+                    {
+                        <label>
+                            <input type="checkbox" value="@storename" name="chkstore" />@storename
+                        </label>
+                    }
+                </div>
+            </div>
+            <div id="divCampaign"></div>
+        </div>
+    </div>
+    <!-- Filters End-->
+    <!-- Main Content -->
+    <div class="col-md-9 col-sm-9 col-sx-9 paddingright0">
+        <div class="box">
+            <div id="divCoupon">
+                @Html.Partial("_Coupons", Model)
+            </div>
+        </div>
+    </div>
+    <!-- Main Content End-->
+</div>
