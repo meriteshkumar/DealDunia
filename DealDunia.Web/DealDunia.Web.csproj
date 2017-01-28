@@ -273,6 +273,8 @@
     <None Include="Properties\PublishProfiles\DealDunia.pubxml" />
     <None Include="Properties\PublishProfiles\GMD.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
+    <Content Include="Images\Stores\Allegory\allegory.png" />
+    <Content Include="Images\Stores\Bingo\bingo.jpg" />
     <Content Include="Images\Carousel\1015785_GWsuperhero_4500x900._UX1500_SX1500_CB526421994_.jpg" />
     <Content Include="Images\Carousel\1477563131315-Offer_HPB_26Oct.jpg" />
     <Content Include="Images\Carousel\GW_Hero_4500x900_4._UX1500_SX1500_CB526501252_.jpg" />
@@ -452,6 +454,7 @@
     <Content Include="Images\Stores\Coveritup\coveritup.png" />
     <Content Include="Images\Stores\Craftsvilla\craftsvilla.jpg" />
     <Content Include="Images\Stores\Crocs\Crocs.png" />
+    <Content Include="Images\Stores\Croma\Croma.jpg" />
     <Content Include="Images\Stores\DailyObjects\DailyObjects.jpg" />
     <Content Include="Images\Stores\Decathlon\decathlon.png" />
     <Content Include="Images\Stores\DinoDirect\DinoDirect.png" />
@@ -558,6 +561,7 @@
     <Content Include="Images\Stores\Metro\Metro.png" />
     <Content Include="Images\Stores\MI\MI.png" />
     <Content Include="Images\Stores\Mobikwik\Mobikwik.jpg" />
+    <Content Include="Images\Stores\Moglix\Moglix.jpg" />
     <Content Include="Images\Stores\Montecarlo\Montecarlo.jpg" />
     <Content Include="Images\Stores\Musafir\Musafir.jpg" />
     <Content Include="Images\Stores\MyBusTickets\MyBusTickets.jpg" />

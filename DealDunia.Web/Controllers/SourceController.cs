@@ -32,6 +32,7 @@ namespace DealDunia.Web.Controllers
                 if (Source.ToLower() == "vcom")
                 {
                     HttpWebRequest request = (HttpWebRequest)WebRequest.Create(string.Format("https://tools.vcommission.com/api/coupons.php?apikey={0}", VCOM.APIKEY));
+                    request.UserAgent = "Mozilla/4.0";
                     List<VCOMCoupon> deserializedResult = null;
                     JavaScriptSerializer serializer = new JavaScriptSerializer();
                     WebResponse response = request.GetResponse();
@@ -121,6 +122,7 @@ namespace DealDunia.Web.Controllers
                 }
                 HttpWebRequest httpRequest = null;
                 httpRequest = (HttpWebRequest)WebRequest.Create(request);
+                httpRequest.UserAgent = "Mozilla/4.0";
                 List<SourceStore> stores = new List<SourceStore>();
                 WebResponse response = httpRequest.GetResponse();
                 using (Stream responseStream = response.GetResponseStream())
