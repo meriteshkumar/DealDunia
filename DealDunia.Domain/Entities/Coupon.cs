@@ -31,5 +31,7 @@ namespace DealDunia.Domain.Entities
         public string OfferType { get; set; } 
         public string OfferName { get; set; }
         public string StoreCategoryName { get; set; }
+        public bool? OfferZone { get; set; }
+        public bool? Sale { get; set; }
     }
 }

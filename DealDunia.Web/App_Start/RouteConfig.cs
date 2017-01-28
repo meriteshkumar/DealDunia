@@ -31,7 +31,17 @@ namespace DealDunia.Web
                 defaults: new { controller = "Deal", action = "Coupon" }
             );
 
-            
+            routes.MapRoute(
+                name: "CouponSale",
+                url: "Sale",
+                defaults: new { controller = "Deal", action = "Sale", Sale = true }
+                );
+
+            routes.MapRoute(
+                name: "CouponOfferZone",
+                url: "OfferZone",
+                defaults: new { controller = "Deal", action = "OfferZone", OfferZone = true }
+                );
 
             //routes.MapRoute(
             //    name: "UpdateCoupons",
