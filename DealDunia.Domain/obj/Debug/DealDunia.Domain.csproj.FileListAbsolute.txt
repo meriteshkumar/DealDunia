@@ -22,3 +22,15 @@ F:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Debug\Newtonsoft.Json.xm
 F:\Affiliate\Application\DealDunia\DealDunia.Domain\obj\Debug\DealDunia.Domain.csprojResolveAssemblyReference.cache
 F:\Affiliate\Application\DealDunia\DealDunia.Domain\obj\Debug\DealDunia.Domain.dll
 F:\Affiliate\Application\DealDunia\DealDunia.Domain\obj\Debug\DealDunia.Domain.pdb
+D:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Domain.dll.config
+D:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Domain.dll
+D:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Domain.pdb
+D:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Infrastructure.dll
+D:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Service.dll
+D:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Debug\Newtonsoft.Json.dll
+D:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Infrastructure.pdb
+D:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Debug\DealDunia.Service.pdb
+D:\Affiliate\Application\DealDunia\DealDunia.Domain\bin\Debug\Newtonsoft.Json.xml
+D:\Affiliate\Application\DealDunia\DealDunia.Domain\obj\Debug\DealDunia.Domain.csprojResolveAssemblyReference.cache
+D:\Affiliate\Application\DealDunia\DealDunia.Domain\obj\Debug\DealDunia.Domain.dll
+D:\Affiliate\Application\DealDunia\DealDunia.Domain\obj\Debug\DealDunia.Domain.pdb

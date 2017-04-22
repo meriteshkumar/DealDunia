@@ -1,0 +1,181 @@
+﻿@model DealDunia.Web.Areas.Store
+@{
+    WebGrid grid = new WebGrid(Model.StoreCategoryMaps, rowsPerPage: 50);
+}
+
+
+<div class="modal-content">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Add/Edit Store</h4>
+    </div>
+    @using (Html.BeginForm(Html.BeginForm("Save", "Stores", FormMethod.Post, new { enctype = "multipart/form-data", id = "myForm" })))
+    {
+        @Html.ValidationSummary();
+        <div class="modal-body">
+            <div class="form-horizontal">
+                <div class="form-group">
+                    @Html.HiddenFor(h => h.StoreId)
+                    <label class="col-sm-2">Name</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(t => t.StoreName, new { @class = "form-control" })
+                    </div>
+                    <label class="col-sm-2">Image</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(t => t.StoreImage, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2">Description</label>
+                    <div class="col-sm-10">
+                        @Html.TextAreaFor(m => m.StoreDescription, new { cols = "40", rows = "3", @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2">Affiliate</label>
+                    <div class="col-sm-1">
+                        @Html.EditorFor(m => m.Affiliate)
+                    </div>
+                    <div class="col-sm-3">
+                        @Html.TextBoxFor(t => t.AffiliateId, new { @class = "form-control" })
+                    </div>
+                    <label class="col-sm-2">Exp. Date</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(t => t.ExpirationDate, new { @class = "form-control expirationdate" })
+                    </div>                    
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2">Source</label>
+                    <div class="col-sm-4 save-store-source">
+                        <!-- placeholder for store source dropdown -->
+                    </div>
+                    <label class="col-sm-2">Store Id</label>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(t => t.SourceStoreId, new { @class = "form-control" })
+                    </div>
+                </div>               
+                <div class="form-group">                   
+                    <label class="col-sm-2">Store URL</label>
+                    <div class="col-sm-10">
+                        @Html.TextAreaFor(t => t.StoreURL, new { cols = "40", rows = "2", @class = "form-control" })
+                        @*@Html.TextBoxFor(t => t.StoreURL, new { @class = "form-control" })*@
+                    </div>
+                </div>
+                <div class="form-group">                    
+                    <label class="col-sm-2">Active</label>
+                    <div class="col-sm-2">
+                        @Html.EditorFor(m => m.Active)
+                    </div>
+                    <label class="col-sm-2">Status</label>
+                    <div class="col-sm-2">
+                        @Html.EditorFor(m => m.Status)
+                    </div>
+                    <label class="col-sm-2">Featured</label>
+                    <div class="col-sm-2">
+                        @Html.EditorFor(m => m.IsFeatured)
+                    </div>
+                </div>               
+                @*<div class="form-group">
+                    <label class="col-sm-12">Category Mapping</label>
+                </div>*@
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        @grid.GetHtml(tableStyle: "table table-hover grid-categorymap",
+                                    headerStyle: "success",
+                                    mode: WebGridPagerModes.All,
+                                    firstText: "<<First", previousText: "<Previous", nextText: "Next>", lastText: "Last>>",
+                                          columns: new[] {
+                                            grid.Column(format: @<text><input type="hidden" value="@item.StoreCategoryId" id="grid-storecategoryid"></text>),
+                                            grid.Column(format: @<text><input type="hidden" value="@item.URL" id="grid-url"></text>),
+                                            grid.Column(columnName:"StoreCategory.StoreCategoryName", header:"Category", canSort:false),
+                                            grid.Column(columnName:"URL", header:"URL", canSort:false, style:"test")
+                                        })
+                    </div>
+                </div>
+                <div class="form-group save-categorymapline">
+                    <input type="hidden" id="StoreCategoryMapList" name="StoreCategoryMapList" />
+                    @{
+                        DealDunia.Web.Areas.StoreCategoryMap map = new DealDunia.Web.Areas.StoreCategoryMap();
+                    }
+                    @Html.Partial("CategoryMapLine", map)
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="button" value="+" class="btn btn-primary btn-xs" id="add-row" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    @*<input type="submit" value="Save changes" class="btn btn-primary" />*@
+                    <input type="button" value="Save changes" class="btn btn-primary" id="save-btn" />
+                </div>
+            </div>
+        </div>
+                        }
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var settings = {
+            storeSourceDropDown: '@Url.Action("_StoreSourceDropDown", "Coupons")',
+            categoryMapLine: '@Url.Action("CategoryMapLine", "Stores")',
+            saveStoreUrl: '@Url.Action("Save", "Stores")'
+        };
+
+        init();
+
+        function init() {
+            loadStoreSource(settings.storeSourceDropDown, "save-store-source")
+            .done(function (data) {
+                $(".save-store-source").html(data);
+                @if(Model.StoreSourceId != 0)
+                {
+                    <text>
+                console.log(@Model.StoreSourceId);
+                $(".save-store-source select").val(@Model.StoreSourceId);
+                </text>
+                }
+            }).fail(function (data, status, headers, config) {
+                //TODO:Debugging
+            });
+
+
+            $(".expirationdate").datepicker();
+        }
+
+        $("#add-row").click(function () {
+            appendCategoryMapLineRow(settings.categoryMapLine, null, "save-categorymapline");
+        });
+
+        $("#save-btn").click(function () {
+            $(".save-categorymapline #StoreCategoryMapList").val("");
+            var storeCategoryMapList = '';
+            var storeCategoryId = '';
+            var url = '';
+
+            //$(".grid-categorymap tbody >tr").each(function (index, value) {
+            //    storeCategoryId = $(this).find("#grid-storecategoryid").val();
+            //    url = $(this).find("#grid-url").val();
+
+            //    if (storeCategoryId !== undefined || storeCategoryId !== '') {
+            //        storeCategoryMapList += storeCategoryId + ":" + url;
+            //        storeCategoryMapList += ",";
+            //    }
+            //});
+
+            $(".save-categorymapline .categorymapline").each(function (index, value) {
+                storeCategoryId = $(this).find(".mapline-storecategory #StoreCategoryId").val();
+                url = $(this).find(".mapline-url #URL").val();
+
+                if (storeCategoryId !== undefined && storeCategoryId !== '' && storeCategoryId != '0') {
+                    storeCategoryMapList += storeCategoryId + ":" + url;
+                    storeCategoryMapList += ",";
+                }
+            });
+
+            storeCategoryMapList = storeCategoryMapList.replace(/,\s*$/, "");
+            $(".save-categorymapline #StoreCategoryMapList").val(storeCategoryMapList);
+
+            save(settings.saveStoreUrl, $('#myForm').serialize());
+        });
+    });
+</script>

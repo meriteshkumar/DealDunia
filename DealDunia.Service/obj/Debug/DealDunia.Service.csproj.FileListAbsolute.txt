@@ -13,3 +13,11 @@ F:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Infrastructur
 F:\Affiliate\Application\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.csprojResolveAssemblyReference.cache
 F:\Affiliate\Application\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.dll
 F:\Affiliate\Application\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.pdb
+D:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Service.dll.config
+D:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Service.dll
+D:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Service.pdb
+D:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Infrastructure.dll
+D:\Affiliate\Application\DealDunia\DealDunia.Service\bin\DealDunia.Infrastructure.pdb
+D:\Affiliate\Application\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.csprojResolveAssemblyReference.cache
+D:\Affiliate\Application\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.dll
+D:\Affiliate\Application\DealDunia\DealDunia.Service\obj\Debug\DealDunia.Service.pdb

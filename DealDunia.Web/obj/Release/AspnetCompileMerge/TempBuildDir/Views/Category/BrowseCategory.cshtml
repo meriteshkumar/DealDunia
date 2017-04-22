@@ -1,0 +1,27 @@
+﻿@model IEnumerable<DealDunia.Domain.Entities.Category>
+
+@{
+    ViewBag.Title = "BrowseCategory";
+}
+
+<div>
+    @if (Convert.ToInt16(ViewBag.ShowBrowse) == 1)
+    {
+        @Html.Partial("_LineItem", Model)
+    }
+    else if (Convert.ToInt16(ViewBag.ShowBrowse) == 2)
+    {
+        @Html.Partial("_LineItem2", Model)
+    }
+
+@*     @if (Convert.ToInt16(ViewBag.ShowBrowse) == 1)
+    {
+        @Html.Action("SearchResult", "Nav", new { searchtext = ViewContext.RouteData.Values["id1"].ToString() })
+    }
+    else if (Convert.ToInt16(ViewBag.ShowBrowse) == 2)
+    {
+        @Html.Action("SearchResult", "Nav", new { searchtext = ViewContext.RouteData.Values["id2"].ToString() })
+    }*@
+</div>
+
+

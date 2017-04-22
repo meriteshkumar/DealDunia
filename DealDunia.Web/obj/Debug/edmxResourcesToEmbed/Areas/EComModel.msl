@@ -4,6 +4,8 @@
     <EntitySetMapping Name="ExcDeals">
       <EntityTypeMapping TypeName="EcomModel.ExcDeal">
         <MappingFragment StoreEntitySet="ExcDeals">
+          <ScalarProperty Name="Sale" ColumnName="Sale" />
+          <ScalarProperty Name="OfferZone" ColumnName="OfferZone" />
           <ScalarProperty Name="ExcDealId" ColumnName="ExcDealId" />
           <ScalarProperty Name="StoreId" ColumnName="StoreId" />
           <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
@@ -23,6 +25,8 @@
     <EntitySetMapping Name="StoreCategories">
       <EntityTypeMapping TypeName="EcomModel.StoreCategory">
         <MappingFragment StoreEntitySet="StoreCategory">
+          <ScalarProperty Name="CampaignId" ColumnName="CampaignId" />
+          <ScalarProperty Name="StoreSourceId" ColumnName="StoreSourceId" />
           <ScalarProperty Name="Logo" ColumnName="Logo" />
           <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
@@ -58,6 +62,8 @@
     <EntitySetMapping Name="Coupons">
       <EntityTypeMapping TypeName="EcomModel.Coupon">
         <MappingFragment StoreEntitySet="Coupons">
+          <ScalarProperty Name="Sale" ColumnName="Sale" />
+          <ScalarProperty Name="OfferZone" ColumnName="OfferZone" />
           <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="Status" ColumnName="Status" />
@@ -111,5 +117,6 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="UpdateCoupon" FunctionName="EcomModel.Store.UpdateCoupon" />
+    <FunctionImportMapping FunctionImportName="SaveStore" FunctionName="EcomModel.Store.SaveStore" />
   </EntityContainerMapping>
 </Mapping>

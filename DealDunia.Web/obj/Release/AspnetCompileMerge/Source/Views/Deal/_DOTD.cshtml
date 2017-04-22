@@ -1,0 +1,36 @@
+﻿@model IEnumerable<DealDunia.Domain.Entities.DOTD>
+
+@if (Model.Count() > 0)
+{    
+    <div class="row box">
+        @foreach (var deal in Model)
+        {            
+            <a target="_blank" href="@deal.DetailPageURL">
+                <div class="col-md-2 paddingzero">
+                    <div class="divProBox">
+                        <div class="divProStoreImg">
+                            <img class="ProStoreImg" alt="@deal.StoreName"  src="@Url.Content("~/Images/" + deal.StoreImage)"/>
+                        </div>
+                        <div class="divProImg">
+                            <img class="ProImg" alt="@deal.Title" src="@Url.Content(deal.ImageUrl)" />
+                        </div>
+                        <hr style="margin: 10px;" />
+                        <div class="divProTitle">
+                            <b>@deal.Title</b>
+                        </div>
+                        <hr style="margin: 10px;" />
+                        <div class="divProPriceOuter">
+                            <div class="divProPriceInner">
+                                <span>@deal.Description</span><span style="color: gray; text-decoration: line-through;">@deal.MRP</span><span style="color: red"> @deal.EffPrice</span>
+                            </div>
+                            <span>
+                                <a style="float:right" class="btn btn-primary btn-xs" target="_blank" href="@deal.DetailPageURL">Buy</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+ 
+}

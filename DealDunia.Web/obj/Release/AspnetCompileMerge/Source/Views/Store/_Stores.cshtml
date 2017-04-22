@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DealDunia.Domain.Entities.Store>
+
+@{
+    ViewBag.Title = "Store";
+}
+
+@*<h2>@Model.StoreName</h2>*@
+
+<script type="text/javascript">
+    @{
+        var items = "";
+        if (Model.Count() < 6)
+        {
+            items = Model.Count().ToString();
+        }
+        else
+        {
+            items = "6";
+        }
+    }
+    $(window).on('load', function () {
+        $("#flexisel").flexisel({
+            visibleItems: '@items',
+            itemsToScroll: 1,
+            autoPlay: {
+                enable: true,
+                interval: 5000,
+                pauseOnHover: true
+            }
+        });
+    });
+
+</script>
+
+@*@Styles.Render("~/Content/css/carousel")
+@Scripts.Render("~/bundles/js/slider")*@
+
+@foreach (string category in Model.Select(x => x.StoreCategoryName).Distinct())
+{
+    <div class="row box">
+        <h4><span class="boxtitle">STORES IN @category.ToUpper()</span></h4>
+        <ul id="flexisel">
+            @foreach (var store in Model.Where(x => x.StoreCategoryName == category))
+            {
+                var url = string.Empty;
+                if (ViewContext.RouteData.Values["category"] != null)
+                {               
+                <li>
+                    <a target="_blank" href="@Url.Action("Out", "Out", new { source = "couponsbycat", id = store.StoreCatMapId })">
+                        <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName" class="store_logo" />
+                    </a>
+                </li>
+                }
+                else
+                {
+                <li>
+                    <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
+                        <img src="@Url.Content("~/Images/" + store.StoreImage)" alt="@store.StoreName"  class="store_logo"/>
+                    </a>
+                </li>
+                }
+            }
+        </ul>
+    </div>    
+}

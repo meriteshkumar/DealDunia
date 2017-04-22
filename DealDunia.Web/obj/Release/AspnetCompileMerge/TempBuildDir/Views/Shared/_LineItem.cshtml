@@ -1,0 +1,19 @@
+﻿@model IEnumerable<DealDunia.Domain.Entities.Category>
+@using DealDunia.Infrastructure.Utility
+
+<div class="row">
+    @foreach (var category in Model.Where(c => c.Level == 2))
+    {
+        <div class="divBox">
+            <span><a href="@Url.RouteUrl("Level2", new { id1 = Utilities.EncodeUrl(ViewContext.RouteData.Values["id1"].ToString()), id2 = Utilities.EncodeUrl(category.CategoryName) })"><strong>@category.CategoryName</strong></a></span>
+            <br />
+            <a href="@Url.RouteUrl("Level2", new { id1 = Utilities.EncodeUrl(ViewContext.RouteData.Values["id1"].ToString()), id2 = Utilities.EncodeUrl(category.CategoryName) })">
+                <img src="@Url.Content("~/Images/" + category.Image)" alt="@category.CategoryName" class="imgDivBox"/></a>
+            <br />
+            @foreach (var inner in Model.Where(i => i.ParentId == category.CategoryId))
+            {
+                <a class="imgDivBox" href="@Url.RouteUrl("Level3", new { id1 = Utilities.EncodeUrl(ViewContext.RouteData.Values["id1"].ToString()), id2 = Utilities.EncodeUrl(category.CategoryName), id3 = Utilities.EncodeUrl(inner.CategoryName) })">@inner.CategoryName</a> <span>|</span>
+            }
+        </div>
+    }
+</div>

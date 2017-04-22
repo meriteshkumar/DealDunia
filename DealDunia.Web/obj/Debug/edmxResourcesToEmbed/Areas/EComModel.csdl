@@ -49,6 +49,8 @@
       <Parameter Name="Exclusive" Mode="In" Type="Boolean" />
       <Parameter Name="Status" Mode="In" Type="Boolean" />
       <Parameter Name="StoreCategoryCSV" Mode="In" Type="String" />
+      <Parameter Name="OfferZone" Mode="In" Type="Boolean" />
+      <Parameter Name="Sale" Mode="In" Type="Boolean" />
     </FunctionImport>
     <EntitySet Name="CouponCategoryMaps" EntityType="EcomModel.CouponCategoryMap" />
     <AssociationSet Name="FK_CouponCategoryMap_Coupons" Association="EcomModel.FK_CouponCategoryMap_Coupons">
@@ -78,7 +80,34 @@
       <Parameter Name="Exclusive" Mode="In" Type="Boolean" />
       <Parameter Name="Status" Mode="In" Type="Boolean" />
       <Parameter Name="StoreCategoryCSV" Mode="In" Type="String" />
+      <Parameter Name="OfferZone" Mode="In" Type="Boolean" />
+      <Parameter Name="Sale" Mode="In" Type="Boolean" />
     </FunctionImport>
+    <AssociationSet Name="FK_StoreCategoryMap_Store" Association="EcomModel.FK_StoreCategoryMap_Store">
+      <End Role="Store" EntitySet="Stores" />
+      <End Role="StoreCategoryMap" EntitySet="StoreCategoryMaps" />
+    </AssociationSet>
+    <FunctionImport Name="SaveStore">
+      <Parameter Name="Mode" Mode="In" Type="String" />
+      <Parameter Name="StoreId" Mode="In" Type="Int16" />
+      <Parameter Name="StoreName" Mode="In" Type="String" />
+      <Parameter Name="StoreDescription" Mode="In" Type="String" />
+      <Parameter Name="StoreURL" Mode="In" Type="String" />
+      <Parameter Name="StoreImage" Mode="In" Type="String" />
+      <Parameter Name="Affiliate" Mode="In" Type="Boolean" />
+      <Parameter Name="AffiliateId" Mode="In" Type="String" />
+      <Parameter Name="StoreSourceId" Mode="In" Type="Int16" />
+      <Parameter Name="SourceStoreId" Mode="In" Type="Int32" />
+      <Parameter Name="IsFeatured" Mode="In" Type="Boolean" />
+      <Parameter Name="ExpirationDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Active" Mode="In" Type="Boolean" />
+      <Parameter Name="Status" Mode="In" Type="Boolean" />
+      <Parameter Name="StoreCategoryMapList" Mode="In" Type="String" />
+    </FunctionImport>
+    <AssociationSet Name="FK_StoreCategory_StoreSource" Association="EcomModel.FK_StoreCategory_StoreSource">
+      <End Role="StoreSource" EntitySet="StoreSources" />
+      <End Role="StoreCategory" EntitySet="StoreCategories" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="ExcDeal">
     <Key>
@@ -99,6 +128,8 @@
     <Property Name="EndDate" Type="DateTime" Precision="0" />
     <NavigationProperty Name="Store" Relationship="EcomModel.FK_ExcDeals_Store" FromRole="ExcDeal" ToRole="Store" />
     <NavigationProperty Name="StoreCategory" Relationship="EcomModel.FK_ExcDeals_StoreCategory" FromRole="ExcDeal" ToRole="StoreCategory" />
+    <Property Name="OfferZone" Type="Boolean" />
+    <Property Name="Sale" Type="Boolean" />
   </EntityType>
   <EntityType Name="StoreCategory">
     <Key>
@@ -115,6 +146,9 @@
     <Property Type="String" Name="Logo" MaxLength="1000" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="StoreCategoryMaps" Relationship="EcomModel.FK_StoreCategoryMap_StoreCategory" FromRole="StoreCategory" ToRole="StoreCategoryMap" />
     <NavigationProperty Name="CouponCategoryMaps" Relationship="EcomModel.FK_CouponCategoryMap_StoreCategory" FromRole="StoreCategory" ToRole="CouponCategoryMap" />
+    <Property Name="StoreSourceId" Type="Int16" />
+    <Property Name="CampaignId" Type="Int32" />
+    <NavigationProperty Name="StoreSource" Relationship="EcomModel.FK_StoreCategory_StoreSource" FromRole="StoreCategory" ToRole="StoreSource" />
   </EntityType>
   <EntityType Name="Store">
     <Key>
@@ -138,6 +172,7 @@
     <Property Type="Boolean" Name="Status" />
     <NavigationProperty Name="StoreSource" Relationship="EcomModel.FK_Store_StoreSource" FromRole="Store" ToRole="StoreSource" />
     <Property Type="String" Name="StoreDescription" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="StoreCategoryMaps" Relationship="EcomModel.FK_StoreCategoryMap_Store" FromRole="Store" ToRole="StoreCategoryMap" />
   </EntityType>
   <Association Name="FK_ExcDeals_Store">
     <End Type="EcomModel.Store" Role="Store" Multiplicity="1" />
@@ -189,6 +224,8 @@
     <NavigationProperty Name="StoreCategory" Relationship="EcomModel.FK_Coupons_StoreCategory" FromRole="Coupon" ToRole="StoreCategory" />
     <NavigationProperty Name="StoreSource" Relationship="EcomModel.FK_Coupons_StoreSource" FromRole="Coupon" ToRole="StoreSource" />
     <NavigationProperty Name="CouponCategoryMaps" Relationship="EcomModel.FK_CouponCategoryMap_Coupons" FromRole="Coupon" ToRole="CouponCategoryMap" />
+    <Property Name="OfferZone" Type="Boolean" />
+    <Property Name="Sale" Type="Boolean" />
   </EntityType>
   <EntityType Name="StoreSource">
     <Key>
@@ -199,6 +236,7 @@
     <Property Type="String" Name="StoreSourceName" MaxLength="100" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="Coupons" Relationship="EcomModel.FK_Coupons_StoreSource" FromRole="StoreSource" ToRole="Coupon" />
     <NavigationProperty Name="Stores" Relationship="EcomModel.FK_Store_StoreSource" FromRole="StoreSource" ToRole="Store" />
+    <NavigationProperty Name="StoreCategories" Relationship="EcomModel.FK_StoreCategory_StoreSource" FromRole="StoreSource" ToRole="StoreCategory" />
   </EntityType>
   <Association Name="FK_Coupons_StoreCategory">
     <End Type="EcomModel.StoreCategory" Role="StoreCategory" Multiplicity="0..1" />
@@ -246,6 +284,7 @@
     <Property Type="String" Name="URL" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Type="Boolean" Name="Active" />
     <NavigationProperty Name="StoreCategory" Relationship="EcomModel.FK_StoreCategoryMap_StoreCategory" FromRole="StoreCategoryMap" ToRole="StoreCategory" />
+    <NavigationProperty Name="Store" Relationship="EcomModel.FK_StoreCategoryMap_Store" FromRole="StoreCategoryMap" ToRole="Store" />
   </EntityType>
   <Association Name="FK_StoreCategoryMap_StoreCategory">
     <End Type="EcomModel.StoreCategory" Role="StoreCategory" Multiplicity="1" />
@@ -290,6 +329,30 @@
       </Principal>
       <Dependent Role="CouponCategoryMap">
         <PropertyRef Name="StoreCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreCategoryMap_Store">
+    <End Type="EcomModel.Store" Role="Store" Multiplicity="1" />
+    <End Type="EcomModel.StoreCategoryMap" Role="StoreCategoryMap" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Store">
+        <PropertyRef Name="StoreId" />
+      </Principal>
+      <Dependent Role="StoreCategoryMap">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StoreCategory_StoreSource">
+    <End Type="EcomModel.StoreSource" Role="StoreSource" Multiplicity="0..1" />
+    <End Type="EcomModel.StoreCategory" Role="StoreCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StoreSource">
+        <PropertyRef Name="StoreSourceId" />
+      </Principal>
+      <Dependent Role="StoreCategory">
+        <PropertyRef Name="StoreSourceId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

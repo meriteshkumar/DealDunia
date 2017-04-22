@@ -1,0 +1,31 @@
+﻿@model IEnumerable<DealDunia.Domain.Entities.Store>
+
+@{    
+    ViewBag.Title = "GrabMeDeal: Online Shopping Sites";
+}
+
+@*<h2>@Model.StoreName</h2>*@
+
+<div>
+    <div style="text-align: center;">
+        @foreach (string alphabet in Model.OrderBy(o => o.Alphabet).Select(x => x.Alphabet).Distinct())
+        {
+            <a href="#@alphabet" style="font-size:22px;">&nbsp;@alphabet&nbsp;</a>
+        }
+    </div>
+    @foreach (string alphabet in Model.OrderBy(o => o.Alphabet).Select(x => x.Alphabet).Distinct())
+    {
+        <div class="row box">
+            <h4 id="@alphabet"><span class="boxtitle">@alphabet</span></h4>
+            @foreach (var store in Model.Where(x => x.Alphabet == alphabet).Select(s => new { StoreName = s.StoreName, StoreImage = s.StoreImage }).Distinct())
+            {
+                <div style="float: left; width: 120px;">
+                    <a href="@Url.RouteUrl("Store", new { store = store.StoreName })">
+                        @store.StoreName
+                    </a>
+                </div>              
+            }
+        </div>
+        <hr class="margin5" />
+    }
+</div>
