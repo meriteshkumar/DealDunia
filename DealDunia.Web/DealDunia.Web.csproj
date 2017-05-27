@@ -433,6 +433,7 @@
     <Content Include="Images\Stores\Bluehost\bluehost.png" />
     <Content Include="Images\Stores\BlueStone\BlueStone.jpg" />
     <Content Include="Images\Stores\BookMyFlowers\BookMyFlowers.jpg" />
+    <Content Include="Images\Stores\BookMyShow\book-my-show.png" />
     <Content Include="Images\Stores\BucketKart\BucketKart.gif" />
     <Content Include="Images\Stores\BurgerKing\burgerking.png" />
     <Content Include="Images\Stores\CampusSutra\CampusSutra.jpg" />
@@ -548,6 +549,7 @@
     <Content Include="Images\Stores\LinoPerros\LinoPerros.png" />
     <Content Include="Images\Stores\LittleApp\LittleApp.jpg" />
     <Content Include="Images\Stores\Lotusherbals\Lotusherbals.png" />
+    <Content Include="Images\Stores\LuluAndSky\luluandsky.PNG" />
     <Content Include="Images\Stores\Makemytrip\Makemytrip_Bus.png" />
     <Content Include="Images\Stores\Makemytrip\Makemytrip_DF.png" />
     <Content Include="Images\Stores\Makemytrip\Makemytrip_Hotel.png" />
@@ -593,6 +595,7 @@
     <Content Include="Images\Stores\Printvenue\Printvenue.jpg" />
     <Content Include="Images\Stores\Provogue\Provogue.png" />
     <Content Include="Images\Stores\Puma\Puma.png" />
+    <Content Include="Images\Stores\PVR\pvr.png" />
     <Content Include="Images\Stores\QatarAw\qataraw.png" />
     <Content Include="Images\Stores\Raymond\raymond.png" />
     <Content Include="Images\Stores\Redbus\Redbus.jpg" />
